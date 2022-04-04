@@ -12,4 +12,5 @@ mkdir build && cd build
 cmake /github/workspace
 make Sphinx
 
-cd /github/workspace && git checkout ${OUTPUT_BRANCH}
+cd /github/workspace
+git status
