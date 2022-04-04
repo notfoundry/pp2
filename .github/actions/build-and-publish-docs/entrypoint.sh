@@ -1,8 +1,8 @@
 #!/bin/sh -l
 set -x
 
-INPUT_BRANCH=$1
-OUTPUT_BRANCH=$2
+OUTPUT_BRANCH=$1
 
-cd /github/workspace
-which python3
+mkdir build && cd build
+cmake /github/workspace
+make Sphinx

@@ -1,10 +1,6 @@
 ﻿name: 'build-and-publish-docs'
 description: ''
 inputs:
-    input-branch:
-        description: ''
-        required: true
-        default: 'master'
     output-branch:
         description: ''
         required: true
@@ -13,5 +9,4 @@ runs:
     using: 'docker'
     image: 'Dockerfile'
     args:
-        - ${{ inputs.input-branch }}
         - ${{ inputs.output-branch }}
