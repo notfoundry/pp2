@@ -12,5 +12,5 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v3
       - name: Execute
-        uses: notfoundry/publish-pp2-docs-to-gh-pages-action@master
+        uses: ./.github/actions/build-andd-publish-docs@master
      
