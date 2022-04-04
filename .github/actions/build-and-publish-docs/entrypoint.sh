@@ -1,6 +1,8 @@
 #!/bin/sh -l
 set -x
 
+REPO_DIR=/github/workspace
+
 OUTPUT_BRANCH=$1
 
 ConfigureGitUser() {
@@ -9,8 +11,9 @@ ConfigureGitUser() {
 }
 
 mkdir build && cd build
-cmake /github/workspace
+cmake $REPO_DIR
 make Sphinx
 
-cd /github/workspace
-git status
+cd $REPO_DIR
+git remote update
+git checkout "${OUTPUT_BRANCH}"
