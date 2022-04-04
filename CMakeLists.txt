@@ -7,9 +7,11 @@ project(pp2
         LANGUAGES C CXX)
 string(TOUPPER ${PROJECT_NAME} PROJECT_NAME_UPPERCASE)
 
+set(CMAKE_MODULE_PATH "${PROJECT_SOURCE_DIR}/cmake" ${CMAKE_MODULE_PATH})
 
 option(${PROJECT_NAME_UPPERCASE}_INSTALL "Generate install target" ON)
 option(${PROJECT_NAME_UPPERCASE}_BUILD_TESTS "Build project tests" ON)
+option(${PROJECT_NAME_UPPERCASE}_BUILD_DOCS "Build project documentation" ON)
 
 include(CTest)
 include(GNUInstallDirs)
@@ -28,6 +30,10 @@ target_compile_features(${PROJECT_NAME} INTERFACE c_variadic_macros cxx_variadic
 if (${PROJECT_NAME_UPPERCASE}_BUILD_TESTS)
     enable_testing()
     add_subdirectory(test)
+endif()
+
+if (${PROJECT_NAME_UPPERCASE}_BUILD_DOCS)
+    add_subdirectory(docs)
 endif()
 
 if (${PROJECT_NAME_UPPERCASE}_INSTALL)
