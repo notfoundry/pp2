@@ -1,7 +1,7 @@
 #!/bin/sh -l
 set -x
 
-REPO_DIR=/github/workspace
+WORKSPACE=/github/workspace
 
 OUTPUT_BRANCH=$1
 
@@ -10,10 +10,13 @@ ConfigureGitUser() {
     git config user.email github-actions[bot]@users.noreply.github.com
 }
 
+cd ${WORKSPACE}
 mkdir build && cd build
-cmake $REPO_DIR
+cmake ${WORKSPACE}
 make Sphinx
 
-cd $REPO_DIR
+cd ${WORKSPACE}
 git remote update
 git checkout "${OUTPUT_BRANCH}"
+mv -f ${WORKSPACE}/build/docs/sphinx/* ${WORKSPACE}
+ls ${WORKSPACE}
