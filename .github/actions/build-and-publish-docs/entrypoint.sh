@@ -5,10 +5,6 @@ WORKSPACE=/github/workspace
 
 OUTPUT_BRANCH=$1
 
-ConfigureGitUser() {
-    git config user.name github-actions[bot]
-    git config user.email github-actions[bot]@users.noreply.github.com
-}
 
 cd ${WORKSPACE}
 mkdir build && cd build
@@ -19,4 +15,10 @@ cd ${WORKSPACE}
 git remote update
 git checkout "${OUTPUT_BRANCH}"
 mv -f ${WORKSPACE}/build/docs/sphinx/* ${WORKSPACE}
-ls ${WORKSPACE}
+
+
+git add .
+git config user.name github-actions[bot]
+git config user.email github-actions[bot]@users.noreply.github.com
+git commit -m "Auto-update documentation from ${GITHUB_REF}@${GITHUB_SHA}"
+git push
