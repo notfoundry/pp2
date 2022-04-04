@@ -1,5 +1,8 @@
 FROM alpine:3.10
 
+RUN apk add --no-cache python3 py3-pip
+RUN python3 -m pip install sphinx breathe sphinx-book-theme
+
 COPY entrypoint.sh /entrypoint.sh
 
 RUN ["chmod", "+x", "/entrypoint.sh"]
