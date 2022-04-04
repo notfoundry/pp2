@@ -1,0 +1,16 @@
+name: Build and Publish Documentation
+
+on:
+  push:
+    branches: [ master ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    name: build-and-publish-docs
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+      - name: Execute
+        uses: notfoundry/publish-pp2-docs-to-gh-pages-action@master
+     
