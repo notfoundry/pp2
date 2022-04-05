@@ -3,14 +3,6 @@
 #define PP2_PRIMITIVE_CORE_H
 
 /**
-* Substitutes none of the provided macro arguments into the macro replacment list,
-* causing all tokens in those arguments to be erased.
-*
-* @param ... the token sequence to erase
-*/
-#define PP2_EAT(...)
-
-/**
 * Substitutes all of the provided macro arguments into the macro replacement list without changing them.
 *
 * This is typically used to force an additional scan over the tokens in the macro arguments,
