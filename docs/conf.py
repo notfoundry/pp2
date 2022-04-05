@@ -13,6 +13,8 @@
 # import os
 # import sys
 # sys.path.insert(0, os.path.abspath('.'))
+import os
+import glob
 
 
 # -- Project information -----------------------------------------------------
@@ -27,7 +29,7 @@ author = 'Mark Johnson'
 # Add any Sphinx extension module names here, as strings. They can be
 # extensions coming with Sphinx (named 'sphinx.ext.*') or your custom
 # ones.
-extensions = ['breathe']
+extensions = ['breathe', 'sphinx_jinja']
 
 # Add any paths that contain templates here, relative to this directory.
 templates_path = ['_templates']
@@ -51,3 +53,11 @@ html_theme = 'sphinx_book_theme'
 html_static_path = ['_static']
 
 breathe_default_project = "pp2"
+
+# jinja_contexts = {
+#     'index_generation': {'header_files': list(os.path.abspath(p) for p in glob.glob("**/*.h", recursive=True))}
+# }
+
+jinja_contexts = {
+    'index_generation': {'header_files': list(os.path.abspath(p) for p in glob.glob("../include/**/*.h", recursive=True))}
+}
