@@ -1,0 +1,59 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.2" xml:lang="en-US">
+  <compounddef id="eat_8h" kind="file" language="C++">
+    <compoundname>eat.h</compoundname>
+    <includedby refid="vm_8h" local="yes">/github/workspace/include/pp2/machine/vm.h</includedby>
+    <invincdepgraph>
+      <node id="2">
+        <label>/github/workspace/include/pp2/machine/vm.h</label>
+        <link refid="vm_8h"/>
+      </node>
+      <node id="1">
+        <label>/github/workspace/include/pp2/primitive/tuple/eat.h</label>
+        <link refid="eat_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+      </node>
+    </invincdepgraph>
+      <sectiondef kind="define">
+      <memberdef kind="define" id="eat_8h_1a83710799538680c51ad357f7c2e5ff59" prot="public" static="no">
+        <name>PP2_EAT</name>
+        <param><defname>...</defname></param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Substitutes none of the provided macro arguments into the macro replacment list, causing all tokens in those arguments to be erased.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>...</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the token sequence to erase </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>a Placemarker token </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/github/workspace/include/pp2/primitive/tuple/eat.h" line="12" column="9" bodyfile="/github/workspace/include/pp2/primitive/tuple/eat.h" bodystart="12" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight><highlight class="preprocessor">#ifndef<sp/>PP2_PRIMITIVE_TUPLE_EAT_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>PP2_PRIMITIVE_TUPLE_EAT_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight></codeline>
+<codeline lineno="12" refid="eat_8h_1a83710799538680c51ad357f7c2e5ff59" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>PP2_EAT(...)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="13"><highlight class="normal"></highlight></codeline>
+<codeline lineno="14"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight></codeline>
+    </programlisting>
+    <location file="/github/workspace/include/pp2/primitive/tuple/eat.h"/>
+  </compounddef>
+</doxygen>
