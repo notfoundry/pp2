@@ -1,0 +1,150 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.2" xml:lang="en-US">
+  <compounddef id="core_8h" kind="file" language="C++">
+    <compoundname>core.h</compoundname>
+      <sectiondef kind="define">
+      <memberdef kind="define" id="core_8h_1a83710799538680c51ad357f7c2e5ff59" prot="public" static="no">
+        <name>PP2_EAT</name>
+        <param><defname>...</defname></param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Substitutes none of the provided macro arguments into the macro replacment list, causing all tokens in those arguments to be erased.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>...</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the token sequence to erase </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/github/workspace/include/pp2/primitive/core.h" line="11" column="9" bodyfile="/github/workspace/include/pp2/primitive/core.h" bodystart="11" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="core_8h_1a2e85a4c48515c59b026ce31749692513" prot="public" static="no">
+        <name>PP2_SCAN</name>
+        <param><defname>...</defname></param>
+        <initializer>__VA_ARGS__</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Substitutes all of the provided macro arguments into the macro replacement list without changing them.</para>
+<para>This is typically used to force an additional scan over the tokens in the macro arguments, allowing additional macro expansions to take place if any are legal to perform. This only differs from <ref refid="core_8h_1a4b438a51aa1b73bb331e7da86d375c13" kindref="member">PP2_OPEN</ref> in its intended use, as demonstrated: <programlisting filename=".c"><codeline><highlight class="preprocessor">#define<sp/>FOO(x)<sp/>PP2_SCAN(x)</highlight><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>BAR<sp/>123</highlight><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal">FOO(BAR<sp/><ref refid="core_8h_1a996770b8535ea8b7d129a45d2787d540" kindref="member">PP2_BLOCK</ref><sp/>())<sp/></highlight><highlight class="comment">//<sp/>123</highlight><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"></highlight><highlight class="comment">//<sp/>compared<sp/>to...</highlight><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>FOO(x)<sp/>PP2_OPEN<sp/>x</highlight></codeline>
+<codeline><highlight class="preprocessor">FOO((1,2,3))<sp/></highlight><highlight class="comment">//<sp/>1,2,3</highlight></codeline>
+</programlisting></para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>...</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the token sequence to scan </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/github/workspace/include/pp2/primitive/core.h" line="32" column="9" bodyfile="/github/workspace/include/pp2/primitive/core.h" bodystart="32" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="core_8h_1a4b438a51aa1b73bb331e7da86d375c13" prot="public" static="no">
+        <name>PP2_OPEN</name>
+        <param><defname>...</defname></param>
+        <initializer>__VA_ARGS__</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Removes the parentheses surrounding the provided macro arguments, and substitutes the tokens contained between those parentheses into the macro replacement list without changing them.</para>
+<para>See <ref refid="core_8h_1a2e85a4c48515c59b026ce31749692513" kindref="member">PP2_SCAN</ref> for a comparison between these two macros.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>...</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the token sequence to have the outermost parentheses stripped from </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/github/workspace/include/pp2/primitive/core.h" line="42" column="9" bodyfile="/github/workspace/include/pp2/primitive/core.h" bodystart="42" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="core_8h_1a684a5f333098aecc2cf92a3e54d14338" prot="public" static="no">
+        <name>PP2_QUOTE_OPEN</name>
+        <param><defname>P</defname></param>
+        <param><defname>...</defname></param>
+        <initializer>P##__VA_ARGS__</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>P</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>...</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/github/workspace/include/pp2/primitive/core.h" line="48" column="9" bodyfile="/github/workspace/include/pp2/primitive/core.h" bodystart="48" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="core_8h_1a996770b8535ea8b7d129a45d2787d540" prot="public" static="no">
+        <name>PP2_BLOCK</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Substitutes no tokens into the macro replacmeent list, effectively advancing the macro evaluator ahead by one token and performing a no-op. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/github/workspace/include/pp2/primitive/core.h" line="54" column="9" bodyfile="/github/workspace/include/pp2/primitive/core.h" bodystart="54" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight><highlight class="preprocessor">#ifndef<sp/>PP2_PRIMITIVE_CORE_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>PP2_PRIMITIVE_CORE_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight></codeline>
+<codeline lineno="11" refid="core_8h_1a83710799538680c51ad357f7c2e5ff59" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>PP2_EAT(...)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="12"><highlight class="normal"></highlight></codeline>
+<codeline lineno="32" refid="core_8h_1a2e85a4c48515c59b026ce31749692513" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>PP2_SCAN(...)<sp/>__VA_ARGS__</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="33"><highlight class="normal"></highlight></codeline>
+<codeline lineno="42" refid="core_8h_1a4b438a51aa1b73bb331e7da86d375c13" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>PP2_OPEN(...)<sp/>__VA_ARGS__</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="43"><highlight class="normal"></highlight></codeline>
+<codeline lineno="48" refid="core_8h_1a684a5f333098aecc2cf92a3e54d14338" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>PP2_QUOTE_OPEN(P,...)<sp/>P##__VA_ARGS__</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="49"><highlight class="normal"></highlight></codeline>
+<codeline lineno="54" refid="core_8h_1a996770b8535ea8b7d129a45d2787d540" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>PP2_BLOCK</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="55"><highlight class="normal"></highlight></codeline>
+<codeline lineno="56"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight></codeline>
+    </programlisting>
+    <location file="/github/workspace/include/pp2/primitive/core.h"/>
+  </compounddef>
+</doxygen>
