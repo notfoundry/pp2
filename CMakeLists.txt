@@ -13,7 +13,6 @@ option(${PROJECT_NAME_UPPERCASE}_INSTALL "Generate install target" ON)
 option(${PROJECT_NAME_UPPERCASE}_BUILD_TESTS "Build project tests" ON)
 option(${PROJECT_NAME_UPPERCASE}_BUILD_DOCS "Build project documentation" ON)
 
-include(CTest)
 include(GNUInstallDirs)
 include(CMakePackageConfigHelpers)
 
