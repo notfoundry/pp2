@@ -1,4 +1,4 @@
 sphinx
 breathe
 sphinx-jinja
-sphinx-book-theme
+sphinx-book-pip

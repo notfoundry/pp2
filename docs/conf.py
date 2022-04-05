@@ -1,18 +1,3 @@
-# Configuration file for the Sphinx documentation builder.
-#
-# This file only contains a selection of the most common options. For a full
-# list see the documentation:
-# https://www.sphinx-doc.org/en/master/usage/configuration.html
-
-# -- Path setup --------------------------------------------------------------
-
-# If extensions (or modules to document with autodoc) are in another directory,
-# add these directories to sys.path here. If the directory is relative to the
-# documentation root, use os.path.abspath to make it absolute, like shown here.
-#
-# import os
-# import sys
-# sys.path.insert(0, os.path.abspath('.'))
 import os
 import glob
 
@@ -54,10 +39,55 @@ html_static_path = ['_static']
 
 breathe_default_project = "pp2"
 
-# jinja_contexts = {
-#     'index_generation': {'header_files': list(os.path.abspath(p) for p in glob.glob("**/*.h", recursive=True))}
-# }
-
 jinja_contexts = {
     'index_generation': {'header_files': list(os.path.abspath(p) for p in glob.glob("../include/**/*.h", recursive=True))}
 }
+
+
+from pygments.lexer import RegexLexer, default
+from pygments.token import *
+from sphinx.highlighting import lexers
+
+
+class PP2Lexer(RegexLexer):
+    name = 'pp2'
+
+    tokens = {
+        'root': [
+            default('body')
+        ],
+        'body': [
+            (r'/\*', Comment.Multiline, 'comment'),
+            (r'//.*?$', Comment.Singleline),
+            
+            (r'\s+', Whitespace),
+            
+            (r'[0-9]+', Number.Integer),
+            
+            (r'(true|false)', Keyword),
+            
+            (r'\(', Punctuation, 'body'),
+            (r'\)', Punctuation, '#pop'),
+            
+            (r'print', Keyword.Declaration, 'print')
+        ],
+        'print': [
+            (r'\(', Punctuation, 'print_body')
+        ],
+        'print_body': [
+            (r'\(', Punctuation, 'print_literal'),
+            (r'\)', Punctuation, '#pop')
+        ],
+        'print_literal': [
+            (r'[^,\)\(]+', String),
+            (r'\)', Punctuation, '#pop')
+        ],
+        'comment': [
+            (r'[^*/]+', Comment.Multiline),
+            (r'/\*', Comment.Multiline, '#push'),
+            (r'\*/', Comment.Multiline, '#pop'),
+            (r'[*/]', Comment.Multiline)
+        ]
+    }
+
+lexers['pp2'] = PP2Lexer()
