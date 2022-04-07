@@ -1,0 +1,13 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.2" xml:lang="en-US">
+  <compounddef id="dir_90f9c9bd354b55c2191a7062782fbbe6" kind="dir">
+    <compoundname>/github/workspace/include/pp2/machine/insns</compoundname>
+    <innerfile refid="emit_8h">emit.h</innerfile>
+    <innerfile refid="terminate_8h">terminate.h</innerfile>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="/github/workspace/include/pp2/machine/insns/"/>
+  </compounddef>
+</doxygen>

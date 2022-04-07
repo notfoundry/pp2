@@ -1,0 +1,79 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.2" xml:lang="en-US">
+  <compounddef id="open_8h" kind="file" language="C++">
+    <compoundname>open.h</compoundname>
+      <sectiondef kind="define">
+      <memberdef kind="define" id="open_8h_1a4b438a51aa1b73bb331e7da86d375c13" prot="public" static="no">
+        <name>PP2_OPEN</name>
+        <param><defname>...</defname></param>
+        <initializer>__VA_ARGS__</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Removes the parentheses surrounding the provided macro arguments, and substitutes the tokens contained between those parentheses into the macro replacement list without changing them.</para>
+<para>See <ref refid="core_8h_1a2e85a4c48515c59b026ce31749692513" kindref="member">PP2_SCAN</ref> for a comparison between these two macros.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>...</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the token sequence to have the outermost parentheses stripped from </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/github/workspace/include/pp2/primitive/tuple/open.h" line="13" column="9" bodyfile="/github/workspace/include/pp2/primitive/tuple/open.h" bodystart="13" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="open_8h_1a684a5f333098aecc2cf92a3e54d14338" prot="public" static="no">
+        <name>PP2_QUOTE_OPEN</name>
+        <param><defname>P</defname></param>
+        <param><defname>...</defname></param>
+        <initializer>P##__VA_ARGS__</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>P</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>...</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/github/workspace/include/pp2/primitive/tuple/open.h" line="19" column="9" bodyfile="/github/workspace/include/pp2/primitive/tuple/open.h" bodystart="19" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight><highlight class="preprocessor">#ifndef<sp/>PP2_PRIMITIVE_TUPLE_OPEN_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>PP2_PRIMITIVE_TUPLE_OPEN_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight></codeline>
+<codeline lineno="13" refid="open_8h_1a4b438a51aa1b73bb331e7da86d375c13" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>PP2_OPEN(...)<sp/>__VA_ARGS__</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="14"><highlight class="normal"></highlight></codeline>
+<codeline lineno="19" refid="open_8h_1a684a5f333098aecc2cf92a3e54d14338" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>PP2_QUOTE_OPEN(P,...)<sp/>P##__VA_ARGS__</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="20"><highlight class="normal"></highlight></codeline>
+<codeline lineno="21"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight></codeline>
+    </programlisting>
+    <location file="/github/workspace/include/pp2/primitive/tuple/open.h"/>
+  </compounddef>
+</doxygen>

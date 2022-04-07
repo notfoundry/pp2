@@ -1,0 +1,15 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.2" xml:lang="en-US">
+  <compounddef id="dir_a7b0e54266c61b4adbc7f9ba921f925b" kind="dir">
+    <compoundname>/github/workspace/include/pp2/language</compoundname>
+    <innerdir refid="dir_49830ee0aebe6d2d09faa79647192b38">/github/workspace/include/pp2/language/basic</innerdir>
+    <innerdir refid="dir_06e4c60bca0ba1c382e01414fdc8f3dc">/github/workspace/include/pp2/language/definition</innerdir>
+    <innerdir refid="dir_54e32ba7c274f1567cbfadff026ff206">/github/workspace/include/pp2/language/statements</innerdir>
+    <innerdir refid="dir_0ae0ac79256482dbb385d116c42ed830">/github/workspace/include/pp2/language/types</innerdir>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="/github/workspace/include/pp2/language/"/>
+  </compounddef>
+</doxygen>
