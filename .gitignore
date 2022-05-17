@@ -4,3 +4,4 @@ scratch/**
 .pytest_cache/**
 .templates/**
 template.config.js
+*.pyc

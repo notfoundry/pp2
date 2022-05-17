@@ -44,4 +44,9 @@
 */
 #define PP2_INVOKE(K,...) PP2_##K(,__VA_ARGS__
 
+/**
+*
+*/
+#define IP2_INVOKE(K,...) IP2_##K(,__VA_ARGS__
+
 #endif
