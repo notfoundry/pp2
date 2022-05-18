@@ -6,7 +6,7 @@
 
 #include "pp2/primitive/basic/invoke.h"
 
-#define PP2_INSN_8PP2_STACK_STORE(P,r0,r1,r2,addr,value,...) \
+#define PP2_INSN_8PP2_STACK_STORE(P,value,r1,r2,addr,...) \
         PP2_FX( \
                 INSN_8PP2_STACK_FRAME_STORE, \
                 (,/*r0=*/,/*r1=*/,/*r2=*/P##r2, \
