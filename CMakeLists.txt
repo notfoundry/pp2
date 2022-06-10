@@ -12,6 +12,7 @@ set(CMAKE_MODULE_PATH "${PROJECT_SOURCE_DIR}/cmake" ${CMAKE_MODULE_PATH})
 option(${PROJECT_NAME_UPPERCASE}_INSTALL "Generate install target" ON)
 option(${PROJECT_NAME_UPPERCASE}_BUILD_TESTS "Build project tests" ON)
 option(${PROJECT_NAME_UPPERCASE}_BUILD_DOCS "Build project documentation" ON)
+option(${PROJECT_NAME_UPPERCASE}_BUILD_SINGLE_INCLUDE "Build single-include file" ON)
 
 include(GNUInstallDirs)
 include(CMakePackageConfigHelpers)
@@ -33,6 +34,10 @@ endif()
 
 if (${PROJECT_NAME_UPPERCASE}_BUILD_DOCS)
     add_subdirectory(docs)
+endif()
+
+if (${PROJECT_NAME_UPPERCASE}_BUILD_SINGLE_INCLUDE)
+    add_subdirectory(single_include)
 endif()
 
 if (${PROJECT_NAME_UPPERCASE}_INSTALL)
