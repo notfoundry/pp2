@@ -1,4 +1,5 @@
 import os
+import sys
 import glob
 
 
@@ -14,7 +15,8 @@ author = 'Mark Johnson'
 # Add any Sphinx extension module names here, as strings. They can be
 # extensions coming with Sphinx (named 'sphinx.ext.*') or your custom
 # ones.
-extensions = ['breathe', 'sphinx_jinja']
+sys.path.append(os.path.abspath("./ext"))
+extensions = ['breathe', 'sphinx_jinja', 'livecode']
 
 # Add any paths that contain templates here, relative to this directory.
 templates_path = ['_templates']
@@ -37,57 +39,30 @@ html_theme = 'sphinx_book_theme'
 # so a file named "default.css" will overwrite the builtin "default.css".
 html_static_path = ['_static']
 
+html_css_files = [
+    'css/codemirror.css',
+    'css/goldenlayout-base.css',
+    'css/goldenlayout-light-theme.css',
+    'css/livecode.css'
+]
+
+html_js_files = [
+    'scripts/livecode.js',
+    'scripts/livecode-constants.js',
+    'scripts/codemirror.js',
+    'scripts/codemirror/autorefresh.js',
+    'scripts/codemirror/matchbrackets.js',
+    'scripts/codemirror/closebrackets.js',
+    'scripts/codemirror/mode/perl.js',
+    'scripts/goldenlayout.js',
+    'scripts/ansicolor.js'
+]
+with open("../single_include/pp2/pp2.h") as livecode_header:
+    with open('{}/scripts/livecode-constants.js'.format(html_static_path[0]), 'w') as livecode_constants:
+        livecode_constants.write('LIVECODE_HEADER = String.raw`{}`\n'.format(livecode_header.read()))
+
 breathe_default_project = "pp2"
 
 jinja_contexts = {
     'index_generation': {'header_files': list(os.path.abspath(p) for p in glob.glob("../include/**/*.h", recursive=True))}
 }
-
-
-from pygments.lexer import RegexLexer, default
-from pygments.token import *
-from sphinx.highlighting import lexers
-
-
-class PP2Lexer(RegexLexer):
-    name = 'pp2'
-
-    tokens = {
-        'root': [
-            default('body')
-        ],
-        'body': [
-            (r'/\*', Comment.Multiline, 'comment'),
-            (r'//.*?$', Comment.Singleline),
-            
-            (r'\s+', Whitespace),
-            
-            (r'[0-9]+', Number.Integer),
-            
-            (r'(true|false)', Keyword),
-            
-            (r'\(', Punctuation, 'body'),
-            (r'\)', Punctuation, '#pop'),
-            
-            (r'print', Keyword.Declaration, 'print')
-        ],
-        'print': [
-            (r'\(', Punctuation, 'print_body')
-        ],
-        'print_body': [
-            (r'\(', Punctuation, 'print_literal'),
-            (r'\)', Punctuation, '#pop')
-        ],
-        'print_literal': [
-            (r'[^,\)\(]+', String),
-            (r'\)', Punctuation, '#pop')
-        ],
-        'comment': [
-            (r'[^*/]+', Comment.Multiline),
-            (r'/\*', Comment.Multiline, '#push'),
-            (r'\*/', Comment.Multiline, '#pop'),
-            (r'[*/]', Comment.Multiline)
-        ]
-    }
-
-lexers['pp2'] = PP2Lexer()
