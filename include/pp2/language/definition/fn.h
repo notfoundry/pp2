@@ -2,6 +2,9 @@
 #ifndef PP2_LANGUAGE_DEFINITION_FN_H
 #define PP2_LANGUAGE_DEFINITION_FN_H
 
+#include "pp2/language/types/fn.h"
+#include "pp2/language/basic/return.h"
+
 #include "pp2/primitive/tuple/at.h"
 #include "pp2/primitive/punctuation/comma.h"
 
@@ -32,14 +35,14 @@
 #define IP2_LANGUAGE_FN_PARSE_PARAMS_8(P,p0,p1,p2,p3,p4,p5,p6,p7)
 #define IP2_LANGUAGE_FN_PARSE_PARAMS_9_OR_MORE(P,p0,p1,p2,p3,p4,p5,p6,p7,...)
 
-#define IP2_LANGUAGE_FN_PARSE_PARAM_TYPES_1(P,i0,a0,t0) IP2_LANGUAGE_FN_CHOOSE_PARAM_TYPE(IP2_LANGUAGE_FN_TEST_IF_REF P##t0 ())
+#define IP2_LANGUAGE_FN_PARSE_PARAM_TYPES_1(P,i0,a0,t0) (IP2_LANGUAGE_FN_CHOOSE_PARAM_TYPE(IP2_LANGUAGE_FN_TEST_IF_REF P##t0 ())(,P##i0,P##a0))
 
 #define IP2_LANGUAGE_FN_CHOOSE_PARAM_TYPE(...) PP2_TUPLE_AT_1(,__VA_ARGS__,8REFERENCE)
 #define IP2_LANGUAGE_FN_TEST_IF_REF(...) ,8VALUE,
 
 #define IP2_LANGUAGE_FN_PARSE_BODY(...) (8PP2_LANGUAGE_BLOCK,(__VA_ARGS__)),
 
-#define PP2_INSN_8PP2_LANGUAGE_FN(P,r0,r1,r2,params,body,args,...) (,P##r0,P##r1,P##r2,P##__VA_ARGS__)
 
+#define PP2_INSN_8PP2_LANGUAGE_FN(P,r0,r1,r2,params,body,...) (,(,Fn,(,P##params,P##body)),P##r1,P##r2,8PP2_LANGUAGE_RETURN,P##__VA_ARGS__)
 
 #endif
