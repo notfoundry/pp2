@@ -2,7 +2,7 @@
 $(document).ready(function(){
     function resizeFrames(layout, lhsHeight, rhsHeight) {
         const newHeight = Math.max(lhsHeight, rhsHeight);
-        layout.updateSize("100%", newHeight);
+        layout.updateSize("99.9%", newHeight);
     }
 
     function compile(code, callback) {
@@ -92,7 +92,6 @@ $(document).ready(function(){
                     indentUnit: 4,
                     smartIndent: false,
                     styleActiveLine: true,
-                    lineNumbers: true,
                     autoRefresh: true,
                     matchBrackets: true,
                     autoCloseBrackets: true,
