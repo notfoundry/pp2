@@ -88,7 +88,7 @@ $(document).ready(function(){
         myLayout.registerComponent( 'livecode-code', function( container, state ){
                 liveCodeInput = CodeMirror(container.getElement()[0], {
                     value: state.text,
-                    mode:  "perl",
+                    mode:  "stylus",
                     indentUnit: 4,
                     smartIndent: false,
                     styleActiveLine: true,

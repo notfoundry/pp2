@@ -53,7 +53,7 @@ html_js_files = [
     'scripts/codemirror/autorefresh.js',
     'scripts/codemirror/matchbrackets.js',
     'scripts/codemirror/closebrackets.js',
-    'scripts/codemirror/mode/perl.js',
+    'scripts/codemirror/mode/stylus.js',
     'scripts/goldenlayout.js',
     'scripts/ansicolor.js'
 ]
