@@ -14,8 +14,9 @@
     padding: .625rem .875rem;
 }
 
+body[data-theme="dark"] .CodeMirror { background: #202020; color: #d0d0d0 }
+
 .CodeMirror-focused {
-    /* background-color: rgba(var(--pst-color-preformatted-background),1) !important; */
     margin: 0px;
 }
 
@@ -27,9 +28,8 @@
     bottom: 16px;
 }
 
-.lm_goldenlayout {
-    background: #f8f8f8;
-}
+.lm_goldenlayout { background: #f8f8f8 }
+body[data-theme="dark"] .lm_goldenlayout { background: #202020; color: #d0d0d0 }
 
 .lm_content {
     background: none;
