@@ -2,4 +2,5 @@ sphinx
 breathe
 requests
 sphinx-jinja
-sphinx-book-theme
+furo
+myst-parser

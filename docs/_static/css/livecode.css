@@ -7,15 +7,15 @@
 
 .CodeMirror {
     height: auto;
-    background-color: rgba(var(--pst-color-preformatted-background),1);
-    font-family: var(--pst-font-family-monospace);
-    font-size: 87.5%;
-    line-height: 125%;
-    padding: 10px 7px;
+    background: #f8f8f8;
+    font-family: var(--font-stack--monospace);
+    font-size: var(--code-font-size);
+    line-height: 1.5;
+    padding: .625rem .875rem;
 }
 
 .CodeMirror-focused {
-    background-color: rgba(var(--pst-color-preformatted-background),1) !important;
+    /* background-color: rgba(var(--pst-color-preformatted-background),1) !important; */
     margin: 0px;
 }
 
@@ -24,15 +24,19 @@
 }
 
 .CodeMirror-hscrollbar {
-    bottom: 4px;
+    bottom: 16px;
 }
 
 .lm_goldenlayout {
-    background: transparent;
+    background: #f8f8f8;
 }
 
 .lm_content {
     background: none;
     border-radius: 0.4em;
     border: none;
+}
+
+.lm_splitter {
+    opacity: 0.3;
 }

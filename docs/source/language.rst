@@ -2,12 +2,10 @@ Language
 ========
 
 .. toctree::
-   
+   language/introduction
    language/hello-world
-   language/important-concepts
-   language/builtin-types
+   language/literals
    language/variables
    language/control-flow
    language/functions
-   language/operators
    language/stdlib
