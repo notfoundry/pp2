@@ -24,7 +24,7 @@
             IP2_LANGUAGE_RETURN_AND_METHOD \
         )
 
-#define IP2_LANGUAGE_RETURN(P,r0,r1,r2,_,insn,...) PP2_INSN_##insn(,P##r0,P##r1,P##r2,P##__VA_ARGS__)
+#define IP2_LANGUAGE_RETURN(P,r0,r1,r2,_,...) (,P##r0,P##r1,P##r2,P##__VA_ARGS__)
 #define IP2_LANGUAGE_RETURN_AND_METHOD(P,r0,r1,r2,method,...) (,P##r0,P##r1,P##r2,IP2_LANGUAGE_RETURN_METHOD_CALL(,P##r0,P##method),P##__VA_ARGS__)
 #define IP2_LANGUAGE_RETURN_AND_CALL(P,r0,r1,r2,method,...) (,P##r0,P##r1,P##r2,IP2_LANGUAGE_RETURN_METHOD_CALL(,P##r0,call P##method),P##__VA_ARGS__)
 

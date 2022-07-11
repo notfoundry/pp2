@@ -11,7 +11,7 @@
                 INSN_8PP2_STACK_FRAME_STORE, \
                 (,/*r0=*/,/*r1=*/,/*r2=*/P##r2, \
                  P##addr,P##value, \
-                 /*(frame,frame_stack)=*/IP2_STACK_STORE_SPLIT_FRAME P##r1, \
+                 /*frame,frame_stack,merge_insn=*/IP2_STACK_STORE_SPLIT_FRAME P##r1, \
                  P##__VA_ARGS__ \
                 ) \
         )
@@ -42,6 +42,10 @@
         /*r1=*/((,P##addr,8LOCAL,P##value) P##r0)P##frame_stack, \
         /*r2=*/P##r2
 
-#define IP2_STACK_STORE_SPLIT_FRAME(...) __VA_ARGS__,
+
+#define PP2_INSN_8PP2_STACK_FRAME_STORE_FINALIZE(P,r0,r1,r2, labels,_reserved, insn,...) PP2_INSN_##insn(,P##r0,(,P##r1,P##labels,),P##r2,P##__VA_ARGS__)
+
+#define IP2_STACK_STORE_SPLIT_FRAME(P,stack,...) IP2_STACK_STORE_SPLIT_FRAME_I P##stack,8PP2_STACK_FRAME_STORE_FINALIZE,P##__VA_ARGS__
+#define IP2_STACK_STORE_SPLIT_FRAME_I(...) __VA_ARGS__,
 
 #endif
