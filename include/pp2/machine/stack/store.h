@@ -2,7 +2,7 @@
 #ifndef PP2_MACHINE_STACK_STORE_H
 #define PP2_MACHINE_STACK_STORE_H
 
-#include "pp2/machine/stack/store_tables.h"
+#include "pp2/machine/stack/detail/store_tables.h"
 
 #include "pp2/primitive/basic/invoke.h"
 

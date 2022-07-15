@@ -1,0 +1,9 @@
+#ifndef PP2_LANGUAGE_COMPILER_H
+#define PP2_LANGUAGE_COMPILER_H
+
+#define PP2_DEF(stx) PP2_DEF_##stx)
+
+#define PP2_COMPILE(...) PP2_COMPILE_GENERIC(,__VA_ARGS__
+#define PP2_COMPILE_GENERIC(P,...) P##__VA_ARGS__
+
+#endif

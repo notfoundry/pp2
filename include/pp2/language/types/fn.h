@@ -4,10 +4,9 @@
 
 #include "pp2/primitive/basic/invoke.h"
 #include "pp2/primitive/tuple/open.h"
+#include "pp2/primitive/seq/head.h"
 
-#define PP2_DEF_Fn_call 8PP2_LANGUAGE_FN_CALL,IP2_LANGUAGE_FN_CALL_ARGS
-
-#define IP2_LANGUAGE_FN_CALL_ARGS(...) (__VA_ARGS__),
+#define PP2_DEF_Fn_call 8PP2_LANGUAGE_FN_CALL,PP2_SEQ_SPLIT_HEAD
 
 
 #define PP2_INSN_8PP2_LANGUAGE_FN_CALL(P,r0,r1,r2,fn_args,...) IP2_FX(LANGUAGE_FN_CALL,(,IP2_LANGUAGE_FN_CALL_OPEN P##r0,P##r1,P##r2,P##fn_args,P##__VA_ARGS__))
@@ -29,7 +28,7 @@
 
 #define PP2_INSN_8PP2_LANGUAGE_FN_ARGS_PUSH(P,r0,r1,r2,args,K,...) PP2_INSN_##K(,P##args,P##r1,P##r2,P##__VA_ARGS__)
 
-#define IP2_LANGUAGE_FN_ARGS_HEAD(x,...) PP2_DEF_##x
+#define IP2_LANGUAGE_FN_ARGS_HEAD(x,...) PP2_DEF_##x)
 #define IP2_LANGUAGE_FN_ARGS_TAIL(x,...) (__VA_ARGS__)
 
 #endif

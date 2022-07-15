@@ -2,7 +2,7 @@
 #ifndef PP2_MACHINE_STACK_LOAD_H
 #define PP2_MACHINE_STACK_LOAD_H
 
-#include "pp2/machine/stack/load_tables.h"
+#include "pp2/machine/stack/detail/load_tables.h"
 
 #include "pp2/primitive/basic/invoke.h"
 #include "pp2/primitive/tuple/at.h"
