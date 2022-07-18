@@ -8,7 +8,6 @@
 
 #define PP2_DEF_Fn_call 8PP2_LANGUAGE_FN_CALL,PP2_SEQ_SPLIT_HEAD
 
-
 #define PP2_INSN_8PP2_LANGUAGE_FN_CALL(P,r0,r1,r2,fn_args,...) IP2_FX(LANGUAGE_FN_CALL,(,IP2_LANGUAGE_FN_CALL_OPEN P##r0,P##r1,P##r2,P##fn_args,P##__VA_ARGS__))
 
 #define IP2_LANGUAGE_FN_CALL(P,fn_params,fn_body,r1,r2,fn_args,...) (,P##fn_args,P##r1,P##r2,PP2_OPEN P##fn_params,PP2_OPEN P##fn_body,P##__VA_ARGS__)

@@ -6,7 +6,7 @@
 
 #include "pp2/primitive/tuple/at.h"
 
-#define PP2_DEF_for(init_stx,cond_stx,update_stx) PP2_COMPILE_LANGUAGE_FOR(init_stx,cond_stx,update_stx,
+#define PP2_DEF_for(init_stx,cond_stx,update_stx) )PP2_COMPILE_LANGUAGE_FOR(init_stx,cond_stx,update_stx,
 
 #define PP2_COMPILE_LANGUAGE_FOR(init_stx,cond_stx,update_stx,body_stx_tup) \
         IP2_COMPILE_LANGUAGE_FOR_INLINE_INIT_IF_PRESENT( \
@@ -21,7 +21,7 @@
 
 #define IP2_COMPILE_LANGUAGE_FOR_INLINE_INIT_IF_PRESENT(...) PP2_TUPLE_AT_1(,__VA_ARGS__,IP2_COMPILE_LANGUAGE_FOR_WITH_INIT)
 #define IP2_COMPILE_LANGUAGE_FOR_TEST_IF_INIT_OMITTED(...) ,IP2_COMPILE_LANGUAGE_FOR_WITHOUT_INIT,
-#define IP2_COMPILE_LANGUAGE_FOR_WITH_INIT(init_stx) PP2_DEF_##init_stx),
+#define IP2_COMPILE_LANGUAGE_FOR_WITH_INIT(init_stx) 8PP2_LANGUAGE_COMPILE,init_stx,
 #define IP2_COMPILE_LANGUAGE_FOR_WITHOUT_INIT()
 
 #define IP2_COMPILE_LANGUAGE_FOR_MERGE_BODY_AND_UPDATE_IF_PRESENT(...) PP2_TUPLE_AT_1(,__VA_ARGS__,IP2_COMPILE_LANGUAGE_FOR_WITH_UPDATE)

@@ -28,7 +28,7 @@
                                          IP2_LANGUAGE_VAR_STORE_OPEN P##value,8PP2_STACK_STORE,P##addr, \
                                          P##__VA_ARGS__ \
                                         )
-#define IP2_LANGUAGE_VAR_STORE_OPEN(value) PP2_DEF_##value)
+#define IP2_LANGUAGE_VAR_STORE_OPEN(value) PP2_COMPILE(value)
 
 #define PP2_INSN_8IP2_LANGUAGE_VAR_LOAD(P,r0,r1,r2,addr,method,...) \
                                        (, \\

@@ -9,7 +9,7 @@
 
 #include "pp2/primitive/tuple/at.h"
 
-#define PP2_DEF_while(cond_stx) PP2_COMPILE_LANGUAGE_WHILE(cond_stx,
+#define PP2_DEF_while(cond_stx) )PP2_COMPILE_LANGUAGE_WHILE(cond_stx,
 
 #define PP2_COMPILE_LANGUAGE_WHILE(cond_stx,body_stx_tup) \
         8PP2_LANGUAGE_LOOP, \
@@ -21,7 +21,7 @@
 #define IP2_COMPILE_LANGUAGE_WHILE_TEST_IF_COND_OMITTED(...) ,IP2_COMPILE_LANGUAGE_WHILE_UNCONDITIONAL,
 #define IP2_COMPILE_LANGUAGE_WHILE_CONDITIONAL(P,body_stx_tup,cond_stx) \
         ( \
-         PP2_DEF_##cond_stx), \
+         8PP2_LANGUAGE_COMPILE,P##cond_stx, \
          8PP2_LANGUAGE_WHILE_LOOP_BRANCH, \
          8PP2_LANGUAGE_BLOCK,P##body_stx_tup, \
          8PP2_GOTO,1, \

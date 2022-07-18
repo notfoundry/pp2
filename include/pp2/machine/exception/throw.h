@@ -4,6 +4,6 @@
 
 #include "pp2/primitive/assoc/find.h"
 
-#define PP2_INSN_8PP2_THROW_EXCEPTION(P,r0,r1,r2,type,...) (,P##r0,P##r1,P##r2,PP2_ASSOC_FIND(),P##__VA_ARGS__)
+#define PP2_INSN_8PP2_THROW_EXCEPTION(P,r0,r1,r2,type,msg,...) (,P##r0,P##r1,P##r2,P##__VA_ARGS__)(,8LITERAL,P##type(P##msg))
 
 #endif

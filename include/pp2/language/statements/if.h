@@ -3,15 +3,16 @@
 #define PP2_LANGUAGE_STATEMENTS_IF_H
 
 #include "pp2/language/basic/block.h"
+#include "pp2/language/definition/basic.h"
 #include "pp2/primitive/seq/head.h"
 
-#define PP2_DEF_if(cond_stx) PP2_COMPILE(8PP2_LANGUAGE_IF,cond_stx,PP2_SEQ_SPLIT_HEAD)
+#define PP2_DEF_if(cond_stx) PP2_BASIC_DEF(8PP2_LANGUAGE_IF,cond_stx,PP2_SEQ_SPLIT_HEAD)
 
 
 #define PP2_INSN_8PP2_LANGUAGE_IF(P,r0,r1,r2,cond_stx,if_branch,else_branch,...) \
                                  (,\
                                   P##r0,P##r1,P##r2, \
-                                  PP2_DEF_##cond_stx), \
+                                  PP2_COMPILE(cond_stx), \
                                   8PP2_LANGUAGE_IF_BRANCH,P##if_branch,P##else_branch, \
                                   P##__VA_ARGS__ \
                                  )
@@ -33,7 +34,7 @@
 #define PP2_INSN_8PP2_LANGUAGE_ELSE_IF(P,r0,r1,r2,if_branch,...) \
                                       (, \
                                        P##r0,P##r1,P##r2, \
-                                       PP2_DEF_##if_branch), \
+                                       PP2_COMPILE(if_branch), \
                                        P##__VA_ARGS__, \
                                       )
 

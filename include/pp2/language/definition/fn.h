@@ -2,7 +2,6 @@
 #ifndef PP2_LANGUAGE_DEFINITION_FN_H
 #define PP2_LANGUAGE_DEFINITION_FN_H
 
-#include "pp2/language/types/fn.h"
 #include "pp2/language/basic/return.h"
 
 #include "pp2/primitive/tuple/at.h"
