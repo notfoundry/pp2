@@ -6,4 +6,9 @@
 
 #define PP2_CAT(a,...) PP2_PRIMITIVE_CAT(a,__VA_ARGS__)
 
+
+#define PP2_PRIMITIVE_REVERSE_CAT(a,...) __VA_ARGS__##a
+
+#define PP2_REVERSE_CAT(a,...) PP2_PRIMITIVE_REVERSE_CAT(a,__VA_ARGS__)
+
 #endif

@@ -3,6 +3,7 @@
 #define PP2_LANGUAGE_TYPES_BOOL_H
 
 #include "pp2/language/definition/const.h"
+#include "pp2/language/definition/vm_fn.h"
 
 #include "pp2/primitive/basic/invoke.h"
 #include "pp2/primitive/tuple/open.h"
@@ -10,11 +11,11 @@
 #define PP2_DEF_true  PP2_CONST(Bool,1)
 #define PP2_DEF_false PP2_CONST(Bool,0)
 
-// #define PP2_DEF_Bool_not 8PP2_LANGUAGE_BOOL_NOT,
-// #define PP2_INSN_8PP2_LANGUAGE_BOOL_NOT(P,obj,r1,r2,G,...) (,/*r0=*/IP2_LANGUAGE_BOOL_NOT P##obj,P##r1,P##r2,P##__VA_ARGS__)
-// #define IP2_LANGUAGE_BOOL_NOT(addr,type,obj) IP2_LANGUAGE_BOOL_NOT_##obj
-// #define IP2_LANGUAGE_BOOL_NOT_0 (,Bool,1)
-// #define IP2_LANGUAGE_BOOL_NOT_1 (,Bool,0)
+#define PP2_DEF_Bool_not PP2_VM_FN(PP2_LANGUAGE_BOOL_NOT,1)
+#define PP2_LANGUAGE_BOOL_NOT(P,r0,r1,r2,obj,...) (,/*r0=*/IP2_LANGUAGE_BOOL_NOT P##obj,P##r1,P##r2,P##__VA_ARGS__)
+#define IP2_LANGUAGE_BOOL_NOT(addr,type,obj) IP2_LANGUAGE_BOOL_NOT_##obj
+#define IP2_LANGUAGE_BOOL_NOT_0 (,Bool,1)
+#define IP2_LANGUAGE_BOOL_NOT_1 (,Bool,0)
 
 // #define PP2_DEF_Bool_and 8PP2_LANGUAGE_BOOL_AND,PP2_LANGUAGE_ARGS
 // #define PP2_INSN_8PP2_LANGUAGE_BOOL_AND(P,lhs_obj,r1,r2,rhs_stx,...) (,/*r0=*/,P##r1,P##r2,PP2_DEF_##rhs_stx),8PP2_LANGUAGE_BOOL_AND_I,P##lhs_obj,P##__VA_ARGS__)

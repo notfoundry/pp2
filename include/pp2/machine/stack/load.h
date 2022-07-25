@@ -14,12 +14,13 @@
                                     P##__VA_ARGS__ \
                                 )
 
-#define IP2_STACK_FRAME_LOAD(P,addr,frame,frame_stack) IP2_STACK_FRAME_LOAD_I(PP2_STACK_FRAME_LOAD_UP_##addr P##frame)
-#define IP2_STACK_FRAME_LOAD_I(x) PP2_TUPLE_AT_1(,x,PP2_UNBOUND_LOCAL(x))
+#define IP2_STACK_FRAME_LOAD(P,addr,frame,frame_stack) IP2_STACK_FRAME_LOAD_I(P##addr,PP2_STACK_FRAME_LOAD_UP_##addr P##frame)
+#define IP2_STACK_FRAME_LOAD_I(addr,x) PP2_TUPLE_AT_1(,x,IP2_STACK_FRAME_LOAD_UNBOUND(,addr))
 
 #define IP2_STACK_LOAD_SPLIT_FRAME(P,stack,...) IP2_STACK_LOAD_SPLIT_FRAME_I P##stack
 #define IP2_STACK_LOAD_SPLIT_FRAME_I(...) __VA_ARGS__,
 
-#define PP2_UNBOUND_LOCAL()
+#define IP2_STACK_FRAME_LOAD_UNBOUND(P,addr) /*r0=*/,/*r1=*/,/*r2=*/,8PP2_STACK_FRAME_LOAD_UNBOUND,P##addr
+#define PP2_INSN_8PP2_STACK_FRAME_LOAD_UNBOUND(P,_0,_1,_2,addr,r1,r2,...) (,P##r0,P##r1,P##r2,8PP2_THROW_EXCEPTION,8PP2_LANGUAGE_UNBOUND_LOCAL_EXCEPTION,P##addr,P##__VA_ARGS__)
 
 #endif
