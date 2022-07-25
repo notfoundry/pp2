@@ -8,9 +8,9 @@
 
 #define PP2_INSN_8PP2_LANGUAGE_VM_FN(P,r0,r1,r2,nargs,macro,...) \
                                     (, \
-                                     /*r0=*/(,Fn,(,8PP2_LOCAL_CTX_PUSH_ARGUMENTS,PP2_LOCAL_CTX_GET_ARGUMENTS P##r1,8PP2_LANGUAGE_VM_FN_CALL,P##macro,8PP2_LOCAL_STX_CLEAR_ARGUMENTS)), \
+                                     /*r0=*/(,Fn,(,8PP2_LOCAL_CTX_PUSH_ARGUMENTS,PP2_LOCAL_CTX_GET_ARGUMENTS P##r1,8PP2_LANGUAGE_VM_FN_CALL,P##macro)), \
                                      P##r1,P##r2, \
-                                     8PP2_LOCAL_STX_CLEAR_ARGUMENTS, \
+                                     8PP2_LOCAL_CTX_CLEAR_ARGUMENTS, \
                                      P##__VA_ARGS__ \
                                     )
 
@@ -20,6 +20,7 @@
             (, \
              /*r0=*/,P##r1,P##r2, \
              PP2_REVERSE_CAT(0,IP2_FX(LANGUAGE_VM_FN_CALL_UNPACK_ARGS,PP2_LOCAL_CTX_GET_ARGUMENTS P##r1)), \
+             8PP2_LOCAL_CTX_CLEAR_ARGUMENTS, \
              P##__VA_ARGS__ \
             ) \
         )
