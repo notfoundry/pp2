@@ -2,6 +2,8 @@
 #ifndef PP2_LANGUAGE_TYPES_FN_H
 #define PP2_LANGUAGE_TYPES_FN_H
 
+#include "pp2/language/definition/type.h"
+
 #include "pp2/machine/insns/nop.h"
 
 #include "pp2/primitive/punctuation/comma.h"
@@ -11,13 +13,15 @@
 #include "pp2/primitive/tuple/at.h"
 #include "pp2/primitive/seq/head.h"
 
+#define PP2_DEF_Fn PP2_TYPE(Fn,Any)
+
 #define PP2_DEF_Fn_call )PP2_COMPILE_LANGUAGE_FN_CALL(,
 #define PP2_COMPILE_LANGUAGE_FN_CALL(P,args_tup) \
         IP2_COMPILE_LANGUAGE_FN_CALL_CHOOSE_PTR_OR_CALL( \
             IP2_COMPILE_LANGUAGE_FN_CALL_TEST_IF_CALL P##args_tup\
         )(,P##args_tup)
 
-#define IP2_COMPILE_LANGUAGE_FN_CALL(P,args_tup) IP2_FX(COMPILE_LANGUAGE_FN_CALL_I,(,PP2_SEQ_SPLIT_HEAD P##args_tup))
+#define IP2_COMPILE_LANGUAGE_FN_CALL(P,args_tup) IP2_FW(COMPILE_LANGUAGE_FN_CALL_I,(,PP2_SEQ_SPLIT_HEAD P##args_tup))
 #define IP2_COMPILE_LANGUAGE_FN_CALL_I(P,args_tup,rhs_stx) 8PP2_LANGUAGE_FN_CALL,P##args_tup,PP2_COMPILE_LANGUAGE_RETURN(P##rhs_stx)
 #define IP2_COMPILE_LANGUAGE_FN_CALL_PTR(P,rhs_stx) 8PP2_LANGUAGE_FN_PTR,PP2_COMPILE_LANGUAGE_RETURN(P##rhs_stx)
 

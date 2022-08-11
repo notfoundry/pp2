@@ -2,6 +2,8 @@
 #ifndef PP2_MACHINE_CONTEXT_H
 #define PP2_MACHINE_CONTEXT_H
 
+#include "pp2/primitive/basic/cat.h"
+#include "pp2/primitive/basic/invoke.h"
 #include "pp2/primitive/tuple/eat.h"
 #include "pp2/primitive/tuple/at.h"
 #include "pp2/primitive/tuple/open.h"
@@ -58,6 +60,13 @@
 
 #define PP2_LOCAL_CTX_CLEAR_ARGUMENTS(P,stack,labels,arguments,registers,_) (,P##stack,P##labels,/*arguments=*/,P##registers,)
 #define PP2_INSN_8PP2_LOCAL_CTX_CLEAR_ARGUMENTS(P,r0,r1,r2,...) (,P##r0,PP2_LOCAL_CTX_CLEAR_ARGUMENTS P##r1,P##r2,P##__VA_ARGS__)
+
+#define PP2_LOCAL_CTX_UNPACK_ARGS(P,stack,labels,arguments,registers,_) PP2_REVERSE_CAT(0,IP2_LOCAL_CTX_UNPACK_ARGS P##arguments)
+#define IP2_LOCAL_CTX_UNPACK_ARGS(x) x IP2_LOCAL_CTX_UNPACK_ARGS_UP
+#define IP2_LOCAL_CTX_UNPACK_ARGS_UP(x) ,x IP2_LOCAL_CTX_UNPACK_ARGS_DN
+#define IP2_LOCAL_CTX_UNPACK_ARGS_DN(x) ,x IP2_LOCAL_CTX_UNPACK_ARGS_UP
+#define IP2_LOCAL_CTX_UNPACK_ARGS_UP0
+#define IP2_LOCAL_CTX_UNPACK_ARGS_DN0
 
 /**
 *

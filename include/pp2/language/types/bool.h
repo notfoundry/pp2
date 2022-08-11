@@ -3,10 +3,13 @@
 #define PP2_LANGUAGE_TYPES_BOOL_H
 
 #include "pp2/language/definition/const.h"
+#include "pp2/language/definition/type.h"
 #include "pp2/language/definition/vm_fn.h"
 
 #include "pp2/primitive/basic/invoke.h"
 #include "pp2/primitive/tuple/open.h"
+
+#define PP2_DEF_Bool PP2_TYPE(Bool,Any)
 
 #define PP2_DEF_true  PP2_CONST(Bool,1)
 #define PP2_DEF_false PP2_CONST(Bool,0)

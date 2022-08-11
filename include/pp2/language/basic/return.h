@@ -3,6 +3,7 @@
 #define PP2_LANGUAGE_BASIC_RETURN_H
 
 #include "pp2/language/compiler.h"
+#include "pp2/language/basic/object.h"
 
 #include "pp2/primitive/basic/invoke.h"
 #include "pp2/primitive/tuple/open.h"
@@ -43,12 +44,28 @@
 #define IP2_LANGUAGE_RETURN_TEST_IF_CALL(...) ,8IP2_LANGUAGE_RETURN_AND_CALL,
 #define IP2_LANGUAGE_RETURN_TEST_IF_NOT_METHOD(...) ,8IP2_LANGUAGE_RETURN_NOP,
 
-#define IP2_LANGUAGE_RETURN_METHOD_CALL(P,obj,method) IP2_FW(LANGUAGE_RETURN_METHOD_CALL_I, (,PP2_OPEN P##obj,P##method))
-// #define IP2_LANGUAGE_RETURN_METHOD_CALL_I(P,obj_addr,obj_type,obj_value,method) \
-//         PP2_FX( \
-//             TUPLE_PREPEND_LAST, \
-//             (,8PP2_LANGUAGE_RETURN,PP2_COMPILE(obj_type##_##method)) \
-//         )
-#define IP2_LANGUAGE_RETURN_METHOD_CALL_I(P,obj_addr,obj_type,obj_value,method) PP2_COMPILE(obj_type##_##method)
+
+#define IP2_LANGUAGE_RETURN_METHOD_CALL(P,obj,method) IP2_FX(LANGUAGE_RETURN_METHOD_CALL_I, (,IP2_LANGUAGE_OBJECT_TYPE P##obj,P##method))
+#define IP2_LANGUAGE_RETURN_METHOD_CALL_I(P,type,method) PP2_COMPILE_OR_DEFAULT(type##_##method,(8IP2_LANGUAGE_RETURN_RESOLVE_INHERITED_METHOD,P##type,P##method))
+
+#define PP2_INSN_8IP2_LANGUAGE_RETURN_RESOLVE_INHERITED_METHOD(P,r0,r1,r2,type,method,...) \
+                                                              (, \
+                                                               P##r0,P##r1,P##r2, \
+                                                               PP2_COMPILE_UNSAFE(P##type), \
+                                                               8PP2_LANGUAGE_TYPE_SUPERTYPE_NAME, \
+                                                               8IP2_LANGUAGE_RETURN_INHERITED_METHOD_CALL,P##method, \
+                                                               P##__VA_ARGS__ \
+                                                              )
+
+#define PP2_INSN_8IP2_LANGUAGE_RETURN_INHERITED_METHOD_CALL(P,r0,r1,r2,method,...) \
+                                                           (, \
+                                                            /*r0=*/,P##r1,P##r2, \
+                                                            IP2_LANGUAGE_RETURN_METHOD_CALL_I(,P##r0,P##method), \
+                                                            P##__VA_ARGS__ \
+                                                           )
+
+#define PP2_INSN_8PP2_LANGUAGE_TYPE_SUPERTYPE_NAME(P,r0,r1,r2,...) (,PP2_LANGUAGE_TYPE_SUPERTYPE_NAME P##r0,P##r1,P##r2,P##__VA_ARGS__)
+#define PP2_LANGUAGE_TYPE_SUPERTYPE_NAME(type_addr,type_type,type_value) IP2_LANGUAGE_TYPE_SUPERTYPE_NAME_I type_value
+#define IP2_LANGUAGE_TYPE_SUPERTYPE_NAME_I(P,type_name,supertype_name) P##supertype_name
 
 #endif
