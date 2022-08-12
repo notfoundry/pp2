@@ -48,7 +48,7 @@ $(document).ready(function(){
     function attachHeightObserver(container, callback) {
         const ro = new ResizeObserver(entries => {
             const newHeight = Math.max.apply(null, entries.map(function(o){ return o.contentRect.height; }));
-            callback(newHeight);
+            callback(newHeight + 20);
         });
         ro.observe(container.getElement().find('.CodeMirror')[0]);
     }
