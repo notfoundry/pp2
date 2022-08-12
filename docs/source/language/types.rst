@@ -2,5 +2,5 @@ Literals
 ========
 
 .. toctree::
-   
-   literals/bool
+   types/bool
+   types/quote
