@@ -1,8 +1,0 @@
-/** @file */
-#ifndef PP2_LANGUAGE_DEFINITION_PRIMITIVE_H
-#define PP2_LANGUAGE_DEFINITION_PRIMITIVE_H
-
-#define PP2_PRIMITIVE(...) )PP2_PRIMITIVE_I(,__VA_ARGS__
-#define PP2_PRIMITIVE_I(P,...) P##__VA_ARGS__
-
-#endif
