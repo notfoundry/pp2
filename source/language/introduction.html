@@ -163,8 +163,8 @@
 <li class="toctree-l1 current has-children"><a class="reference internal" href="../language.html">Language</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" role="switch" type="checkbox"/><label for="toctree-checkbox-1"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul class="current">
 <li class="toctree-l2 current current-page"><a class="current reference internal" href="#">Introduction</a></li>
 <li class="toctree-l2"><a class="reference internal" href="hello-world.html">Hello World!</a></li>
-<li class="toctree-l2 has-children"><a class="reference internal" href="literals.html">Literals</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" role="switch" type="checkbox"/><label for="toctree-checkbox-2"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
-<li class="toctree-l3"><a class="reference internal" href="literals/bool.html">Bool</a></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="types.html">Literals</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" role="switch" type="checkbox"/><label for="toctree-checkbox-2"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="types/bool.html">Bool</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="variables.html">Variables</a></li>
@@ -218,6 +218,25 @@
           <section id="introduction">
 <h1>Introduction<a class="headerlink" href="#introduction" title="Permalink to this heading">#</a></h1>
 <p>PP2 is an imperative, C-syntax code generation language designed to be interpreted inside the C Preprocessor.</p>
+<p>This guide assumes that you are already familiar with the C or C++ programming languages, given that every PP2 program is by definition valid C source code.
+That being said, having any amount of programming knowledge under your belt from another language such as Python, Java, C#, or Rust is likely sufficient.</p>
+<p>To start using PP2, you first need to <a class="reference external" href="https://github.com/notfoundry/pp2">download the header-only PP2 library</a> and add it to your C compiler include path.
+Once that is done, add the main PP2 header to your C source file, like so:</p>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;pp2/pp2.h&quot;</span><span class="cp"></span>
+</pre></div>
+</div>
+<p>When your C compiler resolves that include successfully, that means you’re good to go! Run the PP2 compiler on your PP2 metaprograms using the <code class="docutils literal notranslate"><span class="pre">PP2</span></code> macro:</p>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;pp2/pp2.h&quot;</span><span class="cp"></span>
+
+<span class="n">PP2</span><span class="w"> </span><span class="p">(</span><span class="w"></span>
+<span class="w">    </span><span class="n">print</span><span class="p">((</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">squares</span><span class="p">[]</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="p">)),</span><span class="w"></span>
+<span class="w">    </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="n">i</span><span class="w"> </span><span class="p">(</span><span class="mi">0</span><span class="p">),</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="n">less</span><span class="w"> </span><span class="p">(</span><span class="mi">32</span><span class="p">),</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="n">inc</span><span class="p">())</span><span class="w"> </span><span class="p">(</span><span class="w"></span>
+<span class="w">        </span><span class="n">print</span><span class="p">(</span><span class="w"> </span><span class="p">(,)</span><span class="w"> </span><span class="p">,</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="n">times</span><span class="w"> </span><span class="p">(</span><span class="n">i</span><span class="p">)</span><span class="w"> </span><span class="p">)</span><span class="w"></span>
+<span class="w">    </span><span class="p">),</span><span class="w"></span>
+<span class="w">    </span><span class="n">print</span><span class="p">((</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="p">))</span><span class="w"></span>
+<span class="p">)</span><span class="w"></span>
+</pre></div>
+</div>
 </section>
 
         </article>

@@ -3,7 +3,7 @@
   <head><meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width,initial-scale=1"/>
     <meta name="color-scheme" content="light dark"><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
-<link rel="index" title="Index" href="../../genindex.html" /><link rel="search" title="Search" href="../../search.html" /><link rel="next" title="Literals" href="literals.html" /><link rel="prev" title="Introduction" href="introduction.html" />
+<link rel="index" title="Index" href="../../genindex.html" /><link rel="search" title="Search" href="../../search.html" /><link rel="next" title="Literals" href="types.html" /><link rel="prev" title="Introduction" href="introduction.html" />
 
     <meta name="generator" content="sphinx-5.1.1, furo 2022.06.21"/>
         <title>Hello World! - pp2 documentation</title>
@@ -163,8 +163,8 @@
 <li class="toctree-l1 current has-children"><a class="reference internal" href="../language.html">Language</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" role="switch" type="checkbox"/><label for="toctree-checkbox-1"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="introduction.html">Introduction</a></li>
 <li class="toctree-l2 current current-page"><a class="current reference internal" href="#">Hello World!</a></li>
-<li class="toctree-l2 has-children"><a class="reference internal" href="literals.html">Literals</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" role="switch" type="checkbox"/><label for="toctree-checkbox-2"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
-<li class="toctree-l3"><a class="reference internal" href="literals/bool.html">Bool</a></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="types.html">Literals</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" role="switch" type="checkbox"/><label for="toctree-checkbox-2"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="types/bool.html">Bool</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="variables.html">Variables</a></li>
@@ -223,7 +223,8 @@
     print(
         (Hello World!)
     )
-)</div><p>The entire program consists of a call to the function <code class="docutils literal notranslate"><span class="pre">print</span></code> with the tokens <code class="docutils literal notranslate"><span class="pre">(Hello</span> <span class="pre">World!)</span></code> passed as an argument; all code in the top-level scope is part of the main program, without needing an explicit <code class="docutils literal notranslate"><span class="pre">main</span></code> function as an entrypoint.</p>
+)</div><p>The <code class="docutils literal notranslate"><span class="pre">PP2</span></code> macro is responsible for compiling your pp2 programs, and it is defined in the <code class="docutils literal notranslate"><span class="pre">&lt;pp2/pp2.h&gt;</span></code> header. For brevity, each code sample will have a <code class="docutils literal notranslate"><span class="pre">#include</span></code> for this header inserted automatically.
+The entire pp2 program consists of a call to the function <code class="docutils literal notranslate"><span class="pre">print</span></code> with the tokens <code class="docutils literal notranslate"><span class="pre">(Hello</span> <span class="pre">World!)</span></code> passed as an argument; all code in the top-level scope is part of the main program, without needing an explicit <code class="docutils literal notranslate"><span class="pre">main</span></code> function as an entrypoint.</p>
 <p>The <code class="docutils literal notranslate"><span class="pre">print</span></code> function will emit the tokens <code class="docutils literal notranslate"><span class="pre">Hello</span> <span class="pre">World!</span></code> into the source file being preprocessed. However, since that file is likely then going to be passed into a C or C++ compiler (which won’t appreciate a floating <code class="docutils literal notranslate"><span class="pre">Hello</span> <span class="pre">World!</span></code> being present in the code), this program is not particularly helpful.
 To see our program output, what we really need to do is write a metaprogram: A <code class="docutils literal notranslate"><span class="pre">Hello</span> <span class="pre">World!</span></code> program generator!</p>
 <div class="livecode" livecode-default="int main() { puts(&quot;Hello World!&quot;); }
@@ -241,7 +242,7 @@ To see our program output, what we really need to do is write a metaprogram: A <
       <footer>
         
         <div class="related-pages">
-          <a class="next-page" href="literals.html">
+          <a class="next-page" href="types.html">
               <div class="page-info">
                 <div class="context">
                   <span>Next</span>
