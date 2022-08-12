@@ -24,6 +24,7 @@
 #include "pp2/language/types/any.h"
 #include "pp2/language/types/bool.h"
 #include "pp2/language/types/fn.h"
+#include "pp2/language/types/quote.h"
 #include "pp2/language/types/type.h"
 
 #include "pp2/language/compiler.h"

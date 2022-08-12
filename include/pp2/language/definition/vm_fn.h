@@ -12,7 +12,7 @@
 
 #define PP2_INSN_8PP2_LANGUAGE_VM_FN(P,r0,r1,r2,nargs,macro,...) \
                                     (, \
-                                     /*r0=*/(,Fn,(,8PP2_LOCAL_CTX_PUSH_ARGUMENTS,PP2_LOCAL_CTX_GET_ARGUMENTS P##r1,8PP2_LANGUAGE_VM_FN_CALL,P##macro)), \
+                                     /*r0=*/(,Fn,(,8PP2_LOCAL_CTX_PREPEND_ARGUMENTS,PP2_LOCAL_CTX_GET_ARGUMENTS P##r1,8PP2_LANGUAGE_VM_FN_CALL,P##macro)), \
                                      P##r1,P##r2, \
                                      8PP2_LOCAL_CTX_CLEAR_ARGUMENTS, \
                                      P##__VA_ARGS__ \
