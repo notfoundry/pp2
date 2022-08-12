@@ -218,7 +218,7 @@
           <section id="hello-world">
 <h1>Hello World!<a class="headerlink" href="#hello-world" title="Permalink to this heading">#</a></h1>
 <p>Getting a simple program to compile is a good way to verify that you have pp2’s includes set up properly. Let’s start by writing a program that emits “Hello world!” when expanded by the compiler.</p>
-<div class="livecode" livecode-default="Hello World!
+<div class="livecode" livecode-default="(,Quote,(Hello World!))
 ">PP2 (
     print(
         (Hello World!)
@@ -226,7 +226,7 @@
 )</div><p>The entire program consists of a call to the function <code class="docutils literal notranslate"><span class="pre">print</span></code> with the tokens <code class="docutils literal notranslate"><span class="pre">(Hello</span> <span class="pre">World!)</span></code> passed as an argument; all code in the top-level scope is part of the main program, without needing an explicit <code class="docutils literal notranslate"><span class="pre">main</span></code> function as an entrypoint.</p>
 <p>The <code class="docutils literal notranslate"><span class="pre">print</span></code> function will emit the tokens <code class="docutils literal notranslate"><span class="pre">Hello</span> <span class="pre">World!</span></code> into the source file being preprocessed. However, since that file is likely then going to be passed into a C or C++ compiler (which won’t appreciate a floating <code class="docutils literal notranslate"><span class="pre">Hello</span> <span class="pre">World!</span></code> being present in the code), this program is not particularly helpful.
 To see our program output, what we really need to do is write a metaprogram: A <code class="docutils literal notranslate"><span class="pre">Hello</span> <span class="pre">World!</span></code> program generator!</p>
-<div class="livecode" livecode-default="int main() { puts(&quot;Hello World!&quot;); }
+<div class="livecode" livecode-default="(,Quote,(int main() { puts(&quot;Hello World!&quot;); }))
 ">PP2 (
     print((
         int main() {
