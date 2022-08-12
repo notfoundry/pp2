@@ -5,11 +5,12 @@
 #include "pp2/language/compiler.h"
 #include "pp2/language/basic/object.h"
 
+#include "pp2/machine/context.h"
+#include "pp2/machine/exception/throw.h"
 #include "pp2/machine/insns/nop.h"
 
 #include "pp2/primitive/basic/invoke.h"
 #include "pp2/primitive/tuple/open.h"
-#include "pp2/primitive/tuple/prepend_last.h"
 #include "pp2/primitive/introspection/is_nil.h"
 
 #define PP2_COMPILE_LANGUAGE_RETURN(rhs_stx) \

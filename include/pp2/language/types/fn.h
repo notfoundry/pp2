@@ -2,8 +2,11 @@
 #ifndef PP2_LANGUAGE_TYPES_FN_H
 #define PP2_LANGUAGE_TYPES_FN_H
 
+#include "pp2/language/compiler.h"
+#include "pp2/language/basic/return.h"
 #include "pp2/language/definition/type.h"
 
+#include "pp2/machine/context.h"
 #include "pp2/machine/insns/nop.h"
 
 #include "pp2/primitive/punctuation/comma.h"

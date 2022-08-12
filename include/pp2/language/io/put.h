@@ -3,6 +3,7 @@
 
 #include "pp2/language/compiler.h"
 #include "pp2/language/basic/return.h"
+#include "pp2/language/definition/primitive.h"
 
 #include "pp2/machine/insns/emit.h"
 

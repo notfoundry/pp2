@@ -1,6 +1,10 @@
 #ifndef PP2_LANGUAGE_DEFINITION_VM_FN_H
 #define PP2_LANGUAGE_DEFINITION_VM_FN_H
 
+#include "pp2/language/basic/return.h"
+
+#include "pp2/machine/context.h"
+
 #include "pp2/primitive/basic/cat.h"
 
 #define PP2_VM_FN(macro,nargs) )PP2_LANGUAGE_COMPILE_VM_FN(,macro,nargs,

@@ -2,6 +2,8 @@
 #ifndef PP2_LANGUAGE_TYPES_ANY_H
 #define PP2_LANGUAGE_TYPES_ANY_H
 
+#include "pp2/language/compiler.h"
+#include "pp2/language/basic/return.h"
 #include "pp2/language/basic/object.h"
 #include "pp2/language/types/type.h"
 #include "pp2/language/definition/type.h"

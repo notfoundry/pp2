@@ -2,7 +2,7 @@
 #ifndef PP2_H
 #define PP2_H
 
-#include "pp2/language/basic/block.h"
+#include "pp2/language.h"
 
 #include "pp2/machine/vm.h"
 #include "pp2/machine/context.h"

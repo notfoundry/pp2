@@ -4,6 +4,10 @@
 
 #include "pp2/language/basic/detail/variable_tables.h"
 #include "pp2/language/basic/return.h"
+#include "pp2/language/compiler.h"
+
+#include "pp2/machine/stack/load.h"
+#include "pp2/machine/stack/store.h"
 
 #define PP2_INSN_8PP2_LANGUAGE_VAR(P,r0,r1,r2,addr,rhs_stx,...) \
         IP2_LANGUAGE_VAR_CHOOSE_LOAD_STORE(PP2_INSN_,IP2_LANGUAGE_VAR_TEST_IF_STORE P##rhs_stx) \

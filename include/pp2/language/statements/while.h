@@ -2,11 +2,14 @@
 #ifndef PP2_LANGUAGE_STATEMENTS_WHILE_H
 #define PP2_LANGUAGE_STATEMENTS_WHILE_H
 
+#include "pp2/language/compiler.h"
 #include "pp2/language/basic/block.h"
 
 #include "pp2/machine/goto/goto.h"
 #include "pp2/machine/goto/label.h"
 
+#include "pp2/primitive/basic/invoke.h"
+#include "pp2/primitive/tuple/open.h"
 #include "pp2/primitive/tuple/at.h"
 
 #define PP2_DEF_while(cond_stx) )PP2_COMPILE_LANGUAGE_WHILE(cond_stx,

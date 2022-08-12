@@ -1,6 +1,7 @@
 #ifndef PP2_LANGUAGE_EXPRESSIONS_FN_H
 #define PP2_LANGUAGE_EXPRESSIONS_FN_H
 
+#include "pp2/language/compiler.h"
 #include "pp2/language/types/fn.h"
 #include "pp2/language/basic/return.h"
 #include "pp2/language/basic/block.h"

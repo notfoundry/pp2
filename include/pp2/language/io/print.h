@@ -3,6 +3,8 @@
 #define PP2_LANGUAGE_IO_PRINT_H
 
 #include "pp2/language/compiler.h"
+#include "pp2/language/basic/return.h"
+#include "pp2/language/definition/primitive.h"
 
 #include "pp2/machine/insns/emit.h"
 
