@@ -2,10 +2,12 @@
 #ifndef PP2_LANGUAGE_TYPES_BOOL_H
 #define PP2_LANGUAGE_TYPES_BOOL_H
 
+#include "pp2/language/basic/object.h"
 #include "pp2/language/definition/const.h"
 #include "pp2/language/definition/type.h"
 #include "pp2/language/definition/vm_fn.h"
 
+#include "pp2/primitive/basic/cat.h"
 #include "pp2/primitive/basic/invoke.h"
 #include "pp2/primitive/tuple/open.h"
 
@@ -43,5 +45,10 @@
 #define IP2_LANGUAGE_BOOL_XOR_0_1 (,Bool,1)
 #define IP2_LANGUAGE_BOOL_XOR_1_0 (,Bool,1)
 #define IP2_LANGUAGE_BOOL_XOR_1_1 (,Bool,0)
+
+#define PP2_DEF_Bool_str PP2_VM_FN(PP2_LANGUAGE_BOOL_STR,1)
+#define PP2_LANGUAGE_BOOL_STR(P,r0,r1,r2,obj,...) (,PP2_CAT(IP2_LANGUAGE_BOOL_STR_,IP2_LANGUAGE_OBJECT_VALUE P##obj),P##r1,P##r2,P##__VA_ARGS__)
+#define IP2_LANGUAGE_BOOL_STR_0 false
+#define IP2_LANGUAGE_BOOL_STR_1 true
 
 #endif
