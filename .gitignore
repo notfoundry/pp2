@@ -1,7 +1,0 @@
-build/**
-scratch/**
-.vscode/**
-.pytest_cache/**
-.templates/**
-template.config.js
-*.pyc
