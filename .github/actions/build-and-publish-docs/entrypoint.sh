@@ -5,6 +5,7 @@ WORKSPACE=/github/workspace
 
 OUTPUT_BRANCH=$1
 
+chown -R $(id -u) ${WORKSPACE}
 
 cd ${WORKSPACE}
 mkdir build && cd build
