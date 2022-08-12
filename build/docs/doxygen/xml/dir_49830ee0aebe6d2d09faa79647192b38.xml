@@ -1,0 +1,16 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.2" xml:lang="en-US">
+  <compounddef id="dir_49830ee0aebe6d2d09faa79647192b38" kind="dir">
+    <compoundname>/github/workspace/include/pp2/language/basic</compoundname>
+    <innerdir refid="dir_0d3816c6b6023b7dc6bfc0a59c09ce0c">/github/workspace/include/pp2/language/basic/detail</innerdir>
+    <innerfile refid="block_8h">block.h</innerfile>
+    <innerfile refid="object_8h">object.h</innerfile>
+    <innerfile refid="return_8h">return.h</innerfile>
+    <innerfile refid="variable_8h">variable.h</innerfile>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="/github/workspace/include/pp2/language/basic/"/>
+  </compounddef>
+</doxygen>

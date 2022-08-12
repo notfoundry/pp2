@@ -1,0 +1,330 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.2" xml:lang="en-US">
+  <compounddef id="open_8h" kind="file" language="C++">
+    <compoundname>open.h</compoundname>
+    <includedby refid="return_8h" local="yes">/github/workspace/include/pp2/language/basic/return.h</includedby>
+    <includedby refid="print_8h" local="yes">/github/workspace/include/pp2/language/io/print.h</includedby>
+    <includedby refid="while_8h" local="yes">/github/workspace/include/pp2/language/statements/while.h</includedby>
+    <includedby refid="bool_8h" local="yes">/github/workspace/include/pp2/language/types/bool.h</includedby>
+    <includedby refid="types_2fn_8h" local="yes">/github/workspace/include/pp2/language/types/fn.h</includedby>
+    <includedby refid="context_8h" local="yes">/github/workspace/include/pp2/machine/context.h</includedby>
+    <includedby refid="push__eh_8h" local="yes">/github/workspace/include/pp2/machine/exception/push_eh.h</includedby>
+    <includedby refid="goto_8h" local="yes">/github/workspace/include/pp2/machine/goto/goto.h</includedby>
+    <includedby refid="label_8h" local="yes">/github/workspace/include/pp2/machine/goto/label.h</includedby>
+    <includedby refid="primitive_8h" local="yes">/github/workspace/include/pp2/primitive.h</includedby>
+    <includedby refid="compute_8h" local="yes">/github/workspace/include/pp2/primitive/tuple/higher_order/compute.h</includedby>
+    <invincdepgraph>
+      <node id="3">
+        <label>/github/workspace/include/pp2/language.h</label>
+        <link refid="language_8h_source"/>
+        <childnode refid="4" relation="include">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>/github/workspace/include/pp2/language/basic/return.h</label>
+        <link refid="return_8h"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="13" relation="include">
+        </childnode>
+        <childnode refid="14" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+        <childnode refid="15" relation="include">
+        </childnode>
+        <childnode refid="16" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+      </node>
+      <node id="5">
+        <label>/github/workspace/include/pp2/language/basic/variable.h</label>
+        <link refid="variable_8h"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+      </node>
+      <node id="6">
+        <label>/github/workspace/include/pp2/language/definition/const.h</label>
+        <link refid="const_8h"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+      </node>
+      <node id="13">
+        <label>/github/workspace/include/pp2/language/definition/def.h</label>
+        <link refid="def_8h"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+      </node>
+      <node id="7">
+        <label>/github/workspace/include/pp2/language/definition/type.h</label>
+        <link refid="definition_2type_8h"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+        <childnode refid="12" relation="include">
+        </childnode>
+      </node>
+      <node id="14">
+        <label>/github/workspace/include/pp2/language/definition/vm_fn.h</label>
+        <link refid="vm__fn_8h_source"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+      </node>
+      <node id="11">
+        <label>/github/workspace/include/pp2/language/expressions/fn.h</label>
+        <link refid="expressions_2fn_8h_source"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+      </node>
+      <node id="15">
+        <label>/github/workspace/include/pp2/language/io/print.h</label>
+        <link refid="print_8h"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+      </node>
+      <node id="16">
+        <label>/github/workspace/include/pp2/language/io/put.h</label>
+        <link refid="put_8h_source"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+      </node>
+      <node id="18">
+        <label>/github/workspace/include/pp2/language/statements/for.h</label>
+        <link refid="for_8h"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+      </node>
+      <node id="17">
+        <label>/github/workspace/include/pp2/language/statements/while.h</label>
+        <link refid="while_8h"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="18" relation="include">
+        </childnode>
+      </node>
+      <node id="8">
+        <label>/github/workspace/include/pp2/language/types/any.h</label>
+        <link refid="any_8h"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+      </node>
+      <node id="9">
+        <label>/github/workspace/include/pp2/language/types/bool.h</label>
+        <link refid="bool_8h"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+      </node>
+      <node id="10">
+        <label>/github/workspace/include/pp2/language/types/fn.h</label>
+        <link refid="types_2fn_8h"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+      </node>
+      <node id="12">
+        <label>/github/workspace/include/pp2/language/types/type.h</label>
+        <link refid="types_2type_8h"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+      </node>
+      <node id="20">
+        <label>/github/workspace/include/pp2/machine.h</label>
+        <link refid="machine_8h_source"/>
+      </node>
+      <node id="19">
+        <label>/github/workspace/include/pp2/machine/context.h</label>
+        <link refid="context_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="14" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+        <childnode refid="20" relation="include">
+        </childnode>
+        <childnode refid="21" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+      </node>
+      <node id="23">
+        <label>/github/workspace/include/pp2/machine/exception/push_eh.h</label>
+        <link refid="push__eh_8h"/>
+        <childnode refid="20" relation="include">
+        </childnode>
+      </node>
+      <node id="24">
+        <label>/github/workspace/include/pp2/machine/goto/goto.h</label>
+        <link refid="goto_8h"/>
+        <childnode refid="17" relation="include">
+        </childnode>
+        <childnode refid="20" relation="include">
+        </childnode>
+      </node>
+      <node id="25">
+        <label>/github/workspace/include/pp2/machine/goto/label.h</label>
+        <link refid="label_8h"/>
+        <childnode refid="17" relation="include">
+        </childnode>
+        <childnode refid="20" relation="include">
+        </childnode>
+      </node>
+      <node id="22">
+        <label>/github/workspace/include/pp2/machine/output.h</label>
+        <link refid="output_8h"/>
+        <childnode refid="20" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+      </node>
+      <node id="21">
+        <label>/github/workspace/include/pp2/machine/vm.h</label>
+        <link refid="vm_8h"/>
+        <childnode refid="20" relation="include">
+        </childnode>
+        <childnode refid="22" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+      </node>
+      <node id="4">
+        <label>/github/workspace/include/pp2/pp2.h</label>
+        <link refid="pp2_8h"/>
+      </node>
+      <node id="26">
+        <label>/github/workspace/include/pp2/primitive.h</label>
+        <link refid="primitive_8h_source"/>
+      </node>
+      <node id="27">
+        <label>/github/workspace/include/pp2/primitive/tuple/higher_order/compute.h</label>
+        <link refid="compute_8h"/>
+        <childnode refid="26" relation="include">
+        </childnode>
+      </node>
+      <node id="1">
+        <label>/github/workspace/include/pp2/primitive/tuple/open.h</label>
+        <link refid="open_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="15" relation="include">
+        </childnode>
+        <childnode refid="17" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+        <childnode refid="19" relation="include">
+        </childnode>
+        <childnode refid="23" relation="include">
+        </childnode>
+        <childnode refid="24" relation="include">
+        </childnode>
+        <childnode refid="25" relation="include">
+        </childnode>
+        <childnode refid="26" relation="include">
+        </childnode>
+        <childnode refid="27" relation="include">
+        </childnode>
+      </node>
+    </invincdepgraph>
+      <sectiondef kind="define">
+      <memberdef kind="define" id="open_8h_1a4b438a51aa1b73bb331e7da86d375c13" prot="public" static="no">
+        <name>PP2_OPEN</name>
+        <param><defname>...</defname></param>
+        <initializer>__VA_ARGS__</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Removes the parentheses surrounding the provided macro arguments, and substitutes the tokens contained between those parentheses into the macro replacement list without changing them.</para>
+<para>See <ref refid="core_8h_1a2e85a4c48515c59b026ce31749692513" kindref="member">PP2_SCAN</ref> for a comparison between these two macros.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>...</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the token sequence to have the outermost parentheses stripped from </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/github/workspace/include/pp2/primitive/tuple/open.h" line="13" column="9" bodyfile="/github/workspace/include/pp2/primitive/tuple/open.h" bodystart="13" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="open_8h_1a684a5f333098aecc2cf92a3e54d14338" prot="public" static="no">
+        <name>PP2_QUOTE_OPEN</name>
+        <param><defname>P</defname></param>
+        <param><defname>...</defname></param>
+        <initializer>P##__VA_ARGS__</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>P</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>...</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/github/workspace/include/pp2/primitive/tuple/open.h" line="19" column="9" bodyfile="/github/workspace/include/pp2/primitive/tuple/open.h" bodystart="19" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight><highlight class="preprocessor">#ifndef<sp/>PP2_PRIMITIVE_TUPLE_OPEN_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>PP2_PRIMITIVE_TUPLE_OPEN_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight></codeline>
+<codeline lineno="13" refid="open_8h_1a4b438a51aa1b73bb331e7da86d375c13" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>PP2_OPEN(...)<sp/>__VA_ARGS__</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="14"><highlight class="normal"></highlight></codeline>
+<codeline lineno="19" refid="open_8h_1a684a5f333098aecc2cf92a3e54d14338" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>PP2_QUOTE_OPEN(P,...)<sp/>P##__VA_ARGS__</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="20"><highlight class="normal"></highlight></codeline>
+<codeline lineno="21"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight></codeline>
+    </programlisting>
+    <location file="/github/workspace/include/pp2/primitive/tuple/open.h"/>
+  </compounddef>
+</doxygen>

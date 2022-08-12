@@ -1,0 +1,675 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.2" xml:lang="en-US">
+  <compounddef id="bool_8h" kind="file" language="C++">
+    <compoundname>bool.h</compoundname>
+    <includes refid="object_8h" local="yes">pp2/language/basic/object.h</includes>
+    <includes refid="const_8h" local="yes">pp2/language/definition/const.h</includes>
+    <includes refid="definition_2type_8h" local="yes">pp2/language/definition/type.h</includes>
+    <includes refid="vm__fn_8h" local="yes">pp2/language/definition/vm_fn.h</includes>
+    <includes refid="cat_8h" local="yes">pp2/primitive/basic/cat.h</includes>
+    <includes refid="invoke_8h" local="yes">pp2/primitive/basic/invoke.h</includes>
+    <includes refid="open_8h" local="yes">pp2/primitive/tuple/open.h</includes>
+    <includedby refid="language_8h" local="yes">/github/workspace/include/pp2/language.h</includedby>
+    <incdepgraph>
+      <node id="2">
+        <label>pp2/language/basic/object.h</label>
+        <link refid="object_8h"/>
+      </node>
+      <node id="4">
+        <label>pp2/language/basic/return.h</label>
+        <link refid="return_8h"/>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="15" relation="include">
+        </childnode>
+        <childnode refid="13" relation="include">
+        </childnode>
+        <childnode refid="14" relation="include">
+        </childnode>
+        <childnode refid="16" relation="include">
+        </childnode>
+      </node>
+      <node id="5">
+        <label>pp2/language/compiler.h</label>
+        <link refid="compiler_8h_source"/>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>pp2/language/definition/const.h</label>
+        <link refid="const_8h"/>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="19" relation="include">
+        </childnode>
+      </node>
+      <node id="20">
+        <label>pp2/language/definition/type.h</label>
+        <link refid="definition_2type_8h"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+      </node>
+      <node id="21">
+        <label>pp2/language/definition/vm_fn.h</label>
+        <link refid="vm__fn_8h_source"/>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+        <childnode refid="12" relation="include">
+        </childnode>
+      </node>
+      <node id="1">
+        <label>/github/workspace/include/pp2/language/types/bool.h</label>
+        <link refid="bool_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="20" relation="include">
+        </childnode>
+        <childnode refid="21" relation="include">
+        </childnode>
+        <childnode refid="12" relation="include">
+        </childnode>
+        <childnode refid="13" relation="include">
+        </childnode>
+        <childnode refid="14" relation="include">
+        </childnode>
+      </node>
+      <node id="11">
+        <label>pp2/machine/context.h</label>
+        <link refid="context_8h"/>
+        <childnode refid="12" relation="include">
+        </childnode>
+        <childnode refid="13" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+        <childnode refid="14" relation="include">
+        </childnode>
+      </node>
+      <node id="6">
+        <label>pp2/machine/exception/throw.h</label>
+        <link refid="throw_8h"/>
+        <childnode refid="7" relation="include">
+        </childnode>
+      </node>
+      <node id="19">
+        <label>pp2/machine/insns/load.h</label>
+        <link refid="insns_2load_8h"/>
+      </node>
+      <node id="15">
+        <label>pp2/machine/insns/nop.h</label>
+        <link refid="nop_8h_source"/>
+      </node>
+      <node id="8">
+        <label>pp2/primitive/assoc/detail/find_tables.h</label>
+        <link refid="find__tables_8h"/>
+      </node>
+      <node id="7">
+        <label>pp2/primitive/assoc/find.h</label>
+        <link refid="find_8h"/>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+      </node>
+      <node id="12">
+        <label>pp2/primitive/basic/cat.h</label>
+        <link refid="cat_8h"/>
+      </node>
+      <node id="13">
+        <label>pp2/primitive/basic/invoke.h</label>
+        <link refid="invoke_8h"/>
+      </node>
+      <node id="18">
+        <label>pp2/primitive/control/if.h</label>
+        <link refid="primitive_2control_2if_8h"/>
+        <childnode refid="12" relation="include">
+        </childnode>
+      </node>
+      <node id="16">
+        <label>pp2/primitive/introspection/is_nil.h</label>
+        <link refid="is__nil_8h"/>
+        <childnode refid="17" relation="include">
+        </childnode>
+        <childnode refid="18" relation="include">
+        </childnode>
+      </node>
+      <node id="17">
+        <label>pp2/primitive/introspection/is_tuple.h</label>
+        <link refid="is__tuple_8h"/>
+        <childnode refid="9" relation="include">
+        </childnode>
+        <childnode refid="18" relation="include">
+        </childnode>
+      </node>
+      <node id="9">
+        <label>pp2/primitive/tuple/at.h</label>
+        <link refid="at_8h"/>
+      </node>
+      <node id="10">
+        <label>pp2/primitive/tuple/eat.h</label>
+        <link refid="eat_8h"/>
+      </node>
+      <node id="14">
+        <label>pp2/primitive/tuple/open.h</label>
+        <link refid="open_8h"/>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="2">
+        <label>/github/workspace/include/pp2/language.h</label>
+        <link refid="language_8h_source"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+      </node>
+      <node id="1">
+        <label>/github/workspace/include/pp2/language/types/bool.h</label>
+        <link refid="bool_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>/github/workspace/include/pp2/pp2.h</label>
+        <link refid="pp2_8h"/>
+      </node>
+    </invincdepgraph>
+      <sectiondef kind="define">
+      <memberdef kind="define" id="bool_8h_1a81338dfb6ffa5339de376ce7f9856555" prot="public" static="no">
+        <name>PP2_DEF_Bool</name>
+        <initializer>PP2_TYPE(Bool,Any)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/github/workspace/include/pp2/language/types/bool.h" line="14" column="9" bodyfile="/github/workspace/include/pp2/language/types/bool.h" bodystart="14" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="bool_8h_1ae336d802d5a5add15f065368fac2a006" prot="public" static="no">
+        <name>PP2_DEF_true</name>
+        <initializer>PP2_CONST(Bool,1)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/github/workspace/include/pp2/language/types/bool.h" line="16" column="9" bodyfile="/github/workspace/include/pp2/language/types/bool.h" bodystart="16" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="bool_8h_1a97be965f9a4fc264ccd490afe11e28c5" prot="public" static="no">
+        <name>PP2_DEF_false</name>
+        <initializer>PP2_CONST(Bool,0)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/github/workspace/include/pp2/language/types/bool.h" line="17" column="9" bodyfile="/github/workspace/include/pp2/language/types/bool.h" bodystart="17" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="bool_8h_1a009627d9a06cfa5b7005712a08914f63" prot="public" static="no">
+        <name>PP2_DEF_Bool_not</name>
+        <initializer>PP2_VM_FN(PP2_LANGUAGE_BOOL_NOT,1)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/github/workspace/include/pp2/language/types/bool.h" line="19" column="9" bodyfile="/github/workspace/include/pp2/language/types/bool.h" bodystart="19" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="bool_8h_1a79e37caf438f5b750f695e5d0d778ef8" prot="public" static="no">
+        <name>PP2_LANGUAGE_BOOL_NOT</name>
+        <param><defname>P</defname></param>
+        <param><defname>r0</defname></param>
+        <param><defname>r1</defname></param>
+        <param><defname>r2</defname></param>
+        <param><defname>obj</defname></param>
+        <param><defname>...</defname></param>
+        <initializer>(,/*r0=*/IP2_LANGUAGE_BOOL_NOT P##obj,P##r1,P##r2,P##__VA_ARGS__)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/github/workspace/include/pp2/language/types/bool.h" line="20" column="9" bodyfile="/github/workspace/include/pp2/language/types/bool.h" bodystart="20" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="bool_8h_1a1a1f14a9d70de3cc7258edb9c8bb9eda" prot="public" static="no">
+        <name>IP2_LANGUAGE_BOOL_NOT</name>
+        <param><defname>addr</defname></param>
+        <param><defname>type</defname></param>
+        <param><defname>obj</defname></param>
+        <initializer>IP2_LANGUAGE_BOOL_NOT_##obj</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/github/workspace/include/pp2/language/types/bool.h" line="21" column="9" bodyfile="/github/workspace/include/pp2/language/types/bool.h" bodystart="21" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="bool_8h_1ab5c32727d452a76ac44d082cc0227091" prot="public" static="no">
+        <name>IP2_LANGUAGE_BOOL_NOT_0</name>
+        <initializer>(,Bool,1)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/github/workspace/include/pp2/language/types/bool.h" line="22" column="9" bodyfile="/github/workspace/include/pp2/language/types/bool.h" bodystart="22" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="bool_8h_1a81426c075344304a5ee1ec764667d17b" prot="public" static="no">
+        <name>IP2_LANGUAGE_BOOL_NOT_1</name>
+        <initializer>(,Bool,0)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/github/workspace/include/pp2/language/types/bool.h" line="23" column="9" bodyfile="/github/workspace/include/pp2/language/types/bool.h" bodystart="23" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="bool_8h_1a5e4b0f069a44a04be5d910e705158d31" prot="public" static="no">
+        <name>PP2_DEF_Bool_and</name>
+        <initializer>PP2_VM_FN(PP2_LANGUAGE_BOOL_AND,2)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/github/workspace/include/pp2/language/types/bool.h" line="25" column="9" bodyfile="/github/workspace/include/pp2/language/types/bool.h" bodystart="25" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="bool_8h_1a10c92a215544bc1922ee267f508c9d8b" prot="public" static="no">
+        <name>PP2_LANGUAGE_BOOL_AND</name>
+        <param><defname>P</defname></param>
+        <param><defname>r0</defname></param>
+        <param><defname>r1</defname></param>
+        <param><defname>r2</defname></param>
+        <param><defname>lhs_obj</defname></param>
+        <param><defname>rhs_obj</defname></param>
+        <param><defname>...</defname></param>
+        <initializer>(,/*r0=*/IP2_FX(LANGUAGE_BOOL_AND, (,<ref refid="open_8h_1a4b438a51aa1b73bb331e7da86d375c13" kindref="member">PP2_OPEN</ref> P##lhs_obj,<ref refid="open_8h_1a4b438a51aa1b73bb331e7da86d375c13" kindref="member">PP2_OPEN</ref> P##rhs_obj)),P##r1,P##r2,P##__VA_ARGS__)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/github/workspace/include/pp2/language/types/bool.h" line="26" column="9" bodyfile="/github/workspace/include/pp2/language/types/bool.h" bodystart="26" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="bool_8h_1aa716839b3444347029e0e680162d5173" prot="public" static="no">
+        <name>IP2_LANGUAGE_BOOL_AND</name>
+        <param><defname>P</defname></param>
+        <param><defname>lhs_addr</defname></param>
+        <param><defname>lhs_type</defname></param>
+        <param><defname>lhs_value</defname></param>
+        <param><defname>rhs_addr</defname></param>
+        <param><defname>rhs_type</defname></param>
+        <param><defname>rhs_value</defname></param>
+        <initializer>IP2_LANGUAGE_BOOL_AND_##lhs_value##_##rhs_value</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/github/workspace/include/pp2/language/types/bool.h" line="27" column="9" bodyfile="/github/workspace/include/pp2/language/types/bool.h" bodystart="27" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="bool_8h_1a1555072eb9ed93b3bbf780596f5e3a58" prot="public" static="no">
+        <name>IP2_LANGUAGE_BOOL_AND_0_0</name>
+        <initializer>(,Bool,0)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/github/workspace/include/pp2/language/types/bool.h" line="28" column="9" bodyfile="/github/workspace/include/pp2/language/types/bool.h" bodystart="28" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="bool_8h_1a685b1c9faa09e1e11553b366e4195631" prot="public" static="no">
+        <name>IP2_LANGUAGE_BOOL_AND_0_1</name>
+        <initializer>(,Bool,0)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/github/workspace/include/pp2/language/types/bool.h" line="29" column="9" bodyfile="/github/workspace/include/pp2/language/types/bool.h" bodystart="29" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="bool_8h_1a17d9a3bf83f700f0b8f04131fe17a6d3" prot="public" static="no">
+        <name>IP2_LANGUAGE_BOOL_AND_1_0</name>
+        <initializer>(,Bool,0)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/github/workspace/include/pp2/language/types/bool.h" line="30" column="9" bodyfile="/github/workspace/include/pp2/language/types/bool.h" bodystart="30" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="bool_8h_1a58ce31077c20bb3323f1a04c2ea3722a" prot="public" static="no">
+        <name>IP2_LANGUAGE_BOOL_AND_1_1</name>
+        <initializer>(,Bool,1)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/github/workspace/include/pp2/language/types/bool.h" line="31" column="9" bodyfile="/github/workspace/include/pp2/language/types/bool.h" bodystart="31" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="bool_8h_1a0c40a71caff3f2faf0a35ae573eac47c" prot="public" static="no">
+        <name>PP2_DEF_Bool_or</name>
+        <initializer>PP2_VM_FN(PP2_LANGUAGE_BOOL_OR,2)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/github/workspace/include/pp2/language/types/bool.h" line="33" column="9" bodyfile="/github/workspace/include/pp2/language/types/bool.h" bodystart="33" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="bool_8h_1aa052c4b30f358b4a874f743b9e6b0d21" prot="public" static="no">
+        <name>PP2_LANGUAGE_BOOL_OR</name>
+        <param><defname>P</defname></param>
+        <param><defname>r0</defname></param>
+        <param><defname>r1</defname></param>
+        <param><defname>r2</defname></param>
+        <param><defname>lhs_obj</defname></param>
+        <param><defname>rhs_obj</defname></param>
+        <param><defname>...</defname></param>
+        <initializer>(,/*r0=*/IP2_FX(LANGUAGE_BOOL_OR, (,<ref refid="open_8h_1a4b438a51aa1b73bb331e7da86d375c13" kindref="member">PP2_OPEN</ref> P##lhs_obj,<ref refid="open_8h_1a4b438a51aa1b73bb331e7da86d375c13" kindref="member">PP2_OPEN</ref> P##rhs_obj)),P##r1,P##r2,P##__VA_ARGS__)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/github/workspace/include/pp2/language/types/bool.h" line="34" column="9" bodyfile="/github/workspace/include/pp2/language/types/bool.h" bodystart="34" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="bool_8h_1a7b334384ae3b23824a085912b159ae71" prot="public" static="no">
+        <name>IP2_LANGUAGE_BOOL_OR</name>
+        <param><defname>P</defname></param>
+        <param><defname>lhs_addr</defname></param>
+        <param><defname>lhs_type</defname></param>
+        <param><defname>lhs_value</defname></param>
+        <param><defname>rhs_addr</defname></param>
+        <param><defname>rhs_type</defname></param>
+        <param><defname>rhs_value</defname></param>
+        <initializer>IP2_LANGUAGE_BOOL_OR_##lhs_value##_##rhs_value</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/github/workspace/include/pp2/language/types/bool.h" line="35" column="9" bodyfile="/github/workspace/include/pp2/language/types/bool.h" bodystart="35" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="bool_8h_1a49d8e47540ebfcec020b888775f6683a" prot="public" static="no">
+        <name>IP2_LANGUAGE_BOOL_OR_0_0</name>
+        <initializer>(,Bool,0)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/github/workspace/include/pp2/language/types/bool.h" line="36" column="9" bodyfile="/github/workspace/include/pp2/language/types/bool.h" bodystart="36" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="bool_8h_1af9ae6613e1ca681314e75c3d21febd05" prot="public" static="no">
+        <name>IP2_LANGUAGE_BOOL_OR_0_1</name>
+        <initializer>(,Bool,1)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/github/workspace/include/pp2/language/types/bool.h" line="37" column="9" bodyfile="/github/workspace/include/pp2/language/types/bool.h" bodystart="37" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="bool_8h_1ad79cc71fe28f0df8d4f6e3aaabb72bdb" prot="public" static="no">
+        <name>IP2_LANGUAGE_BOOL_OR_1_0</name>
+        <initializer>(,Bool,1)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/github/workspace/include/pp2/language/types/bool.h" line="38" column="9" bodyfile="/github/workspace/include/pp2/language/types/bool.h" bodystart="38" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="bool_8h_1ad8a278bf1842f3f0b615bc856da867c6" prot="public" static="no">
+        <name>IP2_LANGUAGE_BOOL_OR_1_1</name>
+        <initializer>(,Bool,1)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/github/workspace/include/pp2/language/types/bool.h" line="39" column="9" bodyfile="/github/workspace/include/pp2/language/types/bool.h" bodystart="39" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="bool_8h_1a34946f7587410868e13ed02e01e78a74" prot="public" static="no">
+        <name>PP2_DEF_Bool_xor</name>
+        <initializer>PP2_VM_FN(PP2_LANGUAGE_BOOL_XOR,2)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/github/workspace/include/pp2/language/types/bool.h" line="41" column="9" bodyfile="/github/workspace/include/pp2/language/types/bool.h" bodystart="41" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="bool_8h_1af1ca1d7cd9327706f5eeb2b9814036d7" prot="public" static="no">
+        <name>PP2_LANGUAGE_BOOL_XOR</name>
+        <param><defname>P</defname></param>
+        <param><defname>r0</defname></param>
+        <param><defname>r1</defname></param>
+        <param><defname>r2</defname></param>
+        <param><defname>lhs_obj</defname></param>
+        <param><defname>rhs_obj</defname></param>
+        <param><defname>...</defname></param>
+        <initializer>(,/*r0=*/IP2_FX(LANGUAGE_BOOL_XOR, (,<ref refid="open_8h_1a4b438a51aa1b73bb331e7da86d375c13" kindref="member">PP2_OPEN</ref> P##lhs_obj,<ref refid="open_8h_1a4b438a51aa1b73bb331e7da86d375c13" kindref="member">PP2_OPEN</ref> P##rhs_obj)),P##r1,P##r2,P##__VA_ARGS__)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/github/workspace/include/pp2/language/types/bool.h" line="42" column="9" bodyfile="/github/workspace/include/pp2/language/types/bool.h" bodystart="42" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="bool_8h_1a5b73a90469a65a92d7cd58cf101d716d" prot="public" static="no">
+        <name>IP2_LANGUAGE_BOOL_XOR</name>
+        <param><defname>P</defname></param>
+        <param><defname>lhs_addr</defname></param>
+        <param><defname>lhs_type</defname></param>
+        <param><defname>lhs_value</defname></param>
+        <param><defname>rhs_addr</defname></param>
+        <param><defname>rhs_type</defname></param>
+        <param><defname>rhs_value</defname></param>
+        <initializer>IP2_LANGUAGE_BOOL_XOR_##lhs_value##_##rhs_value</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/github/workspace/include/pp2/language/types/bool.h" line="43" column="9" bodyfile="/github/workspace/include/pp2/language/types/bool.h" bodystart="43" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="bool_8h_1a3b014cc7f5701cbe095d9be4c53f3dac" prot="public" static="no">
+        <name>IP2_LANGUAGE_BOOL_XOR_0_0</name>
+        <initializer>(,Bool,0)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/github/workspace/include/pp2/language/types/bool.h" line="44" column="9" bodyfile="/github/workspace/include/pp2/language/types/bool.h" bodystart="44" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="bool_8h_1ad967509ff5e56fa551c37302349c7f2e" prot="public" static="no">
+        <name>IP2_LANGUAGE_BOOL_XOR_0_1</name>
+        <initializer>(,Bool,1)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/github/workspace/include/pp2/language/types/bool.h" line="45" column="9" bodyfile="/github/workspace/include/pp2/language/types/bool.h" bodystart="45" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="bool_8h_1aa4a4a71bd64515e5cf63ff93156d45da" prot="public" static="no">
+        <name>IP2_LANGUAGE_BOOL_XOR_1_0</name>
+        <initializer>(,Bool,1)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/github/workspace/include/pp2/language/types/bool.h" line="46" column="9" bodyfile="/github/workspace/include/pp2/language/types/bool.h" bodystart="46" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="bool_8h_1a764ad0a036af1cc8e3ec18bf59dab7d9" prot="public" static="no">
+        <name>IP2_LANGUAGE_BOOL_XOR_1_1</name>
+        <initializer>(,Bool,0)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/github/workspace/include/pp2/language/types/bool.h" line="47" column="9" bodyfile="/github/workspace/include/pp2/language/types/bool.h" bodystart="47" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="bool_8h_1a6eb8dd69910ac0ef701f03c2844951d3" prot="public" static="no">
+        <name>PP2_DEF_Bool_str</name>
+        <initializer>PP2_VM_FN(PP2_LANGUAGE_BOOL_STR,1)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/github/workspace/include/pp2/language/types/bool.h" line="49" column="9" bodyfile="/github/workspace/include/pp2/language/types/bool.h" bodystart="49" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="bool_8h_1a6e77ca5068e031c430f39853954ef79d" prot="public" static="no">
+        <name>PP2_LANGUAGE_BOOL_STR</name>
+        <param><defname>P</defname></param>
+        <param><defname>r0</defname></param>
+        <param><defname>r1</defname></param>
+        <param><defname>r2</defname></param>
+        <param><defname>obj</defname></param>
+        <param><defname>...</defname></param>
+        <initializer>(,PP2_CAT(IP2_LANGUAGE_BOOL_STR_,IP2_LANGUAGE_OBJECT_VALUE P##obj),P##r1,P##r2,P##__VA_ARGS__)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/github/workspace/include/pp2/language/types/bool.h" line="50" column="9" bodyfile="/github/workspace/include/pp2/language/types/bool.h" bodystart="50" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="bool_8h_1a87c663943fc98ccafac2f39fe64f0900" prot="public" static="no">
+        <name>IP2_LANGUAGE_BOOL_STR_0</name>
+        <initializer>false</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/github/workspace/include/pp2/language/types/bool.h" line="51" column="9" bodyfile="/github/workspace/include/pp2/language/types/bool.h" bodystart="51" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="bool_8h_1a7a0ee3aa64e2e78908ed1f20ad6c701f" prot="public" static="no">
+        <name>IP2_LANGUAGE_BOOL_STR_1</name>
+        <initializer>true</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/github/workspace/include/pp2/language/types/bool.h" line="52" column="9" bodyfile="/github/workspace/include/pp2/language/types/bool.h" bodystart="52" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight><highlight class="preprocessor">#ifndef<sp/>PP2_LANGUAGE_TYPES_BOOL_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>PP2_LANGUAGE_TYPES_BOOL_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight></codeline>
+<codeline lineno="5"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="object_8h" kindref="compound">pp2/language/basic/object.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="const_8h" kindref="compound">pp2/language/definition/const.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="definition_2type_8h" kindref="compound">pp2/language/definition/type.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="8"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;pp2/language/definition/vm_fn.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="9"><highlight class="normal"></highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="cat_8h" kindref="compound">pp2/primitive/basic/cat.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="11"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="invoke_8h" kindref="compound">pp2/primitive/basic/invoke.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="12"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="open_8h" kindref="compound">pp2/primitive/tuple/open.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="13"><highlight class="normal"></highlight></codeline>
+<codeline lineno="14"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>PP2_DEF_Bool<sp/>PP2_TYPE(Bool,Any)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="15"><highlight class="normal"></highlight></codeline>
+<codeline lineno="16"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>PP2_DEF_true<sp/><sp/>PP2_CONST(Bool,1)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="17"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>PP2_DEF_false<sp/>PP2_CONST(Bool,0)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="18"><highlight class="normal"></highlight></codeline>
+<codeline lineno="19"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>PP2_DEF_Bool_not<sp/>PP2_VM_FN(PP2_LANGUAGE_BOOL_NOT,1)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="20"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>PP2_LANGUAGE_BOOL_NOT(P,r0,r1,r2,obj,...)<sp/>(,</highlight><highlight class="comment">/*r0=*/</highlight><highlight class="preprocessor">IP2_LANGUAGE_BOOL_NOT<sp/>P##obj,P##r1,P##r2,P##__VA_ARGS__)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="21"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>IP2_LANGUAGE_BOOL_NOT(addr,type,obj)<sp/>IP2_LANGUAGE_BOOL_NOT_##obj</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="22"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>IP2_LANGUAGE_BOOL_NOT_0<sp/>(,Bool,1)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="23"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>IP2_LANGUAGE_BOOL_NOT_1<sp/>(,Bool,0)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="24"><highlight class="normal"></highlight></codeline>
+<codeline lineno="25"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>PP2_DEF_Bool_and<sp/>PP2_VM_FN(PP2_LANGUAGE_BOOL_AND,2)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="26"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>PP2_LANGUAGE_BOOL_AND(P,r0,r1,r2,lhs_obj,rhs_obj,...)<sp/>(,</highlight><highlight class="comment">/*r0=*/</highlight><highlight class="preprocessor">IP2_FX(LANGUAGE_BOOL_AND,<sp/>(,PP2_OPEN<sp/>P##lhs_obj,PP2_OPEN<sp/>P##rhs_obj)),P##r1,P##r2,P##__VA_ARGS__)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="27"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>IP2_LANGUAGE_BOOL_AND(P,lhs_addr,lhs_type,lhs_value,rhs_addr,rhs_type,rhs_value)<sp/>IP2_LANGUAGE_BOOL_AND_##lhs_value##_##rhs_value</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="28"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>IP2_LANGUAGE_BOOL_AND_0_0<sp/>(,Bool,0)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="29"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>IP2_LANGUAGE_BOOL_AND_0_1<sp/>(,Bool,0)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="30"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>IP2_LANGUAGE_BOOL_AND_1_0<sp/>(,Bool,0)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="31"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>IP2_LANGUAGE_BOOL_AND_1_1<sp/>(,Bool,1)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="32"><highlight class="normal"></highlight></codeline>
+<codeline lineno="33"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>PP2_DEF_Bool_or<sp/>PP2_VM_FN(PP2_LANGUAGE_BOOL_OR,2)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="34"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>PP2_LANGUAGE_BOOL_OR(P,r0,r1,r2,lhs_obj,rhs_obj,...)<sp/>(,</highlight><highlight class="comment">/*r0=*/</highlight><highlight class="preprocessor">IP2_FX(LANGUAGE_BOOL_OR,<sp/>(,PP2_OPEN<sp/>P##lhs_obj,PP2_OPEN<sp/>P##rhs_obj)),P##r1,P##r2,P##__VA_ARGS__)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="35"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>IP2_LANGUAGE_BOOL_OR(P,lhs_addr,lhs_type,lhs_value,rhs_addr,rhs_type,rhs_value)<sp/>IP2_LANGUAGE_BOOL_OR_##lhs_value##_##rhs_value</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="36"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>IP2_LANGUAGE_BOOL_OR_0_0<sp/>(,Bool,0)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="37"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>IP2_LANGUAGE_BOOL_OR_0_1<sp/>(,Bool,1)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="38"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>IP2_LANGUAGE_BOOL_OR_1_0<sp/>(,Bool,1)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="39"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>IP2_LANGUAGE_BOOL_OR_1_1<sp/>(,Bool,1)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="40"><highlight class="normal"></highlight></codeline>
+<codeline lineno="41"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>PP2_DEF_Bool_xor<sp/>PP2_VM_FN(PP2_LANGUAGE_BOOL_XOR,2)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="42"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>PP2_LANGUAGE_BOOL_XOR(P,r0,r1,r2,lhs_obj,rhs_obj,...)<sp/>(,</highlight><highlight class="comment">/*r0=*/</highlight><highlight class="preprocessor">IP2_FX(LANGUAGE_BOOL_XOR,<sp/>(,PP2_OPEN<sp/>P##lhs_obj,PP2_OPEN<sp/>P##rhs_obj)),P##r1,P##r2,P##__VA_ARGS__)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="43"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>IP2_LANGUAGE_BOOL_XOR(P,lhs_addr,lhs_type,lhs_value,rhs_addr,rhs_type,rhs_value)<sp/>IP2_LANGUAGE_BOOL_XOR_##lhs_value##_##rhs_value</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="44"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>IP2_LANGUAGE_BOOL_XOR_0_0<sp/>(,Bool,0)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="45"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>IP2_LANGUAGE_BOOL_XOR_0_1<sp/>(,Bool,1)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="46"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>IP2_LANGUAGE_BOOL_XOR_1_0<sp/>(,Bool,1)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="47"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>IP2_LANGUAGE_BOOL_XOR_1_1<sp/>(,Bool,0)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="48"><highlight class="normal"></highlight></codeline>
+<codeline lineno="49"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>PP2_DEF_Bool_str<sp/>PP2_VM_FN(PP2_LANGUAGE_BOOL_STR,1)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="50"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>PP2_LANGUAGE_BOOL_STR(P,r0,r1,r2,obj,...)<sp/>(,PP2_CAT(IP2_LANGUAGE_BOOL_STR_,IP2_LANGUAGE_OBJECT_VALUE<sp/>P##obj),P##r1,P##r2,P##__VA_ARGS__)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="51"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>IP2_LANGUAGE_BOOL_STR_0<sp/>false</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="52"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>IP2_LANGUAGE_BOOL_STR_1<sp/>true</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="53"><highlight class="normal"></highlight></codeline>
+<codeline lineno="54"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight></codeline>
+    </programlisting>
+    <location file="/github/workspace/include/pp2/language/types/bool.h"/>
+  </compounddef>
+</doxygen>

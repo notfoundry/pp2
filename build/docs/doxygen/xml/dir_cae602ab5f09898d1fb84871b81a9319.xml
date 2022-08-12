@@ -1,0 +1,12 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.2" xml:lang="en-US">
+  <compounddef id="dir_cae602ab5f09898d1fb84871b81a9319" kind="dir">
+    <compoundname>/github/workspace/include/pp2/primitive/arithmetic</compoundname>
+    <innerdir refid="dir_7683c817fc7c90f57763a3b0fd87fbd9">/github/workspace/include/pp2/primitive/arithmetic/literal</innerdir>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="/github/workspace/include/pp2/primitive/arithmetic/"/>
+  </compounddef>
+</doxygen>

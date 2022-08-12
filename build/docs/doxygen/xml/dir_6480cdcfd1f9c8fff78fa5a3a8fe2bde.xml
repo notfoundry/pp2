@@ -1,0 +1,13 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.2" xml:lang="en-US">
+  <compounddef id="dir_6480cdcfd1f9c8fff78fa5a3a8fe2bde" kind="dir">
+    <compoundname>/github/workspace/include/pp2/primitive/seq</compoundname>
+    <innerfile refid="seq_2head_8h">head.h</innerfile>
+    <innerfile refid="tail_8h">tail.h</innerfile>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="/github/workspace/include/pp2/primitive/seq/"/>
+  </compounddef>
+</doxygen>

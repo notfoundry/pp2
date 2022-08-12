@@ -1,0 +1,20 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.2" xml:lang="en-US">
+  <compounddef id="dir_b6929a7c41d698fbf88df46a5c400a14" kind="dir">
+    <compoundname>/github/workspace/include/pp2/primitive</compoundname>
+    <innerdir refid="dir_cae602ab5f09898d1fb84871b81a9319">/github/workspace/include/pp2/primitive/arithmetic</innerdir>
+    <innerdir refid="dir_de311e63f9e81b96a5e6f164c105b1c8">/github/workspace/include/pp2/primitive/assoc</innerdir>
+    <innerdir refid="dir_e6aa97dcc94d04c58ca97579b7d92b48">/github/workspace/include/pp2/primitive/basic</innerdir>
+    <innerdir refid="dir_e4d7bb6c78c02f7fc1f890b96fd008a8">/github/workspace/include/pp2/primitive/control</innerdir>
+    <innerdir refid="dir_8d46207baec8b19a93879beb1db0133b">/github/workspace/include/pp2/primitive/introspection</innerdir>
+    <innerdir refid="dir_11b96a0fa9c26210fc1fd11a7cdef761">/github/workspace/include/pp2/primitive/punctuation</innerdir>
+    <innerdir refid="dir_6480cdcfd1f9c8fff78fa5a3a8fe2bde">/github/workspace/include/pp2/primitive/seq</innerdir>
+    <innerdir refid="dir_c242852f3002895c3adb78efa06fd70d">/github/workspace/include/pp2/primitive/tuple</innerdir>
+    <innerfile refid="core_8h">core.h</innerfile>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="/github/workspace/include/pp2/primitive/"/>
+  </compounddef>
+</doxygen>

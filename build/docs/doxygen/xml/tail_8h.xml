@@ -1,0 +1,84 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.2" xml:lang="en-US">
+  <compounddef id="tail_8h" kind="file" language="C++">
+    <compoundname>tail.h</compoundname>
+    <includes refid="seq_2head_8h" local="yes">pp2/primitive/seq/head.h</includes>
+    <includes refid="at_8h" local="yes">pp2/primitive/tuple/at.h</includes>
+    <includedby refid="primitive_8h" local="yes">/github/workspace/include/pp2/primitive.h</includedby>
+    <incdepgraph>
+      <node id="2">
+        <label>pp2/primitive/seq/head.h</label>
+        <link refid="seq_2head_8h_source"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+      </node>
+      <node id="1">
+        <label>/github/workspace/include/pp2/primitive/seq/tail.h</label>
+        <link refid="tail_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>pp2/primitive/tuple/at.h</label>
+        <link refid="at_8h"/>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="2">
+        <label>/github/workspace/include/pp2/primitive.h</label>
+        <link refid="primitive_8h_source"/>
+      </node>
+      <node id="1">
+        <label>/github/workspace/include/pp2/primitive/seq/tail.h</label>
+        <link refid="tail_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+      </node>
+    </invincdepgraph>
+      <sectiondef kind="define">
+      <memberdef kind="define" id="tail_8h_1adc614566797f4d4e126feb53dd79aec9" prot="public" static="no">
+        <name>PP2_SEQ_TAIL</name>
+        <param><defname>seq</defname></param>
+        <initializer>IP2_SEQ_TAIL_I(PP2_SEQ_SPLIT_HEAD seq)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/github/workspace/include/pp2/primitive/seq/tail.h" line="7" column="9" bodyfile="/github/workspace/include/pp2/primitive/seq/tail.h" bodystart="7" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="tail_8h_1a3624b260d0f68504d342cf6b07918a34" prot="public" static="no">
+        <name>IP2_SEQ_TAIL_I</name>
+        <param><defname>x</defname></param>
+        <initializer>PP2_TUPLE_AT_1(,x)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/github/workspace/include/pp2/primitive/seq/tail.h" line="8" column="9" bodyfile="/github/workspace/include/pp2/primitive/seq/tail.h" bodystart="8" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="preprocessor">#ifndef<sp/>PP2_PRIMITIVE_SEQ_TAIL_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>PP2_PRIMITIVE_SEQ_TAIL_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;pp2/primitive/seq/head.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="5"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="at_8h" kindref="compound">pp2/primitive/tuple/at.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>PP2_SEQ_TAIL(seq)<sp/>IP2_SEQ_TAIL_I(PP2_SEQ_SPLIT_HEAD<sp/>seq)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="8"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>IP2_SEQ_TAIL_I(x)<sp/>PP2_TUPLE_AT_1(,x)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="9"><highlight class="normal"></highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight></codeline>
+    </programlisting>
+    <location file="/github/workspace/include/pp2/primitive/seq/tail.h"/>
+  </compounddef>
+</doxygen>

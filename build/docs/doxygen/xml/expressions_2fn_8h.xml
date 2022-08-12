@@ -1,0 +1,791 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.2" xml:lang="en-US">
+  <compounddef id="expressions_2fn_8h" kind="file" language="C++">
+    <compoundname>fn.h</compoundname>
+    <includes refid="compiler_8h" local="yes">pp2/language/compiler.h</includes>
+    <includes refid="types_2fn_8h" local="yes">pp2/language/types/fn.h</includes>
+    <includes refid="return_8h" local="yes">pp2/language/basic/return.h</includes>
+    <includes refid="block_8h" local="yes">pp2/language/basic/block.h</includes>
+    <includes refid="store_8h" local="yes">pp2/machine/stack/store.h</includes>
+    <includes refid="at_8h" local="yes">pp2/primitive/tuple/at.h</includes>
+    <includes refid="seq_2head_8h" local="yes">pp2/primitive/seq/head.h</includes>
+    <includes refid="invoke_8h" local="yes">pp2/primitive/basic/invoke.h</includes>
+    <includedby refid="language_8h" local="yes">/github/workspace/include/pp2/language.h</includedby>
+    <incdepgraph>
+      <node id="24">
+        <label>pp2/language/basic/block.h</label>
+        <link refid="block_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="22" relation="include">
+        </childnode>
+      </node>
+      <node id="10">
+        <label>pp2/language/basic/object.h</label>
+        <link refid="object_8h"/>
+      </node>
+      <node id="9">
+        <label>pp2/language/basic/return.h</label>
+        <link refid="return_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="15" relation="include">
+        </childnode>
+        <childnode refid="13" relation="include">
+        </childnode>
+        <childnode refid="14" relation="include">
+        </childnode>
+        <childnode refid="16" relation="include">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>pp2/language/compiler.h</label>
+        <link refid="compiler_8h_source"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+      </node>
+      <node id="20">
+        <label>pp2/language/definition/const.h</label>
+        <link refid="const_8h"/>
+        <childnode refid="9" relation="include">
+        </childnode>
+        <childnode refid="21" relation="include">
+        </childnode>
+      </node>
+      <node id="19">
+        <label>pp2/language/definition/type.h</label>
+        <link refid="definition_2type_8h"/>
+        <childnode refid="20" relation="include">
+        </childnode>
+      </node>
+      <node id="1">
+        <label>/github/workspace/include/pp2/language/expressions/fn.h</label>
+        <link refid="expressions_2fn_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+        <childnode refid="24" relation="include">
+        </childnode>
+        <childnode refid="25" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="23" relation="include">
+        </childnode>
+        <childnode refid="13" relation="include">
+        </childnode>
+      </node>
+      <node id="8">
+        <label>pp2/language/types/fn.h</label>
+        <link refid="types_2fn_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+        <childnode refid="19" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+        <childnode refid="15" relation="include">
+        </childnode>
+        <childnode refid="22" relation="include">
+        </childnode>
+        <childnode refid="13" relation="include">
+        </childnode>
+        <childnode refid="12" relation="include">
+        </childnode>
+        <childnode refid="14" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="23" relation="include">
+        </childnode>
+      </node>
+      <node id="11">
+        <label>pp2/machine/context.h</label>
+        <link refid="context_8h"/>
+        <childnode refid="12" relation="include">
+        </childnode>
+        <childnode refid="13" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="14" relation="include">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>pp2/machine/exception/throw.h</label>
+        <link refid="throw_8h"/>
+        <childnode refid="4" relation="include">
+        </childnode>
+      </node>
+      <node id="21">
+        <label>pp2/machine/insns/load.h</label>
+        <link refid="insns_2load_8h"/>
+      </node>
+      <node id="15">
+        <label>pp2/machine/insns/nop.h</label>
+        <link refid="nop_8h_source"/>
+      </node>
+      <node id="26">
+        <label>pp2/machine/stack/detail/store_tables.h</label>
+        <link refid="store__tables_8h"/>
+      </node>
+      <node id="25">
+        <label>pp2/machine/stack/store.h</label>
+        <link refid="store_8h"/>
+        <childnode refid="26" relation="include">
+        </childnode>
+        <childnode refid="13" relation="include">
+        </childnode>
+      </node>
+      <node id="5">
+        <label>pp2/primitive/assoc/detail/find_tables.h</label>
+        <link refid="find__tables_8h"/>
+      </node>
+      <node id="4">
+        <label>pp2/primitive/assoc/find.h</label>
+        <link refid="find_8h"/>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+      </node>
+      <node id="12">
+        <label>pp2/primitive/basic/cat.h</label>
+        <link refid="cat_8h"/>
+      </node>
+      <node id="13">
+        <label>pp2/primitive/basic/invoke.h</label>
+        <link refid="invoke_8h"/>
+      </node>
+      <node id="18">
+        <label>pp2/primitive/control/if.h</label>
+        <link refid="primitive_2control_2if_8h"/>
+        <childnode refid="12" relation="include">
+        </childnode>
+      </node>
+      <node id="16">
+        <label>pp2/primitive/introspection/is_nil.h</label>
+        <link refid="is__nil_8h"/>
+        <childnode refid="17" relation="include">
+        </childnode>
+        <childnode refid="18" relation="include">
+        </childnode>
+      </node>
+      <node id="17">
+        <label>pp2/primitive/introspection/is_tuple.h</label>
+        <link refid="is__tuple_8h"/>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="18" relation="include">
+        </childnode>
+      </node>
+      <node id="22">
+        <label>pp2/primitive/punctuation/comma.h</label>
+        <link refid="comma_8h"/>
+      </node>
+      <node id="23">
+        <label>pp2/primitive/seq/head.h</label>
+        <link refid="seq_2head_8h_source"/>
+        <childnode refid="6" relation="include">
+        </childnode>
+      </node>
+      <node id="6">
+        <label>pp2/primitive/tuple/at.h</label>
+        <link refid="at_8h"/>
+      </node>
+      <node id="7">
+        <label>pp2/primitive/tuple/eat.h</label>
+        <link refid="eat_8h"/>
+      </node>
+      <node id="14">
+        <label>pp2/primitive/tuple/open.h</label>
+        <link refid="open_8h"/>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="2">
+        <label>/github/workspace/include/pp2/language.h</label>
+        <link refid="language_8h_source"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+      </node>
+      <node id="1">
+        <label>/github/workspace/include/pp2/language/expressions/fn.h</label>
+        <link refid="expressions_2fn_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>/github/workspace/include/pp2/pp2.h</label>
+        <link refid="pp2_8h"/>
+      </node>
+    </invincdepgraph>
+      <sectiondef kind="define">
+      <memberdef kind="define" id="expressions_2fn_8h_1a2e84dacff5bf5c1b8f2463b952ad97f6" prot="public" static="no">
+        <name>PP2_DEF_fn</name>
+        <param><defname>params</defname></param>
+        <initializer>)PP2_COMPILE_LANGUAGE_FN(,params,</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/github/workspace/include/pp2/language/expressions/fn.h" line="15" column="9" bodyfile="/github/workspace/include/pp2/language/expressions/fn.h" bodystart="15" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="expressions_2fn_8h_1a8c5b3d3d57f980199820ef35163246d7" prot="public" static="no">
+        <name>PP2_COMPILE_LANGUAGE_FN</name>
+        <param><defname>P</defname></param>
+        <param><defname>params</defname></param>
+        <param><defname>body</defname></param>
+        <initializer>8PP2_LANGUAGE_FN,(P##params),IP2_FX(COMPILE_LANGUAGE_FN_I, (,PP2_SEQ_SPLIT_HEAD P##body))</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/github/workspace/include/pp2/language/expressions/fn.h" line="16" column="9" bodyfile="/github/workspace/include/pp2/language/expressions/fn.h" bodystart="16" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="expressions_2fn_8h_1aa654cc759683d2291f68d73c9f87b52d" prot="public" static="no">
+        <name>IP2_COMPILE_LANGUAGE_FN_I</name>
+        <param><defname>P</defname></param>
+        <param><defname>body</defname></param>
+        <param><defname>rhs_stx</defname></param>
+        <initializer>P##body,PP2_COMPILE_LANGUAGE_RETURN(P##rhs_stx)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/github/workspace/include/pp2/language/expressions/fn.h" line="17" column="9" bodyfile="/github/workspace/include/pp2/language/expressions/fn.h" bodystart="17" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="expressions_2fn_8h_1a90c151a878e0a023237c3654958daa2b" prot="public" static="no">
+        <name>PP2_INSN_8PP2_LANGUAGE_FN</name>
+        <param><defname>P</defname></param>
+        <param><defname>r0</defname></param>
+        <param><defname>r1</defname></param>
+        <param><defname>r2</defname></param>
+        <param><defname>params</defname></param>
+        <param><defname>body</defname></param>
+        <param><defname>...</defname></param>
+        <initializer>                                 (, \
+                                  /*r0=*/(,Fn,(,IP2_LANGUAGE_FN_PARSE_PARAMS P##params,8PP2_LANGUAGE_BLOCK,P##body)), \
+                                  P##r1,P##r2, \
+                                  P##__VA_ARGS__ \
+                                 )</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/github/workspace/include/pp2/language/expressions/fn.h" line="19" column="9" bodyfile="/github/workspace/include/pp2/language/expressions/fn.h" bodystart="19" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="expressions_2fn_8h_1a21aae54fbc3c909b4c8eeef18e3c4727" prot="public" static="no">
+        <name>PP2_INSN_8PP2_LANGUAGE_FN_PARSE_PARAMS</name>
+        <param><defname>P</defname></param>
+        <param><defname>r0</defname></param>
+        <param><defname>r1</defname></param>
+        <param><defname>r2</defname></param>
+        <param><defname>params</defname></param>
+        <param><defname>...</defname></param>
+        <initializer>(,P##r0,P##r1,P##r2,IP2_LANGUAGE_FN_PARSE_PARAMS P##params,P##__VA_ARGS__)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/github/workspace/include/pp2/language/expressions/fn.h" line="26" column="9" bodyfile="/github/workspace/include/pp2/language/expressions/fn.h" bodystart="26" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="expressions_2fn_8h_1a282e85f911192718d36a5e74c5db8b6d" prot="public" static="no">
+        <name>IP2_LANGUAGE_FN_PARSE_PARAMS</name>
+        <param><defname>...</defname></param>
+        <initializer>        IP2_LANGUAGE_FN_PARSE_PARAMS_OVERLOAD( \
+            __VA_ARGS__, \
+            PP2_COMMA_8, \
+            PP2_COMMA_7, \
+            PP2_COMMA_6, \
+            PP2_COMMA_5, \
+            PP2_COMMA_4, \
+            PP2_COMMA_3, \
+            PP2_COMMA_2, \
+            PP2_COMMA_1, \
+        )(,__VA_ARGS__)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/github/workspace/include/pp2/language/expressions/fn.h" line="27" column="9" bodyfile="/github/workspace/include/pp2/language/expressions/fn.h" bodystart="27" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="expressions_2fn_8h_1a07aeba27f4c9c49c6d7ca18e435042c6" prot="public" static="no">
+        <name>IP2_LANGUAGE_FN_PARSE_PARAMS_OVERLOAD</name>
+        <param><defname>x0</defname></param>
+        <param><defname>x1</defname></param>
+        <param><defname>x2</defname></param>
+        <param><defname>x3</defname></param>
+        <param><defname>x4</defname></param>
+        <param><defname>x5</defname></param>
+        <param><defname>x6</defname></param>
+        <param><defname>x7</defname></param>
+        <param><defname>m</defname></param>
+        <param><defname>...</defname></param>
+        <initializer>PP2_TUPLE_AT_1(IP2_LANGUAGE_FN_PARSE_PARAMS_,m,9_OR_MORE)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/github/workspace/include/pp2/language/expressions/fn.h" line="39" column="9" bodyfile="/github/workspace/include/pp2/language/expressions/fn.h" bodystart="39" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="expressions_2fn_8h_1a257a3f62bb669911c5e802c2427d7189" prot="public" static="no">
+        <name>IP2_LANGUAGE_FN_PARSE_PARAMS_1</name>
+        <param><defname>P</defname></param>
+        <param><defname>p0</defname></param>
+        <initializer>IP2_FX(LANGUAGE_FN_PARSE_PARAM_TYPES_1,(,PP2_COMPILE_UNSAFE(P##p0())))</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/github/workspace/include/pp2/language/expressions/fn.h" line="41" column="9" bodyfile="/github/workspace/include/pp2/language/expressions/fn.h" bodystart="41" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="expressions_2fn_8h_1a7ddfa41c01b97f7f498bbde6f8fce366" prot="public" static="no">
+        <name>IP2_LANGUAGE_FN_PARSE_PARAMS_2</name>
+        <param><defname>P</defname></param>
+        <param><defname>p0</defname></param>
+        <param><defname>p1</defname></param>
+        <initializer>IP2_FX(LANGUAGE_FN_PARSE_PARAM_TYPES_2,(,PP2_COMPILE_UNSAFE(P##p0()),PP2_COMPILE_UNSAFE(P##p1())))</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/github/workspace/include/pp2/language/expressions/fn.h" line="42" column="9" bodyfile="/github/workspace/include/pp2/language/expressions/fn.h" bodystart="42" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="expressions_2fn_8h_1af682189fb20da9364f169edfefc0bff5" prot="public" static="no">
+        <name>IP2_LANGUAGE_FN_PARSE_PARAMS_3</name>
+        <param><defname>P</defname></param>
+        <param><defname>p0</defname></param>
+        <param><defname>p1</defname></param>
+        <param><defname>p2</defname></param>
+        <initializer>IP2_FX(LANGUAGE_FN_PARSE_PARAM_TYPES_3,(,PP2_COMPILE_UNSAFE(P##p0()),PP2_COMPILE_UNSAFE(P##p1()),PP2_COMPILE_UNSAFE(P##p2())))</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/github/workspace/include/pp2/language/expressions/fn.h" line="43" column="9" bodyfile="/github/workspace/include/pp2/language/expressions/fn.h" bodystart="43" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="expressions_2fn_8h_1a25a2a2c8901bacb215d25fdafc21b13b" prot="public" static="no">
+        <name>IP2_LANGUAGE_FN_PARSE_PARAMS_4</name>
+        <param><defname>P</defname></param>
+        <param><defname>p0</defname></param>
+        <param><defname>p1</defname></param>
+        <param><defname>p2</defname></param>
+        <param><defname>p3</defname></param>
+        <initializer>IP2_FX(LANGUAGE_FN_PARSE_PARAM_TYPES_4,(,PP2_COMPILE_UNSAFE(P##p0()),PP2_COMPILE_UNSAFE(P##p1()),PP2_COMPILE_UNSAFE(P##p2()),PP2_COMPILE_UNSAFE(P##p3())))</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/github/workspace/include/pp2/language/expressions/fn.h" line="44" column="9" bodyfile="/github/workspace/include/pp2/language/expressions/fn.h" bodystart="44" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="expressions_2fn_8h_1a572b89d997d6066a9268c0a6a3311c7f" prot="public" static="no">
+        <name>IP2_LANGUAGE_FN_PARSE_PARAMS_5</name>
+        <param><defname>P</defname></param>
+        <param><defname>p0</defname></param>
+        <param><defname>p1</defname></param>
+        <param><defname>p2</defname></param>
+        <param><defname>p3</defname></param>
+        <param><defname>p4</defname></param>
+        <initializer>IP2_FX(LANGUAGE_FN_PARSE_PARAM_TYPES_5,(,PP2_COMPILE_UNSAFE(P##p0()),PP2_COMPILE_UNSAFE(P##p1()),PP2_COMPILE_UNSAFE(P##p2()),PP2_COMPILE_UNSAFE(P##p3()),PP2_COMPILE_UNSAFE(P##p4())))</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/github/workspace/include/pp2/language/expressions/fn.h" line="45" column="9" bodyfile="/github/workspace/include/pp2/language/expressions/fn.h" bodystart="45" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="expressions_2fn_8h_1a7f173df36b0b0e4917bd8812a5e16b44" prot="public" static="no">
+        <name>IP2_LANGUAGE_FN_PARSE_PARAMS_6</name>
+        <param><defname>P</defname></param>
+        <param><defname>p0</defname></param>
+        <param><defname>p1</defname></param>
+        <param><defname>p2</defname></param>
+        <param><defname>p3</defname></param>
+        <param><defname>p4</defname></param>
+        <param><defname>p5</defname></param>
+        <initializer>IP2_FX(LANGUAGE_FN_PARSE_PARAM_TYPES_6,(,PP2_COMPILE_UNSAFE(P##p0()),PP2_COMPILE_UNSAFE(P##p1()),PP2_COMPILE_UNSAFE(P##p2()),PP2_COMPILE_UNSAFE(P##p3()),PP2_COMPILE_UNSAFE(P##p4()),PP2_COMPILE_UNSAFE(P##p5())))</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/github/workspace/include/pp2/language/expressions/fn.h" line="46" column="9" bodyfile="/github/workspace/include/pp2/language/expressions/fn.h" bodystart="46" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="expressions_2fn_8h_1acfbbe5471073872482823cafd363c8cb" prot="public" static="no">
+        <name>IP2_LANGUAGE_FN_PARSE_PARAMS_7</name>
+        <param><defname>P</defname></param>
+        <param><defname>p0</defname></param>
+        <param><defname>p1</defname></param>
+        <param><defname>p2</defname></param>
+        <param><defname>p3</defname></param>
+        <param><defname>p4</defname></param>
+        <param><defname>p5</defname></param>
+        <param><defname>p6</defname></param>
+        <initializer>IP2_FX(LANGUAGE_FN_PARSE_PARAM_TYPES_7,(,PP2_COMPILE_UNSAFE(P##p0()),PP2_COMPILE_UNSAFE(P##p1()),PP2_COMPILE_UNSAFE(P##p2()),PP2_COMPILE_UNSAFE(P##p3()),PP2_COMPILE_UNSAFE(P##p4()),PP2_COMPILE_UNSAFE(P##p5()),PP2_COMPILE_UNSAFE(P##p6())))</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/github/workspace/include/pp2/language/expressions/fn.h" line="47" column="9" bodyfile="/github/workspace/include/pp2/language/expressions/fn.h" bodystart="47" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="expressions_2fn_8h_1a81002cffc61cc9bde7e7fcb79228793b" prot="public" static="no">
+        <name>IP2_LANGUAGE_FN_PARSE_PARAMS_8</name>
+        <param><defname>P</defname></param>
+        <param><defname>p0</defname></param>
+        <param><defname>p1</defname></param>
+        <param><defname>p2</defname></param>
+        <param><defname>p3</defname></param>
+        <param><defname>p4</defname></param>
+        <param><defname>p5</defname></param>
+        <param><defname>p6</defname></param>
+        <param><defname>p7</defname></param>
+        <initializer>IP2_FX(LANGUAGE_FN_PARSE_PARAM_TYPES_8,(,PP2_COMPILE_UNSAFE(P##p0()),PP2_COMPILE_UNSAFE(P##p1()),PP2_COMPILE_UNSAFE(P##p2()),PP2_COMPILE_UNSAFE(P##p3()),PP2_COMPILE_UNSAFE(P##p4()),PP2_COMPILE_UNSAFE(P##p5()),PP2_COMPILE_UNSAFE(P##p6()),PP2_COMPILE_UNSAFE(P##p7())))</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/github/workspace/include/pp2/language/expressions/fn.h" line="48" column="9" bodyfile="/github/workspace/include/pp2/language/expressions/fn.h" bodystart="48" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="expressions_2fn_8h_1a15be974456c6c806d773b4b8b23bf8f0" prot="public" static="no">
+        <name>IP2_LANGUAGE_FN_PARSE_PARAMS_9_OR_MORE</name>
+        <param><defname>P</defname></param>
+        <param><defname>p0</defname></param>
+        <param><defname>p1</defname></param>
+        <param><defname>p2</defname></param>
+        <param><defname>p3</defname></param>
+        <param><defname>p4</defname></param>
+        <param><defname>p5</defname></param>
+        <param><defname>p6</defname></param>
+        <param><defname>p7</defname></param>
+        <param><defname>...</defname></param>
+        <initializer>IP2_FX(LANGUAGE_FN_PARSE_PARAM_TYPES_8,(,PP2_COMPILE_UNSAFE(P##p0()),PP2_COMPILE_UNSAFE(P##p1()),PP2_COMPILE_UNSAFE(P##p2()),PP2_COMPILE_UNSAFE(P##p3()),PP2_COMPILE_UNSAFE(P##p4()),PP2_COMPILE_UNSAFE(P##p5()),PP2_COMPILE_UNSAFE(P##p6()),PP2_COMPILE_UNSAFE(P##p7()))),8PP2_LANGUAGE_FN_PARSE_PARAMS,(P##__VA_ARGS__)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/github/workspace/include/pp2/language/expressions/fn.h" line="49" column="9" bodyfile="/github/workspace/include/pp2/language/expressions/fn.h" bodystart="49" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="expressions_2fn_8h_1a3335560f0c5b3062aa0ce95c10bcbade" prot="public" static="no">
+        <name>IP2_LANGUAGE_FN_PARSE_PARAM_TYPES_1</name>
+        <param><defname>P</defname></param>
+        <param><defname>i0</defname></param>
+        <param><defname>a0</defname></param>
+        <param><defname>x0</defname></param>
+        <initializer>8PP2_LANGUAGE_FN_CALL_POP_ARG,8PP2_STACK_STORE,P##a0</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/github/workspace/include/pp2/language/expressions/fn.h" line="51" column="9" bodyfile="/github/workspace/include/pp2/language/expressions/fn.h" bodystart="51" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="expressions_2fn_8h_1ab5fe3dcbeae71c30912cc8d6cf9ed5f8" prot="public" static="no">
+        <name>IP2_LANGUAGE_FN_PARSE_PARAM_TYPES_2</name>
+        <param><defname>P</defname></param>
+        <param><defname>i0</defname></param>
+        <param><defname>a0</defname></param>
+        <param><defname>x0</defname></param>
+        <param><defname>i1</defname></param>
+        <param><defname>a1</defname></param>
+        <param><defname>x1</defname></param>
+        <initializer>8PP2_LANGUAGE_FN_CALL_POP_ARG,8PP2_STACK_STORE,P##a0,8PP2_LANGUAGE_FN_CALL_POP_ARG,8PP2_STACK_STORE,P##a1</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/github/workspace/include/pp2/language/expressions/fn.h" line="52" column="9" bodyfile="/github/workspace/include/pp2/language/expressions/fn.h" bodystart="52" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="expressions_2fn_8h_1acfc98e2386f707628484fbc96358333e" prot="public" static="no">
+        <name>IP2_LANGUAGE_FN_PARSE_PARAM_TYPES_3</name>
+        <param><defname>P</defname></param>
+        <param><defname>i0</defname></param>
+        <param><defname>a0</defname></param>
+        <param><defname>x0</defname></param>
+        <param><defname>i1</defname></param>
+        <param><defname>a1</defname></param>
+        <param><defname>x1</defname></param>
+        <param><defname>i2</defname></param>
+        <param><defname>a2</defname></param>
+        <param><defname>x2</defname></param>
+        <initializer>8PP2_LANGUAGE_FN_CALL_POP_ARG,8PP2_STACK_STORE,P##a0,8PP2_LANGUAGE_FN_CALL_POP_ARG,8PP2_STACK_STORE,P##a1,8PP2_LANGUAGE_FN_CALL_POP_ARG,8PP2_STACK_STORE,P##a2</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/github/workspace/include/pp2/language/expressions/fn.h" line="53" column="9" bodyfile="/github/workspace/include/pp2/language/expressions/fn.h" bodystart="53" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="expressions_2fn_8h_1a99e865c9c75f78067e730cea3d425b94" prot="public" static="no">
+        <name>IP2_LANGUAGE_FN_PARSE_PARAM_TYPES_4</name>
+        <param><defname>P</defname></param>
+        <param><defname>i0</defname></param>
+        <param><defname>a0</defname></param>
+        <param><defname>x0</defname></param>
+        <param><defname>i1</defname></param>
+        <param><defname>a1</defname></param>
+        <param><defname>x1</defname></param>
+        <param><defname>i2</defname></param>
+        <param><defname>a2</defname></param>
+        <param><defname>x2</defname></param>
+        <param><defname>i3</defname></param>
+        <param><defname>a3</defname></param>
+        <param><defname>x3</defname></param>
+        <initializer>8PP2_LANGUAGE_FN_CALL_POP_ARG,8PP2_STACK_STORE,P##a0,8PP2_LANGUAGE_FN_CALL_POP_ARG,8PP2_STACK_STORE,P##a1,8PP2_LANGUAGE_FN_CALL_POP_ARG,8PP2_STACK_STORE,P##a2,8PP2_LANGUAGE_FN_CALL_POP_ARG,8PP2_STACK_STORE,P##a3</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/github/workspace/include/pp2/language/expressions/fn.h" line="54" column="9" bodyfile="/github/workspace/include/pp2/language/expressions/fn.h" bodystart="54" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="expressions_2fn_8h_1a0c61d9fd5b6755d6b31828d4068e3082" prot="public" static="no">
+        <name>IP2_LANGUAGE_FN_PARSE_PARAM_TYPES_5</name>
+        <param><defname>P</defname></param>
+        <param><defname>i0</defname></param>
+        <param><defname>a0</defname></param>
+        <param><defname>x0</defname></param>
+        <param><defname>i1</defname></param>
+        <param><defname>a1</defname></param>
+        <param><defname>x1</defname></param>
+        <param><defname>i2</defname></param>
+        <param><defname>a2</defname></param>
+        <param><defname>x2</defname></param>
+        <param><defname>i3</defname></param>
+        <param><defname>a3</defname></param>
+        <param><defname>x3</defname></param>
+        <param><defname>i4</defname></param>
+        <param><defname>a4</defname></param>
+        <param><defname>x4</defname></param>
+        <initializer>8PP2_LANGUAGE_FN_CALL_POP_ARG,8PP2_STACK_STORE,P##a0,8PP2_LANGUAGE_FN_CALL_POP_ARG,8PP2_STACK_STORE,P##a1,8PP2_LANGUAGE_FN_CALL_POP_ARG,8PP2_STACK_STORE,P##a2,8PP2_LANGUAGE_FN_CALL_POP_ARG,8PP2_STACK_STORE,P##a3,8PP2_LANGUAGE_FN_CALL_POP_ARG,8PP2_STACK_STORE,P##a4</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/github/workspace/include/pp2/language/expressions/fn.h" line="55" column="9" bodyfile="/github/workspace/include/pp2/language/expressions/fn.h" bodystart="55" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="expressions_2fn_8h_1a61ba12f95f7926192c9786cda2d6bf78" prot="public" static="no">
+        <name>IP2_LANGUAGE_FN_PARSE_PARAM_TYPES_6</name>
+        <param><defname>P</defname></param>
+        <param><defname>i0</defname></param>
+        <param><defname>a0</defname></param>
+        <param><defname>x0</defname></param>
+        <param><defname>i1</defname></param>
+        <param><defname>a1</defname></param>
+        <param><defname>x1</defname></param>
+        <param><defname>i2</defname></param>
+        <param><defname>a2</defname></param>
+        <param><defname>x2</defname></param>
+        <param><defname>i3</defname></param>
+        <param><defname>a3</defname></param>
+        <param><defname>x3</defname></param>
+        <param><defname>i4</defname></param>
+        <param><defname>a4</defname></param>
+        <param><defname>x4</defname></param>
+        <param><defname>i5</defname></param>
+        <param><defname>a5</defname></param>
+        <param><defname>x5</defname></param>
+        <initializer>8PP2_LANGUAGE_FN_CALL_POP_ARG,8PP2_STACK_STORE,P##a0,8PP2_LANGUAGE_FN_CALL_POP_ARG,8PP2_STACK_STORE,P##a1,8PP2_LANGUAGE_FN_CALL_POP_ARG,8PP2_STACK_STORE,P##a2,8PP2_LANGUAGE_FN_CALL_POP_ARG,8PP2_STACK_STORE,P##a3,8PP2_LANGUAGE_FN_CALL_POP_ARG,8PP2_STACK_STORE,P##a4,8PP2_LANGUAGE_FN_CALL_POP_ARG,8PP2_STACK_STORE,P##a5</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/github/workspace/include/pp2/language/expressions/fn.h" line="56" column="9" bodyfile="/github/workspace/include/pp2/language/expressions/fn.h" bodystart="56" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="expressions_2fn_8h_1a29c0ad5514122a8f7421449991dd0c09" prot="public" static="no">
+        <name>IP2_LANGUAGE_FN_PARSE_PARAM_TYPES_7</name>
+        <param><defname>P</defname></param>
+        <param><defname>i0</defname></param>
+        <param><defname>a0</defname></param>
+        <param><defname>x0</defname></param>
+        <param><defname>i1</defname></param>
+        <param><defname>a1</defname></param>
+        <param><defname>x1</defname></param>
+        <param><defname>i2</defname></param>
+        <param><defname>a2</defname></param>
+        <param><defname>x2</defname></param>
+        <param><defname>i3</defname></param>
+        <param><defname>a3</defname></param>
+        <param><defname>x3</defname></param>
+        <param><defname>i4</defname></param>
+        <param><defname>a4</defname></param>
+        <param><defname>x4</defname></param>
+        <param><defname>i5</defname></param>
+        <param><defname>a5</defname></param>
+        <param><defname>x5</defname></param>
+        <param><defname>i6</defname></param>
+        <param><defname>a6</defname></param>
+        <param><defname>x6</defname></param>
+        <initializer>8PP2_LANGUAGE_FN_CALL_POP_ARG,8PP2_STACK_STORE,P##a0,8PP2_LANGUAGE_FN_CALL_POP_ARG,8PP2_STACK_STORE,P##a1,8PP2_LANGUAGE_FN_CALL_POP_ARG,8PP2_STACK_STORE,P##a2,8PP2_LANGUAGE_FN_CALL_POP_ARG,8PP2_STACK_STORE,P##a3,8PP2_LANGUAGE_FN_CALL_POP_ARG,8PP2_STACK_STORE,P##a4,8PP2_LANGUAGE_FN_CALL_POP_ARG,8PP2_STACK_STORE,P##a5,8PP2_LANGUAGE_FN_CALL_POP_ARG,8PP2_STACK_STORE,P##a6</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/github/workspace/include/pp2/language/expressions/fn.h" line="57" column="9" bodyfile="/github/workspace/include/pp2/language/expressions/fn.h" bodystart="57" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="expressions_2fn_8h_1a58b24d536bee3abe6ec8f2ad47cc338b" prot="public" static="no">
+        <name>IP2_LANGUAGE_FN_PARSE_PARAM_TYPES_8</name>
+        <param><defname>P</defname></param>
+        <param><defname>i0</defname></param>
+        <param><defname>a0</defname></param>
+        <param><defname>x0</defname></param>
+        <param><defname>i1</defname></param>
+        <param><defname>a1</defname></param>
+        <param><defname>x1</defname></param>
+        <param><defname>i2</defname></param>
+        <param><defname>a2</defname></param>
+        <param><defname>x2</defname></param>
+        <param><defname>i3</defname></param>
+        <param><defname>a3</defname></param>
+        <param><defname>x3</defname></param>
+        <param><defname>i4</defname></param>
+        <param><defname>a4</defname></param>
+        <param><defname>x4</defname></param>
+        <param><defname>i5</defname></param>
+        <param><defname>a5</defname></param>
+        <param><defname>x5</defname></param>
+        <param><defname>i6</defname></param>
+        <param><defname>a6</defname></param>
+        <param><defname>x6</defname></param>
+        <param><defname>i7</defname></param>
+        <param><defname>a7</defname></param>
+        <param><defname>x7</defname></param>
+        <initializer>8PP2_LANGUAGE_FN_CALL_POP_ARG,8PP2_STACK_STORE,P##a0,8PP2_LANGUAGE_FN_CALL_POP_ARG,8PP2_STACK_STORE,P##a1,8PP2_LANGUAGE_FN_CALL_POP_ARG,8PP2_STACK_STORE,P##a2,8PP2_LANGUAGE_FN_CALL_POP_ARG,8PP2_STACK_STORE,P##a3,8PP2_LANGUAGE_FN_CALL_POP_ARG,8PP2_STACK_STORE,P##a4,8PP2_LANGUAGE_FN_CALL_POP_ARG,8PP2_STACK_STORE,P##a5,8PP2_LANGUAGE_FN_CALL_POP_ARG,8PP2_STACK_STORE,P##a6,8PP2_LANGUAGE_FN_CALL_POP_ARG,8PP2_STACK_STORE,P##a7</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/github/workspace/include/pp2/language/expressions/fn.h" line="58" column="9" bodyfile="/github/workspace/include/pp2/language/expressions/fn.h" bodystart="58" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="preprocessor">#ifndef<sp/>PP2_LANGUAGE_EXPRESSIONS_FN_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>PP2_LANGUAGE_EXPRESSIONS_FN_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;pp2/language/compiler.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="5"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="types_2fn_8h" kindref="compound">pp2/language/types/fn.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="return_8h" kindref="compound">pp2/language/basic/return.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="block_8h" kindref="compound">pp2/language/basic/block.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="8"><highlight class="normal"></highlight></codeline>
+<codeline lineno="9"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="store_8h" kindref="compound">pp2/machine/stack/store.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight></codeline>
+<codeline lineno="11"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="at_8h" kindref="compound">pp2/primitive/tuple/at.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="12"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;pp2/primitive/seq/head.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="13"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="invoke_8h" kindref="compound">pp2/primitive/basic/invoke.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="14"><highlight class="normal"></highlight></codeline>
+<codeline lineno="15"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>PP2_DEF_fn(params)<sp/>)PP2_COMPILE_LANGUAGE_FN(,params,</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="16"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>PP2_COMPILE_LANGUAGE_FN(P,params,body)<sp/>8PP2_LANGUAGE_FN,(P##params),IP2_FX(COMPILE_LANGUAGE_FN_I,<sp/>(,PP2_SEQ_SPLIT_HEAD<sp/>P##body))</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="17"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>IP2_COMPILE_LANGUAGE_FN_I(P,body,rhs_stx)<sp/>P##body,PP2_COMPILE_LANGUAGE_RETURN(P##rhs_stx)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="18"><highlight class="normal"></highlight></codeline>
+<codeline lineno="19"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>PP2_INSN_8PP2_LANGUAGE_FN(P,r0,r1,r2,params,body,...)<sp/>\</highlight></codeline>
+<codeline lineno="20"><highlight class="preprocessor"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>(,<sp/>\</highlight></codeline>
+<codeline lineno="21"><highlight class="preprocessor"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*r0=*/</highlight><highlight class="preprocessor">(,Fn,(,IP2_LANGUAGE_FN_PARSE_PARAMS<sp/>P##params,8PP2_LANGUAGE_BLOCK,P##body)),<sp/>\</highlight></codeline>
+<codeline lineno="22"><highlight class="preprocessor"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>P##r1,P##r2,<sp/>\</highlight></codeline>
+<codeline lineno="23"><highlight class="preprocessor"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>P##__VA_ARGS__<sp/>\</highlight></codeline>
+<codeline lineno="24"><highlight class="preprocessor"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="25"><highlight class="normal"></highlight></codeline>
+<codeline lineno="26"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>PP2_INSN_8PP2_LANGUAGE_FN_PARSE_PARAMS(P,r0,r1,r2,params,...)<sp/>(,P##r0,P##r1,P##r2,IP2_LANGUAGE_FN_PARSE_PARAMS<sp/>P##params,P##__VA_ARGS__)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="27"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>IP2_LANGUAGE_FN_PARSE_PARAMS(...)<sp/>\</highlight></codeline>
+<codeline lineno="28"><highlight class="preprocessor"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>IP2_LANGUAGE_FN_PARSE_PARAMS_OVERLOAD(<sp/>\</highlight></codeline>
+<codeline lineno="29"><highlight class="preprocessor"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>__VA_ARGS__,<sp/>\</highlight></codeline>
+<codeline lineno="30"><highlight class="preprocessor"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>PP2_COMMA_8,<sp/>\</highlight></codeline>
+<codeline lineno="31"><highlight class="preprocessor"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>PP2_COMMA_7,<sp/>\</highlight></codeline>
+<codeline lineno="32"><highlight class="preprocessor"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>PP2_COMMA_6,<sp/>\</highlight></codeline>
+<codeline lineno="33"><highlight class="preprocessor"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>PP2_COMMA_5,<sp/>\</highlight></codeline>
+<codeline lineno="34"><highlight class="preprocessor"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>PP2_COMMA_4,<sp/>\</highlight></codeline>
+<codeline lineno="35"><highlight class="preprocessor"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>PP2_COMMA_3,<sp/>\</highlight></codeline>
+<codeline lineno="36"><highlight class="preprocessor"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>PP2_COMMA_2,<sp/>\</highlight></codeline>
+<codeline lineno="37"><highlight class="preprocessor"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>PP2_COMMA_1,<sp/>\</highlight></codeline>
+<codeline lineno="38"><highlight class="preprocessor"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>)(,__VA_ARGS__)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="39"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>IP2_LANGUAGE_FN_PARSE_PARAMS_OVERLOAD(x0,x1,x2,x3,x4,x5,x6,x7,m,...)<sp/>PP2_TUPLE_AT_1(IP2_LANGUAGE_FN_PARSE_PARAMS_,m,9_OR_MORE)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="40"><highlight class="normal"></highlight></codeline>
+<codeline lineno="41"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>IP2_LANGUAGE_FN_PARSE_PARAMS_1(P,p0)<sp/>IP2_FX(LANGUAGE_FN_PARSE_PARAM_TYPES_1,(,PP2_COMPILE_UNSAFE(P##p0())))</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="42"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>IP2_LANGUAGE_FN_PARSE_PARAMS_2(P,p0,p1)<sp/>IP2_FX(LANGUAGE_FN_PARSE_PARAM_TYPES_2,(,PP2_COMPILE_UNSAFE(P##p0()),PP2_COMPILE_UNSAFE(P##p1())))</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="43"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>IP2_LANGUAGE_FN_PARSE_PARAMS_3(P,p0,p1,p2)<sp/>IP2_FX(LANGUAGE_FN_PARSE_PARAM_TYPES_3,(,PP2_COMPILE_UNSAFE(P##p0()),PP2_COMPILE_UNSAFE(P##p1()),PP2_COMPILE_UNSAFE(P##p2())))</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="44"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>IP2_LANGUAGE_FN_PARSE_PARAMS_4(P,p0,p1,p2,p3)<sp/>IP2_FX(LANGUAGE_FN_PARSE_PARAM_TYPES_4,(,PP2_COMPILE_UNSAFE(P##p0()),PP2_COMPILE_UNSAFE(P##p1()),PP2_COMPILE_UNSAFE(P##p2()),PP2_COMPILE_UNSAFE(P##p3())))</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="45"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>IP2_LANGUAGE_FN_PARSE_PARAMS_5(P,p0,p1,p2,p3,p4)<sp/>IP2_FX(LANGUAGE_FN_PARSE_PARAM_TYPES_5,(,PP2_COMPILE_UNSAFE(P##p0()),PP2_COMPILE_UNSAFE(P##p1()),PP2_COMPILE_UNSAFE(P##p2()),PP2_COMPILE_UNSAFE(P##p3()),PP2_COMPILE_UNSAFE(P##p4())))</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="46"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>IP2_LANGUAGE_FN_PARSE_PARAMS_6(P,p0,p1,p2,p3,p4,p5)<sp/>IP2_FX(LANGUAGE_FN_PARSE_PARAM_TYPES_6,(,PP2_COMPILE_UNSAFE(P##p0()),PP2_COMPILE_UNSAFE(P##p1()),PP2_COMPILE_UNSAFE(P##p2()),PP2_COMPILE_UNSAFE(P##p3()),PP2_COMPILE_UNSAFE(P##p4()),PP2_COMPILE_UNSAFE(P##p5())))</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="47"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>IP2_LANGUAGE_FN_PARSE_PARAMS_7(P,p0,p1,p2,p3,p4,p5,p6)<sp/>IP2_FX(LANGUAGE_FN_PARSE_PARAM_TYPES_7,(,PP2_COMPILE_UNSAFE(P##p0()),PP2_COMPILE_UNSAFE(P##p1()),PP2_COMPILE_UNSAFE(P##p2()),PP2_COMPILE_UNSAFE(P##p3()),PP2_COMPILE_UNSAFE(P##p4()),PP2_COMPILE_UNSAFE(P##p5()),PP2_COMPILE_UNSAFE(P##p6())))</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="48"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>IP2_LANGUAGE_FN_PARSE_PARAMS_8(P,p0,p1,p2,p3,p4,p5,p6,p7)<sp/>IP2_FX(LANGUAGE_FN_PARSE_PARAM_TYPES_8,(,PP2_COMPILE_UNSAFE(P##p0()),PP2_COMPILE_UNSAFE(P##p1()),PP2_COMPILE_UNSAFE(P##p2()),PP2_COMPILE_UNSAFE(P##p3()),PP2_COMPILE_UNSAFE(P##p4()),PP2_COMPILE_UNSAFE(P##p5()),PP2_COMPILE_UNSAFE(P##p6()),PP2_COMPILE_UNSAFE(P##p7())))</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="49"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>IP2_LANGUAGE_FN_PARSE_PARAMS_9_OR_MORE(P,p0,p1,p2,p3,p4,p5,p6,p7,...)<sp/>IP2_FX(LANGUAGE_FN_PARSE_PARAM_TYPES_8,(,PP2_COMPILE_UNSAFE(P##p0()),PP2_COMPILE_UNSAFE(P##p1()),PP2_COMPILE_UNSAFE(P##p2()),PP2_COMPILE_UNSAFE(P##p3()),PP2_COMPILE_UNSAFE(P##p4()),PP2_COMPILE_UNSAFE(P##p5()),PP2_COMPILE_UNSAFE(P##p6()),PP2_COMPILE_UNSAFE(P##p7()))),8PP2_LANGUAGE_FN_PARSE_PARAMS,(P##__VA_ARGS__)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="50"><highlight class="normal"></highlight></codeline>
+<codeline lineno="51"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>IP2_LANGUAGE_FN_PARSE_PARAM_TYPES_1(P,i0,a0,x0)<sp/>8PP2_LANGUAGE_FN_CALL_POP_ARG,8PP2_STACK_STORE,P##a0</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="52"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>IP2_LANGUAGE_FN_PARSE_PARAM_TYPES_2(P,i0,a0,x0,i1,a1,x1)<sp/>8PP2_LANGUAGE_FN_CALL_POP_ARG,8PP2_STACK_STORE,P##a0,8PP2_LANGUAGE_FN_CALL_POP_ARG,8PP2_STACK_STORE,P##a1</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="53"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>IP2_LANGUAGE_FN_PARSE_PARAM_TYPES_3(P,i0,a0,x0,i1,a1,x1,i2,a2,x2)<sp/>8PP2_LANGUAGE_FN_CALL_POP_ARG,8PP2_STACK_STORE,P##a0,8PP2_LANGUAGE_FN_CALL_POP_ARG,8PP2_STACK_STORE,P##a1,8PP2_LANGUAGE_FN_CALL_POP_ARG,8PP2_STACK_STORE,P##a2</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="54"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>IP2_LANGUAGE_FN_PARSE_PARAM_TYPES_4(P,i0,a0,x0,i1,a1,x1,i2,a2,x2,i3,a3,x3)<sp/>8PP2_LANGUAGE_FN_CALL_POP_ARG,8PP2_STACK_STORE,P##a0,8PP2_LANGUAGE_FN_CALL_POP_ARG,8PP2_STACK_STORE,P##a1,8PP2_LANGUAGE_FN_CALL_POP_ARG,8PP2_STACK_STORE,P##a2,8PP2_LANGUAGE_FN_CALL_POP_ARG,8PP2_STACK_STORE,P##a3</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="55"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>IP2_LANGUAGE_FN_PARSE_PARAM_TYPES_5(P,i0,a0,x0,i1,a1,x1,i2,a2,x2,i3,a3,x3,i4,a4,x4)<sp/>8PP2_LANGUAGE_FN_CALL_POP_ARG,8PP2_STACK_STORE,P##a0,8PP2_LANGUAGE_FN_CALL_POP_ARG,8PP2_STACK_STORE,P##a1,8PP2_LANGUAGE_FN_CALL_POP_ARG,8PP2_STACK_STORE,P##a2,8PP2_LANGUAGE_FN_CALL_POP_ARG,8PP2_STACK_STORE,P##a3,8PP2_LANGUAGE_FN_CALL_POP_ARG,8PP2_STACK_STORE,P##a4</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="56"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>IP2_LANGUAGE_FN_PARSE_PARAM_TYPES_6(P,i0,a0,x0,i1,a1,x1,i2,a2,x2,i3,a3,x3,i4,a4,x4,i5,a5,x5)<sp/>8PP2_LANGUAGE_FN_CALL_POP_ARG,8PP2_STACK_STORE,P##a0,8PP2_LANGUAGE_FN_CALL_POP_ARG,8PP2_STACK_STORE,P##a1,8PP2_LANGUAGE_FN_CALL_POP_ARG,8PP2_STACK_STORE,P##a2,8PP2_LANGUAGE_FN_CALL_POP_ARG,8PP2_STACK_STORE,P##a3,8PP2_LANGUAGE_FN_CALL_POP_ARG,8PP2_STACK_STORE,P##a4,8PP2_LANGUAGE_FN_CALL_POP_ARG,8PP2_STACK_STORE,P##a5</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="57"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>IP2_LANGUAGE_FN_PARSE_PARAM_TYPES_7(P,i0,a0,x0,i1,a1,x1,i2,a2,x2,i3,a3,x3,i4,a4,x4,i5,a5,x5,i6,a6,x6)<sp/>8PP2_LANGUAGE_FN_CALL_POP_ARG,8PP2_STACK_STORE,P##a0,8PP2_LANGUAGE_FN_CALL_POP_ARG,8PP2_STACK_STORE,P##a1,8PP2_LANGUAGE_FN_CALL_POP_ARG,8PP2_STACK_STORE,P##a2,8PP2_LANGUAGE_FN_CALL_POP_ARG,8PP2_STACK_STORE,P##a3,8PP2_LANGUAGE_FN_CALL_POP_ARG,8PP2_STACK_STORE,P##a4,8PP2_LANGUAGE_FN_CALL_POP_ARG,8PP2_STACK_STORE,P##a5,8PP2_LANGUAGE_FN_CALL_POP_ARG,8PP2_STACK_STORE,P##a6</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="58"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>IP2_LANGUAGE_FN_PARSE_PARAM_TYPES_8(P,i0,a0,x0,i1,a1,x1,i2,a2,x2,i3,a3,x3,i4,a4,x4,i5,a5,x5,i6,a6,x6,i7,a7,x7)<sp/>8PP2_LANGUAGE_FN_CALL_POP_ARG,8PP2_STACK_STORE,P##a0,8PP2_LANGUAGE_FN_CALL_POP_ARG,8PP2_STACK_STORE,P##a1,8PP2_LANGUAGE_FN_CALL_POP_ARG,8PP2_STACK_STORE,P##a2,8PP2_LANGUAGE_FN_CALL_POP_ARG,8PP2_STACK_STORE,P##a3,8PP2_LANGUAGE_FN_CALL_POP_ARG,8PP2_STACK_STORE,P##a4,8PP2_LANGUAGE_FN_CALL_POP_ARG,8PP2_STACK_STORE,P##a5,8PP2_LANGUAGE_FN_CALL_POP_ARG,8PP2_STACK_STORE,P##a6,8PP2_LANGUAGE_FN_CALL_POP_ARG,8PP2_STACK_STORE,P##a7</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="59"><highlight class="normal"></highlight></codeline>
+<codeline lineno="60"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight></codeline>
+    </programlisting>
+    <location file="/github/workspace/include/pp2/language/expressions/fn.h"/>
+  </compounddef>
+</doxygen>

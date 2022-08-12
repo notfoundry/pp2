@@ -1,0 +1,79 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.2" xml:lang="en-US">
+  <compounddef id="emit_8h" kind="file" language="C++">
+    <compoundname>emit.h</compoundname>
+    <includedby refid="print_8h" local="yes">/github/workspace/include/pp2/language/io/print.h</includedby>
+    <includedby refid="put_8h" local="yes">/github/workspace/include/pp2/language/io/put.h</includedby>
+    <includedby refid="machine_8h" local="yes">/github/workspace/include/pp2/machine.h</includedby>
+    <invincdepgraph>
+      <node id="3">
+        <label>/github/workspace/include/pp2/language.h</label>
+        <link refid="language_8h_source"/>
+        <childnode refid="4" relation="include">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>/github/workspace/include/pp2/language/io/print.h</label>
+        <link refid="print_8h"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+      </node>
+      <node id="5">
+        <label>/github/workspace/include/pp2/language/io/put.h</label>
+        <link refid="put_8h_source"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+      </node>
+      <node id="6">
+        <label>/github/workspace/include/pp2/machine.h</label>
+        <link refid="machine_8h_source"/>
+      </node>
+      <node id="1">
+        <label>/github/workspace/include/pp2/machine/insns/emit.h</label>
+        <link refid="emit_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+      </node>
+      <node id="4">
+        <label>/github/workspace/include/pp2/pp2.h</label>
+        <link refid="pp2_8h"/>
+      </node>
+    </invincdepgraph>
+      <sectiondef kind="define">
+      <memberdef kind="define" id="emit_8h_1af5bd0e518cc66ecea35fb06c1ed2428f" prot="public" static="no">
+        <name>PP2_INSN_8PP2_EMIT_LITERAL</name>
+        <param><defname>P</defname></param>
+        <param><defname>r0</defname></param>
+        <param><defname>r1</defname></param>
+        <param><defname>r2</defname></param>
+        <param><defname>...</defname></param>
+        <initializer>(,/*r0=*/,/*r1=*/P##r1,/*r2=*/P##r2,P##__VA_ARGS__)(,8LITERAL,P##r0)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/github/workspace/include/pp2/machine/insns/emit.h" line="5" column="9" bodyfile="/github/workspace/include/pp2/machine/insns/emit.h" bodystart="5" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight><highlight class="preprocessor">#ifndef<sp/>PP2_MACHINE_INSNS_EMIT_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>PP2_MACHINE_INSNS_EMIT_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight></codeline>
+<codeline lineno="5"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>PP2_INSN_8PP2_EMIT_LITERAL(P,r0,r1,r2,...)<sp/>(,</highlight><highlight class="comment">/*r0=*/</highlight><highlight class="preprocessor">,</highlight><highlight class="comment">/*r1=*/</highlight><highlight class="preprocessor">P##r1,</highlight><highlight class="comment">/*r2=*/</highlight><highlight class="preprocessor">P##r2,P##__VA_ARGS__)(,8LITERAL,P##r0)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight></codeline>
+    </programlisting>
+    <location file="/github/workspace/include/pp2/machine/insns/emit.h"/>
+  </compounddef>
+</doxygen>

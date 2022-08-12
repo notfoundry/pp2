@@ -1,0 +1,528 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.2" xml:lang="en-US">
+  <compounddef id="prepend__last_8h" kind="file" language="C++">
+    <compoundname>prepend_last.h</compoundname>
+    <includes refid="at_8h" local="yes">pp2/primitive/tuple/at.h</includes>
+    <includes refid="comma_8h" local="yes">pp2/primitive/punctuation/comma.h</includes>
+    <includedby refid="primitive_8h" local="yes">/github/workspace/include/pp2/primitive.h</includedby>
+    <incdepgraph>
+      <node id="3">
+        <label>pp2/primitive/punctuation/comma.h</label>
+        <link refid="comma_8h"/>
+      </node>
+      <node id="2">
+        <label>pp2/primitive/tuple/at.h</label>
+        <link refid="at_8h"/>
+      </node>
+      <node id="1">
+        <label>/github/workspace/include/pp2/primitive/tuple/prepend_last.h</label>
+        <link refid="prepend__last_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="2">
+        <label>/github/workspace/include/pp2/primitive.h</label>
+        <link refid="primitive_8h_source"/>
+      </node>
+      <node id="1">
+        <label>/github/workspace/include/pp2/primitive/tuple/prepend_last.h</label>
+        <link refid="prepend__last_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+      </node>
+    </invincdepgraph>
+      <sectiondef kind="define">
+      <memberdef kind="define" id="prepend__last_8h_1a38f24eaaafac24c03581ea2358bd9687" prot="public" static="no">
+        <name>PP2_TUPLE_PREPEND_LAST</name>
+        <param><defname>P</defname></param>
+        <param><defname>v</defname></param>
+        <param><defname>...</defname></param>
+        <initializer>        IP2_TUPLE_PREPEND_LAST_OVERLOAD(           \
+            P##__VA_ARGS__,                       \
+            PP2_COMMA_16,   \
+            PP2_COMMA_15,   \
+            PP2_COMMA_14,   \
+            PP2_COMMA_13,   \
+            PP2_COMMA_12,   \
+            PP2_COMMA_11,   \
+            PP2_COMMA_10,   \
+            PP2_COMMA_9,    \
+            PP2_COMMA_8,    \
+            PP2_COMMA_7,    \
+            PP2_COMMA_6,    \
+            PP2_COMMA_5,    \
+            PP2_COMMA_4,    \
+            PP2_COMMA_3,    \
+            PP2_COMMA_2,    \
+            PP2_COMMA_1,    \
+        )(,P##v,P##__VA_ARGS__)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/github/workspace/include/pp2/primitive/tuple/prepend_last.h" line="8" column="9" bodyfile="/github/workspace/include/pp2/primitive/tuple/prepend_last.h" bodystart="8" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="prepend__last_8h_1ad2fdf07c728e7bdf5f6dc9e2d20a79fa" prot="public" static="no">
+        <name>IP2_TUPLE_PREPEND_LAST_OVERLOAD</name>
+        <param><defname>x0</defname></param>
+        <param><defname>x1</defname></param>
+        <param><defname>x2</defname></param>
+        <param><defname>x3</defname></param>
+        <param><defname>x4</defname></param>
+        <param><defname>x5</defname></param>
+        <param><defname>x6</defname></param>
+        <param><defname>x7</defname></param>
+        <param><defname>x8</defname></param>
+        <param><defname>x9</defname></param>
+        <param><defname>x10</defname></param>
+        <param><defname>x11</defname></param>
+        <param><defname>x12</defname></param>
+        <param><defname>x13</defname></param>
+        <param><defname>x14</defname></param>
+        <param><defname>x15</defname></param>
+        <param><defname>m</defname></param>
+        <param><defname>...</defname></param>
+        <initializer>        IP2_TUPLE_PREPEND_LAST_OVERLOAD_I(IP2_TUPLE_PREPEND_LAST_,m,17_OR_MORE)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/github/workspace/include/pp2/primitive/tuple/prepend_last.h" line="28" column="9" bodyfile="/github/workspace/include/pp2/primitive/tuple/prepend_last.h" bodystart="28" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="prepend__last_8h_1af6ae45ce7bea8ae9cd82d393aefdec71" prot="public" static="no">
+        <name>IP2_TUPLE_PREPEND_LAST_OVERLOAD_I</name>
+        <param><defname>P</defname></param>
+        <param><defname>x0</defname></param>
+        <param><defname>x1</defname></param>
+        <param><defname>...</defname></param>
+        <initializer>P##x1</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/github/workspace/include/pp2/primitive/tuple/prepend_last.h" line="30" column="9" bodyfile="/github/workspace/include/pp2/primitive/tuple/prepend_last.h" bodystart="30" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="prepend__last_8h_1ade17466c09c0c3fec298208f54872d21" prot="public" static="no">
+        <name>IP2_TUPLE_PREPEND_LAST_1</name>
+        <param><defname>P</defname></param>
+        <param><defname>v</defname></param>
+        <param><defname>x0</defname></param>
+        <initializer>P##v,P##x0</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/github/workspace/include/pp2/primitive/tuple/prepend_last.h" line="32" column="9" bodyfile="/github/workspace/include/pp2/primitive/tuple/prepend_last.h" bodystart="32" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="prepend__last_8h_1a9f1e0da8b9592f8af9bc4e9634712796" prot="public" static="no">
+        <name>IP2_TUPLE_PREPEND_LAST_2</name>
+        <param><defname>P</defname></param>
+        <param><defname>v</defname></param>
+        <param><defname>x0</defname></param>
+        <param><defname>x1</defname></param>
+        <initializer>P##x0,P##v,P##x1</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/github/workspace/include/pp2/primitive/tuple/prepend_last.h" line="33" column="9" bodyfile="/github/workspace/include/pp2/primitive/tuple/prepend_last.h" bodystart="33" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="prepend__last_8h_1ae0f934a8779548f9af72eccdb0f0f257" prot="public" static="no">
+        <name>IP2_TUPLE_PREPEND_LAST_3</name>
+        <param><defname>P</defname></param>
+        <param><defname>v</defname></param>
+        <param><defname>x0</defname></param>
+        <param><defname>x1</defname></param>
+        <param><defname>x2</defname></param>
+        <initializer>P##x0,P##x1,P##v,P##x2</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/github/workspace/include/pp2/primitive/tuple/prepend_last.h" line="34" column="9" bodyfile="/github/workspace/include/pp2/primitive/tuple/prepend_last.h" bodystart="34" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="prepend__last_8h_1af171b9d77e1e3b83a4f76fa07245aab3" prot="public" static="no">
+        <name>IP2_TUPLE_PREPEND_LAST_4</name>
+        <param><defname>P</defname></param>
+        <param><defname>v</defname></param>
+        <param><defname>x0</defname></param>
+        <param><defname>x1</defname></param>
+        <param><defname>x2</defname></param>
+        <param><defname>x3</defname></param>
+        <initializer>P##x0,P##x1,P##x2,P##v,P##x3</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/github/workspace/include/pp2/primitive/tuple/prepend_last.h" line="35" column="9" bodyfile="/github/workspace/include/pp2/primitive/tuple/prepend_last.h" bodystart="35" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="prepend__last_8h_1a3ff024b96e4ee4bae158e2ac036773af" prot="public" static="no">
+        <name>IP2_TUPLE_PREPEND_LAST_5</name>
+        <param><defname>P</defname></param>
+        <param><defname>v</defname></param>
+        <param><defname>x0</defname></param>
+        <param><defname>x1</defname></param>
+        <param><defname>x2</defname></param>
+        <param><defname>x3</defname></param>
+        <param><defname>x4</defname></param>
+        <initializer>P##x0,P##x1,P##x2,P##x3,P##v,P##x4</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/github/workspace/include/pp2/primitive/tuple/prepend_last.h" line="36" column="9" bodyfile="/github/workspace/include/pp2/primitive/tuple/prepend_last.h" bodystart="36" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="prepend__last_8h_1a68541d67a016fcc75912576f341882fa" prot="public" static="no">
+        <name>IP2_TUPLE_PREPEND_LAST_6</name>
+        <param><defname>P</defname></param>
+        <param><defname>v</defname></param>
+        <param><defname>x0</defname></param>
+        <param><defname>x1</defname></param>
+        <param><defname>x2</defname></param>
+        <param><defname>x3</defname></param>
+        <param><defname>x4</defname></param>
+        <param><defname>x5</defname></param>
+        <initializer>P##x0,P##x1,P##x2,P##x3,P##x4,P##v,P##x5</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/github/workspace/include/pp2/primitive/tuple/prepend_last.h" line="37" column="9" bodyfile="/github/workspace/include/pp2/primitive/tuple/prepend_last.h" bodystart="37" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="prepend__last_8h_1a3e411eddd8b3578e67bc57a791fb864e" prot="public" static="no">
+        <name>IP2_TUPLE_PREPEND_LAST_7</name>
+        <param><defname>P</defname></param>
+        <param><defname>v</defname></param>
+        <param><defname>x0</defname></param>
+        <param><defname>x1</defname></param>
+        <param><defname>x2</defname></param>
+        <param><defname>x3</defname></param>
+        <param><defname>x4</defname></param>
+        <param><defname>x5</defname></param>
+        <param><defname>x6</defname></param>
+        <initializer>P##x0,P##x1,P##x2,P##x3,P##x4,P##x5,P##v,P##x6</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/github/workspace/include/pp2/primitive/tuple/prepend_last.h" line="38" column="9" bodyfile="/github/workspace/include/pp2/primitive/tuple/prepend_last.h" bodystart="38" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="prepend__last_8h_1a9b758dc511839283e5869be649cdebf2" prot="public" static="no">
+        <name>IP2_TUPLE_PREPEND_LAST_8</name>
+        <param><defname>P</defname></param>
+        <param><defname>v</defname></param>
+        <param><defname>x0</defname></param>
+        <param><defname>x1</defname></param>
+        <param><defname>x2</defname></param>
+        <param><defname>x3</defname></param>
+        <param><defname>x4</defname></param>
+        <param><defname>x5</defname></param>
+        <param><defname>x6</defname></param>
+        <param><defname>x7</defname></param>
+        <initializer>P##x0,P##x1,P##x2,P##x3,P##x4,P##x5,P##x6,P##v,P##x7</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/github/workspace/include/pp2/primitive/tuple/prepend_last.h" line="39" column="9" bodyfile="/github/workspace/include/pp2/primitive/tuple/prepend_last.h" bodystart="39" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="prepend__last_8h_1a759fc62fe17b2f0acb232b0f68ac033c" prot="public" static="no">
+        <name>IP2_TUPLE_PREPEND_LAST_9</name>
+        <param><defname>P</defname></param>
+        <param><defname>v</defname></param>
+        <param><defname>x0</defname></param>
+        <param><defname>x1</defname></param>
+        <param><defname>x2</defname></param>
+        <param><defname>x3</defname></param>
+        <param><defname>x4</defname></param>
+        <param><defname>x5</defname></param>
+        <param><defname>x6</defname></param>
+        <param><defname>x7</defname></param>
+        <param><defname>x8</defname></param>
+        <initializer>P##x0,P##x1,P##x2,P##x3,P##x4,P##x5,P##x6,P##x7,P##v,P##x8</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/github/workspace/include/pp2/primitive/tuple/prepend_last.h" line="40" column="9" bodyfile="/github/workspace/include/pp2/primitive/tuple/prepend_last.h" bodystart="40" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="prepend__last_8h_1a896b903a6eafda7c3eb9b0d5c0f01a19" prot="public" static="no">
+        <name>IP2_TUPLE_PREPEND_LAST_10</name>
+        <param><defname>P</defname></param>
+        <param><defname>v</defname></param>
+        <param><defname>x0</defname></param>
+        <param><defname>x1</defname></param>
+        <param><defname>x2</defname></param>
+        <param><defname>x3</defname></param>
+        <param><defname>x4</defname></param>
+        <param><defname>x5</defname></param>
+        <param><defname>x6</defname></param>
+        <param><defname>x7</defname></param>
+        <param><defname>x8</defname></param>
+        <param><defname>x9</defname></param>
+        <initializer>P##x0,P##x1,P##x2,P##x3,P##x4,P##x5,P##x6,P##x7,P##x8,P##v,P##x9</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/github/workspace/include/pp2/primitive/tuple/prepend_last.h" line="41" column="9" bodyfile="/github/workspace/include/pp2/primitive/tuple/prepend_last.h" bodystart="41" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="prepend__last_8h_1a713786ccaea2a9a6238f7b64a73fe29d" prot="public" static="no">
+        <name>IP2_TUPLE_PREPEND_LAST_11</name>
+        <param><defname>P</defname></param>
+        <param><defname>v</defname></param>
+        <param><defname>x0</defname></param>
+        <param><defname>x1</defname></param>
+        <param><defname>x2</defname></param>
+        <param><defname>x3</defname></param>
+        <param><defname>x4</defname></param>
+        <param><defname>x5</defname></param>
+        <param><defname>x6</defname></param>
+        <param><defname>x7</defname></param>
+        <param><defname>x8</defname></param>
+        <param><defname>x9</defname></param>
+        <param><defname>x10</defname></param>
+        <initializer>P##x0,P##x1,P##x2,P##x3,P##x4,P##x5,P##x6,P##x7,P##x8,P##x9,P##v,P##x10</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/github/workspace/include/pp2/primitive/tuple/prepend_last.h" line="42" column="9" bodyfile="/github/workspace/include/pp2/primitive/tuple/prepend_last.h" bodystart="42" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="prepend__last_8h_1a6fc34d75eeb3419be3cb25c488d81cde" prot="public" static="no">
+        <name>IP2_TUPLE_PREPEND_LAST_12</name>
+        <param><defname>P</defname></param>
+        <param><defname>v</defname></param>
+        <param><defname>x0</defname></param>
+        <param><defname>x1</defname></param>
+        <param><defname>x2</defname></param>
+        <param><defname>x3</defname></param>
+        <param><defname>x4</defname></param>
+        <param><defname>x5</defname></param>
+        <param><defname>x6</defname></param>
+        <param><defname>x7</defname></param>
+        <param><defname>x8</defname></param>
+        <param><defname>x9</defname></param>
+        <param><defname>x10</defname></param>
+        <param><defname>x11</defname></param>
+        <initializer>P##x0,P##x1,P##x2,P##x3,P##x4,P##x5,P##x6,P##x7,P##x8,P##x9,P##x10,P##v,P##x11</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/github/workspace/include/pp2/primitive/tuple/prepend_last.h" line="43" column="9" bodyfile="/github/workspace/include/pp2/primitive/tuple/prepend_last.h" bodystart="43" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="prepend__last_8h_1a8f0d7e192e178eb6a98e7a2d16caeaa1" prot="public" static="no">
+        <name>IP2_TUPLE_PREPEND_LAST_13</name>
+        <param><defname>P</defname></param>
+        <param><defname>v</defname></param>
+        <param><defname>x0</defname></param>
+        <param><defname>x1</defname></param>
+        <param><defname>x2</defname></param>
+        <param><defname>x3</defname></param>
+        <param><defname>x4</defname></param>
+        <param><defname>x5</defname></param>
+        <param><defname>x6</defname></param>
+        <param><defname>x7</defname></param>
+        <param><defname>x8</defname></param>
+        <param><defname>x9</defname></param>
+        <param><defname>x10</defname></param>
+        <param><defname>x11</defname></param>
+        <param><defname>x12</defname></param>
+        <initializer>P##x0,P##x1,P##x2,P##x3,P##x4,P##x5,P##x6,P##x7,P##x8,P##x9,P##x10,P##x11,P##v,P##x12</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/github/workspace/include/pp2/primitive/tuple/prepend_last.h" line="44" column="9" bodyfile="/github/workspace/include/pp2/primitive/tuple/prepend_last.h" bodystart="44" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="prepend__last_8h_1a08cdaef69617110c7375e2cc2c954fa2" prot="public" static="no">
+        <name>IP2_TUPLE_PREPEND_LAST_14</name>
+        <param><defname>P</defname></param>
+        <param><defname>v</defname></param>
+        <param><defname>x0</defname></param>
+        <param><defname>x1</defname></param>
+        <param><defname>x2</defname></param>
+        <param><defname>x3</defname></param>
+        <param><defname>x4</defname></param>
+        <param><defname>x5</defname></param>
+        <param><defname>x6</defname></param>
+        <param><defname>x7</defname></param>
+        <param><defname>x8</defname></param>
+        <param><defname>x9</defname></param>
+        <param><defname>x10</defname></param>
+        <param><defname>x11</defname></param>
+        <param><defname>x12</defname></param>
+        <param><defname>x13</defname></param>
+        <initializer>P##x0,P##x1,P##x2,P##x3,P##x4,P##x5,P##x6,P##x7,P##x8,P##x9,P##x10,P##x11,P##x12,P##v,P##x13</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/github/workspace/include/pp2/primitive/tuple/prepend_last.h" line="45" column="9" bodyfile="/github/workspace/include/pp2/primitive/tuple/prepend_last.h" bodystart="45" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="prepend__last_8h_1a13be543c9daa2ee465286e4ab6af7296" prot="public" static="no">
+        <name>IP2_TUPLE_PREPEND_LAST_15</name>
+        <param><defname>P</defname></param>
+        <param><defname>v</defname></param>
+        <param><defname>x0</defname></param>
+        <param><defname>x1</defname></param>
+        <param><defname>x2</defname></param>
+        <param><defname>x3</defname></param>
+        <param><defname>x4</defname></param>
+        <param><defname>x5</defname></param>
+        <param><defname>x6</defname></param>
+        <param><defname>x7</defname></param>
+        <param><defname>x8</defname></param>
+        <param><defname>x9x10</defname></param>
+        <param><defname>x11</defname></param>
+        <param><defname>x12</defname></param>
+        <param><defname>x13</defname></param>
+        <param><defname>x14</defname></param>
+        <initializer>P##x0,P##x1,P##x2,P##x3,P##x4,P##x5,P##x6,P##x7,P##x8,P##x9,P##x10,P##x11,P##x12,P##x13,P##v,P##x14</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/github/workspace/include/pp2/primitive/tuple/prepend_last.h" line="46" column="9" bodyfile="/github/workspace/include/pp2/primitive/tuple/prepend_last.h" bodystart="46" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="prepend__last_8h_1ad3bce747672d106a424834be2cdb8513" prot="public" static="no">
+        <name>IP2_TUPLE_PREPEND_LAST_16</name>
+        <param><defname>P</defname></param>
+        <param><defname>v</defname></param>
+        <param><defname>x0</defname></param>
+        <param><defname>x1</defname></param>
+        <param><defname>x2</defname></param>
+        <param><defname>x3</defname></param>
+        <param><defname>x4</defname></param>
+        <param><defname>x5</defname></param>
+        <param><defname>x6</defname></param>
+        <param><defname>x7</defname></param>
+        <param><defname>x8</defname></param>
+        <param><defname>x9x10</defname></param>
+        <param><defname>x11</defname></param>
+        <param><defname>x12</defname></param>
+        <param><defname>x13</defname></param>
+        <param><defname>x14</defname></param>
+        <param><defname>x15</defname></param>
+        <initializer>P##x0,P##x1,P##x2,P##x3,P##x4,P##x5,P##x6,P##x7,P##x8,P##x9,P##x10,P##x11,P##x12,P##x13,P##x14,P##v,P##x15</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/github/workspace/include/pp2/primitive/tuple/prepend_last.h" line="47" column="9" bodyfile="/github/workspace/include/pp2/primitive/tuple/prepend_last.h" bodystart="47" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="prepend__last_8h_1a849c0a05458fca9bf60b50cda1c4a197" prot="public" static="no">
+        <name>IP2_TUPLE_PREPEND_LAST_17_OR_MORE</name>
+        <param></param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/github/workspace/include/pp2/primitive/tuple/prepend_last.h" line="48" column="9" bodyfile="/github/workspace/include/pp2/primitive/tuple/prepend_last.h" bodystart="48" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight><highlight class="preprocessor">#ifndef<sp/>PP2_PRIMITIVE_TUPLE_PREPEND_LAST_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>PP2_PRIMITIVE_TUPLE_PREPEND_LAST_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight></codeline>
+<codeline lineno="5"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="at_8h" kindref="compound">pp2/primitive/tuple/at.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="comma_8h" kindref="compound">pp2/primitive/punctuation/comma.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight></codeline>
+<codeline lineno="8"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>PP2_TUPLE_PREPEND_LAST(P,v,...)<sp/>\</highlight></codeline>
+<codeline lineno="9"><highlight class="preprocessor"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>IP2_TUPLE_PREPEND_LAST_OVERLOAD(<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>\</highlight></codeline>
+<codeline lineno="10"><highlight class="preprocessor"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>P##__VA_ARGS__,<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>\</highlight></codeline>
+<codeline lineno="11"><highlight class="preprocessor"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>PP2_COMMA_16,<sp/><sp/><sp/>\</highlight></codeline>
+<codeline lineno="12"><highlight class="preprocessor"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>PP2_COMMA_15,<sp/><sp/><sp/>\</highlight></codeline>
+<codeline lineno="13"><highlight class="preprocessor"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>PP2_COMMA_14,<sp/><sp/><sp/>\</highlight></codeline>
+<codeline lineno="14"><highlight class="preprocessor"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>PP2_COMMA_13,<sp/><sp/><sp/>\</highlight></codeline>
+<codeline lineno="15"><highlight class="preprocessor"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>PP2_COMMA_12,<sp/><sp/><sp/>\</highlight></codeline>
+<codeline lineno="16"><highlight class="preprocessor"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>PP2_COMMA_11,<sp/><sp/><sp/>\</highlight></codeline>
+<codeline lineno="17"><highlight class="preprocessor"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>PP2_COMMA_10,<sp/><sp/><sp/>\</highlight></codeline>
+<codeline lineno="18"><highlight class="preprocessor"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>PP2_COMMA_9,<sp/><sp/><sp/><sp/>\</highlight></codeline>
+<codeline lineno="19"><highlight class="preprocessor"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>PP2_COMMA_8,<sp/><sp/><sp/><sp/>\</highlight></codeline>
+<codeline lineno="20"><highlight class="preprocessor"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>PP2_COMMA_7,<sp/><sp/><sp/><sp/>\</highlight></codeline>
+<codeline lineno="21"><highlight class="preprocessor"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>PP2_COMMA_6,<sp/><sp/><sp/><sp/>\</highlight></codeline>
+<codeline lineno="22"><highlight class="preprocessor"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>PP2_COMMA_5,<sp/><sp/><sp/><sp/>\</highlight></codeline>
+<codeline lineno="23"><highlight class="preprocessor"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>PP2_COMMA_4,<sp/><sp/><sp/><sp/>\</highlight></codeline>
+<codeline lineno="24"><highlight class="preprocessor"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>PP2_COMMA_3,<sp/><sp/><sp/><sp/>\</highlight></codeline>
+<codeline lineno="25"><highlight class="preprocessor"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>PP2_COMMA_2,<sp/><sp/><sp/><sp/>\</highlight></codeline>
+<codeline lineno="26"><highlight class="preprocessor"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>PP2_COMMA_1,<sp/><sp/><sp/><sp/>\</highlight></codeline>
+<codeline lineno="27"><highlight class="preprocessor"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>)(,P##v,P##__VA_ARGS__)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="28"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>IP2_TUPLE_PREPEND_LAST_OVERLOAD(x0,x1,x2,x3,x4,x5,x6,x7,x8,x9,x10,x11,x12,x13,x14,x15,m,...)<sp/>\</highlight></codeline>
+<codeline lineno="29"><highlight class="preprocessor"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>IP2_TUPLE_PREPEND_LAST_OVERLOAD_I(IP2_TUPLE_PREPEND_LAST_,m,17_OR_MORE)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="30"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>IP2_TUPLE_PREPEND_LAST_OVERLOAD_I(P,x0,x1,...)<sp/>P##x1</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="31"><highlight class="normal"></highlight></codeline>
+<codeline lineno="32"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>IP2_TUPLE_PREPEND_LAST_1(P,v,x0)<sp/>P##v,P##x0</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="33"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>IP2_TUPLE_PREPEND_LAST_2(P,v,x0,x1)<sp/>P##x0,P##v,P##x1</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="34"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>IP2_TUPLE_PREPEND_LAST_3(P,v,x0,x1,x2)<sp/>P##x0,P##x1,P##v,P##x2</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="35"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>IP2_TUPLE_PREPEND_LAST_4(P,v,x0,x1,x2,x3)<sp/>P##x0,P##x1,P##x2,P##v,P##x3</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="36"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>IP2_TUPLE_PREPEND_LAST_5(P,v,x0,x1,x2,x3,x4)<sp/>P##x0,P##x1,P##x2,P##x3,P##v,P##x4</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="37"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>IP2_TUPLE_PREPEND_LAST_6(P,v,x0,x1,x2,x3,x4,x5)<sp/>P##x0,P##x1,P##x2,P##x3,P##x4,P##v,P##x5</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="38"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>IP2_TUPLE_PREPEND_LAST_7(P,v,x0,x1,x2,x3,x4,x5,x6)<sp/>P##x0,P##x1,P##x2,P##x3,P##x4,P##x5,P##v,P##x6</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="39"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>IP2_TUPLE_PREPEND_LAST_8(P,v,x0,x1,x2,x3,x4,x5,x6,x7)<sp/>P##x0,P##x1,P##x2,P##x3,P##x4,P##x5,P##x6,P##v,P##x7</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="40"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>IP2_TUPLE_PREPEND_LAST_9(P,v,x0,x1,x2,x3,x4,x5,x6,x7,x8)<sp/>P##x0,P##x1,P##x2,P##x3,P##x4,P##x5,P##x6,P##x7,P##v,P##x8</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="41"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>IP2_TUPLE_PREPEND_LAST_10(P,v,x0,x1,x2,x3,x4,x5,x6,x7,x8,x9)<sp/>P##x0,P##x1,P##x2,P##x3,P##x4,P##x5,P##x6,P##x7,P##x8,P##v,P##x9</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="42"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>IP2_TUPLE_PREPEND_LAST_11(P,v,x0,x1,x2,x3,x4,x5,x6,x7,x8,x9,x10)<sp/>P##x0,P##x1,P##x2,P##x3,P##x4,P##x5,P##x6,P##x7,P##x8,P##x9,P##v,P##x10</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="43"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>IP2_TUPLE_PREPEND_LAST_12(P,v,x0,x1,x2,x3,x4,x5,x6,x7,x8,x9,x10,x11)<sp/>P##x0,P##x1,P##x2,P##x3,P##x4,P##x5,P##x6,P##x7,P##x8,P##x9,P##x10,P##v,P##x11</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="44"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>IP2_TUPLE_PREPEND_LAST_13(P,v,x0,x1,x2,x3,x4,x5,x6,x7,x8,x9,x10,x11,x12)<sp/>P##x0,P##x1,P##x2,P##x3,P##x4,P##x5,P##x6,P##x7,P##x8,P##x9,P##x10,P##x11,P##v,P##x12</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="45"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>IP2_TUPLE_PREPEND_LAST_14(P,v,x0,x1,x2,x3,x4,x5,x6,x7,x8,x9,x10,x11,x12,x13)<sp/>P##x0,P##x1,P##x2,P##x3,P##x4,P##x5,P##x6,P##x7,P##x8,P##x9,P##x10,P##x11,P##x12,P##v,P##x13</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="46"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>IP2_TUPLE_PREPEND_LAST_15(P,v,x0,x1,x2,x3,x4,x5,x6,x7,x8,x9x10,x11,x12,x13,x14)<sp/>P##x0,P##x1,P##x2,P##x3,P##x4,P##x5,P##x6,P##x7,P##x8,P##x9,P##x10,P##x11,P##x12,P##x13,P##v,P##x14</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="47"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>IP2_TUPLE_PREPEND_LAST_16(P,v,x0,x1,x2,x3,x4,x5,x6,x7,x8,x9x10,x11,x12,x13,x14,x15)<sp/>P##x0,P##x1,P##x2,P##x3,P##x4,P##x5,P##x6,P##x7,P##x8,P##x9,P##x10,P##x11,P##x12,P##x13,P##x14,P##v,P##x15</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="48"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>IP2_TUPLE_PREPEND_LAST_17_OR_MORE()</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="49"><highlight class="normal"></highlight></codeline>
+<codeline lineno="50"><highlight class="normal"></highlight></codeline>
+<codeline lineno="51"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight></codeline>
+    </programlisting>
+    <location file="/github/workspace/include/pp2/primitive/tuple/prepend_last.h"/>
+  </compounddef>
+</doxygen>

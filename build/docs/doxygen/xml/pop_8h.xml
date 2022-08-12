@@ -1,0 +1,189 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.2" xml:lang="en-US">
+  <compounddef id="pop_8h" kind="file" language="C++">
+    <compoundname>pop.h</compoundname>
+    <includes refid="invoke_8h" local="yes">pp2/primitive/basic/invoke.h</includes>
+    <includedby refid="machine_8h" local="yes">/github/workspace/include/pp2/machine.h</includedby>
+    <incdepgraph>
+      <node id="1">
+        <label>/github/workspace/include/pp2/machine/stack/pop.h</label>
+        <link refid="pop_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>pp2/primitive/basic/invoke.h</label>
+        <link refid="invoke_8h"/>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="2">
+        <label>/github/workspace/include/pp2/machine.h</label>
+        <link refid="machine_8h_source"/>
+      </node>
+      <node id="1">
+        <label>/github/workspace/include/pp2/machine/stack/pop.h</label>
+        <link refid="pop_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+      </node>
+    </invincdepgraph>
+      <sectiondef kind="define">
+      <memberdef kind="define" id="pop_8h_1abc9b6ffa2cae76f5352d6be446dfbc49" prot="public" static="no">
+        <name>PP2_INSN_8PP2_STACK_POP</name>
+        <param><defname>P</defname></param>
+        <param><defname>r0</defname></param>
+        <param><defname>r1</defname></param>
+        <param><defname>r2</defname></param>
+        <param><defname>...</defname></param>
+        <initializer>        IP2_FX( \
+                STACK_POP_I, \
+                (,/*r0=*/,/*r1=*/,/*r2=*/P##r2, \
+                 /*(frame,frame_stack)=*/IP2_STACK_POP_SPLIT_FRAME P##r1, \
+                 P##__VA_ARGS__ \
+                ) \
+        )</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/github/workspace/include/pp2/machine/stack/pop.h" line="7" column="9" bodyfile="/github/workspace/include/pp2/machine/stack/pop.h" bodystart="7" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="pop_8h_1a57b12161ba088baf516930fcf8fd1f97" prot="public" static="no">
+        <name>IP2_STACK_POP_I</name>
+        <param><defname>P</defname></param>
+        <param><defname>r0</defname></param>
+        <param><defname>r1</defname></param>
+        <param><defname>r2</defname></param>
+        <param><defname>frame</defname></param>
+        <param><defname>frame_stack</defname></param>
+        <param><defname>...</defname></param>
+        <initializer>        IP2_STACK_POP_PARSE_STACK_UP P##frame</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/github/workspace/include/pp2/machine/stack/pop.h" line="15" column="9" bodyfile="/github/workspace/include/pp2/machine/stack/pop.h" bodystart="15" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="pop_8h_1a1a1bd1b5d9a336a2c0742b770a497d3b" prot="public" static="no">
+        <name>IP2_STACK_POP_PARSE_STACK_UP</name>
+        <param><defname>P</defname></param>
+        <param><defname>addr</defname></param>
+        <param><defname>tag</defname></param>
+        <param><defname>value</defname></param>
+        <initializer>IP2_STACK_POP_PARSE_TAG_##tag(,P##addr,P##value) IP2_STACK_POP_PARSE_STACK_DN</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/github/workspace/include/pp2/machine/stack/pop.h" line="18" column="9" bodyfile="/github/workspace/include/pp2/machine/stack/pop.h" bodystart="18" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="pop_8h_1a94bbaca53db993ac3d66f7f6f07e34a0" prot="public" static="no">
+        <name>IP2_STACK_POP_PARSE_STACK_DN</name>
+        <param><defname>P</defname></param>
+        <param><defname>addr</defname></param>
+        <param><defname>tag</defname></param>
+        <param><defname>value</defname></param>
+        <initializer>IP2_STACK_POP_PARSE_TAG_##tag(,P##addr,P##value) IP2_STACK_POP_PARSE_STACK_UP</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/github/workspace/include/pp2/machine/stack/pop.h" line="19" column="9" bodyfile="/github/workspace/include/pp2/machine/stack/pop.h" bodystart="19" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="pop_8h_1abe23ef602606f4ba1acb75264f8eefb3" prot="public" static="no">
+        <name>IP2_STACK_POP_PARSE_TAG_8LOCAL</name>
+        <param><defname>...</defname></param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/github/workspace/include/pp2/machine/stack/pop.h" line="21" column="9" bodyfile="/github/workspace/include/pp2/machine/stack/pop.h" bodystart="21" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="pop_8h_1a49d5c151e3c5f3b328c450b2f5ce41d3" prot="public" static="no">
+        <name>IP2_STACK_POP_PARSE_TAG_8REF</name>
+        <param><defname>P</defname></param>
+        <param><defname>...</defname></param>
+        <initializer>,P##__VA_ARGS__,IP2_STACK_POP_PREPARE_REF_STORE</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/github/workspace/include/pp2/machine/stack/pop.h" line="22" column="9" bodyfile="/github/workspace/include/pp2/machine/stack/pop.h" bodystart="22" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="pop_8h_1ac717ccd7d25c2b69b1e941ec35d54d6c" prot="public" static="no">
+        <name>IP2_STACK_POP_PREPARE_REF_STORE</name>
+        <param><defname>P</defname></param>
+        <param><defname>addr</defname></param>
+        <param><defname>value</defname></param>
+        <initializer>8PP2_STACK_STORE,P##addr,P##value</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/github/workspace/include/pp2/machine/stack/pop.h" line="24" column="9" bodyfile="/github/workspace/include/pp2/machine/stack/pop.h" bodystart="24" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="pop_8h_1a020185029b470711aeb5e4803de9b1cf" prot="public" static="no">
+        <name>IP2_STACK_POP_SPLIT_FRAME</name>
+        <param><defname>...</defname></param>
+        <initializer>__VA_ARGS__,</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/github/workspace/include/pp2/machine/stack/pop.h" line="26" column="9" bodyfile="/github/workspace/include/pp2/machine/stack/pop.h" bodystart="26" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight><highlight class="preprocessor">#ifndef<sp/>PP2_MACHINE_STACK_POP_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>PP2_MACHINE_STACK_POP_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight></codeline>
+<codeline lineno="5"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="invoke_8h" kindref="compound">pp2/primitive/basic/invoke.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>PP2_INSN_8PP2_STACK_POP(P,r0,r1,r2,...)<sp/>\</highlight></codeline>
+<codeline lineno="8"><highlight class="preprocessor"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>IP2_FX(<sp/>\</highlight></codeline>
+<codeline lineno="9"><highlight class="preprocessor"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>STACK_POP_I,<sp/>\</highlight></codeline>
+<codeline lineno="10"><highlight class="preprocessor"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>(,</highlight><highlight class="comment">/*r0=*/</highlight><highlight class="preprocessor">,</highlight><highlight class="comment">/*r1=*/</highlight><highlight class="preprocessor">,</highlight><highlight class="comment">/*r2=*/</highlight><highlight class="preprocessor">P##r2,<sp/>\</highlight></codeline>
+<codeline lineno="11"><highlight class="preprocessor"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*(frame,frame_stack)=*/</highlight><highlight class="preprocessor">IP2_STACK_POP_SPLIT_FRAME<sp/>P##r1,<sp/>\</highlight></codeline>
+<codeline lineno="12"><highlight class="preprocessor"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>P##__VA_ARGS__<sp/>\</highlight></codeline>
+<codeline lineno="13"><highlight class="preprocessor"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>)<sp/>\</highlight></codeline>
+<codeline lineno="14"><highlight class="preprocessor"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="15"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>IP2_STACK_POP_I(P,r0,r1,r2,frame,frame_stack,...)<sp/>\</highlight></codeline>
+<codeline lineno="16"><highlight class="preprocessor"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>IP2_STACK_POP_PARSE_STACK_UP<sp/>P##frame</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="17"><highlight class="normal"></highlight></codeline>
+<codeline lineno="18"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>IP2_STACK_POP_PARSE_STACK_UP(P,addr,tag,value)<sp/>IP2_STACK_POP_PARSE_TAG_##tag(,P##addr,P##value)<sp/>IP2_STACK_POP_PARSE_STACK_DN</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="19"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>IP2_STACK_POP_PARSE_STACK_DN(P,addr,tag,value)<sp/>IP2_STACK_POP_PARSE_TAG_##tag(,P##addr,P##value)<sp/>IP2_STACK_POP_PARSE_STACK_UP</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="20"><highlight class="normal"></highlight></codeline>
+<codeline lineno="21"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>IP2_STACK_POP_PARSE_TAG_8LOCAL(...)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="22"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>IP2_STACK_POP_PARSE_TAG_8REF(P,...)<sp/>,P##__VA_ARGS__,IP2_STACK_POP_PREPARE_REF_STORE</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="23"><highlight class="normal"></highlight></codeline>
+<codeline lineno="24"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>IP2_STACK_POP_PREPARE_REF_STORE(P,addr,value)<sp/>8PP2_STACK_STORE,P##addr,P##value</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="25"><highlight class="normal"></highlight></codeline>
+<codeline lineno="26"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>IP2_STACK_POP_SPLIT_FRAME(...)<sp/>__VA_ARGS__,</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="27"><highlight class="normal"></highlight></codeline>
+<codeline lineno="28"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight></codeline>
+    </programlisting>
+    <location file="/github/workspace/include/pp2/machine/stack/pop.h"/>
+  </compounddef>
+</doxygen>
