@@ -15,7 +15,9 @@ make Sphinx
 cd ${WORKSPACE}
 git remote update
 git checkout "${OUTPUT_BRANCH}"
+rm -rf ${WORKSPACE}/*
 mv -f ${WORKSPACE}/build/docs/sphinx/* ${WORKSPACE}
+touch ${WORKSPACE}/.nojekyll
 
 
 git add .
