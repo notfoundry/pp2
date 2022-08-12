@@ -4,8 +4,8 @@
 
 #include "pp2/primitive/basic/cat.h"
 
-#define PP2_IF(...) PP2_PRIMITIVE_CAT(IP2_IF_,__VA_ARGS__)
-#define IP2_IF_0(t,...) __VA_ARGS__
-#define IP2_IF_1(t,...) t
+#define PP2_IF(...) PP2_PRIMITIVE_CAT(PP2_IF_,__VA_ARGS__)
+#define PP2_IF_0(t,...) __VA_ARGS__
+#define PP2_IF_1(t,...) t
 
 #endif
