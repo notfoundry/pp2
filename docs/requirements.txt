@@ -1,0 +1,6 @@
+sphinx
+breathe
+requests
+sphinx-jinja
+furo
+myst-parser
