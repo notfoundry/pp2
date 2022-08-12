@@ -15,8 +15,8 @@ make Sphinx
 cd ${WORKSPACE}
 git remote update
 git checkout "${OUTPUT_BRANCH}"
-rm -rf ${WORKSPACE}/*
-mv -f ${WORKSPACE}/build/docs/sphinx/* ${WORKSPACE}
+git ls-files | xargs rm -f
+mv ${WORKSPACE}/build/docs/sphinx/* ${WORKSPACE}
 touch ${WORKSPACE}/.nojekyll
 
 
