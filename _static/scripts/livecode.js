@@ -5,6 +5,18 @@ $(document).ready(function(){
         layout.updateSize("99.9%", newHeight);
     }
 
+    function throttle(f, delay){
+        var timer = null;
+        return function(){
+            var context = this, args = arguments;
+            clearTimeout(timer);
+            timer = window.setTimeout(function(){
+                f.apply(context, args);
+            },
+            delay);
+        };
+    }
+
     function compile(code, callback) {
         const data = JSON.stringify({
             "source": (LIVECODE_HEADER + '\n' + code),
@@ -98,11 +110,11 @@ $(document).ready(function(){
                     viewportMargin: Infinity
                 });
 
-                liveCodeInput.on('change', function(instance, changeObj) {
+                liveCodeInput.on('change', throttle(function(instance, changeObj) {
                     compile(liveCodeInput.getValue(), function (data) {
                         liveCodeOutput.setValue(Colors.strip(data.replace(/.*/, "").slice(1)))
                     })
-                });
+                }, 250));
 
                 attachHeightObserver(container, function  (newHeight) {
                     lhsHeight = newHeight;
