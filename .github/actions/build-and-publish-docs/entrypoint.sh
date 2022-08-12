@@ -16,6 +16,7 @@ cd ${WORKSPACE}
 git remote update
 git checkout "${OUTPUT_BRANCH}"
 git ls-files | xargs rm -f
+git ls-tree -d --name-only "${OUTPUT_BRANCH}" | xargs rm -rf
 mv ${WORKSPACE}/build/docs/sphinx/* ${WORKSPACE}
 rm -rf ${WORKSPACE}/build
 touch ${WORKSPACE}/.nojekyll
