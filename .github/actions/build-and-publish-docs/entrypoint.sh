@@ -18,7 +18,7 @@ git checkout "${OUTPUT_BRANCH}"
 git ls-files | xargs rm -f
 git ls-tree -d --name-only "${OUTPUT_BRANCH}" | xargs rm -rf
 mv ${WORKSPACE}/build/docs/sphinx/* ${WORKSPACE}
-rm -rf ${WORKSPACE}/build
+rm -rf ${WORKSPACE}/build  ${WORKSPACE}/docs
 touch ${WORKSPACE}/.nojekyll
 
 
