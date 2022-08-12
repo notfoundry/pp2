@@ -1,0 +1,261 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.2" xml:lang="en-US">
+  <compounddef id="primitive_8h" kind="file" language="C++">
+    <compoundname>primitive.h</compoundname>
+    <includes refid="inc_8h" local="yes">pp2/primitive/arithmetic/literal/inc.h</includes>
+    <includes refid="find_8h" local="yes">pp2/primitive/assoc/find.h</includes>
+    <includes refid="cat_8h" local="yes">pp2/primitive/basic/cat.h</includes>
+    <includes refid="invoke_8h" local="yes">pp2/primitive/basic/invoke.h</includes>
+    <includes refid="primitive_2control_2if_8h" local="yes">pp2/primitive/control/if.h</includes>
+    <includes refid="is__nestable_8h" local="yes">pp2/primitive/introspection/is_nestable.h</includes>
+    <includes refid="is__nil_8h" local="yes">pp2/primitive/introspection/is_nil.h</includes>
+    <includes refid="is__tuple_8h" local="yes">pp2/primitive/introspection/is_tuple.h</includes>
+    <includes refid="comma_8h" local="yes">pp2/primitive/punctuation/comma.h</includes>
+    <includes refid="lparen_8h" local="yes">pp2/primitive/punctuation/lparen.h</includes>
+    <includes refid="rparen_8h" local="yes">pp2/primitive/punctuation/rparen.h</includes>
+    <includes refid="seq_2head_8h" local="yes">pp2/primitive/seq/head.h</includes>
+    <includes refid="tail_8h" local="yes">pp2/primitive/seq/tail.h</includes>
+    <includes refid="compute_8h" local="yes">pp2/primitive/tuple/higher_order/compute.h</includes>
+    <includes refid="at_8h" local="yes">pp2/primitive/tuple/at.h</includes>
+    <includes refid="drop_8h" local="yes">pp2/primitive/tuple/drop.h</includes>
+    <includes refid="eat_8h" local="yes">pp2/primitive/tuple/eat.h</includes>
+    <includes refid="tuple_2head_8h" local="yes">pp2/primitive/tuple/head.h</includes>
+    <includes refid="open_8h" local="yes">pp2/primitive/tuple/open.h</includes>
+    <includes refid="partition_8h" local="yes">pp2/primitive/tuple/partition.h</includes>
+    <includes refid="prepend__last_8h" local="yes">pp2/primitive/tuple/prepend_last.h</includes>
+    <includes refid="replace_8h" local="yes">pp2/primitive/tuple/replace.h</includes>
+    <includes refid="core_8h" local="yes">pp2/primitive/core.h</includes>
+    <incdepgraph>
+      <node id="1">
+        <label>/github/workspace/include/pp2/primitive.h</label>
+        <link refid="primitive_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+        <childnode refid="12" relation="include">
+        </childnode>
+        <childnode refid="13" relation="include">
+        </childnode>
+        <childnode refid="14" relation="include">
+        </childnode>
+        <childnode refid="15" relation="include">
+        </childnode>
+        <childnode refid="16" relation="include">
+        </childnode>
+        <childnode refid="17" relation="include">
+        </childnode>
+        <childnode refid="18" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="21" relation="include">
+        </childnode>
+        <childnode refid="22" relation="include">
+        </childnode>
+        <childnode refid="19" relation="include">
+        </childnode>
+        <childnode refid="20" relation="include">
+        </childnode>
+        <childnode refid="23" relation="include">
+        </childnode>
+        <childnode refid="24" relation="include">
+        </childnode>
+        <childnode refid="25" relation="include">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>pp2/primitive/arithmetic/literal/inc.h</label>
+        <link refid="inc_8h"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+      </node>
+      <node id="7">
+        <label>pp2/primitive/assoc/detail/find_tables.h</label>
+        <link refid="find__tables_8h"/>
+      </node>
+      <node id="6">
+        <label>pp2/primitive/assoc/find.h</label>
+        <link refid="find_8h"/>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+      </node>
+      <node id="8">
+        <label>pp2/primitive/basic/cat.h</label>
+        <link refid="cat_8h"/>
+      </node>
+      <node id="5">
+        <label>pp2/primitive/basic/invoke.h</label>
+        <link refid="invoke_8h"/>
+      </node>
+      <node id="9">
+        <label>pp2/primitive/control/if.h</label>
+        <link refid="primitive_2control_2if_8h"/>
+        <childnode refid="8" relation="include">
+        </childnode>
+      </node>
+      <node id="25">
+        <label>pp2/primitive/core.h</label>
+        <link refid="core_8h"/>
+      </node>
+      <node id="10">
+        <label>pp2/primitive/introspection/is_nestable.h</label>
+        <link refid="is__nestable_8h"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+      </node>
+      <node id="11">
+        <label>pp2/primitive/introspection/is_nil.h</label>
+        <link refid="is__nil_8h"/>
+        <childnode refid="12" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+      </node>
+      <node id="12">
+        <label>pp2/primitive/introspection/is_tuple.h</label>
+        <link refid="is__tuple_8h"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+      </node>
+      <node id="13">
+        <label>pp2/primitive/punctuation/comma.h</label>
+        <link refid="comma_8h"/>
+      </node>
+      <node id="14">
+        <label>pp2/primitive/punctuation/lparen.h</label>
+        <link refid="lparen_8h"/>
+      </node>
+      <node id="15">
+        <label>pp2/primitive/punctuation/rparen.h</label>
+        <link refid="rparen_8h"/>
+      </node>
+      <node id="16">
+        <label>pp2/primitive/seq/head.h</label>
+        <link refid="seq_2head_8h_source"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+      </node>
+      <node id="17">
+        <label>pp2/primitive/seq/tail.h</label>
+        <link refid="tail_8h_source"/>
+        <childnode refid="16" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>pp2/primitive/tuple/at.h</label>
+        <link refid="at_8h"/>
+      </node>
+      <node id="4">
+        <label>pp2/primitive/tuple/drop.h</label>
+        <link refid="drop_8h"/>
+      </node>
+      <node id="21">
+        <label>pp2/primitive/tuple/eat.h</label>
+        <link refid="eat_8h"/>
+      </node>
+      <node id="22">
+        <label>pp2/primitive/tuple/head.h</label>
+        <link refid="tuple_2head_8h_source"/>
+      </node>
+      <node id="18">
+        <label>pp2/primitive/tuple/higher_order/compute.h</label>
+        <link refid="compute_8h"/>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="19" relation="include">
+        </childnode>
+        <childnode refid="20" relation="include">
+        </childnode>
+      </node>
+      <node id="19">
+        <label>pp2/primitive/tuple/open.h</label>
+        <link refid="open_8h"/>
+      </node>
+      <node id="20">
+        <label>pp2/primitive/tuple/partition.h</label>
+        <link refid="partition_8h"/>
+      </node>
+      <node id="23">
+        <label>pp2/primitive/tuple/prepend_last.h</label>
+        <link refid="prepend__last_8h"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="13" relation="include">
+        </childnode>
+      </node>
+      <node id="24">
+        <label>pp2/primitive/tuple/replace.h</label>
+        <link refid="replace_8h"/>
+      </node>
+    </incdepgraph>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="preprocessor">#ifndef<sp/>PP2_PRIMITIVE_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>PP2_PRIMITIVE_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="inc_8h" kindref="compound">pp2/primitive/arithmetic/literal/inc.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="5"><highlight class="normal"></highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="find_8h" kindref="compound">pp2/primitive/assoc/find.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight></codeline>
+<codeline lineno="8"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="cat_8h" kindref="compound">pp2/primitive/basic/cat.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="9"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="invoke_8h" kindref="compound">pp2/primitive/basic/invoke.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight></codeline>
+<codeline lineno="11"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="primitive_2control_2if_8h" kindref="compound">pp2/primitive/control/if.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="12"><highlight class="normal"></highlight></codeline>
+<codeline lineno="13"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="is__nestable_8h" kindref="compound">pp2/primitive/introspection/is_nestable.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="14"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="is__nil_8h" kindref="compound">pp2/primitive/introspection/is_nil.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="15"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="is__tuple_8h" kindref="compound">pp2/primitive/introspection/is_tuple.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="16"><highlight class="normal"></highlight></codeline>
+<codeline lineno="17"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="comma_8h" kindref="compound">pp2/primitive/punctuation/comma.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="18"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="lparen_8h" kindref="compound">pp2/primitive/punctuation/lparen.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="19"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="rparen_8h" kindref="compound">pp2/primitive/punctuation/rparen.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="20"><highlight class="normal"></highlight></codeline>
+<codeline lineno="21"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;pp2/primitive/seq/head.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="22"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;pp2/primitive/seq/tail.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="23"><highlight class="normal"></highlight></codeline>
+<codeline lineno="24"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="compute_8h" kindref="compound">pp2/primitive/tuple/higher_order/compute.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="25"><highlight class="normal"></highlight></codeline>
+<codeline lineno="26"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="at_8h" kindref="compound">pp2/primitive/tuple/at.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="27"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="drop_8h" kindref="compound">pp2/primitive/tuple/drop.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="28"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="eat_8h" kindref="compound">pp2/primitive/tuple/eat.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="29"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;pp2/primitive/tuple/head.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="30"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="open_8h" kindref="compound">pp2/primitive/tuple/open.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="31"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="partition_8h" kindref="compound">pp2/primitive/tuple/partition.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="32"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="prepend__last_8h" kindref="compound">pp2/primitive/tuple/prepend_last.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="33"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="replace_8h" kindref="compound">pp2/primitive/tuple/replace.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="34"><highlight class="normal"></highlight></codeline>
+<codeline lineno="35"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="core_8h" kindref="compound">pp2/primitive/core.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="36"><highlight class="normal"></highlight></codeline>
+<codeline lineno="37"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight></codeline>
+    </programlisting>
+    <location file="/github/workspace/include/pp2/primitive.h"/>
+  </compounddef>
+</doxygen>

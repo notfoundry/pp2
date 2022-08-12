@@ -1,0 +1,99 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.2" xml:lang="en-US">
+  <compounddef id="compute_8h" kind="file" language="C++">
+    <compoundname>compute.h</compoundname>
+    <includes refid="cat_8h" local="yes">pp2/primitive/basic/cat.h</includes>
+    <includes refid="open_8h" local="yes">pp2/primitive/tuple/open.h</includes>
+    <includes refid="partition_8h" local="yes">pp2/primitive/tuple/partition.h</includes>
+    <includedby refid="primitive_8h" local="yes">/github/workspace/include/pp2/primitive.h</includedby>
+    <incdepgraph>
+      <node id="2">
+        <label>pp2/primitive/basic/cat.h</label>
+        <link refid="cat_8h"/>
+      </node>
+      <node id="1">
+        <label>/github/workspace/include/pp2/primitive/tuple/higher_order/compute.h</label>
+        <link refid="compute_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>pp2/primitive/tuple/open.h</label>
+        <link refid="open_8h"/>
+      </node>
+      <node id="4">
+        <label>pp2/primitive/tuple/partition.h</label>
+        <link refid="partition_8h"/>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="2">
+        <label>/github/workspace/include/pp2/primitive.h</label>
+        <link refid="primitive_8h_source"/>
+      </node>
+      <node id="1">
+        <label>/github/workspace/include/pp2/primitive/tuple/higher_order/compute.h</label>
+        <link refid="compute_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+      </node>
+    </invincdepgraph>
+      <sectiondef kind="define">
+      <memberdef kind="define" id="compute_8h_1af208d525749693b8eb988fe5c83823b4" prot="public" static="no">
+        <name>PP2_TUPLE_COMPUTE</name>
+        <param><defname>t</defname></param>
+        <param><defname>i</defname></param>
+        <param><defname>f</defname></param>
+        <param><defname>...</defname></param>
+        <initializer>IP2_FX(TUPLE_COMPUTE_I,(,PP2_PRIMITIVE_CAT(PP2_TUPLE_PARTITION_,i) t,f,__VA_ARGS__))</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/github/workspace/include/pp2/primitive/tuple/higher_order/compute.h" line="9" column="9" bodyfile="/github/workspace/include/pp2/primitive/tuple/higher_order/compute.h" bodystart="9" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="compute_8h_1a220eb0d273717421544bd0eac67034dc" prot="public" static="no">
+        <name>IP2_TUPLE_COMPUTE_I</name>
+        <param><defname>P</defname></param>
+        <param><defname>lhs</defname></param>
+        <param><defname>center</defname></param>
+        <param><defname>rhs</defname></param>
+        <param><defname>f</defname></param>
+        <param><defname>...</defname></param>
+        <initializer>(,<ref refid="open_8h_1a4b438a51aa1b73bb331e7da86d375c13" kindref="member">PP2_OPEN</ref> P##lhs f(,P##center,P##__VA_ARGS__) <ref refid="open_8h_1a4b438a51aa1b73bb331e7da86d375c13" kindref="member">PP2_OPEN</ref> P##rhs)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/github/workspace/include/pp2/primitive/tuple/higher_order/compute.h" line="10" column="9" bodyfile="/github/workspace/include/pp2/primitive/tuple/higher_order/compute.h" bodystart="10" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight><highlight class="preprocessor">#ifndef<sp/>PP2_PRIMITIVE_TUPLE_HIGHER_ORDER_COMPUTE_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>PP2_PRIMITIVE_TUPLE_HIGHER_ORDER_COMPUTE_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight></codeline>
+<codeline lineno="5"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="cat_8h" kindref="compound">pp2/primitive/basic/cat.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="open_8h" kindref="compound">pp2/primitive/tuple/open.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="partition_8h" kindref="compound">pp2/primitive/tuple/partition.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="8"><highlight class="normal"></highlight></codeline>
+<codeline lineno="9"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>PP2_TUPLE_COMPUTE(t,i,f,...)<sp/>IP2_FX(TUPLE_COMPUTE_I,(,PP2_PRIMITIVE_CAT(PP2_TUPLE_PARTITION_,i)<sp/>t,f,__VA_ARGS__))</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>IP2_TUPLE_COMPUTE_I(P,lhs,center,rhs,f,...)<sp/>(,PP2_OPEN<sp/>P##lhs<sp/>f(,P##center,P##__VA_ARGS__)<sp/>PP2_OPEN<sp/>P##rhs)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="11"><highlight class="normal"></highlight></codeline>
+<codeline lineno="12"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight></codeline>
+    </programlisting>
+    <location file="/github/workspace/include/pp2/primitive/tuple/higher_order/compute.h"/>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,380 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.2" xml:lang="en-US">
+  <compounddef id="variable_8h" kind="file" language="C++">
+    <compoundname>variable.h</compoundname>
+    <includes refid="variable__tables_8h" local="yes">pp2/language/basic/detail/variable_tables.h</includes>
+    <includes refid="return_8h" local="yes">pp2/language/basic/return.h</includes>
+    <includes refid="compiler_8h" local="yes">pp2/language/compiler.h</includes>
+    <includes refid="stack_2load_8h" local="yes">pp2/machine/stack/load.h</includes>
+    <includes refid="store_8h" local="yes">pp2/machine/stack/store.h</includes>
+    <includedby refid="language_8h" local="yes">/github/workspace/include/pp2/language.h</includedby>
+    <incdepgraph>
+      <node id="2">
+        <label>pp2/language/basic/detail/variable_tables.h</label>
+        <link refid="variable__tables_8h"/>
+      </node>
+      <node id="10">
+        <label>pp2/language/basic/object.h</label>
+        <link refid="object_8h"/>
+      </node>
+      <node id="3">
+        <label>pp2/language/basic/return.h</label>
+        <link refid="return_8h"/>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="15" relation="include">
+        </childnode>
+        <childnode refid="13" relation="include">
+        </childnode>
+        <childnode refid="14" relation="include">
+        </childnode>
+        <childnode refid="16" relation="include">
+        </childnode>
+      </node>
+      <node id="1">
+        <label>/github/workspace/include/pp2/language/basic/variable.h</label>
+        <link refid="variable_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="19" relation="include">
+        </childnode>
+        <childnode refid="21" relation="include">
+        </childnode>
+      </node>
+      <node id="4">
+        <label>pp2/language/compiler.h</label>
+        <link refid="compiler_8h_source"/>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+      </node>
+      <node id="11">
+        <label>pp2/machine/context.h</label>
+        <link refid="context_8h"/>
+        <childnode refid="12" relation="include">
+        </childnode>
+        <childnode refid="13" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="14" relation="include">
+        </childnode>
+      </node>
+      <node id="5">
+        <label>pp2/machine/exception/throw.h</label>
+        <link refid="throw_8h"/>
+        <childnode refid="6" relation="include">
+        </childnode>
+      </node>
+      <node id="15">
+        <label>pp2/machine/insns/nop.h</label>
+        <link refid="nop_8h_source"/>
+      </node>
+      <node id="20">
+        <label>pp2/machine/stack/detail/load_tables.h</label>
+        <link refid="load__tables_8h"/>
+      </node>
+      <node id="22">
+        <label>pp2/machine/stack/detail/store_tables.h</label>
+        <link refid="store__tables_8h"/>
+      </node>
+      <node id="19">
+        <label>pp2/machine/stack/load.h</label>
+        <link refid="stack_2load_8h"/>
+        <childnode refid="20" relation="include">
+        </childnode>
+        <childnode refid="13" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+      </node>
+      <node id="21">
+        <label>pp2/machine/stack/store.h</label>
+        <link refid="store_8h"/>
+        <childnode refid="22" relation="include">
+        </childnode>
+        <childnode refid="13" relation="include">
+        </childnode>
+      </node>
+      <node id="7">
+        <label>pp2/primitive/assoc/detail/find_tables.h</label>
+        <link refid="find__tables_8h"/>
+      </node>
+      <node id="6">
+        <label>pp2/primitive/assoc/find.h</label>
+        <link refid="find_8h"/>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+      </node>
+      <node id="12">
+        <label>pp2/primitive/basic/cat.h</label>
+        <link refid="cat_8h"/>
+      </node>
+      <node id="13">
+        <label>pp2/primitive/basic/invoke.h</label>
+        <link refid="invoke_8h"/>
+      </node>
+      <node id="18">
+        <label>pp2/primitive/control/if.h</label>
+        <link refid="primitive_2control_2if_8h"/>
+        <childnode refid="12" relation="include">
+        </childnode>
+      </node>
+      <node id="16">
+        <label>pp2/primitive/introspection/is_nil.h</label>
+        <link refid="is__nil_8h"/>
+        <childnode refid="17" relation="include">
+        </childnode>
+        <childnode refid="18" relation="include">
+        </childnode>
+      </node>
+      <node id="17">
+        <label>pp2/primitive/introspection/is_tuple.h</label>
+        <link refid="is__tuple_8h"/>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="18" relation="include">
+        </childnode>
+      </node>
+      <node id="8">
+        <label>pp2/primitive/tuple/at.h</label>
+        <link refid="at_8h"/>
+      </node>
+      <node id="9">
+        <label>pp2/primitive/tuple/eat.h</label>
+        <link refid="eat_8h"/>
+      </node>
+      <node id="14">
+        <label>pp2/primitive/tuple/open.h</label>
+        <link refid="open_8h"/>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="2">
+        <label>/github/workspace/include/pp2/language.h</label>
+        <link refid="language_8h_source"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+      </node>
+      <node id="1">
+        <label>/github/workspace/include/pp2/language/basic/variable.h</label>
+        <link refid="variable_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>/github/workspace/include/pp2/pp2.h</label>
+        <link refid="pp2_8h"/>
+      </node>
+    </invincdepgraph>
+      <sectiondef kind="define">
+      <memberdef kind="define" id="variable_8h_1a8b3c924c4d5dc1c0ba9d55e1a1140e73" prot="public" static="no">
+        <name>PP2_INSN_8PP2_LANGUAGE_VAR</name>
+        <param><defname>P</defname></param>
+        <param><defname>r0</defname></param>
+        <param><defname>r1</defname></param>
+        <param><defname>r2</defname></param>
+        <param><defname>addr</defname></param>
+        <param><defname>rhs_stx</defname></param>
+        <param><defname>...</defname></param>
+        <initializer>        IP2_LANGUAGE_VAR_CHOOSE_LOAD_STORE(PP2_INSN_,IP2_LANGUAGE_VAR_TEST_IF_STORE P##rhs_stx) \
+        (, \
+         P##r0,P##r1,P##r2, \
+         P##addr,P##value, \
+         P##__VA_ARGS__ \
+        )</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/github/workspace/include/pp2/language/basic/variable.h" line="12" column="9" bodyfile="/github/workspace/include/pp2/language/basic/variable.h" bodystart="12" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="variable_8h_1a9f2f614fdd4b71fcad02e56210862a38" prot="public" static="no">
+        <name>IP2_LANGUAGE_VAR_CHOOSE_LOAD_STORE</name>
+        <param><defname>P</defname></param>
+        <param><defname>...</defname></param>
+        <initializer>        IP2_LANGUAGE_VAR_CHOOSE_LOAD_STORE_I(P, \
+            __VA_ARGS__, \
+            8IP2_LANGUAGE_VAR_LOAD \
+        )</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/github/workspace/include/pp2/language/basic/variable.h" line="20" column="9" bodyfile="/github/workspace/include/pp2/language/basic/variable.h" bodystart="20" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="variable_8h_1abcd9f13a85dbb6a10e8fe0a5d5bcbf65" prot="public" static="no">
+        <name>IP2_LANGUAGE_VAR_CHOOSE_LOAD_STORE_I</name>
+        <param><defname>P</defname></param>
+        <param><defname>_</defname></param>
+        <param><defname>insn</defname></param>
+        <param><defname>...</defname></param>
+        <initializer>P##insn</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/github/workspace/include/pp2/language/basic/variable.h" line="25" column="9" bodyfile="/github/workspace/include/pp2/language/basic/variable.h" bodystart="25" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="variable_8h_1a32ca78a4683dab0b832a6f74c35916ff" prot="public" static="no">
+        <name>IP2_LANGUAGE_VAR_TEST_IF_STORE</name>
+        <param><defname>...</defname></param>
+        <initializer>,8IP2_LANGUAGE_VAR_STORE,</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/github/workspace/include/pp2/language/basic/variable.h" line="26" column="9" bodyfile="/github/workspace/include/pp2/language/basic/variable.h" bodystart="26" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="variable_8h_1a3db4e3602bc71ac096a7dc7b3d965293" prot="public" static="no">
+        <name>PP2_INSN_8IP2_LANGUAGE_VAR_STORE</name>
+        <param><defname>P</defname></param>
+        <param><defname>r0</defname></param>
+        <param><defname>r1</defname></param>
+        <param><defname>r2</defname></param>
+        <param><defname>addr</defname></param>
+        <param><defname>value</defname></param>
+        <param><defname>...</defname></param>
+        <initializer>                                        (, \
+                                         P##r0,P##r1,P##r2, \
+                                         IP2_LANGUAGE_VAR_STORE_OPEN P##value,8PP2_STACK_STORE,P##addr, \
+                                         P##__VA_ARGS__ \
+                                        )</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/github/workspace/include/pp2/language/basic/variable.h" line="29" column="9" bodyfile="/github/workspace/include/pp2/language/basic/variable.h" bodystart="29" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="variable_8h_1ae170963c1db9e7886a994e1cf46cd8bd" prot="public" static="no">
+        <name>IP2_LANGUAGE_VAR_STORE_OPEN</name>
+        <param><defname>value</defname></param>
+        <initializer>PP2_COMPILE(value)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/github/workspace/include/pp2/language/basic/variable.h" line="35" column="9" bodyfile="/github/workspace/include/pp2/language/basic/variable.h" bodystart="35" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="variable_8h_1a2b920686ee112582b1acb91b59c678af" prot="public" static="no">
+        <name>PP2_INSN_8IP2_LANGUAGE_VAR_LOAD</name>
+        <param><defname>P</defname></param>
+        <param><defname>r0</defname></param>
+        <param><defname>r1</defname></param>
+        <param><defname>r2</defname></param>
+        <param><defname>addr</defname></param>
+        <param><defname>method</defname></param>
+        <param><defname>...</defname></param>
+        <initializer>                                       (, \\
+                                        P##r0,P##r1,P##r2, \
+                                        8PP2_STACK_LOAD,P##addr,PP2_COMPILE_LANGUAGE_RETURN(P##method), \
+                                        P##__VA_ARGS__ \
+                                       )</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/github/workspace/include/pp2/language/basic/variable.h" line="37" column="9" bodyfile="/github/workspace/include/pp2/language/basic/variable.h" bodystart="37" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="variable_8h_1a728b83b7febde02e808c90674fc5b57e" prot="public" static="no">
+        <name>PP2_COMPILE_LANGUAGE_VAR</name>
+        <param><defname>addr</defname></param>
+        <param><defname>rhs_stx</defname></param>
+        <initializer>        IP2_LANGUAGE_VAR_CHOOSE_LOAD_STORE(,IP2_LANGUAGE_VAR_TEST_IF_STORE rhs_stx),addr,rhs_stx</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/github/workspace/include/pp2/language/basic/variable.h" line="45" column="9" bodyfile="/github/workspace/include/pp2/language/basic/variable.h" bodystart="45" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight><highlight class="preprocessor">#ifndef<sp/>PP2_LANGUAGE_BASIC_VARIABLE_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>PP2_LANGUAGE_BASIC_VARIABLE_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight></codeline>
+<codeline lineno="5"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="variable__tables_8h" kindref="compound">pp2/language/basic/detail/variable_tables.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="return_8h" kindref="compound">pp2/language/basic/return.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;pp2/language/compiler.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="8"><highlight class="normal"></highlight></codeline>
+<codeline lineno="9"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="stack_2load_8h" kindref="compound">pp2/machine/stack/load.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="store_8h" kindref="compound">pp2/machine/stack/store.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="11"><highlight class="normal"></highlight></codeline>
+<codeline lineno="12"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>PP2_INSN_8PP2_LANGUAGE_VAR(P,r0,r1,r2,addr,rhs_stx,...)<sp/>\</highlight></codeline>
+<codeline lineno="13"><highlight class="preprocessor"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>IP2_LANGUAGE_VAR_CHOOSE_LOAD_STORE(PP2_INSN_,IP2_LANGUAGE_VAR_TEST_IF_STORE<sp/>P##rhs_stx)<sp/>\</highlight></codeline>
+<codeline lineno="14"><highlight class="preprocessor"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>(,<sp/>\</highlight></codeline>
+<codeline lineno="15"><highlight class="preprocessor"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>P##r0,P##r1,P##r2,<sp/>\</highlight></codeline>
+<codeline lineno="16"><highlight class="preprocessor"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>P##addr,P##value,<sp/>\</highlight></codeline>
+<codeline lineno="17"><highlight class="preprocessor"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>P##__VA_ARGS__<sp/>\</highlight></codeline>
+<codeline lineno="18"><highlight class="preprocessor"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="19"><highlight class="normal"></highlight></codeline>
+<codeline lineno="20"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>IP2_LANGUAGE_VAR_CHOOSE_LOAD_STORE(P,...)<sp/>\</highlight></codeline>
+<codeline lineno="21"><highlight class="preprocessor"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>IP2_LANGUAGE_VAR_CHOOSE_LOAD_STORE_I(P,<sp/>\</highlight></codeline>
+<codeline lineno="22"><highlight class="preprocessor"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>__VA_ARGS__,<sp/>\</highlight></codeline>
+<codeline lineno="23"><highlight class="preprocessor"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>8IP2_LANGUAGE_VAR_LOAD<sp/>\</highlight></codeline>
+<codeline lineno="24"><highlight class="preprocessor"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="25"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>IP2_LANGUAGE_VAR_CHOOSE_LOAD_STORE_I(P,_,insn,...)<sp/>P##insn</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="26"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>IP2_LANGUAGE_VAR_TEST_IF_STORE(...)<sp/>,8IP2_LANGUAGE_VAR_STORE,</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="27"><highlight class="normal"></highlight></codeline>
+<codeline lineno="28"><highlight class="normal"></highlight></codeline>
+<codeline lineno="29"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>PP2_INSN_8IP2_LANGUAGE_VAR_STORE(P,r0,r1,r2,addr,value,...)<sp/>\</highlight></codeline>
+<codeline lineno="30"><highlight class="preprocessor"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>(,<sp/>\</highlight></codeline>
+<codeline lineno="31"><highlight class="preprocessor"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>P##r0,P##r1,P##r2,<sp/>\</highlight></codeline>
+<codeline lineno="32"><highlight class="preprocessor"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>IP2_LANGUAGE_VAR_STORE_OPEN<sp/>P##value,8PP2_STACK_STORE,P##addr,<sp/>\</highlight></codeline>
+<codeline lineno="33"><highlight class="preprocessor"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>P##__VA_ARGS__<sp/>\</highlight></codeline>
+<codeline lineno="34"><highlight class="preprocessor"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="35"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>IP2_LANGUAGE_VAR_STORE_OPEN(value)<sp/>PP2_COMPILE(value)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="36"><highlight class="normal"></highlight></codeline>
+<codeline lineno="37"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>PP2_INSN_8IP2_LANGUAGE_VAR_LOAD(P,r0,r1,r2,addr,method,...)<sp/>\</highlight></codeline>
+<codeline lineno="38"><highlight class="preprocessor"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>(,<sp/>\\</highlight></codeline>
+<codeline lineno="39"><highlight class="preprocessor"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>P##r0,P##r1,P##r2,<sp/>\</highlight></codeline>
+<codeline lineno="40"><highlight class="preprocessor"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>8PP2_STACK_LOAD,P##addr,PP2_COMPILE_LANGUAGE_RETURN(P##method),<sp/>\</highlight></codeline>
+<codeline lineno="41"><highlight class="preprocessor"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>P##__VA_ARGS__<sp/>\</highlight></codeline>
+<codeline lineno="42"><highlight class="preprocessor"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="43"><highlight class="normal"></highlight></codeline>
+<codeline lineno="44"><highlight class="normal"></highlight></codeline>
+<codeline lineno="45"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>PP2_COMPILE_LANGUAGE_VAR(addr,rhs_stx)<sp/>\</highlight></codeline>
+<codeline lineno="46"><highlight class="preprocessor"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>IP2_LANGUAGE_VAR_CHOOSE_LOAD_STORE(,IP2_LANGUAGE_VAR_TEST_IF_STORE<sp/>rhs_stx),addr,rhs_stx</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="47"><highlight class="normal"></highlight></codeline>
+<codeline lineno="48"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight></codeline>
+    </programlisting>
+    <location file="/github/workspace/include/pp2/language/basic/variable.h"/>
+  </compounddef>
+</doxygen>
