@@ -1,6 +1,0 @@
-Literals
-========
-
-.. toctree::
-   
-   literals/bool
