@@ -1,0 +1,12 @@
+﻿name: 'build-and-publish-docs'
+description: ''
+inputs:
+    output-branch:
+        description: ''
+        required: true
+        default: 'gh-pages'
+runs:
+    using: 'docker'
+    image: 'Dockerfile'
+    args:
+        - ${{ inputs.output-branch }}
