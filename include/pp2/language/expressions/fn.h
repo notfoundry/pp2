@@ -12,8 +12,8 @@
 #include "pp2/primitive/seq/head.h"
 #include "pp2/primitive/basic/invoke.h"
 
-#define PP2_DEF_fn(params) )PP2_COMPILE_LANGUAGE_FN(,params,
-#define PP2_COMPILE_LANGUAGE_FN(P,params,body) 8PP2_LANGUAGE_FN,(P##params),IP2_FX(COMPILE_LANGUAGE_FN_I, (,PP2_SEQ_SPLIT_HEAD P##body))
+#define PP2_DEF_fn(...) )PP2_COMPILE_LANGUAGE_FN(,(__VA_ARGS__),
+#define PP2_COMPILE_LANGUAGE_FN(P,params,body) 8PP2_LANGUAGE_FN,P##params,IP2_FX(COMPILE_LANGUAGE_FN_I, (,PP2_SEQ_SPLIT_HEAD P##body))
 #define IP2_COMPILE_LANGUAGE_FN_I(P,body,rhs_stx) P##body,PP2_COMPILE_LANGUAGE_RETURN(P##rhs_stx)
 
 #define PP2_INSN_8PP2_LANGUAGE_FN(P,r0,r1,r2,params,body,...) \
