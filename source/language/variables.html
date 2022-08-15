@@ -3,7 +3,7 @@
   <head><meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width,initial-scale=1"/>
     <meta name="color-scheme" content="light dark"><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
-<link rel="index" title="Index" href="../../genindex.html" /><link rel="search" title="Search" href="../../search.html" /><link rel="next" title="Control Flow" href="control-flow.html" /><link rel="prev" title="&lt;no title&gt;" href="types/quote.html" />
+<link rel="index" title="Index" href="../../genindex.html" /><link rel="search" title="Search" href="../../search.html" /><link rel="next" title="Control Flow" href="control-flow.html" /><link rel="prev" title="Type" href="types/type.html" />
 
     <meta name="generator" content="sphinx-5.1.1, furo 2022.06.21"/>
         <title>Variables - pp2 documentation</title>
@@ -163,8 +163,12 @@
 <li class="toctree-l1 current has-children"><a class="reference internal" href="../language.html">Language</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" role="switch" type="checkbox"/><label for="toctree-checkbox-1"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="introduction.html">Introduction</a></li>
 <li class="toctree-l2"><a class="reference internal" href="hello-world.html">Hello World!</a></li>
-<li class="toctree-l2 has-children"><a class="reference internal" href="types.html">Literals</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" role="switch" type="checkbox"/><label for="toctree-checkbox-2"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2 has-children"><a class="reference internal" href="types.html">Types</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" role="switch" type="checkbox"/><label for="toctree-checkbox-2"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="types/quote.html">Quote</a></li>
 <li class="toctree-l3"><a class="reference internal" href="types/bool.html">Bool</a></li>
+<li class="toctree-l3"><a class="reference internal" href="types/fn.html">Fn</a></li>
+<li class="toctree-l3"><a class="reference internal" href="types/any.html">Any</a></li>
+<li class="toctree-l3"><a class="reference internal" href="types/type.html">Type</a></li>
 </ul>
 </li>
 <li class="toctree-l2 current current-page"><a class="current reference internal" href="#">Variables</a></li>
@@ -175,9 +179,6 @@
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="functions.html">Functions</a></li>
-<li class="toctree-l2 has-children"><a class="reference internal" href="stdlib.html">Standard Library</a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" role="switch" type="checkbox"/><label for="toctree-checkbox-4"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul class="simple">
-</ul>
-</li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../machine.html">Machine</a></li>
@@ -218,14 +219,14 @@
           <section id="variables">
 <h1>Variables<a class="headerlink" href="#variables" title="Permalink to this heading">#</a></h1>
 <p>To store a value and reuse it later, it can be assigned to a local variable.</p>
-<p>For example, if you want to print the number <code class="docutils literal notranslate"><span class="pre">10</span></code> twice, you don’t need to repeat the number multiple times. Instead, you can assign it to a variable and reuse it:</p>
-<div class="livecode" livecode-default="8PP2_LANGUAGE_DEFINITION_EXCEPTION(10)
+<p>For example, if you want to print the quote <code class="docutils literal notranslate"><span class="pre">int</span> <span class="pre">foo();</span></code> twice, you don’t need to repeat the quote multiple times. Instead, you can assign it to a variable and reuse it:</p>
+<div class="livecode" livecode-default="int foo(); int foo();
 ">PP2 (
-    X (10),
+    X (( int foo(); )),
     print(X),
     print(X)
-)</div><p>This program prints the number <code class="docutils literal notranslate"><span class="pre">10</span></code> twice, with whitespace between the occurrences.</p>
-<p>A local variable is a single lowercase or uppercase letter, which can have a value assigned to it by calling the variable like a function with the value as an argument (<code class="docutils literal notranslate"><span class="pre">X(5)</span></code>, <code class="docutils literal notranslate"><span class="pre">i(12)</span></code>), and can also have the last stored value extracted from it by referencing the variable on its own (<code class="docutils literal notranslate"><span class="pre">X</span></code>, <code class="docutils literal notranslate"><span class="pre">i</span></code>).</p>
+)</div><p>This program prints the quote <code class="docutils literal notranslate"><span class="pre">int</span> <span class="pre">foo();</span></code> twice, with whitespace between the occurrences.</p>
+<p>A local variable is a single lowercase or uppercase letter, which can have a value assigned to it by calling the variable like a function with the value as an argument (<code class="docutils literal notranslate"><span class="pre">X</span> <span class="pre">(5)</span></code>, <code class="docutils literal notranslate"><span class="pre">i</span> <span class="pre">(true)</span></code>), and can also have the last stored value extracted from it by referencing the variable on its own (<code class="docutils literal notranslate"><span class="pre">X</span></code>, <code class="docutils literal notranslate"><span class="pre">i</span></code>).</p>
 </section>
 
         </article>
@@ -242,14 +243,14 @@
               </div>
               <svg><use href="#svg-arrow-right"></use></svg>
             </a>
-          <a class="prev-page" href="types/quote.html">
+          <a class="prev-page" href="types/type.html">
               <svg><use href="#svg-arrow-right"></use></svg>
               <div class="page-info">
                 <div class="context">
                   <span>Previous</span>
                 </div>
                 
-                <div class="title">&lt;no title&gt;</div>
+                <div class="title">Type</div>
                 
               </div>
             </a>

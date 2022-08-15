@@ -3,10 +3,10 @@
   <head><meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width,initial-scale=1"/>
     <meta name="color-scheme" content="light dark"><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
-<link rel="index" title="Index" href="../../../genindex.html" /><link rel="search" title="Search" href="../../../search.html" /><link rel="next" title="Fn" href="fn.html" /><link rel="prev" title="Quote" href="quote.html" />
+<link rel="index" title="Index" href="../../../genindex.html" /><link rel="search" title="Search" href="../../../search.html" /><link rel="next" title="Variables" href="../variables.html" /><link rel="prev" title="Any" href="any.html" />
 
     <meta name="generator" content="sphinx-5.1.1, furo 2022.06.21"/>
-        <title>Bool - pp2 documentation</title>
+        <title>Type - pp2 documentation</title>
       <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="../../../_static/styles/furo.css?digest=40978830699223671f4072448e654b5958f38b89" />
     <link rel="stylesheet" type="text/css" href="../../../_static/styles/furo-extensions.css?digest=30d1aed668e5c3a91c3e3bf6a60b675221979f0e" />
@@ -165,10 +165,10 @@
 <li class="toctree-l2"><a class="reference internal" href="../hello-world.html">Hello World!</a></li>
 <li class="toctree-l2 current has-children"><a class="reference internal" href="../types.html">Types</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" role="switch" type="checkbox"/><label for="toctree-checkbox-2"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul class="current">
 <li class="toctree-l3"><a class="reference internal" href="quote.html">Quote</a></li>
-<li class="toctree-l3 current current-page"><a class="current reference internal" href="#">Bool</a></li>
+<li class="toctree-l3"><a class="reference internal" href="bool.html">Bool</a></li>
 <li class="toctree-l3"><a class="reference internal" href="fn.html">Fn</a></li>
 <li class="toctree-l3"><a class="reference internal" href="any.html">Any</a></li>
-<li class="toctree-l3"><a class="reference internal" href="type.html">Type</a></li>
+<li class="toctree-l3 current current-page"><a class="current reference internal" href="#">Type</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../variables.html">Variables</a></li>
@@ -216,19 +216,11 @@
           </label>
         </div>
         <article role="main">
-          <section id="bool">
-<h1>Bool<a class="headerlink" href="#bool" title="Permalink to this heading">#</a></h1>
-<p>A boolean (or just <code class="docutils literal notranslate"><span class="pre">Bool</span></code>) data type can only have two values: <code class="docutils literal notranslate"><span class="pre">true</span></code> or <code class="docutils literal notranslate"><span class="pre">false</span></code>. Bools are usually used for control flow, and they are often a result of logical and relational operators.</p>
-<div class="livecode" livecode-default="true false
+          <section id="type">
+<h1>Type<a class="headerlink" href="#type" title="Permalink to this heading">#</a></h1>
+<div class="livecode" livecode-default="(,Type,(,Bool,Any))
 ">PP2 (
-    print(true),
-    print(false)
-)</div><p>The typical logical operators for <code class="docutils literal notranslate"><span class="pre">Bool</span></code> types are also available in pp2:</p>
-<div class="livecode" livecode-default="false true false
-">PP2 (
-    print(true and (false)),
-    print(false or (false) or (true)),
-    print(true not())
+    print(true type)
 )</div></section>
 
         </article>
@@ -236,23 +228,23 @@
       <footer>
         
         <div class="related-pages">
-          <a class="next-page" href="fn.html">
+          <a class="next-page" href="../variables.html">
               <div class="page-info">
                 <div class="context">
                   <span>Next</span>
                 </div>
-                <div class="title">Fn</div>
+                <div class="title">Variables</div>
               </div>
               <svg><use href="#svg-arrow-right"></use></svg>
             </a>
-          <a class="prev-page" href="quote.html">
+          <a class="prev-page" href="any.html">
               <svg><use href="#svg-arrow-right"></use></svg>
               <div class="page-info">
                 <div class="context">
                   <span>Previous</span>
                 </div>
                 
-                <div class="title">Quote</div>
+                <div class="title">Any</div>
                 
               </div>
             </a>
