@@ -15,7 +15,7 @@
 #include "pp2/primitive/basic/invoke.h"
 
 #define PP2_DEF_Any PP2_TYPE(Any,)
-
+#define PP2_SYM_Any(...) __VA_ARGS__
 
 #define PP2_DEF_Any_type )PP2_COMPILE_LANGUAGE_ANY_TYPE(
 #define PP2_COMPILE_LANGUAGE_ANY_TYPE(rhs_stx) 8PP2_LANGUAGE_ANY_TYPE,PP2_COMPILE_LANGUAGE_RETURN(rhs_stx)

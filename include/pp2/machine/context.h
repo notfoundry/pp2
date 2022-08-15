@@ -46,6 +46,7 @@
 #define PP2_LOCAL_CTX_PUSH_ARGUMENT(ctx,v) IP2_LOCAL_CTX_PUSH_ARGUMENT ctx,v)
 #define IP2_LOCAL_CTX_PUSH_ARGUMENT(P,... ) IP2_LOCAL_CTX_PUSH_ARGUMENT_I(,P##__VA_ARGS__
 #define IP2_LOCAL_CTX_PUSH_ARGUMENT_I(P,stack,labels,arguments,registers,_,v) (,P##stack,P##labels,P##arguments(P##v),P##registers,)
+#define PP2_INSN_8PP2_LOCAL_CTX_PUSH_ARGUMENT(P,r0,r1,r2,v,...) (,P##r0,PP2_LOCAL_CTX_PUSH_ARGUMENT(P##r1,P##v),P##r2,P##__VA_ARGS__)
 
 #define PP2_LOCAL_CTX_PUSH_ARGUMENTS(ctx,v) IP2_LOCAL_CTX_PUSH_ARGUMENTS ctx,v)
 #define IP2_LOCAL_CTX_PUSH_ARGUMENTS(P,... ) IP2_LOCAL_CTX_PUSH_ARGUMENTS_I(,P##__VA_ARGS__
@@ -55,6 +56,7 @@
 #define PP2_LOCAL_CTX_PREPEND_ARGUMENT(ctx,v) IP2_LOCAL_CTX_PREPEND_ARGUMENT ctx,v)
 #define IP2_LOCAL_CTX_PREPEND_ARGUMENT(P,... ) IP2_LOCAL_CTX_PREPEND_ARGUMENT_I(,P##__VA_ARGS__
 #define IP2_LOCAL_CTX_PREPEND_ARGUMENT_I(P,stack,labels,arguments,registers,_,v) (,P##stack,P##labels,(P##v)P##arguments,P##registers,)
+#define PP2_INSN_8PP2_LOCAL_CTX_PREPEND_ARGUMENT(P,r0,r1,r2,v,...) (,P##r0,PP2_LOCAL_CTX_PREPEND_ARGUMENT(P##r1,P##v),P##r2,P##__VA_ARGS__)
 
 #define PP2_LOCAL_CTX_PREPEND_ARGUMENTS(ctx,v) IP2_LOCAL_CTX_PREPEND_ARGUMENTS ctx,v)
 #define IP2_LOCAL_CTX_PREPEND_ARGUMENTS(P,... ) IP2_LOCAL_CTX_PREPEND_ARGUMENTS_I(,P##__VA_ARGS__
@@ -62,6 +64,7 @@
 #define PP2_INSN_8PP2_LOCAL_CTX_PREPEND_ARGUMENTS(P,r0,r1,r2,v,...) (,P##r0,PP2_LOCAL_CTX_PREPEND_ARGUMENTS(P##r1,P##v),P##r2,P##__VA_ARGS__)
 
 #define PP2_LOCAL_CTX_POP_ARGUMENT(P,stack,labels,arguments,registers,_) (,P##stack,P##labels,PP2_EAT P##arguments,P##registers,)
+#define PP2_INSN_8PP2_LOCAL_CTX_POP_ARGUMENT(P,r0,r1,r2,...) (,PP2_LOCAL_CTX_GET_ARGUMENTS_HEAD P##r1,PP2_LOCAL_CTX_POP_ARGUMENT P##r1,P##r2,P##__VA_ARGS__)
 
 #define PP2_LOCAL_CTX_CLEAR_ARGUMENTS(P,stack,labels,arguments,registers,_) (,P##stack,P##labels,/*arguments=*/,P##registers,)
 #define PP2_INSN_8PP2_LOCAL_CTX_CLEAR_ARGUMENTS(P,r0,r1,r2,...) (,P##r0,PP2_LOCAL_CTX_CLEAR_ARGUMENTS P##r1,P##r2,P##__VA_ARGS__)

@@ -18,6 +18,7 @@
 #include "pp2/primitive/seq/head.h"
 
 #define PP2_DEF_Fn PP2_TYPE(Fn,Any)
+#define PP2_SYM_Fn(...) __VA_ARGS__
 
 #define PP2_DEF_Fn_call )PP2_COMPILE_LANGUAGE_FN_CALL(,
 #define PP2_COMPILE_LANGUAGE_FN_CALL(P,args_tup) \
@@ -44,11 +45,10 @@
 
 #define PP2_INSN_8PP2_LANGUAGE_FN_PTR_CALL(P,r0,r1,r2,ptr,...) \
                                           (, \
-                                           /*r0=*/,\
-                                           /*r1=*/PP2_LOCAL_CTX_PREPEND_ARGUMENTS(P##r1,P##ptr), \
+                                           /*r0=*/P##ptr,\
+                                           /*r1=*/P##r1, \
                                            /*r2=*/P##r2, \
                                            8PP2_LANGUAGE_FN_CALL_IMPL, \
-                                           8PP2_LOCAL_CTX_CLEAR_ARGUMENTS, \
                                            P##__VA_ARGS__ \
                                           )
 
@@ -58,17 +58,26 @@
                                        /*r1=*/P##r1, \
                                        /*r2=*/P##r2, \
                                        PP2_LANGUAGE_FN_PARSE_ARGS P##args_tup, \
+                                       8IP2_LANGUAGE_FN_CALL, \
+                                       P##__VA_ARGS__ \
+                                      )
+
+#define PP2_INSN_8IP2_LANGUAGE_FN_CALL(P,r0,r1,r2,...) \
+                                      (, \
+                                       /*r0=*/PP2_LOCAL_CTX_GET_ARGUMENTS_HEAD P##r1, \
+                                       /*r1=*/PP2_LOCAL_CTX_POP_ARGUMENT P##r1, \
+                                       /*r2=*/P##r2, \
                                        8PP2_LANGUAGE_FN_CALL_IMPL, \
-                                       8PP2_LOCAL_CTX_CLEAR_ARGUMENTS, \
                                        P##__VA_ARGS__ \
                                       )
 
 #define PP2_INSN_8PP2_LANGUAGE_FN_CALL_IMPL(P,r0,r1,r2,...) \
                                            (, \
-                                            /*r0=*/P##r0, \
-                                            /*r1=*/PP2_LOCAL_CTX_POP_ARGUMENT P##r1, \
+                                            /*r0=*/, \
+                                            /*r1=*/P##r1, \
                                             /*r2=*/P##r2, \
-                                            IP2_FX(LANGUAGE_FN_CALL_OPEN,PP2_LOCAL_CTX_GET_ARGUMENTS_HEAD P##r1), \
+                                            IP2_LANGUAGE_FN_CALL_OPEN P##r0, \
+                                            8PP2_LOCAL_CTX_CLEAR_ARGUMENTS, \
                                             P##__VA_ARGS__ \
                                            )
 
@@ -113,13 +122,5 @@
                                                 /*r2=*/P##r2, \
                                                 P##__VA_ARGS__ \
                                                )
-
-#define PP2_INSN_8PP2_LANGUAGE_FN_CALL_POP_ARG(P,r0,r1,r2,...) \
-                                              (, \
-                                               /*r0=*/PP2_LOCAL_CTX_GET_ARGUMENTS_HEAD P##r1, \
-                                               /*r1=*/PP2_LOCAL_CTX_POP_ARGUMENT P##r1, \
-                                               /*r2=*/P##r2, \
-                                               P##__VA_ARGS__ \
-                                              )
 
 #endif

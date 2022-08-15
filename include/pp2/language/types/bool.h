@@ -12,6 +12,7 @@
 #include "pp2/primitive/tuple/open.h"
 
 #define PP2_DEF_Bool PP2_TYPE(Bool,Any)
+#define PP2_SYM_Bool(...) __VA_ARGS__
 
 #define PP2_DEF_true  PP2_CONST(Bool,1)
 #define PP2_DEF_false PP2_CONST(Bool,0)
