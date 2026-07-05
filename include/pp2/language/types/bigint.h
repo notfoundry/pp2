@@ -33,6 +33,7 @@
 #define IP2_BIGINT_CONSTRUCT_Int(v) (,BigInt,PP2_ARBITRARY_PROMOTE(v))
 #define IP2_BIGINT_CONSTRUCT_BigInt(v) (,BigInt,v)
 #define IP2_BIGINT_CONSTRUCT_Quote(v) (,BigInt,PP2_ARBITRARY_FIX(PP2_OPEN v))
+#define IP2_BIGINT_CONSTRUCT_Seq(v) (,BigInt,PP2_ARBITRARY_FIX(v))
 
 /* str: demote the digit-seq back to native tokens (a negative emits the sign
  * as its own token: ((1)(2)) -> - 12). */
