@@ -37,10 +37,14 @@ def test_if_nested(pp):
     assert pp.expand("PP2(if (true) (if (true) (print(9))))") == "9"
 
 
-@pytest.mark.xfail(reason="if with a false condition and no else clause splices "
-                          "unbalanced and fails with EOF in PP2_EAT "
-                          "(known pre-existing bug, see pp2-dev-frontier)",
-                   strict=True)
-def test_if_false_no_else(pp):
+@pytest.mark.parametrize("body,expected", [
+    # a false if with no else clause is a clean no-op in any trailing context
+    ("if (false) (print(1))", ""),
+    ("if (false) (print(1)), print(2)", "2"),
+    ("print(0), if (false) (print(1)), print(2)", "0 2"),
+    ("if (true) (print(1))", "1"),
+    ("if (true) (print(1)), print(2)", "1 2"),
+])
+def test_if_no_else(pp, body, expected):
     pp.include("pp2/pp2.h")
-    assert pp.expand("PP2(if (false) (print(1)))") == ""
+    assert pp.expand("PP2({})", body) == expected
