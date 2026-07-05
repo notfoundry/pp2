@@ -105,6 +105,18 @@
 #define IP2_LOCAL_CTX_FRAME_LEAVE_I(P,labels,arguments,frame,rest) (,/*stack=*/PP2_OPEN P##frame,P##labels,P##arguments,/*registers=*/P##rest,)
 #define PP2_INSN_8PP2_FRAME_LEAVE(P,r0,r1,r2,...) (,P##r0,PP2_LOCAL_CTX_FRAME_LEAVE P##r1,P##r2,P##__VA_ARGS__)
 
+/* Closure variant of FRAME_ENTER. A lexical closure captures the environment
+ * visible where the function is DEFINED; since loads only ever see the top
+ * frame, that top frame is the whole visible environment, so a user fn snapshots
+ * its defining stack into its value at creation. On call this installs that
+ * captured stack (instead of the empty frame FRAME_ENTER gives) after spilling
+ * the caller's stack, so the body sees the closed-over bindings; parameters are
+ * then STACK_STOREd on top and shadow any captured binding of the same name.
+ * FRAME_LEAVE restores the caller unchanged, so captures are by snapshot. A fn
+ * defined with an empty environment captures (), i.e. behaves exactly as before. */
+#define PP2_INSN_8PP2_FRAME_ENTER_CLOSURE(P,r0,r1,r2,captured,...) (,P##r0,IP2_FX(LOCAL_CTX_FRAME_ENTER_CLOSURE,(P##captured,PP2_OPEN P##r1)),P##r2,P##__VA_ARGS__)
+#define IP2_LOCAL_CTX_FRAME_ENTER_CLOSURE(captured,P,stack,labels,arguments,registers,_) (,/*stack=*/PP2_OPEN captured,P##labels,P##arguments,/*registers=*/(P##stack)P##registers,)
+
 #define PP2_LOCAL_CTX_UNPACK_ARGS(P,stack,labels,arguments,registers,_) PP2_REVERSE_CAT(0,IP2_LOCAL_CTX_UNPACK_ARGS P##arguments)
 #define IP2_LOCAL_CTX_UNPACK_ARGS(x) x IP2_LOCAL_CTX_UNPACK_ARGS_UP
 #define IP2_LOCAL_CTX_UNPACK_ARGS_UP(x) ,x IP2_LOCAL_CTX_UNPACK_ARGS_DN
