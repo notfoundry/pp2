@@ -31,12 +31,17 @@ class Preprocessor:
     
     def expand(self, token_sequence, *args, **kwargs):
         token_sequence = token_sequence.format(*args, **kwargs)
-        self.directives.append(token_sequence)
+
+        # Run the accumulated setup (includes/defines) plus this one expression.
+        # The expression is NOT retained, so repeated expand() calls in a single
+        # test are independent instead of concatenating their results.
+        lines = self.directives + [token_sequence]
 
         self.test_file.seek(0)
-        self.test_file.write("\n".join(self.directives))
+        self.test_file.truncate()
+        self.test_file.write("\n".join(lines))
         self.test_file.flush()
-        
+
         p = subprocess.run(self.pp_command + [self.test_file.name], stdout=subprocess.PIPE, stderr=subprocess.PIPE)
         p.check_returncode()
         if p.stderr:

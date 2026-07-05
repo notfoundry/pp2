@@ -5,7 +5,7 @@ import pytest
     "()", "(a)", "(a,b,c)"
 ])
 def test_eat(pp, args):
-    pp.include("pp2/primitive/core.h")
+    pp.include("pp2/primitive/tuple/eat.h")
     assert pp.expand("PP2_EAT {}", args) == ''
 
 
@@ -29,5 +29,5 @@ def test_scanning_blocked_expansion(pp):
     "", "a", "a,b,c"
 ])
 def test_removing_parentheses(pp, args):
-    pp.include("pp2/primitive/core.h")
+    pp.include("pp2/primitive/tuple/open.h")
     assert pp.expand("PP2_OPEN ({})", args) == pp.parse(args)
