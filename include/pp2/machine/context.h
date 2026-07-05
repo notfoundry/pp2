@@ -7,6 +7,7 @@
 #include "pp2/primitive/tuple/eat.h"
 #include "pp2/primitive/tuple/at.h"
 #include "pp2/primitive/tuple/open.h"
+#include "pp2/primitive/seq/head.h"
 
 /**
 *
@@ -68,6 +69,41 @@
 
 #define PP2_LOCAL_CTX_CLEAR_ARGUMENTS(P,stack,labels,arguments,registers,_) (,P##stack,P##labels,/*arguments=*/,P##registers,)
 #define PP2_INSN_8PP2_LOCAL_CTX_CLEAR_ARGUMENTS(P,r0,r1,r2,...) (,P##r0,PP2_LOCAL_CTX_CLEAR_ARGUMENTS P##r1,P##r2,P##__VA_ARGS__)
+
+/* Argument-stack spilling for nested calls. The argument list is a single
+ * shared stack, so evaluating a call argument that is itself a call would
+ * scoop up the enclosing call's in-flight operands (its parked callee and any
+ * already-evaluated sibling arguments). SPILL saves the whole current argument
+ * list as one frame on the register spill-stack (a LIFO) and empties the
+ * argument list, so the argument evaluates on a private, empty stack; nested
+ * calls spill further, giving each call depth its own frame. UNSPILL_PUSH
+ * restores the saved frame and pushes the just-evaluated argument (r0) onto it.
+ * Spills are strictly LIFO and balanced (one SPILL + one UNSPILL_PUSH bracket
+ * each argument), so the register field behaves as a proper call-frame stack. */
+#define PP2_LOCAL_CTX_SPILL_ARGUMENTS(P,stack,labels,arguments,registers,_) (,P##stack,P##labels,/*arguments=*/,/*registers=*/(P##arguments)P##registers,)
+#define PP2_INSN_8PP2_ARGS_SPILL(P,r0,r1,r2,...) (,P##r0,PP2_LOCAL_CTX_SPILL_ARGUMENTS P##r1,P##r2,P##__VA_ARGS__)
+
+#define PP2_LOCAL_CTX_UNSPILL_PUSH_ARGUMENT(ctx,v) IP2_LOCAL_CTX_UNSPILL_PUSH_ARGUMENT ctx,v)
+#define IP2_LOCAL_CTX_UNSPILL_PUSH_ARGUMENT(P,...) IP2_LOCAL_CTX_UNSPILL_PUSH_ARGUMENT_I(,P##__VA_ARGS__
+#define IP2_LOCAL_CTX_UNSPILL_PUSH_ARGUMENT_I(P,stack,labels,arguments,registers,_,v) IP2_FX(LOCAL_CTX_UNSPILL_PUSH_ARGUMENT_II,(,P##stack,P##labels,(P##v),PP2_SEQ_SPLIT_HEAD P##registers))
+#define IP2_LOCAL_CTX_UNSPILL_PUSH_ARGUMENT_II(P,stack,labels,elem,frame,rest) (,P##stack,P##labels,/*arguments=*/PP2_OPEN P##frame P##elem,/*registers=*/P##rest,)
+#define PP2_INSN_8PP2_ARGS_UNSPILL_PUSH(P,r0,r1,r2,...) (,/*r0=*/,PP2_LOCAL_CTX_UNSPILL_PUSH_ARGUMENT(P##r1,P##r0),P##r2,P##__VA_ARGS__)
+
+/* Local-variable frames for calls. A user function's parameters are bound into
+ * name-addressed slots on the local stack, so a nested call whose callee reuses
+ * a slot name would clobber the caller's live local. FRAME_ENTER saves the
+ * whole local stack onto the same register spill-stack (as one frame) and hands
+ * the callee an empty stack; FRAME_LEAVE restores the caller's stack by direct
+ * assignment, leaving r0 (the call's result) untouched. FRAME_ENTER/LEAVE and
+ * the argument SPILL/UNSPILL_PUSH are each balanced and strictly nested, so the
+ * shared register stack stays a well-formed LIFO of activation frames. Only
+ * user fns are bracketed (builtin VM_FN methods bind no locals). */
+#define PP2_LOCAL_CTX_FRAME_ENTER(P,stack,labels,arguments,registers,_) (,/*stack=*/(),P##labels,P##arguments,/*registers=*/(P##stack)P##registers,)
+#define PP2_INSN_8PP2_FRAME_ENTER(P,r0,r1,r2,...) (,P##r0,PP2_LOCAL_CTX_FRAME_ENTER P##r1,P##r2,P##__VA_ARGS__)
+
+#define PP2_LOCAL_CTX_FRAME_LEAVE(P,stack,labels,arguments,registers,_) IP2_FX(LOCAL_CTX_FRAME_LEAVE_I,(,P##labels,P##arguments,PP2_SEQ_SPLIT_HEAD P##registers))
+#define IP2_LOCAL_CTX_FRAME_LEAVE_I(P,labels,arguments,frame,rest) (,/*stack=*/PP2_OPEN P##frame,P##labels,P##arguments,/*registers=*/P##rest,)
+#define PP2_INSN_8PP2_FRAME_LEAVE(P,r0,r1,r2,...) (,P##r0,PP2_LOCAL_CTX_FRAME_LEAVE P##r1,P##r2,P##__VA_ARGS__)
 
 #define PP2_LOCAL_CTX_UNPACK_ARGS(P,stack,labels,arguments,registers,_) PP2_REVERSE_CAT(0,IP2_LOCAL_CTX_UNPACK_ARGS P##arguments)
 #define IP2_LOCAL_CTX_UNPACK_ARGS(x) x IP2_LOCAL_CTX_UNPACK_ARGS_UP

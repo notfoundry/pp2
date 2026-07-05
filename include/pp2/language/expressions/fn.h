@@ -18,7 +18,7 @@
 
 #define PP2_INSN_8PP2_LANGUAGE_FN(P,r0,r1,r2,params,body,...) \
                                  (, \
-                                  /*r0=*/(,Fn,(,IP2_LANGUAGE_FN_PARSE_PARAMS P##params,8PP2_LANGUAGE_BLOCK,P##body)), \
+                                  /*r0=*/(,Fn,(,8PP2_FRAME_ENTER,IP2_LANGUAGE_FN_PARSE_PARAMS P##params,8PP2_LANGUAGE_BLOCK,P##body,8PP2_FRAME_LEAVE)), \
                                   P##r1,P##r2, \
                                   P##__VA_ARGS__ \
                                  )
