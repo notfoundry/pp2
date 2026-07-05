@@ -22,6 +22,7 @@
 #include "pp2/language/statements/while.h"
 
 #include "pp2/language/types/any.h"
+#include "pp2/language/types/bigint.h"
 #include "pp2/language/types/bool.h"
 #include "pp2/language/types/fn.h"
 #include "pp2/language/types/int.h"

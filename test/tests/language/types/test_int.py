@@ -20,12 +20,12 @@ import pytest
     ("print(99 inc())", "100"),
     ("print(0 inc() inc() inc())", "3"),
     ("print(5 dec())", "4"),
-    ("print(0 dec())", "0"),         # clamped
+    ("print(0 dec())", "- 1"),       # promotes to BigInt below zero
     # inc and plus compose
     ("print(3 inc() plus (10))", "14"),
-    # minus (clamped at 0), chained
+    # minus, chained; a negative result promotes to BigInt
     ("print(9 minus (4))", "5"),
-    ("print(4 minus (9))", "0"),
+    ("print(4 minus (9))", "- 5"),
     ("print(10 minus (3) minus (2))", "5"),
     # times / mul
     ("print(6 times (7))", "42"),
