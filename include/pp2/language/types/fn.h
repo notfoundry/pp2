@@ -4,7 +4,9 @@
 
 #include "pp2/language/compiler.h"
 #include "pp2/language/basic/return.h"
+#include "pp2/language/basic/object.h"
 #include "pp2/language/definition/type.h"
+#include "pp2/language/definition/vm_fn.h"
 
 #include "pp2/machine/context.h"
 #include "pp2/machine/insns/nop.h"
@@ -19,6 +21,22 @@
 
 #define PP2_DEF_Fn PP2_TYPE(Fn,Any)
 #define PP2_SYM_Fn(...) __VA_ARGS__
+
+/* Fn(params, body): build a function from its constituent data -- a quote
+ * holding the parameter list and a quote holding the body -- exactly as the
+ * `fn (params) (body)` literal would. This VM's functions capture no lexical
+ * environment, so params + body are the whole of a Fn; there is no closure to
+ * pass. The two args arrive as Quote objects: unwrap each to its raw token
+ * tuple and hand them to the same 8PP2_LANGUAGE_FN builder the fn keyword uses,
+ * so parameter binding, framing and the body block all go through one path. */
+#define PP2_DEF_Fn_construct PP2_VM_FN(PP2_LANGUAGE_FN_CONSTRUCT,3)
+#define PP2_LANGUAGE_FN_CONSTRUCT(P,r0,r1,r2,self,params_q,body_q,...) \
+        (, \
+         /*r0=*/, \
+         P##r1,P##r2, \
+         8PP2_LANGUAGE_FN,PP2_LANGUAGE_OBJECT_VALUE P##params_q,PP2_LANGUAGE_OBJECT_VALUE P##body_q, \
+         P##__VA_ARGS__ \
+        )
 
 #define PP2_DEF_Fn_call )PP2_COMPILE_LANGUAGE_FN_CALL(,
 #define PP2_COMPILE_LANGUAGE_FN_CALL(P,args_tup) \

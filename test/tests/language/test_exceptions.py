@@ -65,9 +65,9 @@ def test_unbound_local_halts_program(pp):
 # --- a type with no constructor throws cleanly -----------------------------
 def test_missing_constructor(pp):
     # Type_call resolves <Type>_construct; a type without one throws a normal
-    # DEFINITION_EXCEPTION rather than crashing. (Int/Bool/Quote do define one;
-    # a user Type that does not would land here -- Fn has no construct method.)
+    # DEFINITION_EXCEPTION rather than crashing. Int/Bool/Quote/Fn define one;
+    # Type and Any do not, so calling them lands here.
     pp.include("pp2/pp2.h")
-    result = pp.expand("PP2(print(Fn (7)))")
+    result = pp.expand("PP2(print(Type (7)))")
     assert "8PP2_LANGUAGE_DEFINITION_EXCEPTION" in result
-    assert "Fn_construct" in result
+    assert "Type_construct" in result

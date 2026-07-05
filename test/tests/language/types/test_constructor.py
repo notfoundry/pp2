@@ -48,3 +48,37 @@ def test_constructed_value_behaves(pp, body, expected):
         assert result == pp.parse("(,Type,(,Int,Any))")
     else:
         assert result == expected
+
+
+# --- Fn constructor: build a function from a params quote and a body quote --
+# Unlike the value types, this is a real (non-identity) constructor: it
+# assembles a callable function from its constituent data.
+@pytest.mark.parametrize("body,expected", [
+    ("F (Fn ((x), (x plus (1)))), print(F call (3))", "4"),
+    ("F (Fn ((x, y), (x plus (y)))), print(F call (2, 3))", "5"),
+    ("F (Fn ((x), (x times (x)))), print(F call (5))", "25"),
+    ("print(Fn ((x), (x plus (10))) call (5))", "15"),          # immediate call
+])
+def test_fn_constructor(pp, body, expected):
+    pp.include("pp2/pp2.h")
+    assert pp.expand("PP2({})", body) == expected
+
+
+def test_fn_constructor_is_fn(pp):
+    pp.include("pp2/pp2.h")
+    assert pp.expand("PP2(print(Fn ((x), (x)) type))") == pp.parse("(,Type,(,Fn,Any))")
+
+
+def test_fn_constructor_equals_literal(pp):
+    # Fn((params),(body)) builds exactly what the `fn` literal builds
+    pp.include("pp2/pp2.h")
+    built = pp.expand("PP2(F (Fn ((x), (x plus (1)))), print(F call (7)))")
+    literal = pp.expand("PP2(G (fn (x) (x plus (1))), print(G call (7)))")
+    assert built == literal == "8"
+
+
+def test_fn_constructor_from_quote_variables(pp):
+    # the parts can come from quotes held in variables -- dynamic construction
+    pp.include("pp2/pp2.h")
+    prog = "PP2(P ((x, y)), B ((x times (y))), F (Fn (P, B)), print(F call (6, 7)))"
+    assert pp.expand(prog) == "42"
