@@ -2,12 +2,12 @@ import pytest
 
 
 # Seq is the thin representation type: a raw paren-group seq with no object
-# structure inside the groups, matching PP2's own substrates (BigInt digit
+# structure inside the groups, matching PP2's own substrates (Long digit
 # seqs). The empty seq is written Seq (()) -- a quote of no tokens.
 @pytest.mark.parametrize("body,expected", [
     ("print(Seq (((1)(2)(3))))", "(1)(2)(3)"),
     ("S (Seq (((1)(2)(3)))), print(Seq (S))", "(1)(2)(3)"),
-    # a BigInt exposes its digit seq
+    # a Long exposes its digit seq
     ("print(Seq (127 inc()))", "(1)(2)(8)"),
 ])
 def test_seq_construction_and_str(pp, body, expected):
@@ -48,11 +48,11 @@ def test_seq_to_list(pp, body, expected):
 
 
 @pytest.mark.parametrize("body,expected", [
-    # a Seq of digit groups builds a BigInt (FIX normalizes)
-    ("print(BigInt (Seq (((1)(2)(8)))))", "128"),
-    ("print(BigInt (Seq (127 inc())))", "128"),
-    ("X (BigInt (((1)(0)(0)(0)))), print(Seq (X) size())", "4"),
+    # a Seq of digit groups builds a Long (FIX normalizes)
+    ("print(Long (Seq (((1)(2)(8)))))", "128"),
+    ("print(Long (Seq (127 inc())))", "128"),
+    ("X (Long (((1)(0)(0)(0)))), print(Seq (X) size())", "4"),
 ])
-def test_seq_bigint_interop(pp, body, expected):
+def test_seq_long_interop(pp, body, expected):
     pp.include("pp2/pp2.h")
     assert pp.expand("PP2({})", body) == expected

@@ -20,10 +20,10 @@ import pytest
     ("print(99 inc())", "100"),
     ("print(0 inc() inc() inc())", "3"),
     ("print(5 dec())", "4"),
-    ("print(0 dec())", "- 1"),       # promotes to BigInt below zero
+    ("print(0 dec())", "- 1"),       # promotes to Long below zero
     # inc and plus compose
     ("print(3 inc() plus (10))", "14"),
-    # minus, chained; a negative result promotes to BigInt
+    # minus, chained; a negative result promotes to Long
     ("print(9 minus (4))", "5"),
     ("print(4 minus (9))", "- 5"),
     ("print(10 minus (3) minus (2))", "5"),

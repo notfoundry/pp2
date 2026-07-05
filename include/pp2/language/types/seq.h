@@ -21,12 +21,12 @@
 
 /* Seq is the thin representation type: its value is a RAW paren-group seq,
  * (1)(2)(3), with no object structure inside the groups -- the shape PP2's
- * own substrates use (BigInt digit-seqs, the machine's argument list). List
+ * own substrates use (Long digit-seqs, the machine's argument list). List
  * is the first-class collection; a Seq only earns its keep next to a
  * representation, so it stays minimal: get in, look at the groups, get out.
  *
  * Construction: Seq (((1)(2)(3))) from a quoted raw seq (the quote's wrapping
- * parens are OPENed away); Seq (X) of a BigInt exposes its digit-seq (a
+ * parens are OPENed away); Seq (X) of a Long exposes its digit-seq (a
  * negative keeps its sign wrap and reads as one group); Seq of a Seq is
  * identity. The empty seq's value is no tokens at all. */
 
@@ -39,7 +39,7 @@
 #define IP2_SEQ_CONSTRUCT_T(t) IP2_SEQ_CONSTRUCT_##t
 #define IP2_SEQ_CONSTRUCT_Quote(v) (,Seq,PP2_OPEN v)
 #define IP2_SEQ_CONSTRUCT_Seq(v) (,Seq,v)
-#define IP2_SEQ_CONSTRUCT_BigInt(v) (,Seq,v)
+#define IP2_SEQ_CONSTRUCT_Long(v) (,Seq,v)
 
 /* str: the raw seq is already a single token group chain with no bare
  * commas, so it renders verbatim. */
@@ -94,7 +94,7 @@
 #define IP2_SEQ_PUSH_I(P,s,g) P##s P##g
 
 /* size: one group per machine round through the accumulator's own inc
- * method, so a long seq's count promotes to BigInt automatically. */
+ * method, so a long seq's count promotes to Long automatically. */
 #define PP2_DEF_Seq_size PP2_VM_FN(PP2_LANGUAGE_SEQ_SIZE,1)
 #define PP2_LANGUAGE_SEQ_SIZE(P,r0,r1,r2,self,...) \
         (, \

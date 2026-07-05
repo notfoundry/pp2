@@ -86,8 +86,8 @@ def test_list_structural(pp, body, expected):
     ("print(List (1, 2, 3) contains (2))", "true"),
     ("print(List (1, 2, 3) contains (9))", "false"),
     ("print(List () contains (1))", "false"),
-    # eq dispatches per element, so mixed Int/BigInt probes work
-    ("print(List (1, 127 inc(), 3) contains (BigInt (((1)(2)(8)))))", "true"),
+    # eq dispatches per element, so mixed Int/Long probes work
+    ("print(List (1, 127 inc(), 3) contains (Long (((1)(2)(8)))))", "true"),
 ])
 def test_list_predicates(pp, body, expected):
     pp.include("pp2/pp2.h")

@@ -121,7 +121,7 @@
 /* size: chunked count through the machine's own arithmetic. Each step folds
  * up to 8 elements into the accumulator held in r0 with one `plus` method
  * call, so the count rides the Int literal tables until 127 and promotes to
- * BigInt automatically past the wall. */
+ * Long automatically past the wall. */
 #define PP2_DEF_List_size PP2_VM_FN(PP2_LANGUAGE_LIST_SIZE,1)
 #define PP2_LANGUAGE_LIST_SIZE(P,r0,r1,r2,self,...) \
         (, \

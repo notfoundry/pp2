@@ -22,11 +22,11 @@
 #include "pp2/language/statements/while.h"
 
 #include "pp2/language/types/any.h"
-#include "pp2/language/types/bigint.h"
 #include "pp2/language/types/bool.h"
 #include "pp2/language/types/fn.h"
 #include "pp2/language/types/int.h"
 #include "pp2/language/types/list.h"
+#include "pp2/language/types/long.h"
 #include "pp2/language/types/quote.h"
 #include "pp2/language/types/seq.h"
 #include "pp2/language/types/type.h"
