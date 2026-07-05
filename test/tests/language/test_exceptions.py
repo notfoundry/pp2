@@ -62,12 +62,12 @@ def test_unbound_local_halts_program(pp):
         pp.parse("1 8PP2_LANGUAGE_UNBOUND_LOCAL_EXCEPTION(23)")
 
 
-# --- known-broken: explicit Type constructor -------------------------------
-@pytest.mark.xfail(reason="the explicit Type constructor Int(7) spins in the "
-                          "author's half-finished Type_call dispatch and dies "
-                          "with EOF in PP2_EAT (see pp2-dev-frontier); bare 7 "
-                          "already compiles, so this path is unused",
-                   strict=True, raises=Exception)
-def test_int_explicit_constructor(pp):
+# --- a type with no constructor throws cleanly -----------------------------
+def test_missing_constructor(pp):
+    # Type_call resolves <Type>_construct; a type without one throws a normal
+    # DEFINITION_EXCEPTION rather than crashing. (Int/Bool/Quote do define one;
+    # a user Type that does not would land here -- Fn has no construct method.)
     pp.include("pp2/pp2.h")
-    assert pp.expand("PP2(print(Int (7)))") == "7"
+    result = pp.expand("PP2(print(Fn (7)))")
+    assert "8PP2_LANGUAGE_DEFINITION_EXCEPTION" in result
+    assert "Fn_construct" in result

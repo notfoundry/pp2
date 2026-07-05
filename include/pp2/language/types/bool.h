@@ -17,6 +17,11 @@
 #define PP2_DEF_true  PP2_CONST(Bool,1)
 #define PP2_DEF_false PP2_CONST(Bool,0)
 
+/* Bool(x): the argument is already a compiled Bool object, so construct just
+ * returns it (identity), exactly like Int_construct. */
+#define PP2_DEF_Bool_construct PP2_VM_FN(PP2_LANGUAGE_BOOL_CONSTRUCT,2)
+#define PP2_LANGUAGE_BOOL_CONSTRUCT(P,r0,r1,r2,self,arg0,...) (,/*r0=*/P##arg0,P##r1,P##r2,P##__VA_ARGS__)
+
 #define PP2_DEF_Bool_not PP2_VM_FN(PP2_LANGUAGE_BOOL_NOT,1)
 #define PP2_LANGUAGE_BOOL_NOT(P,r0,r1,r2,obj,...) (,/*r0=*/IP2_LANGUAGE_BOOL_NOT P##obj,P##r1,P##r2,P##__VA_ARGS__)
 #define IP2_LANGUAGE_BOOL_NOT(addr,type,obj) IP2_LANGUAGE_BOOL_NOT_##obj

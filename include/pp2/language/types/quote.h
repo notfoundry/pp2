@@ -12,6 +12,11 @@
 #define PP2_DEF_Quote PP2_TYPE(Quote,Any)
 #define PP2_SYM_Quote(...) __VA_ARGS__
 
+/* Quote(x): the argument is already a compiled Quote object, so construct just
+ * returns it (identity), exactly like Int_construct. */
+#define PP2_DEF_Quote_construct PP2_VM_FN(PP2_LANGUAGE_QUOTE_CONSTRUCT,2)
+#define PP2_LANGUAGE_QUOTE_CONSTRUCT(P,r0,r1,r2,self,arg0,...) (,/*r0=*/P##arg0,P##r1,P##r2,P##__VA_ARGS__)
+
 #define PP2_DEF_Quote_cat PP2_VM_FN(PP2_LANGUAGE_QUOTE_CAT,2)
 #define PP2_LANGUAGE_QUOTE_CAT(P,r0,r1,r2,o0,o1,...) (,/*r0=*/IP2_FX(LANGUAGE_QUOTE_CAT,(,PP2_LANGUAGE_OBJECT_VALUE P##o0,PP2_LANGUAGE_OBJECT_VALUE P##o1)),P##r1,P##r2,P##__VA_ARGS__)
 #define IP2_LANGUAGE_QUOTE_CAT(P,v0,v1) (,Quote,(PP2_CAT(PP2_OPEN P##v0, PP2_OPEN P##v1)))

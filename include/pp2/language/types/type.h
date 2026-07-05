@@ -25,7 +25,9 @@
                                         (, \
                                          /*r0=*/,P##r1,P##r2, \
                                          8PP2_LANGUAGE_TYPE_MEMBER,P##r0,(,Quote,(construct)), \
-                                         8PP2_LOCAL_CTX_PUSH_ARGUMENTS,PP2_LOCAL_CTX_GET_ARGUMENTS P##r1, \
+                                         /* pass the type object itself as `self`, then the call args, */ \
+                                         /* so <Type>_construct(self,arg0,...) binds like any method   */ \
+                                         8PP2_LOCAL_CTX_PUSH_ARGUMENTS,(P##r0)PP2_LOCAL_CTX_GET_ARGUMENTS P##r1, \
                                          8PP2_LANGUAGE_FN_CALL_IMPL, \
                                          P##__VA_ARGS__ \
                                         )
