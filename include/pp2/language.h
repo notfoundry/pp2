@@ -8,6 +8,7 @@
 
 #include "pp2/language/definition/const.h"
 #include "pp2/language/definition/def.h"
+#include "pp2/language/definition/fn.h"
 #include "pp2/language/definition/primitive.h"
 #include "pp2/language/definition/type.h"
 #include "pp2/language/definition/vm_fn.h"
