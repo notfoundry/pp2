@@ -6,6 +6,9 @@
 #include "pp2/language/definition/vm_fn.h"
 #include "pp2/language/definition/type.h"
 
+#include "pp2/language/basic/symbol.h"
+
+#include "pp2/primitive/basic/cat.h"
 #include "pp2/primitive/basic/invoke.h"
 #include "pp2/primitive/tuple/open.h"
 
@@ -49,5 +52,18 @@
 
 #define PP2_LANGUAGE_TYPE_NAME(P,type_name,supertype_name) P##type_name
 #define PP2_LANGUAGE_SUPERTYPE_NAME(P,type_name,supertype_name) P##supertype_name
+
+
+/* eq(other): two Type objects are equal when they name the same type. Type names
+ * are registered symbols, so this is one symbol comparison. A Type never equals
+ * a value of any other type. */
+#define PP2_DEF_Type_eq PP2_VM_FN(8PP2_LANGUAGE_TYPE_EQ,2)
+#define PP2_INSN_8PP2_LANGUAGE_TYPE_EQ(P,r0,r1,r2,lhs_obj,rhs_obj,...) (,/*r0=*/IP2_FX(LANGUAGE_TYPE_EQ, (,PP2_OPEN P##lhs_obj,PP2_OPEN P##rhs_obj)),P##r1,P##r2,P##__VA_ARGS__)
+#define IP2_LANGUAGE_TYPE_EQ(P,lhs_addr,lhs_type,lhs_value,rhs_addr,rhs_type,rhs_value) \
+        PP2_CAT(IP2_LANGUAGE_TYPE_EQ_T_,PP2_SYMBOL_EQ(Type,rhs_type))(lhs_value,rhs_value)
+#define IP2_LANGUAGE_TYPE_EQ_T_0(lhs_value,rhs_value) (,Bool,0)
+#define IP2_LANGUAGE_TYPE_EQ_T_1(lhs_value,rhs_value) \
+        (,Bool,IP2_LANGUAGE_TYPE_EQ_NAMES(PP2_FX(LANGUAGE_TYPE_NAME,lhs_value),PP2_FX(LANGUAGE_TYPE_NAME,rhs_value)))
+#define IP2_LANGUAGE_TYPE_EQ_NAMES(lhs_name,rhs_name) PP2_SYMBOL_EQ(lhs_name,rhs_name)
 
 #endif

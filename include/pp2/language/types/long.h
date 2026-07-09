@@ -89,10 +89,15 @@
 /* comparisons -> (,Bool,0|1), rhs-dispatched like the arithmetic */
 #define PP2_DEF_Long_eq  PP2_VM_FN(8PP2_LANGUAGE_LONG_EQ,2)
 #define PP2_INSN_8PP2_LANGUAGE_LONG_EQ(P,r0,r1,r2,lhs_obj,rhs_obj,...) (,/*r0=*/IP2_FX(LANGUAGE_LONG_EQ,(,PP2_OPEN P##lhs_obj,PP2_OPEN P##rhs_obj)),P##r1,P##r2,P##__VA_ARGS__)
+/* as with Int_eq, a foreign rhs compares false rather than failing to resolve */
 #define IP2_LANGUAGE_LONG_EQ(P,la,lt,lv,ra,rt,rv) IP2_LONG_EQ_T(rt)(lv,rv)
-#define IP2_LONG_EQ_T(t) IP2_LONG_EQ_##t
+#define IP2_LONG_EQ_T(t) IP2_LONG_EQ_T_I(IP2_LONG_EQ_TAG_##t)
+#define IP2_LONG_EQ_T_I(...) PP2_TUPLE_AT_1(,__VA_ARGS__,IP2_LONG_EQ_Foreign)
+#define IP2_LONG_EQ_TAG_Int  ,IP2_LONG_EQ_Int
+#define IP2_LONG_EQ_TAG_Long ,IP2_LONG_EQ_Long
 #define IP2_LONG_EQ_Int(lv,rv) (,Bool,PP2_ARBITRARY_EQUAL(lv,PP2_ARBITRARY_PROMOTE(rv)))
 #define IP2_LONG_EQ_Long(lv,rv) (,Bool,PP2_ARBITRARY_EQUAL(lv,rv))
+#define IP2_LONG_EQ_Foreign(lv,rv) (,Bool,0)
 
 #define PP2_DEF_Long_lt  PP2_VM_FN(8PP2_LANGUAGE_LONG_LT,2)
 #define PP2_INSN_8PP2_LANGUAGE_LONG_LT(P,r0,r1,r2,lhs_obj,rhs_obj,...) (,/*r0=*/IP2_FX(LANGUAGE_LONG_LT,(,PP2_OPEN P##lhs_obj,PP2_OPEN P##rhs_obj)),P##r1,P##r2,P##__VA_ARGS__)

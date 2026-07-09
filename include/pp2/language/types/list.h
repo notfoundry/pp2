@@ -3,6 +3,7 @@
 #define PP2_LANGUAGE_TYPES_LIST_H
 
 #include "pp2/language/basic/object.h"
+#include "pp2/language/basic/symbol.h"
 #include "pp2/language/definition/const.h"
 #include "pp2/language/definition/type.h"
 #include "pp2/language/definition/vm_fn.h"
@@ -335,6 +336,59 @@
 #define IP2_LIST_REV_NEXT_7(acc,e0,e1,e2,e3,e4,e5,e6)
 #define IP2_LIST_REV_NEXT_8(acc,e0,e1,e2,e3,e4,e5,e6,e7)
 #define IP2_LIST_REV_NEXT_9_OR_MORE(acc,e0,e1,e2,e3,e4,e5,e6,e7,...) 8IP2_LANGUAGE_LIST_REV_STEP,(__VA_ARGS__),IP2_LIST_REV_JOIN(acc,e7,e6,e5,e4,e3,e2,e1,e0),
+
+/* eq(other): other is a List of the same length whose elements are pairwise eq.
+ * One pair per machine round, walking both element tuples together and exiting
+ * on the first mismatch. Each round delegates to the left element's own eq, so
+ * a list of lists compares by recursing into this same handler. */
+#define PP2_DEF_List_eq PP2_VM_FN(8PP2_LANGUAGE_LIST_EQ,2)
+#define PP2_INSN_8PP2_LANGUAGE_LIST_EQ(P,r0,r1,r2,self,other,...) \
+        (, \
+         P##r0,P##r1,P##r2, \
+         IP2_FX(LANGUAGE_LIST_EQ_ENTER,(,P##self,P##other,PP2_LANGUAGE_OBJECT_TYPE P##other)) \
+         P##__VA_ARGS__ \
+        )
+#define IP2_LANGUAGE_LIST_EQ_ENTER(P,self,other,other_type) \
+        PP2_CAT(IP2_LIST_EQ_ENTER_,PP2_SYMBOL_EQ(List,other_type))(self,other)
+#define IP2_LIST_EQ_ENTER_0(self,other) 8PP2_LOAD_CONST,(,Bool,0),
+#define IP2_LIST_EQ_ENTER_1(self,other) \
+        8IP2_LANGUAGE_LIST_EQ_STEP,PP2_LANGUAGE_OBJECT_VALUE self,PP2_LANGUAGE_OBJECT_VALUE other,
+
+#define PP2_INSN_8IP2_LANGUAGE_LIST_EQ_STEP(P,r0,r1,r2,lrest,rrest,...) \
+        (, \
+         P##r0,P##r1,P##r2, \
+         IP2_LIST_EQ_EMIT(P##lrest,P##rrest) \
+         P##__VA_ARGS__ \
+        )
+#define IP2_LIST_EQ_EMIT(l,r) IP2_LIST_EQ_EMIT_I(IP2_LIST_PROBE l,IP2_LIST_PROBE r,l,r)
+#define IP2_LIST_EQ_EMIT_I(lh,rh,l,r) PP2_IS_EDIBLE(,lh)(IP2_LIST_EQ_LEFT_,SOME,NONE)(lh,rh,l,r)
+#define IP2_LIST_EQ_LEFT_SOME(lh,rh,l,r) PP2_IS_EDIBLE(,rh)(IP2_LIST_EQ_PAIR_,SOME,NONE)(lh,rh,l,r)
+#define IP2_LIST_EQ_LEFT_NONE(lh,rh,l,r) PP2_IS_EDIBLE(,rh)(IP2_LIST_EQ_DRAINED_,SOME,NONE)(lh,rh,l,r)
+/* left drained: equal only if the right drained too */
+#define IP2_LIST_EQ_DRAINED_NONE(lh,rh,l,r) 8PP2_LOAD_CONST,(,Bool,1),
+#define IP2_LIST_EQ_DRAINED_SOME(lh,rh,l,r) 8PP2_LOAD_CONST,(,Bool,0),
+/* left has an element, right ran out: the right list is shorter */
+#define IP2_LIST_EQ_PAIR_NONE(lh,rh,l,r) 8PP2_LOAD_CONST,(,Bool,0),
+#define IP2_LIST_EQ_PAIR_SOME(lh,rh,l,r) \
+        8PP2_LOCAL_CTX_CLEAR_ARGUMENTS, \
+        8PP2_LOAD_CONST,lh, \
+        8PP2_LANGUAGE_METHOD_CALL,eq, \
+        8PP2_LOCAL_CTX_PUSH_ARGUMENT,rh, \
+        8PP2_LANGUAGE_FN_CALL_IMPL, \
+        8IP2_LANGUAGE_LIST_EQ_NEXT,IP2_LIST_EQ_TAIL(PP2_OPEN l),IP2_LIST_EQ_TAIL(PP2_OPEN r),
+#define IP2_LIST_EQ_TAIL(...) (PP2_TUPLE_DROP_1(,__VA_ARGS__))
+#define PP2_INSN_8IP2_LANGUAGE_LIST_EQ_NEXT(P,r0,r1,r2,lrest,rrest,...) \
+        (, \
+         P##r0,P##r1,P##r2, \
+         IP2_FX(LIST_EQ_NEXT_I,(,PP2_LANGUAGE_OBJECT_VALUE P##r0))(P##lrest,P##rrest) \
+         P##__VA_ARGS__ \
+        )
+#define IP2_LIST_EQ_NEXT_I(P,b) IP2_LIST_EQ_NEXT_II(b)
+#define IP2_LIST_EQ_NEXT_II(b) IP2_LIST_EQ_NEXT_##b
+/* a mismatched pair leaves the false in r0, which is the answer */
+#define IP2_LIST_EQ_NEXT_0(lrest,rrest)
+#define IP2_LIST_EQ_NEXT_1(lrest,rrest) 8IP2_LANGUAGE_LIST_EQ_STEP,lrest,rrest,
+
 
 /* contains(x): one element per machine round with early exit on a hit. Each
  * round calls the element's own eq method with the pre-evaluated probe

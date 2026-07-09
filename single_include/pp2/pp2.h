@@ -2275,10 +2275,41 @@
 #define PP2_LANGUAGE_TYPES_ANY_H
 
 
+// ******************** From: symbol.h
+/** @file */
+#ifndef PP2_LANGUAGE_BASIC_SYMBOL_H
+#define PP2_LANGUAGE_BASIC_SYMBOL_H
+
+/**
+* Equality of two registered symbols, yielding 1 or 0.
+*
+* The preprocessor cannot compare two arbitrary tokens. It can compare tokens
+* that have been registered, and a symbol is registered by defining
+* `PP2_SYM_<name>(...) __VA_ARGS__`. Every PP2 type name is registered next to
+* its type definition.
+*
+* `sa (sb)` yields `sb` when the two differ. When they are the same symbol it
+* yields `sa` painted blue, because a macro is disabled inside its own
+* expansion, and a painted token never expands again. So only the live one goes
+* on to eat the trailing `(0,1)`, and the arity of what comes back is the
+* answer: two arguments when the symbols differ, one when they match.
+*
+* Both names must be registered. An unregistered name expands to nothing at all,
+* which looks exactly like the painted case, so it reports equal. Only ever call
+* this on names you know are registered.
+*/
+#define PP2_SYMBOL_EQ(a,b) IP2_SYMBOL_EQ_I(PP2_SYM_##a,PP2_SYM_##b)
+#define IP2_SYMBOL_EQ_I(sa,sb) IP2_SYMBOL_EQ_II(sa (sb) (0,1))
+#define IP2_SYMBOL_EQ_II(...) IP2_SYMBOL_EQ_PICK(__VA_ARGS__,0,1)
+#define IP2_SYMBOL_EQ_PICK(_1,_2,_3,...) _3
+
+#endif
+
 // ******************** From: type.h
 /** @file */
 #ifndef PP2_LANGUAGE_TYPES_TYPE_H
 #define PP2_LANGUAGE_TYPES_TYPE_H
+
 
 
 
@@ -2323,6 +2354,19 @@
 #define PP2_LANGUAGE_TYPE_NAME(P,type_name,supertype_name) P##type_name
 #define PP2_LANGUAGE_SUPERTYPE_NAME(P,type_name,supertype_name) P##supertype_name
 
+
+/* eq(other): two Type objects are equal when they name the same type. Type names
+ * are registered symbols, so this is one symbol comparison. A Type never equals
+ * a value of any other type. */
+#define PP2_DEF_Type_eq PP2_VM_FN(8PP2_LANGUAGE_TYPE_EQ,2)
+#define PP2_INSN_8PP2_LANGUAGE_TYPE_EQ(P,r0,r1,r2,lhs_obj,rhs_obj,...) (,/*r0=*/IP2_FX(LANGUAGE_TYPE_EQ, (,PP2_OPEN P##lhs_obj,PP2_OPEN P##rhs_obj)),P##r1,P##r2,P##__VA_ARGS__)
+#define IP2_LANGUAGE_TYPE_EQ(P,lhs_addr,lhs_type,lhs_value,rhs_addr,rhs_type,rhs_value) \
+        PP2_CAT(IP2_LANGUAGE_TYPE_EQ_T_,PP2_SYMBOL_EQ(Type,rhs_type))(lhs_value,rhs_value)
+#define IP2_LANGUAGE_TYPE_EQ_T_0(lhs_value,rhs_value) (,Bool,0)
+#define IP2_LANGUAGE_TYPE_EQ_T_1(lhs_value,rhs_value) \
+        (,Bool,IP2_LANGUAGE_TYPE_EQ_NAMES(PP2_FX(LANGUAGE_TYPE_NAME,lhs_value),PP2_FX(LANGUAGE_TYPE_NAME,rhs_value)))
+#define IP2_LANGUAGE_TYPE_EQ_NAMES(lhs_name,rhs_name) PP2_SYMBOL_EQ(lhs_name,rhs_name)
+
 #endif
 
 
@@ -2340,12 +2384,53 @@
 #define PP2_DEF_Any_str PP2_VM_FN(8PP2_LANGUAGE_ANY_STR,1)
 #define PP2_INSN_8PP2_LANGUAGE_ANY_STR(P,r0,r1,r2,obj,...) (,P##obj,P##r1,P##r2,P##__VA_ARGS__)
 
+
+/* eq(other): the root equality every type inherits, so `eq` is total wherever
+ * an answer exists. Values of different types are never equal, which is decided
+ * here by comparing the two type names as registered symbols.
+ *
+ * Reaching this with two values of the SAME type means that type defined no eq
+ * of its own, and the only types in that position are the ones whose values are
+ * arbitrary token sequences: Quote, Seq, Fn. The preprocessor cannot compare
+ * arbitrary tokens, so there is no answer to give and we raise the definition
+ * exception rather than invent one. */
+#define PP2_DEF_Any_eq PP2_VM_FN(8PP2_LANGUAGE_ANY_EQ,2)
+#define PP2_INSN_8PP2_LANGUAGE_ANY_EQ(P,r0,r1,r2,lhs_obj,rhs_obj,...) \
+        (, \
+         P##r0,P##r1,P##r2, \
+         IP2_FX(LANGUAGE_ANY_EQ,(,PP2_LANGUAGE_OBJECT_TYPE P##lhs_obj,PP2_LANGUAGE_OBJECT_TYPE P##rhs_obj)) \
+         P##__VA_ARGS__ \
+        )
+#define IP2_LANGUAGE_ANY_EQ(P,lt,rt) PP2_CAT(IP2_LANGUAGE_ANY_EQ_,PP2_SYMBOL_EQ(lt,rt))(P##lt)
+#define IP2_LANGUAGE_ANY_EQ_0(lt) 8PP2_LOAD_CONST,(,Bool,0),
+#define IP2_LANGUAGE_ANY_EQ_1(lt) 8PP2_THROW_EXCEPTION,8PP2_LANGUAGE_DEFINITION_EXCEPTION,lt##_eq,
+
+
+/* neq(other): the negation of whatever eq the receiver's type resolves to, so a
+ * type gets neq for free the moment it gets eq. Bind the receiver's eq into r0
+ * with a bare METHOD_CALL, fire it against the pre-evaluated operand, then send
+ * not() to the Bool that comes back. */
+#define PP2_DEF_Any_neq PP2_VM_FN(8PP2_LANGUAGE_ANY_NEQ,2)
+#define PP2_INSN_8PP2_LANGUAGE_ANY_NEQ(P,r0,r1,r2,lhs_obj,rhs_obj,...) \
+        (, \
+         P##r0,P##r1,P##r2, \
+         8PP2_LOCAL_CTX_CLEAR_ARGUMENTS, \
+         8PP2_LOAD_CONST,P##lhs_obj, \
+         8PP2_LANGUAGE_METHOD_CALL,eq, \
+         8PP2_LOCAL_CTX_PUSH_ARGUMENT,P##rhs_obj, \
+         8PP2_LANGUAGE_FN_CALL_IMPL, \
+         8PP2_LOCAL_CTX_CLEAR_ARGUMENTS, \
+         8PP2_LANGUAGE_METHOD_CALL,not(), \
+         P##__VA_ARGS__ \
+        )
+
 #endif
 
 // ******************** From: bool.h
 /** @file */
 #ifndef PP2_LANGUAGE_TYPES_BOOL_H
 #define PP2_LANGUAGE_TYPES_BOOL_H
+
 
 
 
@@ -2389,6 +2474,19 @@
 #define IP2_LANGUAGE_BOOL_XOR_0_1 (,Bool,1)
 #define IP2_LANGUAGE_BOOL_XOR_1_0 (,Bool,1)
 #define IP2_LANGUAGE_BOOL_XOR_1_1 (,Bool,0)
+
+/* eq(other): a Bool equals only a Bool of the same value. Any other type takes
+ * the foreign branch and compares false, so eq stays total. */
+#define PP2_DEF_Bool_eq PP2_VM_FN(8PP2_LANGUAGE_BOOL_EQ,2)
+#define PP2_INSN_8PP2_LANGUAGE_BOOL_EQ(P,r0,r1,r2,lhs_obj,rhs_obj,...) (,/*r0=*/IP2_FX(LANGUAGE_BOOL_EQ, (,PP2_OPEN P##lhs_obj,PP2_OPEN P##rhs_obj)),P##r1,P##r2,P##__VA_ARGS__)
+#define IP2_LANGUAGE_BOOL_EQ(P,lhs_addr,lhs_type,lhs_value,rhs_addr,rhs_type,rhs_value) \
+        PP2_CAT(IP2_LANGUAGE_BOOL_EQ_T_,PP2_SYMBOL_EQ(Bool,rhs_type))(lhs_value,rhs_value)
+#define IP2_LANGUAGE_BOOL_EQ_T_0(lhs_value,rhs_value) (,Bool,0)
+#define IP2_LANGUAGE_BOOL_EQ_T_1(lhs_value,rhs_value) IP2_LANGUAGE_BOOL_EQ_##lhs_value##_##rhs_value
+#define IP2_LANGUAGE_BOOL_EQ_0_0 (,Bool,1)
+#define IP2_LANGUAGE_BOOL_EQ_0_1 (,Bool,0)
+#define IP2_LANGUAGE_BOOL_EQ_1_0 (,Bool,0)
+#define IP2_LANGUAGE_BOOL_EQ_1_1 (,Bool,1)
 
 #define PP2_DEF_Bool_str PP2_VM_FN(8PP2_LANGUAGE_BOOL_STR,1)
 #define PP2_INSN_8PP2_LANGUAGE_BOOL_STR(P,r0,r1,r2,obj,...) (,PP2_CAT(IP2_LANGUAGE_BOOL_STR_,PP2_LANGUAGE_OBJECT_VALUE P##obj),P##r1,P##r2,P##__VA_ARGS__)
@@ -4714,10 +4812,17 @@
  * relation; Int vs Long promotes the lhs and uses the arbitrary relation. */
 #define PP2_DEF_Int_eq  PP2_VM_FN(8PP2_LANGUAGE_INT_EQ,2)
 #define PP2_INSN_8PP2_LANGUAGE_INT_EQ(P,r0,r1,r2,lhs_obj,rhs_obj,...) (,/*r0=*/IP2_FX(LANGUAGE_INT_EQ,(,PP2_OPEN P##lhs_obj,PP2_OPEN P##rhs_obj)),P##r1,P##r2,P##__VA_ARGS__)
+/* eq alone among the relations is total: a number compared against a value of
+ * some non-numeric type is false, not an error, so `List (1, true) contains (x)`
+ * can ask every element. The ordering relations still reject a foreign rhs. */
 #define IP2_LANGUAGE_INT_EQ(P,la,lt,lv,ra,rt,rv) IP2_INT_EQ_T(rt)(lv,rv)
-#define IP2_INT_EQ_T(t) IP2_INT_EQ_##t
+#define IP2_INT_EQ_T(t) IP2_INT_EQ_T_I(IP2_INT_EQ_TAG_##t)
+#define IP2_INT_EQ_T_I(...) PP2_TUPLE_AT_1(,__VA_ARGS__,IP2_INT_EQ_Foreign)
+#define IP2_INT_EQ_TAG_Int  ,IP2_INT_EQ_Int
+#define IP2_INT_EQ_TAG_Long ,IP2_INT_EQ_Long
 #define IP2_INT_EQ_Int(lv,rv) (,Bool,PP2_LITERAL_EQ(lv,rv))
 #define IP2_INT_EQ_Long(lv,rv) (,Bool,PP2_ARBITRARY_EQUAL(PP2_ARBITRARY_PROMOTE(lv),rv))
+#define IP2_INT_EQ_Foreign(lv,rv) (,Bool,0)
 
 #define PP2_DEF_Int_lt  PP2_VM_FN(8PP2_LANGUAGE_INT_LT,2)
 #define PP2_INSN_8PP2_LANGUAGE_INT_LT(P,r0,r1,r2,lhs_obj,rhs_obj,...) (,/*r0=*/IP2_FX(LANGUAGE_INT_LT,(,PP2_OPEN P##lhs_obj,PP2_OPEN P##rhs_obj)),P##r1,P##r2,P##__VA_ARGS__)
@@ -5076,6 +5181,59 @@
 #define IP2_LIST_REV_NEXT_8(acc,e0,e1,e2,e3,e4,e5,e6,e7)
 #define IP2_LIST_REV_NEXT_9_OR_MORE(acc,e0,e1,e2,e3,e4,e5,e6,e7,...) 8IP2_LANGUAGE_LIST_REV_STEP,(__VA_ARGS__),IP2_LIST_REV_JOIN(acc,e7,e6,e5,e4,e3,e2,e1,e0),
 
+/* eq(other): other is a List of the same length whose elements are pairwise eq.
+ * One pair per machine round, walking both element tuples together and exiting
+ * on the first mismatch. Each round delegates to the left element's own eq, so
+ * a list of lists compares by recursing into this same handler. */
+#define PP2_DEF_List_eq PP2_VM_FN(8PP2_LANGUAGE_LIST_EQ,2)
+#define PP2_INSN_8PP2_LANGUAGE_LIST_EQ(P,r0,r1,r2,self,other,...) \
+        (, \
+         P##r0,P##r1,P##r2, \
+         IP2_FX(LANGUAGE_LIST_EQ_ENTER,(,P##self,P##other,PP2_LANGUAGE_OBJECT_TYPE P##other)) \
+         P##__VA_ARGS__ \
+        )
+#define IP2_LANGUAGE_LIST_EQ_ENTER(P,self,other,other_type) \
+        PP2_CAT(IP2_LIST_EQ_ENTER_,PP2_SYMBOL_EQ(List,other_type))(self,other)
+#define IP2_LIST_EQ_ENTER_0(self,other) 8PP2_LOAD_CONST,(,Bool,0),
+#define IP2_LIST_EQ_ENTER_1(self,other) \
+        8IP2_LANGUAGE_LIST_EQ_STEP,PP2_LANGUAGE_OBJECT_VALUE self,PP2_LANGUAGE_OBJECT_VALUE other,
+
+#define PP2_INSN_8IP2_LANGUAGE_LIST_EQ_STEP(P,r0,r1,r2,lrest,rrest,...) \
+        (, \
+         P##r0,P##r1,P##r2, \
+         IP2_LIST_EQ_EMIT(P##lrest,P##rrest) \
+         P##__VA_ARGS__ \
+        )
+#define IP2_LIST_EQ_EMIT(l,r) IP2_LIST_EQ_EMIT_I(IP2_LIST_PROBE l,IP2_LIST_PROBE r,l,r)
+#define IP2_LIST_EQ_EMIT_I(lh,rh,l,r) PP2_IS_EDIBLE(,lh)(IP2_LIST_EQ_LEFT_,SOME,NONE)(lh,rh,l,r)
+#define IP2_LIST_EQ_LEFT_SOME(lh,rh,l,r) PP2_IS_EDIBLE(,rh)(IP2_LIST_EQ_PAIR_,SOME,NONE)(lh,rh,l,r)
+#define IP2_LIST_EQ_LEFT_NONE(lh,rh,l,r) PP2_IS_EDIBLE(,rh)(IP2_LIST_EQ_DRAINED_,SOME,NONE)(lh,rh,l,r)
+/* left drained: equal only if the right drained too */
+#define IP2_LIST_EQ_DRAINED_NONE(lh,rh,l,r) 8PP2_LOAD_CONST,(,Bool,1),
+#define IP2_LIST_EQ_DRAINED_SOME(lh,rh,l,r) 8PP2_LOAD_CONST,(,Bool,0),
+/* left has an element, right ran out: the right list is shorter */
+#define IP2_LIST_EQ_PAIR_NONE(lh,rh,l,r) 8PP2_LOAD_CONST,(,Bool,0),
+#define IP2_LIST_EQ_PAIR_SOME(lh,rh,l,r) \
+        8PP2_LOCAL_CTX_CLEAR_ARGUMENTS, \
+        8PP2_LOAD_CONST,lh, \
+        8PP2_LANGUAGE_METHOD_CALL,eq, \
+        8PP2_LOCAL_CTX_PUSH_ARGUMENT,rh, \
+        8PP2_LANGUAGE_FN_CALL_IMPL, \
+        8IP2_LANGUAGE_LIST_EQ_NEXT,IP2_LIST_EQ_TAIL(PP2_OPEN l),IP2_LIST_EQ_TAIL(PP2_OPEN r),
+#define IP2_LIST_EQ_TAIL(...) (PP2_TUPLE_DROP_1(,__VA_ARGS__))
+#define PP2_INSN_8IP2_LANGUAGE_LIST_EQ_NEXT(P,r0,r1,r2,lrest,rrest,...) \
+        (, \
+         P##r0,P##r1,P##r2, \
+         IP2_FX(LIST_EQ_NEXT_I,(,PP2_LANGUAGE_OBJECT_VALUE P##r0))(P##lrest,P##rrest) \
+         P##__VA_ARGS__ \
+        )
+#define IP2_LIST_EQ_NEXT_I(P,b) IP2_LIST_EQ_NEXT_II(b)
+#define IP2_LIST_EQ_NEXT_II(b) IP2_LIST_EQ_NEXT_##b
+/* a mismatched pair leaves the false in r0, which is the answer */
+#define IP2_LIST_EQ_NEXT_0(lrest,rrest)
+#define IP2_LIST_EQ_NEXT_1(lrest,rrest) 8IP2_LANGUAGE_LIST_EQ_STEP,lrest,rrest,
+
+
 /* contains(x): one element per machine round with early exit on a hit. Each
  * round calls the element's own eq method with the pre-evaluated probe
  * object: METHOD_CALL with a bare method name binds the method Fn into r0
@@ -5374,10 +5532,15 @@
 /* comparisons -> (,Bool,0|1), rhs-dispatched like the arithmetic */
 #define PP2_DEF_Long_eq  PP2_VM_FN(8PP2_LANGUAGE_LONG_EQ,2)
 #define PP2_INSN_8PP2_LANGUAGE_LONG_EQ(P,r0,r1,r2,lhs_obj,rhs_obj,...) (,/*r0=*/IP2_FX(LANGUAGE_LONG_EQ,(,PP2_OPEN P##lhs_obj,PP2_OPEN P##rhs_obj)),P##r1,P##r2,P##__VA_ARGS__)
+/* as with Int_eq, a foreign rhs compares false rather than failing to resolve */
 #define IP2_LANGUAGE_LONG_EQ(P,la,lt,lv,ra,rt,rv) IP2_LONG_EQ_T(rt)(lv,rv)
-#define IP2_LONG_EQ_T(t) IP2_LONG_EQ_##t
+#define IP2_LONG_EQ_T(t) IP2_LONG_EQ_T_I(IP2_LONG_EQ_TAG_##t)
+#define IP2_LONG_EQ_T_I(...) PP2_TUPLE_AT_1(,__VA_ARGS__,IP2_LONG_EQ_Foreign)
+#define IP2_LONG_EQ_TAG_Int  ,IP2_LONG_EQ_Int
+#define IP2_LONG_EQ_TAG_Long ,IP2_LONG_EQ_Long
 #define IP2_LONG_EQ_Int(lv,rv) (,Bool,PP2_ARBITRARY_EQUAL(lv,PP2_ARBITRARY_PROMOTE(rv)))
 #define IP2_LONG_EQ_Long(lv,rv) (,Bool,PP2_ARBITRARY_EQUAL(lv,rv))
+#define IP2_LONG_EQ_Foreign(lv,rv) (,Bool,0)
 
 #define PP2_DEF_Long_lt  PP2_VM_FN(8PP2_LANGUAGE_LONG_LT,2)
 #define PP2_INSN_8PP2_LANGUAGE_LONG_LT(P,r0,r1,r2,lhs_obj,rhs_obj,...) (,/*r0=*/IP2_FX(LANGUAGE_LONG_LT,(,PP2_OPEN P##lhs_obj,PP2_OPEN P##rhs_obj)),P##r1,P##r2,P##__VA_ARGS__)

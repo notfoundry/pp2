@@ -125,10 +125,17 @@
  * relation; Int vs Long promotes the lhs and uses the arbitrary relation. */
 #define PP2_DEF_Int_eq  PP2_VM_FN(8PP2_LANGUAGE_INT_EQ,2)
 #define PP2_INSN_8PP2_LANGUAGE_INT_EQ(P,r0,r1,r2,lhs_obj,rhs_obj,...) (,/*r0=*/IP2_FX(LANGUAGE_INT_EQ,(,PP2_OPEN P##lhs_obj,PP2_OPEN P##rhs_obj)),P##r1,P##r2,P##__VA_ARGS__)
+/* eq alone among the relations is total: a number compared against a value of
+ * some non-numeric type is false, not an error, so `List (1, true) contains (x)`
+ * can ask every element. The ordering relations still reject a foreign rhs. */
 #define IP2_LANGUAGE_INT_EQ(P,la,lt,lv,ra,rt,rv) IP2_INT_EQ_T(rt)(lv,rv)
-#define IP2_INT_EQ_T(t) IP2_INT_EQ_##t
+#define IP2_INT_EQ_T(t) IP2_INT_EQ_T_I(IP2_INT_EQ_TAG_##t)
+#define IP2_INT_EQ_T_I(...) PP2_TUPLE_AT_1(,__VA_ARGS__,IP2_INT_EQ_Foreign)
+#define IP2_INT_EQ_TAG_Int  ,IP2_INT_EQ_Int
+#define IP2_INT_EQ_TAG_Long ,IP2_INT_EQ_Long
 #define IP2_INT_EQ_Int(lv,rv) (,Bool,PP2_LITERAL_EQ(lv,rv))
 #define IP2_INT_EQ_Long(lv,rv) (,Bool,PP2_ARBITRARY_EQUAL(PP2_ARBITRARY_PROMOTE(lv),rv))
+#define IP2_INT_EQ_Foreign(lv,rv) (,Bool,0)
 
 #define PP2_DEF_Int_lt  PP2_VM_FN(8PP2_LANGUAGE_INT_LT,2)
 #define PP2_INSN_8PP2_LANGUAGE_INT_LT(P,r0,r1,r2,lhs_obj,rhs_obj,...) (,/*r0=*/IP2_FX(LANGUAGE_INT_LT,(,PP2_OPEN P##lhs_obj,PP2_OPEN P##rhs_obj)),P##r1,P##r2,P##__VA_ARGS__)

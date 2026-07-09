@@ -7,6 +7,8 @@
 #include "pp2/language/definition/type.h"
 #include "pp2/language/definition/vm_fn.h"
 
+#include "pp2/language/basic/symbol.h"
+
 #include "pp2/primitive/basic/cat.h"
 #include "pp2/primitive/basic/invoke.h"
 #include "pp2/primitive/tuple/open.h"
@@ -51,6 +53,19 @@
 #define IP2_LANGUAGE_BOOL_XOR_0_1 (,Bool,1)
 #define IP2_LANGUAGE_BOOL_XOR_1_0 (,Bool,1)
 #define IP2_LANGUAGE_BOOL_XOR_1_1 (,Bool,0)
+
+/* eq(other): a Bool equals only a Bool of the same value. Any other type takes
+ * the foreign branch and compares false, so eq stays total. */
+#define PP2_DEF_Bool_eq PP2_VM_FN(8PP2_LANGUAGE_BOOL_EQ,2)
+#define PP2_INSN_8PP2_LANGUAGE_BOOL_EQ(P,r0,r1,r2,lhs_obj,rhs_obj,...) (,/*r0=*/IP2_FX(LANGUAGE_BOOL_EQ, (,PP2_OPEN P##lhs_obj,PP2_OPEN P##rhs_obj)),P##r1,P##r2,P##__VA_ARGS__)
+#define IP2_LANGUAGE_BOOL_EQ(P,lhs_addr,lhs_type,lhs_value,rhs_addr,rhs_type,rhs_value) \
+        PP2_CAT(IP2_LANGUAGE_BOOL_EQ_T_,PP2_SYMBOL_EQ(Bool,rhs_type))(lhs_value,rhs_value)
+#define IP2_LANGUAGE_BOOL_EQ_T_0(lhs_value,rhs_value) (,Bool,0)
+#define IP2_LANGUAGE_BOOL_EQ_T_1(lhs_value,rhs_value) IP2_LANGUAGE_BOOL_EQ_##lhs_value##_##rhs_value
+#define IP2_LANGUAGE_BOOL_EQ_0_0 (,Bool,1)
+#define IP2_LANGUAGE_BOOL_EQ_0_1 (,Bool,0)
+#define IP2_LANGUAGE_BOOL_EQ_1_0 (,Bool,0)
+#define IP2_LANGUAGE_BOOL_EQ_1_1 (,Bool,1)
 
 #define PP2_DEF_Bool_str PP2_VM_FN(8PP2_LANGUAGE_BOOL_STR,1)
 #define PP2_INSN_8PP2_LANGUAGE_BOOL_STR(P,r0,r1,r2,obj,...) (,PP2_CAT(IP2_LANGUAGE_BOOL_STR_,PP2_LANGUAGE_OBJECT_VALUE P##obj),P##r1,P##r2,P##__VA_ARGS__)
