@@ -28,6 +28,13 @@
              P##__VA_ARGS__ \
             ) \
         )
-#define IP2_LANGUAGE_VM_FN_CALL(m,args_tup) m args_tup
+/* The handler travels through the VM registers as the pp-number `8NAME`, never as
+ * an identifier. An identifier that passes through its own expansion is painted
+ * blue for the rest of the translation unit, which is exactly what happens when a
+ * method appears in its own argument (`3 plus (4 plus (5))`): the outer handler's
+ * name rides the register file through the inner handler's expansion, comes out
+ * painted, and never expands again. A pp-number cannot be painted, so the real
+ * name is pasted back on here, at the last instant before the call. */
+#define IP2_LANGUAGE_VM_FN_CALL(m,args_tup) PP2_INSN_##m args_tup
 
 #endif

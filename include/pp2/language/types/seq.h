@@ -33,8 +33,8 @@
 #define PP2_DEF_Seq PP2_TYPE(Seq,Any)
 #define PP2_SYM_Seq(...) __VA_ARGS__
 
-#define PP2_DEF_Seq_construct PP2_VM_FN(PP2_LANGUAGE_SEQ_CONSTRUCT,2)
-#define PP2_LANGUAGE_SEQ_CONSTRUCT(P,r0,r1,r2,self,arg0,...) (,/*r0=*/IP2_FX(LANGUAGE_SEQ_CONSTRUCT,(,PP2_OPEN P##arg0)),P##r1,P##r2,P##__VA_ARGS__)
+#define PP2_DEF_Seq_construct PP2_VM_FN(8PP2_LANGUAGE_SEQ_CONSTRUCT,2)
+#define PP2_INSN_8PP2_LANGUAGE_SEQ_CONSTRUCT(P,r0,r1,r2,self,arg0,...) (,/*r0=*/IP2_FX(LANGUAGE_SEQ_CONSTRUCT,(,PP2_OPEN P##arg0)),P##r1,P##r2,P##__VA_ARGS__)
 #define IP2_LANGUAGE_SEQ_CONSTRUCT(P,addr,type,value) IP2_SEQ_CONSTRUCT_T(type)(value)
 #define IP2_SEQ_CONSTRUCT_T(t) IP2_SEQ_CONSTRUCT_##t
 #define IP2_SEQ_CONSTRUCT_Quote(v) (,Seq,PP2_OPEN v)
@@ -43,14 +43,14 @@
 
 /* str: the raw seq is already a single token group chain with no bare
  * commas, so it renders verbatim. */
-#define PP2_DEF_Seq_str PP2_VM_FN(PP2_LANGUAGE_SEQ_STR,1)
-#define PP2_LANGUAGE_SEQ_STR(P,r0,r1,r2,obj,...) (,/*r0=*/IP2_FX(LANGUAGE_SEQ_STR,(,PP2_OPEN P##obj)),P##r1,P##r2,P##__VA_ARGS__)
+#define PP2_DEF_Seq_str PP2_VM_FN(8PP2_LANGUAGE_SEQ_STR,1)
+#define PP2_INSN_8PP2_LANGUAGE_SEQ_STR(P,r0,r1,r2,obj,...) (,/*r0=*/IP2_FX(LANGUAGE_SEQ_STR,(,PP2_OPEN P##obj)),P##r1,P##r2,P##__VA_ARGS__)
 #define IP2_LANGUAGE_SEQ_STR(P,addr,type,value) value
 
 #define IP2_SEQ_DROP1(s) PP2_EAT s
 
-#define PP2_DEF_Seq_empty PP2_VM_FN(PP2_LANGUAGE_SEQ_EMPTY,1)
-#define PP2_LANGUAGE_SEQ_EMPTY(P,r0,r1,r2,self,...) \
+#define PP2_DEF_Seq_empty PP2_VM_FN(8PP2_LANGUAGE_SEQ_EMPTY,1)
+#define PP2_INSN_8PP2_LANGUAGE_SEQ_EMPTY(P,r0,r1,r2,self,...) \
         (, \
          /*r0=*/(,Bool,IP2_FX(SEQ_EMPTY_I,(,PP2_LANGUAGE_OBJECT_VALUE P##self))), \
          P##r1,P##r2, \
@@ -63,8 +63,8 @@
 /* head: the first group as a Quote object (PP2_SEQ_SPLIT_HEAD keeps the
  * group's wrap, so a comma-bearing group stays one unit); tail: the rest as
  * a Seq. head of the empty seq is garbage-in-garbage-out. */
-#define PP2_DEF_Seq_head PP2_VM_FN(PP2_LANGUAGE_SEQ_HEAD,1)
-#define PP2_LANGUAGE_SEQ_HEAD(P,r0,r1,r2,self,...) \
+#define PP2_DEF_Seq_head PP2_VM_FN(8PP2_LANGUAGE_SEQ_HEAD,1)
+#define PP2_INSN_8PP2_LANGUAGE_SEQ_HEAD(P,r0,r1,r2,self,...) \
         (, \
          /*r0=*/(,Quote,IP2_FX(SEQ_HEADG_GET,(,PP2_LANGUAGE_OBJECT_VALUE P##self))), \
          P##r1,P##r2, \
@@ -74,8 +74,8 @@
 #define IP2_SEQ_HEADG_GET(P,s) IP2_FY(SEQ_HEADG,(,PP2_SEQ_SPLIT_HEAD P##s))
 #define IP2_SEQ_HEADG(P,g,...) P##g
 
-#define PP2_DEF_Seq_tail PP2_VM_FN(PP2_LANGUAGE_SEQ_TAIL,1)
-#define PP2_LANGUAGE_SEQ_TAIL(P,r0,r1,r2,self,...) \
+#define PP2_DEF_Seq_tail PP2_VM_FN(8PP2_LANGUAGE_SEQ_TAIL,1)
+#define PP2_INSN_8PP2_LANGUAGE_SEQ_TAIL(P,r0,r1,r2,self,...) \
         (, \
          /*r0=*/(,Seq,IP2_FX(SEQ_TAILG,(,PP2_LANGUAGE_OBJECT_VALUE P##self))), \
          P##r1,P##r2, \
@@ -84,8 +84,8 @@
 #define IP2_SEQ_TAILG(P,s) IP2_SEQ_DROP1(P##s)
 
 /* push(q): append a Quote's token tuple as one new group at the end. */
-#define PP2_DEF_Seq_push PP2_VM_FN(PP2_LANGUAGE_SEQ_PUSH,2)
-#define PP2_LANGUAGE_SEQ_PUSH(P,r0,r1,r2,self,x,...) \
+#define PP2_DEF_Seq_push PP2_VM_FN(8PP2_LANGUAGE_SEQ_PUSH,2)
+#define PP2_INSN_8PP2_LANGUAGE_SEQ_PUSH(P,r0,r1,r2,self,x,...) \
         (, \
          /*r0=*/(,Seq,IP2_FX(SEQ_PUSH_I,(,PP2_LANGUAGE_OBJECT_VALUE P##self,PP2_LANGUAGE_OBJECT_VALUE P##x))), \
          P##r1,P##r2, \
@@ -95,8 +95,8 @@
 
 /* size: one group per machine round through the accumulator's own inc
  * method, so a long seq's count promotes to Long automatically. */
-#define PP2_DEF_Seq_size PP2_VM_FN(PP2_LANGUAGE_SEQ_SIZE,1)
-#define PP2_LANGUAGE_SEQ_SIZE(P,r0,r1,r2,self,...) \
+#define PP2_DEF_Seq_size PP2_VM_FN(8PP2_LANGUAGE_SEQ_SIZE,1)
+#define PP2_INSN_8PP2_LANGUAGE_SEQ_SIZE(P,r0,r1,r2,self,...) \
         (, \
          /*r0=*/(,Int,0),P##r1,P##r2, \
          8IP2_LANGUAGE_SEQ_SIZE_STEP,(PP2_LANGUAGE_OBJECT_VALUE P##self), \
@@ -115,8 +115,8 @@
 
 /* to_list: one group per round becomes a Quote object pushed onto the
  * argument seq; the gather is List's own tuple-ize. */
-#define PP2_DEF_Seq_to_list PP2_VM_FN(PP2_LANGUAGE_SEQ_TO_LIST,1)
-#define PP2_LANGUAGE_SEQ_TO_LIST(P,r0,r1,r2,self,...) \
+#define PP2_DEF_Seq_to_list PP2_VM_FN(8PP2_LANGUAGE_SEQ_TO_LIST,1)
+#define PP2_INSN_8PP2_LANGUAGE_SEQ_TO_LIST(P,r0,r1,r2,self,...) \
         (, \
          /*r0=*/,P##r1,P##r2, \
          8PP2_LOCAL_CTX_CLEAR_ARGUMENTS, \

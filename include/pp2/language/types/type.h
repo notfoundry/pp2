@@ -32,7 +32,7 @@
                                          P##__VA_ARGS__ \
                                         )
 
-#define PP2_DEF_Type_member PP2_VM_FN(PP2_INSN_8PP2_LANGUAGE_TYPE_MEMBER,2)
+#define PP2_DEF_Type_member PP2_VM_FN(8PP2_LANGUAGE_TYPE_MEMBER,2)
 #define PP2_INSN_8PP2_LANGUAGE_TYPE_MEMBER(P,r0,r1,r2,type,member,...) \
                                           (, \
                                            P##r0,PP2_LOCAL_CTX_CLEAR_ARGUMENTS P##r1,P##r2, \

@@ -62,8 +62,8 @@
  * renders through its own str method; results accumulate on the argument
  * seq, SPILL/UNSPILL bracketing each call so it runs on a clean argument
  * list. The schedule starts by clearing the stale receiver argument. */
-#define PP2_DEF_List_str PP2_VM_FN(PP2_LANGUAGE_LIST_STR,1)
-#define PP2_LANGUAGE_LIST_STR(P,r0,r1,r2,self,...) \
+#define PP2_DEF_List_str PP2_VM_FN(8PP2_LANGUAGE_LIST_STR,1)
+#define PP2_INSN_8PP2_LANGUAGE_LIST_STR(P,r0,r1,r2,self,...) \
         (, \
          /*r0=*/,P##r1,P##r2, \
          8PP2_LOCAL_CTX_CLEAR_ARGUMENTS, \
@@ -122,8 +122,8 @@
  * up to 8 elements into the accumulator held in r0 with one `plus` method
  * call, so the count rides the Int literal tables until 127 and promotes to
  * Long automatically past the wall. */
-#define PP2_DEF_List_size PP2_VM_FN(PP2_LANGUAGE_LIST_SIZE,1)
-#define PP2_LANGUAGE_LIST_SIZE(P,r0,r1,r2,self,...) \
+#define PP2_DEF_List_size PP2_VM_FN(8PP2_LANGUAGE_LIST_SIZE,1)
+#define PP2_INSN_8PP2_LANGUAGE_LIST_SIZE(P,r0,r1,r2,self,...) \
         (, \
          /*r0=*/(,Int,0),P##r1,P##r2, \
          8IP2_LANGUAGE_LIST_SIZE_STEP,PP2_LANGUAGE_OBJECT_VALUE P##self, \
@@ -168,8 +168,8 @@
 /* at(i): drop-table pick. The index must be a literal Int (the table covers
  * 0..127); an out-of-range index is garbage-in-garbage-out, like division by
  * zero in the arbitrary layer. */
-#define PP2_DEF_List_at PP2_VM_FN(PP2_LANGUAGE_LIST_AT,2)
-#define PP2_LANGUAGE_LIST_AT(P,r0,r1,r2,self,idx,...) \
+#define PP2_DEF_List_at PP2_VM_FN(8PP2_LANGUAGE_LIST_AT,2)
+#define PP2_INSN_8PP2_LANGUAGE_LIST_AT(P,r0,r1,r2,self,idx,...) \
         (, \
          /*r0=*/IP2_FX(LIST_AT_I,(,PP2_LANGUAGE_OBJECT_VALUE P##self,PP2_LANGUAGE_OBJECT_VALUE P##idx)), \
          P##r1,P##r2, \
@@ -182,8 +182,8 @@
 #define IP2_LIST_AT_II(drop,...) IP2_LIST_AT_III(drop(,__VA_ARGS__))
 #define IP2_LIST_AT_III(...) IP2_LIST_PROBE(__VA_ARGS__)
 
-#define PP2_DEF_List_head PP2_VM_FN(PP2_LANGUAGE_LIST_HEAD,1)
-#define PP2_LANGUAGE_LIST_HEAD(P,r0,r1,r2,self,...) \
+#define PP2_DEF_List_head PP2_VM_FN(8PP2_LANGUAGE_LIST_HEAD,1)
+#define PP2_INSN_8PP2_LANGUAGE_LIST_HEAD(P,r0,r1,r2,self,...) \
         (, \
          /*r0=*/IP2_FX(LIST_HEAD_I,(,PP2_LANGUAGE_OBJECT_VALUE P##self)), \
          P##r1,P##r2, \
@@ -191,8 +191,8 @@
         )
 #define IP2_LIST_HEAD_I(P,elems) IP2_LIST_PROBE P##elems
 
-#define PP2_DEF_List_tail PP2_VM_FN(PP2_LANGUAGE_LIST_TAIL,1)
-#define PP2_LANGUAGE_LIST_TAIL(P,r0,r1,r2,self,...) \
+#define PP2_DEF_List_tail PP2_VM_FN(8PP2_LANGUAGE_LIST_TAIL,1)
+#define PP2_INSN_8PP2_LANGUAGE_LIST_TAIL(P,r0,r1,r2,self,...) \
         (, \
          /*r0=*/(,List,IP2_FX(LIST_TAIL_I,(,PP2_LANGUAGE_OBJECT_VALUE P##self))), \
          P##r1,P##r2, \
@@ -203,8 +203,8 @@
 
 /* push/push_front: one variadic paste builds the new element tuple; the only
  * case split is whether the old list was empty (no separating comma). */
-#define PP2_DEF_List_push PP2_VM_FN(PP2_LANGUAGE_LIST_PUSH,2)
-#define PP2_LANGUAGE_LIST_PUSH(P,r0,r1,r2,self,x,...) \
+#define PP2_DEF_List_push PP2_VM_FN(8PP2_LANGUAGE_LIST_PUSH,2)
+#define PP2_INSN_8PP2_LANGUAGE_LIST_PUSH(P,r0,r1,r2,self,x,...) \
         (, \
          /*r0=*/(,List,IP2_FX(LIST_PUSH_I,(,PP2_LANGUAGE_OBJECT_VALUE P##self,P##x))), \
          P##r1,P##r2, \
@@ -215,8 +215,8 @@
 #define IP2_LIST_PUSH_SOME(elems,x) (PP2_OPEN elems,x)
 #define IP2_LIST_PUSH_NONE(elems,x) (x)
 
-#define PP2_DEF_List_push_front PP2_VM_FN(PP2_LANGUAGE_LIST_PUSH_FRONT,2)
-#define PP2_LANGUAGE_LIST_PUSH_FRONT(P,r0,r1,r2,self,x,...) \
+#define PP2_DEF_List_push_front PP2_VM_FN(8PP2_LANGUAGE_LIST_PUSH_FRONT,2)
+#define PP2_INSN_8PP2_LANGUAGE_LIST_PUSH_FRONT(P,r0,r1,r2,self,x,...) \
         (, \
          /*r0=*/(,List,IP2_FX(LIST_PUSH_FRONT_I,(,PP2_LANGUAGE_OBJECT_VALUE P##self,P##x))), \
          P##r1,P##r2, \
@@ -228,8 +228,8 @@
 #define IP2_LIST_PUSH_FRONT_NONE(elems,x) (x)
 
 /* append: four-way paste dispatch on the emptiness of each side. */
-#define PP2_DEF_List_append PP2_VM_FN(PP2_LANGUAGE_LIST_APPEND,2)
-#define PP2_LANGUAGE_LIST_APPEND(P,r0,r1,r2,self,rhs,...) \
+#define PP2_DEF_List_append PP2_VM_FN(8PP2_LANGUAGE_LIST_APPEND,2)
+#define PP2_INSN_8PP2_LANGUAGE_LIST_APPEND(P,r0,r1,r2,self,rhs,...) \
         (, \
          /*r0=*/(,List,IP2_FX(LIST_APPEND_I,(,PP2_LANGUAGE_OBJECT_VALUE P##self,PP2_LANGUAGE_OBJECT_VALUE P##rhs))), \
          P##r1,P##r2, \
@@ -244,8 +244,8 @@
 #define IP2_LIST_APPEND_NS(a,b) b
 #define IP2_LIST_APPEND_NN(a,b) ()
 
-#define PP2_DEF_List_empty PP2_VM_FN(PP2_LANGUAGE_LIST_EMPTY,1)
-#define PP2_LANGUAGE_LIST_EMPTY(P,r0,r1,r2,self,...) \
+#define PP2_DEF_List_empty PP2_VM_FN(8PP2_LANGUAGE_LIST_EMPTY,1)
+#define PP2_INSN_8PP2_LANGUAGE_LIST_EMPTY(P,r0,r1,r2,self,...) \
         (, \
          /*r0=*/(,Bool,IP2_FX(LIST_EMPTY_I,(,PP2_LANGUAGE_OBJECT_VALUE P##self))), \
          P##r1,P##r2, \
@@ -259,8 +259,8 @@
 /* reverse: chunked machine loop. Each step reverses up to 8 elements with a
  * fixed paste and prepends them onto the accumulator threaded as an insn
  * operand. */
-#define PP2_DEF_List_reverse PP2_VM_FN(PP2_LANGUAGE_LIST_REVERSE,1)
-#define PP2_LANGUAGE_LIST_REVERSE(P,r0,r1,r2,self,...) \
+#define PP2_DEF_List_reverse PP2_VM_FN(8PP2_LANGUAGE_LIST_REVERSE,1)
+#define PP2_INSN_8PP2_LANGUAGE_LIST_REVERSE(P,r0,r1,r2,self,...) \
         (, \
          P##r0,P##r1,P##r2, \
          8IP2_LANGUAGE_LIST_REV_STEP,PP2_LANGUAGE_OBJECT_VALUE P##self,(), \
@@ -341,8 +341,8 @@
  * object: METHOD_CALL with a bare method name binds the method Fn into r0
  * without invoking it, so the argument object can be pushed directly and the
  * call fired with FN_CALL_IMPL, keeping receiver-first argument order. */
-#define PP2_DEF_List_contains PP2_VM_FN(PP2_LANGUAGE_LIST_CONTAINS,2)
-#define PP2_LANGUAGE_LIST_CONTAINS(P,r0,r1,r2,self,x,...) \
+#define PP2_DEF_List_contains PP2_VM_FN(8PP2_LANGUAGE_LIST_CONTAINS,2)
+#define PP2_INSN_8PP2_LANGUAGE_LIST_CONTAINS(P,r0,r1,r2,self,x,...) \
         (, \
          P##r0,P##r1,P##r2, \
          8IP2_LANGUAGE_LIST_CONTAINS_STEP,PP2_LANGUAGE_OBJECT_VALUE P##self,P##x, \
@@ -382,8 +382,8 @@
  * gather into a new List, chunked 8 per machine round. */
 #define IP2_LIST_MAP_B(e,fn) 8PP2_ARGS_SPILL,8PP2_LOCAL_CTX_PUSH_ARGUMENT,e,8PP2_LOAD_CONST,fn,8PP2_LANGUAGE_FN_CALL_IMPL,8PP2_ARGS_UNSPILL_PUSH
 
-#define PP2_DEF_List_map PP2_VM_FN(PP2_LANGUAGE_LIST_MAP,2)
-#define PP2_LANGUAGE_LIST_MAP(P,r0,r1,r2,self,fn,...) \
+#define PP2_DEF_List_map PP2_VM_FN(8PP2_LANGUAGE_LIST_MAP,2)
+#define PP2_INSN_8PP2_LANGUAGE_LIST_MAP(P,r0,r1,r2,self,fn,...) \
         (, \
          /*r0=*/,P##r1,P##r2, \
          8PP2_LOCAL_CTX_CLEAR_ARGUMENTS, \
@@ -435,8 +435,8 @@
  * the running accumulator, so no spill bracketing is needed. */
 #define IP2_LIST_FOLD_B(e,fn) 8PP2_LOCAL_CTX_CLEAR_ARGUMENTS,8PP2_LANGUAGE_FN_CALL_PUSH_ARG,8PP2_LOCAL_CTX_PUSH_ARGUMENT,e,8PP2_LOAD_CONST,fn,8PP2_LANGUAGE_FN_CALL_IMPL
 
-#define PP2_DEF_List_fold PP2_VM_FN(PP2_LANGUAGE_LIST_FOLD,3)
-#define PP2_LANGUAGE_LIST_FOLD(P,r0,r1,r2,self,fn,init,...) \
+#define PP2_DEF_List_fold PP2_VM_FN(8PP2_LANGUAGE_LIST_FOLD,3)
+#define PP2_INSN_8PP2_LANGUAGE_LIST_FOLD(P,r0,r1,r2,self,fn,init,...) \
         (, \
          /*r0=*/P##init,P##r1,P##r2, \
          8IP2_LANGUAGE_LIST_FOLD_SCHEDULE,PP2_LANGUAGE_OBJECT_VALUE P##self,P##fn, \
@@ -479,8 +479,8 @@
  * instruction that pushes the original element only when fn said true. */
 #define IP2_LIST_FILTER_B(e,fn) 8PP2_ARGS_SPILL,8PP2_LOCAL_CTX_PUSH_ARGUMENT,e,8PP2_LOAD_CONST,fn,8PP2_LANGUAGE_FN_CALL_IMPL,8IP2_LANGUAGE_LIST_FILTER_KEEP,e
 
-#define PP2_DEF_List_filter PP2_VM_FN(PP2_LANGUAGE_LIST_FILTER,2)
-#define PP2_LANGUAGE_LIST_FILTER(P,r0,r1,r2,self,fn,...) \
+#define PP2_DEF_List_filter PP2_VM_FN(8PP2_LANGUAGE_LIST_FILTER,2)
+#define PP2_INSN_8PP2_LANGUAGE_LIST_FILTER(P,r0,r1,r2,self,fn,...) \
         (, \
          /*r0=*/,P##r1,P##r2, \
          8PP2_LOCAL_CTX_CLEAR_ARGUMENTS, \
@@ -531,8 +531,8 @@
 #define IP2_LIST_FILTER_UNSPILL_I(P,stack,labels,frame,rest) (,P##stack,P##labels,/*arguments=*/PP2_OPEN P##frame,/*registers=*/P##rest,)
 
 /* each(fn): map's traversal for effect only; returns the receiver. */
-#define PP2_DEF_List_each PP2_VM_FN(PP2_LANGUAGE_LIST_EACH,2)
-#define PP2_LANGUAGE_LIST_EACH(P,r0,r1,r2,self,fn,...) \
+#define PP2_DEF_List_each PP2_VM_FN(8PP2_LANGUAGE_LIST_EACH,2)
+#define PP2_INSN_8PP2_LANGUAGE_LIST_EACH(P,r0,r1,r2,self,fn,...) \
         (, \
          /*r0=*/,P##r1,P##r2, \
          8PP2_LOCAL_CTX_CLEAR_ARGUMENTS, \

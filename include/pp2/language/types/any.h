@@ -24,7 +24,7 @@
 #define IP2_LANGUAGE_ANY_TYPE_RESOLVE(P,obj) PP2_FX(COMPILE_UNSAFE,(PP2_LANGUAGE_OBJECT_TYPE P##obj))
 
 
-#define PP2_DEF_Any_str PP2_VM_FN(PP2_LANGUAGE_ANY_STR,1)
-#define PP2_LANGUAGE_ANY_STR(P,r0,r1,r2,obj,...) (,P##obj,P##r1,P##r2,P##__VA_ARGS__)
+#define PP2_DEF_Any_str PP2_VM_FN(8PP2_LANGUAGE_ANY_STR,1)
+#define PP2_INSN_8PP2_LANGUAGE_ANY_STR(P,r0,r1,r2,obj,...) (,P##obj,P##r1,P##r2,P##__VA_ARGS__)
 
 #endif

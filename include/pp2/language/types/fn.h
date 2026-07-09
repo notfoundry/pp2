@@ -29,8 +29,8 @@
  * pass. The two args arrive as Quote objects: unwrap each to its raw token
  * tuple and hand them to the same 8PP2_LANGUAGE_FN builder the fn keyword uses,
  * so parameter binding, framing and the body block all go through one path. */
-#define PP2_DEF_Fn_construct PP2_VM_FN(PP2_LANGUAGE_FN_CONSTRUCT,3)
-#define PP2_LANGUAGE_FN_CONSTRUCT(P,r0,r1,r2,self,params_q,body_q,...) \
+#define PP2_DEF_Fn_construct PP2_VM_FN(8PP2_LANGUAGE_FN_CONSTRUCT,3)
+#define PP2_INSN_8PP2_LANGUAGE_FN_CONSTRUCT(P,r0,r1,r2,self,params_q,body_q,...) \
         (, \
          /*r0=*/, \
          P##r1,P##r2, \
