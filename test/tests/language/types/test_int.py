@@ -86,4 +86,4 @@ def test_int_variable_reassignment(pp):
 
 def test_int_type_introspection(pp):
     pp.include("pp2/pp2.h")
-    assert pp.expand("PP2(print(7 type))") == pp.parse("(,Type,(,Int,Any))")
+    assert pp.expand("PP2(print(7 type))") == "Int"

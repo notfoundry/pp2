@@ -4,6 +4,7 @@
 
 #include "pp2/language/compiler.h"
 #include "pp2/language/basic/block.h"
+#include "pp2/language/basic/nil.h"
 #include "pp2/language/definition/primitive.h"
 
 #include "pp2/machine/insns/nop.h"
@@ -47,7 +48,7 @@
 #define IP2_LANGUAGE_IF_BRANCH_0(P,if_branch,else_branch) IP2_LANGUAGE_ELSE_MATCH_##else_branch
 
 #define IP2_LANGUAGE_ELSE_MATCH_else 8PP2_LANGUAGE_ELSE,
-#define IP2_LANGUAGE_ELSE_MATCH_ 8PP2_NOP /* no else clause: a false if is a no-op */
+#define IP2_LANGUAGE_ELSE_MATCH_ 8PP2_LANGUAGE_LOAD_NIL /* no else clause: a false if answers nil */
 
 #define IP2_LANGUAGE_ELSE_DETECT_BLOCK(...) 0BLOCK_DETECTED,PP2_LANGUAGE_BLOCK(__VA_ARGS__)
 #define IP2_LANGUAGE_ELSE_TEST_IF_COND(...) IP2_LANGUAGE_ELSE_TEST_IF_COND_I(__VA_ARGS__)

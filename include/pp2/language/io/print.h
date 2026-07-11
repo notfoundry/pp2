@@ -3,10 +3,9 @@
 #define PP2_LANGUAGE_IO_PRINT_H
 
 #include "pp2/language/compiler.h"
+#include "pp2/language/io/emit.h"
 #include "pp2/language/basic/return.h"
 #include "pp2/language/definition/primitive.h"
-
-#include "pp2/machine/insns/emit.h"
 
 #include "pp2/primitive/tuple/at.h"
 #include "pp2/primitive/tuple/open.h"
@@ -41,6 +40,6 @@
 #define IP2_LANGUAGE_PRINT_EVAL9_OR_MORE(P,stx0,stx1,stx2,stx3,stx4,stx5,stx6,stx7,...) 8IP2_LANGUAGE_PRINT_OBJ,P##stx0,8IP2_LANGUAGE_PRINT_OBJ,P##stx1,8IP2_LANGUAGE_PRINT_OBJ,P##stx2,8IP2_LANGUAGE_PRINT_OBJ,P##stx3,8IP2_LANGUAGE_PRINT_OBJ,P##stx4,8IP2_LANGUAGE_PRINT_OBJ,P##stx5,8IP2_LANGUAGE_PRINT_OBJ,P##stx6,8IP2_LANGUAGE_PRINT_OBJ,P##stx7,8PP2_LANGUAGE_PRINT,(P##__VA_ARGS__)
 
 #define PP2_INSN_8PP2_LANGUAGE_PRINT(P,r0,r1,r2,stx_tup,...)  (,P##r0,P##r1,P##r2,IP2_LANGUAGE_PRINT_OVERLOAD P##stx_tup,P##__VA_ARGS__)
-#define PP2_INSN_8IP2_LANGUAGE_PRINT_OBJ(P,r0,r1,r2,stx,...)  (,/*r0=*/,P##r1,P##r2,PP2_COMPILE(P##stx),8PP2_LANGUAGE_METHOD_CALL,str(),8PP2_EMIT_LITERAL,P##__VA_ARGS__)
+#define PP2_INSN_8IP2_LANGUAGE_PRINT_OBJ(P,r0,r1,r2,stx,...)  (,/*r0=*/,P##r1,P##r2,PP2_COMPILE(P##stx),8PP2_LANGUAGE_EMIT_OBJECT,P##__VA_ARGS__)
 
 #endif

@@ -4,6 +4,7 @@
 
 #include "pp2/language/compiler.h"
 #include "pp2/language/basic/block.h"
+#include "pp2/language/basic/nil.h"
 
 #include "pp2/machine/goto/goto.h"
 #include "pp2/machine/goto/label.h"
@@ -45,7 +46,10 @@
                                     PP2_OPEN P##body_stx_tup \
                                    )
 
-#define IP2_LANGUAGE_WHILE_LOOP_PUSH_LABELS(body,epilogue,P,stack,labels,...) (,P##stack,(,0,(8PP2_LANGUAGE_LOOP_POP_LABELS,PP2_OPEN P##epilogue))(,1,P##body)P##labels,P##__VA_ARGS__)
+/* Label 0 is the loop's exit continuation. A loop runs for its effect, so it answers
+ * with nil: the exit path loads it on the way out, which also covers `for`, since a
+ * for compiles down to a while. */
+#define IP2_LANGUAGE_WHILE_LOOP_PUSH_LABELS(body,epilogue,P,stack,labels,...) (,P##stack,(,0,(8PP2_LANGUAGE_LOOP_POP_LABELS,8PP2_LANGUAGE_LOAD_NIL,PP2_OPEN P##epilogue))(,1,P##body)P##labels,P##__VA_ARGS__)
 
 /* On loop exit (the goto-0/epilogue path) drop the two labels this loop pushed,
  * restoring any enclosing loop's labels. Without this the labels list is shared

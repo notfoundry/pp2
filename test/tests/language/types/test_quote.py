@@ -37,4 +37,4 @@ def test_quote_bound_to_variable(pp):
 
 def test_quote_type_introspection(pp):
     pp.include("pp2/pp2.h")
-    assert pp.expand("PP2(print((x) type))") == pp.parse("(,Type,(,Quote,Any))")
+    assert pp.expand("PP2(print((x) type))") == "Quote"

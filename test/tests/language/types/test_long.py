@@ -21,12 +21,12 @@ def test_int_promotes_on_overflow(pp, body, expected):
 
 def test_overflow_result_is_long(pp):
     pp.include("pp2/pp2.h")
-    assert pp.expand("PP2(print(127 inc() type))") == pp.parse("(,Type,(,Long,Any))")
+    assert pp.expand("PP2(print(127 inc() type))") == "Long"
 
 
 def test_in_range_result_stays_int(pp):
     pp.include("pp2/pp2.h")
-    assert pp.expand("PP2(print(63 plus (64) type))") == pp.parse("(,Type,(,Int,Any))")
+    assert pp.expand("PP2(print(63 plus (64) type))") == "Int"
 
 
 # Explicit construction: Long (int) promotes; Long (quoted digit-seq)
@@ -44,7 +44,7 @@ def test_long_construction(pp, body, expected):
 
 def test_long_type(pp):
     pp.include("pp2/pp2.h")
-    assert pp.expand("PP2(print(Long (5) type))") == pp.parse("(,Type,(,Long,Any))")
+    assert pp.expand("PP2(print(Long (5) type))") == "Long"
 
 
 # Long is contagious; an Int on either side promotes.

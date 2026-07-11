@@ -22,21 +22,75 @@
 #define PP2_DEF_Fn PP2_TYPE(Fn,Any)
 #define PP2_SYM_Fn(...) __VA_ARGS__
 
-/* Fn(params, body): build a function from its constituent data -- a quote
- * holding the parameter list and a quote holding the body -- exactly as the
- * `fn (params) (body)` literal would. This VM's functions capture no lexical
- * environment, so params + body are the whole of a Fn; there is no closure to
- * pass. The two args arrive as Quote objects: unwrap each to its raw token
- * tuple and hand them to the same 8PP2_LANGUAGE_FN builder the fn keyword uses,
- * so parameter binding, framing and the body block all go through one path. */
+/* Fn(params, body): build a function from its constituent data -- a parameter
+ * list and a quote holding the body -- exactly as the `fn (params) (body)`
+ * literal would. This VM's functions capture no lexical environment, so params
+ * + body are the whole of a Fn; there is no closure to pass. The body is
+ * unwrapped to its raw token tuple and handed, with the parameter names, to the
+ * same 8PP2_LANGUAGE_FN builder the fn keyword uses, so parameter binding,
+ * framing and the body block all go through one path.
+ *
+ * The parameter list comes either way round:
+ *
+ *     Fn ((x, y), (x plus (y)))               one quote holding both names
+ *     Fn (List ((x), (y)), (x plus (y)))      a List of quoted names
+ *
+ * The quote form is direct and carries any number of names. The explicit List
+ * form is useful when parameter names are already first-class Quote values. */
 #define PP2_DEF_Fn_construct PP2_VM_FN(8PP2_LANGUAGE_FN_CONSTRUCT,3)
 #define PP2_INSN_8PP2_LANGUAGE_FN_CONSTRUCT(P,r0,r1,r2,self,params_q,body_q,...) \
         (, \
          /*r0=*/, \
          P##r1,P##r2, \
-         8PP2_LANGUAGE_FN,PP2_LANGUAGE_OBJECT_VALUE P##params_q,PP2_LANGUAGE_OBJECT_VALUE P##body_q, \
+         8PP2_LANGUAGE_FN, \
+         IP2_FX(LANGUAGE_FN_CONSTRUCT_PARAMS,(,PP2_LANGUAGE_OBJECT_TYPE P##params_q,P##params_q)), \
+         PP2_LANGUAGE_OBJECT_VALUE P##body_q, \
          P##__VA_ARGS__ \
         )
+
+/* one paste on the parameter object's type: a Quote already holds the raw
+ * parameter tokens, a List holds one Quote per name */
+#define IP2_LANGUAGE_FN_CONSTRUCT_PARAMS(P,type,obj) IP2_LANGUAGE_FN_CONSTRUCT_PARAMS_##type(P##obj)
+#define IP2_LANGUAGE_FN_CONSTRUCT_PARAMS_Quote(obj) PP2_LANGUAGE_OBJECT_VALUE obj
+#define IP2_LANGUAGE_FN_CONSTRUCT_PARAMS_List(obj) IP2_LANGUAGE_FN_PARAMS_JOIN(PP2_LANGUAGE_OBJECT_VALUE obj)
+
+/* join the element quotes back into the bare, comma-separated parameter list
+ * the fn builder expects. An empty List is a function of no parameters. */
+#define IP2_LANGUAGE_FN_PARAMS_JOIN(elems) IP2_LANGUAGE_FN_PARAMS_JOIN_I(IP2_LANGUAGE_FN_PARAMS_PROBE elems,elems)
+#define IP2_LANGUAGE_FN_PARAMS_PROBE(x0,...) x0
+#define IP2_LANGUAGE_FN_PARAMS_JOIN_I(head,elems) PP2_IS_TUPLE(head)(IP2_LANGUAGE_FN_PARAMS_SOME,IP2_LANGUAGE_FN_PARAMS_NONE)(elems)
+#define IP2_LANGUAGE_FN_PARAMS_NONE(elems) ()
+#define IP2_LANGUAGE_FN_PARAMS_SOME(elems) (IP2_LANGUAGE_FN_PARAMS_OVERLOAD elems)
+
+#define IP2_LANGUAGE_FN_PARAMS_OVERLOAD(...) \
+        IP2_LANGUAGE_FN_PARAMS_SELECT( \
+            __VA_ARGS__, \
+            PP2_COMMA_8, \
+            PP2_COMMA_7, \
+            PP2_COMMA_6, \
+            PP2_COMMA_5, \
+            PP2_COMMA_4, \
+            PP2_COMMA_3, \
+            PP2_COMMA_2, \
+            PP2_COMMA_1, \
+        )(,__VA_ARGS__)
+#define IP2_LANGUAGE_FN_PARAMS_SELECT(x0,x1,x2,x3,x4,x5,x6,x7,m,...) PP2_TUPLE_AT_1(IP2_LANGUAGE_FN_PARAMS_,m,9_OR_MORE)
+
+/* a quote's value keeps its wrapping parens, so the name needs one OPEN */
+#define IP2_LANGUAGE_FN_PARAMS_NAME(e) PP2_FX(OPEN,PP2_LANGUAGE_OBJECT_VALUE e)
+
+#define IP2_LANGUAGE_FN_PARAMS_1(P,e0) IP2_LANGUAGE_FN_PARAMS_NAME(P##e0)
+#define IP2_LANGUAGE_FN_PARAMS_2(P,e0,e1) IP2_LANGUAGE_FN_PARAMS_NAME(P##e0),IP2_LANGUAGE_FN_PARAMS_NAME(P##e1)
+#define IP2_LANGUAGE_FN_PARAMS_3(P,e0,e1,e2) IP2_LANGUAGE_FN_PARAMS_NAME(P##e0),IP2_LANGUAGE_FN_PARAMS_NAME(P##e1),IP2_LANGUAGE_FN_PARAMS_NAME(P##e2)
+#define IP2_LANGUAGE_FN_PARAMS_4(P,e0,e1,e2,e3) IP2_LANGUAGE_FN_PARAMS_NAME(P##e0),IP2_LANGUAGE_FN_PARAMS_NAME(P##e1),IP2_LANGUAGE_FN_PARAMS_NAME(P##e2),IP2_LANGUAGE_FN_PARAMS_NAME(P##e3)
+#define IP2_LANGUAGE_FN_PARAMS_5(P,e0,e1,e2,e3,e4) IP2_LANGUAGE_FN_PARAMS_NAME(P##e0),IP2_LANGUAGE_FN_PARAMS_NAME(P##e1),IP2_LANGUAGE_FN_PARAMS_NAME(P##e2),IP2_LANGUAGE_FN_PARAMS_NAME(P##e3),IP2_LANGUAGE_FN_PARAMS_NAME(P##e4)
+#define IP2_LANGUAGE_FN_PARAMS_6(P,e0,e1,e2,e3,e4,e5) IP2_LANGUAGE_FN_PARAMS_NAME(P##e0),IP2_LANGUAGE_FN_PARAMS_NAME(P##e1),IP2_LANGUAGE_FN_PARAMS_NAME(P##e2),IP2_LANGUAGE_FN_PARAMS_NAME(P##e3),IP2_LANGUAGE_FN_PARAMS_NAME(P##e4),IP2_LANGUAGE_FN_PARAMS_NAME(P##e5)
+#define IP2_LANGUAGE_FN_PARAMS_7(P,e0,e1,e2,e3,e4,e5,e6) IP2_LANGUAGE_FN_PARAMS_NAME(P##e0),IP2_LANGUAGE_FN_PARAMS_NAME(P##e1),IP2_LANGUAGE_FN_PARAMS_NAME(P##e2),IP2_LANGUAGE_FN_PARAMS_NAME(P##e3),IP2_LANGUAGE_FN_PARAMS_NAME(P##e4),IP2_LANGUAGE_FN_PARAMS_NAME(P##e5),IP2_LANGUAGE_FN_PARAMS_NAME(P##e6)
+#define IP2_LANGUAGE_FN_PARAMS_8(P,e0,e1,e2,e3,e4,e5,e6,e7) IP2_LANGUAGE_FN_PARAMS_NAME(P##e0),IP2_LANGUAGE_FN_PARAMS_NAME(P##e1),IP2_LANGUAGE_FN_PARAMS_NAME(P##e2),IP2_LANGUAGE_FN_PARAMS_NAME(P##e3),IP2_LANGUAGE_FN_PARAMS_NAME(P##e4),IP2_LANGUAGE_FN_PARAMS_NAME(P##e5),IP2_LANGUAGE_FN_PARAMS_NAME(P##e6),IP2_LANGUAGE_FN_PARAMS_NAME(P##e7)
+/* Rejoining more than eight names would need a second overload family, and the
+ * quote form already carries any number, so this stops rather than truncating.
+ * The failure token reaches the output the way PP2_VM_FAILURE does. */
+#define IP2_LANGUAGE_FN_PARAMS_9_OR_MORE(P,...) PP2_LANGUAGE_FN_PARAMS_FAILURE
 
 #define PP2_DEF_Fn_call )PP2_COMPILE_LANGUAGE_FN_CALL(,
 #define PP2_COMPILE_LANGUAGE_FN_CALL(P,args_tup) \
@@ -120,7 +174,7 @@
 
 #define IP2_LANGUAGE_FN_CALL_PARSE_ARGS_1(P,a0) PP2_IS_TUPLE(P##a0)(IP2_LANGUAGE_FN_CALL_PARSE_ARGS_1_QUOTE,IP2_LANGUAGE_FN_CALL_PARSE_ARGS_CHOOSE_0_OR_1_ARG(IP2_LANGUAGE_FN_CALL_TEST_IF_0_ARGS P##a0 ()))(,P##a0)
 #define IP2_LANGUAGE_FN_CALL_PARSE_ARGS_1_SYNTAX(P,a0) 8PP2_ARGS_SPILL,IP2_LANGUAGE_COMPILE(P##a0),8PP2_ARGS_UNSPILL_PUSH
-#define IP2_LANGUAGE_FN_CALL_PARSE_ARGS_1_QUOTE(P,a0) 8PP2_ARGS_SPILL,IP2_LANGUAGE_COMPILE_QUOTE(P##a0),8PP2_ARGS_UNSPILL_PUSH
+#define IP2_LANGUAGE_FN_CALL_PARSE_ARGS_1_QUOTE(P,a0) 8PP2_ARGS_SPILL,PP2_COMPILE(P##a0),8PP2_ARGS_UNSPILL_PUSH
 #define IP2_LANGUAGE_FN_CALL_PARSE_ARGS_CHOOSE_0_OR_1_ARG(...) PP2_TUPLE_AT_1(,__VA_ARGS__,IP2_LANGUAGE_FN_CALL_PARSE_ARGS_1_SYNTAX)
 #define IP2_LANGUAGE_FN_CALL_TEST_IF_0_ARGS() ,IP2_LANGUAGE_FN_CALL_PARSE_ARGS_0,
 

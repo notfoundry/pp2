@@ -45,7 +45,7 @@ def test_constructed_value_behaves(pp, body, expected):
     pp.include("pp2/pp2.h")
     result = pp.expand("PP2({})", body)
     if expected is None:
-        assert result == pp.parse("(,Type,(,Int,Any))")
+        assert result == "Int"
     else:
         assert result == expected
 
@@ -53,9 +53,15 @@ def test_constructed_value_behaves(pp, body, expected):
 # --- Fn constructor: build a function from a params quote and a body quote --
 # Unlike the value types, this is a real (non-identity) constructor: it
 # assembles a callable function from its constituent data.
+#
+# The parameter list arrives as one Quote holding the comma-separated names or
+# as an explicit List of individual name Quotes.
 @pytest.mark.parametrize("body,expected", [
     ("F (Fn ((x), (x plus (1)))), print(F call (3))", "4"),
     ("F (Fn ((x, y), (x plus (y)))), print(F call (2, 3))", "5"),
+    ("F (Fn (List((x), (y)), (x plus (y)))), print(F call (2, 3))", "5"),
+    ("F (Fn (Quote ((x, y)), (x plus (y)))), print(F call (2, 3))", "5"),
+    ("F (Fn (List((a), (b), (c)), (a plus (b) plus (c)))), print(F call (1, 2, 3))", "6"),
     ("F (Fn ((x), (x times (x)))), print(F call (5))", "25"),
     ("print(Fn ((x), (x plus (10))) call (5))", "15"),          # immediate call
 ])
@@ -66,7 +72,7 @@ def test_fn_constructor(pp, body, expected):
 
 def test_fn_constructor_is_fn(pp):
     pp.include("pp2/pp2.h")
-    assert pp.expand("PP2(print(Fn ((x), (x)) type))") == pp.parse("(,Type,(,Fn,Any))")
+    assert pp.expand("PP2(print(Fn ((x), (x)) type))") == "Fn"
 
 
 def test_fn_constructor_equals_literal(pp):
@@ -78,7 +84,21 @@ def test_fn_constructor_equals_literal(pp):
 
 
 def test_fn_constructor_from_quote_variables(pp):
-    # the parts can come from quotes held in variables -- dynamic construction
+    # the parts can come from values held in variables -- dynamic construction
     pp.include("pp2/pp2.h")
     prog = "PP2(P ((x, y)), B ((x times (y))), F (Fn (P, B)), print(F call (6, 7)))"
     assert pp.expand(prog) == "42"
+
+
+def test_fn_constructor_params_quote_matches_params_list(pp):
+    # the two spellings of a parameter list build the same function
+    pp.include("pp2/pp2.h")
+    from_list = pp.expand("PP2(F (Fn (List((x), (y)), (x plus (y)))), print(F call (2, 3)))")
+    from_quote = pp.expand("PP2(F (Fn ((x, y), (x plus (y)))), print(F call (2, 3)))")
+    literal = pp.expand("PP2(G (fn (x, y) (x plus (y))), print(G call (2, 3)))")
+    assert from_list == from_quote == literal == "5"
+
+
+def test_fn_constructor_of_no_parameters(pp):
+    pp.include("pp2/pp2.h")
+    assert pp.expand("PP2(F (Fn (List(), (7))), print(F call ()))") == "7"

@@ -17,7 +17,7 @@ def test_seq_construction_and_str(pp, body, expected):
 
 def test_seq_type(pp):
     pp.include("pp2/pp2.h")
-    assert pp.expand("PP2(print(Seq (((1)(2))) type))") == pp.parse("(,Type,(,Seq,Any))")
+    assert pp.expand("PP2(print(Seq (((1)(2))) type))") == "Seq"
 
 
 @pytest.mark.parametrize("body,expected", [

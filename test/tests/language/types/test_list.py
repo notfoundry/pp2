@@ -22,7 +22,7 @@ def test_list_construction_and_str(pp, body, expected):
 
 def test_list_type(pp):
     pp.include("pp2/pp2.h")
-    assert pp.expand("PP2(print(List (1) type))") == pp.parse("(,Type,(,List,Any))")
+    assert pp.expand("PP2(print(List (1) type))") == "List"
 
 
 def test_list_in_variable(pp):

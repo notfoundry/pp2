@@ -6,6 +6,7 @@
 #include "pp2/language/definition/vm_fn.h"
 #include "pp2/language/definition/type.h"
 
+#include "pp2/language/basic/object.h"
 #include "pp2/language/basic/symbol.h"
 
 #include "pp2/primitive/basic/cat.h"
@@ -52,6 +53,16 @@
 
 #define PP2_LANGUAGE_TYPE_NAME(P,type_name,supertype_name) P##type_name
 #define PP2_LANGUAGE_SUPERTYPE_NAME(P,type_name,supertype_name) P##supertype_name
+
+
+/* str(): a Type prints as its name, so `print(Bool)` gives `Bool` and
+ * `print(5 type())` gives `Int`. Without this a Type fell through to Any_str,
+ * which hands the object itself to the emitter, and printing a type spilled its
+ * internals: `(,Type,(,Bool,Any))`. Like Bool_str this leaves a raw token in r0
+ * for 8PP2_EMIT_LITERAL rather than an object. */
+#define PP2_DEF_Type_str PP2_VM_FN(8PP2_LANGUAGE_TYPE_STR,1)
+#define PP2_INSN_8PP2_LANGUAGE_TYPE_STR(P,r0,r1,r2,obj,...) \
+        (,PP2_FX(LANGUAGE_TYPE_NAME,PP2_LANGUAGE_OBJECT_VALUE P##obj),P##r1,P##r2,P##__VA_ARGS__)
 
 
 /* eq(other): two Type objects are equal when they name the same type. Type names

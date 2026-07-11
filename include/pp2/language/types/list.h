@@ -580,9 +580,11 @@
 #define IP2_LIST_FILTER_KEEP_II(b) IP2_LIST_FILTER_KEEP_##b
 #define IP2_LIST_FILTER_KEEP_1(P,r1,r2,e,...) (,,PP2_LOCAL_CTX_UNSPILL_PUSH_ARGUMENT(P##r1,P##e),P##r2,P##__VA_ARGS__)
 #define IP2_LIST_FILTER_KEEP_0(P,r1,r2,e,...) (,,IP2_LIST_FILTER_UNSPILL P##r1,P##r2,P##__VA_ARGS__)
-/* restore the spilled argument frame without pushing anything */
+/* restore the spilled argument frame without pushing anything. IP2_UNTAG, not
+ * PP2_OPEN: entries on the spill stack carry a kind tag (see context.h), so opening
+ * one raw would spill its `8A,` into the local context as an extra field. */
 #define IP2_LIST_FILTER_UNSPILL(P,stack,labels,arguments,registers,_) IP2_FX(LIST_FILTER_UNSPILL_I,(,P##stack,P##labels,PP2_SEQ_SPLIT_HEAD P##registers))
-#define IP2_LIST_FILTER_UNSPILL_I(P,stack,labels,frame,rest) (,P##stack,P##labels,/*arguments=*/PP2_OPEN P##frame,/*registers=*/P##rest,)
+#define IP2_LIST_FILTER_UNSPILL_I(P,stack,labels,frame,rest) (,P##stack,P##labels,/*arguments=*/IP2_UNTAG P##frame,/*registers=*/P##rest,)
 
 /* each(fn): map's traversal for effect only; returns the receiver. */
 #define PP2_DEF_List_each PP2_VM_FN(8PP2_LANGUAGE_LIST_EACH,2)

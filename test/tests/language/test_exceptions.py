@@ -41,7 +41,9 @@ def test_unknown_method(pp, body, qualified):
 
 
 # --- reading a local variable that was never assigned ----------------------
-@pytest.mark.parametrize("var,slot", [("x", "23"), ("q", "16")])
+# A variable's address is its name spelled as a char-seq, so the exception
+# carries that seq: x is (x), q is (q).
+@pytest.mark.parametrize("var,slot", [("x", "(x)"), ("q", "(q)")])
 def test_unbound_local(pp, var, slot):
     pp.include("pp2/pp2.h")
     assert pp.expand("PP2(print({0}))", var) == \
@@ -59,7 +61,7 @@ def test_throw_halts_program(pp):
 def test_unbound_local_halts_program(pp):
     pp.include("pp2/pp2.h")
     assert pp.expand("PP2(print(1), print(x), print(2))") == \
-        pp.parse("1 8PP2_LANGUAGE_UNBOUND_LOCAL_EXCEPTION(23)")
+        pp.parse("1 8PP2_LANGUAGE_UNBOUND_LOCAL_EXCEPTION((x))")
 
 
 # --- a type with no constructor throws cleanly -----------------------------

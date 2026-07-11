@@ -42,4 +42,4 @@ def test_bool_bound_to_variable(pp):
 
 def test_bool_type_introspection(pp):
     pp.include("pp2/pp2.h")
-    assert pp.expand("PP2(print(true type))") == pp.parse("(,Type,(,Bool,Any))")
+    assert pp.expand("PP2(print(true type))") == "Bool"

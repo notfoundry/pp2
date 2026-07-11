@@ -1,6 +1,8 @@
 #ifndef PP2_MACHINE_H
 #define PP2_MACHINE_H
 
+#include "pp2/machine/exception/pop_eh.h"
+#include "pp2/machine/exception/unwind.h"
 #include "pp2/machine/exception/push_eh.h"
 #include "pp2/machine/exception/throw.h"
 

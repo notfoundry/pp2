@@ -27,6 +27,2700 @@
 #define PP2_MACHINE_EXCEPTION_THROW_H
 
 
+// ******************** From: unwind.h
+/** @file */
+#ifndef PP2_MACHINE_EXCEPTION_UNWIND_H
+#define PP2_MACHINE_EXCEPTION_UNWIND_H
+
+
+// ******************** From: context.h
+/** @file */
+#ifndef PP2_MACHINE_CONTEXT_H
+#define PP2_MACHINE_CONTEXT_H
+
+
+// ******************** From: cat.h
+/** @file */
+#ifndef PP2_PRIMITIVE_BASIC_CAT_H
+#define PP2_PRIMITIVE_BASIC_CAT_H
+
+#define PP2_PRIMITIVE_CAT(a,...) a##__VA_ARGS__
+
+#define PP2_CAT(a,...) PP2_PRIMITIVE_CAT(a,__VA_ARGS__)
+
+
+#define PP2_PRIMITIVE_REVERSE_CAT(a,...) __VA_ARGS__##a
+
+#define PP2_REVERSE_CAT(a,...) PP2_PRIMITIVE_REVERSE_CAT(a,__VA_ARGS__)
+
+#endif
+
+// ******************** From: invoke.h
+/** @file */
+#ifndef PP2_PRIMITIVE_BASIC_INVOKE_H
+#define PP2_PRIMITIVE_BASIC_INVOKE_H
+
+
+/**
+*
+*/
+#define PP2_FX(f,x) PP2_##f x
+/**
+*
+*/
+#define PP2_FY(f,y) PP2_##f y
+/**
+*
+*/
+#define PP2_FZ(f,z) PP2_##f z
+/**
+*
+*/
+#define PP2_FW(f,w) PP2_##f w
+
+
+/**
+*
+*/
+#define IP2_FX(f,x) IP2_##f x
+/**
+*
+*/
+#define IP2_FY(f,y) IP2_##f y
+/**
+*
+*/
+#define IP2_FZ(f,z) IP2_##f z
+/**
+*
+*/
+#define IP2_FW(f,w) IP2_##f w
+
+
+/**
+*
+*/
+#define PP2_INVOKE(K,...) PP2_##K(,__VA_ARGS__
+
+/**
+*
+*/
+#define IP2_INVOKE(K,...) IP2_##K(,__VA_ARGS__
+
+#endif
+
+// ******************** From: eat.h
+/** @file */
+#ifndef PP2_PRIMITIVE_TUPLE_EAT_H
+#define PP2_PRIMITIVE_TUPLE_EAT_H
+
+/**
+* Substitutes none of the provided macro arguments into the macro replacment list,
+* causing all tokens in those arguments to be erased.
+*
+* @param ... the token sequence to erase
+* @returns a \ref Placemarker token
+*/
+#define PP2_EAT(...)
+
+#endif
+
+// ******************** From: at.h
+/** @file */
+#ifndef PP2_PRIMITIVE_TUPLE_AT_H
+#define PP2_PRIMITIVE_TUPLE_AT_H
+
+#define PP2_TUPLE_AT_0(P,x0,...) P##x0
+#define PP2_TUPLE_AT_1(P,x0,x1,...) P##x1
+#define PP2_TUPLE_AT_2(P,x0,x1,x2,...) P##x2
+#define PP2_TUPLE_AT_3(P,x0,x1,x2,x3,...) P##x3
+#define PP2_TUPLE_AT_4(P,x0,x1,x2,x3,x4,...) P##x4
+#define PP2_TUPLE_AT_5(P,x0,x1,x2,x3,x4,x5,...) P##x5
+#define PP2_TUPLE_AT_6(P,x0,x1,x2,x3,x4,x5,x6,...) P##x6
+#define PP2_TUPLE_AT_7(P,x0,x1,x2,x3,x4,x5,x6,x7,...) P##x7
+#define PP2_TUPLE_AT_8(P,x0,x1,x2,x3,x4,x5,x6,x7,x8,...) P##x8
+#define PP2_TUPLE_AT_9(P,x0,x1,x2,x3,x4,x5,x6,x7,x8,x9,...) P##x9
+#define PP2_TUPLE_AT_10(P,x0,x1,x2,x3,x4,x5,x6,x7,x8,x9,x10,...) P##x10
+#define PP2_TUPLE_AT_11(P,x0,x1,x2,x3,x4,x5,x6,x7,x8,x9,x10,x11,...) P##x11
+#define PP2_TUPLE_AT_12(P,x0,x1,x2,x3,x4,x5,x6,x7,x8,x9,x10,x11,x12,...) P##x12
+#define PP2_TUPLE_AT_13(P,x0,x1,x2,x3,x4,x5,x6,x7,x8,x9,x10,x11,x12,x13,...) P##x13
+#define PP2_TUPLE_AT_14(P,x0,x1,x2,x3,x4,x5,x6,x7,x8,x9,x10,x11,x12,x13,x14,...) P##x14
+#define PP2_TUPLE_AT_15(P,x0,x1,x2,x3,x4,x5,x6,x7,x8,x9,x10,x11,x12,x13,x14,x15,...) P##x15
+#define PP2_TUPLE_AT_16(P,x0,x1,x2,x3,x4,x5,x6,x7,x8,x9,x10,x11,x12,x13,x14,x15,x16,...) P##x16
+#define PP2_TUPLE_AT_17(P,x0,x1,x2,x3,x4,x5,x6,x7,x8,x9,x10,x11,x12,x13,x14,x15,x16,x17,...) P##x17
+#define PP2_TUPLE_AT_18(P,x0,x1,x2,x3,x4,x5,x6,x7,x8,x9,x10,x11,x12,x13,x14,x15,x16,x17,x18,...) P##x18
+#define PP2_TUPLE_AT_19(P,x0,x1,x2,x3,x4,x5,x6,x7,x8,x9,x10,x11,x12,x13,x14,x15,x16,x17,x18,x19,...) P##x19
+#define PP2_TUPLE_AT_20(P,x0,x1,x2,x3,x4,x5,x6,x7,x8,x9,x10,x11,x12,x13,x14,x15,x16,x17,x18,x19,x20,...) P##x20
+#define PP2_TUPLE_AT_21(P,x0,x1,x2,x3,x4,x5,x6,x7,x8,x9,x10,x11,x12,x13,x14,x15,x16,x17,x18,x19,x20,x21,...) P##x21
+#define PP2_TUPLE_AT_22(P,x0,x1,x2,x3,x4,x5,x6,x7,x8,x9,x10,x11,x12,x13,x14,x15,x16,x17,x18,x19,x20,x21,x22,...) P##x22
+#define PP2_TUPLE_AT_23(P,x0,x1,x2,x3,x4,x5,x6,x7,x8,x9,x10,x11,x12,x13,x14,x15,x16,x17,x18,x19,x20,x21,x22,x23,...) P##x23
+#define PP2_TUPLE_AT_24(P,x0,x1,x2,x3,x4,x5,x6,x7,x8,x9,x10,x11,x12,x13,x14,x15,x16,x17,x18,x19,x20,x21,x22,x23,x24,...) P##x24
+#define PP2_TUPLE_AT_25(P,x0,x1,x2,x3,x4,x5,x6,x7,x8,x9,x10,x11,x12,x13,x14,x15,x16,x17,x18,x19,x20,x21,x22,x23,x24,x25,...) P##x25
+#define PP2_TUPLE_AT_26(P,x0,x1,x2,x3,x4,x5,x6,x7,x8,x9,x10,x11,x12,x13,x14,x15,x16,x17,x18,x19,x20,x21,x22,x23,x24,x25,x26,...) P##x26
+#define PP2_TUPLE_AT_27(P,x0,x1,x2,x3,x4,x5,x6,x7,x8,x9,x10,x11,x12,x13,x14,x15,x16,x17,x18,x19,x20,x21,x22,x23,x24,x25,x26,x27,...) P##x27
+#define PP2_TUPLE_AT_28(P,x0,x1,x2,x3,x4,x5,x6,x7,x8,x9,x10,x11,x12,x13,x14,x15,x16,x17,x18,x19,x20,x21,x22,x23,x24,x25,x26,x27,x28,...) P##x28
+#define PP2_TUPLE_AT_29(P,x0,x1,x2,x3,x4,x5,x6,x7,x8,x9,x10,x11,x12,x13,x14,x15,x16,x17,x18,x19,x20,x21,x22,x23,x24,x25,x26,x27,x28,x29,...) P##x29
+#define PP2_TUPLE_AT_30(P,x0,x1,x2,x3,x4,x5,x6,x7,x8,x9,x10,x11,x12,x13,x14,x15,x16,x17,x18,x19,x20,x21,x22,x23,x24,x25,x26,x27,x28,x29,x30,...) P##x30
+#define PP2_TUPLE_AT_31(P,x0,x1,x2,x3,x4,x5,x6,x7,x8,x9,x10,x11,x12,x13,x14,x15,x16,x17,x18,x19,x20,x21,x22,x23,x24,x25,x26,x27,x28,x29,x30,x31,...) P##x31
+#define PP2_TUPLE_AT_32(P,x0,x1,x2,x3,x4,x5,x6,x7,x8,x9,x10,x11,x12,x13,x14,x15,x16,x17,x18,x19,x20,x21,x22,x23,x24,x25,x26,x27,x28,x29,x30,x31,x32,...) P##x32
+#define PP2_TUPLE_AT_33(P,x0,x1,x2,x3,x4,x5,x6,x7,x8,x9,x10,x11,x12,x13,x14,x15,x16,x17,x18,x19,x20,x21,x22,x23,x24,x25,x26,x27,x28,x29,x30,x31,x32,x33,...) P##x33
+#define PP2_TUPLE_AT_34(P,x0,x1,x2,x3,x4,x5,x6,x7,x8,x9,x10,x11,x12,x13,x14,x15,x16,x17,x18,x19,x20,x21,x22,x23,x24,x25,x26,x27,x28,x29,x30,x31,x32,x33,x34,...) P##x34
+#define PP2_TUPLE_AT_35(P,x0,x1,x2,x3,x4,x5,x6,x7,x8,x9,x10,x11,x12,x13,x14,x15,x16,x17,x18,x19,x20,x21,x22,x23,x24,x25,x26,x27,x28,x29,x30,x31,x32,x33,x34,x35,...) P##x35
+#define PP2_TUPLE_AT_36(P,x0,x1,x2,x3,x4,x5,x6,x7,x8,x9,x10,x11,x12,x13,x14,x15,x16,x17,x18,x19,x20,x21,x22,x23,x24,x25,x26,x27,x28,x29,x30,x31,x32,x33,x34,x35,x36,...) P##x36
+#define PP2_TUPLE_AT_37(P,x0,x1,x2,x3,x4,x5,x6,x7,x8,x9,x10,x11,x12,x13,x14,x15,x16,x17,x18,x19,x20,x21,x22,x23,x24,x25,x26,x27,x28,x29,x30,x31,x32,x33,x34,x35,x36,x37,...) P##x37
+#define PP2_TUPLE_AT_38(P,x0,x1,x2,x3,x4,x5,x6,x7,x8,x9,x10,x11,x12,x13,x14,x15,x16,x17,x18,x19,x20,x21,x22,x23,x24,x25,x26,x27,x28,x29,x30,x31,x32,x33,x34,x35,x36,x37,x38,...) P##x38
+#define PP2_TUPLE_AT_39(P,x0,x1,x2,x3,x4,x5,x6,x7,x8,x9,x10,x11,x12,x13,x14,x15,x16,x17,x18,x19,x20,x21,x22,x23,x24,x25,x26,x27,x28,x29,x30,x31,x32,x33,x34,x35,x36,x37,x38,x39,...) P##x39
+#define PP2_TUPLE_AT_40(P,x0,x1,x2,x3,x4,x5,x6,x7,x8,x9,x10,x11,x12,x13,x14,x15,x16,x17,x18,x19,x20,x21,x22,x23,x24,x25,x26,x27,x28,x29,x30,x31,x32,x33,x34,x35,x36,x37,x38,x39,x40,...) P##x40
+#define PP2_TUPLE_AT_41(P,x0,x1,x2,x3,x4,x5,x6,x7,x8,x9,x10,x11,x12,x13,x14,x15,x16,x17,x18,x19,x20,x21,x22,x23,x24,x25,x26,x27,x28,x29,x30,x31,x32,x33,x34,x35,x36,x37,x38,x39,x40,x41,...) P##x41
+#define PP2_TUPLE_AT_42(P,x0,x1,x2,x3,x4,x5,x6,x7,x8,x9,x10,x11,x12,x13,x14,x15,x16,x17,x18,x19,x20,x21,x22,x23,x24,x25,x26,x27,x28,x29,x30,x31,x32,x33,x34,x35,x36,x37,x38,x39,x40,x41,x42,...) P##x42
+#define PP2_TUPLE_AT_43(P,x0,x1,x2,x3,x4,x5,x6,x7,x8,x9,x10,x11,x12,x13,x14,x15,x16,x17,x18,x19,x20,x21,x22,x23,x24,x25,x26,x27,x28,x29,x30,x31,x32,x33,x34,x35,x36,x37,x38,x39,x40,x41,x42,x43,...) P##x43
+#define PP2_TUPLE_AT_44(P,x0,x1,x2,x3,x4,x5,x6,x7,x8,x9,x10,x11,x12,x13,x14,x15,x16,x17,x18,x19,x20,x21,x22,x23,x24,x25,x26,x27,x28,x29,x30,x31,x32,x33,x34,x35,x36,x37,x38,x39,x40,x41,x42,x43,x44,...) P##x44
+#define PP2_TUPLE_AT_45(P,x0,x1,x2,x3,x4,x5,x6,x7,x8,x9,x10,x11,x12,x13,x14,x15,x16,x17,x18,x19,x20,x21,x22,x23,x24,x25,x26,x27,x28,x29,x30,x31,x32,x33,x34,x35,x36,x37,x38,x39,x40,x41,x42,x43,x44,x45,...) P##x45
+#define PP2_TUPLE_AT_46(P,x0,x1,x2,x3,x4,x5,x6,x7,x8,x9,x10,x11,x12,x13,x14,x15,x16,x17,x18,x19,x20,x21,x22,x23,x24,x25,x26,x27,x28,x29,x30,x31,x32,x33,x34,x35,x36,x37,x38,x39,x40,x41,x42,x43,x44,x45,x46,...) P##x46
+#define PP2_TUPLE_AT_47(P,x0,x1,x2,x3,x4,x5,x6,x7,x8,x9,x10,x11,x12,x13,x14,x15,x16,x17,x18,x19,x20,x21,x22,x23,x24,x25,x26,x27,x28,x29,x30,x31,x32,x33,x34,x35,x36,x37,x38,x39,x40,x41,x42,x43,x44,x45,x46,x47,...) P##x47
+#define PP2_TUPLE_AT_48(P,x0,x1,x2,x3,x4,x5,x6,x7,x8,x9,x10,x11,x12,x13,x14,x15,x16,x17,x18,x19,x20,x21,x22,x23,x24,x25,x26,x27,x28,x29,x30,x31,x32,x33,x34,x35,x36,x37,x38,x39,x40,x41,x42,x43,x44,x45,x46,x47,x48,...) P##x48
+#define PP2_TUPLE_AT_49(P,x0,x1,x2,x3,x4,x5,x6,x7,x8,x9,x10,x11,x12,x13,x14,x15,x16,x17,x18,x19,x20,x21,x22,x23,x24,x25,x26,x27,x28,x29,x30,x31,x32,x33,x34,x35,x36,x37,x38,x39,x40,x41,x42,x43,x44,x45,x46,x47,x48,x49,...) P##x49
+#define PP2_TUPLE_AT_50(P,x0,x1,x2,x3,x4,x5,x6,x7,x8,x9,x10,x11,x12,x13,x14,x15,x16,x17,x18,x19,x20,x21,x22,x23,x24,x25,x26,x27,x28,x29,x30,x31,x32,x33,x34,x35,x36,x37,x38,x39,x40,x41,x42,x43,x44,x45,x46,x47,x48,x49,x50,...) P##x50
+#define PP2_TUPLE_AT_51(P,x0,x1,x2,x3,x4,x5,x6,x7,x8,x9,x10,x11,x12,x13,x14,x15,x16,x17,x18,x19,x20,x21,x22,x23,x24,x25,x26,x27,x28,x29,x30,x31,x32,x33,x34,x35,x36,x37,x38,x39,x40,x41,x42,x43,x44,x45,x46,x47,x48,x49,x50,x51,...) P##x51
+#define PP2_TUPLE_AT_52(P,x0,x1,x2,x3,x4,x5,x6,x7,x8,x9,x10,x11,x12,x13,x14,x15,x16,x17,x18,x19,x20,x21,x22,x23,x24,x25,x26,x27,x28,x29,x30,x31,x32,x33,x34,x35,x36,x37,x38,x39,x40,x41,x42,x43,x44,x45,x46,x47,x48,x49,x50,x51,x52,...) P##x52
+#define PP2_TUPLE_AT_53(P,x0,x1,x2,x3,x4,x5,x6,x7,x8,x9,x10,x11,x12,x13,x14,x15,x16,x17,x18,x19,x20,x21,x22,x23,x24,x25,x26,x27,x28,x29,x30,x31,x32,x33,x34,x35,x36,x37,x38,x39,x40,x41,x42,x43,x44,x45,x46,x47,x48,x49,x50,x51,x52,x53,...) P##x53
+#define PP2_TUPLE_AT_54(P,x0,x1,x2,x3,x4,x5,x6,x7,x8,x9,x10,x11,x12,x13,x14,x15,x16,x17,x18,x19,x20,x21,x22,x23,x24,x25,x26,x27,x28,x29,x30,x31,x32,x33,x34,x35,x36,x37,x38,x39,x40,x41,x42,x43,x44,x45,x46,x47,x48,x49,x50,x51,x52,x53,x54,...) P##x54
+#define PP2_TUPLE_AT_55(P,x0,x1,x2,x3,x4,x5,x6,x7,x8,x9,x10,x11,x12,x13,x14,x15,x16,x17,x18,x19,x20,x21,x22,x23,x24,x25,x26,x27,x28,x29,x30,x31,x32,x33,x34,x35,x36,x37,x38,x39,x40,x41,x42,x43,x44,x45,x46,x47,x48,x49,x50,x51,x52,x53,x54,x55,...) P##x55
+#define PP2_TUPLE_AT_56(P,x0,x1,x2,x3,x4,x5,x6,x7,x8,x9,x10,x11,x12,x13,x14,x15,x16,x17,x18,x19,x20,x21,x22,x23,x24,x25,x26,x27,x28,x29,x30,x31,x32,x33,x34,x35,x36,x37,x38,x39,x40,x41,x42,x43,x44,x45,x46,x47,x48,x49,x50,x51,x52,x53,x54,x55,x56,...) P##x56
+#define PP2_TUPLE_AT_57(P,x0,x1,x2,x3,x4,x5,x6,x7,x8,x9,x10,x11,x12,x13,x14,x15,x16,x17,x18,x19,x20,x21,x22,x23,x24,x25,x26,x27,x28,x29,x30,x31,x32,x33,x34,x35,x36,x37,x38,x39,x40,x41,x42,x43,x44,x45,x46,x47,x48,x49,x50,x51,x52,x53,x54,x55,x56,x57,...) P##x57
+#define PP2_TUPLE_AT_58(P,x0,x1,x2,x3,x4,x5,x6,x7,x8,x9,x10,x11,x12,x13,x14,x15,x16,x17,x18,x19,x20,x21,x22,x23,x24,x25,x26,x27,x28,x29,x30,x31,x32,x33,x34,x35,x36,x37,x38,x39,x40,x41,x42,x43,x44,x45,x46,x47,x48,x49,x50,x51,x52,x53,x54,x55,x56,x57,x58,...) P##x58
+#define PP2_TUPLE_AT_59(P,x0,x1,x2,x3,x4,x5,x6,x7,x8,x9,x10,x11,x12,x13,x14,x15,x16,x17,x18,x19,x20,x21,x22,x23,x24,x25,x26,x27,x28,x29,x30,x31,x32,x33,x34,x35,x36,x37,x38,x39,x40,x41,x42,x43,x44,x45,x46,x47,x48,x49,x50,x51,x52,x53,x54,x55,x56,x57,x58,x59,...) P##x59
+#define PP2_TUPLE_AT_60(P,x0,x1,x2,x3,x4,x5,x6,x7,x8,x9,x10,x11,x12,x13,x14,x15,x16,x17,x18,x19,x20,x21,x22,x23,x24,x25,x26,x27,x28,x29,x30,x31,x32,x33,x34,x35,x36,x37,x38,x39,x40,x41,x42,x43,x44,x45,x46,x47,x48,x49,x50,x51,x52,x53,x54,x55,x56,x57,x58,x59,x60,...) P##x60
+#define PP2_TUPLE_AT_61(P,x0,x1,x2,x3,x4,x5,x6,x7,x8,x9,x10,x11,x12,x13,x14,x15,x16,x17,x18,x19,x20,x21,x22,x23,x24,x25,x26,x27,x28,x29,x30,x31,x32,x33,x34,x35,x36,x37,x38,x39,x40,x41,x42,x43,x44,x45,x46,x47,x48,x49,x50,x51,x52,x53,x54,x55,x56,x57,x58,x59,x60,x61,...) P##x61
+#define PP2_TUPLE_AT_62(P,x0,x1,x2,x3,x4,x5,x6,x7,x8,x9,x10,x11,x12,x13,x14,x15,x16,x17,x18,x19,x20,x21,x22,x23,x24,x25,x26,x27,x28,x29,x30,x31,x32,x33,x34,x35,x36,x37,x38,x39,x40,x41,x42,x43,x44,x45,x46,x47,x48,x49,x50,x51,x52,x53,x54,x55,x56,x57,x58,x59,x60,x61,x62,...) P##x62
+#define PP2_TUPLE_AT_63(P,x0,x1,x2,x3,x4,x5,x6,x7,x8,x9,x10,x11,x12,x13,x14,x15,x16,x17,x18,x19,x20,x21,x22,x23,x24,x25,x26,x27,x28,x29,x30,x31,x32,x33,x34,x35,x36,x37,x38,x39,x40,x41,x42,x43,x44,x45,x46,x47,x48,x49,x50,x51,x52,x53,x54,x55,x56,x57,x58,x59,x60,x61,x62,x63,...) P##x63
+#define PP2_TUPLE_AT_64(P,x0,x1,x2,x3,x4,x5,x6,x7,x8,x9,x10,x11,x12,x13,x14,x15,x16,x17,x18,x19,x20,x21,x22,x23,x24,x25,x26,x27,x28,x29,x30,x31,x32,x33,x34,x35,x36,x37,x38,x39,x40,x41,x42,x43,x44,x45,x46,x47,x48,x49,x50,x51,x52,x53,x54,x55,x56,x57,x58,x59,x60,x61,x62,x63,x64,...) P##x64
+#define PP2_TUPLE_AT_65(P,x0,x1,x2,x3,x4,x5,x6,x7,x8,x9,x10,x11,x12,x13,x14,x15,x16,x17,x18,x19,x20,x21,x22,x23,x24,x25,x26,x27,x28,x29,x30,x31,x32,x33,x34,x35,x36,x37,x38,x39,x40,x41,x42,x43,x44,x45,x46,x47,x48,x49,x50,x51,x52,x53,x54,x55,x56,x57,x58,x59,x60,x61,x62,x63,x64,x65,...) P##x65
+#define PP2_TUPLE_AT_66(P,x0,x1,x2,x3,x4,x5,x6,x7,x8,x9,x10,x11,x12,x13,x14,x15,x16,x17,x18,x19,x20,x21,x22,x23,x24,x25,x26,x27,x28,x29,x30,x31,x32,x33,x34,x35,x36,x37,x38,x39,x40,x41,x42,x43,x44,x45,x46,x47,x48,x49,x50,x51,x52,x53,x54,x55,x56,x57,x58,x59,x60,x61,x62,x63,x64,x65,x66,...) P##x66
+#define PP2_TUPLE_AT_67(P,x0,x1,x2,x3,x4,x5,x6,x7,x8,x9,x10,x11,x12,x13,x14,x15,x16,x17,x18,x19,x20,x21,x22,x23,x24,x25,x26,x27,x28,x29,x30,x31,x32,x33,x34,x35,x36,x37,x38,x39,x40,x41,x42,x43,x44,x45,x46,x47,x48,x49,x50,x51,x52,x53,x54,x55,x56,x57,x58,x59,x60,x61,x62,x63,x64,x65,x66,x67,...) P##x67
+#define PP2_TUPLE_AT_68(P,x0,x1,x2,x3,x4,x5,x6,x7,x8,x9,x10,x11,x12,x13,x14,x15,x16,x17,x18,x19,x20,x21,x22,x23,x24,x25,x26,x27,x28,x29,x30,x31,x32,x33,x34,x35,x36,x37,x38,x39,x40,x41,x42,x43,x44,x45,x46,x47,x48,x49,x50,x51,x52,x53,x54,x55,x56,x57,x58,x59,x60,x61,x62,x63,x64,x65,x66,x67,x68,...) P##x68
+#define PP2_TUPLE_AT_69(P,x0,x1,x2,x3,x4,x5,x6,x7,x8,x9,x10,x11,x12,x13,x14,x15,x16,x17,x18,x19,x20,x21,x22,x23,x24,x25,x26,x27,x28,x29,x30,x31,x32,x33,x34,x35,x36,x37,x38,x39,x40,x41,x42,x43,x44,x45,x46,x47,x48,x49,x50,x51,x52,x53,x54,x55,x56,x57,x58,x59,x60,x61,x62,x63,x64,x65,x66,x67,x68,x69,...) P##x69
+#define PP2_TUPLE_AT_70(P,x0,x1,x2,x3,x4,x5,x6,x7,x8,x9,x10,x11,x12,x13,x14,x15,x16,x17,x18,x19,x20,x21,x22,x23,x24,x25,x26,x27,x28,x29,x30,x31,x32,x33,x34,x35,x36,x37,x38,x39,x40,x41,x42,x43,x44,x45,x46,x47,x48,x49,x50,x51,x52,x53,x54,x55,x56,x57,x58,x59,x60,x61,x62,x63,x64,x65,x66,x67,x68,x69,x70,...) P##x70
+#define PP2_TUPLE_AT_71(P,x0,x1,x2,x3,x4,x5,x6,x7,x8,x9,x10,x11,x12,x13,x14,x15,x16,x17,x18,x19,x20,x21,x22,x23,x24,x25,x26,x27,x28,x29,x30,x31,x32,x33,x34,x35,x36,x37,x38,x39,x40,x41,x42,x43,x44,x45,x46,x47,x48,x49,x50,x51,x52,x53,x54,x55,x56,x57,x58,x59,x60,x61,x62,x63,x64,x65,x66,x67,x68,x69,x70,x71,...) P##x71
+#define PP2_TUPLE_AT_72(P,x0,x1,x2,x3,x4,x5,x6,x7,x8,x9,x10,x11,x12,x13,x14,x15,x16,x17,x18,x19,x20,x21,x22,x23,x24,x25,x26,x27,x28,x29,x30,x31,x32,x33,x34,x35,x36,x37,x38,x39,x40,x41,x42,x43,x44,x45,x46,x47,x48,x49,x50,x51,x52,x53,x54,x55,x56,x57,x58,x59,x60,x61,x62,x63,x64,x65,x66,x67,x68,x69,x70,x71,x72,...) P##x72
+#define PP2_TUPLE_AT_73(P,x0,x1,x2,x3,x4,x5,x6,x7,x8,x9,x10,x11,x12,x13,x14,x15,x16,x17,x18,x19,x20,x21,x22,x23,x24,x25,x26,x27,x28,x29,x30,x31,x32,x33,x34,x35,x36,x37,x38,x39,x40,x41,x42,x43,x44,x45,x46,x47,x48,x49,x50,x51,x52,x53,x54,x55,x56,x57,x58,x59,x60,x61,x62,x63,x64,x65,x66,x67,x68,x69,x70,x71,x72,x73,...) P##x73
+#define PP2_TUPLE_AT_74(P,x0,x1,x2,x3,x4,x5,x6,x7,x8,x9,x10,x11,x12,x13,x14,x15,x16,x17,x18,x19,x20,x21,x22,x23,x24,x25,x26,x27,x28,x29,x30,x31,x32,x33,x34,x35,x36,x37,x38,x39,x40,x41,x42,x43,x44,x45,x46,x47,x48,x49,x50,x51,x52,x53,x54,x55,x56,x57,x58,x59,x60,x61,x62,x63,x64,x65,x66,x67,x68,x69,x70,x71,x72,x73,x74,...) P##x74
+#define PP2_TUPLE_AT_75(P,x0,x1,x2,x3,x4,x5,x6,x7,x8,x9,x10,x11,x12,x13,x14,x15,x16,x17,x18,x19,x20,x21,x22,x23,x24,x25,x26,x27,x28,x29,x30,x31,x32,x33,x34,x35,x36,x37,x38,x39,x40,x41,x42,x43,x44,x45,x46,x47,x48,x49,x50,x51,x52,x53,x54,x55,x56,x57,x58,x59,x60,x61,x62,x63,x64,x65,x66,x67,x68,x69,x70,x71,x72,x73,x74,x75,...) P##x75
+#define PP2_TUPLE_AT_76(P,x0,x1,x2,x3,x4,x5,x6,x7,x8,x9,x10,x11,x12,x13,x14,x15,x16,x17,x18,x19,x20,x21,x22,x23,x24,x25,x26,x27,x28,x29,x30,x31,x32,x33,x34,x35,x36,x37,x38,x39,x40,x41,x42,x43,x44,x45,x46,x47,x48,x49,x50,x51,x52,x53,x54,x55,x56,x57,x58,x59,x60,x61,x62,x63,x64,x65,x66,x67,x68,x69,x70,x71,x72,x73,x74,x75,x76,...) P##x76
+#define PP2_TUPLE_AT_77(P,x0,x1,x2,x3,x4,x5,x6,x7,x8,x9,x10,x11,x12,x13,x14,x15,x16,x17,x18,x19,x20,x21,x22,x23,x24,x25,x26,x27,x28,x29,x30,x31,x32,x33,x34,x35,x36,x37,x38,x39,x40,x41,x42,x43,x44,x45,x46,x47,x48,x49,x50,x51,x52,x53,x54,x55,x56,x57,x58,x59,x60,x61,x62,x63,x64,x65,x66,x67,x68,x69,x70,x71,x72,x73,x74,x75,x76,x77,...) P##x77
+#define PP2_TUPLE_AT_78(P,x0,x1,x2,x3,x4,x5,x6,x7,x8,x9,x10,x11,x12,x13,x14,x15,x16,x17,x18,x19,x20,x21,x22,x23,x24,x25,x26,x27,x28,x29,x30,x31,x32,x33,x34,x35,x36,x37,x38,x39,x40,x41,x42,x43,x44,x45,x46,x47,x48,x49,x50,x51,x52,x53,x54,x55,x56,x57,x58,x59,x60,x61,x62,x63,x64,x65,x66,x67,x68,x69,x70,x71,x72,x73,x74,x75,x76,x77,x78,...) P##x78
+#define PP2_TUPLE_AT_79(P,x0,x1,x2,x3,x4,x5,x6,x7,x8,x9,x10,x11,x12,x13,x14,x15,x16,x17,x18,x19,x20,x21,x22,x23,x24,x25,x26,x27,x28,x29,x30,x31,x32,x33,x34,x35,x36,x37,x38,x39,x40,x41,x42,x43,x44,x45,x46,x47,x48,x49,x50,x51,x52,x53,x54,x55,x56,x57,x58,x59,x60,x61,x62,x63,x64,x65,x66,x67,x68,x69,x70,x71,x72,x73,x74,x75,x76,x77,x78,x79,...) P##x79
+#define PP2_TUPLE_AT_80(P,x0,x1,x2,x3,x4,x5,x6,x7,x8,x9,x10,x11,x12,x13,x14,x15,x16,x17,x18,x19,x20,x21,x22,x23,x24,x25,x26,x27,x28,x29,x30,x31,x32,x33,x34,x35,x36,x37,x38,x39,x40,x41,x42,x43,x44,x45,x46,x47,x48,x49,x50,x51,x52,x53,x54,x55,x56,x57,x58,x59,x60,x61,x62,x63,x64,x65,x66,x67,x68,x69,x70,x71,x72,x73,x74,x75,x76,x77,x78,x79,x80,...) P##x80
+#define PP2_TUPLE_AT_81(P,x0,x1,x2,x3,x4,x5,x6,x7,x8,x9,x10,x11,x12,x13,x14,x15,x16,x17,x18,x19,x20,x21,x22,x23,x24,x25,x26,x27,x28,x29,x30,x31,x32,x33,x34,x35,x36,x37,x38,x39,x40,x41,x42,x43,x44,x45,x46,x47,x48,x49,x50,x51,x52,x53,x54,x55,x56,x57,x58,x59,x60,x61,x62,x63,x64,x65,x66,x67,x68,x69,x70,x71,x72,x73,x74,x75,x76,x77,x78,x79,x80,x81,...) P##x81
+#define PP2_TUPLE_AT_82(P,x0,x1,x2,x3,x4,x5,x6,x7,x8,x9,x10,x11,x12,x13,x14,x15,x16,x17,x18,x19,x20,x21,x22,x23,x24,x25,x26,x27,x28,x29,x30,x31,x32,x33,x34,x35,x36,x37,x38,x39,x40,x41,x42,x43,x44,x45,x46,x47,x48,x49,x50,x51,x52,x53,x54,x55,x56,x57,x58,x59,x60,x61,x62,x63,x64,x65,x66,x67,x68,x69,x70,x71,x72,x73,x74,x75,x76,x77,x78,x79,x80,x81,x82,...) P##x82
+#define PP2_TUPLE_AT_83(P,x0,x1,x2,x3,x4,x5,x6,x7,x8,x9,x10,x11,x12,x13,x14,x15,x16,x17,x18,x19,x20,x21,x22,x23,x24,x25,x26,x27,x28,x29,x30,x31,x32,x33,x34,x35,x36,x37,x38,x39,x40,x41,x42,x43,x44,x45,x46,x47,x48,x49,x50,x51,x52,x53,x54,x55,x56,x57,x58,x59,x60,x61,x62,x63,x64,x65,x66,x67,x68,x69,x70,x71,x72,x73,x74,x75,x76,x77,x78,x79,x80,x81,x82,x83,...) P##x83
+#define PP2_TUPLE_AT_84(P,x0,x1,x2,x3,x4,x5,x6,x7,x8,x9,x10,x11,x12,x13,x14,x15,x16,x17,x18,x19,x20,x21,x22,x23,x24,x25,x26,x27,x28,x29,x30,x31,x32,x33,x34,x35,x36,x37,x38,x39,x40,x41,x42,x43,x44,x45,x46,x47,x48,x49,x50,x51,x52,x53,x54,x55,x56,x57,x58,x59,x60,x61,x62,x63,x64,x65,x66,x67,x68,x69,x70,x71,x72,x73,x74,x75,x76,x77,x78,x79,x80,x81,x82,x83,x84,...) P##x84
+#define PP2_TUPLE_AT_85(P,x0,x1,x2,x3,x4,x5,x6,x7,x8,x9,x10,x11,x12,x13,x14,x15,x16,x17,x18,x19,x20,x21,x22,x23,x24,x25,x26,x27,x28,x29,x30,x31,x32,x33,x34,x35,x36,x37,x38,x39,x40,x41,x42,x43,x44,x45,x46,x47,x48,x49,x50,x51,x52,x53,x54,x55,x56,x57,x58,x59,x60,x61,x62,x63,x64,x65,x66,x67,x68,x69,x70,x71,x72,x73,x74,x75,x76,x77,x78,x79,x80,x81,x82,x83,x84,x85,...) P##x85
+#define PP2_TUPLE_AT_86(P,x0,x1,x2,x3,x4,x5,x6,x7,x8,x9,x10,x11,x12,x13,x14,x15,x16,x17,x18,x19,x20,x21,x22,x23,x24,x25,x26,x27,x28,x29,x30,x31,x32,x33,x34,x35,x36,x37,x38,x39,x40,x41,x42,x43,x44,x45,x46,x47,x48,x49,x50,x51,x52,x53,x54,x55,x56,x57,x58,x59,x60,x61,x62,x63,x64,x65,x66,x67,x68,x69,x70,x71,x72,x73,x74,x75,x76,x77,x78,x79,x80,x81,x82,x83,x84,x85,x86,...) P##x86
+#define PP2_TUPLE_AT_87(P,x0,x1,x2,x3,x4,x5,x6,x7,x8,x9,x10,x11,x12,x13,x14,x15,x16,x17,x18,x19,x20,x21,x22,x23,x24,x25,x26,x27,x28,x29,x30,x31,x32,x33,x34,x35,x36,x37,x38,x39,x40,x41,x42,x43,x44,x45,x46,x47,x48,x49,x50,x51,x52,x53,x54,x55,x56,x57,x58,x59,x60,x61,x62,x63,x64,x65,x66,x67,x68,x69,x70,x71,x72,x73,x74,x75,x76,x77,x78,x79,x80,x81,x82,x83,x84,x85,x86,x87,...) P##x87
+#define PP2_TUPLE_AT_88(P,x0,x1,x2,x3,x4,x5,x6,x7,x8,x9,x10,x11,x12,x13,x14,x15,x16,x17,x18,x19,x20,x21,x22,x23,x24,x25,x26,x27,x28,x29,x30,x31,x32,x33,x34,x35,x36,x37,x38,x39,x40,x41,x42,x43,x44,x45,x46,x47,x48,x49,x50,x51,x52,x53,x54,x55,x56,x57,x58,x59,x60,x61,x62,x63,x64,x65,x66,x67,x68,x69,x70,x71,x72,x73,x74,x75,x76,x77,x78,x79,x80,x81,x82,x83,x84,x85,x86,x87,x88,...) P##x88
+#define PP2_TUPLE_AT_89(P,x0,x1,x2,x3,x4,x5,x6,x7,x8,x9,x10,x11,x12,x13,x14,x15,x16,x17,x18,x19,x20,x21,x22,x23,x24,x25,x26,x27,x28,x29,x30,x31,x32,x33,x34,x35,x36,x37,x38,x39,x40,x41,x42,x43,x44,x45,x46,x47,x48,x49,x50,x51,x52,x53,x54,x55,x56,x57,x58,x59,x60,x61,x62,x63,x64,x65,x66,x67,x68,x69,x70,x71,x72,x73,x74,x75,x76,x77,x78,x79,x80,x81,x82,x83,x84,x85,x86,x87,x88,x89,...) P##x89
+#define PP2_TUPLE_AT_90(P,x0,x1,x2,x3,x4,x5,x6,x7,x8,x9,x10,x11,x12,x13,x14,x15,x16,x17,x18,x19,x20,x21,x22,x23,x24,x25,x26,x27,x28,x29,x30,x31,x32,x33,x34,x35,x36,x37,x38,x39,x40,x41,x42,x43,x44,x45,x46,x47,x48,x49,x50,x51,x52,x53,x54,x55,x56,x57,x58,x59,x60,x61,x62,x63,x64,x65,x66,x67,x68,x69,x70,x71,x72,x73,x74,x75,x76,x77,x78,x79,x80,x81,x82,x83,x84,x85,x86,x87,x88,x89,x90,...) P##x90
+#define PP2_TUPLE_AT_91(P,x0,x1,x2,x3,x4,x5,x6,x7,x8,x9,x10,x11,x12,x13,x14,x15,x16,x17,x18,x19,x20,x21,x22,x23,x24,x25,x26,x27,x28,x29,x30,x31,x32,x33,x34,x35,x36,x37,x38,x39,x40,x41,x42,x43,x44,x45,x46,x47,x48,x49,x50,x51,x52,x53,x54,x55,x56,x57,x58,x59,x60,x61,x62,x63,x64,x65,x66,x67,x68,x69,x70,x71,x72,x73,x74,x75,x76,x77,x78,x79,x80,x81,x82,x83,x84,x85,x86,x87,x88,x89,x90,x91,...) P##x91
+#define PP2_TUPLE_AT_92(P,x0,x1,x2,x3,x4,x5,x6,x7,x8,x9,x10,x11,x12,x13,x14,x15,x16,x17,x18,x19,x20,x21,x22,x23,x24,x25,x26,x27,x28,x29,x30,x31,x32,x33,x34,x35,x36,x37,x38,x39,x40,x41,x42,x43,x44,x45,x46,x47,x48,x49,x50,x51,x52,x53,x54,x55,x56,x57,x58,x59,x60,x61,x62,x63,x64,x65,x66,x67,x68,x69,x70,x71,x72,x73,x74,x75,x76,x77,x78,x79,x80,x81,x82,x83,x84,x85,x86,x87,x88,x89,x90,x91,x92,...) P##x92
+#define PP2_TUPLE_AT_93(P,x0,x1,x2,x3,x4,x5,x6,x7,x8,x9,x10,x11,x12,x13,x14,x15,x16,x17,x18,x19,x20,x21,x22,x23,x24,x25,x26,x27,x28,x29,x30,x31,x32,x33,x34,x35,x36,x37,x38,x39,x40,x41,x42,x43,x44,x45,x46,x47,x48,x49,x50,x51,x52,x53,x54,x55,x56,x57,x58,x59,x60,x61,x62,x63,x64,x65,x66,x67,x68,x69,x70,x71,x72,x73,x74,x75,x76,x77,x78,x79,x80,x81,x82,x83,x84,x85,x86,x87,x88,x89,x90,x91,x92,x93,...) P##x93
+#define PP2_TUPLE_AT_94(P,x0,x1,x2,x3,x4,x5,x6,x7,x8,x9,x10,x11,x12,x13,x14,x15,x16,x17,x18,x19,x20,x21,x22,x23,x24,x25,x26,x27,x28,x29,x30,x31,x32,x33,x34,x35,x36,x37,x38,x39,x40,x41,x42,x43,x44,x45,x46,x47,x48,x49,x50,x51,x52,x53,x54,x55,x56,x57,x58,x59,x60,x61,x62,x63,x64,x65,x66,x67,x68,x69,x70,x71,x72,x73,x74,x75,x76,x77,x78,x79,x80,x81,x82,x83,x84,x85,x86,x87,x88,x89,x90,x91,x92,x93,x94,...) P##x94
+#define PP2_TUPLE_AT_95(P,x0,x1,x2,x3,x4,x5,x6,x7,x8,x9,x10,x11,x12,x13,x14,x15,x16,x17,x18,x19,x20,x21,x22,x23,x24,x25,x26,x27,x28,x29,x30,x31,x32,x33,x34,x35,x36,x37,x38,x39,x40,x41,x42,x43,x44,x45,x46,x47,x48,x49,x50,x51,x52,x53,x54,x55,x56,x57,x58,x59,x60,x61,x62,x63,x64,x65,x66,x67,x68,x69,x70,x71,x72,x73,x74,x75,x76,x77,x78,x79,x80,x81,x82,x83,x84,x85,x86,x87,x88,x89,x90,x91,x92,x93,x94,x95,...) P##x95      
+#define PP2_TUPLE_AT_96(P,x0,x1,x2,x3,x4,x5,x6,x7,x8,x9,x10,x11,x12,x13,x14,x15,x16,x17,x18,x19,x20,x21,x22,x23,x24,x25,x26,x27,x28,x29,x30,x31,x32,x33,x34,x35,x36,x37,x38,x39,x40,x41,x42,x43,x44,x45,x46,x47,x48,x49,x50,x51,x52,x53,x54,x55,x56,x57,x58,x59,x60,x61,x62,x63,x64,x65,x66,x67,x68,x69,x70,x71,x72,x73,x74,x75,x76,x77,x78,x79,x80,x81,x82,x83,x84,x85,x86,x87,x88,x89,x90,x91,x92,x93,x94,x95,x96,...) P##x96  
+#define PP2_TUPLE_AT_97(P,x0,x1,x2,x3,x4,x5,x6,x7,x8,x9,x10,x11,x12,x13,x14,x15,x16,x17,x18,x19,x20,x21,x22,x23,x24,x25,x26,x27,x28,x29,x30,x31,x32,x33,x34,x35,x36,x37,x38,x39,x40,x41,x42,x43,x44,x45,x46,x47,x48,x49,x50,x51,x52,x53,x54,x55,x56,x57,x58,x59,x60,x61,x62,x63,x64,x65,x66,x67,x68,x69,x70,x71,x72,x73,x74,x75,x76,x77,x78,x79,x80,x81,x82,x83,x84,x85,x86,x87,x88,x89,x90,x91,x92,x93,x94,x95,x96,x97,...) P##x97
+#define PP2_TUPLE_AT_98(P,x0,x1,x2,x3,x4,x5,x6,x7,x8,x9,x10,x11,x12,x13,x14,x15,x16,x17,x18,x19,x20,x21,x22,x23,x24,x25,x26,x27,x28,x29,x30,x31,x32,x33,x34,x35,x36,x37,x38,x39,x40,x41,x42,x43,x44,x45,x46,x47,x48,x49,x50,x51,x52,x53,x54,x55,x56,x57,x58,x59,x60,x61,x62,x63,x64,x65,x66,x67,x68,x69,x70,x71,x72,x73,x74,x75,x76,x77,x78,x79,x80,x81,x82,x83,x84,x85,x86,x87,x88,x89,x90,x91,x92,x93,x94,x95,x96,x97,x98,...) P##x98
+#define PP2_TUPLE_AT_99(P,x0,x1,x2,x3,x4,x5,x6,x7,x8,x9,x10,x11,x12,x13,x14,x15,x16,x17,x18,x19,x20,x21,x22,x23,x24,x25,x26,x27,x28,x29,x30,x31,x32,x33,x34,x35,x36,x37,x38,x39,x40,x41,x42,x43,x44,x45,x46,x47,x48,x49,x50,x51,x52,x53,x54,x55,x56,x57,x58,x59,x60,x61,x62,x63,x64,x65,x66,x67,x68,x69,x70,x71,x72,x73,x74,x75,x76,x77,x78,x79,x80,x81,x82,x83,x84,x85,x86,x87,x88,x89,x90,x91,x92,x93,x94,x95,x96,x97,x98,x99,...) P##x99
+
+#define PP2_TUPLE_AT_100(P,x0,x1,x2,x3,x4,x5,x6,x7,x8,x9,x10,x11,x12,x13,x14,x15,x16,x17,x18,x19,x20,x21,x22,x23,x24,x25,x26,x27,x28,x29,x30,x31,x32,x33,x34,x35,x36,x37,x38,x39,x40,x41,x42,x43,x44,x45,x46,x47,x48,x49,x50,x51,x52,x53,x54,x55,x56,x57,x58,x59,x60,x61,x62,x63,x64,x65,x66,x67,x68,x69,x70,x71,x72,x73,x74,x75,x76,x77,x78,x79,x80,x81,x82,x83,x84,x85,x86,x87,x88,x89,x90,x91,x92,x93,x94,x95,x96,x97,x98,x99,x100,...) P##x100
+#define PP2_TUPLE_AT_101(P,x0,x1,x2,x3,x4,x5,x6,x7,x8,x9,x10,x11,x12,x13,x14,x15,x16,x17,x18,x19,x20,x21,x22,x23,x24,x25,x26,x27,x28,x29,x30,x31,x32,x33,x34,x35,x36,x37,x38,x39,x40,x41,x42,x43,x44,x45,x46,x47,x48,x49,x50,x51,x52,x53,x54,x55,x56,x57,x58,x59,x60,x61,x62,x63,x64,x65,x66,x67,x68,x69,x70,x71,x72,x73,x74,x75,x76,x77,x78,x79,x80,x81,x82,x83,x84,x85,x86,x87,x88,x89,x90,x91,x92,x93,x94,x95,x96,x97,x98,x99,x100,x101,...) P##x101
+#define PP2_TUPLE_AT_102(P,x0,x1,x2,x3,x4,x5,x6,x7,x8,x9,x10,x11,x12,x13,x14,x15,x16,x17,x18,x19,x20,x21,x22,x23,x24,x25,x26,x27,x28,x29,x30,x31,x32,x33,x34,x35,x36,x37,x38,x39,x40,x41,x42,x43,x44,x45,x46,x47,x48,x49,x50,x51,x52,x53,x54,x55,x56,x57,x58,x59,x60,x61,x62,x63,x64,x65,x66,x67,x68,x69,x70,x71,x72,x73,x74,x75,x76,x77,x78,x79,x80,x81,x82,x83,x84,x85,x86,x87,x88,x89,x90,x91,x92,x93,x94,x95,x96,x97,x98,x99,x100,x101,x102,...) P##x102
+#define PP2_TUPLE_AT_103(P,x0,x1,x2,x3,x4,x5,x6,x7,x8,x9,x10,x11,x12,x13,x14,x15,x16,x17,x18,x19,x20,x21,x22,x23,x24,x25,x26,x27,x28,x29,x30,x31,x32,x33,x34,x35,x36,x37,x38,x39,x40,x41,x42,x43,x44,x45,x46,x47,x48,x49,x50,x51,x52,x53,x54,x55,x56,x57,x58,x59,x60,x61,x62,x63,x64,x65,x66,x67,x68,x69,x70,x71,x72,x73,x74,x75,x76,x77,x78,x79,x80,x81,x82,x83,x84,x85,x86,x87,x88,x89,x90,x91,x92,x93,x94,x95,x96,x97,x98,x99,x100,x101,x102,x103,...) P##x103
+#define PP2_TUPLE_AT_104(P,x0,x1,x2,x3,x4,x5,x6,x7,x8,x9,x10,x11,x12,x13,x14,x15,x16,x17,x18,x19,x20,x21,x22,x23,x24,x25,x26,x27,x28,x29,x30,x31,x32,x33,x34,x35,x36,x37,x38,x39,x40,x41,x42,x43,x44,x45,x46,x47,x48,x49,x50,x51,x52,x53,x54,x55,x56,x57,x58,x59,x60,x61,x62,x63,x64,x65,x66,x67,x68,x69,x70,x71,x72,x73,x74,x75,x76,x77,x78,x79,x80,x81,x82,x83,x84,x85,x86,x87,x88,x89,x90,x91,x92,x93,x94,x95,x96,x97,x98,x99,x100,x101,x102,x103,x104,...) P##x104
+#define PP2_TUPLE_AT_105(P,x0,x1,x2,x3,x4,x5,x6,x7,x8,x9,x10,x11,x12,x13,x14,x15,x16,x17,x18,x19,x20,x21,x22,x23,x24,x25,x26,x27,x28,x29,x30,x31,x32,x33,x34,x35,x36,x37,x38,x39,x40,x41,x42,x43,x44,x45,x46,x47,x48,x49,x50,x51,x52,x53,x54,x55,x56,x57,x58,x59,x60,x61,x62,x63,x64,x65,x66,x67,x68,x69,x70,x71,x72,x73,x74,x75,x76,x77,x78,x79,x80,x81,x82,x83,x84,x85,x86,x87,x88,x89,x90,x91,x92,x93,x94,x95,x96,x97,x98,x99,x100,x101,x102,x103,x104,x105,...) P##x105
+#define PP2_TUPLE_AT_106(P,x0,x1,x2,x3,x4,x5,x6,x7,x8,x9,x10,x11,x12,x13,x14,x15,x16,x17,x18,x19,x20,x21,x22,x23,x24,x25,x26,x27,x28,x29,x30,x31,x32,x33,x34,x35,x36,x37,x38,x39,x40,x41,x42,x43,x44,x45,x46,x47,x48,x49,x50,x51,x52,x53,x54,x55,x56,x57,x58,x59,x60,x61,x62,x63,x64,x65,x66,x67,x68,x69,x70,x71,x72,x73,x74,x75,x76,x77,x78,x79,x80,x81,x82,x83,x84,x85,x86,x87,x88,x89,x90,x91,x92,x93,x94,x95,x96,x97,x98,x99,x100,x101,x102,x103,x104,x105,x106,...) P##x106
+#define PP2_TUPLE_AT_107(P,x0,x1,x2,x3,x4,x5,x6,x7,x8,x9,x10,x11,x12,x13,x14,x15,x16,x17,x18,x19,x20,x21,x22,x23,x24,x25,x26,x27,x28,x29,x30,x31,x32,x33,x34,x35,x36,x37,x38,x39,x40,x41,x42,x43,x44,x45,x46,x47,x48,x49,x50,x51,x52,x53,x54,x55,x56,x57,x58,x59,x60,x61,x62,x63,x64,x65,x66,x67,x68,x69,x70,x71,x72,x73,x74,x75,x76,x77,x78,x79,x80,x81,x82,x83,x84,x85,x86,x87,x88,x89,x90,x91,x92,x93,x94,x95,x96,x97,x98,x99,x100,x101,x102,x103,x104,x105,x106,x107,...) P##x107
+#define PP2_TUPLE_AT_108(P,x0,x1,x2,x3,x4,x5,x6,x7,x8,x9,x10,x11,x12,x13,x14,x15,x16,x17,x18,x19,x20,x21,x22,x23,x24,x25,x26,x27,x28,x29,x30,x31,x32,x33,x34,x35,x36,x37,x38,x39,x40,x41,x42,x43,x44,x45,x46,x47,x48,x49,x50,x51,x52,x53,x54,x55,x56,x57,x58,x59,x60,x61,x62,x63,x64,x65,x66,x67,x68,x69,x70,x71,x72,x73,x74,x75,x76,x77,x78,x79,x80,x81,x82,x83,x84,x85,x86,x87,x88,x89,x90,x91,x92,x93,x94,x95,x96,x97,x98,x99,x100,x101,x102,x103,x104,x105,x106,x107,x108,...) P##x108
+#define PP2_TUPLE_AT_109(P,x0,x1,x2,x3,x4,x5,x6,x7,x8,x9,x10,x11,x12,x13,x14,x15,x16,x17,x18,x19,x20,x21,x22,x23,x24,x25,x26,x27,x28,x29,x30,x31,x32,x33,x34,x35,x36,x37,x38,x39,x40,x41,x42,x43,x44,x45,x46,x47,x48,x49,x50,x51,x52,x53,x54,x55,x56,x57,x58,x59,x60,x61,x62,x63,x64,x65,x66,x67,x68,x69,x70,x71,x72,x73,x74,x75,x76,x77,x78,x79,x80,x81,x82,x83,x84,x85,x86,x87,x88,x89,x90,x91,x92,x93,x94,x95,x96,x97,x98,x99,x100,x101,x102,x103,x104,x105,x106,x107,x108,x109,...) P##x109
+#define PP2_TUPLE_AT_110(P,x0,x1,x2,x3,x4,x5,x6,x7,x8,x9,x10,x11,x12,x13,x14,x15,x16,x17,x18,x19,x20,x21,x22,x23,x24,x25,x26,x27,x28,x29,x30,x31,x32,x33,x34,x35,x36,x37,x38,x39,x40,x41,x42,x43,x44,x45,x46,x47,x48,x49,x50,x51,x52,x53,x54,x55,x56,x57,x58,x59,x60,x61,x62,x63,x64,x65,x66,x67,x68,x69,x70,x71,x72,x73,x74,x75,x76,x77,x78,x79,x80,x81,x82,x83,x84,x85,x86,x87,x88,x89,x90,x91,x92,x93,x94,x95,x96,x97,x98,x99,x100,x101,x102,x103,x104,x105,x106,x107,x108,x109,x110,...) P##x110
+#define PP2_TUPLE_AT_111(P,x0,x1,x2,x3,x4,x5,x6,x7,x8,x9,x10,x11,x12,x13,x14,x15,x16,x17,x18,x19,x20,x21,x22,x23,x24,x25,x26,x27,x28,x29,x30,x31,x32,x33,x34,x35,x36,x37,x38,x39,x40,x41,x42,x43,x44,x45,x46,x47,x48,x49,x50,x51,x52,x53,x54,x55,x56,x57,x58,x59,x60,x61,x62,x63,x64,x65,x66,x67,x68,x69,x70,x71,x72,x73,x74,x75,x76,x77,x78,x79,x80,x81,x82,x83,x84,x85,x86,x87,x88,x89,x90,x91,x92,x93,x94,x95,x96,x97,x98,x99,x100,x101,x102,x103,x104,x105,x106,x107,x108,x109,x110,x111,...) P##x111
+#define PP2_TUPLE_AT_112(P,x0,x1,x2,x3,x4,x5,x6,x7,x8,x9,x10,x11,x12,x13,x14,x15,x16,x17,x18,x19,x20,x21,x22,x23,x24,x25,x26,x27,x28,x29,x30,x31,x32,x33,x34,x35,x36,x37,x38,x39,x40,x41,x42,x43,x44,x45,x46,x47,x48,x49,x50,x51,x52,x53,x54,x55,x56,x57,x58,x59,x60,x61,x62,x63,x64,x65,x66,x67,x68,x69,x70,x71,x72,x73,x74,x75,x76,x77,x78,x79,x80,x81,x82,x83,x84,x85,x86,x87,x88,x89,x90,x91,x92,x93,x94,x95,x96,x97,x98,x99,x100,x101,x102,x103,x104,x105,x106,x107,x108,x109,x110,x111,x112,...) P##x112
+#define PP2_TUPLE_AT_113(P,x0,x1,x2,x3,x4,x5,x6,x7,x8,x9,x10,x11,x12,x13,x14,x15,x16,x17,x18,x19,x20,x21,x22,x23,x24,x25,x26,x27,x28,x29,x30,x31,x32,x33,x34,x35,x36,x37,x38,x39,x40,x41,x42,x43,x44,x45,x46,x47,x48,x49,x50,x51,x52,x53,x54,x55,x56,x57,x58,x59,x60,x61,x62,x63,x64,x65,x66,x67,x68,x69,x70,x71,x72,x73,x74,x75,x76,x77,x78,x79,x80,x81,x82,x83,x84,x85,x86,x87,x88,x89,x90,x91,x92,x93,x94,x95,x96,x97,x98,x99,x100,x101,x102,x103,x104,x105,x106,x107,x108,x109,x110,x111,x112,x113,...) P##x113
+#define PP2_TUPLE_AT_114(P,x0,x1,x2,x3,x4,x5,x6,x7,x8,x9,x10,x11,x12,x13,x14,x15,x16,x17,x18,x19,x20,x21,x22,x23,x24,x25,x26,x27,x28,x29,x30,x31,x32,x33,x34,x35,x36,x37,x38,x39,x40,x41,x42,x43,x44,x45,x46,x47,x48,x49,x50,x51,x52,x53,x54,x55,x56,x57,x58,x59,x60,x61,x62,x63,x64,x65,x66,x67,x68,x69,x70,x71,x72,x73,x74,x75,x76,x77,x78,x79,x80,x81,x82,x83,x84,x85,x86,x87,x88,x89,x90,x91,x92,x93,x94,x95,x96,x97,x98,x99,x100,x101,x102,x103,x104,x105,x106,x107,x108,x109,x110,x111,x112,x113,x114,...) P##x114
+#define PP2_TUPLE_AT_115(P,x0,x1,x2,x3,x4,x5,x6,x7,x8,x9,x10,x11,x12,x13,x14,x15,x16,x17,x18,x19,x20,x21,x22,x23,x24,x25,x26,x27,x28,x29,x30,x31,x32,x33,x34,x35,x36,x37,x38,x39,x40,x41,x42,x43,x44,x45,x46,x47,x48,x49,x50,x51,x52,x53,x54,x55,x56,x57,x58,x59,x60,x61,x62,x63,x64,x65,x66,x67,x68,x69,x70,x71,x72,x73,x74,x75,x76,x77,x78,x79,x80,x81,x82,x83,x84,x85,x86,x87,x88,x89,x90,x91,x92,x93,x94,x95,x96,x97,x98,x99,x100,x101,x102,x103,x104,x105,x106,x107,x108,x109,x110,x111,x112,x113,x114,x115,...) P##x115
+#define PP2_TUPLE_AT_116(P,x0,x1,x2,x3,x4,x5,x6,x7,x8,x9,x10,x11,x12,x13,x14,x15,x16,x17,x18,x19,x20,x21,x22,x23,x24,x25,x26,x27,x28,x29,x30,x31,x32,x33,x34,x35,x36,x37,x38,x39,x40,x41,x42,x43,x44,x45,x46,x47,x48,x49,x50,x51,x52,x53,x54,x55,x56,x57,x58,x59,x60,x61,x62,x63,x64,x65,x66,x67,x68,x69,x70,x71,x72,x73,x74,x75,x76,x77,x78,x79,x80,x81,x82,x83,x84,x85,x86,x87,x88,x89,x90,x91,x92,x93,x94,x95,x96,x97,x98,x99,x100,x101,x102,x103,x104,x105,x106,x107,x108,x109,x110,x111,x112,x113,x114,x115,x116,...) P##x116
+#define PP2_TUPLE_AT_117(P,x0,x1,x2,x3,x4,x5,x6,x7,x8,x9,x10,x11,x12,x13,x14,x15,x16,x17,x18,x19,x20,x21,x22,x23,x24,x25,x26,x27,x28,x29,x30,x31,x32,x33,x34,x35,x36,x37,x38,x39,x40,x41,x42,x43,x44,x45,x46,x47,x48,x49,x50,x51,x52,x53,x54,x55,x56,x57,x58,x59,x60,x61,x62,x63,x64,x65,x66,x67,x68,x69,x70,x71,x72,x73,x74,x75,x76,x77,x78,x79,x80,x81,x82,x83,x84,x85,x86,x87,x88,x89,x90,x91,x92,x93,x94,x95,x96,x97,x98,x99,x100,x101,x102,x103,x104,x105,x106,x107,x108,x109,x110,x111,x112,x113,x114,x115,x116,x117,...) P##x117
+#define PP2_TUPLE_AT_118(P,x0,x1,x2,x3,x4,x5,x6,x7,x8,x9,x10,x11,x12,x13,x14,x15,x16,x17,x18,x19,x20,x21,x22,x23,x24,x25,x26,x27,x28,x29,x30,x31,x32,x33,x34,x35,x36,x37,x38,x39,x40,x41,x42,x43,x44,x45,x46,x47,x48,x49,x50,x51,x52,x53,x54,x55,x56,x57,x58,x59,x60,x61,x62,x63,x64,x65,x66,x67,x68,x69,x70,x71,x72,x73,x74,x75,x76,x77,x78,x79,x80,x81,x82,x83,x84,x85,x86,x87,x88,x89,x90,x91,x92,x93,x94,x95,x96,x97,x98,x99,x100,x101,x102,x103,x104,x105,x106,x107,x108,x109,x110,x111,x112,x113,x114,x115,x116,x117,x118,...) P##x118
+#define PP2_TUPLE_AT_119(P,x0,x1,x2,x3,x4,x5,x6,x7,x8,x9,x10,x11,x12,x13,x14,x15,x16,x17,x18,x19,x20,x21,x22,x23,x24,x25,x26,x27,x28,x29,x30,x31,x32,x33,x34,x35,x36,x37,x38,x39,x40,x41,x42,x43,x44,x45,x46,x47,x48,x49,x50,x51,x52,x53,x54,x55,x56,x57,x58,x59,x60,x61,x62,x63,x64,x65,x66,x67,x68,x69,x70,x71,x72,x73,x74,x75,x76,x77,x78,x79,x80,x81,x82,x83,x84,x85,x86,x87,x88,x89,x90,x91,x92,x93,x94,x95,x96,x97,x98,x99,x100,x101,x102,x103,x104,x105,x106,x107,x108,x109,x110,x111,x112,x113,x114,x115,x116,x117,x118,x119,...) P##x119
+#define PP2_TUPLE_AT_120(P,x0,x1,x2,x3,x4,x5,x6,x7,x8,x9,x10,x11,x12,x13,x14,x15,x16,x17,x18,x19,x20,x21,x22,x23,x24,x25,x26,x27,x28,x29,x30,x31,x32,x33,x34,x35,x36,x37,x38,x39,x40,x41,x42,x43,x44,x45,x46,x47,x48,x49,x50,x51,x52,x53,x54,x55,x56,x57,x58,x59,x60,x61,x62,x63,x64,x65,x66,x67,x68,x69,x70,x71,x72,x73,x74,x75,x76,x77,x78,x79,x80,x81,x82,x83,x84,x85,x86,x87,x88,x89,x90,x91,x92,x93,x94,x95,x96,x97,x98,x99,x100,x101,x102,x103,x104,x105,x106,x107,x108,x109,x110,x111,x112,x113,x114,x115,x116,x117,x118,x119,x120,...) P##x120
+#define PP2_TUPLE_AT_121(P,x0,x1,x2,x3,x4,x5,x6,x7,x8,x9,x10,x11,x12,x13,x14,x15,x16,x17,x18,x19,x20,x21,x22,x23,x24,x25,x26,x27,x28,x29,x30,x31,x32,x33,x34,x35,x36,x37,x38,x39,x40,x41,x42,x43,x44,x45,x46,x47,x48,x49,x50,x51,x52,x53,x54,x55,x56,x57,x58,x59,x60,x61,x62,x63,x64,x65,x66,x67,x68,x69,x70,x71,x72,x73,x74,x75,x76,x77,x78,x79,x80,x81,x82,x83,x84,x85,x86,x87,x88,x89,x90,x91,x92,x93,x94,x95,x96,x97,x98,x99,x100,x101,x102,x103,x104,x105,x106,x107,x108,x109,x110,x111,x112,x113,x114,x115,x116,x117,x118,x119,x120,x121,...) P##x121
+#define PP2_TUPLE_AT_122(P,x0,x1,x2,x3,x4,x5,x6,x7,x8,x9,x10,x11,x12,x13,x14,x15,x16,x17,x18,x19,x20,x21,x22,x23,x24,x25,x26,x27,x28,x29,x30,x31,x32,x33,x34,x35,x36,x37,x38,x39,x40,x41,x42,x43,x44,x45,x46,x47,x48,x49,x50,x51,x52,x53,x54,x55,x56,x57,x58,x59,x60,x61,x62,x63,x64,x65,x66,x67,x68,x69,x70,x71,x72,x73,x74,x75,x76,x77,x78,x79,x80,x81,x82,x83,x84,x85,x86,x87,x88,x89,x90,x91,x92,x93,x94,x95,x96,x97,x98,x99,x100,x101,x102,x103,x104,x105,x106,x107,x108,x109,x110,x111,x112,x113,x114,x115,x116,x117,x118,x119,x120,x121,x122,...) P##x122
+#define PP2_TUPLE_AT_123(P,x0,x1,x2,x3,x4,x5,x6,x7,x8,x9,x10,x11,x12,x13,x14,x15,x16,x17,x18,x19,x20,x21,x22,x23,x24,x25,x26,x27,x28,x29,x30,x31,x32,x33,x34,x35,x36,x37,x38,x39,x40,x41,x42,x43,x44,x45,x46,x47,x48,x49,x50,x51,x52,x53,x54,x55,x56,x57,x58,x59,x60,x61,x62,x63,x64,x65,x66,x67,x68,x69,x70,x71,x72,x73,x74,x75,x76,x77,x78,x79,x80,x81,x82,x83,x84,x85,x86,x87,x88,x89,x90,x91,x92,x93,x94,x95,x96,x97,x98,x99,x100,x101,x102,x103,x104,x105,x106,x107,x108,x109,x110,x111,x112,x113,x114,x115,x116,x117,x118,x119,x120,x121,x122,x123,...) P##x123
+#define PP2_TUPLE_AT_124(P,x0,x1,x2,x3,x4,x5,x6,x7,x8,x9,x10,x11,x12,x13,x14,x15,x16,x17,x18,x19,x20,x21,x22,x23,x24,x25,x26,x27,x28,x29,x30,x31,x32,x33,x34,x35,x36,x37,x38,x39,x40,x41,x42,x43,x44,x45,x46,x47,x48,x49,x50,x51,x52,x53,x54,x55,x56,x57,x58,x59,x60,x61,x62,x63,x64,x65,x66,x67,x68,x69,x70,x71,x72,x73,x74,x75,x76,x77,x78,x79,x80,x81,x82,x83,x84,x85,x86,x87,x88,x89,x90,x91,x92,x93,x94,x95,x96,x97,x98,x99,x100,x101,x102,x103,x104,x105,x106,x107,x108,x109,x110,x111,x112,x113,x114,x115,x116,x117,x118,x119,x120,x121,x122,x123,x124,...) P##x124
+#define PP2_TUPLE_AT_125(P,x0,x1,x2,x3,x4,x5,x6,x7,x8,x9,x10,x11,x12,x13,x14,x15,x16,x17,x18,x19,x20,x21,x22,x23,x24,x25,x26,x27,x28,x29,x30,x31,x32,x33,x34,x35,x36,x37,x38,x39,x40,x41,x42,x43,x44,x45,x46,x47,x48,x49,x50,x51,x52,x53,x54,x55,x56,x57,x58,x59,x60,x61,x62,x63,x64,x65,x66,x67,x68,x69,x70,x71,x72,x73,x74,x75,x76,x77,x78,x79,x80,x81,x82,x83,x84,x85,x86,x87,x88,x89,x90,x91,x92,x93,x94,x95,x96,x97,x98,x99,x100,x101,x102,x103,x104,x105,x106,x107,x108,x109,x110,x111,x112,x113,x114,x115,x116,x117,x118,x119,x120,x121,x122,x123,x124,x125,...) P##x125
+#define PP2_TUPLE_AT_126(P,x0,x1,x2,x3,x4,x5,x6,x7,x8,x9,x10,x11,x12,x13,x14,x15,x16,x17,x18,x19,x20,x21,x22,x23,x24,x25,x26,x27,x28,x29,x30,x31,x32,x33,x34,x35,x36,x37,x38,x39,x40,x41,x42,x43,x44,x45,x46,x47,x48,x49,x50,x51,x52,x53,x54,x55,x56,x57,x58,x59,x60,x61,x62,x63,x64,x65,x66,x67,x68,x69,x70,x71,x72,x73,x74,x75,x76,x77,x78,x79,x80,x81,x82,x83,x84,x85,x86,x87,x88,x89,x90,x91,x92,x93,x94,x95,x96,x97,x98,x99,x100,x101,x102,x103,x104,x105,x106,x107,x108,x109,x110,x111,x112,x113,x114,x115,x116,x117,x118,x119,x120,x121,x122,x123,x124,x125,x126,...) P##x126
+#define PP2_TUPLE_AT_127(P,x0,x1,x2,x3,x4,x5,x6,x7,x8,x9,x10,x11,x12,x13,x14,x15,x16,x17,x18,x19,x20,x21,x22,x23,x24,x25,x26,x27,x28,x29,x30,x31,x32,x33,x34,x35,x36,x37,x38,x39,x40,x41,x42,x43,x44,x45,x46,x47,x48,x49,x50,x51,x52,x53,x54,x55,x56,x57,x58,x59,x60,x61,x62,x63,x64,x65,x66,x67,x68,x69,x70,x71,x72,x73,x74,x75,x76,x77,x78,x79,x80,x81,x82,x83,x84,x85,x86,x87,x88,x89,x90,x91,x92,x93,x94,x95,x96,x97,x98,x99,x100,x101,x102,x103,x104,x105,x106,x107,x108,x109,x110,x111,x112,x113,x114,x115,x116,x117,x118,x119,x120,x121,x122,x123,x124,x125,x126,x127,...) P##x127
+#endif
+
+// ******************** From: open.h
+/** @file */
+#ifndef PP2_PRIMITIVE_TUPLE_OPEN_H
+#define PP2_PRIMITIVE_TUPLE_OPEN_H
+
+/**
+* Removes the parentheses surrounding the provided macro arguments, and substitutes the tokens contained
+* between those parentheses into the macro replacement list without changing them.
+*
+* See \link PP2_SCAN \endlink for a comparison between these two macros.
+*
+* @param ... the token sequence to have the outermost parentheses stripped from
+*/
+#define PP2_OPEN(...) __VA_ARGS__
+
+/**
+* @param P
+* @param ...
+*/
+#define PP2_QUOTE_OPEN(P,...) P##__VA_ARGS__
+
+#endif
+
+// ******************** From: head.h
+#ifndef PP2_PRIMITIVE_SEQ_HEAD_H
+#define PP2_PRIMITIVE_SEQ_HEAD_H
+
+
+#define PP2_SEQ_HEAD(seq) IP2_SEQ_HEAD_I(,PP2_SEQ_OPEN_SPLIT_HEAD seq)
+#define IP2_SEQ_HEAD_I(P,x) PP2_TUPLE_AT_0(,x)
+
+#define PP2_SEQ_SPLIT_HEAD(...) (__VA_ARGS__),
+
+#define PP2_SEQ_OPEN_SPLIT_HEAD(...) __VA_ARGS__,
+
+#endif
+
+/**
+*
+*/
+#define PP2_DEFAULT_LOCAL_CTX \
+        (, \
+         /*stack=*/(), \
+         /*labels=*/, \
+         /*arguments=*/, \
+         /*registers=*/(), \
+        )
+
+#define PP2_LOCAL_CTX_GET_STACK PP2_TUPLE_AT_0
+#define PP2_LOCAL_CTX_GET_LABELS PP2_TUPLE_AT_1
+#define PP2_LOCAL_CTX_GET_ARGUMENTS PP2_TUPLE_AT_2
+#define PP2_LOCAL_CTX_GET_REGISTERS PP2_TUPLE_AT_3
+
+#define PP2_LOCAL_CTX_SET_STACK(ctx,v) IP2_LOCAL_CTX_SET_STACK ctx,v)
+#define IP2_LOCAL_CTX_SET_STACK(P,...) IP2_LOCAL_CTX_SET_STACK_I(,P##__VA_ARGS__
+#define IP2_LOCAL_CTX_SET_STACK_I(P,stack,labels,arguments,registers,_,v) (,P##v,P##labels,P##arguments,P##registers,)
+
+#define PP2_LOCAL_CTX_SET_LABELS(ctx,v) IP2_LOCAL_CTX_SET_LABELS ctx,v)
+#define IP2_LOCAL_CTX_SET_LABELS(P,...) IP2_LOCAL_CTX_SET_LABELS_I(,P##__VA_ARGS__
+#define IP2_LOCAL_CTX_SET_LABELS_I(P,stack,labels,arguments,registers,_,v) (,P##stack,P##v,P##arguments,P##registers,)
+
+#define PP2_LOCAL_CTX_SET_ARGUMENTS(ctx,v) IP2_LOCAL_CTX_SET_ARGUMENTS ctx,v)
+#define IP2_LOCAL_CTX_SET_ARGUMENTS(P,...) IP2_LOCAL_CTX_SET_ARGUMENTS_I(,P##__VA_ARGS__
+#define IP2_LOCAL_CTX_SET_ARGUMENTS_I(P,stack,labels,arguments,registers,_,v) (,P##stack,P##labels,P##v,P##registers,)
+
+#define PP2_LOCAL_CTX_SET_REGISTERS(ctx,v) IP2_LOCAL_CTX_SET_REGISTERS ctx,v)
+#define IP2_LOCAL_CTX_SET_REGISTERS(P,...) IP2_LOCAL_CTX_SET_REGISTERS_I(,P##__VA_ARGS__
+#define IP2_LOCAL_CTX_SET_REGISTERS_I(P,stack,labels,arguments,registers,_,v) (,P##stack,P##labels,P##arguments,P##v,)
+
+
+#define PP2_LOCAL_CTX_GET_ARGUMENTS_HEAD(P,stack,labels,arguments,registers,_) PP2_SEQ_HEAD(P##arguments)
+
+#define PP2_LOCAL_CTX_PUSH_ARGUMENT(ctx,v) IP2_LOCAL_CTX_PUSH_ARGUMENT ctx,v)
+#define IP2_LOCAL_CTX_PUSH_ARGUMENT(P,... ) IP2_LOCAL_CTX_PUSH_ARGUMENT_I(,P##__VA_ARGS__
+#define IP2_LOCAL_CTX_PUSH_ARGUMENT_I(P,stack,labels,arguments,registers,_,v) (,P##stack,P##labels,P##arguments(P##v),P##registers,)
+#define PP2_INSN_8PP2_LOCAL_CTX_PUSH_ARGUMENT(P,r0,r1,r2,v,...) (,P##r0,PP2_LOCAL_CTX_PUSH_ARGUMENT(P##r1,P##v),P##r2,P##__VA_ARGS__)
+
+#define PP2_LOCAL_CTX_PUSH_ARGUMENTS(ctx,v) IP2_LOCAL_CTX_PUSH_ARGUMENTS ctx,v)
+#define IP2_LOCAL_CTX_PUSH_ARGUMENTS(P,... ) IP2_LOCAL_CTX_PUSH_ARGUMENTS_I(,P##__VA_ARGS__
+#define IP2_LOCAL_CTX_PUSH_ARGUMENTS_I(P,stack,labels,arguments,registers,_,v) (,P##stack,P##labels,P##arguments P##v,P##registers,)
+#define PP2_INSN_8PP2_LOCAL_CTX_PUSH_ARGUMENTS(P,r0,r1,r2,v,...) (,P##r0,PP2_LOCAL_CTX_PUSH_ARGUMENTS(P##r1,P##v),P##r2,P##__VA_ARGS__)
+
+#define PP2_LOCAL_CTX_PREPEND_ARGUMENT(ctx,v) IP2_LOCAL_CTX_PREPEND_ARGUMENT ctx,v)
+#define IP2_LOCAL_CTX_PREPEND_ARGUMENT(P,... ) IP2_LOCAL_CTX_PREPEND_ARGUMENT_I(,P##__VA_ARGS__
+#define IP2_LOCAL_CTX_PREPEND_ARGUMENT_I(P,stack,labels,arguments,registers,_,v) (,P##stack,P##labels,(P##v)P##arguments,P##registers,)
+#define PP2_INSN_8PP2_LOCAL_CTX_PREPEND_ARGUMENT(P,r0,r1,r2,v,...) (,P##r0,PP2_LOCAL_CTX_PREPEND_ARGUMENT(P##r1,P##v),P##r2,P##__VA_ARGS__)
+
+#define PP2_LOCAL_CTX_PREPEND_ARGUMENTS(ctx,v) IP2_LOCAL_CTX_PREPEND_ARGUMENTS ctx,v)
+#define IP2_LOCAL_CTX_PREPEND_ARGUMENTS(P,... ) IP2_LOCAL_CTX_PREPEND_ARGUMENTS_I(,P##__VA_ARGS__
+#define IP2_LOCAL_CTX_PREPEND_ARGUMENTS_I(P,stack,labels,arguments,registers,_,v) (,P##stack,P##labels,P##v P##arguments,P##registers,)
+#define PP2_INSN_8PP2_LOCAL_CTX_PREPEND_ARGUMENTS(P,r0,r1,r2,v,...) (,P##r0,PP2_LOCAL_CTX_PREPEND_ARGUMENTS(P##r1,P##v),P##r2,P##__VA_ARGS__)
+
+#define PP2_LOCAL_CTX_POP_ARGUMENT(P,stack,labels,arguments,registers,_) (,P##stack,P##labels,PP2_EAT P##arguments,P##registers,)
+#define PP2_INSN_8PP2_LOCAL_CTX_POP_ARGUMENT(P,r0,r1,r2,...) (,PP2_LOCAL_CTX_GET_ARGUMENTS_HEAD P##r1,PP2_LOCAL_CTX_POP_ARGUMENT P##r1,P##r2,P##__VA_ARGS__)
+
+#define PP2_LOCAL_CTX_CLEAR_ARGUMENTS(P,stack,labels,arguments,registers,_) (,P##stack,P##labels,/*arguments=*/,P##registers,)
+#define PP2_INSN_8PP2_LOCAL_CTX_CLEAR_ARGUMENTS(P,r0,r1,r2,...) (,P##r0,PP2_LOCAL_CTX_CLEAR_ARGUMENTS P##r1,P##r2,P##__VA_ARGS__)
+
+/* Argument-stack spilling for nested calls. The argument list is a single
+ * shared stack, so evaluating a call argument that is itself a call would
+ * scoop up the enclosing call's in-flight operands (its parked callee and any
+ * already-evaluated sibling arguments). SPILL saves the whole current argument
+ * list as one frame on the register spill-stack (a LIFO) and empties the
+ * argument list, so the argument evaluates on a private, empty stack; nested
+ * calls spill further, giving each call depth its own frame. UNSPILL_PUSH
+ * restores the saved frame and pushes the just-evaluated argument (r0) onto it.
+ * Spills are strictly LIFO and balanced (one SPILL + one UNSPILL_PUSH bracket
+ * each argument), so the register field behaves as a proper call-frame stack. */
+/* Every entry on the spill stack carries a tag saying what kind of thing it is:
+ * 8A for a saved argument list, 8F for a saved local stack, 8E for an installed
+ * exception handler. A throw unwinds by walking this stack and undoing each entry
+ * in turn, which it can only do if it knows which is which -- the two kinds are
+ * both seqs of groups and are otherwise indistinguishable.
+ *
+ * The tag is deliberately cheap: it adds two tokens to a pushed entry and NO extra
+ * macro expansion anywhere, because the pop side swaps PP2_OPEN for IP2_UNTAG,
+ * which is the same one expansion doing the same one job. */
+#define IP2_UNTAG(tag,...) __VA_ARGS__
+
+#define PP2_LOCAL_CTX_SPILL_ARGUMENTS(P,stack,labels,arguments,registers,_) (,P##stack,P##labels,/*arguments=*/,/*registers=*/(8A,P##arguments)P##registers,)
+#define PP2_INSN_8PP2_ARGS_SPILL(P,r0,r1,r2,...) (,P##r0,PP2_LOCAL_CTX_SPILL_ARGUMENTS P##r1,P##r2,P##__VA_ARGS__)
+
+#define PP2_LOCAL_CTX_UNSPILL_PUSH_ARGUMENT(ctx,v) IP2_LOCAL_CTX_UNSPILL_PUSH_ARGUMENT ctx,v)
+#define IP2_LOCAL_CTX_UNSPILL_PUSH_ARGUMENT(P,...) IP2_LOCAL_CTX_UNSPILL_PUSH_ARGUMENT_I(,P##__VA_ARGS__
+#define IP2_LOCAL_CTX_UNSPILL_PUSH_ARGUMENT_I(P,stack,labels,arguments,registers,_,v) IP2_FX(LOCAL_CTX_UNSPILL_PUSH_ARGUMENT_II,(,P##stack,P##labels,(P##v),PP2_SEQ_SPLIT_HEAD P##registers))
+#define IP2_LOCAL_CTX_UNSPILL_PUSH_ARGUMENT_II(P,stack,labels,elem,frame,rest) (,P##stack,P##labels,/*arguments=*/IP2_UNTAG P##frame P##elem,/*registers=*/P##rest,)
+#define PP2_INSN_8PP2_ARGS_UNSPILL_PUSH(P,r0,r1,r2,...) (,/*r0=*/,PP2_LOCAL_CTX_UNSPILL_PUSH_ARGUMENT(P##r1,P##r0),P##r2,P##__VA_ARGS__)
+
+/* Local-variable frames for calls. A user function's parameters are bound into
+ * name-addressed slots on the local stack, so a nested call whose callee reuses
+ * a slot name would clobber the caller's live local. FRAME_ENTER saves the
+ * whole local stack onto the same register spill-stack (as one frame) and hands
+ * the callee an empty stack; FRAME_LEAVE restores the caller's stack by direct
+ * assignment, leaving r0 (the call's result) untouched. FRAME_ENTER/LEAVE and
+ * the argument SPILL/UNSPILL_PUSH are each balanced and strictly nested, so the
+ * shared register stack stays a well-formed LIFO of activation frames. Only
+ * user fns are bracketed (builtin VM_FN methods bind no locals). */
+#define PP2_LOCAL_CTX_FRAME_ENTER(P,stack,labels,arguments,registers,_) (,/*stack=*/(),P##labels,P##arguments,/*registers=*/(8F,P##stack)P##registers,)
+#define PP2_INSN_8PP2_FRAME_ENTER(P,r0,r1,r2,...) (,P##r0,PP2_LOCAL_CTX_FRAME_ENTER P##r1,P##r2,P##__VA_ARGS__)
+
+#define PP2_LOCAL_CTX_FRAME_LEAVE(P,stack,labels,arguments,registers,_) IP2_FX(LOCAL_CTX_FRAME_LEAVE_I,(,P##labels,P##arguments,PP2_SEQ_SPLIT_HEAD P##registers))
+#define IP2_LOCAL_CTX_FRAME_LEAVE_I(P,labels,arguments,frame,rest) (,/*stack=*/IP2_UNTAG P##frame,P##labels,P##arguments,/*registers=*/P##rest,)
+#define PP2_INSN_8PP2_FRAME_LEAVE(P,r0,r1,r2,...) (,P##r0,PP2_LOCAL_CTX_FRAME_LEAVE P##r1,P##r2,P##__VA_ARGS__)
+
+/* Closure variant of FRAME_ENTER. A lexical closure captures the environment
+ * visible where the function is DEFINED; since loads only ever see the top
+ * frame, that top frame is the whole visible environment, so a user fn snapshots
+ * its defining stack into its value at creation. On call this installs that
+ * captured stack (instead of the empty frame FRAME_ENTER gives) after spilling
+ * the caller's stack, so the body sees the closed-over bindings; parameters are
+ * then STACK_STOREd on top and shadow any captured binding of the same name.
+ * FRAME_LEAVE restores the caller unchanged, so captures are by snapshot. A fn
+ * defined with an empty environment captures (), i.e. behaves exactly as before. */
+#define PP2_INSN_8PP2_FRAME_ENTER_CLOSURE(P,r0,r1,r2,captured,...) (,P##r0,IP2_FX(LOCAL_CTX_FRAME_ENTER_CLOSURE,(P##captured,PP2_OPEN P##r1)),P##r2,P##__VA_ARGS__)
+#define IP2_LOCAL_CTX_FRAME_ENTER_CLOSURE(captured,P,stack,labels,arguments,registers,_) (,/*stack=*/PP2_OPEN captured,P##labels,P##arguments,/*registers=*/(8F,P##stack)P##registers,)
+
+#define PP2_LOCAL_CTX_UNPACK_ARGS(P,stack,labels,arguments,registers,_) PP2_REVERSE_CAT(0,IP2_LOCAL_CTX_UNPACK_ARGS P##arguments)
+#define IP2_LOCAL_CTX_UNPACK_ARGS(x) x IP2_LOCAL_CTX_UNPACK_ARGS_UP
+#define IP2_LOCAL_CTX_UNPACK_ARGS_UP(x) ,x IP2_LOCAL_CTX_UNPACK_ARGS_DN
+#define IP2_LOCAL_CTX_UNPACK_ARGS_DN(x) ,x IP2_LOCAL_CTX_UNPACK_ARGS_UP
+#define IP2_LOCAL_CTX_UNPACK_ARGS_UP0
+#define IP2_LOCAL_CTX_UNPACK_ARGS_DN0
+
+/**
+*
+*/
+#define PP2_DEFAULT_VM_STATE \
+        (, \
+         /*heap=*/, \
+         /*eh_stack=*/, \
+        )
+
+
+#define IP2_VM_STATE_SET(idx,val,P,...) PP2_TUPLE_REPLACE_##idx(,P##val,P##__VA_ARGS__)
+
+#endif
+
+
+/* Unwinding, one spill-stack entry at a time.
+ *
+ * A throw abandons the instruction stream it was running in, which discards all the
+ * pending WORK for free, but the local context is a value in a register and does not
+ * unwind by itself. So a throw hands over to this, which walks the spill stack from
+ * the top and undoes each entry until it reaches an installed handler:
+ *
+ *   (8F,stack)  a callee's activation frame. Give the caller's stack back.
+ *   (8A,args)   an argument list spilled to evaluate a nested call. Restore it.
+ *   (8E,labels,handler)  a handler. Take its labels back and run its continuation.
+ *   ()          the bottom. Nobody was catching, so the program ends.
+ *
+ * Restoring rather than snapshotting is what keeps the try scope's own writes. Each
+ * 8F we pass hands back the stack as it stood when that call was made, so the LAST
+ * one we reach -- the first frame entered after the try -- leaves us holding exactly
+ * the try scope's locals, including everything it assigned before it threw. A throw
+ * with no call in flight passes no 8F at all and simply keeps the live stack. Only
+ * the callee frames are discarded, which is the whole point.
+ *
+ * This is a loop in the VM, not in the macro expander: each step re-issues
+ * 8PP2_UNWIND_STEP into the instruction stream and the trampoline decodes it afresh.
+ * So the depth it can unwind is unbounded and nothing here can be blue-painted.
+ * It runs only on a throw, and only for as deep as the throw actually was. */
+#define PP2_INSN_8PP2_UNWIND_STEP(P,r0,r1,r2,type,msg,...) \
+        IP2_FX(UNWIND_OPEN,(,P##r0,P##r2,P##type,P##msg,PP2_OPEN P##r1))
+
+/* r1 opens to `,stack,labels,arguments,registers,`, which hands this hop a fresh
+ * empty P of its own. */
+#define IP2_UNWIND_OPEN(P,r0,r2,type,msg,Q,stack,labels,arguments,registers,_) \
+        IP2_FY(UNWIND_SPLIT,(,P##r0,P##r2,P##type,P##msg,P##stack,P##labels,P##arguments,PP2_SEQ_SPLIT_HEAD P##registers))
+
+#define IP2_UNWIND_SPLIT(P,r0,r2,type,msg,stack,labels,arguments,entry,rest) \
+        PP2_CAT(IP2_UNWIND_,IP2_UNWIND_TAG_OF P##entry) \
+            (,P##r0,P##r2,P##type,P##msg,P##stack,P##labels,P##arguments,P##entry,P##rest)
+
+/* The tag is the entry's first element. The bottom sentinel () has none, and an
+ * empty tag pastes to IP2_UNWIND_, the uncaught case. */
+#define IP2_UNWIND_TAG_OF(...) IP2_UNWIND_TAG_OF_I(__VA_ARGS__,)
+#define IP2_UNWIND_TAG_OF_I(tag,...) tag
+
+
+#define IP2_UNWIND_8F(P,r0,r2,type,msg,stack,labels,arguments,entry,rest) \
+        (, \
+         P##r0, \
+         /*r1=*/(,IP2_UNTAG P##entry,P##labels,P##arguments,P##rest,), \
+         P##r2, \
+         8PP2_UNWIND_STEP,P##type,P##msg \
+        )
+
+/* A spilled argument list. Just drop it. The pending arguments are not restored from
+ * these on the way past, because a throw catches the machine mid-expression and every
+ * argument list between here and the handler belongs to a call that is now abandoned.
+ * The handler's own entry carries the only argument list that still means anything. */
+#define IP2_UNWIND_8A(P,r0,r2,type,msg,stack,labels,arguments,entry,rest) \
+        (, \
+         P##r0, \
+         /*r1=*/(,P##stack,P##labels,P##arguments,P##rest,), \
+         P##r2, \
+         8PP2_UNWIND_STEP,P##type,P##msg \
+        )
+
+/* The handler. Labels and pending arguments come back from its snapshot, so a throw out
+ * of a loop leaves no loop labels behind and a throw out of a half-built call leaves no
+ * parked callee sitting in the argument list. The local stack is whatever the walk has
+ * left us holding, which is the try scope's own -- assignments and all. The exception
+ * lands in r0 as a Quote of the thrown TYPE(message) so a `catch (e)` can name it. The
+ * entry is dropped on the way through, so a throw raised inside this handler walks past
+ * it to the next handler out. */
+#define IP2_UNWIND_8E(P,r0,r2,type,msg,stack,labels,arguments,entry,rest) \
+        IP2_FZ(UNWIND_HANDLER,(,P##r2,P##type,P##msg,P##stack,P##rest,PP2_OPEN P##entry))
+
+#define IP2_UNWIND_HANDLER(P,r2,type,msg,stack,rest,Q,eh_labels,eh_arguments,handler) \
+        (, \
+         /*r0=*/(,Quote,(P##type(P##msg))), \
+         /*r1=*/(,P##stack,P##eh_labels,PP2_OPEN P##eh_arguments,P##rest,), \
+         P##r2, \
+         PP2_OPEN P##handler \
+        )
+
+/* Bottom of the spill stack: nothing was catching. End the program exactly as an
+ * uncaught throw always has -- the `)` closes the VM's own paren so the machine trace
+ * stops being eaten, and the exception leaves as one emitted literal. */
+#define IP2_UNWIND_(P,r0,r2,type,msg,stack,labels,arguments,entry,rest) \
+        )(,8LITERAL,P##type(P##msg))
+
+#endif
+
+/* Throw. An exception is a type token and a message.
+ *
+ * The whole of the throw is here: drop the instruction stream and start unwinding.
+ * Dropping the stream (not forwarding `...`) is what abandons the rest of the try
+ * body and everything that was pending after it -- in this VM the instruction stream
+ * IS the continuation, so discarding the work costs nothing and needs no bookkeeping.
+ * What is left is the local context, which is a value in a register and has to be
+ * walked back down to the handler; 8PP2_UNWIND_STEP does that, and ends the program
+ * if it finds no handler. See unwind.h. */
+#define PP2_INSN_8PP2_THROW_EXCEPTION(P,r0,r1,r2,type,msg,...) \
+        (,P##r0,P##r1,P##r2,8PP2_UNWIND_STEP,P##type,P##msg)
+
+#endif
+
+
+// ******************** From: if.h
+/** @file */
+#ifndef PP2_PRIMITIVE_CONTROL_IF_H
+#define PP2_PRIMITIVE_CONTROL_IF_H
+
+
+#define PP2_IF(...) PP2_PRIMITIVE_CAT(PP2_IF_,__VA_ARGS__)
+#define PP2_IF_0(t,...) __VA_ARGS__
+#define PP2_IF_1(t,...) t
+
+#endif
+
+// ******************** From: is_digit.h
+/** @file */
+#ifndef PP2_PRIMITIVE_DETECTION_IS_DIGIT_H
+#define PP2_PRIMITIVE_DETECTION_IS_DIGIT_H
+
+
+/**
+* Yields \link PP2_IF_1 \endlink when `x` is exactly one of the ten decimal
+* digit tokens, and \link PP2_IF_0 \endlink otherwise. Used as
+* `PP2_IS_DIGIT(x)(then,else)`; both branches are substituted, so they must be
+* inert tokens.
+*
+* Each digit is registered as a function-like macro, so the trailing `()`
+* fires only when the pasted name is a whole digit and nothing follows it.
+* `2` yields `,1`; `a`, `2 plus` and the empty token sequence all leave the
+* pasted name unexpanded, which shifts the pick onto the trailing `0`.
+*
+* `x` must be a single argument. A comma in `x` pastes onto its first token
+* and the result is meaningless.
+*/
+#define PP2_IS_DIGIT(...) IP2_IS_DIGIT_I(PP2_DIGIT_TAG_##__VA_ARGS__ ())
+#define IP2_IS_DIGIT_I(...) PP2_TUPLE_AT_1(PP2_IF_,__VA_ARGS__,0)
+
+#define PP2_DIGIT_TAG_0(...) ,1
+#define PP2_DIGIT_TAG_1(...) ,1
+#define PP2_DIGIT_TAG_2(...) ,1
+#define PP2_DIGIT_TAG_3(...) ,1
+#define PP2_DIGIT_TAG_4(...) ,1
+#define PP2_DIGIT_TAG_5(...) ,1
+#define PP2_DIGIT_TAG_6(...) ,1
+#define PP2_DIGIT_TAG_7(...) ,1
+#define PP2_DIGIT_TAG_8(...) ,1
+#define PP2_DIGIT_TAG_9(...) ,1
+
+#endif
+
+// ******************** From: is_tuple.h
+/** @file */
+#ifndef PP2_PRIMITIVE_INTROSPECTION_IS_TUPLE_H
+#define PP2_PRIMITIVE_INTROSPECTION_IS_TUPLE_H
+
+
+#define PP2_IS_TUPLE(x) IP2_IS_TUPLE_TEST_I(IP2_IS_TUPLE_TEST_DETECT_TUPLE x,1,0)
+#define IP2_IS_TUPLE_TEST_I(...) PP2_TUPLE_AT_2(PP2_IF_,__VA_ARGS__)
+#define IP2_IS_TUPLE_TEST_DETECT_TUPLE(...) ,
+
+#endif
+
+// ******************** From: comma.h
+/** @file */
+#ifndef PP2_PRIMITIVE_PUNCTUATION_COMMA_H
+#define PP2_PRIMITIVE_PUNCTUATION_COMMA_H
+
+/**
+*/
+#define PP2_COMMA ,
+
+#define PP2_COMMA_0  ,0
+#define PP2_COMMA_1  ,1
+#define PP2_COMMA_2  ,2
+#define PP2_COMMA_3  ,3
+#define PP2_COMMA_4  ,4
+#define PP2_COMMA_5  ,5
+#define PP2_COMMA_6  ,6
+#define PP2_COMMA_7  ,7
+#define PP2_COMMA_8  ,8
+#define PP2_COMMA_9  ,9
+#define PP2_COMMA_10 ,10
+#define PP2_COMMA_11 ,11
+#define PP2_COMMA_12 ,12
+#define PP2_COMMA_13 ,13
+#define PP2_COMMA_14 ,14
+#define PP2_COMMA_15 ,15
+#define PP2_COMMA_16 ,16
+
+#endif
+
+#define PP2_COMPILE(stx) IP2_LANGUAGE_COMPILE_CHOOSE_EVAL_OR_LITERAL(IP2_LANGUAGE_COMPILE_TEST_IF_LITERAL stx)(stx)
+#define IP2_LANGUAGE_COMPILE_CHOOSE_EVAL_OR_LITERAL(x) PP2_TUPLE_AT_2(IP2_LANGUAGE_COMPILE,x,_LITERAL,)
+#define IP2_LANGUAGE_COMPILE_TEST_IF_LITERAL(...) ,
+
+#define IP2_LANGUAGE_COMPILE(stx) IP2_LANGUAGE_COMPILE_I(((8PP2_THROW_EXCEPTION,8PP2_LANGUAGE_DEFINITION_EXCEPTION,stx),PP2_DEF_##stx))
+#define IP2_LANGUAGE_COMPILE_I(tup) IP2_LANGUAGE_COMPILE_II tup
+#define IP2_LANGUAGE_COMPILE_II(fail_cont,x) IP2_LANGUAGE_COMPILE_III(IP2_LANGUAGE_COMPILE_TEST_SUCCESS_##x,IP2_LANGUAGE_COMPILE_FAIL,) fail_cont
+#define IP2_LANGUAGE_COMPILE_III(...) PP2_TUPLE_AT_1(,__VA_ARGS__)
+#define IP2_LANGUAGE_COMPILE_TEST_SUCCESS_ ,PP2_EAT,
+#define IP2_LANGUAGE_COMPILE_FAIL(...) __VA_ARGS__
+
+
+/* An expression that opens with a parenthesised group is a literal, and the
+ * shape of that leading group says which one. Split it off the syntax with
+ * PP2_SEQ_SPLIT_HEAD, ask its shape, and hand the group and everything after
+ * it to the matching builder. */
+#define IP2_LANGUAGE_COMPILE_LITERAL(stx) IP2_FX(LANGUAGE_COMPILE_LITERAL_I,(,PP2_SEQ_SPLIT_HEAD stx))
+#define IP2_LANGUAGE_COMPILE_LITERAL_I(P,lead,...) PP2_CAT(IP2_LANGUAGE_COMPILE_LIT_,IP2_LANGUAGE_LITERAL_KIND lead)(lead,__VA_ARGS__)
+
+/* LONG when the group holds one decimal digit, QUOTE otherwise. Commas remain
+ * quoted tokens: Lists use the ordinary explicit constructor `List(a,b,c)`.
+ * A group holding a group is also a quote of that group, so `((1)(2))` stays a
+ * Quote: the arbitrary layer spells a negative that way, but the literal
+ * syntax does not claim it. */
+#define IP2_LANGUAGE_LITERAL_KIND(...) IP2_LANGUAGE_LITERAL_KIND_SELECT(__VA_ARGS__,PP2_COMMA_1,)(__VA_ARGS__)
+#define IP2_LANGUAGE_LITERAL_KIND_SELECT(x0,m,...) PP2_TUPLE_AT_1(IP2_LANGUAGE_LITERAL_KIND_,m,MANY)
+#define IP2_LANGUAGE_LITERAL_KIND_MANY(...) QUOTE
+#define IP2_LANGUAGE_LITERAL_KIND_1(x) PP2_IS_TUPLE(x)(IP2_LANGUAGE_LITERAL_KIND_GROUP,IP2_LANGUAGE_LITERAL_KIND_TOKEN)(x)
+#define IP2_LANGUAGE_LITERAL_KIND_GROUP(x) QUOTE
+#define IP2_LANGUAGE_LITERAL_KIND_TOKEN(x) PP2_IS_DIGIT(x)(LONG,QUOTE)
+
+#define IP2_LANGUAGE_COMPILE_LIT_QUOTE(lead,...) 8PP2_LOAD_CONST,(,Quote,lead),PP2_COMPILE_LANGUAGE_RETURN(__VA_ARGS__)
+
+/* `(2)(5)(6)` is 256. A Long's value already IS a most-significant-first
+ * sequence of single-digit groups, so the leading digit loads a Long directly
+ * and each further group arrives as a call on it (see Long_call in long.h).
+ * The literal costs one constant load plus one instruction per digit; nothing
+ * is computed. */
+#define IP2_LANGUAGE_COMPILE_LIT_LONG(lead,...) 8PP2_LOAD_CONST,(,Long,lead),PP2_COMPILE_LANGUAGE_RETURN(__VA_ARGS__)
+
+
+#define PP2_COMPILE_UNSAFE(stx) IP2_LANGUAGE_COMPILE_UNSAFE((PP2_DEF_##stx))
+#define IP2_LANGUAGE_COMPILE_UNSAFE(x) PP2_EAT x
+
+
+#define PP2_COMPILE_OR_DEFAULT(stx,default) IP2_LANGUAGE_COMPILE_I((default,PP2_DEF_##stx))
+
+
+#define PP2_INSN_8PP2_LANGUAGE_COMPILE(P,r0,r1,r2,stx,...) (,P##r0,P##r1,P##r2,PP2_COMPILE(P##stx),P##__VA_ARGS__)
+#define PP2_INSN_8PP2_LANGUAGE_COMPILE_UNSAFE(P,r0,r1,r2,stx,...) (,P##r0,P##r1,P##r2,PP2_COMPILE_UNSAFE(P##stx),P##__VA_ARGS__)
+#define PP2_INSN_8PP2_LANGUAGE_COMPILE_OR_DEFAULT(P,r0,r1,r2,stx,default,...) (,P##r0,P##r1,P##r2,PP2_COMPILE_OR_DEFAULT(P##stx,P##default),P##__VA_ARGS__)
+
+#endif
+
+
+#define PP2_LANGUAGE_BLOCK(...)                \
+        IP2_LANGUAGE_BLOCK_OVERLOAD(           \
+            __VA_ARGS__,                       \
+            PP2_COMMA_16,                      \
+            PP2_COMMA_15,                      \
+            PP2_COMMA_14,                      \
+            PP2_COMMA_13,                      \
+            PP2_COMMA_12,                      \
+            PP2_COMMA_11,                      \
+            PP2_COMMA_10,                      \
+            PP2_COMMA_9,                       \
+            PP2_COMMA_8,                       \
+            PP2_COMMA_7,                       \
+            PP2_COMMA_6,                       \
+            PP2_COMMA_5,                       \
+            PP2_COMMA_4,                       \
+            PP2_COMMA_3,                       \
+            PP2_COMMA_2,                       \
+            PP2_COMMA_1,                       \
+        )(__VA_ARGS__)
+
+#define IP2_LANGUAGE_BLOCK_OVERLOAD(x0,x1,x2,x3,x4,x5,x6,x7,x8,x9,x10,x11,x12,x13,x14,x15,m,...) PP2_TUPLE_AT_1(IP2_LANGUAGE_BLOCK_EVAL,m,17_OR_MORE)
+
+#define IP2_LANGUAGE_BLOCK_EVAL1(stx0) PP2_COMPILE(stx0)
+#define IP2_LANGUAGE_BLOCK_EVAL2(stx0,stx1) PP2_COMPILE(stx0),PP2_COMPILE(stx1)
+#define IP2_LANGUAGE_BLOCK_EVAL3(stx0,stx1,stx2) PP2_COMPILE(stx0),PP2_COMPILE(stx1),PP2_COMPILE(stx2)
+#define IP2_LANGUAGE_BLOCK_EVAL4(stx0,stx1,stx2,stx3) PP2_COMPILE(stx0),PP2_COMPILE(stx1),PP2_COMPILE(stx2),PP2_COMPILE(stx3)
+#define IP2_LANGUAGE_BLOCK_EVAL5(stx0,stx1,stx2,stx3,stx4) PP2_COMPILE(stx0),PP2_COMPILE(stx1),PP2_COMPILE(stx2),PP2_COMPILE(stx3),PP2_COMPILE(stx4)
+#define IP2_LANGUAGE_BLOCK_EVAL6(stx0,stx1,stx2,stx3,stx4,stx5) PP2_COMPILE(stx0),PP2_COMPILE(stx1),PP2_COMPILE(stx2),PP2_COMPILE(stx3),PP2_COMPILE(stx4),PP2_COMPILE(stx5)
+#define IP2_LANGUAGE_BLOCK_EVAL7(stx0,stx1,stx2,stx3,stx4,stx5,stx6) PP2_COMPILE(stx0),PP2_COMPILE(stx1),PP2_COMPILE(stx2),PP2_COMPILE(stx3),PP2_COMPILE(stx4),PP2_COMPILE(stx5),PP2_COMPILE(stx6)
+#define IP2_LANGUAGE_BLOCK_EVAL8(stx0,stx1,stx2,stx3,stx4,stx5,stx6,stx7) PP2_COMPILE(stx0),PP2_COMPILE(stx1),PP2_COMPILE(stx2),PP2_COMPILE(stx3),PP2_COMPILE(stx4),PP2_COMPILE(stx5),PP2_COMPILE(stx6),PP2_COMPILE(stx7)
+#define IP2_LANGUAGE_BLOCK_EVAL9(stx0,stx1,stx2,stx3,stx4,stx5,stx6,stx7,stx8) PP2_COMPILE(stx0),PP2_COMPILE(stx1),PP2_COMPILE(stx2),PP2_COMPILE(stx3),PP2_COMPILE(stx4),PP2_COMPILE(stx5),PP2_COMPILE(stx6),PP2_COMPILE(stx7),PP2_COMPILE(stx8)
+#define IP2_LANGUAGE_BLOCK_EVAL10(stx0,stx1,stx2,stx3,stx4,stx5,stx6,stx7,stx8,stx9) PP2_COMPILE(stx0),PP2_COMPILE(stx1),PP2_COMPILE(stx2),PP2_COMPILE(stx3),PP2_COMPILE(stx4),PP2_COMPILE(stx5),PP2_COMPILE(stx6),PP2_COMPILE(stx7),PP2_COMPILE(stx8),PP2_COMPILE(stx9)
+#define IP2_LANGUAGE_BLOCK_EVAL11(stx0,stx1,stx2,stx3,stx4,stx5,stx6,stx7,stx8,stx9,stx10) PP2_COMPILE(stx0),PP2_COMPILE(stx1),PP2_COMPILE(stx2),PP2_COMPILE(stx3),PP2_COMPILE(stx4),PP2_COMPILE(stx5),PP2_COMPILE(stx6),PP2_COMPILE(stx7),PP2_COMPILE(stx8),PP2_COMPILE(stx9),PP2_COMPILE(stx10)
+#define IP2_LANGUAGE_BLOCK_EVAL12(stx0,stx1,stx2,stx3,stx4,stx5,stx6,stx7,stx8,stx9,stx10,stx11) PP2_COMPILE(stx0),PP2_COMPILE(stx1),PP2_COMPILE(stx2),PP2_COMPILE(stx3),PP2_COMPILE(stx4),PP2_COMPILE(stx5),PP2_COMPILE(stx6),PP2_COMPILE(stx7),PP2_COMPILE(stx8),PP2_COMPILE(stx9),PP2_COMPILE(stx10),PP2_COMPILE(stx11)
+#define IP2_LANGUAGE_BLOCK_EVAL13(stx0,stx1,stx2,stx3,stx4,stx5,stx6,stx7,stx8,stx9,stx10,stx11,stx12) PP2_COMPILE(stx0),PP2_COMPILE(stx1),PP2_COMPILE(stx2),PP2_COMPILE(stx3),PP2_COMPILE(stx4),PP2_COMPILE(stx5),PP2_COMPILE(stx6),PP2_COMPILE(stx7),PP2_COMPILE(stx8),PP2_COMPILE(stx9),PP2_COMPILE(stx10),PP2_COMPILE(stx11),PP2_COMPILE(stx12)
+#define IP2_LANGUAGE_BLOCK_EVAL14(stx0,stx1,stx2,stx3,stx4,stx5,stx6,stx7,stx8,stx9,stx10,stx11,stx12,stx13) PP2_COMPILE(stx0),PP2_COMPILE(stx1),PP2_COMPILE(stx2),PP2_COMPILE(stx3),PP2_COMPILE(stx4),PP2_COMPILE(stx5),PP2_COMPILE(stx6),PP2_COMPILE(stx7),PP2_COMPILE(stx8),PP2_COMPILE(stx9),PP2_COMPILE(stx10),PP2_COMPILE(stx11),PP2_COMPILE(stx12),PP2_COMPILE(stx13)
+#define IP2_LANGUAGE_BLOCK_EVAL15(stx0,stx1,stx2,stx3,stx4,stx5,stx6,stx7,stx8,stx9,stx10,stx11,stx12,stx13,stx14) PP2_COMPILE(stx0),PP2_COMPILE(stx1),PP2_COMPILE(stx2),PP2_COMPILE(stx3),PP2_COMPILE(stx4),PP2_COMPILE(stx5),PP2_COMPILE(stx6),PP2_COMPILE(stx7),PP2_COMPILE(stx8),PP2_COMPILE(stx9),PP2_COMPILE(stx10),PP2_COMPILE(stx11),PP2_COMPILE(stx12),PP2_COMPILE(stx13),PP2_COMPILE(stx14)
+#define IP2_LANGUAGE_BLOCK_EVAL16(stx0,stx1,stx2,stx3,stx4,stx5,stx6,stx7,stx8,stx9,stx10,stx11,stx12,stx13,stx14,stx15) PP2_COMPILE(stx0),PP2_COMPILE(stx1),PP2_COMPILE(stx2),PP2_COMPILE(stx3),PP2_COMPILE(stx4),PP2_COMPILE(stx5),PP2_COMPILE(stx6),PP2_COMPILE(stx7),PP2_COMPILE(stx8),PP2_COMPILE(stx9),PP2_COMPILE(stx10),PP2_COMPILE(stx11),PP2_COMPILE(stx12),PP2_COMPILE(stx13),PP2_COMPILE(stx14),PP2_COMPILE(stx15)
+#define IP2_LANGUAGE_BLOCK_EVAL17_OR_MORE(stx0,stx1,stx2,stx3,stx4,stx5,stx6,stx7,stx8,stx9,stx10,stx11,stx12,stx13,stx14,stx15,...) PP2_COMPILE(stx0),PP2_COMPILE(stx1),PP2_COMPILE(stx2),PP2_COMPILE(stx3),PP2_COMPILE(stx4),PP2_COMPILE(stx5),PP2_COMPILE(stx6),PP2_COMPILE(stx7),PP2_COMPILE(stx8),PP2_COMPILE(stx9),PP2_COMPILE(stx10),PP2_COMPILE(stx11),PP2_COMPILE(stx12),PP2_COMPILE(stx13),PP2_COMPILE(stx14),PP2_COMPILE(stx15),8PP2_LANGUAGE_BLOCK,(__VA_ARGS__)
+
+#define PP2_INSN_8PP2_LANGUAGE_BLOCK(P,r0,r1,r2,stx_tuple,...) (,P##r0,P##r1,P##r2,PP2_LANGUAGE_BLOCK P##stx_tuple,P##__VA_ARGS__)
+
+#endif
+
+// ******************** From: object.h
+/** @file */
+#ifndef PP2_LANGUAGE_BASIC_OBJECT_H
+#define PP2_LANGUAGE_BASIC_OBJECT_H
+
+#define PP2_INSN_8PP2_LANGUAGE_OBJECT_ADDR(P,r0,r1,r2,...) (,/*r0=*/PP2_LANGUAGE_OBJECT_ADDR P##r0,P##r1,P##r2,P##__VA_ARGS__)
+#define PP2_INSN_8PP2_LANGUAGE_OBJECT_TYPE(P,r0,r1,r2,...) (,/*r0=*/PP2_LANGUAGE_OBJECT_TYPE P##r0,P##r1,P##r2,P##__VA_ARGS__)
+#define PP2_INSN_8PP2_LANGUAGE_OBJECT_VALUE(P,r0,r1,r2,...) (,/*r0=*/PP2_LANGUAGE_OBJECT_VALUE P##r0,P##r1,P##r2,P##__VA_ARGS__)
+
+#define PP2_LANGUAGE_OBJECT_ADDR(addr,type,value) addr
+#define PP2_LANGUAGE_OBJECT_TYPE(addr,type,value) type
+#define PP2_LANGUAGE_OBJECT_VALUE(addr,type,value) value
+
+#endif
+
+// ******************** From: return.h
+/** @file */
+#ifndef PP2_LANGUAGE_BASIC_RETURN_H
+#define PP2_LANGUAGE_BASIC_RETURN_H
+
+
+
+// ******************** From: nop.h
+#ifndef PP2_MACHINE_INSNS_NOP_H
+#define PP2_MACHINE_INSNS_NOP_H
+
+#define PP2_INSN_8PP2_NOP(P,r0,r1,r2,...) (,P##r0,P##r1,P##r2,P##__VA_ARGS__)
+
+#define PP2_INSN_8PP2_NOP_UNSAFE(P,r0,r1,r2,insn,...) PP2_INSN_##insn(,P##r0,P##r1,P##r2,P##__VA_ARGS__)
+
+
+#endif
+
+
+// ******************** From: is_nil.h
+/** @file */
+#ifndef PP2_PRIMITIVE_INTROSPECTION_IS_NIL_H
+#define PP2_PRIMITIVE_INTROSPECTION_IS_NIL_H
+
+
+#define PP2_IS_NIL(x) PP2_IS_TUPLE(x)(PP2_IF_0,PP2_IS_TUPLE(x()))
+
+#define PP2_IS_NIL_NON_TUPLE(x) PP2_IS_TUPLE(x())
+
+#endif
+
+#define PP2_COMPILE_LANGUAGE_RETURN(rhs_stx) \
+        IP2_LANGUAGE_RETURN_CHOOSE_CALL_OR_METHOD(,rhs_stx,IP2_LANGUAGE_RETURN_TEST_IF_CALL rhs_stx), \
+        rhs_stx
+
+#define PP2_INSN_8PP2_LANGUAGE_RETURN(P,r0,r1,r2,method,...) \
+                                     (, \
+                                      P##r0,P##r1,P##r2, \
+                                      IP2_LANGUAGE_RETURN_CHOOSE_CALL_OR_METHOD(, \
+                                          P##method,IP2_LANGUAGE_RETURN_TEST_IF_CALL P##method \
+                                      ), \
+                                      P##method, \
+                                      P##__VA_ARGS__ \
+                                     )
+
+#define IP2_LANGUAGE_RETURN_CHOOSE_CALL_OR_METHOD(P,method,...) \
+        IP2_LANGUAGE_RETURN_TUPLE_AT_1( \
+            __VA_ARGS__, \
+            IP2_LANGUAGE_RETURN_CHOOSE_METHOD_OR_RETURN(, \
+                IP2_LANGUAGE_RETURN_TEST_IF_NOT_METHOD P##method () \
+            ) \
+        )
+#define IP2_LANGUAGE_RETURN_CHOOSE_METHOD_OR_RETURN(P,...) \
+        IP2_LANGUAGE_RETURN_TUPLE_AT_1( \
+            __VA_ARGS__, \
+            8PP2_LANGUAGE_METHOD_CALL \
+        )
+
+#define PP2_INSN_8IP2_LANGUAGE_RETURN_NOP(P,r0,r1,r2,_,...) (,P##r0,P##r1,P##r2,P##__VA_ARGS__)
+#define PP2_INSN_8PP2_LANGUAGE_METHOD_CALL(P,r0,r1,r2,method,...) (,P##r0,PP2_LOCAL_CTX_PUSH_ARGUMENT(P##r1,P##r0),P##r2,IP2_LANGUAGE_RETURN_METHOD_CALL(,P##r0,P##method),P##__VA_ARGS__)
+#define PP2_INSN_8PP2_LANGUAGE_SELF_CALL(P,r0,r1,r2,args_tup,...) (,P##r0,PP2_LOCAL_CTX_PUSH_ARGUMENT(P##r1,P##r0),P##r2,IP2_LANGUAGE_RETURN_METHOD_CALL(,P##r0,call P##args_tup),P##__VA_ARGS__)
+
+#define IP2_LANGUAGE_RETURN_TUPLE_AT_1(_,insn,...) insn
+#define IP2_LANGUAGE_RETURN_TEST_IF_CALL(...) ,8PP2_LANGUAGE_SELF_CALL,
+#define IP2_LANGUAGE_RETURN_TEST_IF_NOT_METHOD(...) ,8IP2_LANGUAGE_RETURN_NOP,
+
+
+#define IP2_LANGUAGE_RETURN_METHOD_CALL(P,obj,method) IP2_FX(LANGUAGE_RETURN_METHOD_CALL_STATIC, (,PP2_LANGUAGE_OBJECT_TYPE P##obj,P##method))
+#define IP2_LANGUAGE_RETURN_METHOD_CALL_STATIC(P,type,method) PP2_COMPILE_OR_DEFAULT(type##_##method,(8IP2_LANGUAGE_RETURN_RESOLVE_INHERITED_METHOD,P##type,P##type,P##method))
+#define IP2_LANGUAGE_RETURN_METHOD_CALL_INHERITED(P,base_type,type,method) PP2_COMPILE_OR_DEFAULT(type##_##method,(8IP2_LANGUAGE_RETURN_RESOLVE_INHERITED_METHOD,P##base_type,P##type,P##method))
+
+#define PP2_INSN_8IP2_LANGUAGE_RETURN_RESOLVE_INHERITED_METHOD(P,r0,r1,r2,base_type,type,method,...) \
+                                                              (, \
+                                                               P##r0,P##r1,P##r2, \
+                                                               PP2_COMPILE_UNSAFE(P##type), \
+                                                               8IP2_LANGUAGE_RETURN_INHERITED_METHOD_CALL,P##base_type,P##method, \
+                                                               P##__VA_ARGS__ \
+                                                              )
+
+#define PP2_INSN_8IP2_LANGUAGE_RETURN_INHERITED_METHOD_CALL(P,r0,r1,r2,base_type,method,...) \
+                                                           (, \
+                                                            /*r0=*/,P##r1,P##r2, \
+                                                            IP2_FX ( \
+                                                                LANGUAGE_RETURN_INHERITED_METHOD_CALL_INVOKE, \
+                                                                (,P##base_type,PP2_LANGUAGE_TYPE_SUPERTYPE_NAME P##r0,P##method) \
+                                                            ), \
+                                                            P##__VA_ARGS__ \
+                                                           )
+#define IP2_LANGUAGE_RETURN_INHERITED_METHOD_CALL_INVOKE(P,type_name,supertype_name,method) \
+        PP2_IS_NIL_NON_TUPLE (P##supertype_name) ( \
+            IP2_LANGUAGE_RETURN_INHERITED_METHOD_CALL_FAIL(type_name##_##method), \
+            IP2_LANGUAGE_RETURN_METHOD_CALL_INHERITED(,P##type_name,P##supertype_name,P##method) \
+        )
+#define IP2_LANGUAGE_RETURN_INHERITED_METHOD_CALL_FAIL(stx) 8PP2_THROW_EXCEPTION,8PP2_LANGUAGE_DEFINITION_EXCEPTION,stx
+
+#define PP2_LANGUAGE_TYPE_SUPERTYPE_NAME(type_addr,type_type,type_value) IP2_LANGUAGE_TYPE_SUPERTYPE_NAME_I type_value
+#define IP2_LANGUAGE_TYPE_SUPERTYPE_NAME_I(P,type_name,supertype_name) P##supertype_name
+
+#endif
+
+// ******************** From: variable.h
+/** @file */
+#ifndef PP2_LANGUAGE_BASIC_VARIABLE_H
+#define PP2_LANGUAGE_BASIC_VARIABLE_H
+
+
+// ******************** From: variable_tables.h
+/** @file */
+#ifndef PP2_LANGUAGE_BASIC_DETAIL_VARIABLE_TABLES_H
+#define PP2_LANGUAGE_BASIC_DETAIL_VARIABLE_TABLES_H
+
+/* The built-in single-letter variables. A variable's address is now a char-seq
+ * (the same paren-per-character shape used elsewhere), so `x` addresses slot
+ * (x) and the reserved `this` addresses (t)(h)(i)(s). Multi-character names are
+ * declared host-side with PP2_VAR (see variable.h); there is no longer a fixed
+ * slot table, only these convenience bindings for the letters. */
+
+#define PP2_DEF_a )PP2_COMPILE_LANGUAGE_VAR((a),
+#define PP2_DEF_b )PP2_COMPILE_LANGUAGE_VAR((b),
+#define PP2_DEF_c )PP2_COMPILE_LANGUAGE_VAR((c),
+#define PP2_DEF_d )PP2_COMPILE_LANGUAGE_VAR((d),
+#define PP2_DEF_e )PP2_COMPILE_LANGUAGE_VAR((e),
+#define PP2_DEF_f )PP2_COMPILE_LANGUAGE_VAR((f),
+#define PP2_DEF_g )PP2_COMPILE_LANGUAGE_VAR((g),
+#define PP2_DEF_h )PP2_COMPILE_LANGUAGE_VAR((h),
+#define PP2_DEF_i )PP2_COMPILE_LANGUAGE_VAR((i),
+#define PP2_DEF_j )PP2_COMPILE_LANGUAGE_VAR((j),
+#define PP2_DEF_k )PP2_COMPILE_LANGUAGE_VAR((k),
+#define PP2_DEF_l )PP2_COMPILE_LANGUAGE_VAR((l),
+#define PP2_DEF_m )PP2_COMPILE_LANGUAGE_VAR((m),
+#define PP2_DEF_n )PP2_COMPILE_LANGUAGE_VAR((n),
+#define PP2_DEF_o )PP2_COMPILE_LANGUAGE_VAR((o),
+#define PP2_DEF_p )PP2_COMPILE_LANGUAGE_VAR((p),
+#define PP2_DEF_q )PP2_COMPILE_LANGUAGE_VAR((q),
+#define PP2_DEF_r )PP2_COMPILE_LANGUAGE_VAR((r),
+#define PP2_DEF_s )PP2_COMPILE_LANGUAGE_VAR((s),
+#define PP2_DEF_t )PP2_COMPILE_LANGUAGE_VAR((t),
+#define PP2_DEF_u )PP2_COMPILE_LANGUAGE_VAR((u),
+#define PP2_DEF_v )PP2_COMPILE_LANGUAGE_VAR((v),
+#define PP2_DEF_w )PP2_COMPILE_LANGUAGE_VAR((w),
+#define PP2_DEF_x )PP2_COMPILE_LANGUAGE_VAR((x),
+#define PP2_DEF_y )PP2_COMPILE_LANGUAGE_VAR((y),
+#define PP2_DEF_z )PP2_COMPILE_LANGUAGE_VAR((z),
+#define PP2_DEF_A )PP2_COMPILE_LANGUAGE_VAR((A),
+#define PP2_DEF_B )PP2_COMPILE_LANGUAGE_VAR((B),
+#define PP2_DEF_C )PP2_COMPILE_LANGUAGE_VAR((C),
+#define PP2_DEF_D )PP2_COMPILE_LANGUAGE_VAR((D),
+#define PP2_DEF_E )PP2_COMPILE_LANGUAGE_VAR((E),
+#define PP2_DEF_F )PP2_COMPILE_LANGUAGE_VAR((F),
+#define PP2_DEF_G )PP2_COMPILE_LANGUAGE_VAR((G),
+#define PP2_DEF_H )PP2_COMPILE_LANGUAGE_VAR((H),
+#define PP2_DEF_I )PP2_COMPILE_LANGUAGE_VAR((I),
+#define PP2_DEF_J )PP2_COMPILE_LANGUAGE_VAR((J),
+#define PP2_DEF_K )PP2_COMPILE_LANGUAGE_VAR((K),
+#define PP2_DEF_L )PP2_COMPILE_LANGUAGE_VAR((L),
+#define PP2_DEF_M )PP2_COMPILE_LANGUAGE_VAR((M),
+#define PP2_DEF_N )PP2_COMPILE_LANGUAGE_VAR((N),
+#define PP2_DEF_O )PP2_COMPILE_LANGUAGE_VAR((O),
+#define PP2_DEF_P )PP2_COMPILE_LANGUAGE_VAR((P),
+#define PP2_DEF_Q )PP2_COMPILE_LANGUAGE_VAR((Q),
+#define PP2_DEF_R )PP2_COMPILE_LANGUAGE_VAR((R),
+#define PP2_DEF_S )PP2_COMPILE_LANGUAGE_VAR((S),
+#define PP2_DEF_T )PP2_COMPILE_LANGUAGE_VAR((T),
+#define PP2_DEF_U )PP2_COMPILE_LANGUAGE_VAR((U),
+#define PP2_DEF_V )PP2_COMPILE_LANGUAGE_VAR((V),
+#define PP2_DEF_W )PP2_COMPILE_LANGUAGE_VAR((W),
+#define PP2_DEF_X )PP2_COMPILE_LANGUAGE_VAR((X),
+#define PP2_DEF_Y )PP2_COMPILE_LANGUAGE_VAR((Y),
+#define PP2_DEF_Z )PP2_COMPILE_LANGUAGE_VAR((Z),
+
+#define PP2_DEF_this )PP2_COMPILE_LANGUAGE_VAR((t)(h)(i)(s),
+
+#endif
+
+// ******************** From: name.h
+/** @file */
+#ifndef PP2_LANGUAGE_BASIC_DETAIL_NAME_H
+#define PP2_LANGUAGE_BASIC_DETAIL_NAME_H
+
+
+/* Build a char-seq address from comma-separated characters:
+ * PP2_CHARSEQ(t,o,t,a,l) -> (t)(o)(t)(a)(l). Used by PP2_VAR to declare a
+ * multi-character variable name host-side. Bounded at 40 characters. */
+#define PP2_CHARSEQ(...) IP2_CHARSEQ_OVL(__VA_ARGS__,PP2_COMMA_40, PP2_COMMA_39, PP2_COMMA_38, PP2_COMMA_37, PP2_COMMA_36, PP2_COMMA_35, PP2_COMMA_34, PP2_COMMA_33, PP2_COMMA_32, PP2_COMMA_31, PP2_COMMA_30, PP2_COMMA_29, PP2_COMMA_28, PP2_COMMA_27, PP2_COMMA_26, PP2_COMMA_25, PP2_COMMA_24, PP2_COMMA_23, PP2_COMMA_22, PP2_COMMA_21, PP2_COMMA_20, PP2_COMMA_19, PP2_COMMA_18, PP2_COMMA_17, PP2_COMMA_16, PP2_COMMA_15, PP2_COMMA_14, PP2_COMMA_13, PP2_COMMA_12, PP2_COMMA_11, PP2_COMMA_10, PP2_COMMA_9, PP2_COMMA_8, PP2_COMMA_7, PP2_COMMA_6, PP2_COMMA_5, PP2_COMMA_4, PP2_COMMA_3, PP2_COMMA_2, PP2_COMMA_1,)(__VA_ARGS__)
+
+#define IP2_CHARSEQ_OVL(x0,x1,x2,x3,x4,x5,x6,x7,x8,x9,x10,x11,x12,x13,x14,x15,x16,x17,x18,x19,x20,x21,x22,x23,x24,x25,x26,x27,x28,x29,x30,x31,x32,x33,x34,x35,x36,x37,x38,x39,m,...) PP2_TUPLE_AT_1(IP2_CHARSEQ_,m,41_OR_MORE)
+#define IP2_CHARSEQ_1(c0) (c0)
+#define IP2_CHARSEQ_2(c0,c1) (c0)(c1)
+#define IP2_CHARSEQ_3(c0,c1,c2) (c0)(c1)(c2)
+#define IP2_CHARSEQ_4(c0,c1,c2,c3) (c0)(c1)(c2)(c3)
+#define IP2_CHARSEQ_5(c0,c1,c2,c3,c4) (c0)(c1)(c2)(c3)(c4)
+#define IP2_CHARSEQ_6(c0,c1,c2,c3,c4,c5) (c0)(c1)(c2)(c3)(c4)(c5)
+#define IP2_CHARSEQ_7(c0,c1,c2,c3,c4,c5,c6) (c0)(c1)(c2)(c3)(c4)(c5)(c6)
+#define IP2_CHARSEQ_8(c0,c1,c2,c3,c4,c5,c6,c7) (c0)(c1)(c2)(c3)(c4)(c5)(c6)(c7)
+#define IP2_CHARSEQ_9(c0,c1,c2,c3,c4,c5,c6,c7,c8) (c0)(c1)(c2)(c3)(c4)(c5)(c6)(c7)(c8)
+#define IP2_CHARSEQ_10(c0,c1,c2,c3,c4,c5,c6,c7,c8,c9) (c0)(c1)(c2)(c3)(c4)(c5)(c6)(c7)(c8)(c9)
+#define IP2_CHARSEQ_11(c0,c1,c2,c3,c4,c5,c6,c7,c8,c9,c10) (c0)(c1)(c2)(c3)(c4)(c5)(c6)(c7)(c8)(c9)(c10)
+#define IP2_CHARSEQ_12(c0,c1,c2,c3,c4,c5,c6,c7,c8,c9,c10,c11) (c0)(c1)(c2)(c3)(c4)(c5)(c6)(c7)(c8)(c9)(c10)(c11)
+#define IP2_CHARSEQ_13(c0,c1,c2,c3,c4,c5,c6,c7,c8,c9,c10,c11,c12) (c0)(c1)(c2)(c3)(c4)(c5)(c6)(c7)(c8)(c9)(c10)(c11)(c12)
+#define IP2_CHARSEQ_14(c0,c1,c2,c3,c4,c5,c6,c7,c8,c9,c10,c11,c12,c13) (c0)(c1)(c2)(c3)(c4)(c5)(c6)(c7)(c8)(c9)(c10)(c11)(c12)(c13)
+#define IP2_CHARSEQ_15(c0,c1,c2,c3,c4,c5,c6,c7,c8,c9,c10,c11,c12,c13,c14) (c0)(c1)(c2)(c3)(c4)(c5)(c6)(c7)(c8)(c9)(c10)(c11)(c12)(c13)(c14)
+#define IP2_CHARSEQ_16(c0,c1,c2,c3,c4,c5,c6,c7,c8,c9,c10,c11,c12,c13,c14,c15) (c0)(c1)(c2)(c3)(c4)(c5)(c6)(c7)(c8)(c9)(c10)(c11)(c12)(c13)(c14)(c15)
+#define IP2_CHARSEQ_17(c0,c1,c2,c3,c4,c5,c6,c7,c8,c9,c10,c11,c12,c13,c14,c15,c16) (c0)(c1)(c2)(c3)(c4)(c5)(c6)(c7)(c8)(c9)(c10)(c11)(c12)(c13)(c14)(c15)(c16)
+#define IP2_CHARSEQ_18(c0,c1,c2,c3,c4,c5,c6,c7,c8,c9,c10,c11,c12,c13,c14,c15,c16,c17) (c0)(c1)(c2)(c3)(c4)(c5)(c6)(c7)(c8)(c9)(c10)(c11)(c12)(c13)(c14)(c15)(c16)(c17)
+#define IP2_CHARSEQ_19(c0,c1,c2,c3,c4,c5,c6,c7,c8,c9,c10,c11,c12,c13,c14,c15,c16,c17,c18) (c0)(c1)(c2)(c3)(c4)(c5)(c6)(c7)(c8)(c9)(c10)(c11)(c12)(c13)(c14)(c15)(c16)(c17)(c18)
+#define IP2_CHARSEQ_20(c0,c1,c2,c3,c4,c5,c6,c7,c8,c9,c10,c11,c12,c13,c14,c15,c16,c17,c18,c19) (c0)(c1)(c2)(c3)(c4)(c5)(c6)(c7)(c8)(c9)(c10)(c11)(c12)(c13)(c14)(c15)(c16)(c17)(c18)(c19)
+#define IP2_CHARSEQ_21(c0,c1,c2,c3,c4,c5,c6,c7,c8,c9,c10,c11,c12,c13,c14,c15,c16,c17,c18,c19,c20) (c0)(c1)(c2)(c3)(c4)(c5)(c6)(c7)(c8)(c9)(c10)(c11)(c12)(c13)(c14)(c15)(c16)(c17)(c18)(c19)(c20)
+#define IP2_CHARSEQ_22(c0,c1,c2,c3,c4,c5,c6,c7,c8,c9,c10,c11,c12,c13,c14,c15,c16,c17,c18,c19,c20,c21) (c0)(c1)(c2)(c3)(c4)(c5)(c6)(c7)(c8)(c9)(c10)(c11)(c12)(c13)(c14)(c15)(c16)(c17)(c18)(c19)(c20)(c21)
+#define IP2_CHARSEQ_23(c0,c1,c2,c3,c4,c5,c6,c7,c8,c9,c10,c11,c12,c13,c14,c15,c16,c17,c18,c19,c20,c21,c22) (c0)(c1)(c2)(c3)(c4)(c5)(c6)(c7)(c8)(c9)(c10)(c11)(c12)(c13)(c14)(c15)(c16)(c17)(c18)(c19)(c20)(c21)(c22)
+#define IP2_CHARSEQ_24(c0,c1,c2,c3,c4,c5,c6,c7,c8,c9,c10,c11,c12,c13,c14,c15,c16,c17,c18,c19,c20,c21,c22,c23) (c0)(c1)(c2)(c3)(c4)(c5)(c6)(c7)(c8)(c9)(c10)(c11)(c12)(c13)(c14)(c15)(c16)(c17)(c18)(c19)(c20)(c21)(c22)(c23)
+#define IP2_CHARSEQ_25(c0,c1,c2,c3,c4,c5,c6,c7,c8,c9,c10,c11,c12,c13,c14,c15,c16,c17,c18,c19,c20,c21,c22,c23,c24) (c0)(c1)(c2)(c3)(c4)(c5)(c6)(c7)(c8)(c9)(c10)(c11)(c12)(c13)(c14)(c15)(c16)(c17)(c18)(c19)(c20)(c21)(c22)(c23)(c24)
+#define IP2_CHARSEQ_26(c0,c1,c2,c3,c4,c5,c6,c7,c8,c9,c10,c11,c12,c13,c14,c15,c16,c17,c18,c19,c20,c21,c22,c23,c24,c25) (c0)(c1)(c2)(c3)(c4)(c5)(c6)(c7)(c8)(c9)(c10)(c11)(c12)(c13)(c14)(c15)(c16)(c17)(c18)(c19)(c20)(c21)(c22)(c23)(c24)(c25)
+#define IP2_CHARSEQ_27(c0,c1,c2,c3,c4,c5,c6,c7,c8,c9,c10,c11,c12,c13,c14,c15,c16,c17,c18,c19,c20,c21,c22,c23,c24,c25,c26) (c0)(c1)(c2)(c3)(c4)(c5)(c6)(c7)(c8)(c9)(c10)(c11)(c12)(c13)(c14)(c15)(c16)(c17)(c18)(c19)(c20)(c21)(c22)(c23)(c24)(c25)(c26)
+#define IP2_CHARSEQ_28(c0,c1,c2,c3,c4,c5,c6,c7,c8,c9,c10,c11,c12,c13,c14,c15,c16,c17,c18,c19,c20,c21,c22,c23,c24,c25,c26,c27) (c0)(c1)(c2)(c3)(c4)(c5)(c6)(c7)(c8)(c9)(c10)(c11)(c12)(c13)(c14)(c15)(c16)(c17)(c18)(c19)(c20)(c21)(c22)(c23)(c24)(c25)(c26)(c27)
+#define IP2_CHARSEQ_29(c0,c1,c2,c3,c4,c5,c6,c7,c8,c9,c10,c11,c12,c13,c14,c15,c16,c17,c18,c19,c20,c21,c22,c23,c24,c25,c26,c27,c28) (c0)(c1)(c2)(c3)(c4)(c5)(c6)(c7)(c8)(c9)(c10)(c11)(c12)(c13)(c14)(c15)(c16)(c17)(c18)(c19)(c20)(c21)(c22)(c23)(c24)(c25)(c26)(c27)(c28)
+#define IP2_CHARSEQ_30(c0,c1,c2,c3,c4,c5,c6,c7,c8,c9,c10,c11,c12,c13,c14,c15,c16,c17,c18,c19,c20,c21,c22,c23,c24,c25,c26,c27,c28,c29) (c0)(c1)(c2)(c3)(c4)(c5)(c6)(c7)(c8)(c9)(c10)(c11)(c12)(c13)(c14)(c15)(c16)(c17)(c18)(c19)(c20)(c21)(c22)(c23)(c24)(c25)(c26)(c27)(c28)(c29)
+#define IP2_CHARSEQ_31(c0,c1,c2,c3,c4,c5,c6,c7,c8,c9,c10,c11,c12,c13,c14,c15,c16,c17,c18,c19,c20,c21,c22,c23,c24,c25,c26,c27,c28,c29,c30) (c0)(c1)(c2)(c3)(c4)(c5)(c6)(c7)(c8)(c9)(c10)(c11)(c12)(c13)(c14)(c15)(c16)(c17)(c18)(c19)(c20)(c21)(c22)(c23)(c24)(c25)(c26)(c27)(c28)(c29)(c30)
+#define IP2_CHARSEQ_32(c0,c1,c2,c3,c4,c5,c6,c7,c8,c9,c10,c11,c12,c13,c14,c15,c16,c17,c18,c19,c20,c21,c22,c23,c24,c25,c26,c27,c28,c29,c30,c31) (c0)(c1)(c2)(c3)(c4)(c5)(c6)(c7)(c8)(c9)(c10)(c11)(c12)(c13)(c14)(c15)(c16)(c17)(c18)(c19)(c20)(c21)(c22)(c23)(c24)(c25)(c26)(c27)(c28)(c29)(c30)(c31)
+#define IP2_CHARSEQ_33(c0,c1,c2,c3,c4,c5,c6,c7,c8,c9,c10,c11,c12,c13,c14,c15,c16,c17,c18,c19,c20,c21,c22,c23,c24,c25,c26,c27,c28,c29,c30,c31,c32) (c0)(c1)(c2)(c3)(c4)(c5)(c6)(c7)(c8)(c9)(c10)(c11)(c12)(c13)(c14)(c15)(c16)(c17)(c18)(c19)(c20)(c21)(c22)(c23)(c24)(c25)(c26)(c27)(c28)(c29)(c30)(c31)(c32)
+#define IP2_CHARSEQ_34(c0,c1,c2,c3,c4,c5,c6,c7,c8,c9,c10,c11,c12,c13,c14,c15,c16,c17,c18,c19,c20,c21,c22,c23,c24,c25,c26,c27,c28,c29,c30,c31,c32,c33) (c0)(c1)(c2)(c3)(c4)(c5)(c6)(c7)(c8)(c9)(c10)(c11)(c12)(c13)(c14)(c15)(c16)(c17)(c18)(c19)(c20)(c21)(c22)(c23)(c24)(c25)(c26)(c27)(c28)(c29)(c30)(c31)(c32)(c33)
+#define IP2_CHARSEQ_35(c0,c1,c2,c3,c4,c5,c6,c7,c8,c9,c10,c11,c12,c13,c14,c15,c16,c17,c18,c19,c20,c21,c22,c23,c24,c25,c26,c27,c28,c29,c30,c31,c32,c33,c34) (c0)(c1)(c2)(c3)(c4)(c5)(c6)(c7)(c8)(c9)(c10)(c11)(c12)(c13)(c14)(c15)(c16)(c17)(c18)(c19)(c20)(c21)(c22)(c23)(c24)(c25)(c26)(c27)(c28)(c29)(c30)(c31)(c32)(c33)(c34)
+#define IP2_CHARSEQ_36(c0,c1,c2,c3,c4,c5,c6,c7,c8,c9,c10,c11,c12,c13,c14,c15,c16,c17,c18,c19,c20,c21,c22,c23,c24,c25,c26,c27,c28,c29,c30,c31,c32,c33,c34,c35) (c0)(c1)(c2)(c3)(c4)(c5)(c6)(c7)(c8)(c9)(c10)(c11)(c12)(c13)(c14)(c15)(c16)(c17)(c18)(c19)(c20)(c21)(c22)(c23)(c24)(c25)(c26)(c27)(c28)(c29)(c30)(c31)(c32)(c33)(c34)(c35)
+#define IP2_CHARSEQ_37(c0,c1,c2,c3,c4,c5,c6,c7,c8,c9,c10,c11,c12,c13,c14,c15,c16,c17,c18,c19,c20,c21,c22,c23,c24,c25,c26,c27,c28,c29,c30,c31,c32,c33,c34,c35,c36) (c0)(c1)(c2)(c3)(c4)(c5)(c6)(c7)(c8)(c9)(c10)(c11)(c12)(c13)(c14)(c15)(c16)(c17)(c18)(c19)(c20)(c21)(c22)(c23)(c24)(c25)(c26)(c27)(c28)(c29)(c30)(c31)(c32)(c33)(c34)(c35)(c36)
+#define IP2_CHARSEQ_38(c0,c1,c2,c3,c4,c5,c6,c7,c8,c9,c10,c11,c12,c13,c14,c15,c16,c17,c18,c19,c20,c21,c22,c23,c24,c25,c26,c27,c28,c29,c30,c31,c32,c33,c34,c35,c36,c37) (c0)(c1)(c2)(c3)(c4)(c5)(c6)(c7)(c8)(c9)(c10)(c11)(c12)(c13)(c14)(c15)(c16)(c17)(c18)(c19)(c20)(c21)(c22)(c23)(c24)(c25)(c26)(c27)(c28)(c29)(c30)(c31)(c32)(c33)(c34)(c35)(c36)(c37)
+#define IP2_CHARSEQ_39(c0,c1,c2,c3,c4,c5,c6,c7,c8,c9,c10,c11,c12,c13,c14,c15,c16,c17,c18,c19,c20,c21,c22,c23,c24,c25,c26,c27,c28,c29,c30,c31,c32,c33,c34,c35,c36,c37,c38) (c0)(c1)(c2)(c3)(c4)(c5)(c6)(c7)(c8)(c9)(c10)(c11)(c12)(c13)(c14)(c15)(c16)(c17)(c18)(c19)(c20)(c21)(c22)(c23)(c24)(c25)(c26)(c27)(c28)(c29)(c30)(c31)(c32)(c33)(c34)(c35)(c36)(c37)(c38)
+#define IP2_CHARSEQ_40(c0,c1,c2,c3,c4,c5,c6,c7,c8,c9,c10,c11,c12,c13,c14,c15,c16,c17,c18,c19,c20,c21,c22,c23,c24,c25,c26,c27,c28,c29,c30,c31,c32,c33,c34,c35,c36,c37,c38,c39) (c0)(c1)(c2)(c3)(c4)(c5)(c6)(c7)(c8)(c9)(c10)(c11)(c12)(c13)(c14)(c15)(c16)(c17)(c18)(c19)(c20)(c21)(c22)(c23)(c24)(c25)(c26)(c27)(c28)(c29)(c30)(c31)(c32)(c33)(c34)(c35)(c36)(c37)(c38)(c39)
+#define IP2_CHARSEQ_41_OR_MORE(c0,c1,c2,c3,c4,c5,c6,c7,c8,c9,c10,c11,c12,c13,c14,c15,c16,c17,c18,c19,c20,c21,c22,c23,c24,c25,c26,c27,c28,c29,c30,c31,c32,c33,c34,c35,c36,c37,c38,c39,...) (c0)(c1)(c2)(c3)(c4)(c5)(c6)(c7)(c8)(c9)(c10)(c11)(c12)(c13)(c14)(c15)(c16)(c17)(c18)(c19)(c20)(c21)(c22)(c23)(c24)(c25)(c26)(c27)(c28)(c29)(c30)(c31)(c32)(c33)(c34)(c35)(c36)(c37)(c38)(c39) PP2_NAME_TOO_LONG
+
+/* ---- PP2_SPACED: a space-separated name -> a char-seq, at compile time ----
+ * PP2_SPACED(t e s t) -> (t)(e)(s)(t). Backs the in-language `var (...)` keyword
+ * (see variable.h). A whitespace-separated run is the one thing a macro cannot
+ * split -- there is no comma to break on -- so each character is pasted onto
+ * IP2_SPACED_WRAP_, which rewrites it as `(c),CONT,`. Argument pre-expansion in the
+ * re-split step turns that injected comma into a real argument boundary, handing
+ * the character off as a group and leaving the tail bare for the next peel. No
+ * reach-forward, no paren balancing. The sentinel IP2_SPACED_END wraps to `,STOP,`.
+ *
+ * A CAT-peel nests each step inside the last, so hide-sets accumulate down the
+ * chain and ANY macro shared between steps is blue-painted on re-entry (the 2-name
+ * A/B alternation the arbitrary engine uses only survives a flat sibling walk over
+ * a pre-grouped seq, which a bare run is not). So every macro on the path is
+ * distinct per depth: IP2_SPACED_<k> re-splits, _C_<k> dispatches on the marker,
+ * _CONT_<k> peels the next character, _STOP_<k> returns the finished seq. The hot
+ * path is three expansions per character. Characters must come from the registered
+ * alphabet (a-z A-Z 0-9 _); past 40 characters yields PP2_NAME_TOO_LONG. */
+#define PP2_SPACED(...) IP2_SPACED_1(,IP2_SPACED_WRAP_##__VA_ARGS__ IP2_SPACED_END)
+
+#define IP2_SPACED_1(acc,rest) IP2_SPACED_C_1(acc,rest)
+#define IP2_SPACED_C_1(acc,head,marker,...) IP2_SPACED_##marker##_1(acc,head,__VA_ARGS__)
+#define IP2_SPACED_STOP_1(acc,head,...) acc
+#define IP2_SPACED_CONT_1(acc,head,...) IP2_SPACED_2(acc head,IP2_SPACED_WRAP_##__VA_ARGS__)
+
+#define IP2_SPACED_2(acc,rest) IP2_SPACED_C_2(acc,rest)
+#define IP2_SPACED_C_2(acc,head,marker,...) IP2_SPACED_##marker##_2(acc,head,__VA_ARGS__)
+#define IP2_SPACED_STOP_2(acc,head,...) acc
+#define IP2_SPACED_CONT_2(acc,head,...) IP2_SPACED_3(acc head,IP2_SPACED_WRAP_##__VA_ARGS__)
+
+#define IP2_SPACED_3(acc,rest) IP2_SPACED_C_3(acc,rest)
+#define IP2_SPACED_C_3(acc,head,marker,...) IP2_SPACED_##marker##_3(acc,head,__VA_ARGS__)
+#define IP2_SPACED_STOP_3(acc,head,...) acc
+#define IP2_SPACED_CONT_3(acc,head,...) IP2_SPACED_4(acc head,IP2_SPACED_WRAP_##__VA_ARGS__)
+
+#define IP2_SPACED_4(acc,rest) IP2_SPACED_C_4(acc,rest)
+#define IP2_SPACED_C_4(acc,head,marker,...) IP2_SPACED_##marker##_4(acc,head,__VA_ARGS__)
+#define IP2_SPACED_STOP_4(acc,head,...) acc
+#define IP2_SPACED_CONT_4(acc,head,...) IP2_SPACED_5(acc head,IP2_SPACED_WRAP_##__VA_ARGS__)
+
+#define IP2_SPACED_5(acc,rest) IP2_SPACED_C_5(acc,rest)
+#define IP2_SPACED_C_5(acc,head,marker,...) IP2_SPACED_##marker##_5(acc,head,__VA_ARGS__)
+#define IP2_SPACED_STOP_5(acc,head,...) acc
+#define IP2_SPACED_CONT_5(acc,head,...) IP2_SPACED_6(acc head,IP2_SPACED_WRAP_##__VA_ARGS__)
+
+#define IP2_SPACED_6(acc,rest) IP2_SPACED_C_6(acc,rest)
+#define IP2_SPACED_C_6(acc,head,marker,...) IP2_SPACED_##marker##_6(acc,head,__VA_ARGS__)
+#define IP2_SPACED_STOP_6(acc,head,...) acc
+#define IP2_SPACED_CONT_6(acc,head,...) IP2_SPACED_7(acc head,IP2_SPACED_WRAP_##__VA_ARGS__)
+
+#define IP2_SPACED_7(acc,rest) IP2_SPACED_C_7(acc,rest)
+#define IP2_SPACED_C_7(acc,head,marker,...) IP2_SPACED_##marker##_7(acc,head,__VA_ARGS__)
+#define IP2_SPACED_STOP_7(acc,head,...) acc
+#define IP2_SPACED_CONT_7(acc,head,...) IP2_SPACED_8(acc head,IP2_SPACED_WRAP_##__VA_ARGS__)
+
+#define IP2_SPACED_8(acc,rest) IP2_SPACED_C_8(acc,rest)
+#define IP2_SPACED_C_8(acc,head,marker,...) IP2_SPACED_##marker##_8(acc,head,__VA_ARGS__)
+#define IP2_SPACED_STOP_8(acc,head,...) acc
+#define IP2_SPACED_CONT_8(acc,head,...) IP2_SPACED_9(acc head,IP2_SPACED_WRAP_##__VA_ARGS__)
+
+#define IP2_SPACED_9(acc,rest) IP2_SPACED_C_9(acc,rest)
+#define IP2_SPACED_C_9(acc,head,marker,...) IP2_SPACED_##marker##_9(acc,head,__VA_ARGS__)
+#define IP2_SPACED_STOP_9(acc,head,...) acc
+#define IP2_SPACED_CONT_9(acc,head,...) IP2_SPACED_10(acc head,IP2_SPACED_WRAP_##__VA_ARGS__)
+
+#define IP2_SPACED_10(acc,rest) IP2_SPACED_C_10(acc,rest)
+#define IP2_SPACED_C_10(acc,head,marker,...) IP2_SPACED_##marker##_10(acc,head,__VA_ARGS__)
+#define IP2_SPACED_STOP_10(acc,head,...) acc
+#define IP2_SPACED_CONT_10(acc,head,...) IP2_SPACED_11(acc head,IP2_SPACED_WRAP_##__VA_ARGS__)
+
+#define IP2_SPACED_11(acc,rest) IP2_SPACED_C_11(acc,rest)
+#define IP2_SPACED_C_11(acc,head,marker,...) IP2_SPACED_##marker##_11(acc,head,__VA_ARGS__)
+#define IP2_SPACED_STOP_11(acc,head,...) acc
+#define IP2_SPACED_CONT_11(acc,head,...) IP2_SPACED_12(acc head,IP2_SPACED_WRAP_##__VA_ARGS__)
+
+#define IP2_SPACED_12(acc,rest) IP2_SPACED_C_12(acc,rest)
+#define IP2_SPACED_C_12(acc,head,marker,...) IP2_SPACED_##marker##_12(acc,head,__VA_ARGS__)
+#define IP2_SPACED_STOP_12(acc,head,...) acc
+#define IP2_SPACED_CONT_12(acc,head,...) IP2_SPACED_13(acc head,IP2_SPACED_WRAP_##__VA_ARGS__)
+
+#define IP2_SPACED_13(acc,rest) IP2_SPACED_C_13(acc,rest)
+#define IP2_SPACED_C_13(acc,head,marker,...) IP2_SPACED_##marker##_13(acc,head,__VA_ARGS__)
+#define IP2_SPACED_STOP_13(acc,head,...) acc
+#define IP2_SPACED_CONT_13(acc,head,...) IP2_SPACED_14(acc head,IP2_SPACED_WRAP_##__VA_ARGS__)
+
+#define IP2_SPACED_14(acc,rest) IP2_SPACED_C_14(acc,rest)
+#define IP2_SPACED_C_14(acc,head,marker,...) IP2_SPACED_##marker##_14(acc,head,__VA_ARGS__)
+#define IP2_SPACED_STOP_14(acc,head,...) acc
+#define IP2_SPACED_CONT_14(acc,head,...) IP2_SPACED_15(acc head,IP2_SPACED_WRAP_##__VA_ARGS__)
+
+#define IP2_SPACED_15(acc,rest) IP2_SPACED_C_15(acc,rest)
+#define IP2_SPACED_C_15(acc,head,marker,...) IP2_SPACED_##marker##_15(acc,head,__VA_ARGS__)
+#define IP2_SPACED_STOP_15(acc,head,...) acc
+#define IP2_SPACED_CONT_15(acc,head,...) IP2_SPACED_16(acc head,IP2_SPACED_WRAP_##__VA_ARGS__)
+
+#define IP2_SPACED_16(acc,rest) IP2_SPACED_C_16(acc,rest)
+#define IP2_SPACED_C_16(acc,head,marker,...) IP2_SPACED_##marker##_16(acc,head,__VA_ARGS__)
+#define IP2_SPACED_STOP_16(acc,head,...) acc
+#define IP2_SPACED_CONT_16(acc,head,...) IP2_SPACED_17(acc head,IP2_SPACED_WRAP_##__VA_ARGS__)
+
+#define IP2_SPACED_17(acc,rest) IP2_SPACED_C_17(acc,rest)
+#define IP2_SPACED_C_17(acc,head,marker,...) IP2_SPACED_##marker##_17(acc,head,__VA_ARGS__)
+#define IP2_SPACED_STOP_17(acc,head,...) acc
+#define IP2_SPACED_CONT_17(acc,head,...) IP2_SPACED_18(acc head,IP2_SPACED_WRAP_##__VA_ARGS__)
+
+#define IP2_SPACED_18(acc,rest) IP2_SPACED_C_18(acc,rest)
+#define IP2_SPACED_C_18(acc,head,marker,...) IP2_SPACED_##marker##_18(acc,head,__VA_ARGS__)
+#define IP2_SPACED_STOP_18(acc,head,...) acc
+#define IP2_SPACED_CONT_18(acc,head,...) IP2_SPACED_19(acc head,IP2_SPACED_WRAP_##__VA_ARGS__)
+
+#define IP2_SPACED_19(acc,rest) IP2_SPACED_C_19(acc,rest)
+#define IP2_SPACED_C_19(acc,head,marker,...) IP2_SPACED_##marker##_19(acc,head,__VA_ARGS__)
+#define IP2_SPACED_STOP_19(acc,head,...) acc
+#define IP2_SPACED_CONT_19(acc,head,...) IP2_SPACED_20(acc head,IP2_SPACED_WRAP_##__VA_ARGS__)
+
+#define IP2_SPACED_20(acc,rest) IP2_SPACED_C_20(acc,rest)
+#define IP2_SPACED_C_20(acc,head,marker,...) IP2_SPACED_##marker##_20(acc,head,__VA_ARGS__)
+#define IP2_SPACED_STOP_20(acc,head,...) acc
+#define IP2_SPACED_CONT_20(acc,head,...) IP2_SPACED_21(acc head,IP2_SPACED_WRAP_##__VA_ARGS__)
+
+#define IP2_SPACED_21(acc,rest) IP2_SPACED_C_21(acc,rest)
+#define IP2_SPACED_C_21(acc,head,marker,...) IP2_SPACED_##marker##_21(acc,head,__VA_ARGS__)
+#define IP2_SPACED_STOP_21(acc,head,...) acc
+#define IP2_SPACED_CONT_21(acc,head,...) IP2_SPACED_22(acc head,IP2_SPACED_WRAP_##__VA_ARGS__)
+
+#define IP2_SPACED_22(acc,rest) IP2_SPACED_C_22(acc,rest)
+#define IP2_SPACED_C_22(acc,head,marker,...) IP2_SPACED_##marker##_22(acc,head,__VA_ARGS__)
+#define IP2_SPACED_STOP_22(acc,head,...) acc
+#define IP2_SPACED_CONT_22(acc,head,...) IP2_SPACED_23(acc head,IP2_SPACED_WRAP_##__VA_ARGS__)
+
+#define IP2_SPACED_23(acc,rest) IP2_SPACED_C_23(acc,rest)
+#define IP2_SPACED_C_23(acc,head,marker,...) IP2_SPACED_##marker##_23(acc,head,__VA_ARGS__)
+#define IP2_SPACED_STOP_23(acc,head,...) acc
+#define IP2_SPACED_CONT_23(acc,head,...) IP2_SPACED_24(acc head,IP2_SPACED_WRAP_##__VA_ARGS__)
+
+#define IP2_SPACED_24(acc,rest) IP2_SPACED_C_24(acc,rest)
+#define IP2_SPACED_C_24(acc,head,marker,...) IP2_SPACED_##marker##_24(acc,head,__VA_ARGS__)
+#define IP2_SPACED_STOP_24(acc,head,...) acc
+#define IP2_SPACED_CONT_24(acc,head,...) IP2_SPACED_25(acc head,IP2_SPACED_WRAP_##__VA_ARGS__)
+
+#define IP2_SPACED_25(acc,rest) IP2_SPACED_C_25(acc,rest)
+#define IP2_SPACED_C_25(acc,head,marker,...) IP2_SPACED_##marker##_25(acc,head,__VA_ARGS__)
+#define IP2_SPACED_STOP_25(acc,head,...) acc
+#define IP2_SPACED_CONT_25(acc,head,...) IP2_SPACED_26(acc head,IP2_SPACED_WRAP_##__VA_ARGS__)
+
+#define IP2_SPACED_26(acc,rest) IP2_SPACED_C_26(acc,rest)
+#define IP2_SPACED_C_26(acc,head,marker,...) IP2_SPACED_##marker##_26(acc,head,__VA_ARGS__)
+#define IP2_SPACED_STOP_26(acc,head,...) acc
+#define IP2_SPACED_CONT_26(acc,head,...) IP2_SPACED_27(acc head,IP2_SPACED_WRAP_##__VA_ARGS__)
+
+#define IP2_SPACED_27(acc,rest) IP2_SPACED_C_27(acc,rest)
+#define IP2_SPACED_C_27(acc,head,marker,...) IP2_SPACED_##marker##_27(acc,head,__VA_ARGS__)
+#define IP2_SPACED_STOP_27(acc,head,...) acc
+#define IP2_SPACED_CONT_27(acc,head,...) IP2_SPACED_28(acc head,IP2_SPACED_WRAP_##__VA_ARGS__)
+
+#define IP2_SPACED_28(acc,rest) IP2_SPACED_C_28(acc,rest)
+#define IP2_SPACED_C_28(acc,head,marker,...) IP2_SPACED_##marker##_28(acc,head,__VA_ARGS__)
+#define IP2_SPACED_STOP_28(acc,head,...) acc
+#define IP2_SPACED_CONT_28(acc,head,...) IP2_SPACED_29(acc head,IP2_SPACED_WRAP_##__VA_ARGS__)
+
+#define IP2_SPACED_29(acc,rest) IP2_SPACED_C_29(acc,rest)
+#define IP2_SPACED_C_29(acc,head,marker,...) IP2_SPACED_##marker##_29(acc,head,__VA_ARGS__)
+#define IP2_SPACED_STOP_29(acc,head,...) acc
+#define IP2_SPACED_CONT_29(acc,head,...) IP2_SPACED_30(acc head,IP2_SPACED_WRAP_##__VA_ARGS__)
+
+#define IP2_SPACED_30(acc,rest) IP2_SPACED_C_30(acc,rest)
+#define IP2_SPACED_C_30(acc,head,marker,...) IP2_SPACED_##marker##_30(acc,head,__VA_ARGS__)
+#define IP2_SPACED_STOP_30(acc,head,...) acc
+#define IP2_SPACED_CONT_30(acc,head,...) IP2_SPACED_31(acc head,IP2_SPACED_WRAP_##__VA_ARGS__)
+
+#define IP2_SPACED_31(acc,rest) IP2_SPACED_C_31(acc,rest)
+#define IP2_SPACED_C_31(acc,head,marker,...) IP2_SPACED_##marker##_31(acc,head,__VA_ARGS__)
+#define IP2_SPACED_STOP_31(acc,head,...) acc
+#define IP2_SPACED_CONT_31(acc,head,...) IP2_SPACED_32(acc head,IP2_SPACED_WRAP_##__VA_ARGS__)
+
+#define IP2_SPACED_32(acc,rest) IP2_SPACED_C_32(acc,rest)
+#define IP2_SPACED_C_32(acc,head,marker,...) IP2_SPACED_##marker##_32(acc,head,__VA_ARGS__)
+#define IP2_SPACED_STOP_32(acc,head,...) acc
+#define IP2_SPACED_CONT_32(acc,head,...) IP2_SPACED_33(acc head,IP2_SPACED_WRAP_##__VA_ARGS__)
+
+#define IP2_SPACED_33(acc,rest) IP2_SPACED_C_33(acc,rest)
+#define IP2_SPACED_C_33(acc,head,marker,...) IP2_SPACED_##marker##_33(acc,head,__VA_ARGS__)
+#define IP2_SPACED_STOP_33(acc,head,...) acc
+#define IP2_SPACED_CONT_33(acc,head,...) IP2_SPACED_34(acc head,IP2_SPACED_WRAP_##__VA_ARGS__)
+
+#define IP2_SPACED_34(acc,rest) IP2_SPACED_C_34(acc,rest)
+#define IP2_SPACED_C_34(acc,head,marker,...) IP2_SPACED_##marker##_34(acc,head,__VA_ARGS__)
+#define IP2_SPACED_STOP_34(acc,head,...) acc
+#define IP2_SPACED_CONT_34(acc,head,...) IP2_SPACED_35(acc head,IP2_SPACED_WRAP_##__VA_ARGS__)
+
+#define IP2_SPACED_35(acc,rest) IP2_SPACED_C_35(acc,rest)
+#define IP2_SPACED_C_35(acc,head,marker,...) IP2_SPACED_##marker##_35(acc,head,__VA_ARGS__)
+#define IP2_SPACED_STOP_35(acc,head,...) acc
+#define IP2_SPACED_CONT_35(acc,head,...) IP2_SPACED_36(acc head,IP2_SPACED_WRAP_##__VA_ARGS__)
+
+#define IP2_SPACED_36(acc,rest) IP2_SPACED_C_36(acc,rest)
+#define IP2_SPACED_C_36(acc,head,marker,...) IP2_SPACED_##marker##_36(acc,head,__VA_ARGS__)
+#define IP2_SPACED_STOP_36(acc,head,...) acc
+#define IP2_SPACED_CONT_36(acc,head,...) IP2_SPACED_37(acc head,IP2_SPACED_WRAP_##__VA_ARGS__)
+
+#define IP2_SPACED_37(acc,rest) IP2_SPACED_C_37(acc,rest)
+#define IP2_SPACED_C_37(acc,head,marker,...) IP2_SPACED_##marker##_37(acc,head,__VA_ARGS__)
+#define IP2_SPACED_STOP_37(acc,head,...) acc
+#define IP2_SPACED_CONT_37(acc,head,...) IP2_SPACED_38(acc head,IP2_SPACED_WRAP_##__VA_ARGS__)
+
+#define IP2_SPACED_38(acc,rest) IP2_SPACED_C_38(acc,rest)
+#define IP2_SPACED_C_38(acc,head,marker,...) IP2_SPACED_##marker##_38(acc,head,__VA_ARGS__)
+#define IP2_SPACED_STOP_38(acc,head,...) acc
+#define IP2_SPACED_CONT_38(acc,head,...) IP2_SPACED_39(acc head,IP2_SPACED_WRAP_##__VA_ARGS__)
+
+#define IP2_SPACED_39(acc,rest) IP2_SPACED_C_39(acc,rest)
+#define IP2_SPACED_C_39(acc,head,marker,...) IP2_SPACED_##marker##_39(acc,head,__VA_ARGS__)
+#define IP2_SPACED_STOP_39(acc,head,...) acc
+#define IP2_SPACED_CONT_39(acc,head,...) IP2_SPACED_40(acc head,IP2_SPACED_WRAP_##__VA_ARGS__)
+
+#define IP2_SPACED_40(acc,rest) IP2_SPACED_C_40(acc,rest)
+#define IP2_SPACED_C_40(acc,head,marker,...) IP2_SPACED_##marker##_40(acc,head,__VA_ARGS__)
+#define IP2_SPACED_STOP_40(acc,head,...) acc
+#define IP2_SPACED_CONT_40(acc,head,...) IP2_SPACED_41(acc head,IP2_SPACED_WRAP_##__VA_ARGS__)
+
+#define IP2_SPACED_41(acc,rest) IP2_SPACED_C_41(acc,rest)
+#define IP2_SPACED_C_41(acc,head,marker,...) IP2_SPACED_##marker##_41(acc,head,__VA_ARGS__)
+#define IP2_SPACED_STOP_41(acc,head,...) acc
+#define IP2_SPACED_CONT_41(acc,head,...) PP2_NAME_TOO_LONG
+
+#define IP2_SPACED_WRAP_a (a),CONT,
+#define IP2_SPACED_WRAP_b (b),CONT,
+#define IP2_SPACED_WRAP_c (c),CONT,
+#define IP2_SPACED_WRAP_d (d),CONT,
+#define IP2_SPACED_WRAP_e (e),CONT,
+#define IP2_SPACED_WRAP_f (f),CONT,
+#define IP2_SPACED_WRAP_g (g),CONT,
+#define IP2_SPACED_WRAP_h (h),CONT,
+#define IP2_SPACED_WRAP_i (i),CONT,
+#define IP2_SPACED_WRAP_j (j),CONT,
+#define IP2_SPACED_WRAP_k (k),CONT,
+#define IP2_SPACED_WRAP_l (l),CONT,
+#define IP2_SPACED_WRAP_m (m),CONT,
+#define IP2_SPACED_WRAP_n (n),CONT,
+#define IP2_SPACED_WRAP_o (o),CONT,
+#define IP2_SPACED_WRAP_p (p),CONT,
+#define IP2_SPACED_WRAP_q (q),CONT,
+#define IP2_SPACED_WRAP_r (r),CONT,
+#define IP2_SPACED_WRAP_s (s),CONT,
+#define IP2_SPACED_WRAP_t (t),CONT,
+#define IP2_SPACED_WRAP_u (u),CONT,
+#define IP2_SPACED_WRAP_v (v),CONT,
+#define IP2_SPACED_WRAP_w (w),CONT,
+#define IP2_SPACED_WRAP_x (x),CONT,
+#define IP2_SPACED_WRAP_y (y),CONT,
+#define IP2_SPACED_WRAP_z (z),CONT,
+#define IP2_SPACED_WRAP_A (A),CONT,
+#define IP2_SPACED_WRAP_B (B),CONT,
+#define IP2_SPACED_WRAP_C (C),CONT,
+#define IP2_SPACED_WRAP_D (D),CONT,
+#define IP2_SPACED_WRAP_E (E),CONT,
+#define IP2_SPACED_WRAP_F (F),CONT,
+#define IP2_SPACED_WRAP_G (G),CONT,
+#define IP2_SPACED_WRAP_H (H),CONT,
+#define IP2_SPACED_WRAP_I (I),CONT,
+#define IP2_SPACED_WRAP_J (J),CONT,
+#define IP2_SPACED_WRAP_K (K),CONT,
+#define IP2_SPACED_WRAP_L (L),CONT,
+#define IP2_SPACED_WRAP_M (M),CONT,
+#define IP2_SPACED_WRAP_N (N),CONT,
+#define IP2_SPACED_WRAP_O (O),CONT,
+#define IP2_SPACED_WRAP_P (P),CONT,
+#define IP2_SPACED_WRAP_Q (Q),CONT,
+#define IP2_SPACED_WRAP_R (R),CONT,
+#define IP2_SPACED_WRAP_S (S),CONT,
+#define IP2_SPACED_WRAP_T (T),CONT,
+#define IP2_SPACED_WRAP_U (U),CONT,
+#define IP2_SPACED_WRAP_V (V),CONT,
+#define IP2_SPACED_WRAP_W (W),CONT,
+#define IP2_SPACED_WRAP_X (X),CONT,
+#define IP2_SPACED_WRAP_Y (Y),CONT,
+#define IP2_SPACED_WRAP_Z (Z),CONT,
+#define IP2_SPACED_WRAP_0 (0),CONT,
+#define IP2_SPACED_WRAP_1 (1),CONT,
+#define IP2_SPACED_WRAP_2 (2),CONT,
+#define IP2_SPACED_WRAP_3 (3),CONT,
+#define IP2_SPACED_WRAP_4 (4),CONT,
+#define IP2_SPACED_WRAP_5 (5),CONT,
+#define IP2_SPACED_WRAP_6 (6),CONT,
+#define IP2_SPACED_WRAP_7 (7),CONT,
+#define IP2_SPACED_WRAP_8 (8),CONT,
+#define IP2_SPACED_WRAP_9 (9),CONT,
+#define IP2_SPACED_WRAP__ (_),CONT,
+#define IP2_SPACED_WRAP_IP2_SPACED_END ,STOP,
+
+
+#endif
+
+// ******************** From: nil.h
+/** @file */
+#ifndef PP2_LANGUAGE_BASIC_NIL_H
+#define PP2_LANGUAGE_BASIC_NIL_H
+
+/* The Nil object and the instruction that loads it, with no dependencies, so the
+ * statements that answer with Nil (print, assignment, if, loops) can reach it
+ * without dragging in the whole type. The type itself, its methods, and the `nil`
+ * literal live in language/types/nil.h. */
+
+#define PP2_LANGUAGE_NIL (,Nil,)
+
+/* Set r0 to nil and carry on. Unlike 8PP2_LOAD_CONST this eats no operand and
+ * names no following instruction, so it is safe to append after an instruction
+ * that has already consumed the rest of its stream (8PP2_EMIT_LITERAL). */
+#define PP2_INSN_8PP2_LANGUAGE_LOAD_NIL(P,r0,r1,r2,...) \
+        (,/*r0=*/PP2_LANGUAGE_NIL,P##r1,P##r2,P##__VA_ARGS__)
+
+#endif
+
+
+// ******************** From: load.h
+/** @file */
+#ifndef PP2_MACHINE_STACK_LOAD_H
+#define PP2_MACHINE_STACK_LOAD_H
+
+
+// ******************** From: frame_walk.h
+/** @file */
+#ifndef PP2_MACHINE_STACK_DETAIL_FRAME_WALK_H
+#define PP2_MACHINE_STACK_DETAIL_FRAME_WALK_H
+
+
+// ******************** From: is_edible.h
+/** @file */
+#ifndef PP2_PRIMITIVE_DETECTION_IS_EDIBLE_H
+#define PP2_PRIMITIVE_DETECTION_IS_EDIBLE_H
+
+
+// ******************** From: test.h
+/** @file */
+#ifndef PP2_PRIMITIVE_CONTROL_TEST_H
+#define PP2_PRIMITIVE_CONTROL_TEST_H
+
+
+/**
+* Detection primitive: selects `P##c` when `x` expands to two commas (three
+* fields) and `P##a` otherwise. Detection macros arrange for `x` to be `,,`
+* exactly when the tested property holds, so this collapses a probe into a
+* branch. See \link PP2_IS_EDIBLE \endlink.
+*/
+#define PP2_TEST(P,x,c,a) PP2_TUPLE_AT_3(,x,P##c,,P##a,)
+
+#endif
+
+// ******************** From: ifp.h
+/** @file */
+#ifndef PP2_PRIMITIVE_CONTROL_IFP_H
+#define PP2_PRIMITIVE_CONTROL_IFP_H
+
+
+/* Three-argument "if with paste prefix": the selectors returned by the
+ * detection primitives take a paste-prefix P, a true-branch c, and an else
+ * branch, yielding P##c or P##else. This is the convention the arbitrary
+ * arithmetic walks rely on to emit either a kept digit (P##(digit)) or a
+ * continuation co-routine (P##next) from a single predicate call. It is
+ * deliberately separate from the two-argument \link PP2_IF \endlink used
+ * elsewhere in the primitive library. */
+
+#define PP2_IFP(c) PP2_PRIMITIVE_CAT(PP2_IFP_,c)
+#define PP2_IFP_(P,c,...) P##c
+#define PP2_IFP_0(P,c,...) P##__VA_ARGS__
+#define PP2_IFP_1(P,c,...) P##c
+
+#define PP2_IFP_NOT(c) PP2_PRIMITIVE_CAT(PP2_IFP_NOT_,c)
+#define PP2_IFP_NOT_(P,c,...) P##__VA_ARGS__
+#define PP2_IFP_NOT_0(P,c,...) P##c
+#define PP2_IFP_NOT_1(P,c,...) P##__VA_ARGS__
+
+#endif
+
+/**
+* Yields a 3-arg paste-selector (see \link PP2_IFP \endlink): the true selector
+* when `x##P` is "edible" (a parenthesised group, so that PP2_IS_EDIBLE_TEST
+* placed before it fires and expands to `,,`), and the false selector otherwise.
+* Used as `PP2_IS_EDIBLE(,x)(P,then,else)`.
+*/
+#define PP2_IS_EDIBLE(P,x) PP2_TEST(PP2_IFP_,PP2_IS_EDIBLE_TEST x##P,,0)
+#define PP2_ISNT_EDIBLE(P,x) PP2_TEST(PP2_IFP_,PP2_IS_EDIBLE_TEST x##P,0,)
+
+#define PP2_IS_EDIBLE_TEST(...) ,,
+
+#endif
+
+// ******************** From: chars_eq.h
+/** @file */
+#ifndef PP2_PRIMITIVE_STRING_CHARS_EQ_H
+#define PP2_PRIMITIVE_STRING_CHARS_EQ_H
+
+
+// ******************** From: core.h
+/** @file */ 
+#ifndef PP2_PRIMITIVE_CORE_H
+#define PP2_PRIMITIVE_CORE_H
+
+/**
+* Substitutes all of the provided macro arguments into the macro replacement list without changing them.
+*
+* This is typically used to force an additional scan over the tokens in the macro arguments,
+* allowing additional macro expansions to take place if any are legal to perform.
+* This only differs from \link PP2_OPEN \endlink in its intended use, as demonstrated:
+* \code{.c}
+* #define FOO(x) PP2_SCAN(x)
+* #define BAR 123
+* FOO(BAR PP2_BLOCK ()) // 123
+*
+* // compared to...
+*
+* #define FOO(x) PP2_OPEN x
+* FOO((1,2,3)) // 1,2,3
+* \endcode
+*
+* @param ... the token sequence to scan
+*/
+#define PP2_SCAN(...) __VA_ARGS__
+
+/**
+* Substitutes no tokens into the macro replacmeent list, effectively advancing the macro evaluator ahead
+* by one token and performing a no-op.
+*/
+#define PP2_BLOCK
+
+#endif
+
+// ******************** From: indirect.h
+/** @file */
+#ifndef PP2_PRIMITIVE_FACILITIES_INDIRECT_H
+#define PP2_PRIMITIVE_FACILITIES_INDIRECT_H
+
+
+/**
+* Re-emits a chosen macro applied to a digit `n`, one rescan later. Used by the
+* arbitrary-precision comparison walk to hand a running result to the next
+* stage without it collapsing prematurely.
+*/
+#define PP2_INDIRECT(n) PP2_PRIMITIVE_CAT(PP2_INDIRECT_, n)
+
+#define PP2_INDIRECT_0(m) m(0)
+#define PP2_INDIRECT_1(m) m(1)
+#define PP2_INDIRECT_2(m) m(2)
+#define PP2_INDIRECT_3(m) m(3)
+#define PP2_INDIRECT_4(m) m(4)
+#define PP2_INDIRECT_5(m) m(5)
+#define PP2_INDIRECT_6(m) m(6)
+#define PP2_INDIRECT_7(m) m(7)
+#define PP2_INDIRECT_8(m) m(8)
+#define PP2_INDIRECT_9(m) m(9)
+
+#endif
+
+// ******************** From: char.h
+/** @file */
+#ifndef PP2_PRIMITIVE_STRING_CHAR_H
+#define PP2_PRIMITIVE_STRING_CHAR_H
+
+
+/**
+* Equality of two single character tokens, yielding 1 or 0.
+*
+* This is \link PP2_SYMBOL_EQ \endlink specialised to a private character
+* alphabet: each admissible character is registered once as
+* `PP2_CHAR_TAG_<c>(...) __VA_ARGS__`, and equality is the same blue-paint
+* identity test. `ta (tb) (0,1)` yields `tb` painted (arity 1) when the two
+* characters match and the trailing `(0,1)` otherwise, so the arity of the
+* result is the answer.
+*
+* Both characters must be drawn from the registered alphabet (the ASCII
+* identifier characters: `a`-`z`, `A`-`Z`, `0`-`9` and `_`). An unregistered
+* character expands to nothing, which reads as equal, so only ever call this on
+* alphabet characters.
+*/
+#define PP2_CHAR_EQ(a,b) IP2_CHAR_EQ_I(PP2_CHAR_TAG_##a,PP2_CHAR_TAG_##b)
+#define IP2_CHAR_EQ_I(ta,tb) IP2_CHAR_EQ_II(ta (tb) (0,1))
+#define IP2_CHAR_EQ_II(...) IP2_CHAR_EQ_PICK(__VA_ARGS__,0,1)
+#define IP2_CHAR_EQ_PICK(_1,_2,_3,...) _3
+
+#define PP2_CHAR_TAG_a(...) __VA_ARGS__
+#define PP2_CHAR_TAG_b(...) __VA_ARGS__
+#define PP2_CHAR_TAG_c(...) __VA_ARGS__
+#define PP2_CHAR_TAG_d(...) __VA_ARGS__
+#define PP2_CHAR_TAG_e(...) __VA_ARGS__
+#define PP2_CHAR_TAG_f(...) __VA_ARGS__
+#define PP2_CHAR_TAG_g(...) __VA_ARGS__
+#define PP2_CHAR_TAG_h(...) __VA_ARGS__
+#define PP2_CHAR_TAG_i(...) __VA_ARGS__
+#define PP2_CHAR_TAG_j(...) __VA_ARGS__
+#define PP2_CHAR_TAG_k(...) __VA_ARGS__
+#define PP2_CHAR_TAG_l(...) __VA_ARGS__
+#define PP2_CHAR_TAG_m(...) __VA_ARGS__
+#define PP2_CHAR_TAG_n(...) __VA_ARGS__
+#define PP2_CHAR_TAG_o(...) __VA_ARGS__
+#define PP2_CHAR_TAG_p(...) __VA_ARGS__
+#define PP2_CHAR_TAG_q(...) __VA_ARGS__
+#define PP2_CHAR_TAG_r(...) __VA_ARGS__
+#define PP2_CHAR_TAG_s(...) __VA_ARGS__
+#define PP2_CHAR_TAG_t(...) __VA_ARGS__
+#define PP2_CHAR_TAG_u(...) __VA_ARGS__
+#define PP2_CHAR_TAG_v(...) __VA_ARGS__
+#define PP2_CHAR_TAG_w(...) __VA_ARGS__
+#define PP2_CHAR_TAG_x(...) __VA_ARGS__
+#define PP2_CHAR_TAG_y(...) __VA_ARGS__
+#define PP2_CHAR_TAG_z(...) __VA_ARGS__
+
+#define PP2_CHAR_TAG_A(...) __VA_ARGS__
+#define PP2_CHAR_TAG_B(...) __VA_ARGS__
+#define PP2_CHAR_TAG_C(...) __VA_ARGS__
+#define PP2_CHAR_TAG_D(...) __VA_ARGS__
+#define PP2_CHAR_TAG_E(...) __VA_ARGS__
+#define PP2_CHAR_TAG_F(...) __VA_ARGS__
+#define PP2_CHAR_TAG_G(...) __VA_ARGS__
+#define PP2_CHAR_TAG_H(...) __VA_ARGS__
+#define PP2_CHAR_TAG_I(...) __VA_ARGS__
+#define PP2_CHAR_TAG_J(...) __VA_ARGS__
+#define PP2_CHAR_TAG_K(...) __VA_ARGS__
+#define PP2_CHAR_TAG_L(...) __VA_ARGS__
+#define PP2_CHAR_TAG_M(...) __VA_ARGS__
+#define PP2_CHAR_TAG_N(...) __VA_ARGS__
+#define PP2_CHAR_TAG_O(...) __VA_ARGS__
+#define PP2_CHAR_TAG_P(...) __VA_ARGS__
+#define PP2_CHAR_TAG_Q(...) __VA_ARGS__
+#define PP2_CHAR_TAG_R(...) __VA_ARGS__
+#define PP2_CHAR_TAG_S(...) __VA_ARGS__
+#define PP2_CHAR_TAG_T(...) __VA_ARGS__
+#define PP2_CHAR_TAG_U(...) __VA_ARGS__
+#define PP2_CHAR_TAG_V(...) __VA_ARGS__
+#define PP2_CHAR_TAG_W(...) __VA_ARGS__
+#define PP2_CHAR_TAG_X(...) __VA_ARGS__
+#define PP2_CHAR_TAG_Y(...) __VA_ARGS__
+#define PP2_CHAR_TAG_Z(...) __VA_ARGS__
+
+#define PP2_CHAR_TAG_0(...) __VA_ARGS__
+#define PP2_CHAR_TAG_1(...) __VA_ARGS__
+#define PP2_CHAR_TAG_2(...) __VA_ARGS__
+#define PP2_CHAR_TAG_3(...) __VA_ARGS__
+#define PP2_CHAR_TAG_4(...) __VA_ARGS__
+#define PP2_CHAR_TAG_5(...) __VA_ARGS__
+#define PP2_CHAR_TAG_6(...) __VA_ARGS__
+#define PP2_CHAR_TAG_7(...) __VA_ARGS__
+#define PP2_CHAR_TAG_8(...) __VA_ARGS__
+#define PP2_CHAR_TAG_9(...) __VA_ARGS__
+
+#define PP2_CHAR_TAG__(...) __VA_ARGS__
+
+#endif
+
+// ******************** From: is_shorter.h
+/** @file */
+#ifndef PP2_PRIMITIVE_ARITHMETIC_ARBITRARY_DETAIL_IS_SHORTER_H
+#define PP2_PRIMITIVE_ARITHMETIC_ARBITRARY_DETAIL_IS_SHORTER_H
+
+
+// ******************** From: defer.h
+/** @file */
+#ifndef PP2_PRIMITIVE_BASIC_DEFER_H
+#define PP2_PRIMITIVE_BASIC_DEFER_H
+
+
+/**
+* Emits its arguments followed by a \link PP2_BLOCK \endlink, delaying any
+* function-like macro named at the tail of the arguments by one rescan: the
+* trailing name and a following `()` are separated by the (empty) PP2_BLOCK, so
+* the call only forms after the block is eliminated on the next scan.
+*
+* @param ... the token sequence to defer
+*/
+#define PP2_DEFER(...) __VA_ARGS__ PP2_BLOCK
+
+#endif
+
+// ******************** From: lparen.h
+/** @file */
+#ifndef PP2_PRIMITIVE_PUNCTUATION_LPAREN_H
+#define PP2_PRIMITIVE_PUNCTUATION_LPAREN_H
+
+/**
+*/
+#define PP2_LPAREN (
+
+/**
+* Yields an unmatched left parenthesis when called, but only after a rescan.
+* Used with \link PP2_DEFER \endlink to place a `(` that must not pair eagerly
+* during the sliding-window walks in the arbitrary-precision arithmetic.
+*/
+#define PP2_LPAREN_ID() PP2_LPAREN
+
+#endif
+
+// ******************** From: special.h
+/** @file */
+#ifndef PP2_PRIMITIVE_ARITHMETIC_ARBITRARY_DETAIL_SPECIAL_H
+#define PP2_PRIMITIVE_ARITHMETIC_ARBITRARY_DETAIL_SPECIAL_H
+
+
+// ******************** From: rparen.h
+/** @file */
+#ifndef PP2_PRIMITIVE_PUNCTUATION_RPAREN_H
+#define PP2_PRIMITIVE_PUNCTUATION_RPAREN_H
+
+/**
+*/
+#define PP2_RPAREN )
+
+#endif
+
+/* The sliding-window engine behind every arbitrary-precision walk.
+ *
+ * PP2_ARBITRARY_SPECIAL(elem) selects a pass-through for a real element and an
+ * eater for the sentinel 00. Walkers drive a seq (e0)(e1)... by pasting each
+ * element onto an alternating A/B co-routine (dodging blue-paint), and terminate
+ * when the injected (00) is reached. PP2_ARBITRARY_SPECIAL_CLOSE emits one ')'
+ * per element so a walk opened with a deferred '(' per element closes exactly.
+ *
+ * The elements are the decimal digits for the arithmetic layer, but the engine
+ * itself is value-agnostic: only the 00 sentinel is distinguished. The string
+ * layer drives char seqs (t)(o)(t)(a)(l) through the same walks (FMERGE,
+ * IS_SHORTER), so the identifier characters -- letters and underscore -- are
+ * registered here as pass-throughs alongside the digits. A single character is
+ * never the two-character token 00, so the sentinel stays unambiguous. */
+
+#define PP2_ARBITRARY_SPECIAL(digit) PP2_PRIMITIVE_CAT(PP2_ARBITRARY_SPECIAL_, digit)
+
+#define PP2_ARBITRARY_SPECIAL_00(...)
+#define PP2_ARBITRARY_SPECIAL_0(...) __VA_ARGS__
+#define PP2_ARBITRARY_SPECIAL_1(...) __VA_ARGS__
+#define PP2_ARBITRARY_SPECIAL_2(...) __VA_ARGS__
+#define PP2_ARBITRARY_SPECIAL_3(...) __VA_ARGS__
+#define PP2_ARBITRARY_SPECIAL_4(...) __VA_ARGS__
+#define PP2_ARBITRARY_SPECIAL_5(...) __VA_ARGS__
+#define PP2_ARBITRARY_SPECIAL_6(...) __VA_ARGS__
+#define PP2_ARBITRARY_SPECIAL_7(...) __VA_ARGS__
+#define PP2_ARBITRARY_SPECIAL_8(...) __VA_ARGS__
+#define PP2_ARBITRARY_SPECIAL_9(...) __VA_ARGS__
+
+#define PP2_ARBITRARY_SPECIAL_a(...) __VA_ARGS__
+#define PP2_ARBITRARY_SPECIAL_b(...) __VA_ARGS__
+#define PP2_ARBITRARY_SPECIAL_c(...) __VA_ARGS__
+#define PP2_ARBITRARY_SPECIAL_d(...) __VA_ARGS__
+#define PP2_ARBITRARY_SPECIAL_e(...) __VA_ARGS__
+#define PP2_ARBITRARY_SPECIAL_f(...) __VA_ARGS__
+#define PP2_ARBITRARY_SPECIAL_g(...) __VA_ARGS__
+#define PP2_ARBITRARY_SPECIAL_h(...) __VA_ARGS__
+#define PP2_ARBITRARY_SPECIAL_i(...) __VA_ARGS__
+#define PP2_ARBITRARY_SPECIAL_j(...) __VA_ARGS__
+#define PP2_ARBITRARY_SPECIAL_k(...) __VA_ARGS__
+#define PP2_ARBITRARY_SPECIAL_l(...) __VA_ARGS__
+#define PP2_ARBITRARY_SPECIAL_m(...) __VA_ARGS__
+#define PP2_ARBITRARY_SPECIAL_n(...) __VA_ARGS__
+#define PP2_ARBITRARY_SPECIAL_o(...) __VA_ARGS__
+#define PP2_ARBITRARY_SPECIAL_p(...) __VA_ARGS__
+#define PP2_ARBITRARY_SPECIAL_q(...) __VA_ARGS__
+#define PP2_ARBITRARY_SPECIAL_r(...) __VA_ARGS__
+#define PP2_ARBITRARY_SPECIAL_s(...) __VA_ARGS__
+#define PP2_ARBITRARY_SPECIAL_t(...) __VA_ARGS__
+#define PP2_ARBITRARY_SPECIAL_u(...) __VA_ARGS__
+#define PP2_ARBITRARY_SPECIAL_v(...) __VA_ARGS__
+#define PP2_ARBITRARY_SPECIAL_w(...) __VA_ARGS__
+#define PP2_ARBITRARY_SPECIAL_x(...) __VA_ARGS__
+#define PP2_ARBITRARY_SPECIAL_y(...) __VA_ARGS__
+#define PP2_ARBITRARY_SPECIAL_z(...) __VA_ARGS__
+
+#define PP2_ARBITRARY_SPECIAL_A(...) __VA_ARGS__
+#define PP2_ARBITRARY_SPECIAL_B(...) __VA_ARGS__
+#define PP2_ARBITRARY_SPECIAL_C(...) __VA_ARGS__
+#define PP2_ARBITRARY_SPECIAL_D(...) __VA_ARGS__
+#define PP2_ARBITRARY_SPECIAL_E(...) __VA_ARGS__
+#define PP2_ARBITRARY_SPECIAL_F(...) __VA_ARGS__
+#define PP2_ARBITRARY_SPECIAL_G(...) __VA_ARGS__
+#define PP2_ARBITRARY_SPECIAL_H(...) __VA_ARGS__
+#define PP2_ARBITRARY_SPECIAL_I(...) __VA_ARGS__
+#define PP2_ARBITRARY_SPECIAL_J(...) __VA_ARGS__
+#define PP2_ARBITRARY_SPECIAL_K(...) __VA_ARGS__
+#define PP2_ARBITRARY_SPECIAL_L(...) __VA_ARGS__
+#define PP2_ARBITRARY_SPECIAL_M(...) __VA_ARGS__
+#define PP2_ARBITRARY_SPECIAL_N(...) __VA_ARGS__
+#define PP2_ARBITRARY_SPECIAL_O(...) __VA_ARGS__
+#define PP2_ARBITRARY_SPECIAL_P(...) __VA_ARGS__
+#define PP2_ARBITRARY_SPECIAL_Q(...) __VA_ARGS__
+#define PP2_ARBITRARY_SPECIAL_R(...) __VA_ARGS__
+#define PP2_ARBITRARY_SPECIAL_S(...) __VA_ARGS__
+#define PP2_ARBITRARY_SPECIAL_T(...) __VA_ARGS__
+#define PP2_ARBITRARY_SPECIAL_U(...) __VA_ARGS__
+#define PP2_ARBITRARY_SPECIAL_V(...) __VA_ARGS__
+#define PP2_ARBITRARY_SPECIAL_W(...) __VA_ARGS__
+#define PP2_ARBITRARY_SPECIAL_X(...) __VA_ARGS__
+#define PP2_ARBITRARY_SPECIAL_Y(...) __VA_ARGS__
+#define PP2_ARBITRARY_SPECIAL_Z(...) __VA_ARGS__
+
+#define PP2_ARBITRARY_SPECIAL__(...) __VA_ARGS__
+
+#define PP2_ARBITRARY_SPECIAL_CLOSE(x) PP2_ARBITRARY_SPECIAL_CLOSE_A x(00)
+
+#define PP2_ARBITRARY_SPECIAL_CLOSE_A(digit) PP2_ARBITRARY_SPECIAL(digit)(PP2_RPAREN PP2_ARBITRARY_SPECIAL_CLOSE_B)
+#define PP2_ARBITRARY_SPECIAL_CLOSE_B(digit) PP2_ARBITRARY_SPECIAL(digit)(PP2_RPAREN PP2_ARBITRARY_SPECIAL_CLOSE_A)
+
+#endif
+
+/* Yields a selector: true when seq x is strictly shorter than seq y. Walks both
+ * in lockstep (x drives, y is consumed) and detects whether y still has digits
+ * left when x runs out. Use as PP2_ARBITRARY_IS_SHORTER(x,y)(P,then,else). */
+
+#define PP2_ARBITRARY_IS_SHORTER(x, y) PP2_ARBITRARY_IS_SHORTER_II(PP2_SCAN(PP2_ARBITRARY_IS_SHORTER_A x(00) y ~ PP2_ARBITRARY_SPECIAL_CLOSE(x)))
+#define PP2_ARBITRARY_IS_SHORTER_II(...) PP2_IS_EDIBLE(,__VA_ARGS__)
+
+#define PP2_ARBITRARY_IS_SHORTER_A(digit) PP2_ARBITRARY_SPECIAL(digit)(PP2_ARBITRARY_IS_SHORTER_I PP2_DEFER(PP2_LPAREN_ID)() PP2_ARBITRARY_IS_SHORTER_B)
+#define PP2_ARBITRARY_IS_SHORTER_B(digit) PP2_ARBITRARY_SPECIAL(digit)(PP2_ARBITRARY_IS_SHORTER_I PP2_DEFER(PP2_LPAREN_ID)() PP2_ARBITRARY_IS_SHORTER_A)
+#define PP2_ARBITRARY_IS_SHORTER_I(y) PP2_EAT y
+
+#endif
+
+// ******************** From: merge.h
+/** @file */
+#ifndef PP2_PRIMITIVE_ARITHMETIC_ARBITRARY_DETAIL_MERGE_H
+#define PP2_PRIMITIVE_ARITHMETIC_ARBITRARY_DETAIL_MERGE_H
+
+
+// ******************** From: tail.h
+#ifndef PP2_PRIMITIVE_SEQ_TAIL_H
+#define PP2_PRIMITIVE_SEQ_TAIL_H
+
+
+#define PP2_SEQ_TAIL(seq) IP2_SEQ_TAIL_I(PP2_SEQ_SPLIT_HEAD seq)
+#define IP2_SEQ_TAIL_I(x) PP2_TUPLE_AT_1(,x)
+
+#endif
+
+// ******************** From: reverse.h
+/** @file */
+#ifndef PP2_PRIMITIVE_SEQ_REVERSE_H
+#define PP2_PRIMITIVE_SEQ_REVERSE_H
+
+
+// ******************** From: binary_transform.h
+/** @file */
+#ifndef PP2_PRIMITIVE_SEQ_BINARY_TRANSFORM_H
+#define PP2_PRIMITIVE_SEQ_BINARY_TRANSFORM_H
+
+
+/* Turn a seq (a)(b)(c) into the "binary" chain (REM,a)()(REM,b)()(REM,c)()
+ * consumed by the reversal walk. The A/B co-routines alternate to dodge
+ * blue-paint; the trailing co-routine name is pasted to 0 by the enclosing CAT
+ * to reach an empty terminator. */
+
+#define PP2_SEQ_BINARY_TRANSFORM(seq,...) PP2_CAT(PP2_SEQ_BINARY_TRANSFORM_A seq,0)(PP2_EAT,__VA_ARGS__)
+
+#define PP2_SEQ_BINARY_TRANSFORM_A(...) (PP2_OPEN,__VA_ARGS__)()PP2_SEQ_BINARY_TRANSFORM_B
+#define PP2_SEQ_BINARY_TRANSFORM_B(...) (PP2_OPEN,__VA_ARGS__)()PP2_SEQ_BINARY_TRANSFORM_A
+
+#define PP2_SEQ_BINARY_TRANSFORM_A0
+#define PP2_SEQ_BINARY_TRANSFORM_B0
+
+#endif
+
+// ******************** From: close.h
+/** @file */
+#ifndef PP2_PRIMITIVE_SEQ_DETAIL_CLOSE_H
+#define PP2_PRIMITIVE_SEQ_DETAIL_CLOSE_H
+
+
+/* Emits the trailing ')' that closes a binary-chain walk (one per element,
+ * driven by the chain itself). */
+
+#define PP2_SEQ_CLOSE(bin) PP2_SEQ_CLOSE_I bin
+
+#define PP2_SEQ_CLOSE_I_ID() PP2_SEQ_CLOSE_I
+
+#define PP2_SEQ_CLOSE_I(K,...) K(PP2_RPAREN PP2_SEQ_CLOSE_I_ID)
+
+#endif
+
+/* Reverse a seq: (a)(b)(c) -> (c)(b)(a). Drives the binary chain, prepending
+ * each element to a running result via the deferred-open-paren idiom. */
+
+#define PP2_SEQ_REVERSE(seq) PP2_SCAN(PP2_SEQ_REVERSE_I(PP2_SEQ_BINARY_TRANSFORM(seq,~)))
+
+#define PP2_SEQ_REVERSE_I(bin) PP2_SEQ_REVERSE_II bin PP2_SEQ_CLOSE(bin)
+#define PP2_SEQ_REVERSE_II(K,...) K(PP2_SEQ_REVERSE_III PP2_DEFER(PP2_LPAREN_ID)()(__VA_ARGS__),PP2_SEQ_REVERSE_II_ID)
+
+#define PP2_SEQ_REVERSE_II_ID() PP2_SEQ_REVERSE_II
+#define PP2_SEQ_REVERSE_III(x,res) res x
+
+#endif
+
+// ******************** From: swap.h
+/** @file */
+#ifndef PP2_PRIMITIVE_ARITHMETIC_ARBITRARY_DETAIL_SWAP_H
+#define PP2_PRIMITIVE_ARITHMETIC_ARBITRARY_DETAIL_SWAP_H
+
+/* Order a digit pair for a merge op. When the shorter operand was on the left,
+ * SWAP restores original operand order to the op; NO_SWAP keeps it. */
+
+#define PP2_ARBITRARY_SWAP(a,...) (__VA_ARGS__,a)
+#define PP2_ARBITRARY_NO_SWAP(a,...) (a,__VA_ARGS__)
+
+#endif
+
+/* Zip two digit seqs of possibly different length, applying op to each aligned
+ * digit pair and padding the shorter with def. FMERGE aligns from the most
+ * significant end (result MSD-first, used by comparison); RMERGE aligns from the
+ * least significant end (result LSD-first, used by add/sub). The longer operand
+ * drives the walk; the shorter is padded by appending (def) as it is consumed.
+ * SWAP restores original op-argument order when the left operand was shorter. */
+
+#define PP2_ARBITRARY_FMERGE(x, y, op, def) PP2_ARBITRARY_FMERGE_III(PP2_ARBITRARY_IS_SHORTER(x,y)(PP2_ARBITRARY_FMERGE_,LHS,RHS)(x,y,op,def))
+#define PP2_ARBITRARY_FMERGE_LHS(x, y, op, def) PP2_SCAN(PP2_ARBITRARY_FMERGE_A y(00), PP2_SEQ_REVERSE(x), op, def, PP2_ARBITRARY_SWAP PP2_ARBITRARY_SPECIAL_CLOSE(y))
+#define PP2_ARBITRARY_FMERGE_RHS(x, y, op, def) PP2_SCAN(PP2_ARBITRARY_FMERGE_A x(00), PP2_SEQ_REVERSE(y), op, def, PP2_ARBITRARY_SPECIAL_CLOSE(x))
+
+#define PP2_ARBITRARY_FMERGE_A(digit) PP2_ARBITRARY_SPECIAL(digit)(PP2_ARBITRARY_FMERGE_I PP2_DEFER(PP2_LPAREN_ID)() digit, PP2_ARBITRARY_FMERGE_B)
+#define PP2_ARBITRARY_FMERGE_B(digit) PP2_ARBITRARY_SPECIAL(digit)(PP2_ARBITRARY_FMERGE_I PP2_DEFER(PP2_LPAREN_ID)() digit, PP2_ARBITRARY_FMERGE_A)
+#define PP2_ARBITRARY_FMERGE_I(...) PP2_ARBITRARY_FMERGE_II(__VA_ARGS__)
+#define PP2_ARBITRARY_FMERGE_II(digit, res, y, op, def, swap) \
+        (op)swap(digit, PP2_SEQ_HEAD(y))res, PP2_SEQ_TAIL(y(def)), op, def, swap
+
+#define PP2_ARBITRARY_FMERGE_III(...) PP2_SCAN(PP2_EAT PP2_TUPLE_AT_0(,__VA_ARGS__))
+
+
+#define PP2_ARBITRARY_RMERGE(x, y, op, def) PP2_ARBITRARY_RMERGE_III(PP2_ARBITRARY_IS_SHORTER(x,y)(PP2_ARBITRARY_RMERGE_,LHS,RHS)(x,y,op,def))
+#define PP2_ARBITRARY_RMERGE_LHS(x, y, op, def) PP2_SCAN(PP2_ARBITRARY_RMERGE_A y(00) PP2_EAT, PP2_SEQ_REVERSE(x), op, def, PP2_ARBITRARY_SWAP PP2_ARBITRARY_SPECIAL_CLOSE(y))
+#define PP2_ARBITRARY_RMERGE_RHS(x, y, op, def) PP2_SCAN(PP2_ARBITRARY_RMERGE_A x(00) PP2_EAT, PP2_SEQ_REVERSE(y), op, def, PP2_ARBITRARY_SPECIAL_CLOSE(x))
+
+#define PP2_ARBITRARY_RMERGE_A(digit) PP2_ARBITRARY_SPECIAL(digit)(PP2_ARBITRARY_RMERGE_I PP2_DEFER(PP2_LPAREN_ID)() digit, PP2_ARBITRARY_RMERGE_B)
+#define PP2_ARBITRARY_RMERGE_B(digit) PP2_ARBITRARY_SPECIAL(digit)(PP2_ARBITRARY_RMERGE_I PP2_DEFER(PP2_LPAREN_ID)() digit, PP2_ARBITRARY_RMERGE_A)
+#define PP2_ARBITRARY_RMERGE_I(...) PP2_ARBITRARY_RMERGE_II(__VA_ARGS__)
+#define PP2_ARBITRARY_RMERGE_II(digit, res, y, op, def, swap) \
+        res(op)swap(digit, PP2_SEQ_HEAD(y)), PP2_SEQ_TAIL(y(def)), op, def, swap
+
+#define PP2_ARBITRARY_RMERGE_III(...) PP2_TUPLE_AT_0(,__VA_ARGS__)
+
+#endif
+
+/* Equality of two character sequences, yielding 1 or 0. A character sequence is
+ * a paren-per-character seq, (t)(o)(t)(a)(l), and the empty sequence is no
+ * tokens at all. Two sequences are equal when they have the same length and
+ * equal characters pairwise.
+ *
+ * This rides the same sliding-window engine as the arbitrary-precision layer.
+ * Length is settled first with IS_SHORTER in both directions: unequal length is
+ * unequal, with no content walk. When the lengths match, FMERGE zips the two
+ * seqs column by column exactly as CMP does, threading a verdict: the walk
+ * starts equal (state 1) and each column stays equal only while the two
+ * characters match, so the first differing column drops the verdict to 0 and it
+ * never recovers. The pad element FMERGE would append to a shorter operand is
+ * never reached, since the walk runs only on equal-length operands. */
+
+#define PP2_CHARS_EQ(x,y) IP2_CHARS_EQ_DISP(PP2_ARBITRARY_IS_SHORTER(x,y)(,1,0),PP2_ARBITRARY_IS_SHORTER(y,x)(,1,0),x,y)
+#define IP2_CHARS_EQ_DISP(sx,sy,x,y) IP2_CHARS_EQ_DISP_I(sx,sy,x,y)
+#define IP2_CHARS_EQ_DISP_I(sx,sy,x,y) IP2_CHARS_EQ_LEN_##sx##sy(x,y)
+/* equal length: two empty seqs are equal; otherwise zip the characters */
+#define IP2_CHARS_EQ_LEN_00(x,y) PP2_IS_EDIBLE(,x)(,IP2_CHARS_EQ_CONTENT,IP2_CHARS_EQ_BOTH_EMPTY)(x,y)
+#define IP2_CHARS_EQ_BOTH_EMPTY(x,y) 1
+#define IP2_CHARS_EQ_LEN_01(x,y) 0
+#define IP2_CHARS_EQ_LEN_10(x,y) 0
+#define IP2_CHARS_EQ_LEN_11(x,y) 0
+
+#define IP2_CHARS_EQ_CONTENT(x,y) \
+        PP2_SCAN(IP2_CHARS_EQ_M(1) PP2_ARBITRARY_FMERGE(x,y,IP2_CHARS_EQ_M,00)(IP2_CHARS_EQ_FIN))
+
+#define IP2_CHARS_EQ_M(s) IP2_CHARS_EQ_M_##s
+#define IP2_CHARS_EQ_M_0(a,b) PP2_INDIRECT(0)
+#define IP2_CHARS_EQ_M_1(a,b) PP2_INDIRECT(PP2_CHAR_EQ(a,b))
+#define IP2_CHARS_EQ_FIN(s) s
+
+#endif
+
+/* Association-list frame walks keyed by char-seq addresses.
+ *
+ * A frame is a seq of binding groups (,addr,tag,value)(,addr,tag,value)...,
+ * newest first, where addr is a char-seq like (t)(o)(t)(a)(l). The three walks
+ * -- FIND (read), FOUND (membership), STORE (update-or-prepend) -- each compare
+ * the target against every binding's addr with PP2_CHARS_EQ.
+ *
+ * The comparison is a PP2_SCAN-driven walk (it rides the arbitrary-precision
+ * sliding-window engine), and a SCAN walk cannot run inside another SCAN walk
+ * without blue-painting the inner one. So the frame is NOT walked by a SCAN
+ * trampoline; it is unrolled by arity, exactly as PP2_LANGUAGE_BLOCK unrolls a
+ * statement block, and each per-binding PP2_CHARS_EQ is emitted as a sibling.
+ * That bounds a single frame at 52 distinct locals (one scope), which is the
+ * count of distinct names a scope binds, not a program-wide limit. Beyond it a
+ * PP2_FRAME_TOO_MANY_LOCALS token reaches the output the way PP2_VM_FAILURE
+ * does. */
+
+#define PP2_SEQ_COMMAS(seq) PP2_REVERSE_CAT(0,IP2_SEQ_COMMAS_A seq)
+#define IP2_SEQ_COMMAS_A(...) (__VA_ARGS__) IP2_SEQ_COMMAS_B
+#define IP2_SEQ_COMMAS_B(...) ,(__VA_ARGS__) IP2_SEQ_COMMAS_C
+#define IP2_SEQ_COMMAS_C(...) ,(__VA_ARGS__) IP2_SEQ_COMMAS_B
+#define IP2_SEQ_COMMAS_A0
+#define IP2_SEQ_COMMAS_B0
+#define IP2_SEQ_COMMAS_C0
+#define IP2_FRAME_EMPTY(...)
+
+/* A private force-expand hop. The walks run inside load/store, which call them
+ * through IP2_FX, so a shared IP2_FX here would be blue-painted and the
+ * per-binding comparison would silently drop. This distinct name is never the
+ * one an enclosing instruction is already expanding. */
+#define IP2_FRAME_FX(f,x) IP2_##f x
+
+/* FIND(target,frame): the value bound to target, or (8MISS) */
+#define PP2_FRAME_FIND(target,frame) IP2_FRAME_FIND_PICK(IP2_FRAME_FIND_DISPATCH(target,frame))
+#define IP2_FRAME_FIND_PICK(...) PP2_TUPLE_AT_1(,__VA_ARGS__,(8MISS))
+#define IP2_FRAME_FIND_DISPATCH(target,frame) PP2_IS_EDIBLE(,frame)(,IP2_FRAME_FIND_SOME,IP2_FRAME_EMPTY)(target,frame)
+#define IP2_FRAME_FIND_SOME(target,frame) IP2_FRAME_FIND_SEL(target,PP2_SEQ_COMMAS(frame))
+#define PP2_FRAME_ONE(target,binding) IP2_FRAME_FX(FRAME_ONE_I,(,target,PP2_OPEN binding))
+#define IP2_FRAME_ONE_I(P,target,e,addr,tag,value) IP2_FRAME_SELECT(PP2_CHARS_EQ(target,addr),value)
+#define IP2_FRAME_SELECT(eq,value) IP2_FRAME_SELECT_I(eq,value)
+#define IP2_FRAME_SELECT_I(eq,value) IP2_FRAME_SELECT_##eq(value)
+#define IP2_FRAME_SELECT_1(value) ,value,
+#define IP2_FRAME_SELECT_0(value)
+
+/* FOUND(target,frame): 1 if target is bound, else 0 */
+#define PP2_FRAME_FOUND(target,frame) IP2_FRAME_FOUND_TEST(IP2_FRAME_FOUND_DISPATCH(target,frame))
+#define IP2_FRAME_FOUND_TEST(...) PP2_IS_EDIBLE(,__VA_ARGS__)(,1,0)
+#define IP2_FRAME_FOUND_DISPATCH(target,frame) PP2_IS_EDIBLE(,frame)(,IP2_FRAME_FOUND_SOME,IP2_FRAME_EMPTY)(target,frame)
+#define IP2_FRAME_FOUND_SOME(target,frame) IP2_FRAME_FOUND_SEL(target,PP2_SEQ_COMMAS(frame))
+#define PP2_FRAME_FLAG(target,binding) IP2_FRAME_FX(FRAME_FLAG_I,(,target,PP2_OPEN binding))
+#define IP2_FRAME_FLAG_I(P,target,e,addr,tag,value) IP2_FRAME_FLAGSEL(PP2_CHARS_EQ(target,addr))
+#define IP2_FRAME_FLAGSEL(eq) IP2_FRAME_FLAGSEL_I(eq)
+#define IP2_FRAME_FLAGSEL_I(eq) IP2_FRAME_FLAGSEL_##eq
+#define IP2_FRAME_FLAGSEL_1 (1)
+#define IP2_FRAME_FLAGSEL_0
+
+/* STORE(target,value,frame): frame with target's value replaced in place, or the
+ * new binding prepended when target is absent */
+#define PP2_FRAME_STORE(target,value,frame) IP2_FRAME_STORE_DISP(PP2_FRAME_FOUND(target,frame),target,value,frame)
+#define IP2_FRAME_STORE_DISP(found,target,value,frame) IP2_FRAME_STORE_DISP_I(found,target,value,frame)
+#define IP2_FRAME_STORE_DISP_I(found,target,value,frame) IP2_FRAME_STORE_##found(target,value,frame)
+#define IP2_FRAME_STORE_0(target,value,frame) (,target,8LOCAL,value)frame
+#define IP2_FRAME_STORE_1(target,value,frame) IP2_FRAME_REWRITE_DISPATCH(target,value,frame)
+#define IP2_FRAME_REWRITE_DISPATCH(target,value,frame) PP2_IS_EDIBLE(,frame)(,IP2_FRAME_REWRITE_SOME,IP2_FRAME_EMPTY)(target,value,frame)
+#define IP2_FRAME_REWRITE_SOME(target,value,frame) IP2_FRAME_REWRITE_SEL(target,value,PP2_SEQ_COMMAS(frame))
+#define PP2_FRAME_REW(target,value,binding) IP2_FRAME_FX(FRAME_REW_I,(,target,value,PP2_OPEN binding))
+#define IP2_FRAME_REW_I(P,target,value,e,addr,tag,vv) IP2_FRAME_REW_PICK(PP2_CHARS_EQ(target,addr),value,addr,tag,vv)
+#define IP2_FRAME_REW_PICK(eq,value,addr,tag,vv) IP2_FRAME_REW_PICK_I(eq,value,addr,tag,vv)
+#define IP2_FRAME_REW_PICK_I(eq,value,addr,tag,vv) IP2_FRAME_REW_##eq(value,addr,tag,vv)
+#define IP2_FRAME_REW_1(value,addr,tag,vv) (,addr,tag,value)
+#define IP2_FRAME_REW_0(value,addr,tag,vv) (,addr,tag,vv)
+
+#define IP2_FRAME_FIND_SEL(target,...) IP2_FRAME_FIND_OVL(target,__VA_ARGS__,PP2_COMMA_52, PP2_COMMA_51, PP2_COMMA_50, PP2_COMMA_49, PP2_COMMA_48, PP2_COMMA_47, PP2_COMMA_46, PP2_COMMA_45, PP2_COMMA_44, PP2_COMMA_43, PP2_COMMA_42, PP2_COMMA_41, PP2_COMMA_40, PP2_COMMA_39, PP2_COMMA_38, PP2_COMMA_37, PP2_COMMA_36, PP2_COMMA_35, PP2_COMMA_34, PP2_COMMA_33, PP2_COMMA_32, PP2_COMMA_31, PP2_COMMA_30, PP2_COMMA_29, PP2_COMMA_28, PP2_COMMA_27, PP2_COMMA_26, PP2_COMMA_25, PP2_COMMA_24, PP2_COMMA_23, PP2_COMMA_22, PP2_COMMA_21, PP2_COMMA_20, PP2_COMMA_19, PP2_COMMA_18, PP2_COMMA_17, PP2_COMMA_16, PP2_COMMA_15, PP2_COMMA_14, PP2_COMMA_13, PP2_COMMA_12, PP2_COMMA_11, PP2_COMMA_10, PP2_COMMA_9, PP2_COMMA_8, PP2_COMMA_7, PP2_COMMA_6, PP2_COMMA_5, PP2_COMMA_4, PP2_COMMA_3, PP2_COMMA_2, PP2_COMMA_1,)(target,__VA_ARGS__)
+#define IP2_FRAME_FIND_OVL(target,x0,x1,x2,x3,x4,x5,x6,x7,x8,x9,x10,x11,x12,x13,x14,x15,x16,x17,x18,x19,x20,x21,x22,x23,x24,x25,x26,x27,x28,x29,x30,x31,x32,x33,x34,x35,x36,x37,x38,x39,x40,x41,x42,x43,x44,x45,x46,x47,x48,x49,x50,x51,m,...) PP2_TUPLE_AT_1(IP2_FRAME_FIND_,m,53_OR_MORE)
+#define IP2_FRAME_FIND_1(target,b0) PP2_FRAME_ONE(target,b0)
+#define IP2_FRAME_FIND_2(target,b0,b1) PP2_FRAME_ONE(target,b0) PP2_FRAME_ONE(target,b1)
+#define IP2_FRAME_FIND_3(target,b0,b1,b2) PP2_FRAME_ONE(target,b0) PP2_FRAME_ONE(target,b1) PP2_FRAME_ONE(target,b2)
+#define IP2_FRAME_FIND_4(target,b0,b1,b2,b3) PP2_FRAME_ONE(target,b0) PP2_FRAME_ONE(target,b1) PP2_FRAME_ONE(target,b2) PP2_FRAME_ONE(target,b3)
+#define IP2_FRAME_FIND_5(target,b0,b1,b2,b3,b4) PP2_FRAME_ONE(target,b0) PP2_FRAME_ONE(target,b1) PP2_FRAME_ONE(target,b2) PP2_FRAME_ONE(target,b3) PP2_FRAME_ONE(target,b4)
+#define IP2_FRAME_FIND_6(target,b0,b1,b2,b3,b4,b5) PP2_FRAME_ONE(target,b0) PP2_FRAME_ONE(target,b1) PP2_FRAME_ONE(target,b2) PP2_FRAME_ONE(target,b3) PP2_FRAME_ONE(target,b4) PP2_FRAME_ONE(target,b5)
+#define IP2_FRAME_FIND_7(target,b0,b1,b2,b3,b4,b5,b6) PP2_FRAME_ONE(target,b0) PP2_FRAME_ONE(target,b1) PP2_FRAME_ONE(target,b2) PP2_FRAME_ONE(target,b3) PP2_FRAME_ONE(target,b4) PP2_FRAME_ONE(target,b5) PP2_FRAME_ONE(target,b6)
+#define IP2_FRAME_FIND_8(target,b0,b1,b2,b3,b4,b5,b6,b7) PP2_FRAME_ONE(target,b0) PP2_FRAME_ONE(target,b1) PP2_FRAME_ONE(target,b2) PP2_FRAME_ONE(target,b3) PP2_FRAME_ONE(target,b4) PP2_FRAME_ONE(target,b5) PP2_FRAME_ONE(target,b6) PP2_FRAME_ONE(target,b7)
+#define IP2_FRAME_FIND_9(target,b0,b1,b2,b3,b4,b5,b6,b7,b8) PP2_FRAME_ONE(target,b0) PP2_FRAME_ONE(target,b1) PP2_FRAME_ONE(target,b2) PP2_FRAME_ONE(target,b3) PP2_FRAME_ONE(target,b4) PP2_FRAME_ONE(target,b5) PP2_FRAME_ONE(target,b6) PP2_FRAME_ONE(target,b7) PP2_FRAME_ONE(target,b8)
+#define IP2_FRAME_FIND_10(target,b0,b1,b2,b3,b4,b5,b6,b7,b8,b9) PP2_FRAME_ONE(target,b0) PP2_FRAME_ONE(target,b1) PP2_FRAME_ONE(target,b2) PP2_FRAME_ONE(target,b3) PP2_FRAME_ONE(target,b4) PP2_FRAME_ONE(target,b5) PP2_FRAME_ONE(target,b6) PP2_FRAME_ONE(target,b7) PP2_FRAME_ONE(target,b8) PP2_FRAME_ONE(target,b9)
+#define IP2_FRAME_FIND_11(target,b0,b1,b2,b3,b4,b5,b6,b7,b8,b9,b10) PP2_FRAME_ONE(target,b0) PP2_FRAME_ONE(target,b1) PP2_FRAME_ONE(target,b2) PP2_FRAME_ONE(target,b3) PP2_FRAME_ONE(target,b4) PP2_FRAME_ONE(target,b5) PP2_FRAME_ONE(target,b6) PP2_FRAME_ONE(target,b7) PP2_FRAME_ONE(target,b8) PP2_FRAME_ONE(target,b9) PP2_FRAME_ONE(target,b10)
+#define IP2_FRAME_FIND_12(target,b0,b1,b2,b3,b4,b5,b6,b7,b8,b9,b10,b11) PP2_FRAME_ONE(target,b0) PP2_FRAME_ONE(target,b1) PP2_FRAME_ONE(target,b2) PP2_FRAME_ONE(target,b3) PP2_FRAME_ONE(target,b4) PP2_FRAME_ONE(target,b5) PP2_FRAME_ONE(target,b6) PP2_FRAME_ONE(target,b7) PP2_FRAME_ONE(target,b8) PP2_FRAME_ONE(target,b9) PP2_FRAME_ONE(target,b10) PP2_FRAME_ONE(target,b11)
+#define IP2_FRAME_FIND_13(target,b0,b1,b2,b3,b4,b5,b6,b7,b8,b9,b10,b11,b12) PP2_FRAME_ONE(target,b0) PP2_FRAME_ONE(target,b1) PP2_FRAME_ONE(target,b2) PP2_FRAME_ONE(target,b3) PP2_FRAME_ONE(target,b4) PP2_FRAME_ONE(target,b5) PP2_FRAME_ONE(target,b6) PP2_FRAME_ONE(target,b7) PP2_FRAME_ONE(target,b8) PP2_FRAME_ONE(target,b9) PP2_FRAME_ONE(target,b10) PP2_FRAME_ONE(target,b11) PP2_FRAME_ONE(target,b12)
+#define IP2_FRAME_FIND_14(target,b0,b1,b2,b3,b4,b5,b6,b7,b8,b9,b10,b11,b12,b13) PP2_FRAME_ONE(target,b0) PP2_FRAME_ONE(target,b1) PP2_FRAME_ONE(target,b2) PP2_FRAME_ONE(target,b3) PP2_FRAME_ONE(target,b4) PP2_FRAME_ONE(target,b5) PP2_FRAME_ONE(target,b6) PP2_FRAME_ONE(target,b7) PP2_FRAME_ONE(target,b8) PP2_FRAME_ONE(target,b9) PP2_FRAME_ONE(target,b10) PP2_FRAME_ONE(target,b11) PP2_FRAME_ONE(target,b12) PP2_FRAME_ONE(target,b13)
+#define IP2_FRAME_FIND_15(target,b0,b1,b2,b3,b4,b5,b6,b7,b8,b9,b10,b11,b12,b13,b14) PP2_FRAME_ONE(target,b0) PP2_FRAME_ONE(target,b1) PP2_FRAME_ONE(target,b2) PP2_FRAME_ONE(target,b3) PP2_FRAME_ONE(target,b4) PP2_FRAME_ONE(target,b5) PP2_FRAME_ONE(target,b6) PP2_FRAME_ONE(target,b7) PP2_FRAME_ONE(target,b8) PP2_FRAME_ONE(target,b9) PP2_FRAME_ONE(target,b10) PP2_FRAME_ONE(target,b11) PP2_FRAME_ONE(target,b12) PP2_FRAME_ONE(target,b13) PP2_FRAME_ONE(target,b14)
+#define IP2_FRAME_FIND_16(target,b0,b1,b2,b3,b4,b5,b6,b7,b8,b9,b10,b11,b12,b13,b14,b15) PP2_FRAME_ONE(target,b0) PP2_FRAME_ONE(target,b1) PP2_FRAME_ONE(target,b2) PP2_FRAME_ONE(target,b3) PP2_FRAME_ONE(target,b4) PP2_FRAME_ONE(target,b5) PP2_FRAME_ONE(target,b6) PP2_FRAME_ONE(target,b7) PP2_FRAME_ONE(target,b8) PP2_FRAME_ONE(target,b9) PP2_FRAME_ONE(target,b10) PP2_FRAME_ONE(target,b11) PP2_FRAME_ONE(target,b12) PP2_FRAME_ONE(target,b13) PP2_FRAME_ONE(target,b14) PP2_FRAME_ONE(target,b15)
+#define IP2_FRAME_FIND_17(target,b0,b1,b2,b3,b4,b5,b6,b7,b8,b9,b10,b11,b12,b13,b14,b15,b16) PP2_FRAME_ONE(target,b0) PP2_FRAME_ONE(target,b1) PP2_FRAME_ONE(target,b2) PP2_FRAME_ONE(target,b3) PP2_FRAME_ONE(target,b4) PP2_FRAME_ONE(target,b5) PP2_FRAME_ONE(target,b6) PP2_FRAME_ONE(target,b7) PP2_FRAME_ONE(target,b8) PP2_FRAME_ONE(target,b9) PP2_FRAME_ONE(target,b10) PP2_FRAME_ONE(target,b11) PP2_FRAME_ONE(target,b12) PP2_FRAME_ONE(target,b13) PP2_FRAME_ONE(target,b14) PP2_FRAME_ONE(target,b15) PP2_FRAME_ONE(target,b16)
+#define IP2_FRAME_FIND_18(target,b0,b1,b2,b3,b4,b5,b6,b7,b8,b9,b10,b11,b12,b13,b14,b15,b16,b17) PP2_FRAME_ONE(target,b0) PP2_FRAME_ONE(target,b1) PP2_FRAME_ONE(target,b2) PP2_FRAME_ONE(target,b3) PP2_FRAME_ONE(target,b4) PP2_FRAME_ONE(target,b5) PP2_FRAME_ONE(target,b6) PP2_FRAME_ONE(target,b7) PP2_FRAME_ONE(target,b8) PP2_FRAME_ONE(target,b9) PP2_FRAME_ONE(target,b10) PP2_FRAME_ONE(target,b11) PP2_FRAME_ONE(target,b12) PP2_FRAME_ONE(target,b13) PP2_FRAME_ONE(target,b14) PP2_FRAME_ONE(target,b15) PP2_FRAME_ONE(target,b16) PP2_FRAME_ONE(target,b17)
+#define IP2_FRAME_FIND_19(target,b0,b1,b2,b3,b4,b5,b6,b7,b8,b9,b10,b11,b12,b13,b14,b15,b16,b17,b18) PP2_FRAME_ONE(target,b0) PP2_FRAME_ONE(target,b1) PP2_FRAME_ONE(target,b2) PP2_FRAME_ONE(target,b3) PP2_FRAME_ONE(target,b4) PP2_FRAME_ONE(target,b5) PP2_FRAME_ONE(target,b6) PP2_FRAME_ONE(target,b7) PP2_FRAME_ONE(target,b8) PP2_FRAME_ONE(target,b9) PP2_FRAME_ONE(target,b10) PP2_FRAME_ONE(target,b11) PP2_FRAME_ONE(target,b12) PP2_FRAME_ONE(target,b13) PP2_FRAME_ONE(target,b14) PP2_FRAME_ONE(target,b15) PP2_FRAME_ONE(target,b16) PP2_FRAME_ONE(target,b17) PP2_FRAME_ONE(target,b18)
+#define IP2_FRAME_FIND_20(target,b0,b1,b2,b3,b4,b5,b6,b7,b8,b9,b10,b11,b12,b13,b14,b15,b16,b17,b18,b19) PP2_FRAME_ONE(target,b0) PP2_FRAME_ONE(target,b1) PP2_FRAME_ONE(target,b2) PP2_FRAME_ONE(target,b3) PP2_FRAME_ONE(target,b4) PP2_FRAME_ONE(target,b5) PP2_FRAME_ONE(target,b6) PP2_FRAME_ONE(target,b7) PP2_FRAME_ONE(target,b8) PP2_FRAME_ONE(target,b9) PP2_FRAME_ONE(target,b10) PP2_FRAME_ONE(target,b11) PP2_FRAME_ONE(target,b12) PP2_FRAME_ONE(target,b13) PP2_FRAME_ONE(target,b14) PP2_FRAME_ONE(target,b15) PP2_FRAME_ONE(target,b16) PP2_FRAME_ONE(target,b17) PP2_FRAME_ONE(target,b18) PP2_FRAME_ONE(target,b19)
+#define IP2_FRAME_FIND_21(target,b0,b1,b2,b3,b4,b5,b6,b7,b8,b9,b10,b11,b12,b13,b14,b15,b16,b17,b18,b19,b20) PP2_FRAME_ONE(target,b0) PP2_FRAME_ONE(target,b1) PP2_FRAME_ONE(target,b2) PP2_FRAME_ONE(target,b3) PP2_FRAME_ONE(target,b4) PP2_FRAME_ONE(target,b5) PP2_FRAME_ONE(target,b6) PP2_FRAME_ONE(target,b7) PP2_FRAME_ONE(target,b8) PP2_FRAME_ONE(target,b9) PP2_FRAME_ONE(target,b10) PP2_FRAME_ONE(target,b11) PP2_FRAME_ONE(target,b12) PP2_FRAME_ONE(target,b13) PP2_FRAME_ONE(target,b14) PP2_FRAME_ONE(target,b15) PP2_FRAME_ONE(target,b16) PP2_FRAME_ONE(target,b17) PP2_FRAME_ONE(target,b18) PP2_FRAME_ONE(target,b19) PP2_FRAME_ONE(target,b20)
+#define IP2_FRAME_FIND_22(target,b0,b1,b2,b3,b4,b5,b6,b7,b8,b9,b10,b11,b12,b13,b14,b15,b16,b17,b18,b19,b20,b21) PP2_FRAME_ONE(target,b0) PP2_FRAME_ONE(target,b1) PP2_FRAME_ONE(target,b2) PP2_FRAME_ONE(target,b3) PP2_FRAME_ONE(target,b4) PP2_FRAME_ONE(target,b5) PP2_FRAME_ONE(target,b6) PP2_FRAME_ONE(target,b7) PP2_FRAME_ONE(target,b8) PP2_FRAME_ONE(target,b9) PP2_FRAME_ONE(target,b10) PP2_FRAME_ONE(target,b11) PP2_FRAME_ONE(target,b12) PP2_FRAME_ONE(target,b13) PP2_FRAME_ONE(target,b14) PP2_FRAME_ONE(target,b15) PP2_FRAME_ONE(target,b16) PP2_FRAME_ONE(target,b17) PP2_FRAME_ONE(target,b18) PP2_FRAME_ONE(target,b19) PP2_FRAME_ONE(target,b20) PP2_FRAME_ONE(target,b21)
+#define IP2_FRAME_FIND_23(target,b0,b1,b2,b3,b4,b5,b6,b7,b8,b9,b10,b11,b12,b13,b14,b15,b16,b17,b18,b19,b20,b21,b22) PP2_FRAME_ONE(target,b0) PP2_FRAME_ONE(target,b1) PP2_FRAME_ONE(target,b2) PP2_FRAME_ONE(target,b3) PP2_FRAME_ONE(target,b4) PP2_FRAME_ONE(target,b5) PP2_FRAME_ONE(target,b6) PP2_FRAME_ONE(target,b7) PP2_FRAME_ONE(target,b8) PP2_FRAME_ONE(target,b9) PP2_FRAME_ONE(target,b10) PP2_FRAME_ONE(target,b11) PP2_FRAME_ONE(target,b12) PP2_FRAME_ONE(target,b13) PP2_FRAME_ONE(target,b14) PP2_FRAME_ONE(target,b15) PP2_FRAME_ONE(target,b16) PP2_FRAME_ONE(target,b17) PP2_FRAME_ONE(target,b18) PP2_FRAME_ONE(target,b19) PP2_FRAME_ONE(target,b20) PP2_FRAME_ONE(target,b21) PP2_FRAME_ONE(target,b22)
+#define IP2_FRAME_FIND_24(target,b0,b1,b2,b3,b4,b5,b6,b7,b8,b9,b10,b11,b12,b13,b14,b15,b16,b17,b18,b19,b20,b21,b22,b23) PP2_FRAME_ONE(target,b0) PP2_FRAME_ONE(target,b1) PP2_FRAME_ONE(target,b2) PP2_FRAME_ONE(target,b3) PP2_FRAME_ONE(target,b4) PP2_FRAME_ONE(target,b5) PP2_FRAME_ONE(target,b6) PP2_FRAME_ONE(target,b7) PP2_FRAME_ONE(target,b8) PP2_FRAME_ONE(target,b9) PP2_FRAME_ONE(target,b10) PP2_FRAME_ONE(target,b11) PP2_FRAME_ONE(target,b12) PP2_FRAME_ONE(target,b13) PP2_FRAME_ONE(target,b14) PP2_FRAME_ONE(target,b15) PP2_FRAME_ONE(target,b16) PP2_FRAME_ONE(target,b17) PP2_FRAME_ONE(target,b18) PP2_FRAME_ONE(target,b19) PP2_FRAME_ONE(target,b20) PP2_FRAME_ONE(target,b21) PP2_FRAME_ONE(target,b22) PP2_FRAME_ONE(target,b23)
+#define IP2_FRAME_FIND_25(target,b0,b1,b2,b3,b4,b5,b6,b7,b8,b9,b10,b11,b12,b13,b14,b15,b16,b17,b18,b19,b20,b21,b22,b23,b24) PP2_FRAME_ONE(target,b0) PP2_FRAME_ONE(target,b1) PP2_FRAME_ONE(target,b2) PP2_FRAME_ONE(target,b3) PP2_FRAME_ONE(target,b4) PP2_FRAME_ONE(target,b5) PP2_FRAME_ONE(target,b6) PP2_FRAME_ONE(target,b7) PP2_FRAME_ONE(target,b8) PP2_FRAME_ONE(target,b9) PP2_FRAME_ONE(target,b10) PP2_FRAME_ONE(target,b11) PP2_FRAME_ONE(target,b12) PP2_FRAME_ONE(target,b13) PP2_FRAME_ONE(target,b14) PP2_FRAME_ONE(target,b15) PP2_FRAME_ONE(target,b16) PP2_FRAME_ONE(target,b17) PP2_FRAME_ONE(target,b18) PP2_FRAME_ONE(target,b19) PP2_FRAME_ONE(target,b20) PP2_FRAME_ONE(target,b21) PP2_FRAME_ONE(target,b22) PP2_FRAME_ONE(target,b23) PP2_FRAME_ONE(target,b24)
+#define IP2_FRAME_FIND_26(target,b0,b1,b2,b3,b4,b5,b6,b7,b8,b9,b10,b11,b12,b13,b14,b15,b16,b17,b18,b19,b20,b21,b22,b23,b24,b25) PP2_FRAME_ONE(target,b0) PP2_FRAME_ONE(target,b1) PP2_FRAME_ONE(target,b2) PP2_FRAME_ONE(target,b3) PP2_FRAME_ONE(target,b4) PP2_FRAME_ONE(target,b5) PP2_FRAME_ONE(target,b6) PP2_FRAME_ONE(target,b7) PP2_FRAME_ONE(target,b8) PP2_FRAME_ONE(target,b9) PP2_FRAME_ONE(target,b10) PP2_FRAME_ONE(target,b11) PP2_FRAME_ONE(target,b12) PP2_FRAME_ONE(target,b13) PP2_FRAME_ONE(target,b14) PP2_FRAME_ONE(target,b15) PP2_FRAME_ONE(target,b16) PP2_FRAME_ONE(target,b17) PP2_FRAME_ONE(target,b18) PP2_FRAME_ONE(target,b19) PP2_FRAME_ONE(target,b20) PP2_FRAME_ONE(target,b21) PP2_FRAME_ONE(target,b22) PP2_FRAME_ONE(target,b23) PP2_FRAME_ONE(target,b24) PP2_FRAME_ONE(target,b25)
+#define IP2_FRAME_FIND_27(target,b0,b1,b2,b3,b4,b5,b6,b7,b8,b9,b10,b11,b12,b13,b14,b15,b16,b17,b18,b19,b20,b21,b22,b23,b24,b25,b26) PP2_FRAME_ONE(target,b0) PP2_FRAME_ONE(target,b1) PP2_FRAME_ONE(target,b2) PP2_FRAME_ONE(target,b3) PP2_FRAME_ONE(target,b4) PP2_FRAME_ONE(target,b5) PP2_FRAME_ONE(target,b6) PP2_FRAME_ONE(target,b7) PP2_FRAME_ONE(target,b8) PP2_FRAME_ONE(target,b9) PP2_FRAME_ONE(target,b10) PP2_FRAME_ONE(target,b11) PP2_FRAME_ONE(target,b12) PP2_FRAME_ONE(target,b13) PP2_FRAME_ONE(target,b14) PP2_FRAME_ONE(target,b15) PP2_FRAME_ONE(target,b16) PP2_FRAME_ONE(target,b17) PP2_FRAME_ONE(target,b18) PP2_FRAME_ONE(target,b19) PP2_FRAME_ONE(target,b20) PP2_FRAME_ONE(target,b21) PP2_FRAME_ONE(target,b22) PP2_FRAME_ONE(target,b23) PP2_FRAME_ONE(target,b24) PP2_FRAME_ONE(target,b25) PP2_FRAME_ONE(target,b26)
+#define IP2_FRAME_FIND_28(target,b0,b1,b2,b3,b4,b5,b6,b7,b8,b9,b10,b11,b12,b13,b14,b15,b16,b17,b18,b19,b20,b21,b22,b23,b24,b25,b26,b27) PP2_FRAME_ONE(target,b0) PP2_FRAME_ONE(target,b1) PP2_FRAME_ONE(target,b2) PP2_FRAME_ONE(target,b3) PP2_FRAME_ONE(target,b4) PP2_FRAME_ONE(target,b5) PP2_FRAME_ONE(target,b6) PP2_FRAME_ONE(target,b7) PP2_FRAME_ONE(target,b8) PP2_FRAME_ONE(target,b9) PP2_FRAME_ONE(target,b10) PP2_FRAME_ONE(target,b11) PP2_FRAME_ONE(target,b12) PP2_FRAME_ONE(target,b13) PP2_FRAME_ONE(target,b14) PP2_FRAME_ONE(target,b15) PP2_FRAME_ONE(target,b16) PP2_FRAME_ONE(target,b17) PP2_FRAME_ONE(target,b18) PP2_FRAME_ONE(target,b19) PP2_FRAME_ONE(target,b20) PP2_FRAME_ONE(target,b21) PP2_FRAME_ONE(target,b22) PP2_FRAME_ONE(target,b23) PP2_FRAME_ONE(target,b24) PP2_FRAME_ONE(target,b25) PP2_FRAME_ONE(target,b26) PP2_FRAME_ONE(target,b27)
+#define IP2_FRAME_FIND_29(target,b0,b1,b2,b3,b4,b5,b6,b7,b8,b9,b10,b11,b12,b13,b14,b15,b16,b17,b18,b19,b20,b21,b22,b23,b24,b25,b26,b27,b28) PP2_FRAME_ONE(target,b0) PP2_FRAME_ONE(target,b1) PP2_FRAME_ONE(target,b2) PP2_FRAME_ONE(target,b3) PP2_FRAME_ONE(target,b4) PP2_FRAME_ONE(target,b5) PP2_FRAME_ONE(target,b6) PP2_FRAME_ONE(target,b7) PP2_FRAME_ONE(target,b8) PP2_FRAME_ONE(target,b9) PP2_FRAME_ONE(target,b10) PP2_FRAME_ONE(target,b11) PP2_FRAME_ONE(target,b12) PP2_FRAME_ONE(target,b13) PP2_FRAME_ONE(target,b14) PP2_FRAME_ONE(target,b15) PP2_FRAME_ONE(target,b16) PP2_FRAME_ONE(target,b17) PP2_FRAME_ONE(target,b18) PP2_FRAME_ONE(target,b19) PP2_FRAME_ONE(target,b20) PP2_FRAME_ONE(target,b21) PP2_FRAME_ONE(target,b22) PP2_FRAME_ONE(target,b23) PP2_FRAME_ONE(target,b24) PP2_FRAME_ONE(target,b25) PP2_FRAME_ONE(target,b26) PP2_FRAME_ONE(target,b27) PP2_FRAME_ONE(target,b28)
+#define IP2_FRAME_FIND_30(target,b0,b1,b2,b3,b4,b5,b6,b7,b8,b9,b10,b11,b12,b13,b14,b15,b16,b17,b18,b19,b20,b21,b22,b23,b24,b25,b26,b27,b28,b29) PP2_FRAME_ONE(target,b0) PP2_FRAME_ONE(target,b1) PP2_FRAME_ONE(target,b2) PP2_FRAME_ONE(target,b3) PP2_FRAME_ONE(target,b4) PP2_FRAME_ONE(target,b5) PP2_FRAME_ONE(target,b6) PP2_FRAME_ONE(target,b7) PP2_FRAME_ONE(target,b8) PP2_FRAME_ONE(target,b9) PP2_FRAME_ONE(target,b10) PP2_FRAME_ONE(target,b11) PP2_FRAME_ONE(target,b12) PP2_FRAME_ONE(target,b13) PP2_FRAME_ONE(target,b14) PP2_FRAME_ONE(target,b15) PP2_FRAME_ONE(target,b16) PP2_FRAME_ONE(target,b17) PP2_FRAME_ONE(target,b18) PP2_FRAME_ONE(target,b19) PP2_FRAME_ONE(target,b20) PP2_FRAME_ONE(target,b21) PP2_FRAME_ONE(target,b22) PP2_FRAME_ONE(target,b23) PP2_FRAME_ONE(target,b24) PP2_FRAME_ONE(target,b25) PP2_FRAME_ONE(target,b26) PP2_FRAME_ONE(target,b27) PP2_FRAME_ONE(target,b28) PP2_FRAME_ONE(target,b29)
+#define IP2_FRAME_FIND_31(target,b0,b1,b2,b3,b4,b5,b6,b7,b8,b9,b10,b11,b12,b13,b14,b15,b16,b17,b18,b19,b20,b21,b22,b23,b24,b25,b26,b27,b28,b29,b30) PP2_FRAME_ONE(target,b0) PP2_FRAME_ONE(target,b1) PP2_FRAME_ONE(target,b2) PP2_FRAME_ONE(target,b3) PP2_FRAME_ONE(target,b4) PP2_FRAME_ONE(target,b5) PP2_FRAME_ONE(target,b6) PP2_FRAME_ONE(target,b7) PP2_FRAME_ONE(target,b8) PP2_FRAME_ONE(target,b9) PP2_FRAME_ONE(target,b10) PP2_FRAME_ONE(target,b11) PP2_FRAME_ONE(target,b12) PP2_FRAME_ONE(target,b13) PP2_FRAME_ONE(target,b14) PP2_FRAME_ONE(target,b15) PP2_FRAME_ONE(target,b16) PP2_FRAME_ONE(target,b17) PP2_FRAME_ONE(target,b18) PP2_FRAME_ONE(target,b19) PP2_FRAME_ONE(target,b20) PP2_FRAME_ONE(target,b21) PP2_FRAME_ONE(target,b22) PP2_FRAME_ONE(target,b23) PP2_FRAME_ONE(target,b24) PP2_FRAME_ONE(target,b25) PP2_FRAME_ONE(target,b26) PP2_FRAME_ONE(target,b27) PP2_FRAME_ONE(target,b28) PP2_FRAME_ONE(target,b29) PP2_FRAME_ONE(target,b30)
+#define IP2_FRAME_FIND_32(target,b0,b1,b2,b3,b4,b5,b6,b7,b8,b9,b10,b11,b12,b13,b14,b15,b16,b17,b18,b19,b20,b21,b22,b23,b24,b25,b26,b27,b28,b29,b30,b31) PP2_FRAME_ONE(target,b0) PP2_FRAME_ONE(target,b1) PP2_FRAME_ONE(target,b2) PP2_FRAME_ONE(target,b3) PP2_FRAME_ONE(target,b4) PP2_FRAME_ONE(target,b5) PP2_FRAME_ONE(target,b6) PP2_FRAME_ONE(target,b7) PP2_FRAME_ONE(target,b8) PP2_FRAME_ONE(target,b9) PP2_FRAME_ONE(target,b10) PP2_FRAME_ONE(target,b11) PP2_FRAME_ONE(target,b12) PP2_FRAME_ONE(target,b13) PP2_FRAME_ONE(target,b14) PP2_FRAME_ONE(target,b15) PP2_FRAME_ONE(target,b16) PP2_FRAME_ONE(target,b17) PP2_FRAME_ONE(target,b18) PP2_FRAME_ONE(target,b19) PP2_FRAME_ONE(target,b20) PP2_FRAME_ONE(target,b21) PP2_FRAME_ONE(target,b22) PP2_FRAME_ONE(target,b23) PP2_FRAME_ONE(target,b24) PP2_FRAME_ONE(target,b25) PP2_FRAME_ONE(target,b26) PP2_FRAME_ONE(target,b27) PP2_FRAME_ONE(target,b28) PP2_FRAME_ONE(target,b29) PP2_FRAME_ONE(target,b30) PP2_FRAME_ONE(target,b31)
+#define IP2_FRAME_FIND_33(target,b0,b1,b2,b3,b4,b5,b6,b7,b8,b9,b10,b11,b12,b13,b14,b15,b16,b17,b18,b19,b20,b21,b22,b23,b24,b25,b26,b27,b28,b29,b30,b31,b32) PP2_FRAME_ONE(target,b0) PP2_FRAME_ONE(target,b1) PP2_FRAME_ONE(target,b2) PP2_FRAME_ONE(target,b3) PP2_FRAME_ONE(target,b4) PP2_FRAME_ONE(target,b5) PP2_FRAME_ONE(target,b6) PP2_FRAME_ONE(target,b7) PP2_FRAME_ONE(target,b8) PP2_FRAME_ONE(target,b9) PP2_FRAME_ONE(target,b10) PP2_FRAME_ONE(target,b11) PP2_FRAME_ONE(target,b12) PP2_FRAME_ONE(target,b13) PP2_FRAME_ONE(target,b14) PP2_FRAME_ONE(target,b15) PP2_FRAME_ONE(target,b16) PP2_FRAME_ONE(target,b17) PP2_FRAME_ONE(target,b18) PP2_FRAME_ONE(target,b19) PP2_FRAME_ONE(target,b20) PP2_FRAME_ONE(target,b21) PP2_FRAME_ONE(target,b22) PP2_FRAME_ONE(target,b23) PP2_FRAME_ONE(target,b24) PP2_FRAME_ONE(target,b25) PP2_FRAME_ONE(target,b26) PP2_FRAME_ONE(target,b27) PP2_FRAME_ONE(target,b28) PP2_FRAME_ONE(target,b29) PP2_FRAME_ONE(target,b30) PP2_FRAME_ONE(target,b31) PP2_FRAME_ONE(target,b32)
+#define IP2_FRAME_FIND_34(target,b0,b1,b2,b3,b4,b5,b6,b7,b8,b9,b10,b11,b12,b13,b14,b15,b16,b17,b18,b19,b20,b21,b22,b23,b24,b25,b26,b27,b28,b29,b30,b31,b32,b33) PP2_FRAME_ONE(target,b0) PP2_FRAME_ONE(target,b1) PP2_FRAME_ONE(target,b2) PP2_FRAME_ONE(target,b3) PP2_FRAME_ONE(target,b4) PP2_FRAME_ONE(target,b5) PP2_FRAME_ONE(target,b6) PP2_FRAME_ONE(target,b7) PP2_FRAME_ONE(target,b8) PP2_FRAME_ONE(target,b9) PP2_FRAME_ONE(target,b10) PP2_FRAME_ONE(target,b11) PP2_FRAME_ONE(target,b12) PP2_FRAME_ONE(target,b13) PP2_FRAME_ONE(target,b14) PP2_FRAME_ONE(target,b15) PP2_FRAME_ONE(target,b16) PP2_FRAME_ONE(target,b17) PP2_FRAME_ONE(target,b18) PP2_FRAME_ONE(target,b19) PP2_FRAME_ONE(target,b20) PP2_FRAME_ONE(target,b21) PP2_FRAME_ONE(target,b22) PP2_FRAME_ONE(target,b23) PP2_FRAME_ONE(target,b24) PP2_FRAME_ONE(target,b25) PP2_FRAME_ONE(target,b26) PP2_FRAME_ONE(target,b27) PP2_FRAME_ONE(target,b28) PP2_FRAME_ONE(target,b29) PP2_FRAME_ONE(target,b30) PP2_FRAME_ONE(target,b31) PP2_FRAME_ONE(target,b32) PP2_FRAME_ONE(target,b33)
+#define IP2_FRAME_FIND_35(target,b0,b1,b2,b3,b4,b5,b6,b7,b8,b9,b10,b11,b12,b13,b14,b15,b16,b17,b18,b19,b20,b21,b22,b23,b24,b25,b26,b27,b28,b29,b30,b31,b32,b33,b34) PP2_FRAME_ONE(target,b0) PP2_FRAME_ONE(target,b1) PP2_FRAME_ONE(target,b2) PP2_FRAME_ONE(target,b3) PP2_FRAME_ONE(target,b4) PP2_FRAME_ONE(target,b5) PP2_FRAME_ONE(target,b6) PP2_FRAME_ONE(target,b7) PP2_FRAME_ONE(target,b8) PP2_FRAME_ONE(target,b9) PP2_FRAME_ONE(target,b10) PP2_FRAME_ONE(target,b11) PP2_FRAME_ONE(target,b12) PP2_FRAME_ONE(target,b13) PP2_FRAME_ONE(target,b14) PP2_FRAME_ONE(target,b15) PP2_FRAME_ONE(target,b16) PP2_FRAME_ONE(target,b17) PP2_FRAME_ONE(target,b18) PP2_FRAME_ONE(target,b19) PP2_FRAME_ONE(target,b20) PP2_FRAME_ONE(target,b21) PP2_FRAME_ONE(target,b22) PP2_FRAME_ONE(target,b23) PP2_FRAME_ONE(target,b24) PP2_FRAME_ONE(target,b25) PP2_FRAME_ONE(target,b26) PP2_FRAME_ONE(target,b27) PP2_FRAME_ONE(target,b28) PP2_FRAME_ONE(target,b29) PP2_FRAME_ONE(target,b30) PP2_FRAME_ONE(target,b31) PP2_FRAME_ONE(target,b32) PP2_FRAME_ONE(target,b33) PP2_FRAME_ONE(target,b34)
+#define IP2_FRAME_FIND_36(target,b0,b1,b2,b3,b4,b5,b6,b7,b8,b9,b10,b11,b12,b13,b14,b15,b16,b17,b18,b19,b20,b21,b22,b23,b24,b25,b26,b27,b28,b29,b30,b31,b32,b33,b34,b35) PP2_FRAME_ONE(target,b0) PP2_FRAME_ONE(target,b1) PP2_FRAME_ONE(target,b2) PP2_FRAME_ONE(target,b3) PP2_FRAME_ONE(target,b4) PP2_FRAME_ONE(target,b5) PP2_FRAME_ONE(target,b6) PP2_FRAME_ONE(target,b7) PP2_FRAME_ONE(target,b8) PP2_FRAME_ONE(target,b9) PP2_FRAME_ONE(target,b10) PP2_FRAME_ONE(target,b11) PP2_FRAME_ONE(target,b12) PP2_FRAME_ONE(target,b13) PP2_FRAME_ONE(target,b14) PP2_FRAME_ONE(target,b15) PP2_FRAME_ONE(target,b16) PP2_FRAME_ONE(target,b17) PP2_FRAME_ONE(target,b18) PP2_FRAME_ONE(target,b19) PP2_FRAME_ONE(target,b20) PP2_FRAME_ONE(target,b21) PP2_FRAME_ONE(target,b22) PP2_FRAME_ONE(target,b23) PP2_FRAME_ONE(target,b24) PP2_FRAME_ONE(target,b25) PP2_FRAME_ONE(target,b26) PP2_FRAME_ONE(target,b27) PP2_FRAME_ONE(target,b28) PP2_FRAME_ONE(target,b29) PP2_FRAME_ONE(target,b30) PP2_FRAME_ONE(target,b31) PP2_FRAME_ONE(target,b32) PP2_FRAME_ONE(target,b33) PP2_FRAME_ONE(target,b34) PP2_FRAME_ONE(target,b35)
+#define IP2_FRAME_FIND_37(target,b0,b1,b2,b3,b4,b5,b6,b7,b8,b9,b10,b11,b12,b13,b14,b15,b16,b17,b18,b19,b20,b21,b22,b23,b24,b25,b26,b27,b28,b29,b30,b31,b32,b33,b34,b35,b36) PP2_FRAME_ONE(target,b0) PP2_FRAME_ONE(target,b1) PP2_FRAME_ONE(target,b2) PP2_FRAME_ONE(target,b3) PP2_FRAME_ONE(target,b4) PP2_FRAME_ONE(target,b5) PP2_FRAME_ONE(target,b6) PP2_FRAME_ONE(target,b7) PP2_FRAME_ONE(target,b8) PP2_FRAME_ONE(target,b9) PP2_FRAME_ONE(target,b10) PP2_FRAME_ONE(target,b11) PP2_FRAME_ONE(target,b12) PP2_FRAME_ONE(target,b13) PP2_FRAME_ONE(target,b14) PP2_FRAME_ONE(target,b15) PP2_FRAME_ONE(target,b16) PP2_FRAME_ONE(target,b17) PP2_FRAME_ONE(target,b18) PP2_FRAME_ONE(target,b19) PP2_FRAME_ONE(target,b20) PP2_FRAME_ONE(target,b21) PP2_FRAME_ONE(target,b22) PP2_FRAME_ONE(target,b23) PP2_FRAME_ONE(target,b24) PP2_FRAME_ONE(target,b25) PP2_FRAME_ONE(target,b26) PP2_FRAME_ONE(target,b27) PP2_FRAME_ONE(target,b28) PP2_FRAME_ONE(target,b29) PP2_FRAME_ONE(target,b30) PP2_FRAME_ONE(target,b31) PP2_FRAME_ONE(target,b32) PP2_FRAME_ONE(target,b33) PP2_FRAME_ONE(target,b34) PP2_FRAME_ONE(target,b35) PP2_FRAME_ONE(target,b36)
+#define IP2_FRAME_FIND_38(target,b0,b1,b2,b3,b4,b5,b6,b7,b8,b9,b10,b11,b12,b13,b14,b15,b16,b17,b18,b19,b20,b21,b22,b23,b24,b25,b26,b27,b28,b29,b30,b31,b32,b33,b34,b35,b36,b37) PP2_FRAME_ONE(target,b0) PP2_FRAME_ONE(target,b1) PP2_FRAME_ONE(target,b2) PP2_FRAME_ONE(target,b3) PP2_FRAME_ONE(target,b4) PP2_FRAME_ONE(target,b5) PP2_FRAME_ONE(target,b6) PP2_FRAME_ONE(target,b7) PP2_FRAME_ONE(target,b8) PP2_FRAME_ONE(target,b9) PP2_FRAME_ONE(target,b10) PP2_FRAME_ONE(target,b11) PP2_FRAME_ONE(target,b12) PP2_FRAME_ONE(target,b13) PP2_FRAME_ONE(target,b14) PP2_FRAME_ONE(target,b15) PP2_FRAME_ONE(target,b16) PP2_FRAME_ONE(target,b17) PP2_FRAME_ONE(target,b18) PP2_FRAME_ONE(target,b19) PP2_FRAME_ONE(target,b20) PP2_FRAME_ONE(target,b21) PP2_FRAME_ONE(target,b22) PP2_FRAME_ONE(target,b23) PP2_FRAME_ONE(target,b24) PP2_FRAME_ONE(target,b25) PP2_FRAME_ONE(target,b26) PP2_FRAME_ONE(target,b27) PP2_FRAME_ONE(target,b28) PP2_FRAME_ONE(target,b29) PP2_FRAME_ONE(target,b30) PP2_FRAME_ONE(target,b31) PP2_FRAME_ONE(target,b32) PP2_FRAME_ONE(target,b33) PP2_FRAME_ONE(target,b34) PP2_FRAME_ONE(target,b35) PP2_FRAME_ONE(target,b36) PP2_FRAME_ONE(target,b37)
+#define IP2_FRAME_FIND_39(target,b0,b1,b2,b3,b4,b5,b6,b7,b8,b9,b10,b11,b12,b13,b14,b15,b16,b17,b18,b19,b20,b21,b22,b23,b24,b25,b26,b27,b28,b29,b30,b31,b32,b33,b34,b35,b36,b37,b38) PP2_FRAME_ONE(target,b0) PP2_FRAME_ONE(target,b1) PP2_FRAME_ONE(target,b2) PP2_FRAME_ONE(target,b3) PP2_FRAME_ONE(target,b4) PP2_FRAME_ONE(target,b5) PP2_FRAME_ONE(target,b6) PP2_FRAME_ONE(target,b7) PP2_FRAME_ONE(target,b8) PP2_FRAME_ONE(target,b9) PP2_FRAME_ONE(target,b10) PP2_FRAME_ONE(target,b11) PP2_FRAME_ONE(target,b12) PP2_FRAME_ONE(target,b13) PP2_FRAME_ONE(target,b14) PP2_FRAME_ONE(target,b15) PP2_FRAME_ONE(target,b16) PP2_FRAME_ONE(target,b17) PP2_FRAME_ONE(target,b18) PP2_FRAME_ONE(target,b19) PP2_FRAME_ONE(target,b20) PP2_FRAME_ONE(target,b21) PP2_FRAME_ONE(target,b22) PP2_FRAME_ONE(target,b23) PP2_FRAME_ONE(target,b24) PP2_FRAME_ONE(target,b25) PP2_FRAME_ONE(target,b26) PP2_FRAME_ONE(target,b27) PP2_FRAME_ONE(target,b28) PP2_FRAME_ONE(target,b29) PP2_FRAME_ONE(target,b30) PP2_FRAME_ONE(target,b31) PP2_FRAME_ONE(target,b32) PP2_FRAME_ONE(target,b33) PP2_FRAME_ONE(target,b34) PP2_FRAME_ONE(target,b35) PP2_FRAME_ONE(target,b36) PP2_FRAME_ONE(target,b37) PP2_FRAME_ONE(target,b38)
+#define IP2_FRAME_FIND_40(target,b0,b1,b2,b3,b4,b5,b6,b7,b8,b9,b10,b11,b12,b13,b14,b15,b16,b17,b18,b19,b20,b21,b22,b23,b24,b25,b26,b27,b28,b29,b30,b31,b32,b33,b34,b35,b36,b37,b38,b39) PP2_FRAME_ONE(target,b0) PP2_FRAME_ONE(target,b1) PP2_FRAME_ONE(target,b2) PP2_FRAME_ONE(target,b3) PP2_FRAME_ONE(target,b4) PP2_FRAME_ONE(target,b5) PP2_FRAME_ONE(target,b6) PP2_FRAME_ONE(target,b7) PP2_FRAME_ONE(target,b8) PP2_FRAME_ONE(target,b9) PP2_FRAME_ONE(target,b10) PP2_FRAME_ONE(target,b11) PP2_FRAME_ONE(target,b12) PP2_FRAME_ONE(target,b13) PP2_FRAME_ONE(target,b14) PP2_FRAME_ONE(target,b15) PP2_FRAME_ONE(target,b16) PP2_FRAME_ONE(target,b17) PP2_FRAME_ONE(target,b18) PP2_FRAME_ONE(target,b19) PP2_FRAME_ONE(target,b20) PP2_FRAME_ONE(target,b21) PP2_FRAME_ONE(target,b22) PP2_FRAME_ONE(target,b23) PP2_FRAME_ONE(target,b24) PP2_FRAME_ONE(target,b25) PP2_FRAME_ONE(target,b26) PP2_FRAME_ONE(target,b27) PP2_FRAME_ONE(target,b28) PP2_FRAME_ONE(target,b29) PP2_FRAME_ONE(target,b30) PP2_FRAME_ONE(target,b31) PP2_FRAME_ONE(target,b32) PP2_FRAME_ONE(target,b33) PP2_FRAME_ONE(target,b34) PP2_FRAME_ONE(target,b35) PP2_FRAME_ONE(target,b36) PP2_FRAME_ONE(target,b37) PP2_FRAME_ONE(target,b38) PP2_FRAME_ONE(target,b39)
+#define IP2_FRAME_FIND_41(target,b0,b1,b2,b3,b4,b5,b6,b7,b8,b9,b10,b11,b12,b13,b14,b15,b16,b17,b18,b19,b20,b21,b22,b23,b24,b25,b26,b27,b28,b29,b30,b31,b32,b33,b34,b35,b36,b37,b38,b39,b40) PP2_FRAME_ONE(target,b0) PP2_FRAME_ONE(target,b1) PP2_FRAME_ONE(target,b2) PP2_FRAME_ONE(target,b3) PP2_FRAME_ONE(target,b4) PP2_FRAME_ONE(target,b5) PP2_FRAME_ONE(target,b6) PP2_FRAME_ONE(target,b7) PP2_FRAME_ONE(target,b8) PP2_FRAME_ONE(target,b9) PP2_FRAME_ONE(target,b10) PP2_FRAME_ONE(target,b11) PP2_FRAME_ONE(target,b12) PP2_FRAME_ONE(target,b13) PP2_FRAME_ONE(target,b14) PP2_FRAME_ONE(target,b15) PP2_FRAME_ONE(target,b16) PP2_FRAME_ONE(target,b17) PP2_FRAME_ONE(target,b18) PP2_FRAME_ONE(target,b19) PP2_FRAME_ONE(target,b20) PP2_FRAME_ONE(target,b21) PP2_FRAME_ONE(target,b22) PP2_FRAME_ONE(target,b23) PP2_FRAME_ONE(target,b24) PP2_FRAME_ONE(target,b25) PP2_FRAME_ONE(target,b26) PP2_FRAME_ONE(target,b27) PP2_FRAME_ONE(target,b28) PP2_FRAME_ONE(target,b29) PP2_FRAME_ONE(target,b30) PP2_FRAME_ONE(target,b31) PP2_FRAME_ONE(target,b32) PP2_FRAME_ONE(target,b33) PP2_FRAME_ONE(target,b34) PP2_FRAME_ONE(target,b35) PP2_FRAME_ONE(target,b36) PP2_FRAME_ONE(target,b37) PP2_FRAME_ONE(target,b38) PP2_FRAME_ONE(target,b39) PP2_FRAME_ONE(target,b40)
+#define IP2_FRAME_FIND_42(target,b0,b1,b2,b3,b4,b5,b6,b7,b8,b9,b10,b11,b12,b13,b14,b15,b16,b17,b18,b19,b20,b21,b22,b23,b24,b25,b26,b27,b28,b29,b30,b31,b32,b33,b34,b35,b36,b37,b38,b39,b40,b41) PP2_FRAME_ONE(target,b0) PP2_FRAME_ONE(target,b1) PP2_FRAME_ONE(target,b2) PP2_FRAME_ONE(target,b3) PP2_FRAME_ONE(target,b4) PP2_FRAME_ONE(target,b5) PP2_FRAME_ONE(target,b6) PP2_FRAME_ONE(target,b7) PP2_FRAME_ONE(target,b8) PP2_FRAME_ONE(target,b9) PP2_FRAME_ONE(target,b10) PP2_FRAME_ONE(target,b11) PP2_FRAME_ONE(target,b12) PP2_FRAME_ONE(target,b13) PP2_FRAME_ONE(target,b14) PP2_FRAME_ONE(target,b15) PP2_FRAME_ONE(target,b16) PP2_FRAME_ONE(target,b17) PP2_FRAME_ONE(target,b18) PP2_FRAME_ONE(target,b19) PP2_FRAME_ONE(target,b20) PP2_FRAME_ONE(target,b21) PP2_FRAME_ONE(target,b22) PP2_FRAME_ONE(target,b23) PP2_FRAME_ONE(target,b24) PP2_FRAME_ONE(target,b25) PP2_FRAME_ONE(target,b26) PP2_FRAME_ONE(target,b27) PP2_FRAME_ONE(target,b28) PP2_FRAME_ONE(target,b29) PP2_FRAME_ONE(target,b30) PP2_FRAME_ONE(target,b31) PP2_FRAME_ONE(target,b32) PP2_FRAME_ONE(target,b33) PP2_FRAME_ONE(target,b34) PP2_FRAME_ONE(target,b35) PP2_FRAME_ONE(target,b36) PP2_FRAME_ONE(target,b37) PP2_FRAME_ONE(target,b38) PP2_FRAME_ONE(target,b39) PP2_FRAME_ONE(target,b40) PP2_FRAME_ONE(target,b41)
+#define IP2_FRAME_FIND_43(target,b0,b1,b2,b3,b4,b5,b6,b7,b8,b9,b10,b11,b12,b13,b14,b15,b16,b17,b18,b19,b20,b21,b22,b23,b24,b25,b26,b27,b28,b29,b30,b31,b32,b33,b34,b35,b36,b37,b38,b39,b40,b41,b42) PP2_FRAME_ONE(target,b0) PP2_FRAME_ONE(target,b1) PP2_FRAME_ONE(target,b2) PP2_FRAME_ONE(target,b3) PP2_FRAME_ONE(target,b4) PP2_FRAME_ONE(target,b5) PP2_FRAME_ONE(target,b6) PP2_FRAME_ONE(target,b7) PP2_FRAME_ONE(target,b8) PP2_FRAME_ONE(target,b9) PP2_FRAME_ONE(target,b10) PP2_FRAME_ONE(target,b11) PP2_FRAME_ONE(target,b12) PP2_FRAME_ONE(target,b13) PP2_FRAME_ONE(target,b14) PP2_FRAME_ONE(target,b15) PP2_FRAME_ONE(target,b16) PP2_FRAME_ONE(target,b17) PP2_FRAME_ONE(target,b18) PP2_FRAME_ONE(target,b19) PP2_FRAME_ONE(target,b20) PP2_FRAME_ONE(target,b21) PP2_FRAME_ONE(target,b22) PP2_FRAME_ONE(target,b23) PP2_FRAME_ONE(target,b24) PP2_FRAME_ONE(target,b25) PP2_FRAME_ONE(target,b26) PP2_FRAME_ONE(target,b27) PP2_FRAME_ONE(target,b28) PP2_FRAME_ONE(target,b29) PP2_FRAME_ONE(target,b30) PP2_FRAME_ONE(target,b31) PP2_FRAME_ONE(target,b32) PP2_FRAME_ONE(target,b33) PP2_FRAME_ONE(target,b34) PP2_FRAME_ONE(target,b35) PP2_FRAME_ONE(target,b36) PP2_FRAME_ONE(target,b37) PP2_FRAME_ONE(target,b38) PP2_FRAME_ONE(target,b39) PP2_FRAME_ONE(target,b40) PP2_FRAME_ONE(target,b41) PP2_FRAME_ONE(target,b42)
+#define IP2_FRAME_FIND_44(target,b0,b1,b2,b3,b4,b5,b6,b7,b8,b9,b10,b11,b12,b13,b14,b15,b16,b17,b18,b19,b20,b21,b22,b23,b24,b25,b26,b27,b28,b29,b30,b31,b32,b33,b34,b35,b36,b37,b38,b39,b40,b41,b42,b43) PP2_FRAME_ONE(target,b0) PP2_FRAME_ONE(target,b1) PP2_FRAME_ONE(target,b2) PP2_FRAME_ONE(target,b3) PP2_FRAME_ONE(target,b4) PP2_FRAME_ONE(target,b5) PP2_FRAME_ONE(target,b6) PP2_FRAME_ONE(target,b7) PP2_FRAME_ONE(target,b8) PP2_FRAME_ONE(target,b9) PP2_FRAME_ONE(target,b10) PP2_FRAME_ONE(target,b11) PP2_FRAME_ONE(target,b12) PP2_FRAME_ONE(target,b13) PP2_FRAME_ONE(target,b14) PP2_FRAME_ONE(target,b15) PP2_FRAME_ONE(target,b16) PP2_FRAME_ONE(target,b17) PP2_FRAME_ONE(target,b18) PP2_FRAME_ONE(target,b19) PP2_FRAME_ONE(target,b20) PP2_FRAME_ONE(target,b21) PP2_FRAME_ONE(target,b22) PP2_FRAME_ONE(target,b23) PP2_FRAME_ONE(target,b24) PP2_FRAME_ONE(target,b25) PP2_FRAME_ONE(target,b26) PP2_FRAME_ONE(target,b27) PP2_FRAME_ONE(target,b28) PP2_FRAME_ONE(target,b29) PP2_FRAME_ONE(target,b30) PP2_FRAME_ONE(target,b31) PP2_FRAME_ONE(target,b32) PP2_FRAME_ONE(target,b33) PP2_FRAME_ONE(target,b34) PP2_FRAME_ONE(target,b35) PP2_FRAME_ONE(target,b36) PP2_FRAME_ONE(target,b37) PP2_FRAME_ONE(target,b38) PP2_FRAME_ONE(target,b39) PP2_FRAME_ONE(target,b40) PP2_FRAME_ONE(target,b41) PP2_FRAME_ONE(target,b42) PP2_FRAME_ONE(target,b43)
+#define IP2_FRAME_FIND_45(target,b0,b1,b2,b3,b4,b5,b6,b7,b8,b9,b10,b11,b12,b13,b14,b15,b16,b17,b18,b19,b20,b21,b22,b23,b24,b25,b26,b27,b28,b29,b30,b31,b32,b33,b34,b35,b36,b37,b38,b39,b40,b41,b42,b43,b44) PP2_FRAME_ONE(target,b0) PP2_FRAME_ONE(target,b1) PP2_FRAME_ONE(target,b2) PP2_FRAME_ONE(target,b3) PP2_FRAME_ONE(target,b4) PP2_FRAME_ONE(target,b5) PP2_FRAME_ONE(target,b6) PP2_FRAME_ONE(target,b7) PP2_FRAME_ONE(target,b8) PP2_FRAME_ONE(target,b9) PP2_FRAME_ONE(target,b10) PP2_FRAME_ONE(target,b11) PP2_FRAME_ONE(target,b12) PP2_FRAME_ONE(target,b13) PP2_FRAME_ONE(target,b14) PP2_FRAME_ONE(target,b15) PP2_FRAME_ONE(target,b16) PP2_FRAME_ONE(target,b17) PP2_FRAME_ONE(target,b18) PP2_FRAME_ONE(target,b19) PP2_FRAME_ONE(target,b20) PP2_FRAME_ONE(target,b21) PP2_FRAME_ONE(target,b22) PP2_FRAME_ONE(target,b23) PP2_FRAME_ONE(target,b24) PP2_FRAME_ONE(target,b25) PP2_FRAME_ONE(target,b26) PP2_FRAME_ONE(target,b27) PP2_FRAME_ONE(target,b28) PP2_FRAME_ONE(target,b29) PP2_FRAME_ONE(target,b30) PP2_FRAME_ONE(target,b31) PP2_FRAME_ONE(target,b32) PP2_FRAME_ONE(target,b33) PP2_FRAME_ONE(target,b34) PP2_FRAME_ONE(target,b35) PP2_FRAME_ONE(target,b36) PP2_FRAME_ONE(target,b37) PP2_FRAME_ONE(target,b38) PP2_FRAME_ONE(target,b39) PP2_FRAME_ONE(target,b40) PP2_FRAME_ONE(target,b41) PP2_FRAME_ONE(target,b42) PP2_FRAME_ONE(target,b43) PP2_FRAME_ONE(target,b44)
+#define IP2_FRAME_FIND_46(target,b0,b1,b2,b3,b4,b5,b6,b7,b8,b9,b10,b11,b12,b13,b14,b15,b16,b17,b18,b19,b20,b21,b22,b23,b24,b25,b26,b27,b28,b29,b30,b31,b32,b33,b34,b35,b36,b37,b38,b39,b40,b41,b42,b43,b44,b45) PP2_FRAME_ONE(target,b0) PP2_FRAME_ONE(target,b1) PP2_FRAME_ONE(target,b2) PP2_FRAME_ONE(target,b3) PP2_FRAME_ONE(target,b4) PP2_FRAME_ONE(target,b5) PP2_FRAME_ONE(target,b6) PP2_FRAME_ONE(target,b7) PP2_FRAME_ONE(target,b8) PP2_FRAME_ONE(target,b9) PP2_FRAME_ONE(target,b10) PP2_FRAME_ONE(target,b11) PP2_FRAME_ONE(target,b12) PP2_FRAME_ONE(target,b13) PP2_FRAME_ONE(target,b14) PP2_FRAME_ONE(target,b15) PP2_FRAME_ONE(target,b16) PP2_FRAME_ONE(target,b17) PP2_FRAME_ONE(target,b18) PP2_FRAME_ONE(target,b19) PP2_FRAME_ONE(target,b20) PP2_FRAME_ONE(target,b21) PP2_FRAME_ONE(target,b22) PP2_FRAME_ONE(target,b23) PP2_FRAME_ONE(target,b24) PP2_FRAME_ONE(target,b25) PP2_FRAME_ONE(target,b26) PP2_FRAME_ONE(target,b27) PP2_FRAME_ONE(target,b28) PP2_FRAME_ONE(target,b29) PP2_FRAME_ONE(target,b30) PP2_FRAME_ONE(target,b31) PP2_FRAME_ONE(target,b32) PP2_FRAME_ONE(target,b33) PP2_FRAME_ONE(target,b34) PP2_FRAME_ONE(target,b35) PP2_FRAME_ONE(target,b36) PP2_FRAME_ONE(target,b37) PP2_FRAME_ONE(target,b38) PP2_FRAME_ONE(target,b39) PP2_FRAME_ONE(target,b40) PP2_FRAME_ONE(target,b41) PP2_FRAME_ONE(target,b42) PP2_FRAME_ONE(target,b43) PP2_FRAME_ONE(target,b44) PP2_FRAME_ONE(target,b45)
+#define IP2_FRAME_FIND_47(target,b0,b1,b2,b3,b4,b5,b6,b7,b8,b9,b10,b11,b12,b13,b14,b15,b16,b17,b18,b19,b20,b21,b22,b23,b24,b25,b26,b27,b28,b29,b30,b31,b32,b33,b34,b35,b36,b37,b38,b39,b40,b41,b42,b43,b44,b45,b46) PP2_FRAME_ONE(target,b0) PP2_FRAME_ONE(target,b1) PP2_FRAME_ONE(target,b2) PP2_FRAME_ONE(target,b3) PP2_FRAME_ONE(target,b4) PP2_FRAME_ONE(target,b5) PP2_FRAME_ONE(target,b6) PP2_FRAME_ONE(target,b7) PP2_FRAME_ONE(target,b8) PP2_FRAME_ONE(target,b9) PP2_FRAME_ONE(target,b10) PP2_FRAME_ONE(target,b11) PP2_FRAME_ONE(target,b12) PP2_FRAME_ONE(target,b13) PP2_FRAME_ONE(target,b14) PP2_FRAME_ONE(target,b15) PP2_FRAME_ONE(target,b16) PP2_FRAME_ONE(target,b17) PP2_FRAME_ONE(target,b18) PP2_FRAME_ONE(target,b19) PP2_FRAME_ONE(target,b20) PP2_FRAME_ONE(target,b21) PP2_FRAME_ONE(target,b22) PP2_FRAME_ONE(target,b23) PP2_FRAME_ONE(target,b24) PP2_FRAME_ONE(target,b25) PP2_FRAME_ONE(target,b26) PP2_FRAME_ONE(target,b27) PP2_FRAME_ONE(target,b28) PP2_FRAME_ONE(target,b29) PP2_FRAME_ONE(target,b30) PP2_FRAME_ONE(target,b31) PP2_FRAME_ONE(target,b32) PP2_FRAME_ONE(target,b33) PP2_FRAME_ONE(target,b34) PP2_FRAME_ONE(target,b35) PP2_FRAME_ONE(target,b36) PP2_FRAME_ONE(target,b37) PP2_FRAME_ONE(target,b38) PP2_FRAME_ONE(target,b39) PP2_FRAME_ONE(target,b40) PP2_FRAME_ONE(target,b41) PP2_FRAME_ONE(target,b42) PP2_FRAME_ONE(target,b43) PP2_FRAME_ONE(target,b44) PP2_FRAME_ONE(target,b45) PP2_FRAME_ONE(target,b46)
+#define IP2_FRAME_FIND_48(target,b0,b1,b2,b3,b4,b5,b6,b7,b8,b9,b10,b11,b12,b13,b14,b15,b16,b17,b18,b19,b20,b21,b22,b23,b24,b25,b26,b27,b28,b29,b30,b31,b32,b33,b34,b35,b36,b37,b38,b39,b40,b41,b42,b43,b44,b45,b46,b47) PP2_FRAME_ONE(target,b0) PP2_FRAME_ONE(target,b1) PP2_FRAME_ONE(target,b2) PP2_FRAME_ONE(target,b3) PP2_FRAME_ONE(target,b4) PP2_FRAME_ONE(target,b5) PP2_FRAME_ONE(target,b6) PP2_FRAME_ONE(target,b7) PP2_FRAME_ONE(target,b8) PP2_FRAME_ONE(target,b9) PP2_FRAME_ONE(target,b10) PP2_FRAME_ONE(target,b11) PP2_FRAME_ONE(target,b12) PP2_FRAME_ONE(target,b13) PP2_FRAME_ONE(target,b14) PP2_FRAME_ONE(target,b15) PP2_FRAME_ONE(target,b16) PP2_FRAME_ONE(target,b17) PP2_FRAME_ONE(target,b18) PP2_FRAME_ONE(target,b19) PP2_FRAME_ONE(target,b20) PP2_FRAME_ONE(target,b21) PP2_FRAME_ONE(target,b22) PP2_FRAME_ONE(target,b23) PP2_FRAME_ONE(target,b24) PP2_FRAME_ONE(target,b25) PP2_FRAME_ONE(target,b26) PP2_FRAME_ONE(target,b27) PP2_FRAME_ONE(target,b28) PP2_FRAME_ONE(target,b29) PP2_FRAME_ONE(target,b30) PP2_FRAME_ONE(target,b31) PP2_FRAME_ONE(target,b32) PP2_FRAME_ONE(target,b33) PP2_FRAME_ONE(target,b34) PP2_FRAME_ONE(target,b35) PP2_FRAME_ONE(target,b36) PP2_FRAME_ONE(target,b37) PP2_FRAME_ONE(target,b38) PP2_FRAME_ONE(target,b39) PP2_FRAME_ONE(target,b40) PP2_FRAME_ONE(target,b41) PP2_FRAME_ONE(target,b42) PP2_FRAME_ONE(target,b43) PP2_FRAME_ONE(target,b44) PP2_FRAME_ONE(target,b45) PP2_FRAME_ONE(target,b46) PP2_FRAME_ONE(target,b47)
+#define IP2_FRAME_FIND_49(target,b0,b1,b2,b3,b4,b5,b6,b7,b8,b9,b10,b11,b12,b13,b14,b15,b16,b17,b18,b19,b20,b21,b22,b23,b24,b25,b26,b27,b28,b29,b30,b31,b32,b33,b34,b35,b36,b37,b38,b39,b40,b41,b42,b43,b44,b45,b46,b47,b48) PP2_FRAME_ONE(target,b0) PP2_FRAME_ONE(target,b1) PP2_FRAME_ONE(target,b2) PP2_FRAME_ONE(target,b3) PP2_FRAME_ONE(target,b4) PP2_FRAME_ONE(target,b5) PP2_FRAME_ONE(target,b6) PP2_FRAME_ONE(target,b7) PP2_FRAME_ONE(target,b8) PP2_FRAME_ONE(target,b9) PP2_FRAME_ONE(target,b10) PP2_FRAME_ONE(target,b11) PP2_FRAME_ONE(target,b12) PP2_FRAME_ONE(target,b13) PP2_FRAME_ONE(target,b14) PP2_FRAME_ONE(target,b15) PP2_FRAME_ONE(target,b16) PP2_FRAME_ONE(target,b17) PP2_FRAME_ONE(target,b18) PP2_FRAME_ONE(target,b19) PP2_FRAME_ONE(target,b20) PP2_FRAME_ONE(target,b21) PP2_FRAME_ONE(target,b22) PP2_FRAME_ONE(target,b23) PP2_FRAME_ONE(target,b24) PP2_FRAME_ONE(target,b25) PP2_FRAME_ONE(target,b26) PP2_FRAME_ONE(target,b27) PP2_FRAME_ONE(target,b28) PP2_FRAME_ONE(target,b29) PP2_FRAME_ONE(target,b30) PP2_FRAME_ONE(target,b31) PP2_FRAME_ONE(target,b32) PP2_FRAME_ONE(target,b33) PP2_FRAME_ONE(target,b34) PP2_FRAME_ONE(target,b35) PP2_FRAME_ONE(target,b36) PP2_FRAME_ONE(target,b37) PP2_FRAME_ONE(target,b38) PP2_FRAME_ONE(target,b39) PP2_FRAME_ONE(target,b40) PP2_FRAME_ONE(target,b41) PP2_FRAME_ONE(target,b42) PP2_FRAME_ONE(target,b43) PP2_FRAME_ONE(target,b44) PP2_FRAME_ONE(target,b45) PP2_FRAME_ONE(target,b46) PP2_FRAME_ONE(target,b47) PP2_FRAME_ONE(target,b48)
+#define IP2_FRAME_FIND_50(target,b0,b1,b2,b3,b4,b5,b6,b7,b8,b9,b10,b11,b12,b13,b14,b15,b16,b17,b18,b19,b20,b21,b22,b23,b24,b25,b26,b27,b28,b29,b30,b31,b32,b33,b34,b35,b36,b37,b38,b39,b40,b41,b42,b43,b44,b45,b46,b47,b48,b49) PP2_FRAME_ONE(target,b0) PP2_FRAME_ONE(target,b1) PP2_FRAME_ONE(target,b2) PP2_FRAME_ONE(target,b3) PP2_FRAME_ONE(target,b4) PP2_FRAME_ONE(target,b5) PP2_FRAME_ONE(target,b6) PP2_FRAME_ONE(target,b7) PP2_FRAME_ONE(target,b8) PP2_FRAME_ONE(target,b9) PP2_FRAME_ONE(target,b10) PP2_FRAME_ONE(target,b11) PP2_FRAME_ONE(target,b12) PP2_FRAME_ONE(target,b13) PP2_FRAME_ONE(target,b14) PP2_FRAME_ONE(target,b15) PP2_FRAME_ONE(target,b16) PP2_FRAME_ONE(target,b17) PP2_FRAME_ONE(target,b18) PP2_FRAME_ONE(target,b19) PP2_FRAME_ONE(target,b20) PP2_FRAME_ONE(target,b21) PP2_FRAME_ONE(target,b22) PP2_FRAME_ONE(target,b23) PP2_FRAME_ONE(target,b24) PP2_FRAME_ONE(target,b25) PP2_FRAME_ONE(target,b26) PP2_FRAME_ONE(target,b27) PP2_FRAME_ONE(target,b28) PP2_FRAME_ONE(target,b29) PP2_FRAME_ONE(target,b30) PP2_FRAME_ONE(target,b31) PP2_FRAME_ONE(target,b32) PP2_FRAME_ONE(target,b33) PP2_FRAME_ONE(target,b34) PP2_FRAME_ONE(target,b35) PP2_FRAME_ONE(target,b36) PP2_FRAME_ONE(target,b37) PP2_FRAME_ONE(target,b38) PP2_FRAME_ONE(target,b39) PP2_FRAME_ONE(target,b40) PP2_FRAME_ONE(target,b41) PP2_FRAME_ONE(target,b42) PP2_FRAME_ONE(target,b43) PP2_FRAME_ONE(target,b44) PP2_FRAME_ONE(target,b45) PP2_FRAME_ONE(target,b46) PP2_FRAME_ONE(target,b47) PP2_FRAME_ONE(target,b48) PP2_FRAME_ONE(target,b49)
+#define IP2_FRAME_FIND_51(target,b0,b1,b2,b3,b4,b5,b6,b7,b8,b9,b10,b11,b12,b13,b14,b15,b16,b17,b18,b19,b20,b21,b22,b23,b24,b25,b26,b27,b28,b29,b30,b31,b32,b33,b34,b35,b36,b37,b38,b39,b40,b41,b42,b43,b44,b45,b46,b47,b48,b49,b50) PP2_FRAME_ONE(target,b0) PP2_FRAME_ONE(target,b1) PP2_FRAME_ONE(target,b2) PP2_FRAME_ONE(target,b3) PP2_FRAME_ONE(target,b4) PP2_FRAME_ONE(target,b5) PP2_FRAME_ONE(target,b6) PP2_FRAME_ONE(target,b7) PP2_FRAME_ONE(target,b8) PP2_FRAME_ONE(target,b9) PP2_FRAME_ONE(target,b10) PP2_FRAME_ONE(target,b11) PP2_FRAME_ONE(target,b12) PP2_FRAME_ONE(target,b13) PP2_FRAME_ONE(target,b14) PP2_FRAME_ONE(target,b15) PP2_FRAME_ONE(target,b16) PP2_FRAME_ONE(target,b17) PP2_FRAME_ONE(target,b18) PP2_FRAME_ONE(target,b19) PP2_FRAME_ONE(target,b20) PP2_FRAME_ONE(target,b21) PP2_FRAME_ONE(target,b22) PP2_FRAME_ONE(target,b23) PP2_FRAME_ONE(target,b24) PP2_FRAME_ONE(target,b25) PP2_FRAME_ONE(target,b26) PP2_FRAME_ONE(target,b27) PP2_FRAME_ONE(target,b28) PP2_FRAME_ONE(target,b29) PP2_FRAME_ONE(target,b30) PP2_FRAME_ONE(target,b31) PP2_FRAME_ONE(target,b32) PP2_FRAME_ONE(target,b33) PP2_FRAME_ONE(target,b34) PP2_FRAME_ONE(target,b35) PP2_FRAME_ONE(target,b36) PP2_FRAME_ONE(target,b37) PP2_FRAME_ONE(target,b38) PP2_FRAME_ONE(target,b39) PP2_FRAME_ONE(target,b40) PP2_FRAME_ONE(target,b41) PP2_FRAME_ONE(target,b42) PP2_FRAME_ONE(target,b43) PP2_FRAME_ONE(target,b44) PP2_FRAME_ONE(target,b45) PP2_FRAME_ONE(target,b46) PP2_FRAME_ONE(target,b47) PP2_FRAME_ONE(target,b48) PP2_FRAME_ONE(target,b49) PP2_FRAME_ONE(target,b50)
+#define IP2_FRAME_FIND_52(target,b0,b1,b2,b3,b4,b5,b6,b7,b8,b9,b10,b11,b12,b13,b14,b15,b16,b17,b18,b19,b20,b21,b22,b23,b24,b25,b26,b27,b28,b29,b30,b31,b32,b33,b34,b35,b36,b37,b38,b39,b40,b41,b42,b43,b44,b45,b46,b47,b48,b49,b50,b51) PP2_FRAME_ONE(target,b0) PP2_FRAME_ONE(target,b1) PP2_FRAME_ONE(target,b2) PP2_FRAME_ONE(target,b3) PP2_FRAME_ONE(target,b4) PP2_FRAME_ONE(target,b5) PP2_FRAME_ONE(target,b6) PP2_FRAME_ONE(target,b7) PP2_FRAME_ONE(target,b8) PP2_FRAME_ONE(target,b9) PP2_FRAME_ONE(target,b10) PP2_FRAME_ONE(target,b11) PP2_FRAME_ONE(target,b12) PP2_FRAME_ONE(target,b13) PP2_FRAME_ONE(target,b14) PP2_FRAME_ONE(target,b15) PP2_FRAME_ONE(target,b16) PP2_FRAME_ONE(target,b17) PP2_FRAME_ONE(target,b18) PP2_FRAME_ONE(target,b19) PP2_FRAME_ONE(target,b20) PP2_FRAME_ONE(target,b21) PP2_FRAME_ONE(target,b22) PP2_FRAME_ONE(target,b23) PP2_FRAME_ONE(target,b24) PP2_FRAME_ONE(target,b25) PP2_FRAME_ONE(target,b26) PP2_FRAME_ONE(target,b27) PP2_FRAME_ONE(target,b28) PP2_FRAME_ONE(target,b29) PP2_FRAME_ONE(target,b30) PP2_FRAME_ONE(target,b31) PP2_FRAME_ONE(target,b32) PP2_FRAME_ONE(target,b33) PP2_FRAME_ONE(target,b34) PP2_FRAME_ONE(target,b35) PP2_FRAME_ONE(target,b36) PP2_FRAME_ONE(target,b37) PP2_FRAME_ONE(target,b38) PP2_FRAME_ONE(target,b39) PP2_FRAME_ONE(target,b40) PP2_FRAME_ONE(target,b41) PP2_FRAME_ONE(target,b42) PP2_FRAME_ONE(target,b43) PP2_FRAME_ONE(target,b44) PP2_FRAME_ONE(target,b45) PP2_FRAME_ONE(target,b46) PP2_FRAME_ONE(target,b47) PP2_FRAME_ONE(target,b48) PP2_FRAME_ONE(target,b49) PP2_FRAME_ONE(target,b50) PP2_FRAME_ONE(target,b51)
+#define IP2_FRAME_FIND_53_OR_MORE(target,b0,b1,b2,b3,b4,b5,b6,b7,b8,b9,b10,b11,b12,b13,b14,b15,b16,b17,b18,b19,b20,b21,b22,b23,b24,b25,b26,b27,b28,b29,b30,b31,b32,b33,b34,b35,b36,b37,b38,b39,b40,b41,b42,b43,b44,b45,b46,b47,b48,b49,b50,b51,...) PP2_FRAME_ONE(target,b0) PP2_FRAME_ONE(target,b1) PP2_FRAME_ONE(target,b2) PP2_FRAME_ONE(target,b3) PP2_FRAME_ONE(target,b4) PP2_FRAME_ONE(target,b5) PP2_FRAME_ONE(target,b6) PP2_FRAME_ONE(target,b7) PP2_FRAME_ONE(target,b8) PP2_FRAME_ONE(target,b9) PP2_FRAME_ONE(target,b10) PP2_FRAME_ONE(target,b11) PP2_FRAME_ONE(target,b12) PP2_FRAME_ONE(target,b13) PP2_FRAME_ONE(target,b14) PP2_FRAME_ONE(target,b15) PP2_FRAME_ONE(target,b16) PP2_FRAME_ONE(target,b17) PP2_FRAME_ONE(target,b18) PP2_FRAME_ONE(target,b19) PP2_FRAME_ONE(target,b20) PP2_FRAME_ONE(target,b21) PP2_FRAME_ONE(target,b22) PP2_FRAME_ONE(target,b23) PP2_FRAME_ONE(target,b24) PP2_FRAME_ONE(target,b25) PP2_FRAME_ONE(target,b26) PP2_FRAME_ONE(target,b27) PP2_FRAME_ONE(target,b28) PP2_FRAME_ONE(target,b29) PP2_FRAME_ONE(target,b30) PP2_FRAME_ONE(target,b31) PP2_FRAME_ONE(target,b32) PP2_FRAME_ONE(target,b33) PP2_FRAME_ONE(target,b34) PP2_FRAME_ONE(target,b35) PP2_FRAME_ONE(target,b36) PP2_FRAME_ONE(target,b37) PP2_FRAME_ONE(target,b38) PP2_FRAME_ONE(target,b39) PP2_FRAME_ONE(target,b40) PP2_FRAME_ONE(target,b41) PP2_FRAME_ONE(target,b42) PP2_FRAME_ONE(target,b43) PP2_FRAME_ONE(target,b44) PP2_FRAME_ONE(target,b45) PP2_FRAME_ONE(target,b46) PP2_FRAME_ONE(target,b47) PP2_FRAME_ONE(target,b48) PP2_FRAME_ONE(target,b49) PP2_FRAME_ONE(target,b50) PP2_FRAME_ONE(target,b51) PP2_FRAME_TOO_MANY_LOCALS
+#define IP2_FRAME_FOUND_SEL(target,...) IP2_FRAME_FOUND_OVL(target,__VA_ARGS__,PP2_COMMA_52, PP2_COMMA_51, PP2_COMMA_50, PP2_COMMA_49, PP2_COMMA_48, PP2_COMMA_47, PP2_COMMA_46, PP2_COMMA_45, PP2_COMMA_44, PP2_COMMA_43, PP2_COMMA_42, PP2_COMMA_41, PP2_COMMA_40, PP2_COMMA_39, PP2_COMMA_38, PP2_COMMA_37, PP2_COMMA_36, PP2_COMMA_35, PP2_COMMA_34, PP2_COMMA_33, PP2_COMMA_32, PP2_COMMA_31, PP2_COMMA_30, PP2_COMMA_29, PP2_COMMA_28, PP2_COMMA_27, PP2_COMMA_26, PP2_COMMA_25, PP2_COMMA_24, PP2_COMMA_23, PP2_COMMA_22, PP2_COMMA_21, PP2_COMMA_20, PP2_COMMA_19, PP2_COMMA_18, PP2_COMMA_17, PP2_COMMA_16, PP2_COMMA_15, PP2_COMMA_14, PP2_COMMA_13, PP2_COMMA_12, PP2_COMMA_11, PP2_COMMA_10, PP2_COMMA_9, PP2_COMMA_8, PP2_COMMA_7, PP2_COMMA_6, PP2_COMMA_5, PP2_COMMA_4, PP2_COMMA_3, PP2_COMMA_2, PP2_COMMA_1,)(target,__VA_ARGS__)
+#define IP2_FRAME_FOUND_OVL(target,x0,x1,x2,x3,x4,x5,x6,x7,x8,x9,x10,x11,x12,x13,x14,x15,x16,x17,x18,x19,x20,x21,x22,x23,x24,x25,x26,x27,x28,x29,x30,x31,x32,x33,x34,x35,x36,x37,x38,x39,x40,x41,x42,x43,x44,x45,x46,x47,x48,x49,x50,x51,m,...) PP2_TUPLE_AT_1(IP2_FRAME_FOUND_,m,53_OR_MORE)
+#define IP2_FRAME_FOUND_1(target,b0) PP2_FRAME_FLAG(target,b0)
+#define IP2_FRAME_FOUND_2(target,b0,b1) PP2_FRAME_FLAG(target,b0) PP2_FRAME_FLAG(target,b1)
+#define IP2_FRAME_FOUND_3(target,b0,b1,b2) PP2_FRAME_FLAG(target,b0) PP2_FRAME_FLAG(target,b1) PP2_FRAME_FLAG(target,b2)
+#define IP2_FRAME_FOUND_4(target,b0,b1,b2,b3) PP2_FRAME_FLAG(target,b0) PP2_FRAME_FLAG(target,b1) PP2_FRAME_FLAG(target,b2) PP2_FRAME_FLAG(target,b3)
+#define IP2_FRAME_FOUND_5(target,b0,b1,b2,b3,b4) PP2_FRAME_FLAG(target,b0) PP2_FRAME_FLAG(target,b1) PP2_FRAME_FLAG(target,b2) PP2_FRAME_FLAG(target,b3) PP2_FRAME_FLAG(target,b4)
+#define IP2_FRAME_FOUND_6(target,b0,b1,b2,b3,b4,b5) PP2_FRAME_FLAG(target,b0) PP2_FRAME_FLAG(target,b1) PP2_FRAME_FLAG(target,b2) PP2_FRAME_FLAG(target,b3) PP2_FRAME_FLAG(target,b4) PP2_FRAME_FLAG(target,b5)
+#define IP2_FRAME_FOUND_7(target,b0,b1,b2,b3,b4,b5,b6) PP2_FRAME_FLAG(target,b0) PP2_FRAME_FLAG(target,b1) PP2_FRAME_FLAG(target,b2) PP2_FRAME_FLAG(target,b3) PP2_FRAME_FLAG(target,b4) PP2_FRAME_FLAG(target,b5) PP2_FRAME_FLAG(target,b6)
+#define IP2_FRAME_FOUND_8(target,b0,b1,b2,b3,b4,b5,b6,b7) PP2_FRAME_FLAG(target,b0) PP2_FRAME_FLAG(target,b1) PP2_FRAME_FLAG(target,b2) PP2_FRAME_FLAG(target,b3) PP2_FRAME_FLAG(target,b4) PP2_FRAME_FLAG(target,b5) PP2_FRAME_FLAG(target,b6) PP2_FRAME_FLAG(target,b7)
+#define IP2_FRAME_FOUND_9(target,b0,b1,b2,b3,b4,b5,b6,b7,b8) PP2_FRAME_FLAG(target,b0) PP2_FRAME_FLAG(target,b1) PP2_FRAME_FLAG(target,b2) PP2_FRAME_FLAG(target,b3) PP2_FRAME_FLAG(target,b4) PP2_FRAME_FLAG(target,b5) PP2_FRAME_FLAG(target,b6) PP2_FRAME_FLAG(target,b7) PP2_FRAME_FLAG(target,b8)
+#define IP2_FRAME_FOUND_10(target,b0,b1,b2,b3,b4,b5,b6,b7,b8,b9) PP2_FRAME_FLAG(target,b0) PP2_FRAME_FLAG(target,b1) PP2_FRAME_FLAG(target,b2) PP2_FRAME_FLAG(target,b3) PP2_FRAME_FLAG(target,b4) PP2_FRAME_FLAG(target,b5) PP2_FRAME_FLAG(target,b6) PP2_FRAME_FLAG(target,b7) PP2_FRAME_FLAG(target,b8) PP2_FRAME_FLAG(target,b9)
+#define IP2_FRAME_FOUND_11(target,b0,b1,b2,b3,b4,b5,b6,b7,b8,b9,b10) PP2_FRAME_FLAG(target,b0) PP2_FRAME_FLAG(target,b1) PP2_FRAME_FLAG(target,b2) PP2_FRAME_FLAG(target,b3) PP2_FRAME_FLAG(target,b4) PP2_FRAME_FLAG(target,b5) PP2_FRAME_FLAG(target,b6) PP2_FRAME_FLAG(target,b7) PP2_FRAME_FLAG(target,b8) PP2_FRAME_FLAG(target,b9) PP2_FRAME_FLAG(target,b10)
+#define IP2_FRAME_FOUND_12(target,b0,b1,b2,b3,b4,b5,b6,b7,b8,b9,b10,b11) PP2_FRAME_FLAG(target,b0) PP2_FRAME_FLAG(target,b1) PP2_FRAME_FLAG(target,b2) PP2_FRAME_FLAG(target,b3) PP2_FRAME_FLAG(target,b4) PP2_FRAME_FLAG(target,b5) PP2_FRAME_FLAG(target,b6) PP2_FRAME_FLAG(target,b7) PP2_FRAME_FLAG(target,b8) PP2_FRAME_FLAG(target,b9) PP2_FRAME_FLAG(target,b10) PP2_FRAME_FLAG(target,b11)
+#define IP2_FRAME_FOUND_13(target,b0,b1,b2,b3,b4,b5,b6,b7,b8,b9,b10,b11,b12) PP2_FRAME_FLAG(target,b0) PP2_FRAME_FLAG(target,b1) PP2_FRAME_FLAG(target,b2) PP2_FRAME_FLAG(target,b3) PP2_FRAME_FLAG(target,b4) PP2_FRAME_FLAG(target,b5) PP2_FRAME_FLAG(target,b6) PP2_FRAME_FLAG(target,b7) PP2_FRAME_FLAG(target,b8) PP2_FRAME_FLAG(target,b9) PP2_FRAME_FLAG(target,b10) PP2_FRAME_FLAG(target,b11) PP2_FRAME_FLAG(target,b12)
+#define IP2_FRAME_FOUND_14(target,b0,b1,b2,b3,b4,b5,b6,b7,b8,b9,b10,b11,b12,b13) PP2_FRAME_FLAG(target,b0) PP2_FRAME_FLAG(target,b1) PP2_FRAME_FLAG(target,b2) PP2_FRAME_FLAG(target,b3) PP2_FRAME_FLAG(target,b4) PP2_FRAME_FLAG(target,b5) PP2_FRAME_FLAG(target,b6) PP2_FRAME_FLAG(target,b7) PP2_FRAME_FLAG(target,b8) PP2_FRAME_FLAG(target,b9) PP2_FRAME_FLAG(target,b10) PP2_FRAME_FLAG(target,b11) PP2_FRAME_FLAG(target,b12) PP2_FRAME_FLAG(target,b13)
+#define IP2_FRAME_FOUND_15(target,b0,b1,b2,b3,b4,b5,b6,b7,b8,b9,b10,b11,b12,b13,b14) PP2_FRAME_FLAG(target,b0) PP2_FRAME_FLAG(target,b1) PP2_FRAME_FLAG(target,b2) PP2_FRAME_FLAG(target,b3) PP2_FRAME_FLAG(target,b4) PP2_FRAME_FLAG(target,b5) PP2_FRAME_FLAG(target,b6) PP2_FRAME_FLAG(target,b7) PP2_FRAME_FLAG(target,b8) PP2_FRAME_FLAG(target,b9) PP2_FRAME_FLAG(target,b10) PP2_FRAME_FLAG(target,b11) PP2_FRAME_FLAG(target,b12) PP2_FRAME_FLAG(target,b13) PP2_FRAME_FLAG(target,b14)
+#define IP2_FRAME_FOUND_16(target,b0,b1,b2,b3,b4,b5,b6,b7,b8,b9,b10,b11,b12,b13,b14,b15) PP2_FRAME_FLAG(target,b0) PP2_FRAME_FLAG(target,b1) PP2_FRAME_FLAG(target,b2) PP2_FRAME_FLAG(target,b3) PP2_FRAME_FLAG(target,b4) PP2_FRAME_FLAG(target,b5) PP2_FRAME_FLAG(target,b6) PP2_FRAME_FLAG(target,b7) PP2_FRAME_FLAG(target,b8) PP2_FRAME_FLAG(target,b9) PP2_FRAME_FLAG(target,b10) PP2_FRAME_FLAG(target,b11) PP2_FRAME_FLAG(target,b12) PP2_FRAME_FLAG(target,b13) PP2_FRAME_FLAG(target,b14) PP2_FRAME_FLAG(target,b15)
+#define IP2_FRAME_FOUND_17(target,b0,b1,b2,b3,b4,b5,b6,b7,b8,b9,b10,b11,b12,b13,b14,b15,b16) PP2_FRAME_FLAG(target,b0) PP2_FRAME_FLAG(target,b1) PP2_FRAME_FLAG(target,b2) PP2_FRAME_FLAG(target,b3) PP2_FRAME_FLAG(target,b4) PP2_FRAME_FLAG(target,b5) PP2_FRAME_FLAG(target,b6) PP2_FRAME_FLAG(target,b7) PP2_FRAME_FLAG(target,b8) PP2_FRAME_FLAG(target,b9) PP2_FRAME_FLAG(target,b10) PP2_FRAME_FLAG(target,b11) PP2_FRAME_FLAG(target,b12) PP2_FRAME_FLAG(target,b13) PP2_FRAME_FLAG(target,b14) PP2_FRAME_FLAG(target,b15) PP2_FRAME_FLAG(target,b16)
+#define IP2_FRAME_FOUND_18(target,b0,b1,b2,b3,b4,b5,b6,b7,b8,b9,b10,b11,b12,b13,b14,b15,b16,b17) PP2_FRAME_FLAG(target,b0) PP2_FRAME_FLAG(target,b1) PP2_FRAME_FLAG(target,b2) PP2_FRAME_FLAG(target,b3) PP2_FRAME_FLAG(target,b4) PP2_FRAME_FLAG(target,b5) PP2_FRAME_FLAG(target,b6) PP2_FRAME_FLAG(target,b7) PP2_FRAME_FLAG(target,b8) PP2_FRAME_FLAG(target,b9) PP2_FRAME_FLAG(target,b10) PP2_FRAME_FLAG(target,b11) PP2_FRAME_FLAG(target,b12) PP2_FRAME_FLAG(target,b13) PP2_FRAME_FLAG(target,b14) PP2_FRAME_FLAG(target,b15) PP2_FRAME_FLAG(target,b16) PP2_FRAME_FLAG(target,b17)
+#define IP2_FRAME_FOUND_19(target,b0,b1,b2,b3,b4,b5,b6,b7,b8,b9,b10,b11,b12,b13,b14,b15,b16,b17,b18) PP2_FRAME_FLAG(target,b0) PP2_FRAME_FLAG(target,b1) PP2_FRAME_FLAG(target,b2) PP2_FRAME_FLAG(target,b3) PP2_FRAME_FLAG(target,b4) PP2_FRAME_FLAG(target,b5) PP2_FRAME_FLAG(target,b6) PP2_FRAME_FLAG(target,b7) PP2_FRAME_FLAG(target,b8) PP2_FRAME_FLAG(target,b9) PP2_FRAME_FLAG(target,b10) PP2_FRAME_FLAG(target,b11) PP2_FRAME_FLAG(target,b12) PP2_FRAME_FLAG(target,b13) PP2_FRAME_FLAG(target,b14) PP2_FRAME_FLAG(target,b15) PP2_FRAME_FLAG(target,b16) PP2_FRAME_FLAG(target,b17) PP2_FRAME_FLAG(target,b18)
+#define IP2_FRAME_FOUND_20(target,b0,b1,b2,b3,b4,b5,b6,b7,b8,b9,b10,b11,b12,b13,b14,b15,b16,b17,b18,b19) PP2_FRAME_FLAG(target,b0) PP2_FRAME_FLAG(target,b1) PP2_FRAME_FLAG(target,b2) PP2_FRAME_FLAG(target,b3) PP2_FRAME_FLAG(target,b4) PP2_FRAME_FLAG(target,b5) PP2_FRAME_FLAG(target,b6) PP2_FRAME_FLAG(target,b7) PP2_FRAME_FLAG(target,b8) PP2_FRAME_FLAG(target,b9) PP2_FRAME_FLAG(target,b10) PP2_FRAME_FLAG(target,b11) PP2_FRAME_FLAG(target,b12) PP2_FRAME_FLAG(target,b13) PP2_FRAME_FLAG(target,b14) PP2_FRAME_FLAG(target,b15) PP2_FRAME_FLAG(target,b16) PP2_FRAME_FLAG(target,b17) PP2_FRAME_FLAG(target,b18) PP2_FRAME_FLAG(target,b19)
+#define IP2_FRAME_FOUND_21(target,b0,b1,b2,b3,b4,b5,b6,b7,b8,b9,b10,b11,b12,b13,b14,b15,b16,b17,b18,b19,b20) PP2_FRAME_FLAG(target,b0) PP2_FRAME_FLAG(target,b1) PP2_FRAME_FLAG(target,b2) PP2_FRAME_FLAG(target,b3) PP2_FRAME_FLAG(target,b4) PP2_FRAME_FLAG(target,b5) PP2_FRAME_FLAG(target,b6) PP2_FRAME_FLAG(target,b7) PP2_FRAME_FLAG(target,b8) PP2_FRAME_FLAG(target,b9) PP2_FRAME_FLAG(target,b10) PP2_FRAME_FLAG(target,b11) PP2_FRAME_FLAG(target,b12) PP2_FRAME_FLAG(target,b13) PP2_FRAME_FLAG(target,b14) PP2_FRAME_FLAG(target,b15) PP2_FRAME_FLAG(target,b16) PP2_FRAME_FLAG(target,b17) PP2_FRAME_FLAG(target,b18) PP2_FRAME_FLAG(target,b19) PP2_FRAME_FLAG(target,b20)
+#define IP2_FRAME_FOUND_22(target,b0,b1,b2,b3,b4,b5,b6,b7,b8,b9,b10,b11,b12,b13,b14,b15,b16,b17,b18,b19,b20,b21) PP2_FRAME_FLAG(target,b0) PP2_FRAME_FLAG(target,b1) PP2_FRAME_FLAG(target,b2) PP2_FRAME_FLAG(target,b3) PP2_FRAME_FLAG(target,b4) PP2_FRAME_FLAG(target,b5) PP2_FRAME_FLAG(target,b6) PP2_FRAME_FLAG(target,b7) PP2_FRAME_FLAG(target,b8) PP2_FRAME_FLAG(target,b9) PP2_FRAME_FLAG(target,b10) PP2_FRAME_FLAG(target,b11) PP2_FRAME_FLAG(target,b12) PP2_FRAME_FLAG(target,b13) PP2_FRAME_FLAG(target,b14) PP2_FRAME_FLAG(target,b15) PP2_FRAME_FLAG(target,b16) PP2_FRAME_FLAG(target,b17) PP2_FRAME_FLAG(target,b18) PP2_FRAME_FLAG(target,b19) PP2_FRAME_FLAG(target,b20) PP2_FRAME_FLAG(target,b21)
+#define IP2_FRAME_FOUND_23(target,b0,b1,b2,b3,b4,b5,b6,b7,b8,b9,b10,b11,b12,b13,b14,b15,b16,b17,b18,b19,b20,b21,b22) PP2_FRAME_FLAG(target,b0) PP2_FRAME_FLAG(target,b1) PP2_FRAME_FLAG(target,b2) PP2_FRAME_FLAG(target,b3) PP2_FRAME_FLAG(target,b4) PP2_FRAME_FLAG(target,b5) PP2_FRAME_FLAG(target,b6) PP2_FRAME_FLAG(target,b7) PP2_FRAME_FLAG(target,b8) PP2_FRAME_FLAG(target,b9) PP2_FRAME_FLAG(target,b10) PP2_FRAME_FLAG(target,b11) PP2_FRAME_FLAG(target,b12) PP2_FRAME_FLAG(target,b13) PP2_FRAME_FLAG(target,b14) PP2_FRAME_FLAG(target,b15) PP2_FRAME_FLAG(target,b16) PP2_FRAME_FLAG(target,b17) PP2_FRAME_FLAG(target,b18) PP2_FRAME_FLAG(target,b19) PP2_FRAME_FLAG(target,b20) PP2_FRAME_FLAG(target,b21) PP2_FRAME_FLAG(target,b22)
+#define IP2_FRAME_FOUND_24(target,b0,b1,b2,b3,b4,b5,b6,b7,b8,b9,b10,b11,b12,b13,b14,b15,b16,b17,b18,b19,b20,b21,b22,b23) PP2_FRAME_FLAG(target,b0) PP2_FRAME_FLAG(target,b1) PP2_FRAME_FLAG(target,b2) PP2_FRAME_FLAG(target,b3) PP2_FRAME_FLAG(target,b4) PP2_FRAME_FLAG(target,b5) PP2_FRAME_FLAG(target,b6) PP2_FRAME_FLAG(target,b7) PP2_FRAME_FLAG(target,b8) PP2_FRAME_FLAG(target,b9) PP2_FRAME_FLAG(target,b10) PP2_FRAME_FLAG(target,b11) PP2_FRAME_FLAG(target,b12) PP2_FRAME_FLAG(target,b13) PP2_FRAME_FLAG(target,b14) PP2_FRAME_FLAG(target,b15) PP2_FRAME_FLAG(target,b16) PP2_FRAME_FLAG(target,b17) PP2_FRAME_FLAG(target,b18) PP2_FRAME_FLAG(target,b19) PP2_FRAME_FLAG(target,b20) PP2_FRAME_FLAG(target,b21) PP2_FRAME_FLAG(target,b22) PP2_FRAME_FLAG(target,b23)
+#define IP2_FRAME_FOUND_25(target,b0,b1,b2,b3,b4,b5,b6,b7,b8,b9,b10,b11,b12,b13,b14,b15,b16,b17,b18,b19,b20,b21,b22,b23,b24) PP2_FRAME_FLAG(target,b0) PP2_FRAME_FLAG(target,b1) PP2_FRAME_FLAG(target,b2) PP2_FRAME_FLAG(target,b3) PP2_FRAME_FLAG(target,b4) PP2_FRAME_FLAG(target,b5) PP2_FRAME_FLAG(target,b6) PP2_FRAME_FLAG(target,b7) PP2_FRAME_FLAG(target,b8) PP2_FRAME_FLAG(target,b9) PP2_FRAME_FLAG(target,b10) PP2_FRAME_FLAG(target,b11) PP2_FRAME_FLAG(target,b12) PP2_FRAME_FLAG(target,b13) PP2_FRAME_FLAG(target,b14) PP2_FRAME_FLAG(target,b15) PP2_FRAME_FLAG(target,b16) PP2_FRAME_FLAG(target,b17) PP2_FRAME_FLAG(target,b18) PP2_FRAME_FLAG(target,b19) PP2_FRAME_FLAG(target,b20) PP2_FRAME_FLAG(target,b21) PP2_FRAME_FLAG(target,b22) PP2_FRAME_FLAG(target,b23) PP2_FRAME_FLAG(target,b24)
+#define IP2_FRAME_FOUND_26(target,b0,b1,b2,b3,b4,b5,b6,b7,b8,b9,b10,b11,b12,b13,b14,b15,b16,b17,b18,b19,b20,b21,b22,b23,b24,b25) PP2_FRAME_FLAG(target,b0) PP2_FRAME_FLAG(target,b1) PP2_FRAME_FLAG(target,b2) PP2_FRAME_FLAG(target,b3) PP2_FRAME_FLAG(target,b4) PP2_FRAME_FLAG(target,b5) PP2_FRAME_FLAG(target,b6) PP2_FRAME_FLAG(target,b7) PP2_FRAME_FLAG(target,b8) PP2_FRAME_FLAG(target,b9) PP2_FRAME_FLAG(target,b10) PP2_FRAME_FLAG(target,b11) PP2_FRAME_FLAG(target,b12) PP2_FRAME_FLAG(target,b13) PP2_FRAME_FLAG(target,b14) PP2_FRAME_FLAG(target,b15) PP2_FRAME_FLAG(target,b16) PP2_FRAME_FLAG(target,b17) PP2_FRAME_FLAG(target,b18) PP2_FRAME_FLAG(target,b19) PP2_FRAME_FLAG(target,b20) PP2_FRAME_FLAG(target,b21) PP2_FRAME_FLAG(target,b22) PP2_FRAME_FLAG(target,b23) PP2_FRAME_FLAG(target,b24) PP2_FRAME_FLAG(target,b25)
+#define IP2_FRAME_FOUND_27(target,b0,b1,b2,b3,b4,b5,b6,b7,b8,b9,b10,b11,b12,b13,b14,b15,b16,b17,b18,b19,b20,b21,b22,b23,b24,b25,b26) PP2_FRAME_FLAG(target,b0) PP2_FRAME_FLAG(target,b1) PP2_FRAME_FLAG(target,b2) PP2_FRAME_FLAG(target,b3) PP2_FRAME_FLAG(target,b4) PP2_FRAME_FLAG(target,b5) PP2_FRAME_FLAG(target,b6) PP2_FRAME_FLAG(target,b7) PP2_FRAME_FLAG(target,b8) PP2_FRAME_FLAG(target,b9) PP2_FRAME_FLAG(target,b10) PP2_FRAME_FLAG(target,b11) PP2_FRAME_FLAG(target,b12) PP2_FRAME_FLAG(target,b13) PP2_FRAME_FLAG(target,b14) PP2_FRAME_FLAG(target,b15) PP2_FRAME_FLAG(target,b16) PP2_FRAME_FLAG(target,b17) PP2_FRAME_FLAG(target,b18) PP2_FRAME_FLAG(target,b19) PP2_FRAME_FLAG(target,b20) PP2_FRAME_FLAG(target,b21) PP2_FRAME_FLAG(target,b22) PP2_FRAME_FLAG(target,b23) PP2_FRAME_FLAG(target,b24) PP2_FRAME_FLAG(target,b25) PP2_FRAME_FLAG(target,b26)
+#define IP2_FRAME_FOUND_28(target,b0,b1,b2,b3,b4,b5,b6,b7,b8,b9,b10,b11,b12,b13,b14,b15,b16,b17,b18,b19,b20,b21,b22,b23,b24,b25,b26,b27) PP2_FRAME_FLAG(target,b0) PP2_FRAME_FLAG(target,b1) PP2_FRAME_FLAG(target,b2) PP2_FRAME_FLAG(target,b3) PP2_FRAME_FLAG(target,b4) PP2_FRAME_FLAG(target,b5) PP2_FRAME_FLAG(target,b6) PP2_FRAME_FLAG(target,b7) PP2_FRAME_FLAG(target,b8) PP2_FRAME_FLAG(target,b9) PP2_FRAME_FLAG(target,b10) PP2_FRAME_FLAG(target,b11) PP2_FRAME_FLAG(target,b12) PP2_FRAME_FLAG(target,b13) PP2_FRAME_FLAG(target,b14) PP2_FRAME_FLAG(target,b15) PP2_FRAME_FLAG(target,b16) PP2_FRAME_FLAG(target,b17) PP2_FRAME_FLAG(target,b18) PP2_FRAME_FLAG(target,b19) PP2_FRAME_FLAG(target,b20) PP2_FRAME_FLAG(target,b21) PP2_FRAME_FLAG(target,b22) PP2_FRAME_FLAG(target,b23) PP2_FRAME_FLAG(target,b24) PP2_FRAME_FLAG(target,b25) PP2_FRAME_FLAG(target,b26) PP2_FRAME_FLAG(target,b27)
+#define IP2_FRAME_FOUND_29(target,b0,b1,b2,b3,b4,b5,b6,b7,b8,b9,b10,b11,b12,b13,b14,b15,b16,b17,b18,b19,b20,b21,b22,b23,b24,b25,b26,b27,b28) PP2_FRAME_FLAG(target,b0) PP2_FRAME_FLAG(target,b1) PP2_FRAME_FLAG(target,b2) PP2_FRAME_FLAG(target,b3) PP2_FRAME_FLAG(target,b4) PP2_FRAME_FLAG(target,b5) PP2_FRAME_FLAG(target,b6) PP2_FRAME_FLAG(target,b7) PP2_FRAME_FLAG(target,b8) PP2_FRAME_FLAG(target,b9) PP2_FRAME_FLAG(target,b10) PP2_FRAME_FLAG(target,b11) PP2_FRAME_FLAG(target,b12) PP2_FRAME_FLAG(target,b13) PP2_FRAME_FLAG(target,b14) PP2_FRAME_FLAG(target,b15) PP2_FRAME_FLAG(target,b16) PP2_FRAME_FLAG(target,b17) PP2_FRAME_FLAG(target,b18) PP2_FRAME_FLAG(target,b19) PP2_FRAME_FLAG(target,b20) PP2_FRAME_FLAG(target,b21) PP2_FRAME_FLAG(target,b22) PP2_FRAME_FLAG(target,b23) PP2_FRAME_FLAG(target,b24) PP2_FRAME_FLAG(target,b25) PP2_FRAME_FLAG(target,b26) PP2_FRAME_FLAG(target,b27) PP2_FRAME_FLAG(target,b28)
+#define IP2_FRAME_FOUND_30(target,b0,b1,b2,b3,b4,b5,b6,b7,b8,b9,b10,b11,b12,b13,b14,b15,b16,b17,b18,b19,b20,b21,b22,b23,b24,b25,b26,b27,b28,b29) PP2_FRAME_FLAG(target,b0) PP2_FRAME_FLAG(target,b1) PP2_FRAME_FLAG(target,b2) PP2_FRAME_FLAG(target,b3) PP2_FRAME_FLAG(target,b4) PP2_FRAME_FLAG(target,b5) PP2_FRAME_FLAG(target,b6) PP2_FRAME_FLAG(target,b7) PP2_FRAME_FLAG(target,b8) PP2_FRAME_FLAG(target,b9) PP2_FRAME_FLAG(target,b10) PP2_FRAME_FLAG(target,b11) PP2_FRAME_FLAG(target,b12) PP2_FRAME_FLAG(target,b13) PP2_FRAME_FLAG(target,b14) PP2_FRAME_FLAG(target,b15) PP2_FRAME_FLAG(target,b16) PP2_FRAME_FLAG(target,b17) PP2_FRAME_FLAG(target,b18) PP2_FRAME_FLAG(target,b19) PP2_FRAME_FLAG(target,b20) PP2_FRAME_FLAG(target,b21) PP2_FRAME_FLAG(target,b22) PP2_FRAME_FLAG(target,b23) PP2_FRAME_FLAG(target,b24) PP2_FRAME_FLAG(target,b25) PP2_FRAME_FLAG(target,b26) PP2_FRAME_FLAG(target,b27) PP2_FRAME_FLAG(target,b28) PP2_FRAME_FLAG(target,b29)
+#define IP2_FRAME_FOUND_31(target,b0,b1,b2,b3,b4,b5,b6,b7,b8,b9,b10,b11,b12,b13,b14,b15,b16,b17,b18,b19,b20,b21,b22,b23,b24,b25,b26,b27,b28,b29,b30) PP2_FRAME_FLAG(target,b0) PP2_FRAME_FLAG(target,b1) PP2_FRAME_FLAG(target,b2) PP2_FRAME_FLAG(target,b3) PP2_FRAME_FLAG(target,b4) PP2_FRAME_FLAG(target,b5) PP2_FRAME_FLAG(target,b6) PP2_FRAME_FLAG(target,b7) PP2_FRAME_FLAG(target,b8) PP2_FRAME_FLAG(target,b9) PP2_FRAME_FLAG(target,b10) PP2_FRAME_FLAG(target,b11) PP2_FRAME_FLAG(target,b12) PP2_FRAME_FLAG(target,b13) PP2_FRAME_FLAG(target,b14) PP2_FRAME_FLAG(target,b15) PP2_FRAME_FLAG(target,b16) PP2_FRAME_FLAG(target,b17) PP2_FRAME_FLAG(target,b18) PP2_FRAME_FLAG(target,b19) PP2_FRAME_FLAG(target,b20) PP2_FRAME_FLAG(target,b21) PP2_FRAME_FLAG(target,b22) PP2_FRAME_FLAG(target,b23) PP2_FRAME_FLAG(target,b24) PP2_FRAME_FLAG(target,b25) PP2_FRAME_FLAG(target,b26) PP2_FRAME_FLAG(target,b27) PP2_FRAME_FLAG(target,b28) PP2_FRAME_FLAG(target,b29) PP2_FRAME_FLAG(target,b30)
+#define IP2_FRAME_FOUND_32(target,b0,b1,b2,b3,b4,b5,b6,b7,b8,b9,b10,b11,b12,b13,b14,b15,b16,b17,b18,b19,b20,b21,b22,b23,b24,b25,b26,b27,b28,b29,b30,b31) PP2_FRAME_FLAG(target,b0) PP2_FRAME_FLAG(target,b1) PP2_FRAME_FLAG(target,b2) PP2_FRAME_FLAG(target,b3) PP2_FRAME_FLAG(target,b4) PP2_FRAME_FLAG(target,b5) PP2_FRAME_FLAG(target,b6) PP2_FRAME_FLAG(target,b7) PP2_FRAME_FLAG(target,b8) PP2_FRAME_FLAG(target,b9) PP2_FRAME_FLAG(target,b10) PP2_FRAME_FLAG(target,b11) PP2_FRAME_FLAG(target,b12) PP2_FRAME_FLAG(target,b13) PP2_FRAME_FLAG(target,b14) PP2_FRAME_FLAG(target,b15) PP2_FRAME_FLAG(target,b16) PP2_FRAME_FLAG(target,b17) PP2_FRAME_FLAG(target,b18) PP2_FRAME_FLAG(target,b19) PP2_FRAME_FLAG(target,b20) PP2_FRAME_FLAG(target,b21) PP2_FRAME_FLAG(target,b22) PP2_FRAME_FLAG(target,b23) PP2_FRAME_FLAG(target,b24) PP2_FRAME_FLAG(target,b25) PP2_FRAME_FLAG(target,b26) PP2_FRAME_FLAG(target,b27) PP2_FRAME_FLAG(target,b28) PP2_FRAME_FLAG(target,b29) PP2_FRAME_FLAG(target,b30) PP2_FRAME_FLAG(target,b31)
+#define IP2_FRAME_FOUND_33(target,b0,b1,b2,b3,b4,b5,b6,b7,b8,b9,b10,b11,b12,b13,b14,b15,b16,b17,b18,b19,b20,b21,b22,b23,b24,b25,b26,b27,b28,b29,b30,b31,b32) PP2_FRAME_FLAG(target,b0) PP2_FRAME_FLAG(target,b1) PP2_FRAME_FLAG(target,b2) PP2_FRAME_FLAG(target,b3) PP2_FRAME_FLAG(target,b4) PP2_FRAME_FLAG(target,b5) PP2_FRAME_FLAG(target,b6) PP2_FRAME_FLAG(target,b7) PP2_FRAME_FLAG(target,b8) PP2_FRAME_FLAG(target,b9) PP2_FRAME_FLAG(target,b10) PP2_FRAME_FLAG(target,b11) PP2_FRAME_FLAG(target,b12) PP2_FRAME_FLAG(target,b13) PP2_FRAME_FLAG(target,b14) PP2_FRAME_FLAG(target,b15) PP2_FRAME_FLAG(target,b16) PP2_FRAME_FLAG(target,b17) PP2_FRAME_FLAG(target,b18) PP2_FRAME_FLAG(target,b19) PP2_FRAME_FLAG(target,b20) PP2_FRAME_FLAG(target,b21) PP2_FRAME_FLAG(target,b22) PP2_FRAME_FLAG(target,b23) PP2_FRAME_FLAG(target,b24) PP2_FRAME_FLAG(target,b25) PP2_FRAME_FLAG(target,b26) PP2_FRAME_FLAG(target,b27) PP2_FRAME_FLAG(target,b28) PP2_FRAME_FLAG(target,b29) PP2_FRAME_FLAG(target,b30) PP2_FRAME_FLAG(target,b31) PP2_FRAME_FLAG(target,b32)
+#define IP2_FRAME_FOUND_34(target,b0,b1,b2,b3,b4,b5,b6,b7,b8,b9,b10,b11,b12,b13,b14,b15,b16,b17,b18,b19,b20,b21,b22,b23,b24,b25,b26,b27,b28,b29,b30,b31,b32,b33) PP2_FRAME_FLAG(target,b0) PP2_FRAME_FLAG(target,b1) PP2_FRAME_FLAG(target,b2) PP2_FRAME_FLAG(target,b3) PP2_FRAME_FLAG(target,b4) PP2_FRAME_FLAG(target,b5) PP2_FRAME_FLAG(target,b6) PP2_FRAME_FLAG(target,b7) PP2_FRAME_FLAG(target,b8) PP2_FRAME_FLAG(target,b9) PP2_FRAME_FLAG(target,b10) PP2_FRAME_FLAG(target,b11) PP2_FRAME_FLAG(target,b12) PP2_FRAME_FLAG(target,b13) PP2_FRAME_FLAG(target,b14) PP2_FRAME_FLAG(target,b15) PP2_FRAME_FLAG(target,b16) PP2_FRAME_FLAG(target,b17) PP2_FRAME_FLAG(target,b18) PP2_FRAME_FLAG(target,b19) PP2_FRAME_FLAG(target,b20) PP2_FRAME_FLAG(target,b21) PP2_FRAME_FLAG(target,b22) PP2_FRAME_FLAG(target,b23) PP2_FRAME_FLAG(target,b24) PP2_FRAME_FLAG(target,b25) PP2_FRAME_FLAG(target,b26) PP2_FRAME_FLAG(target,b27) PP2_FRAME_FLAG(target,b28) PP2_FRAME_FLAG(target,b29) PP2_FRAME_FLAG(target,b30) PP2_FRAME_FLAG(target,b31) PP2_FRAME_FLAG(target,b32) PP2_FRAME_FLAG(target,b33)
+#define IP2_FRAME_FOUND_35(target,b0,b1,b2,b3,b4,b5,b6,b7,b8,b9,b10,b11,b12,b13,b14,b15,b16,b17,b18,b19,b20,b21,b22,b23,b24,b25,b26,b27,b28,b29,b30,b31,b32,b33,b34) PP2_FRAME_FLAG(target,b0) PP2_FRAME_FLAG(target,b1) PP2_FRAME_FLAG(target,b2) PP2_FRAME_FLAG(target,b3) PP2_FRAME_FLAG(target,b4) PP2_FRAME_FLAG(target,b5) PP2_FRAME_FLAG(target,b6) PP2_FRAME_FLAG(target,b7) PP2_FRAME_FLAG(target,b8) PP2_FRAME_FLAG(target,b9) PP2_FRAME_FLAG(target,b10) PP2_FRAME_FLAG(target,b11) PP2_FRAME_FLAG(target,b12) PP2_FRAME_FLAG(target,b13) PP2_FRAME_FLAG(target,b14) PP2_FRAME_FLAG(target,b15) PP2_FRAME_FLAG(target,b16) PP2_FRAME_FLAG(target,b17) PP2_FRAME_FLAG(target,b18) PP2_FRAME_FLAG(target,b19) PP2_FRAME_FLAG(target,b20) PP2_FRAME_FLAG(target,b21) PP2_FRAME_FLAG(target,b22) PP2_FRAME_FLAG(target,b23) PP2_FRAME_FLAG(target,b24) PP2_FRAME_FLAG(target,b25) PP2_FRAME_FLAG(target,b26) PP2_FRAME_FLAG(target,b27) PP2_FRAME_FLAG(target,b28) PP2_FRAME_FLAG(target,b29) PP2_FRAME_FLAG(target,b30) PP2_FRAME_FLAG(target,b31) PP2_FRAME_FLAG(target,b32) PP2_FRAME_FLAG(target,b33) PP2_FRAME_FLAG(target,b34)
+#define IP2_FRAME_FOUND_36(target,b0,b1,b2,b3,b4,b5,b6,b7,b8,b9,b10,b11,b12,b13,b14,b15,b16,b17,b18,b19,b20,b21,b22,b23,b24,b25,b26,b27,b28,b29,b30,b31,b32,b33,b34,b35) PP2_FRAME_FLAG(target,b0) PP2_FRAME_FLAG(target,b1) PP2_FRAME_FLAG(target,b2) PP2_FRAME_FLAG(target,b3) PP2_FRAME_FLAG(target,b4) PP2_FRAME_FLAG(target,b5) PP2_FRAME_FLAG(target,b6) PP2_FRAME_FLAG(target,b7) PP2_FRAME_FLAG(target,b8) PP2_FRAME_FLAG(target,b9) PP2_FRAME_FLAG(target,b10) PP2_FRAME_FLAG(target,b11) PP2_FRAME_FLAG(target,b12) PP2_FRAME_FLAG(target,b13) PP2_FRAME_FLAG(target,b14) PP2_FRAME_FLAG(target,b15) PP2_FRAME_FLAG(target,b16) PP2_FRAME_FLAG(target,b17) PP2_FRAME_FLAG(target,b18) PP2_FRAME_FLAG(target,b19) PP2_FRAME_FLAG(target,b20) PP2_FRAME_FLAG(target,b21) PP2_FRAME_FLAG(target,b22) PP2_FRAME_FLAG(target,b23) PP2_FRAME_FLAG(target,b24) PP2_FRAME_FLAG(target,b25) PP2_FRAME_FLAG(target,b26) PP2_FRAME_FLAG(target,b27) PP2_FRAME_FLAG(target,b28) PP2_FRAME_FLAG(target,b29) PP2_FRAME_FLAG(target,b30) PP2_FRAME_FLAG(target,b31) PP2_FRAME_FLAG(target,b32) PP2_FRAME_FLAG(target,b33) PP2_FRAME_FLAG(target,b34) PP2_FRAME_FLAG(target,b35)
+#define IP2_FRAME_FOUND_37(target,b0,b1,b2,b3,b4,b5,b6,b7,b8,b9,b10,b11,b12,b13,b14,b15,b16,b17,b18,b19,b20,b21,b22,b23,b24,b25,b26,b27,b28,b29,b30,b31,b32,b33,b34,b35,b36) PP2_FRAME_FLAG(target,b0) PP2_FRAME_FLAG(target,b1) PP2_FRAME_FLAG(target,b2) PP2_FRAME_FLAG(target,b3) PP2_FRAME_FLAG(target,b4) PP2_FRAME_FLAG(target,b5) PP2_FRAME_FLAG(target,b6) PP2_FRAME_FLAG(target,b7) PP2_FRAME_FLAG(target,b8) PP2_FRAME_FLAG(target,b9) PP2_FRAME_FLAG(target,b10) PP2_FRAME_FLAG(target,b11) PP2_FRAME_FLAG(target,b12) PP2_FRAME_FLAG(target,b13) PP2_FRAME_FLAG(target,b14) PP2_FRAME_FLAG(target,b15) PP2_FRAME_FLAG(target,b16) PP2_FRAME_FLAG(target,b17) PP2_FRAME_FLAG(target,b18) PP2_FRAME_FLAG(target,b19) PP2_FRAME_FLAG(target,b20) PP2_FRAME_FLAG(target,b21) PP2_FRAME_FLAG(target,b22) PP2_FRAME_FLAG(target,b23) PP2_FRAME_FLAG(target,b24) PP2_FRAME_FLAG(target,b25) PP2_FRAME_FLAG(target,b26) PP2_FRAME_FLAG(target,b27) PP2_FRAME_FLAG(target,b28) PP2_FRAME_FLAG(target,b29) PP2_FRAME_FLAG(target,b30) PP2_FRAME_FLAG(target,b31) PP2_FRAME_FLAG(target,b32) PP2_FRAME_FLAG(target,b33) PP2_FRAME_FLAG(target,b34) PP2_FRAME_FLAG(target,b35) PP2_FRAME_FLAG(target,b36)
+#define IP2_FRAME_FOUND_38(target,b0,b1,b2,b3,b4,b5,b6,b7,b8,b9,b10,b11,b12,b13,b14,b15,b16,b17,b18,b19,b20,b21,b22,b23,b24,b25,b26,b27,b28,b29,b30,b31,b32,b33,b34,b35,b36,b37) PP2_FRAME_FLAG(target,b0) PP2_FRAME_FLAG(target,b1) PP2_FRAME_FLAG(target,b2) PP2_FRAME_FLAG(target,b3) PP2_FRAME_FLAG(target,b4) PP2_FRAME_FLAG(target,b5) PP2_FRAME_FLAG(target,b6) PP2_FRAME_FLAG(target,b7) PP2_FRAME_FLAG(target,b8) PP2_FRAME_FLAG(target,b9) PP2_FRAME_FLAG(target,b10) PP2_FRAME_FLAG(target,b11) PP2_FRAME_FLAG(target,b12) PP2_FRAME_FLAG(target,b13) PP2_FRAME_FLAG(target,b14) PP2_FRAME_FLAG(target,b15) PP2_FRAME_FLAG(target,b16) PP2_FRAME_FLAG(target,b17) PP2_FRAME_FLAG(target,b18) PP2_FRAME_FLAG(target,b19) PP2_FRAME_FLAG(target,b20) PP2_FRAME_FLAG(target,b21) PP2_FRAME_FLAG(target,b22) PP2_FRAME_FLAG(target,b23) PP2_FRAME_FLAG(target,b24) PP2_FRAME_FLAG(target,b25) PP2_FRAME_FLAG(target,b26) PP2_FRAME_FLAG(target,b27) PP2_FRAME_FLAG(target,b28) PP2_FRAME_FLAG(target,b29) PP2_FRAME_FLAG(target,b30) PP2_FRAME_FLAG(target,b31) PP2_FRAME_FLAG(target,b32) PP2_FRAME_FLAG(target,b33) PP2_FRAME_FLAG(target,b34) PP2_FRAME_FLAG(target,b35) PP2_FRAME_FLAG(target,b36) PP2_FRAME_FLAG(target,b37)
+#define IP2_FRAME_FOUND_39(target,b0,b1,b2,b3,b4,b5,b6,b7,b8,b9,b10,b11,b12,b13,b14,b15,b16,b17,b18,b19,b20,b21,b22,b23,b24,b25,b26,b27,b28,b29,b30,b31,b32,b33,b34,b35,b36,b37,b38) PP2_FRAME_FLAG(target,b0) PP2_FRAME_FLAG(target,b1) PP2_FRAME_FLAG(target,b2) PP2_FRAME_FLAG(target,b3) PP2_FRAME_FLAG(target,b4) PP2_FRAME_FLAG(target,b5) PP2_FRAME_FLAG(target,b6) PP2_FRAME_FLAG(target,b7) PP2_FRAME_FLAG(target,b8) PP2_FRAME_FLAG(target,b9) PP2_FRAME_FLAG(target,b10) PP2_FRAME_FLAG(target,b11) PP2_FRAME_FLAG(target,b12) PP2_FRAME_FLAG(target,b13) PP2_FRAME_FLAG(target,b14) PP2_FRAME_FLAG(target,b15) PP2_FRAME_FLAG(target,b16) PP2_FRAME_FLAG(target,b17) PP2_FRAME_FLAG(target,b18) PP2_FRAME_FLAG(target,b19) PP2_FRAME_FLAG(target,b20) PP2_FRAME_FLAG(target,b21) PP2_FRAME_FLAG(target,b22) PP2_FRAME_FLAG(target,b23) PP2_FRAME_FLAG(target,b24) PP2_FRAME_FLAG(target,b25) PP2_FRAME_FLAG(target,b26) PP2_FRAME_FLAG(target,b27) PP2_FRAME_FLAG(target,b28) PP2_FRAME_FLAG(target,b29) PP2_FRAME_FLAG(target,b30) PP2_FRAME_FLAG(target,b31) PP2_FRAME_FLAG(target,b32) PP2_FRAME_FLAG(target,b33) PP2_FRAME_FLAG(target,b34) PP2_FRAME_FLAG(target,b35) PP2_FRAME_FLAG(target,b36) PP2_FRAME_FLAG(target,b37) PP2_FRAME_FLAG(target,b38)
+#define IP2_FRAME_FOUND_40(target,b0,b1,b2,b3,b4,b5,b6,b7,b8,b9,b10,b11,b12,b13,b14,b15,b16,b17,b18,b19,b20,b21,b22,b23,b24,b25,b26,b27,b28,b29,b30,b31,b32,b33,b34,b35,b36,b37,b38,b39) PP2_FRAME_FLAG(target,b0) PP2_FRAME_FLAG(target,b1) PP2_FRAME_FLAG(target,b2) PP2_FRAME_FLAG(target,b3) PP2_FRAME_FLAG(target,b4) PP2_FRAME_FLAG(target,b5) PP2_FRAME_FLAG(target,b6) PP2_FRAME_FLAG(target,b7) PP2_FRAME_FLAG(target,b8) PP2_FRAME_FLAG(target,b9) PP2_FRAME_FLAG(target,b10) PP2_FRAME_FLAG(target,b11) PP2_FRAME_FLAG(target,b12) PP2_FRAME_FLAG(target,b13) PP2_FRAME_FLAG(target,b14) PP2_FRAME_FLAG(target,b15) PP2_FRAME_FLAG(target,b16) PP2_FRAME_FLAG(target,b17) PP2_FRAME_FLAG(target,b18) PP2_FRAME_FLAG(target,b19) PP2_FRAME_FLAG(target,b20) PP2_FRAME_FLAG(target,b21) PP2_FRAME_FLAG(target,b22) PP2_FRAME_FLAG(target,b23) PP2_FRAME_FLAG(target,b24) PP2_FRAME_FLAG(target,b25) PP2_FRAME_FLAG(target,b26) PP2_FRAME_FLAG(target,b27) PP2_FRAME_FLAG(target,b28) PP2_FRAME_FLAG(target,b29) PP2_FRAME_FLAG(target,b30) PP2_FRAME_FLAG(target,b31) PP2_FRAME_FLAG(target,b32) PP2_FRAME_FLAG(target,b33) PP2_FRAME_FLAG(target,b34) PP2_FRAME_FLAG(target,b35) PP2_FRAME_FLAG(target,b36) PP2_FRAME_FLAG(target,b37) PP2_FRAME_FLAG(target,b38) PP2_FRAME_FLAG(target,b39)
+#define IP2_FRAME_FOUND_41(target,b0,b1,b2,b3,b4,b5,b6,b7,b8,b9,b10,b11,b12,b13,b14,b15,b16,b17,b18,b19,b20,b21,b22,b23,b24,b25,b26,b27,b28,b29,b30,b31,b32,b33,b34,b35,b36,b37,b38,b39,b40) PP2_FRAME_FLAG(target,b0) PP2_FRAME_FLAG(target,b1) PP2_FRAME_FLAG(target,b2) PP2_FRAME_FLAG(target,b3) PP2_FRAME_FLAG(target,b4) PP2_FRAME_FLAG(target,b5) PP2_FRAME_FLAG(target,b6) PP2_FRAME_FLAG(target,b7) PP2_FRAME_FLAG(target,b8) PP2_FRAME_FLAG(target,b9) PP2_FRAME_FLAG(target,b10) PP2_FRAME_FLAG(target,b11) PP2_FRAME_FLAG(target,b12) PP2_FRAME_FLAG(target,b13) PP2_FRAME_FLAG(target,b14) PP2_FRAME_FLAG(target,b15) PP2_FRAME_FLAG(target,b16) PP2_FRAME_FLAG(target,b17) PP2_FRAME_FLAG(target,b18) PP2_FRAME_FLAG(target,b19) PP2_FRAME_FLAG(target,b20) PP2_FRAME_FLAG(target,b21) PP2_FRAME_FLAG(target,b22) PP2_FRAME_FLAG(target,b23) PP2_FRAME_FLAG(target,b24) PP2_FRAME_FLAG(target,b25) PP2_FRAME_FLAG(target,b26) PP2_FRAME_FLAG(target,b27) PP2_FRAME_FLAG(target,b28) PP2_FRAME_FLAG(target,b29) PP2_FRAME_FLAG(target,b30) PP2_FRAME_FLAG(target,b31) PP2_FRAME_FLAG(target,b32) PP2_FRAME_FLAG(target,b33) PP2_FRAME_FLAG(target,b34) PP2_FRAME_FLAG(target,b35) PP2_FRAME_FLAG(target,b36) PP2_FRAME_FLAG(target,b37) PP2_FRAME_FLAG(target,b38) PP2_FRAME_FLAG(target,b39) PP2_FRAME_FLAG(target,b40)
+#define IP2_FRAME_FOUND_42(target,b0,b1,b2,b3,b4,b5,b6,b7,b8,b9,b10,b11,b12,b13,b14,b15,b16,b17,b18,b19,b20,b21,b22,b23,b24,b25,b26,b27,b28,b29,b30,b31,b32,b33,b34,b35,b36,b37,b38,b39,b40,b41) PP2_FRAME_FLAG(target,b0) PP2_FRAME_FLAG(target,b1) PP2_FRAME_FLAG(target,b2) PP2_FRAME_FLAG(target,b3) PP2_FRAME_FLAG(target,b4) PP2_FRAME_FLAG(target,b5) PP2_FRAME_FLAG(target,b6) PP2_FRAME_FLAG(target,b7) PP2_FRAME_FLAG(target,b8) PP2_FRAME_FLAG(target,b9) PP2_FRAME_FLAG(target,b10) PP2_FRAME_FLAG(target,b11) PP2_FRAME_FLAG(target,b12) PP2_FRAME_FLAG(target,b13) PP2_FRAME_FLAG(target,b14) PP2_FRAME_FLAG(target,b15) PP2_FRAME_FLAG(target,b16) PP2_FRAME_FLAG(target,b17) PP2_FRAME_FLAG(target,b18) PP2_FRAME_FLAG(target,b19) PP2_FRAME_FLAG(target,b20) PP2_FRAME_FLAG(target,b21) PP2_FRAME_FLAG(target,b22) PP2_FRAME_FLAG(target,b23) PP2_FRAME_FLAG(target,b24) PP2_FRAME_FLAG(target,b25) PP2_FRAME_FLAG(target,b26) PP2_FRAME_FLAG(target,b27) PP2_FRAME_FLAG(target,b28) PP2_FRAME_FLAG(target,b29) PP2_FRAME_FLAG(target,b30) PP2_FRAME_FLAG(target,b31) PP2_FRAME_FLAG(target,b32) PP2_FRAME_FLAG(target,b33) PP2_FRAME_FLAG(target,b34) PP2_FRAME_FLAG(target,b35) PP2_FRAME_FLAG(target,b36) PP2_FRAME_FLAG(target,b37) PP2_FRAME_FLAG(target,b38) PP2_FRAME_FLAG(target,b39) PP2_FRAME_FLAG(target,b40) PP2_FRAME_FLAG(target,b41)
+#define IP2_FRAME_FOUND_43(target,b0,b1,b2,b3,b4,b5,b6,b7,b8,b9,b10,b11,b12,b13,b14,b15,b16,b17,b18,b19,b20,b21,b22,b23,b24,b25,b26,b27,b28,b29,b30,b31,b32,b33,b34,b35,b36,b37,b38,b39,b40,b41,b42) PP2_FRAME_FLAG(target,b0) PP2_FRAME_FLAG(target,b1) PP2_FRAME_FLAG(target,b2) PP2_FRAME_FLAG(target,b3) PP2_FRAME_FLAG(target,b4) PP2_FRAME_FLAG(target,b5) PP2_FRAME_FLAG(target,b6) PP2_FRAME_FLAG(target,b7) PP2_FRAME_FLAG(target,b8) PP2_FRAME_FLAG(target,b9) PP2_FRAME_FLAG(target,b10) PP2_FRAME_FLAG(target,b11) PP2_FRAME_FLAG(target,b12) PP2_FRAME_FLAG(target,b13) PP2_FRAME_FLAG(target,b14) PP2_FRAME_FLAG(target,b15) PP2_FRAME_FLAG(target,b16) PP2_FRAME_FLAG(target,b17) PP2_FRAME_FLAG(target,b18) PP2_FRAME_FLAG(target,b19) PP2_FRAME_FLAG(target,b20) PP2_FRAME_FLAG(target,b21) PP2_FRAME_FLAG(target,b22) PP2_FRAME_FLAG(target,b23) PP2_FRAME_FLAG(target,b24) PP2_FRAME_FLAG(target,b25) PP2_FRAME_FLAG(target,b26) PP2_FRAME_FLAG(target,b27) PP2_FRAME_FLAG(target,b28) PP2_FRAME_FLAG(target,b29) PP2_FRAME_FLAG(target,b30) PP2_FRAME_FLAG(target,b31) PP2_FRAME_FLAG(target,b32) PP2_FRAME_FLAG(target,b33) PP2_FRAME_FLAG(target,b34) PP2_FRAME_FLAG(target,b35) PP2_FRAME_FLAG(target,b36) PP2_FRAME_FLAG(target,b37) PP2_FRAME_FLAG(target,b38) PP2_FRAME_FLAG(target,b39) PP2_FRAME_FLAG(target,b40) PP2_FRAME_FLAG(target,b41) PP2_FRAME_FLAG(target,b42)
+#define IP2_FRAME_FOUND_44(target,b0,b1,b2,b3,b4,b5,b6,b7,b8,b9,b10,b11,b12,b13,b14,b15,b16,b17,b18,b19,b20,b21,b22,b23,b24,b25,b26,b27,b28,b29,b30,b31,b32,b33,b34,b35,b36,b37,b38,b39,b40,b41,b42,b43) PP2_FRAME_FLAG(target,b0) PP2_FRAME_FLAG(target,b1) PP2_FRAME_FLAG(target,b2) PP2_FRAME_FLAG(target,b3) PP2_FRAME_FLAG(target,b4) PP2_FRAME_FLAG(target,b5) PP2_FRAME_FLAG(target,b6) PP2_FRAME_FLAG(target,b7) PP2_FRAME_FLAG(target,b8) PP2_FRAME_FLAG(target,b9) PP2_FRAME_FLAG(target,b10) PP2_FRAME_FLAG(target,b11) PP2_FRAME_FLAG(target,b12) PP2_FRAME_FLAG(target,b13) PP2_FRAME_FLAG(target,b14) PP2_FRAME_FLAG(target,b15) PP2_FRAME_FLAG(target,b16) PP2_FRAME_FLAG(target,b17) PP2_FRAME_FLAG(target,b18) PP2_FRAME_FLAG(target,b19) PP2_FRAME_FLAG(target,b20) PP2_FRAME_FLAG(target,b21) PP2_FRAME_FLAG(target,b22) PP2_FRAME_FLAG(target,b23) PP2_FRAME_FLAG(target,b24) PP2_FRAME_FLAG(target,b25) PP2_FRAME_FLAG(target,b26) PP2_FRAME_FLAG(target,b27) PP2_FRAME_FLAG(target,b28) PP2_FRAME_FLAG(target,b29) PP2_FRAME_FLAG(target,b30) PP2_FRAME_FLAG(target,b31) PP2_FRAME_FLAG(target,b32) PP2_FRAME_FLAG(target,b33) PP2_FRAME_FLAG(target,b34) PP2_FRAME_FLAG(target,b35) PP2_FRAME_FLAG(target,b36) PP2_FRAME_FLAG(target,b37) PP2_FRAME_FLAG(target,b38) PP2_FRAME_FLAG(target,b39) PP2_FRAME_FLAG(target,b40) PP2_FRAME_FLAG(target,b41) PP2_FRAME_FLAG(target,b42) PP2_FRAME_FLAG(target,b43)
+#define IP2_FRAME_FOUND_45(target,b0,b1,b2,b3,b4,b5,b6,b7,b8,b9,b10,b11,b12,b13,b14,b15,b16,b17,b18,b19,b20,b21,b22,b23,b24,b25,b26,b27,b28,b29,b30,b31,b32,b33,b34,b35,b36,b37,b38,b39,b40,b41,b42,b43,b44) PP2_FRAME_FLAG(target,b0) PP2_FRAME_FLAG(target,b1) PP2_FRAME_FLAG(target,b2) PP2_FRAME_FLAG(target,b3) PP2_FRAME_FLAG(target,b4) PP2_FRAME_FLAG(target,b5) PP2_FRAME_FLAG(target,b6) PP2_FRAME_FLAG(target,b7) PP2_FRAME_FLAG(target,b8) PP2_FRAME_FLAG(target,b9) PP2_FRAME_FLAG(target,b10) PP2_FRAME_FLAG(target,b11) PP2_FRAME_FLAG(target,b12) PP2_FRAME_FLAG(target,b13) PP2_FRAME_FLAG(target,b14) PP2_FRAME_FLAG(target,b15) PP2_FRAME_FLAG(target,b16) PP2_FRAME_FLAG(target,b17) PP2_FRAME_FLAG(target,b18) PP2_FRAME_FLAG(target,b19) PP2_FRAME_FLAG(target,b20) PP2_FRAME_FLAG(target,b21) PP2_FRAME_FLAG(target,b22) PP2_FRAME_FLAG(target,b23) PP2_FRAME_FLAG(target,b24) PP2_FRAME_FLAG(target,b25) PP2_FRAME_FLAG(target,b26) PP2_FRAME_FLAG(target,b27) PP2_FRAME_FLAG(target,b28) PP2_FRAME_FLAG(target,b29) PP2_FRAME_FLAG(target,b30) PP2_FRAME_FLAG(target,b31) PP2_FRAME_FLAG(target,b32) PP2_FRAME_FLAG(target,b33) PP2_FRAME_FLAG(target,b34) PP2_FRAME_FLAG(target,b35) PP2_FRAME_FLAG(target,b36) PP2_FRAME_FLAG(target,b37) PP2_FRAME_FLAG(target,b38) PP2_FRAME_FLAG(target,b39) PP2_FRAME_FLAG(target,b40) PP2_FRAME_FLAG(target,b41) PP2_FRAME_FLAG(target,b42) PP2_FRAME_FLAG(target,b43) PP2_FRAME_FLAG(target,b44)
+#define IP2_FRAME_FOUND_46(target,b0,b1,b2,b3,b4,b5,b6,b7,b8,b9,b10,b11,b12,b13,b14,b15,b16,b17,b18,b19,b20,b21,b22,b23,b24,b25,b26,b27,b28,b29,b30,b31,b32,b33,b34,b35,b36,b37,b38,b39,b40,b41,b42,b43,b44,b45) PP2_FRAME_FLAG(target,b0) PP2_FRAME_FLAG(target,b1) PP2_FRAME_FLAG(target,b2) PP2_FRAME_FLAG(target,b3) PP2_FRAME_FLAG(target,b4) PP2_FRAME_FLAG(target,b5) PP2_FRAME_FLAG(target,b6) PP2_FRAME_FLAG(target,b7) PP2_FRAME_FLAG(target,b8) PP2_FRAME_FLAG(target,b9) PP2_FRAME_FLAG(target,b10) PP2_FRAME_FLAG(target,b11) PP2_FRAME_FLAG(target,b12) PP2_FRAME_FLAG(target,b13) PP2_FRAME_FLAG(target,b14) PP2_FRAME_FLAG(target,b15) PP2_FRAME_FLAG(target,b16) PP2_FRAME_FLAG(target,b17) PP2_FRAME_FLAG(target,b18) PP2_FRAME_FLAG(target,b19) PP2_FRAME_FLAG(target,b20) PP2_FRAME_FLAG(target,b21) PP2_FRAME_FLAG(target,b22) PP2_FRAME_FLAG(target,b23) PP2_FRAME_FLAG(target,b24) PP2_FRAME_FLAG(target,b25) PP2_FRAME_FLAG(target,b26) PP2_FRAME_FLAG(target,b27) PP2_FRAME_FLAG(target,b28) PP2_FRAME_FLAG(target,b29) PP2_FRAME_FLAG(target,b30) PP2_FRAME_FLAG(target,b31) PP2_FRAME_FLAG(target,b32) PP2_FRAME_FLAG(target,b33) PP2_FRAME_FLAG(target,b34) PP2_FRAME_FLAG(target,b35) PP2_FRAME_FLAG(target,b36) PP2_FRAME_FLAG(target,b37) PP2_FRAME_FLAG(target,b38) PP2_FRAME_FLAG(target,b39) PP2_FRAME_FLAG(target,b40) PP2_FRAME_FLAG(target,b41) PP2_FRAME_FLAG(target,b42) PP2_FRAME_FLAG(target,b43) PP2_FRAME_FLAG(target,b44) PP2_FRAME_FLAG(target,b45)
+#define IP2_FRAME_FOUND_47(target,b0,b1,b2,b3,b4,b5,b6,b7,b8,b9,b10,b11,b12,b13,b14,b15,b16,b17,b18,b19,b20,b21,b22,b23,b24,b25,b26,b27,b28,b29,b30,b31,b32,b33,b34,b35,b36,b37,b38,b39,b40,b41,b42,b43,b44,b45,b46) PP2_FRAME_FLAG(target,b0) PP2_FRAME_FLAG(target,b1) PP2_FRAME_FLAG(target,b2) PP2_FRAME_FLAG(target,b3) PP2_FRAME_FLAG(target,b4) PP2_FRAME_FLAG(target,b5) PP2_FRAME_FLAG(target,b6) PP2_FRAME_FLAG(target,b7) PP2_FRAME_FLAG(target,b8) PP2_FRAME_FLAG(target,b9) PP2_FRAME_FLAG(target,b10) PP2_FRAME_FLAG(target,b11) PP2_FRAME_FLAG(target,b12) PP2_FRAME_FLAG(target,b13) PP2_FRAME_FLAG(target,b14) PP2_FRAME_FLAG(target,b15) PP2_FRAME_FLAG(target,b16) PP2_FRAME_FLAG(target,b17) PP2_FRAME_FLAG(target,b18) PP2_FRAME_FLAG(target,b19) PP2_FRAME_FLAG(target,b20) PP2_FRAME_FLAG(target,b21) PP2_FRAME_FLAG(target,b22) PP2_FRAME_FLAG(target,b23) PP2_FRAME_FLAG(target,b24) PP2_FRAME_FLAG(target,b25) PP2_FRAME_FLAG(target,b26) PP2_FRAME_FLAG(target,b27) PP2_FRAME_FLAG(target,b28) PP2_FRAME_FLAG(target,b29) PP2_FRAME_FLAG(target,b30) PP2_FRAME_FLAG(target,b31) PP2_FRAME_FLAG(target,b32) PP2_FRAME_FLAG(target,b33) PP2_FRAME_FLAG(target,b34) PP2_FRAME_FLAG(target,b35) PP2_FRAME_FLAG(target,b36) PP2_FRAME_FLAG(target,b37) PP2_FRAME_FLAG(target,b38) PP2_FRAME_FLAG(target,b39) PP2_FRAME_FLAG(target,b40) PP2_FRAME_FLAG(target,b41) PP2_FRAME_FLAG(target,b42) PP2_FRAME_FLAG(target,b43) PP2_FRAME_FLAG(target,b44) PP2_FRAME_FLAG(target,b45) PP2_FRAME_FLAG(target,b46)
+#define IP2_FRAME_FOUND_48(target,b0,b1,b2,b3,b4,b5,b6,b7,b8,b9,b10,b11,b12,b13,b14,b15,b16,b17,b18,b19,b20,b21,b22,b23,b24,b25,b26,b27,b28,b29,b30,b31,b32,b33,b34,b35,b36,b37,b38,b39,b40,b41,b42,b43,b44,b45,b46,b47) PP2_FRAME_FLAG(target,b0) PP2_FRAME_FLAG(target,b1) PP2_FRAME_FLAG(target,b2) PP2_FRAME_FLAG(target,b3) PP2_FRAME_FLAG(target,b4) PP2_FRAME_FLAG(target,b5) PP2_FRAME_FLAG(target,b6) PP2_FRAME_FLAG(target,b7) PP2_FRAME_FLAG(target,b8) PP2_FRAME_FLAG(target,b9) PP2_FRAME_FLAG(target,b10) PP2_FRAME_FLAG(target,b11) PP2_FRAME_FLAG(target,b12) PP2_FRAME_FLAG(target,b13) PP2_FRAME_FLAG(target,b14) PP2_FRAME_FLAG(target,b15) PP2_FRAME_FLAG(target,b16) PP2_FRAME_FLAG(target,b17) PP2_FRAME_FLAG(target,b18) PP2_FRAME_FLAG(target,b19) PP2_FRAME_FLAG(target,b20) PP2_FRAME_FLAG(target,b21) PP2_FRAME_FLAG(target,b22) PP2_FRAME_FLAG(target,b23) PP2_FRAME_FLAG(target,b24) PP2_FRAME_FLAG(target,b25) PP2_FRAME_FLAG(target,b26) PP2_FRAME_FLAG(target,b27) PP2_FRAME_FLAG(target,b28) PP2_FRAME_FLAG(target,b29) PP2_FRAME_FLAG(target,b30) PP2_FRAME_FLAG(target,b31) PP2_FRAME_FLAG(target,b32) PP2_FRAME_FLAG(target,b33) PP2_FRAME_FLAG(target,b34) PP2_FRAME_FLAG(target,b35) PP2_FRAME_FLAG(target,b36) PP2_FRAME_FLAG(target,b37) PP2_FRAME_FLAG(target,b38) PP2_FRAME_FLAG(target,b39) PP2_FRAME_FLAG(target,b40) PP2_FRAME_FLAG(target,b41) PP2_FRAME_FLAG(target,b42) PP2_FRAME_FLAG(target,b43) PP2_FRAME_FLAG(target,b44) PP2_FRAME_FLAG(target,b45) PP2_FRAME_FLAG(target,b46) PP2_FRAME_FLAG(target,b47)
+#define IP2_FRAME_FOUND_49(target,b0,b1,b2,b3,b4,b5,b6,b7,b8,b9,b10,b11,b12,b13,b14,b15,b16,b17,b18,b19,b20,b21,b22,b23,b24,b25,b26,b27,b28,b29,b30,b31,b32,b33,b34,b35,b36,b37,b38,b39,b40,b41,b42,b43,b44,b45,b46,b47,b48) PP2_FRAME_FLAG(target,b0) PP2_FRAME_FLAG(target,b1) PP2_FRAME_FLAG(target,b2) PP2_FRAME_FLAG(target,b3) PP2_FRAME_FLAG(target,b4) PP2_FRAME_FLAG(target,b5) PP2_FRAME_FLAG(target,b6) PP2_FRAME_FLAG(target,b7) PP2_FRAME_FLAG(target,b8) PP2_FRAME_FLAG(target,b9) PP2_FRAME_FLAG(target,b10) PP2_FRAME_FLAG(target,b11) PP2_FRAME_FLAG(target,b12) PP2_FRAME_FLAG(target,b13) PP2_FRAME_FLAG(target,b14) PP2_FRAME_FLAG(target,b15) PP2_FRAME_FLAG(target,b16) PP2_FRAME_FLAG(target,b17) PP2_FRAME_FLAG(target,b18) PP2_FRAME_FLAG(target,b19) PP2_FRAME_FLAG(target,b20) PP2_FRAME_FLAG(target,b21) PP2_FRAME_FLAG(target,b22) PP2_FRAME_FLAG(target,b23) PP2_FRAME_FLAG(target,b24) PP2_FRAME_FLAG(target,b25) PP2_FRAME_FLAG(target,b26) PP2_FRAME_FLAG(target,b27) PP2_FRAME_FLAG(target,b28) PP2_FRAME_FLAG(target,b29) PP2_FRAME_FLAG(target,b30) PP2_FRAME_FLAG(target,b31) PP2_FRAME_FLAG(target,b32) PP2_FRAME_FLAG(target,b33) PP2_FRAME_FLAG(target,b34) PP2_FRAME_FLAG(target,b35) PP2_FRAME_FLAG(target,b36) PP2_FRAME_FLAG(target,b37) PP2_FRAME_FLAG(target,b38) PP2_FRAME_FLAG(target,b39) PP2_FRAME_FLAG(target,b40) PP2_FRAME_FLAG(target,b41) PP2_FRAME_FLAG(target,b42) PP2_FRAME_FLAG(target,b43) PP2_FRAME_FLAG(target,b44) PP2_FRAME_FLAG(target,b45) PP2_FRAME_FLAG(target,b46) PP2_FRAME_FLAG(target,b47) PP2_FRAME_FLAG(target,b48)
+#define IP2_FRAME_FOUND_50(target,b0,b1,b2,b3,b4,b5,b6,b7,b8,b9,b10,b11,b12,b13,b14,b15,b16,b17,b18,b19,b20,b21,b22,b23,b24,b25,b26,b27,b28,b29,b30,b31,b32,b33,b34,b35,b36,b37,b38,b39,b40,b41,b42,b43,b44,b45,b46,b47,b48,b49) PP2_FRAME_FLAG(target,b0) PP2_FRAME_FLAG(target,b1) PP2_FRAME_FLAG(target,b2) PP2_FRAME_FLAG(target,b3) PP2_FRAME_FLAG(target,b4) PP2_FRAME_FLAG(target,b5) PP2_FRAME_FLAG(target,b6) PP2_FRAME_FLAG(target,b7) PP2_FRAME_FLAG(target,b8) PP2_FRAME_FLAG(target,b9) PP2_FRAME_FLAG(target,b10) PP2_FRAME_FLAG(target,b11) PP2_FRAME_FLAG(target,b12) PP2_FRAME_FLAG(target,b13) PP2_FRAME_FLAG(target,b14) PP2_FRAME_FLAG(target,b15) PP2_FRAME_FLAG(target,b16) PP2_FRAME_FLAG(target,b17) PP2_FRAME_FLAG(target,b18) PP2_FRAME_FLAG(target,b19) PP2_FRAME_FLAG(target,b20) PP2_FRAME_FLAG(target,b21) PP2_FRAME_FLAG(target,b22) PP2_FRAME_FLAG(target,b23) PP2_FRAME_FLAG(target,b24) PP2_FRAME_FLAG(target,b25) PP2_FRAME_FLAG(target,b26) PP2_FRAME_FLAG(target,b27) PP2_FRAME_FLAG(target,b28) PP2_FRAME_FLAG(target,b29) PP2_FRAME_FLAG(target,b30) PP2_FRAME_FLAG(target,b31) PP2_FRAME_FLAG(target,b32) PP2_FRAME_FLAG(target,b33) PP2_FRAME_FLAG(target,b34) PP2_FRAME_FLAG(target,b35) PP2_FRAME_FLAG(target,b36) PP2_FRAME_FLAG(target,b37) PP2_FRAME_FLAG(target,b38) PP2_FRAME_FLAG(target,b39) PP2_FRAME_FLAG(target,b40) PP2_FRAME_FLAG(target,b41) PP2_FRAME_FLAG(target,b42) PP2_FRAME_FLAG(target,b43) PP2_FRAME_FLAG(target,b44) PP2_FRAME_FLAG(target,b45) PP2_FRAME_FLAG(target,b46) PP2_FRAME_FLAG(target,b47) PP2_FRAME_FLAG(target,b48) PP2_FRAME_FLAG(target,b49)
+#define IP2_FRAME_FOUND_51(target,b0,b1,b2,b3,b4,b5,b6,b7,b8,b9,b10,b11,b12,b13,b14,b15,b16,b17,b18,b19,b20,b21,b22,b23,b24,b25,b26,b27,b28,b29,b30,b31,b32,b33,b34,b35,b36,b37,b38,b39,b40,b41,b42,b43,b44,b45,b46,b47,b48,b49,b50) PP2_FRAME_FLAG(target,b0) PP2_FRAME_FLAG(target,b1) PP2_FRAME_FLAG(target,b2) PP2_FRAME_FLAG(target,b3) PP2_FRAME_FLAG(target,b4) PP2_FRAME_FLAG(target,b5) PP2_FRAME_FLAG(target,b6) PP2_FRAME_FLAG(target,b7) PP2_FRAME_FLAG(target,b8) PP2_FRAME_FLAG(target,b9) PP2_FRAME_FLAG(target,b10) PP2_FRAME_FLAG(target,b11) PP2_FRAME_FLAG(target,b12) PP2_FRAME_FLAG(target,b13) PP2_FRAME_FLAG(target,b14) PP2_FRAME_FLAG(target,b15) PP2_FRAME_FLAG(target,b16) PP2_FRAME_FLAG(target,b17) PP2_FRAME_FLAG(target,b18) PP2_FRAME_FLAG(target,b19) PP2_FRAME_FLAG(target,b20) PP2_FRAME_FLAG(target,b21) PP2_FRAME_FLAG(target,b22) PP2_FRAME_FLAG(target,b23) PP2_FRAME_FLAG(target,b24) PP2_FRAME_FLAG(target,b25) PP2_FRAME_FLAG(target,b26) PP2_FRAME_FLAG(target,b27) PP2_FRAME_FLAG(target,b28) PP2_FRAME_FLAG(target,b29) PP2_FRAME_FLAG(target,b30) PP2_FRAME_FLAG(target,b31) PP2_FRAME_FLAG(target,b32) PP2_FRAME_FLAG(target,b33) PP2_FRAME_FLAG(target,b34) PP2_FRAME_FLAG(target,b35) PP2_FRAME_FLAG(target,b36) PP2_FRAME_FLAG(target,b37) PP2_FRAME_FLAG(target,b38) PP2_FRAME_FLAG(target,b39) PP2_FRAME_FLAG(target,b40) PP2_FRAME_FLAG(target,b41) PP2_FRAME_FLAG(target,b42) PP2_FRAME_FLAG(target,b43) PP2_FRAME_FLAG(target,b44) PP2_FRAME_FLAG(target,b45) PP2_FRAME_FLAG(target,b46) PP2_FRAME_FLAG(target,b47) PP2_FRAME_FLAG(target,b48) PP2_FRAME_FLAG(target,b49) PP2_FRAME_FLAG(target,b50)
+#define IP2_FRAME_FOUND_52(target,b0,b1,b2,b3,b4,b5,b6,b7,b8,b9,b10,b11,b12,b13,b14,b15,b16,b17,b18,b19,b20,b21,b22,b23,b24,b25,b26,b27,b28,b29,b30,b31,b32,b33,b34,b35,b36,b37,b38,b39,b40,b41,b42,b43,b44,b45,b46,b47,b48,b49,b50,b51) PP2_FRAME_FLAG(target,b0) PP2_FRAME_FLAG(target,b1) PP2_FRAME_FLAG(target,b2) PP2_FRAME_FLAG(target,b3) PP2_FRAME_FLAG(target,b4) PP2_FRAME_FLAG(target,b5) PP2_FRAME_FLAG(target,b6) PP2_FRAME_FLAG(target,b7) PP2_FRAME_FLAG(target,b8) PP2_FRAME_FLAG(target,b9) PP2_FRAME_FLAG(target,b10) PP2_FRAME_FLAG(target,b11) PP2_FRAME_FLAG(target,b12) PP2_FRAME_FLAG(target,b13) PP2_FRAME_FLAG(target,b14) PP2_FRAME_FLAG(target,b15) PP2_FRAME_FLAG(target,b16) PP2_FRAME_FLAG(target,b17) PP2_FRAME_FLAG(target,b18) PP2_FRAME_FLAG(target,b19) PP2_FRAME_FLAG(target,b20) PP2_FRAME_FLAG(target,b21) PP2_FRAME_FLAG(target,b22) PP2_FRAME_FLAG(target,b23) PP2_FRAME_FLAG(target,b24) PP2_FRAME_FLAG(target,b25) PP2_FRAME_FLAG(target,b26) PP2_FRAME_FLAG(target,b27) PP2_FRAME_FLAG(target,b28) PP2_FRAME_FLAG(target,b29) PP2_FRAME_FLAG(target,b30) PP2_FRAME_FLAG(target,b31) PP2_FRAME_FLAG(target,b32) PP2_FRAME_FLAG(target,b33) PP2_FRAME_FLAG(target,b34) PP2_FRAME_FLAG(target,b35) PP2_FRAME_FLAG(target,b36) PP2_FRAME_FLAG(target,b37) PP2_FRAME_FLAG(target,b38) PP2_FRAME_FLAG(target,b39) PP2_FRAME_FLAG(target,b40) PP2_FRAME_FLAG(target,b41) PP2_FRAME_FLAG(target,b42) PP2_FRAME_FLAG(target,b43) PP2_FRAME_FLAG(target,b44) PP2_FRAME_FLAG(target,b45) PP2_FRAME_FLAG(target,b46) PP2_FRAME_FLAG(target,b47) PP2_FRAME_FLAG(target,b48) PP2_FRAME_FLAG(target,b49) PP2_FRAME_FLAG(target,b50) PP2_FRAME_FLAG(target,b51)
+#define IP2_FRAME_FOUND_53_OR_MORE(target,b0,b1,b2,b3,b4,b5,b6,b7,b8,b9,b10,b11,b12,b13,b14,b15,b16,b17,b18,b19,b20,b21,b22,b23,b24,b25,b26,b27,b28,b29,b30,b31,b32,b33,b34,b35,b36,b37,b38,b39,b40,b41,b42,b43,b44,b45,b46,b47,b48,b49,b50,b51,...) PP2_FRAME_FLAG(target,b0) PP2_FRAME_FLAG(target,b1) PP2_FRAME_FLAG(target,b2) PP2_FRAME_FLAG(target,b3) PP2_FRAME_FLAG(target,b4) PP2_FRAME_FLAG(target,b5) PP2_FRAME_FLAG(target,b6) PP2_FRAME_FLAG(target,b7) PP2_FRAME_FLAG(target,b8) PP2_FRAME_FLAG(target,b9) PP2_FRAME_FLAG(target,b10) PP2_FRAME_FLAG(target,b11) PP2_FRAME_FLAG(target,b12) PP2_FRAME_FLAG(target,b13) PP2_FRAME_FLAG(target,b14) PP2_FRAME_FLAG(target,b15) PP2_FRAME_FLAG(target,b16) PP2_FRAME_FLAG(target,b17) PP2_FRAME_FLAG(target,b18) PP2_FRAME_FLAG(target,b19) PP2_FRAME_FLAG(target,b20) PP2_FRAME_FLAG(target,b21) PP2_FRAME_FLAG(target,b22) PP2_FRAME_FLAG(target,b23) PP2_FRAME_FLAG(target,b24) PP2_FRAME_FLAG(target,b25) PP2_FRAME_FLAG(target,b26) PP2_FRAME_FLAG(target,b27) PP2_FRAME_FLAG(target,b28) PP2_FRAME_FLAG(target,b29) PP2_FRAME_FLAG(target,b30) PP2_FRAME_FLAG(target,b31) PP2_FRAME_FLAG(target,b32) PP2_FRAME_FLAG(target,b33) PP2_FRAME_FLAG(target,b34) PP2_FRAME_FLAG(target,b35) PP2_FRAME_FLAG(target,b36) PP2_FRAME_FLAG(target,b37) PP2_FRAME_FLAG(target,b38) PP2_FRAME_FLAG(target,b39) PP2_FRAME_FLAG(target,b40) PP2_FRAME_FLAG(target,b41) PP2_FRAME_FLAG(target,b42) PP2_FRAME_FLAG(target,b43) PP2_FRAME_FLAG(target,b44) PP2_FRAME_FLAG(target,b45) PP2_FRAME_FLAG(target,b46) PP2_FRAME_FLAG(target,b47) PP2_FRAME_FLAG(target,b48) PP2_FRAME_FLAG(target,b49) PP2_FRAME_FLAG(target,b50) PP2_FRAME_FLAG(target,b51) PP2_FRAME_TOO_MANY_LOCALS
+#define IP2_FRAME_REWRITE_SEL(target,value,...) IP2_FRAME_REWRITE_OVL(target,value,__VA_ARGS__,PP2_COMMA_52, PP2_COMMA_51, PP2_COMMA_50, PP2_COMMA_49, PP2_COMMA_48, PP2_COMMA_47, PP2_COMMA_46, PP2_COMMA_45, PP2_COMMA_44, PP2_COMMA_43, PP2_COMMA_42, PP2_COMMA_41, PP2_COMMA_40, PP2_COMMA_39, PP2_COMMA_38, PP2_COMMA_37, PP2_COMMA_36, PP2_COMMA_35, PP2_COMMA_34, PP2_COMMA_33, PP2_COMMA_32, PP2_COMMA_31, PP2_COMMA_30, PP2_COMMA_29, PP2_COMMA_28, PP2_COMMA_27, PP2_COMMA_26, PP2_COMMA_25, PP2_COMMA_24, PP2_COMMA_23, PP2_COMMA_22, PP2_COMMA_21, PP2_COMMA_20, PP2_COMMA_19, PP2_COMMA_18, PP2_COMMA_17, PP2_COMMA_16, PP2_COMMA_15, PP2_COMMA_14, PP2_COMMA_13, PP2_COMMA_12, PP2_COMMA_11, PP2_COMMA_10, PP2_COMMA_9, PP2_COMMA_8, PP2_COMMA_7, PP2_COMMA_6, PP2_COMMA_5, PP2_COMMA_4, PP2_COMMA_3, PP2_COMMA_2, PP2_COMMA_1,)(target,value,__VA_ARGS__)
+#define IP2_FRAME_REWRITE_OVL(target,value,x0,x1,x2,x3,x4,x5,x6,x7,x8,x9,x10,x11,x12,x13,x14,x15,x16,x17,x18,x19,x20,x21,x22,x23,x24,x25,x26,x27,x28,x29,x30,x31,x32,x33,x34,x35,x36,x37,x38,x39,x40,x41,x42,x43,x44,x45,x46,x47,x48,x49,x50,x51,m,...) PP2_TUPLE_AT_1(IP2_FRAME_REWRITE_,m,53_OR_MORE)
+#define IP2_FRAME_REWRITE_1(target,value,b0) PP2_FRAME_REW(target,value,b0)
+#define IP2_FRAME_REWRITE_2(target,value,b0,b1) PP2_FRAME_REW(target,value,b0) PP2_FRAME_REW(target,value,b1)
+#define IP2_FRAME_REWRITE_3(target,value,b0,b1,b2) PP2_FRAME_REW(target,value,b0) PP2_FRAME_REW(target,value,b1) PP2_FRAME_REW(target,value,b2)
+#define IP2_FRAME_REWRITE_4(target,value,b0,b1,b2,b3) PP2_FRAME_REW(target,value,b0) PP2_FRAME_REW(target,value,b1) PP2_FRAME_REW(target,value,b2) PP2_FRAME_REW(target,value,b3)
+#define IP2_FRAME_REWRITE_5(target,value,b0,b1,b2,b3,b4) PP2_FRAME_REW(target,value,b0) PP2_FRAME_REW(target,value,b1) PP2_FRAME_REW(target,value,b2) PP2_FRAME_REW(target,value,b3) PP2_FRAME_REW(target,value,b4)
+#define IP2_FRAME_REWRITE_6(target,value,b0,b1,b2,b3,b4,b5) PP2_FRAME_REW(target,value,b0) PP2_FRAME_REW(target,value,b1) PP2_FRAME_REW(target,value,b2) PP2_FRAME_REW(target,value,b3) PP2_FRAME_REW(target,value,b4) PP2_FRAME_REW(target,value,b5)
+#define IP2_FRAME_REWRITE_7(target,value,b0,b1,b2,b3,b4,b5,b6) PP2_FRAME_REW(target,value,b0) PP2_FRAME_REW(target,value,b1) PP2_FRAME_REW(target,value,b2) PP2_FRAME_REW(target,value,b3) PP2_FRAME_REW(target,value,b4) PP2_FRAME_REW(target,value,b5) PP2_FRAME_REW(target,value,b6)
+#define IP2_FRAME_REWRITE_8(target,value,b0,b1,b2,b3,b4,b5,b6,b7) PP2_FRAME_REW(target,value,b0) PP2_FRAME_REW(target,value,b1) PP2_FRAME_REW(target,value,b2) PP2_FRAME_REW(target,value,b3) PP2_FRAME_REW(target,value,b4) PP2_FRAME_REW(target,value,b5) PP2_FRAME_REW(target,value,b6) PP2_FRAME_REW(target,value,b7)
+#define IP2_FRAME_REWRITE_9(target,value,b0,b1,b2,b3,b4,b5,b6,b7,b8) PP2_FRAME_REW(target,value,b0) PP2_FRAME_REW(target,value,b1) PP2_FRAME_REW(target,value,b2) PP2_FRAME_REW(target,value,b3) PP2_FRAME_REW(target,value,b4) PP2_FRAME_REW(target,value,b5) PP2_FRAME_REW(target,value,b6) PP2_FRAME_REW(target,value,b7) PP2_FRAME_REW(target,value,b8)
+#define IP2_FRAME_REWRITE_10(target,value,b0,b1,b2,b3,b4,b5,b6,b7,b8,b9) PP2_FRAME_REW(target,value,b0) PP2_FRAME_REW(target,value,b1) PP2_FRAME_REW(target,value,b2) PP2_FRAME_REW(target,value,b3) PP2_FRAME_REW(target,value,b4) PP2_FRAME_REW(target,value,b5) PP2_FRAME_REW(target,value,b6) PP2_FRAME_REW(target,value,b7) PP2_FRAME_REW(target,value,b8) PP2_FRAME_REW(target,value,b9)
+#define IP2_FRAME_REWRITE_11(target,value,b0,b1,b2,b3,b4,b5,b6,b7,b8,b9,b10) PP2_FRAME_REW(target,value,b0) PP2_FRAME_REW(target,value,b1) PP2_FRAME_REW(target,value,b2) PP2_FRAME_REW(target,value,b3) PP2_FRAME_REW(target,value,b4) PP2_FRAME_REW(target,value,b5) PP2_FRAME_REW(target,value,b6) PP2_FRAME_REW(target,value,b7) PP2_FRAME_REW(target,value,b8) PP2_FRAME_REW(target,value,b9) PP2_FRAME_REW(target,value,b10)
+#define IP2_FRAME_REWRITE_12(target,value,b0,b1,b2,b3,b4,b5,b6,b7,b8,b9,b10,b11) PP2_FRAME_REW(target,value,b0) PP2_FRAME_REW(target,value,b1) PP2_FRAME_REW(target,value,b2) PP2_FRAME_REW(target,value,b3) PP2_FRAME_REW(target,value,b4) PP2_FRAME_REW(target,value,b5) PP2_FRAME_REW(target,value,b6) PP2_FRAME_REW(target,value,b7) PP2_FRAME_REW(target,value,b8) PP2_FRAME_REW(target,value,b9) PP2_FRAME_REW(target,value,b10) PP2_FRAME_REW(target,value,b11)
+#define IP2_FRAME_REWRITE_13(target,value,b0,b1,b2,b3,b4,b5,b6,b7,b8,b9,b10,b11,b12) PP2_FRAME_REW(target,value,b0) PP2_FRAME_REW(target,value,b1) PP2_FRAME_REW(target,value,b2) PP2_FRAME_REW(target,value,b3) PP2_FRAME_REW(target,value,b4) PP2_FRAME_REW(target,value,b5) PP2_FRAME_REW(target,value,b6) PP2_FRAME_REW(target,value,b7) PP2_FRAME_REW(target,value,b8) PP2_FRAME_REW(target,value,b9) PP2_FRAME_REW(target,value,b10) PP2_FRAME_REW(target,value,b11) PP2_FRAME_REW(target,value,b12)
+#define IP2_FRAME_REWRITE_14(target,value,b0,b1,b2,b3,b4,b5,b6,b7,b8,b9,b10,b11,b12,b13) PP2_FRAME_REW(target,value,b0) PP2_FRAME_REW(target,value,b1) PP2_FRAME_REW(target,value,b2) PP2_FRAME_REW(target,value,b3) PP2_FRAME_REW(target,value,b4) PP2_FRAME_REW(target,value,b5) PP2_FRAME_REW(target,value,b6) PP2_FRAME_REW(target,value,b7) PP2_FRAME_REW(target,value,b8) PP2_FRAME_REW(target,value,b9) PP2_FRAME_REW(target,value,b10) PP2_FRAME_REW(target,value,b11) PP2_FRAME_REW(target,value,b12) PP2_FRAME_REW(target,value,b13)
+#define IP2_FRAME_REWRITE_15(target,value,b0,b1,b2,b3,b4,b5,b6,b7,b8,b9,b10,b11,b12,b13,b14) PP2_FRAME_REW(target,value,b0) PP2_FRAME_REW(target,value,b1) PP2_FRAME_REW(target,value,b2) PP2_FRAME_REW(target,value,b3) PP2_FRAME_REW(target,value,b4) PP2_FRAME_REW(target,value,b5) PP2_FRAME_REW(target,value,b6) PP2_FRAME_REW(target,value,b7) PP2_FRAME_REW(target,value,b8) PP2_FRAME_REW(target,value,b9) PP2_FRAME_REW(target,value,b10) PP2_FRAME_REW(target,value,b11) PP2_FRAME_REW(target,value,b12) PP2_FRAME_REW(target,value,b13) PP2_FRAME_REW(target,value,b14)
+#define IP2_FRAME_REWRITE_16(target,value,b0,b1,b2,b3,b4,b5,b6,b7,b8,b9,b10,b11,b12,b13,b14,b15) PP2_FRAME_REW(target,value,b0) PP2_FRAME_REW(target,value,b1) PP2_FRAME_REW(target,value,b2) PP2_FRAME_REW(target,value,b3) PP2_FRAME_REW(target,value,b4) PP2_FRAME_REW(target,value,b5) PP2_FRAME_REW(target,value,b6) PP2_FRAME_REW(target,value,b7) PP2_FRAME_REW(target,value,b8) PP2_FRAME_REW(target,value,b9) PP2_FRAME_REW(target,value,b10) PP2_FRAME_REW(target,value,b11) PP2_FRAME_REW(target,value,b12) PP2_FRAME_REW(target,value,b13) PP2_FRAME_REW(target,value,b14) PP2_FRAME_REW(target,value,b15)
+#define IP2_FRAME_REWRITE_17(target,value,b0,b1,b2,b3,b4,b5,b6,b7,b8,b9,b10,b11,b12,b13,b14,b15,b16) PP2_FRAME_REW(target,value,b0) PP2_FRAME_REW(target,value,b1) PP2_FRAME_REW(target,value,b2) PP2_FRAME_REW(target,value,b3) PP2_FRAME_REW(target,value,b4) PP2_FRAME_REW(target,value,b5) PP2_FRAME_REW(target,value,b6) PP2_FRAME_REW(target,value,b7) PP2_FRAME_REW(target,value,b8) PP2_FRAME_REW(target,value,b9) PP2_FRAME_REW(target,value,b10) PP2_FRAME_REW(target,value,b11) PP2_FRAME_REW(target,value,b12) PP2_FRAME_REW(target,value,b13) PP2_FRAME_REW(target,value,b14) PP2_FRAME_REW(target,value,b15) PP2_FRAME_REW(target,value,b16)
+#define IP2_FRAME_REWRITE_18(target,value,b0,b1,b2,b3,b4,b5,b6,b7,b8,b9,b10,b11,b12,b13,b14,b15,b16,b17) PP2_FRAME_REW(target,value,b0) PP2_FRAME_REW(target,value,b1) PP2_FRAME_REW(target,value,b2) PP2_FRAME_REW(target,value,b3) PP2_FRAME_REW(target,value,b4) PP2_FRAME_REW(target,value,b5) PP2_FRAME_REW(target,value,b6) PP2_FRAME_REW(target,value,b7) PP2_FRAME_REW(target,value,b8) PP2_FRAME_REW(target,value,b9) PP2_FRAME_REW(target,value,b10) PP2_FRAME_REW(target,value,b11) PP2_FRAME_REW(target,value,b12) PP2_FRAME_REW(target,value,b13) PP2_FRAME_REW(target,value,b14) PP2_FRAME_REW(target,value,b15) PP2_FRAME_REW(target,value,b16) PP2_FRAME_REW(target,value,b17)
+#define IP2_FRAME_REWRITE_19(target,value,b0,b1,b2,b3,b4,b5,b6,b7,b8,b9,b10,b11,b12,b13,b14,b15,b16,b17,b18) PP2_FRAME_REW(target,value,b0) PP2_FRAME_REW(target,value,b1) PP2_FRAME_REW(target,value,b2) PP2_FRAME_REW(target,value,b3) PP2_FRAME_REW(target,value,b4) PP2_FRAME_REW(target,value,b5) PP2_FRAME_REW(target,value,b6) PP2_FRAME_REW(target,value,b7) PP2_FRAME_REW(target,value,b8) PP2_FRAME_REW(target,value,b9) PP2_FRAME_REW(target,value,b10) PP2_FRAME_REW(target,value,b11) PP2_FRAME_REW(target,value,b12) PP2_FRAME_REW(target,value,b13) PP2_FRAME_REW(target,value,b14) PP2_FRAME_REW(target,value,b15) PP2_FRAME_REW(target,value,b16) PP2_FRAME_REW(target,value,b17) PP2_FRAME_REW(target,value,b18)
+#define IP2_FRAME_REWRITE_20(target,value,b0,b1,b2,b3,b4,b5,b6,b7,b8,b9,b10,b11,b12,b13,b14,b15,b16,b17,b18,b19) PP2_FRAME_REW(target,value,b0) PP2_FRAME_REW(target,value,b1) PP2_FRAME_REW(target,value,b2) PP2_FRAME_REW(target,value,b3) PP2_FRAME_REW(target,value,b4) PP2_FRAME_REW(target,value,b5) PP2_FRAME_REW(target,value,b6) PP2_FRAME_REW(target,value,b7) PP2_FRAME_REW(target,value,b8) PP2_FRAME_REW(target,value,b9) PP2_FRAME_REW(target,value,b10) PP2_FRAME_REW(target,value,b11) PP2_FRAME_REW(target,value,b12) PP2_FRAME_REW(target,value,b13) PP2_FRAME_REW(target,value,b14) PP2_FRAME_REW(target,value,b15) PP2_FRAME_REW(target,value,b16) PP2_FRAME_REW(target,value,b17) PP2_FRAME_REW(target,value,b18) PP2_FRAME_REW(target,value,b19)
+#define IP2_FRAME_REWRITE_21(target,value,b0,b1,b2,b3,b4,b5,b6,b7,b8,b9,b10,b11,b12,b13,b14,b15,b16,b17,b18,b19,b20) PP2_FRAME_REW(target,value,b0) PP2_FRAME_REW(target,value,b1) PP2_FRAME_REW(target,value,b2) PP2_FRAME_REW(target,value,b3) PP2_FRAME_REW(target,value,b4) PP2_FRAME_REW(target,value,b5) PP2_FRAME_REW(target,value,b6) PP2_FRAME_REW(target,value,b7) PP2_FRAME_REW(target,value,b8) PP2_FRAME_REW(target,value,b9) PP2_FRAME_REW(target,value,b10) PP2_FRAME_REW(target,value,b11) PP2_FRAME_REW(target,value,b12) PP2_FRAME_REW(target,value,b13) PP2_FRAME_REW(target,value,b14) PP2_FRAME_REW(target,value,b15) PP2_FRAME_REW(target,value,b16) PP2_FRAME_REW(target,value,b17) PP2_FRAME_REW(target,value,b18) PP2_FRAME_REW(target,value,b19) PP2_FRAME_REW(target,value,b20)
+#define IP2_FRAME_REWRITE_22(target,value,b0,b1,b2,b3,b4,b5,b6,b7,b8,b9,b10,b11,b12,b13,b14,b15,b16,b17,b18,b19,b20,b21) PP2_FRAME_REW(target,value,b0) PP2_FRAME_REW(target,value,b1) PP2_FRAME_REW(target,value,b2) PP2_FRAME_REW(target,value,b3) PP2_FRAME_REW(target,value,b4) PP2_FRAME_REW(target,value,b5) PP2_FRAME_REW(target,value,b6) PP2_FRAME_REW(target,value,b7) PP2_FRAME_REW(target,value,b8) PP2_FRAME_REW(target,value,b9) PP2_FRAME_REW(target,value,b10) PP2_FRAME_REW(target,value,b11) PP2_FRAME_REW(target,value,b12) PP2_FRAME_REW(target,value,b13) PP2_FRAME_REW(target,value,b14) PP2_FRAME_REW(target,value,b15) PP2_FRAME_REW(target,value,b16) PP2_FRAME_REW(target,value,b17) PP2_FRAME_REW(target,value,b18) PP2_FRAME_REW(target,value,b19) PP2_FRAME_REW(target,value,b20) PP2_FRAME_REW(target,value,b21)
+#define IP2_FRAME_REWRITE_23(target,value,b0,b1,b2,b3,b4,b5,b6,b7,b8,b9,b10,b11,b12,b13,b14,b15,b16,b17,b18,b19,b20,b21,b22) PP2_FRAME_REW(target,value,b0) PP2_FRAME_REW(target,value,b1) PP2_FRAME_REW(target,value,b2) PP2_FRAME_REW(target,value,b3) PP2_FRAME_REW(target,value,b4) PP2_FRAME_REW(target,value,b5) PP2_FRAME_REW(target,value,b6) PP2_FRAME_REW(target,value,b7) PP2_FRAME_REW(target,value,b8) PP2_FRAME_REW(target,value,b9) PP2_FRAME_REW(target,value,b10) PP2_FRAME_REW(target,value,b11) PP2_FRAME_REW(target,value,b12) PP2_FRAME_REW(target,value,b13) PP2_FRAME_REW(target,value,b14) PP2_FRAME_REW(target,value,b15) PP2_FRAME_REW(target,value,b16) PP2_FRAME_REW(target,value,b17) PP2_FRAME_REW(target,value,b18) PP2_FRAME_REW(target,value,b19) PP2_FRAME_REW(target,value,b20) PP2_FRAME_REW(target,value,b21) PP2_FRAME_REW(target,value,b22)
+#define IP2_FRAME_REWRITE_24(target,value,b0,b1,b2,b3,b4,b5,b6,b7,b8,b9,b10,b11,b12,b13,b14,b15,b16,b17,b18,b19,b20,b21,b22,b23) PP2_FRAME_REW(target,value,b0) PP2_FRAME_REW(target,value,b1) PP2_FRAME_REW(target,value,b2) PP2_FRAME_REW(target,value,b3) PP2_FRAME_REW(target,value,b4) PP2_FRAME_REW(target,value,b5) PP2_FRAME_REW(target,value,b6) PP2_FRAME_REW(target,value,b7) PP2_FRAME_REW(target,value,b8) PP2_FRAME_REW(target,value,b9) PP2_FRAME_REW(target,value,b10) PP2_FRAME_REW(target,value,b11) PP2_FRAME_REW(target,value,b12) PP2_FRAME_REW(target,value,b13) PP2_FRAME_REW(target,value,b14) PP2_FRAME_REW(target,value,b15) PP2_FRAME_REW(target,value,b16) PP2_FRAME_REW(target,value,b17) PP2_FRAME_REW(target,value,b18) PP2_FRAME_REW(target,value,b19) PP2_FRAME_REW(target,value,b20) PP2_FRAME_REW(target,value,b21) PP2_FRAME_REW(target,value,b22) PP2_FRAME_REW(target,value,b23)
+#define IP2_FRAME_REWRITE_25(target,value,b0,b1,b2,b3,b4,b5,b6,b7,b8,b9,b10,b11,b12,b13,b14,b15,b16,b17,b18,b19,b20,b21,b22,b23,b24) PP2_FRAME_REW(target,value,b0) PP2_FRAME_REW(target,value,b1) PP2_FRAME_REW(target,value,b2) PP2_FRAME_REW(target,value,b3) PP2_FRAME_REW(target,value,b4) PP2_FRAME_REW(target,value,b5) PP2_FRAME_REW(target,value,b6) PP2_FRAME_REW(target,value,b7) PP2_FRAME_REW(target,value,b8) PP2_FRAME_REW(target,value,b9) PP2_FRAME_REW(target,value,b10) PP2_FRAME_REW(target,value,b11) PP2_FRAME_REW(target,value,b12) PP2_FRAME_REW(target,value,b13) PP2_FRAME_REW(target,value,b14) PP2_FRAME_REW(target,value,b15) PP2_FRAME_REW(target,value,b16) PP2_FRAME_REW(target,value,b17) PP2_FRAME_REW(target,value,b18) PP2_FRAME_REW(target,value,b19) PP2_FRAME_REW(target,value,b20) PP2_FRAME_REW(target,value,b21) PP2_FRAME_REW(target,value,b22) PP2_FRAME_REW(target,value,b23) PP2_FRAME_REW(target,value,b24)
+#define IP2_FRAME_REWRITE_26(target,value,b0,b1,b2,b3,b4,b5,b6,b7,b8,b9,b10,b11,b12,b13,b14,b15,b16,b17,b18,b19,b20,b21,b22,b23,b24,b25) PP2_FRAME_REW(target,value,b0) PP2_FRAME_REW(target,value,b1) PP2_FRAME_REW(target,value,b2) PP2_FRAME_REW(target,value,b3) PP2_FRAME_REW(target,value,b4) PP2_FRAME_REW(target,value,b5) PP2_FRAME_REW(target,value,b6) PP2_FRAME_REW(target,value,b7) PP2_FRAME_REW(target,value,b8) PP2_FRAME_REW(target,value,b9) PP2_FRAME_REW(target,value,b10) PP2_FRAME_REW(target,value,b11) PP2_FRAME_REW(target,value,b12) PP2_FRAME_REW(target,value,b13) PP2_FRAME_REW(target,value,b14) PP2_FRAME_REW(target,value,b15) PP2_FRAME_REW(target,value,b16) PP2_FRAME_REW(target,value,b17) PP2_FRAME_REW(target,value,b18) PP2_FRAME_REW(target,value,b19) PP2_FRAME_REW(target,value,b20) PP2_FRAME_REW(target,value,b21) PP2_FRAME_REW(target,value,b22) PP2_FRAME_REW(target,value,b23) PP2_FRAME_REW(target,value,b24) PP2_FRAME_REW(target,value,b25)
+#define IP2_FRAME_REWRITE_27(target,value,b0,b1,b2,b3,b4,b5,b6,b7,b8,b9,b10,b11,b12,b13,b14,b15,b16,b17,b18,b19,b20,b21,b22,b23,b24,b25,b26) PP2_FRAME_REW(target,value,b0) PP2_FRAME_REW(target,value,b1) PP2_FRAME_REW(target,value,b2) PP2_FRAME_REW(target,value,b3) PP2_FRAME_REW(target,value,b4) PP2_FRAME_REW(target,value,b5) PP2_FRAME_REW(target,value,b6) PP2_FRAME_REW(target,value,b7) PP2_FRAME_REW(target,value,b8) PP2_FRAME_REW(target,value,b9) PP2_FRAME_REW(target,value,b10) PP2_FRAME_REW(target,value,b11) PP2_FRAME_REW(target,value,b12) PP2_FRAME_REW(target,value,b13) PP2_FRAME_REW(target,value,b14) PP2_FRAME_REW(target,value,b15) PP2_FRAME_REW(target,value,b16) PP2_FRAME_REW(target,value,b17) PP2_FRAME_REW(target,value,b18) PP2_FRAME_REW(target,value,b19) PP2_FRAME_REW(target,value,b20) PP2_FRAME_REW(target,value,b21) PP2_FRAME_REW(target,value,b22) PP2_FRAME_REW(target,value,b23) PP2_FRAME_REW(target,value,b24) PP2_FRAME_REW(target,value,b25) PP2_FRAME_REW(target,value,b26)
+#define IP2_FRAME_REWRITE_28(target,value,b0,b1,b2,b3,b4,b5,b6,b7,b8,b9,b10,b11,b12,b13,b14,b15,b16,b17,b18,b19,b20,b21,b22,b23,b24,b25,b26,b27) PP2_FRAME_REW(target,value,b0) PP2_FRAME_REW(target,value,b1) PP2_FRAME_REW(target,value,b2) PP2_FRAME_REW(target,value,b3) PP2_FRAME_REW(target,value,b4) PP2_FRAME_REW(target,value,b5) PP2_FRAME_REW(target,value,b6) PP2_FRAME_REW(target,value,b7) PP2_FRAME_REW(target,value,b8) PP2_FRAME_REW(target,value,b9) PP2_FRAME_REW(target,value,b10) PP2_FRAME_REW(target,value,b11) PP2_FRAME_REW(target,value,b12) PP2_FRAME_REW(target,value,b13) PP2_FRAME_REW(target,value,b14) PP2_FRAME_REW(target,value,b15) PP2_FRAME_REW(target,value,b16) PP2_FRAME_REW(target,value,b17) PP2_FRAME_REW(target,value,b18) PP2_FRAME_REW(target,value,b19) PP2_FRAME_REW(target,value,b20) PP2_FRAME_REW(target,value,b21) PP2_FRAME_REW(target,value,b22) PP2_FRAME_REW(target,value,b23) PP2_FRAME_REW(target,value,b24) PP2_FRAME_REW(target,value,b25) PP2_FRAME_REW(target,value,b26) PP2_FRAME_REW(target,value,b27)
+#define IP2_FRAME_REWRITE_29(target,value,b0,b1,b2,b3,b4,b5,b6,b7,b8,b9,b10,b11,b12,b13,b14,b15,b16,b17,b18,b19,b20,b21,b22,b23,b24,b25,b26,b27,b28) PP2_FRAME_REW(target,value,b0) PP2_FRAME_REW(target,value,b1) PP2_FRAME_REW(target,value,b2) PP2_FRAME_REW(target,value,b3) PP2_FRAME_REW(target,value,b4) PP2_FRAME_REW(target,value,b5) PP2_FRAME_REW(target,value,b6) PP2_FRAME_REW(target,value,b7) PP2_FRAME_REW(target,value,b8) PP2_FRAME_REW(target,value,b9) PP2_FRAME_REW(target,value,b10) PP2_FRAME_REW(target,value,b11) PP2_FRAME_REW(target,value,b12) PP2_FRAME_REW(target,value,b13) PP2_FRAME_REW(target,value,b14) PP2_FRAME_REW(target,value,b15) PP2_FRAME_REW(target,value,b16) PP2_FRAME_REW(target,value,b17) PP2_FRAME_REW(target,value,b18) PP2_FRAME_REW(target,value,b19) PP2_FRAME_REW(target,value,b20) PP2_FRAME_REW(target,value,b21) PP2_FRAME_REW(target,value,b22) PP2_FRAME_REW(target,value,b23) PP2_FRAME_REW(target,value,b24) PP2_FRAME_REW(target,value,b25) PP2_FRAME_REW(target,value,b26) PP2_FRAME_REW(target,value,b27) PP2_FRAME_REW(target,value,b28)
+#define IP2_FRAME_REWRITE_30(target,value,b0,b1,b2,b3,b4,b5,b6,b7,b8,b9,b10,b11,b12,b13,b14,b15,b16,b17,b18,b19,b20,b21,b22,b23,b24,b25,b26,b27,b28,b29) PP2_FRAME_REW(target,value,b0) PP2_FRAME_REW(target,value,b1) PP2_FRAME_REW(target,value,b2) PP2_FRAME_REW(target,value,b3) PP2_FRAME_REW(target,value,b4) PP2_FRAME_REW(target,value,b5) PP2_FRAME_REW(target,value,b6) PP2_FRAME_REW(target,value,b7) PP2_FRAME_REW(target,value,b8) PP2_FRAME_REW(target,value,b9) PP2_FRAME_REW(target,value,b10) PP2_FRAME_REW(target,value,b11) PP2_FRAME_REW(target,value,b12) PP2_FRAME_REW(target,value,b13) PP2_FRAME_REW(target,value,b14) PP2_FRAME_REW(target,value,b15) PP2_FRAME_REW(target,value,b16) PP2_FRAME_REW(target,value,b17) PP2_FRAME_REW(target,value,b18) PP2_FRAME_REW(target,value,b19) PP2_FRAME_REW(target,value,b20) PP2_FRAME_REW(target,value,b21) PP2_FRAME_REW(target,value,b22) PP2_FRAME_REW(target,value,b23) PP2_FRAME_REW(target,value,b24) PP2_FRAME_REW(target,value,b25) PP2_FRAME_REW(target,value,b26) PP2_FRAME_REW(target,value,b27) PP2_FRAME_REW(target,value,b28) PP2_FRAME_REW(target,value,b29)
+#define IP2_FRAME_REWRITE_31(target,value,b0,b1,b2,b3,b4,b5,b6,b7,b8,b9,b10,b11,b12,b13,b14,b15,b16,b17,b18,b19,b20,b21,b22,b23,b24,b25,b26,b27,b28,b29,b30) PP2_FRAME_REW(target,value,b0) PP2_FRAME_REW(target,value,b1) PP2_FRAME_REW(target,value,b2) PP2_FRAME_REW(target,value,b3) PP2_FRAME_REW(target,value,b4) PP2_FRAME_REW(target,value,b5) PP2_FRAME_REW(target,value,b6) PP2_FRAME_REW(target,value,b7) PP2_FRAME_REW(target,value,b8) PP2_FRAME_REW(target,value,b9) PP2_FRAME_REW(target,value,b10) PP2_FRAME_REW(target,value,b11) PP2_FRAME_REW(target,value,b12) PP2_FRAME_REW(target,value,b13) PP2_FRAME_REW(target,value,b14) PP2_FRAME_REW(target,value,b15) PP2_FRAME_REW(target,value,b16) PP2_FRAME_REW(target,value,b17) PP2_FRAME_REW(target,value,b18) PP2_FRAME_REW(target,value,b19) PP2_FRAME_REW(target,value,b20) PP2_FRAME_REW(target,value,b21) PP2_FRAME_REW(target,value,b22) PP2_FRAME_REW(target,value,b23) PP2_FRAME_REW(target,value,b24) PP2_FRAME_REW(target,value,b25) PP2_FRAME_REW(target,value,b26) PP2_FRAME_REW(target,value,b27) PP2_FRAME_REW(target,value,b28) PP2_FRAME_REW(target,value,b29) PP2_FRAME_REW(target,value,b30)
+#define IP2_FRAME_REWRITE_32(target,value,b0,b1,b2,b3,b4,b5,b6,b7,b8,b9,b10,b11,b12,b13,b14,b15,b16,b17,b18,b19,b20,b21,b22,b23,b24,b25,b26,b27,b28,b29,b30,b31) PP2_FRAME_REW(target,value,b0) PP2_FRAME_REW(target,value,b1) PP2_FRAME_REW(target,value,b2) PP2_FRAME_REW(target,value,b3) PP2_FRAME_REW(target,value,b4) PP2_FRAME_REW(target,value,b5) PP2_FRAME_REW(target,value,b6) PP2_FRAME_REW(target,value,b7) PP2_FRAME_REW(target,value,b8) PP2_FRAME_REW(target,value,b9) PP2_FRAME_REW(target,value,b10) PP2_FRAME_REW(target,value,b11) PP2_FRAME_REW(target,value,b12) PP2_FRAME_REW(target,value,b13) PP2_FRAME_REW(target,value,b14) PP2_FRAME_REW(target,value,b15) PP2_FRAME_REW(target,value,b16) PP2_FRAME_REW(target,value,b17) PP2_FRAME_REW(target,value,b18) PP2_FRAME_REW(target,value,b19) PP2_FRAME_REW(target,value,b20) PP2_FRAME_REW(target,value,b21) PP2_FRAME_REW(target,value,b22) PP2_FRAME_REW(target,value,b23) PP2_FRAME_REW(target,value,b24) PP2_FRAME_REW(target,value,b25) PP2_FRAME_REW(target,value,b26) PP2_FRAME_REW(target,value,b27) PP2_FRAME_REW(target,value,b28) PP2_FRAME_REW(target,value,b29) PP2_FRAME_REW(target,value,b30) PP2_FRAME_REW(target,value,b31)
+#define IP2_FRAME_REWRITE_33(target,value,b0,b1,b2,b3,b4,b5,b6,b7,b8,b9,b10,b11,b12,b13,b14,b15,b16,b17,b18,b19,b20,b21,b22,b23,b24,b25,b26,b27,b28,b29,b30,b31,b32) PP2_FRAME_REW(target,value,b0) PP2_FRAME_REW(target,value,b1) PP2_FRAME_REW(target,value,b2) PP2_FRAME_REW(target,value,b3) PP2_FRAME_REW(target,value,b4) PP2_FRAME_REW(target,value,b5) PP2_FRAME_REW(target,value,b6) PP2_FRAME_REW(target,value,b7) PP2_FRAME_REW(target,value,b8) PP2_FRAME_REW(target,value,b9) PP2_FRAME_REW(target,value,b10) PP2_FRAME_REW(target,value,b11) PP2_FRAME_REW(target,value,b12) PP2_FRAME_REW(target,value,b13) PP2_FRAME_REW(target,value,b14) PP2_FRAME_REW(target,value,b15) PP2_FRAME_REW(target,value,b16) PP2_FRAME_REW(target,value,b17) PP2_FRAME_REW(target,value,b18) PP2_FRAME_REW(target,value,b19) PP2_FRAME_REW(target,value,b20) PP2_FRAME_REW(target,value,b21) PP2_FRAME_REW(target,value,b22) PP2_FRAME_REW(target,value,b23) PP2_FRAME_REW(target,value,b24) PP2_FRAME_REW(target,value,b25) PP2_FRAME_REW(target,value,b26) PP2_FRAME_REW(target,value,b27) PP2_FRAME_REW(target,value,b28) PP2_FRAME_REW(target,value,b29) PP2_FRAME_REW(target,value,b30) PP2_FRAME_REW(target,value,b31) PP2_FRAME_REW(target,value,b32)
+#define IP2_FRAME_REWRITE_34(target,value,b0,b1,b2,b3,b4,b5,b6,b7,b8,b9,b10,b11,b12,b13,b14,b15,b16,b17,b18,b19,b20,b21,b22,b23,b24,b25,b26,b27,b28,b29,b30,b31,b32,b33) PP2_FRAME_REW(target,value,b0) PP2_FRAME_REW(target,value,b1) PP2_FRAME_REW(target,value,b2) PP2_FRAME_REW(target,value,b3) PP2_FRAME_REW(target,value,b4) PP2_FRAME_REW(target,value,b5) PP2_FRAME_REW(target,value,b6) PP2_FRAME_REW(target,value,b7) PP2_FRAME_REW(target,value,b8) PP2_FRAME_REW(target,value,b9) PP2_FRAME_REW(target,value,b10) PP2_FRAME_REW(target,value,b11) PP2_FRAME_REW(target,value,b12) PP2_FRAME_REW(target,value,b13) PP2_FRAME_REW(target,value,b14) PP2_FRAME_REW(target,value,b15) PP2_FRAME_REW(target,value,b16) PP2_FRAME_REW(target,value,b17) PP2_FRAME_REW(target,value,b18) PP2_FRAME_REW(target,value,b19) PP2_FRAME_REW(target,value,b20) PP2_FRAME_REW(target,value,b21) PP2_FRAME_REW(target,value,b22) PP2_FRAME_REW(target,value,b23) PP2_FRAME_REW(target,value,b24) PP2_FRAME_REW(target,value,b25) PP2_FRAME_REW(target,value,b26) PP2_FRAME_REW(target,value,b27) PP2_FRAME_REW(target,value,b28) PP2_FRAME_REW(target,value,b29) PP2_FRAME_REW(target,value,b30) PP2_FRAME_REW(target,value,b31) PP2_FRAME_REW(target,value,b32) PP2_FRAME_REW(target,value,b33)
+#define IP2_FRAME_REWRITE_35(target,value,b0,b1,b2,b3,b4,b5,b6,b7,b8,b9,b10,b11,b12,b13,b14,b15,b16,b17,b18,b19,b20,b21,b22,b23,b24,b25,b26,b27,b28,b29,b30,b31,b32,b33,b34) PP2_FRAME_REW(target,value,b0) PP2_FRAME_REW(target,value,b1) PP2_FRAME_REW(target,value,b2) PP2_FRAME_REW(target,value,b3) PP2_FRAME_REW(target,value,b4) PP2_FRAME_REW(target,value,b5) PP2_FRAME_REW(target,value,b6) PP2_FRAME_REW(target,value,b7) PP2_FRAME_REW(target,value,b8) PP2_FRAME_REW(target,value,b9) PP2_FRAME_REW(target,value,b10) PP2_FRAME_REW(target,value,b11) PP2_FRAME_REW(target,value,b12) PP2_FRAME_REW(target,value,b13) PP2_FRAME_REW(target,value,b14) PP2_FRAME_REW(target,value,b15) PP2_FRAME_REW(target,value,b16) PP2_FRAME_REW(target,value,b17) PP2_FRAME_REW(target,value,b18) PP2_FRAME_REW(target,value,b19) PP2_FRAME_REW(target,value,b20) PP2_FRAME_REW(target,value,b21) PP2_FRAME_REW(target,value,b22) PP2_FRAME_REW(target,value,b23) PP2_FRAME_REW(target,value,b24) PP2_FRAME_REW(target,value,b25) PP2_FRAME_REW(target,value,b26) PP2_FRAME_REW(target,value,b27) PP2_FRAME_REW(target,value,b28) PP2_FRAME_REW(target,value,b29) PP2_FRAME_REW(target,value,b30) PP2_FRAME_REW(target,value,b31) PP2_FRAME_REW(target,value,b32) PP2_FRAME_REW(target,value,b33) PP2_FRAME_REW(target,value,b34)
+#define IP2_FRAME_REWRITE_36(target,value,b0,b1,b2,b3,b4,b5,b6,b7,b8,b9,b10,b11,b12,b13,b14,b15,b16,b17,b18,b19,b20,b21,b22,b23,b24,b25,b26,b27,b28,b29,b30,b31,b32,b33,b34,b35) PP2_FRAME_REW(target,value,b0) PP2_FRAME_REW(target,value,b1) PP2_FRAME_REW(target,value,b2) PP2_FRAME_REW(target,value,b3) PP2_FRAME_REW(target,value,b4) PP2_FRAME_REW(target,value,b5) PP2_FRAME_REW(target,value,b6) PP2_FRAME_REW(target,value,b7) PP2_FRAME_REW(target,value,b8) PP2_FRAME_REW(target,value,b9) PP2_FRAME_REW(target,value,b10) PP2_FRAME_REW(target,value,b11) PP2_FRAME_REW(target,value,b12) PP2_FRAME_REW(target,value,b13) PP2_FRAME_REW(target,value,b14) PP2_FRAME_REW(target,value,b15) PP2_FRAME_REW(target,value,b16) PP2_FRAME_REW(target,value,b17) PP2_FRAME_REW(target,value,b18) PP2_FRAME_REW(target,value,b19) PP2_FRAME_REW(target,value,b20) PP2_FRAME_REW(target,value,b21) PP2_FRAME_REW(target,value,b22) PP2_FRAME_REW(target,value,b23) PP2_FRAME_REW(target,value,b24) PP2_FRAME_REW(target,value,b25) PP2_FRAME_REW(target,value,b26) PP2_FRAME_REW(target,value,b27) PP2_FRAME_REW(target,value,b28) PP2_FRAME_REW(target,value,b29) PP2_FRAME_REW(target,value,b30) PP2_FRAME_REW(target,value,b31) PP2_FRAME_REW(target,value,b32) PP2_FRAME_REW(target,value,b33) PP2_FRAME_REW(target,value,b34) PP2_FRAME_REW(target,value,b35)
+#define IP2_FRAME_REWRITE_37(target,value,b0,b1,b2,b3,b4,b5,b6,b7,b8,b9,b10,b11,b12,b13,b14,b15,b16,b17,b18,b19,b20,b21,b22,b23,b24,b25,b26,b27,b28,b29,b30,b31,b32,b33,b34,b35,b36) PP2_FRAME_REW(target,value,b0) PP2_FRAME_REW(target,value,b1) PP2_FRAME_REW(target,value,b2) PP2_FRAME_REW(target,value,b3) PP2_FRAME_REW(target,value,b4) PP2_FRAME_REW(target,value,b5) PP2_FRAME_REW(target,value,b6) PP2_FRAME_REW(target,value,b7) PP2_FRAME_REW(target,value,b8) PP2_FRAME_REW(target,value,b9) PP2_FRAME_REW(target,value,b10) PP2_FRAME_REW(target,value,b11) PP2_FRAME_REW(target,value,b12) PP2_FRAME_REW(target,value,b13) PP2_FRAME_REW(target,value,b14) PP2_FRAME_REW(target,value,b15) PP2_FRAME_REW(target,value,b16) PP2_FRAME_REW(target,value,b17) PP2_FRAME_REW(target,value,b18) PP2_FRAME_REW(target,value,b19) PP2_FRAME_REW(target,value,b20) PP2_FRAME_REW(target,value,b21) PP2_FRAME_REW(target,value,b22) PP2_FRAME_REW(target,value,b23) PP2_FRAME_REW(target,value,b24) PP2_FRAME_REW(target,value,b25) PP2_FRAME_REW(target,value,b26) PP2_FRAME_REW(target,value,b27) PP2_FRAME_REW(target,value,b28) PP2_FRAME_REW(target,value,b29) PP2_FRAME_REW(target,value,b30) PP2_FRAME_REW(target,value,b31) PP2_FRAME_REW(target,value,b32) PP2_FRAME_REW(target,value,b33) PP2_FRAME_REW(target,value,b34) PP2_FRAME_REW(target,value,b35) PP2_FRAME_REW(target,value,b36)
+#define IP2_FRAME_REWRITE_38(target,value,b0,b1,b2,b3,b4,b5,b6,b7,b8,b9,b10,b11,b12,b13,b14,b15,b16,b17,b18,b19,b20,b21,b22,b23,b24,b25,b26,b27,b28,b29,b30,b31,b32,b33,b34,b35,b36,b37) PP2_FRAME_REW(target,value,b0) PP2_FRAME_REW(target,value,b1) PP2_FRAME_REW(target,value,b2) PP2_FRAME_REW(target,value,b3) PP2_FRAME_REW(target,value,b4) PP2_FRAME_REW(target,value,b5) PP2_FRAME_REW(target,value,b6) PP2_FRAME_REW(target,value,b7) PP2_FRAME_REW(target,value,b8) PP2_FRAME_REW(target,value,b9) PP2_FRAME_REW(target,value,b10) PP2_FRAME_REW(target,value,b11) PP2_FRAME_REW(target,value,b12) PP2_FRAME_REW(target,value,b13) PP2_FRAME_REW(target,value,b14) PP2_FRAME_REW(target,value,b15) PP2_FRAME_REW(target,value,b16) PP2_FRAME_REW(target,value,b17) PP2_FRAME_REW(target,value,b18) PP2_FRAME_REW(target,value,b19) PP2_FRAME_REW(target,value,b20) PP2_FRAME_REW(target,value,b21) PP2_FRAME_REW(target,value,b22) PP2_FRAME_REW(target,value,b23) PP2_FRAME_REW(target,value,b24) PP2_FRAME_REW(target,value,b25) PP2_FRAME_REW(target,value,b26) PP2_FRAME_REW(target,value,b27) PP2_FRAME_REW(target,value,b28) PP2_FRAME_REW(target,value,b29) PP2_FRAME_REW(target,value,b30) PP2_FRAME_REW(target,value,b31) PP2_FRAME_REW(target,value,b32) PP2_FRAME_REW(target,value,b33) PP2_FRAME_REW(target,value,b34) PP2_FRAME_REW(target,value,b35) PP2_FRAME_REW(target,value,b36) PP2_FRAME_REW(target,value,b37)
+#define IP2_FRAME_REWRITE_39(target,value,b0,b1,b2,b3,b4,b5,b6,b7,b8,b9,b10,b11,b12,b13,b14,b15,b16,b17,b18,b19,b20,b21,b22,b23,b24,b25,b26,b27,b28,b29,b30,b31,b32,b33,b34,b35,b36,b37,b38) PP2_FRAME_REW(target,value,b0) PP2_FRAME_REW(target,value,b1) PP2_FRAME_REW(target,value,b2) PP2_FRAME_REW(target,value,b3) PP2_FRAME_REW(target,value,b4) PP2_FRAME_REW(target,value,b5) PP2_FRAME_REW(target,value,b6) PP2_FRAME_REW(target,value,b7) PP2_FRAME_REW(target,value,b8) PP2_FRAME_REW(target,value,b9) PP2_FRAME_REW(target,value,b10) PP2_FRAME_REW(target,value,b11) PP2_FRAME_REW(target,value,b12) PP2_FRAME_REW(target,value,b13) PP2_FRAME_REW(target,value,b14) PP2_FRAME_REW(target,value,b15) PP2_FRAME_REW(target,value,b16) PP2_FRAME_REW(target,value,b17) PP2_FRAME_REW(target,value,b18) PP2_FRAME_REW(target,value,b19) PP2_FRAME_REW(target,value,b20) PP2_FRAME_REW(target,value,b21) PP2_FRAME_REW(target,value,b22) PP2_FRAME_REW(target,value,b23) PP2_FRAME_REW(target,value,b24) PP2_FRAME_REW(target,value,b25) PP2_FRAME_REW(target,value,b26) PP2_FRAME_REW(target,value,b27) PP2_FRAME_REW(target,value,b28) PP2_FRAME_REW(target,value,b29) PP2_FRAME_REW(target,value,b30) PP2_FRAME_REW(target,value,b31) PP2_FRAME_REW(target,value,b32) PP2_FRAME_REW(target,value,b33) PP2_FRAME_REW(target,value,b34) PP2_FRAME_REW(target,value,b35) PP2_FRAME_REW(target,value,b36) PP2_FRAME_REW(target,value,b37) PP2_FRAME_REW(target,value,b38)
+#define IP2_FRAME_REWRITE_40(target,value,b0,b1,b2,b3,b4,b5,b6,b7,b8,b9,b10,b11,b12,b13,b14,b15,b16,b17,b18,b19,b20,b21,b22,b23,b24,b25,b26,b27,b28,b29,b30,b31,b32,b33,b34,b35,b36,b37,b38,b39) PP2_FRAME_REW(target,value,b0) PP2_FRAME_REW(target,value,b1) PP2_FRAME_REW(target,value,b2) PP2_FRAME_REW(target,value,b3) PP2_FRAME_REW(target,value,b4) PP2_FRAME_REW(target,value,b5) PP2_FRAME_REW(target,value,b6) PP2_FRAME_REW(target,value,b7) PP2_FRAME_REW(target,value,b8) PP2_FRAME_REW(target,value,b9) PP2_FRAME_REW(target,value,b10) PP2_FRAME_REW(target,value,b11) PP2_FRAME_REW(target,value,b12) PP2_FRAME_REW(target,value,b13) PP2_FRAME_REW(target,value,b14) PP2_FRAME_REW(target,value,b15) PP2_FRAME_REW(target,value,b16) PP2_FRAME_REW(target,value,b17) PP2_FRAME_REW(target,value,b18) PP2_FRAME_REW(target,value,b19) PP2_FRAME_REW(target,value,b20) PP2_FRAME_REW(target,value,b21) PP2_FRAME_REW(target,value,b22) PP2_FRAME_REW(target,value,b23) PP2_FRAME_REW(target,value,b24) PP2_FRAME_REW(target,value,b25) PP2_FRAME_REW(target,value,b26) PP2_FRAME_REW(target,value,b27) PP2_FRAME_REW(target,value,b28) PP2_FRAME_REW(target,value,b29) PP2_FRAME_REW(target,value,b30) PP2_FRAME_REW(target,value,b31) PP2_FRAME_REW(target,value,b32) PP2_FRAME_REW(target,value,b33) PP2_FRAME_REW(target,value,b34) PP2_FRAME_REW(target,value,b35) PP2_FRAME_REW(target,value,b36) PP2_FRAME_REW(target,value,b37) PP2_FRAME_REW(target,value,b38) PP2_FRAME_REW(target,value,b39)
+#define IP2_FRAME_REWRITE_41(target,value,b0,b1,b2,b3,b4,b5,b6,b7,b8,b9,b10,b11,b12,b13,b14,b15,b16,b17,b18,b19,b20,b21,b22,b23,b24,b25,b26,b27,b28,b29,b30,b31,b32,b33,b34,b35,b36,b37,b38,b39,b40) PP2_FRAME_REW(target,value,b0) PP2_FRAME_REW(target,value,b1) PP2_FRAME_REW(target,value,b2) PP2_FRAME_REW(target,value,b3) PP2_FRAME_REW(target,value,b4) PP2_FRAME_REW(target,value,b5) PP2_FRAME_REW(target,value,b6) PP2_FRAME_REW(target,value,b7) PP2_FRAME_REW(target,value,b8) PP2_FRAME_REW(target,value,b9) PP2_FRAME_REW(target,value,b10) PP2_FRAME_REW(target,value,b11) PP2_FRAME_REW(target,value,b12) PP2_FRAME_REW(target,value,b13) PP2_FRAME_REW(target,value,b14) PP2_FRAME_REW(target,value,b15) PP2_FRAME_REW(target,value,b16) PP2_FRAME_REW(target,value,b17) PP2_FRAME_REW(target,value,b18) PP2_FRAME_REW(target,value,b19) PP2_FRAME_REW(target,value,b20) PP2_FRAME_REW(target,value,b21) PP2_FRAME_REW(target,value,b22) PP2_FRAME_REW(target,value,b23) PP2_FRAME_REW(target,value,b24) PP2_FRAME_REW(target,value,b25) PP2_FRAME_REW(target,value,b26) PP2_FRAME_REW(target,value,b27) PP2_FRAME_REW(target,value,b28) PP2_FRAME_REW(target,value,b29) PP2_FRAME_REW(target,value,b30) PP2_FRAME_REW(target,value,b31) PP2_FRAME_REW(target,value,b32) PP2_FRAME_REW(target,value,b33) PP2_FRAME_REW(target,value,b34) PP2_FRAME_REW(target,value,b35) PP2_FRAME_REW(target,value,b36) PP2_FRAME_REW(target,value,b37) PP2_FRAME_REW(target,value,b38) PP2_FRAME_REW(target,value,b39) PP2_FRAME_REW(target,value,b40)
+#define IP2_FRAME_REWRITE_42(target,value,b0,b1,b2,b3,b4,b5,b6,b7,b8,b9,b10,b11,b12,b13,b14,b15,b16,b17,b18,b19,b20,b21,b22,b23,b24,b25,b26,b27,b28,b29,b30,b31,b32,b33,b34,b35,b36,b37,b38,b39,b40,b41) PP2_FRAME_REW(target,value,b0) PP2_FRAME_REW(target,value,b1) PP2_FRAME_REW(target,value,b2) PP2_FRAME_REW(target,value,b3) PP2_FRAME_REW(target,value,b4) PP2_FRAME_REW(target,value,b5) PP2_FRAME_REW(target,value,b6) PP2_FRAME_REW(target,value,b7) PP2_FRAME_REW(target,value,b8) PP2_FRAME_REW(target,value,b9) PP2_FRAME_REW(target,value,b10) PP2_FRAME_REW(target,value,b11) PP2_FRAME_REW(target,value,b12) PP2_FRAME_REW(target,value,b13) PP2_FRAME_REW(target,value,b14) PP2_FRAME_REW(target,value,b15) PP2_FRAME_REW(target,value,b16) PP2_FRAME_REW(target,value,b17) PP2_FRAME_REW(target,value,b18) PP2_FRAME_REW(target,value,b19) PP2_FRAME_REW(target,value,b20) PP2_FRAME_REW(target,value,b21) PP2_FRAME_REW(target,value,b22) PP2_FRAME_REW(target,value,b23) PP2_FRAME_REW(target,value,b24) PP2_FRAME_REW(target,value,b25) PP2_FRAME_REW(target,value,b26) PP2_FRAME_REW(target,value,b27) PP2_FRAME_REW(target,value,b28) PP2_FRAME_REW(target,value,b29) PP2_FRAME_REW(target,value,b30) PP2_FRAME_REW(target,value,b31) PP2_FRAME_REW(target,value,b32) PP2_FRAME_REW(target,value,b33) PP2_FRAME_REW(target,value,b34) PP2_FRAME_REW(target,value,b35) PP2_FRAME_REW(target,value,b36) PP2_FRAME_REW(target,value,b37) PP2_FRAME_REW(target,value,b38) PP2_FRAME_REW(target,value,b39) PP2_FRAME_REW(target,value,b40) PP2_FRAME_REW(target,value,b41)
+#define IP2_FRAME_REWRITE_43(target,value,b0,b1,b2,b3,b4,b5,b6,b7,b8,b9,b10,b11,b12,b13,b14,b15,b16,b17,b18,b19,b20,b21,b22,b23,b24,b25,b26,b27,b28,b29,b30,b31,b32,b33,b34,b35,b36,b37,b38,b39,b40,b41,b42) PP2_FRAME_REW(target,value,b0) PP2_FRAME_REW(target,value,b1) PP2_FRAME_REW(target,value,b2) PP2_FRAME_REW(target,value,b3) PP2_FRAME_REW(target,value,b4) PP2_FRAME_REW(target,value,b5) PP2_FRAME_REW(target,value,b6) PP2_FRAME_REW(target,value,b7) PP2_FRAME_REW(target,value,b8) PP2_FRAME_REW(target,value,b9) PP2_FRAME_REW(target,value,b10) PP2_FRAME_REW(target,value,b11) PP2_FRAME_REW(target,value,b12) PP2_FRAME_REW(target,value,b13) PP2_FRAME_REW(target,value,b14) PP2_FRAME_REW(target,value,b15) PP2_FRAME_REW(target,value,b16) PP2_FRAME_REW(target,value,b17) PP2_FRAME_REW(target,value,b18) PP2_FRAME_REW(target,value,b19) PP2_FRAME_REW(target,value,b20) PP2_FRAME_REW(target,value,b21) PP2_FRAME_REW(target,value,b22) PP2_FRAME_REW(target,value,b23) PP2_FRAME_REW(target,value,b24) PP2_FRAME_REW(target,value,b25) PP2_FRAME_REW(target,value,b26) PP2_FRAME_REW(target,value,b27) PP2_FRAME_REW(target,value,b28) PP2_FRAME_REW(target,value,b29) PP2_FRAME_REW(target,value,b30) PP2_FRAME_REW(target,value,b31) PP2_FRAME_REW(target,value,b32) PP2_FRAME_REW(target,value,b33) PP2_FRAME_REW(target,value,b34) PP2_FRAME_REW(target,value,b35) PP2_FRAME_REW(target,value,b36) PP2_FRAME_REW(target,value,b37) PP2_FRAME_REW(target,value,b38) PP2_FRAME_REW(target,value,b39) PP2_FRAME_REW(target,value,b40) PP2_FRAME_REW(target,value,b41) PP2_FRAME_REW(target,value,b42)
+#define IP2_FRAME_REWRITE_44(target,value,b0,b1,b2,b3,b4,b5,b6,b7,b8,b9,b10,b11,b12,b13,b14,b15,b16,b17,b18,b19,b20,b21,b22,b23,b24,b25,b26,b27,b28,b29,b30,b31,b32,b33,b34,b35,b36,b37,b38,b39,b40,b41,b42,b43) PP2_FRAME_REW(target,value,b0) PP2_FRAME_REW(target,value,b1) PP2_FRAME_REW(target,value,b2) PP2_FRAME_REW(target,value,b3) PP2_FRAME_REW(target,value,b4) PP2_FRAME_REW(target,value,b5) PP2_FRAME_REW(target,value,b6) PP2_FRAME_REW(target,value,b7) PP2_FRAME_REW(target,value,b8) PP2_FRAME_REW(target,value,b9) PP2_FRAME_REW(target,value,b10) PP2_FRAME_REW(target,value,b11) PP2_FRAME_REW(target,value,b12) PP2_FRAME_REW(target,value,b13) PP2_FRAME_REW(target,value,b14) PP2_FRAME_REW(target,value,b15) PP2_FRAME_REW(target,value,b16) PP2_FRAME_REW(target,value,b17) PP2_FRAME_REW(target,value,b18) PP2_FRAME_REW(target,value,b19) PP2_FRAME_REW(target,value,b20) PP2_FRAME_REW(target,value,b21) PP2_FRAME_REW(target,value,b22) PP2_FRAME_REW(target,value,b23) PP2_FRAME_REW(target,value,b24) PP2_FRAME_REW(target,value,b25) PP2_FRAME_REW(target,value,b26) PP2_FRAME_REW(target,value,b27) PP2_FRAME_REW(target,value,b28) PP2_FRAME_REW(target,value,b29) PP2_FRAME_REW(target,value,b30) PP2_FRAME_REW(target,value,b31) PP2_FRAME_REW(target,value,b32) PP2_FRAME_REW(target,value,b33) PP2_FRAME_REW(target,value,b34) PP2_FRAME_REW(target,value,b35) PP2_FRAME_REW(target,value,b36) PP2_FRAME_REW(target,value,b37) PP2_FRAME_REW(target,value,b38) PP2_FRAME_REW(target,value,b39) PP2_FRAME_REW(target,value,b40) PP2_FRAME_REW(target,value,b41) PP2_FRAME_REW(target,value,b42) PP2_FRAME_REW(target,value,b43)
+#define IP2_FRAME_REWRITE_45(target,value,b0,b1,b2,b3,b4,b5,b6,b7,b8,b9,b10,b11,b12,b13,b14,b15,b16,b17,b18,b19,b20,b21,b22,b23,b24,b25,b26,b27,b28,b29,b30,b31,b32,b33,b34,b35,b36,b37,b38,b39,b40,b41,b42,b43,b44) PP2_FRAME_REW(target,value,b0) PP2_FRAME_REW(target,value,b1) PP2_FRAME_REW(target,value,b2) PP2_FRAME_REW(target,value,b3) PP2_FRAME_REW(target,value,b4) PP2_FRAME_REW(target,value,b5) PP2_FRAME_REW(target,value,b6) PP2_FRAME_REW(target,value,b7) PP2_FRAME_REW(target,value,b8) PP2_FRAME_REW(target,value,b9) PP2_FRAME_REW(target,value,b10) PP2_FRAME_REW(target,value,b11) PP2_FRAME_REW(target,value,b12) PP2_FRAME_REW(target,value,b13) PP2_FRAME_REW(target,value,b14) PP2_FRAME_REW(target,value,b15) PP2_FRAME_REW(target,value,b16) PP2_FRAME_REW(target,value,b17) PP2_FRAME_REW(target,value,b18) PP2_FRAME_REW(target,value,b19) PP2_FRAME_REW(target,value,b20) PP2_FRAME_REW(target,value,b21) PP2_FRAME_REW(target,value,b22) PP2_FRAME_REW(target,value,b23) PP2_FRAME_REW(target,value,b24) PP2_FRAME_REW(target,value,b25) PP2_FRAME_REW(target,value,b26) PP2_FRAME_REW(target,value,b27) PP2_FRAME_REW(target,value,b28) PP2_FRAME_REW(target,value,b29) PP2_FRAME_REW(target,value,b30) PP2_FRAME_REW(target,value,b31) PP2_FRAME_REW(target,value,b32) PP2_FRAME_REW(target,value,b33) PP2_FRAME_REW(target,value,b34) PP2_FRAME_REW(target,value,b35) PP2_FRAME_REW(target,value,b36) PP2_FRAME_REW(target,value,b37) PP2_FRAME_REW(target,value,b38) PP2_FRAME_REW(target,value,b39) PP2_FRAME_REW(target,value,b40) PP2_FRAME_REW(target,value,b41) PP2_FRAME_REW(target,value,b42) PP2_FRAME_REW(target,value,b43) PP2_FRAME_REW(target,value,b44)
+#define IP2_FRAME_REWRITE_46(target,value,b0,b1,b2,b3,b4,b5,b6,b7,b8,b9,b10,b11,b12,b13,b14,b15,b16,b17,b18,b19,b20,b21,b22,b23,b24,b25,b26,b27,b28,b29,b30,b31,b32,b33,b34,b35,b36,b37,b38,b39,b40,b41,b42,b43,b44,b45) PP2_FRAME_REW(target,value,b0) PP2_FRAME_REW(target,value,b1) PP2_FRAME_REW(target,value,b2) PP2_FRAME_REW(target,value,b3) PP2_FRAME_REW(target,value,b4) PP2_FRAME_REW(target,value,b5) PP2_FRAME_REW(target,value,b6) PP2_FRAME_REW(target,value,b7) PP2_FRAME_REW(target,value,b8) PP2_FRAME_REW(target,value,b9) PP2_FRAME_REW(target,value,b10) PP2_FRAME_REW(target,value,b11) PP2_FRAME_REW(target,value,b12) PP2_FRAME_REW(target,value,b13) PP2_FRAME_REW(target,value,b14) PP2_FRAME_REW(target,value,b15) PP2_FRAME_REW(target,value,b16) PP2_FRAME_REW(target,value,b17) PP2_FRAME_REW(target,value,b18) PP2_FRAME_REW(target,value,b19) PP2_FRAME_REW(target,value,b20) PP2_FRAME_REW(target,value,b21) PP2_FRAME_REW(target,value,b22) PP2_FRAME_REW(target,value,b23) PP2_FRAME_REW(target,value,b24) PP2_FRAME_REW(target,value,b25) PP2_FRAME_REW(target,value,b26) PP2_FRAME_REW(target,value,b27) PP2_FRAME_REW(target,value,b28) PP2_FRAME_REW(target,value,b29) PP2_FRAME_REW(target,value,b30) PP2_FRAME_REW(target,value,b31) PP2_FRAME_REW(target,value,b32) PP2_FRAME_REW(target,value,b33) PP2_FRAME_REW(target,value,b34) PP2_FRAME_REW(target,value,b35) PP2_FRAME_REW(target,value,b36) PP2_FRAME_REW(target,value,b37) PP2_FRAME_REW(target,value,b38) PP2_FRAME_REW(target,value,b39) PP2_FRAME_REW(target,value,b40) PP2_FRAME_REW(target,value,b41) PP2_FRAME_REW(target,value,b42) PP2_FRAME_REW(target,value,b43) PP2_FRAME_REW(target,value,b44) PP2_FRAME_REW(target,value,b45)
+#define IP2_FRAME_REWRITE_47(target,value,b0,b1,b2,b3,b4,b5,b6,b7,b8,b9,b10,b11,b12,b13,b14,b15,b16,b17,b18,b19,b20,b21,b22,b23,b24,b25,b26,b27,b28,b29,b30,b31,b32,b33,b34,b35,b36,b37,b38,b39,b40,b41,b42,b43,b44,b45,b46) PP2_FRAME_REW(target,value,b0) PP2_FRAME_REW(target,value,b1) PP2_FRAME_REW(target,value,b2) PP2_FRAME_REW(target,value,b3) PP2_FRAME_REW(target,value,b4) PP2_FRAME_REW(target,value,b5) PP2_FRAME_REW(target,value,b6) PP2_FRAME_REW(target,value,b7) PP2_FRAME_REW(target,value,b8) PP2_FRAME_REW(target,value,b9) PP2_FRAME_REW(target,value,b10) PP2_FRAME_REW(target,value,b11) PP2_FRAME_REW(target,value,b12) PP2_FRAME_REW(target,value,b13) PP2_FRAME_REW(target,value,b14) PP2_FRAME_REW(target,value,b15) PP2_FRAME_REW(target,value,b16) PP2_FRAME_REW(target,value,b17) PP2_FRAME_REW(target,value,b18) PP2_FRAME_REW(target,value,b19) PP2_FRAME_REW(target,value,b20) PP2_FRAME_REW(target,value,b21) PP2_FRAME_REW(target,value,b22) PP2_FRAME_REW(target,value,b23) PP2_FRAME_REW(target,value,b24) PP2_FRAME_REW(target,value,b25) PP2_FRAME_REW(target,value,b26) PP2_FRAME_REW(target,value,b27) PP2_FRAME_REW(target,value,b28) PP2_FRAME_REW(target,value,b29) PP2_FRAME_REW(target,value,b30) PP2_FRAME_REW(target,value,b31) PP2_FRAME_REW(target,value,b32) PP2_FRAME_REW(target,value,b33) PP2_FRAME_REW(target,value,b34) PP2_FRAME_REW(target,value,b35) PP2_FRAME_REW(target,value,b36) PP2_FRAME_REW(target,value,b37) PP2_FRAME_REW(target,value,b38) PP2_FRAME_REW(target,value,b39) PP2_FRAME_REW(target,value,b40) PP2_FRAME_REW(target,value,b41) PP2_FRAME_REW(target,value,b42) PP2_FRAME_REW(target,value,b43) PP2_FRAME_REW(target,value,b44) PP2_FRAME_REW(target,value,b45) PP2_FRAME_REW(target,value,b46)
+#define IP2_FRAME_REWRITE_48(target,value,b0,b1,b2,b3,b4,b5,b6,b7,b8,b9,b10,b11,b12,b13,b14,b15,b16,b17,b18,b19,b20,b21,b22,b23,b24,b25,b26,b27,b28,b29,b30,b31,b32,b33,b34,b35,b36,b37,b38,b39,b40,b41,b42,b43,b44,b45,b46,b47) PP2_FRAME_REW(target,value,b0) PP2_FRAME_REW(target,value,b1) PP2_FRAME_REW(target,value,b2) PP2_FRAME_REW(target,value,b3) PP2_FRAME_REW(target,value,b4) PP2_FRAME_REW(target,value,b5) PP2_FRAME_REW(target,value,b6) PP2_FRAME_REW(target,value,b7) PP2_FRAME_REW(target,value,b8) PP2_FRAME_REW(target,value,b9) PP2_FRAME_REW(target,value,b10) PP2_FRAME_REW(target,value,b11) PP2_FRAME_REW(target,value,b12) PP2_FRAME_REW(target,value,b13) PP2_FRAME_REW(target,value,b14) PP2_FRAME_REW(target,value,b15) PP2_FRAME_REW(target,value,b16) PP2_FRAME_REW(target,value,b17) PP2_FRAME_REW(target,value,b18) PP2_FRAME_REW(target,value,b19) PP2_FRAME_REW(target,value,b20) PP2_FRAME_REW(target,value,b21) PP2_FRAME_REW(target,value,b22) PP2_FRAME_REW(target,value,b23) PP2_FRAME_REW(target,value,b24) PP2_FRAME_REW(target,value,b25) PP2_FRAME_REW(target,value,b26) PP2_FRAME_REW(target,value,b27) PP2_FRAME_REW(target,value,b28) PP2_FRAME_REW(target,value,b29) PP2_FRAME_REW(target,value,b30) PP2_FRAME_REW(target,value,b31) PP2_FRAME_REW(target,value,b32) PP2_FRAME_REW(target,value,b33) PP2_FRAME_REW(target,value,b34) PP2_FRAME_REW(target,value,b35) PP2_FRAME_REW(target,value,b36) PP2_FRAME_REW(target,value,b37) PP2_FRAME_REW(target,value,b38) PP2_FRAME_REW(target,value,b39) PP2_FRAME_REW(target,value,b40) PP2_FRAME_REW(target,value,b41) PP2_FRAME_REW(target,value,b42) PP2_FRAME_REW(target,value,b43) PP2_FRAME_REW(target,value,b44) PP2_FRAME_REW(target,value,b45) PP2_FRAME_REW(target,value,b46) PP2_FRAME_REW(target,value,b47)
+#define IP2_FRAME_REWRITE_49(target,value,b0,b1,b2,b3,b4,b5,b6,b7,b8,b9,b10,b11,b12,b13,b14,b15,b16,b17,b18,b19,b20,b21,b22,b23,b24,b25,b26,b27,b28,b29,b30,b31,b32,b33,b34,b35,b36,b37,b38,b39,b40,b41,b42,b43,b44,b45,b46,b47,b48) PP2_FRAME_REW(target,value,b0) PP2_FRAME_REW(target,value,b1) PP2_FRAME_REW(target,value,b2) PP2_FRAME_REW(target,value,b3) PP2_FRAME_REW(target,value,b4) PP2_FRAME_REW(target,value,b5) PP2_FRAME_REW(target,value,b6) PP2_FRAME_REW(target,value,b7) PP2_FRAME_REW(target,value,b8) PP2_FRAME_REW(target,value,b9) PP2_FRAME_REW(target,value,b10) PP2_FRAME_REW(target,value,b11) PP2_FRAME_REW(target,value,b12) PP2_FRAME_REW(target,value,b13) PP2_FRAME_REW(target,value,b14) PP2_FRAME_REW(target,value,b15) PP2_FRAME_REW(target,value,b16) PP2_FRAME_REW(target,value,b17) PP2_FRAME_REW(target,value,b18) PP2_FRAME_REW(target,value,b19) PP2_FRAME_REW(target,value,b20) PP2_FRAME_REW(target,value,b21) PP2_FRAME_REW(target,value,b22) PP2_FRAME_REW(target,value,b23) PP2_FRAME_REW(target,value,b24) PP2_FRAME_REW(target,value,b25) PP2_FRAME_REW(target,value,b26) PP2_FRAME_REW(target,value,b27) PP2_FRAME_REW(target,value,b28) PP2_FRAME_REW(target,value,b29) PP2_FRAME_REW(target,value,b30) PP2_FRAME_REW(target,value,b31) PP2_FRAME_REW(target,value,b32) PP2_FRAME_REW(target,value,b33) PP2_FRAME_REW(target,value,b34) PP2_FRAME_REW(target,value,b35) PP2_FRAME_REW(target,value,b36) PP2_FRAME_REW(target,value,b37) PP2_FRAME_REW(target,value,b38) PP2_FRAME_REW(target,value,b39) PP2_FRAME_REW(target,value,b40) PP2_FRAME_REW(target,value,b41) PP2_FRAME_REW(target,value,b42) PP2_FRAME_REW(target,value,b43) PP2_FRAME_REW(target,value,b44) PP2_FRAME_REW(target,value,b45) PP2_FRAME_REW(target,value,b46) PP2_FRAME_REW(target,value,b47) PP2_FRAME_REW(target,value,b48)
+#define IP2_FRAME_REWRITE_50(target,value,b0,b1,b2,b3,b4,b5,b6,b7,b8,b9,b10,b11,b12,b13,b14,b15,b16,b17,b18,b19,b20,b21,b22,b23,b24,b25,b26,b27,b28,b29,b30,b31,b32,b33,b34,b35,b36,b37,b38,b39,b40,b41,b42,b43,b44,b45,b46,b47,b48,b49) PP2_FRAME_REW(target,value,b0) PP2_FRAME_REW(target,value,b1) PP2_FRAME_REW(target,value,b2) PP2_FRAME_REW(target,value,b3) PP2_FRAME_REW(target,value,b4) PP2_FRAME_REW(target,value,b5) PP2_FRAME_REW(target,value,b6) PP2_FRAME_REW(target,value,b7) PP2_FRAME_REW(target,value,b8) PP2_FRAME_REW(target,value,b9) PP2_FRAME_REW(target,value,b10) PP2_FRAME_REW(target,value,b11) PP2_FRAME_REW(target,value,b12) PP2_FRAME_REW(target,value,b13) PP2_FRAME_REW(target,value,b14) PP2_FRAME_REW(target,value,b15) PP2_FRAME_REW(target,value,b16) PP2_FRAME_REW(target,value,b17) PP2_FRAME_REW(target,value,b18) PP2_FRAME_REW(target,value,b19) PP2_FRAME_REW(target,value,b20) PP2_FRAME_REW(target,value,b21) PP2_FRAME_REW(target,value,b22) PP2_FRAME_REW(target,value,b23) PP2_FRAME_REW(target,value,b24) PP2_FRAME_REW(target,value,b25) PP2_FRAME_REW(target,value,b26) PP2_FRAME_REW(target,value,b27) PP2_FRAME_REW(target,value,b28) PP2_FRAME_REW(target,value,b29) PP2_FRAME_REW(target,value,b30) PP2_FRAME_REW(target,value,b31) PP2_FRAME_REW(target,value,b32) PP2_FRAME_REW(target,value,b33) PP2_FRAME_REW(target,value,b34) PP2_FRAME_REW(target,value,b35) PP2_FRAME_REW(target,value,b36) PP2_FRAME_REW(target,value,b37) PP2_FRAME_REW(target,value,b38) PP2_FRAME_REW(target,value,b39) PP2_FRAME_REW(target,value,b40) PP2_FRAME_REW(target,value,b41) PP2_FRAME_REW(target,value,b42) PP2_FRAME_REW(target,value,b43) PP2_FRAME_REW(target,value,b44) PP2_FRAME_REW(target,value,b45) PP2_FRAME_REW(target,value,b46) PP2_FRAME_REW(target,value,b47) PP2_FRAME_REW(target,value,b48) PP2_FRAME_REW(target,value,b49)
+#define IP2_FRAME_REWRITE_51(target,value,b0,b1,b2,b3,b4,b5,b6,b7,b8,b9,b10,b11,b12,b13,b14,b15,b16,b17,b18,b19,b20,b21,b22,b23,b24,b25,b26,b27,b28,b29,b30,b31,b32,b33,b34,b35,b36,b37,b38,b39,b40,b41,b42,b43,b44,b45,b46,b47,b48,b49,b50) PP2_FRAME_REW(target,value,b0) PP2_FRAME_REW(target,value,b1) PP2_FRAME_REW(target,value,b2) PP2_FRAME_REW(target,value,b3) PP2_FRAME_REW(target,value,b4) PP2_FRAME_REW(target,value,b5) PP2_FRAME_REW(target,value,b6) PP2_FRAME_REW(target,value,b7) PP2_FRAME_REW(target,value,b8) PP2_FRAME_REW(target,value,b9) PP2_FRAME_REW(target,value,b10) PP2_FRAME_REW(target,value,b11) PP2_FRAME_REW(target,value,b12) PP2_FRAME_REW(target,value,b13) PP2_FRAME_REW(target,value,b14) PP2_FRAME_REW(target,value,b15) PP2_FRAME_REW(target,value,b16) PP2_FRAME_REW(target,value,b17) PP2_FRAME_REW(target,value,b18) PP2_FRAME_REW(target,value,b19) PP2_FRAME_REW(target,value,b20) PP2_FRAME_REW(target,value,b21) PP2_FRAME_REW(target,value,b22) PP2_FRAME_REW(target,value,b23) PP2_FRAME_REW(target,value,b24) PP2_FRAME_REW(target,value,b25) PP2_FRAME_REW(target,value,b26) PP2_FRAME_REW(target,value,b27) PP2_FRAME_REW(target,value,b28) PP2_FRAME_REW(target,value,b29) PP2_FRAME_REW(target,value,b30) PP2_FRAME_REW(target,value,b31) PP2_FRAME_REW(target,value,b32) PP2_FRAME_REW(target,value,b33) PP2_FRAME_REW(target,value,b34) PP2_FRAME_REW(target,value,b35) PP2_FRAME_REW(target,value,b36) PP2_FRAME_REW(target,value,b37) PP2_FRAME_REW(target,value,b38) PP2_FRAME_REW(target,value,b39) PP2_FRAME_REW(target,value,b40) PP2_FRAME_REW(target,value,b41) PP2_FRAME_REW(target,value,b42) PP2_FRAME_REW(target,value,b43) PP2_FRAME_REW(target,value,b44) PP2_FRAME_REW(target,value,b45) PP2_FRAME_REW(target,value,b46) PP2_FRAME_REW(target,value,b47) PP2_FRAME_REW(target,value,b48) PP2_FRAME_REW(target,value,b49) PP2_FRAME_REW(target,value,b50)
+#define IP2_FRAME_REWRITE_52(target,value,b0,b1,b2,b3,b4,b5,b6,b7,b8,b9,b10,b11,b12,b13,b14,b15,b16,b17,b18,b19,b20,b21,b22,b23,b24,b25,b26,b27,b28,b29,b30,b31,b32,b33,b34,b35,b36,b37,b38,b39,b40,b41,b42,b43,b44,b45,b46,b47,b48,b49,b50,b51) PP2_FRAME_REW(target,value,b0) PP2_FRAME_REW(target,value,b1) PP2_FRAME_REW(target,value,b2) PP2_FRAME_REW(target,value,b3) PP2_FRAME_REW(target,value,b4) PP2_FRAME_REW(target,value,b5) PP2_FRAME_REW(target,value,b6) PP2_FRAME_REW(target,value,b7) PP2_FRAME_REW(target,value,b8) PP2_FRAME_REW(target,value,b9) PP2_FRAME_REW(target,value,b10) PP2_FRAME_REW(target,value,b11) PP2_FRAME_REW(target,value,b12) PP2_FRAME_REW(target,value,b13) PP2_FRAME_REW(target,value,b14) PP2_FRAME_REW(target,value,b15) PP2_FRAME_REW(target,value,b16) PP2_FRAME_REW(target,value,b17) PP2_FRAME_REW(target,value,b18) PP2_FRAME_REW(target,value,b19) PP2_FRAME_REW(target,value,b20) PP2_FRAME_REW(target,value,b21) PP2_FRAME_REW(target,value,b22) PP2_FRAME_REW(target,value,b23) PP2_FRAME_REW(target,value,b24) PP2_FRAME_REW(target,value,b25) PP2_FRAME_REW(target,value,b26) PP2_FRAME_REW(target,value,b27) PP2_FRAME_REW(target,value,b28) PP2_FRAME_REW(target,value,b29) PP2_FRAME_REW(target,value,b30) PP2_FRAME_REW(target,value,b31) PP2_FRAME_REW(target,value,b32) PP2_FRAME_REW(target,value,b33) PP2_FRAME_REW(target,value,b34) PP2_FRAME_REW(target,value,b35) PP2_FRAME_REW(target,value,b36) PP2_FRAME_REW(target,value,b37) PP2_FRAME_REW(target,value,b38) PP2_FRAME_REW(target,value,b39) PP2_FRAME_REW(target,value,b40) PP2_FRAME_REW(target,value,b41) PP2_FRAME_REW(target,value,b42) PP2_FRAME_REW(target,value,b43) PP2_FRAME_REW(target,value,b44) PP2_FRAME_REW(target,value,b45) PP2_FRAME_REW(target,value,b46) PP2_FRAME_REW(target,value,b47) PP2_FRAME_REW(target,value,b48) PP2_FRAME_REW(target,value,b49) PP2_FRAME_REW(target,value,b50) PP2_FRAME_REW(target,value,b51)
+#define IP2_FRAME_REWRITE_53_OR_MORE(target,value,b0,b1,b2,b3,b4,b5,b6,b7,b8,b9,b10,b11,b12,b13,b14,b15,b16,b17,b18,b19,b20,b21,b22,b23,b24,b25,b26,b27,b28,b29,b30,b31,b32,b33,b34,b35,b36,b37,b38,b39,b40,b41,b42,b43,b44,b45,b46,b47,b48,b49,b50,b51,...) PP2_FRAME_REW(target,value,b0) PP2_FRAME_REW(target,value,b1) PP2_FRAME_REW(target,value,b2) PP2_FRAME_REW(target,value,b3) PP2_FRAME_REW(target,value,b4) PP2_FRAME_REW(target,value,b5) PP2_FRAME_REW(target,value,b6) PP2_FRAME_REW(target,value,b7) PP2_FRAME_REW(target,value,b8) PP2_FRAME_REW(target,value,b9) PP2_FRAME_REW(target,value,b10) PP2_FRAME_REW(target,value,b11) PP2_FRAME_REW(target,value,b12) PP2_FRAME_REW(target,value,b13) PP2_FRAME_REW(target,value,b14) PP2_FRAME_REW(target,value,b15) PP2_FRAME_REW(target,value,b16) PP2_FRAME_REW(target,value,b17) PP2_FRAME_REW(target,value,b18) PP2_FRAME_REW(target,value,b19) PP2_FRAME_REW(target,value,b20) PP2_FRAME_REW(target,value,b21) PP2_FRAME_REW(target,value,b22) PP2_FRAME_REW(target,value,b23) PP2_FRAME_REW(target,value,b24) PP2_FRAME_REW(target,value,b25) PP2_FRAME_REW(target,value,b26) PP2_FRAME_REW(target,value,b27) PP2_FRAME_REW(target,value,b28) PP2_FRAME_REW(target,value,b29) PP2_FRAME_REW(target,value,b30) PP2_FRAME_REW(target,value,b31) PP2_FRAME_REW(target,value,b32) PP2_FRAME_REW(target,value,b33) PP2_FRAME_REW(target,value,b34) PP2_FRAME_REW(target,value,b35) PP2_FRAME_REW(target,value,b36) PP2_FRAME_REW(target,value,b37) PP2_FRAME_REW(target,value,b38) PP2_FRAME_REW(target,value,b39) PP2_FRAME_REW(target,value,b40) PP2_FRAME_REW(target,value,b41) PP2_FRAME_REW(target,value,b42) PP2_FRAME_REW(target,value,b43) PP2_FRAME_REW(target,value,b44) PP2_FRAME_REW(target,value,b45) PP2_FRAME_REW(target,value,b46) PP2_FRAME_REW(target,value,b47) PP2_FRAME_REW(target,value,b48) PP2_FRAME_REW(target,value,b49) PP2_FRAME_REW(target,value,b50) PP2_FRAME_REW(target,value,b51) PP2_FRAME_TOO_MANY_LOCALS
+#endif
+
+
+/* Load the value bound to a char-seq address in the current (top) frame. The
+ * frame is the first group of the local stack; PP2_FRAME_FIND walks its
+ * bindings and returns the value, or (8MISS) when the address is unbound, which
+ * routes to the UNBOUND_LOCAL exception carrying the address. */
+#define PP2_INSN_8PP2_STACK_LOAD(P,r0,r1,r2,addr,...) \
+        IP2_STACK_LOAD_DISPATCH( \
+            IP2_FX(STACK_LOAD_FIND,(,P##addr,IP2_STACK_LOAD_SPLIT_FRAME P##r1)), \
+            P##addr,P##r1,P##r2,P##__VA_ARGS__ \
+        )
+
+#define IP2_STACK_LOAD_FIND(P,addr,frame,...) PP2_FRAME_FIND(addr,frame)
+
+#define IP2_STACK_LOAD_SPLIT_FRAME(P,stack,...) IP2_STACK_LOAD_SPLIT_FRAME_I P##stack
+#define IP2_STACK_LOAD_SPLIT_FRAME_I(...) __VA_ARGS__,
+
+/* Branch on whether the find hit. A compiled object opens to `,Type,...` (its
+ * first field is empty), so the probe token is empty; a miss opens to the bare
+ * `8MISS` token. */
+#define IP2_STACK_LOAD_DISPATCH(res,addr,r1,r2,...) \
+        IP2_STACK_LOAD_DISPATCH_I(IP2_STACK_LOAD_ISMISS(res),res,addr,r1,r2,__VA_ARGS__)
+#define IP2_STACK_LOAD_DISPATCH_I(miss,res,addr,r1,r2,...) IP2_STACK_LOAD_DISPATCH_II(miss,res,addr,r1,r2,__VA_ARGS__)
+#define IP2_STACK_LOAD_DISPATCH_II(miss,res,addr,r1,r2,...) IP2_STACK_LOAD_##miss(res,addr,r1,r2,__VA_ARGS__)
+
+#define IP2_STACK_LOAD_ISMISS(res) IP2_FX(STACK_LOAD_ISMISS_I,(,PP2_OPEN res))
+#define IP2_STACK_LOAD_ISMISS_I(P,x,...) IP2_STACK_LOAD_ISMISS_II(x)
+#define IP2_STACK_LOAD_ISMISS_II(x) IP2_STACK_LOAD_ISMISS_TAG_##x
+#define IP2_STACK_LOAD_ISMISS_TAG_ 0
+#define IP2_STACK_LOAD_ISMISS_TAG_8MISS 1
+
+#define IP2_STACK_LOAD_0(res,addr,r1,r2,...) (,/*r0=*/res,r1,r2,__VA_ARGS__)
+#define IP2_STACK_LOAD_1(res,addr,r1,r2,...) \
+        (,/*r0=*/,r1,r2,8PP2_THROW_EXCEPTION,8PP2_LANGUAGE_UNBOUND_LOCAL_EXCEPTION,addr,__VA_ARGS__)
+
+#endif
+
+// ******************** From: store.h
+/** @file */
+#ifndef PP2_MACHINE_STACK_STORE_H
+#define PP2_MACHINE_STACK_STORE_H
+
+
+
+/* Store the value in r0 to a char-seq address in the current (top) frame.
+ * PP2_FRAME_STORE rewrites the frame's bindings -- replacing the target's value
+ * in place, or prepending a new binding when the address is unbound -- and the
+ * rebuilt frame is set back as the first group of the local stack. r0 is
+ * cleared; the store is a statement, not an expression. */
+#define PP2_INSN_8PP2_STACK_STORE(P,value,r1,r2,addr,...) \
+        (, \
+         /*r0=*/, \
+         IP2_FX(STACK_STORE_NEWCTX,(,P##r1,P##addr,P##value,IP2_STACK_STORE_SPLIT_FRAME(PP2_LOCAL_CTX_GET_STACK P##r1))), \
+         P##r2, \
+         P##__VA_ARGS__ \
+        )
+
+#define IP2_STACK_STORE_NEWCTX(P,ctx,addr,value,frame,frame_stack) \
+        PP2_LOCAL_CTX_SET_STACK(ctx,(PP2_FRAME_STORE(addr,value,frame))frame_stack)
+
+#define IP2_STACK_STORE_SPLIT_FRAME(stack) IP2_STACK_STORE_SPLIT_FRAME_I stack
+#define IP2_STACK_STORE_SPLIT_FRAME_I(...) __VA_ARGS__,
+
+#endif
+
+/* Declare a multi-character variable name host-side. The name is spelled as its
+ * characters, since a single token cannot be taken apart:
+ *
+ *   #define PP2_DEF_total PP2_VAR(t,o,t,a,l)
+ *
+ * after which bare `total` is a variable in every position, exactly like the
+ * built-in single letters. The address is the char-seq (t)(o)(t)(a)(l); load
+ * and store compare addresses character by character (see frame_walk.h), so
+ * there is no slot table and no limit on distinct names. */
+#define PP2_VAR(...) )PP2_COMPILE_LANGUAGE_VAR(PP2_CHARSEQ(__VA_ARGS__),
+
+/* The in-language `var (...)` keyword: a variable whose name is written inline as
+ * a run of space-separated characters, no host-side declaration needed.
+ *
+ *   var (t o t a l) (5)         assigns 5 to total
+ *   print(var (t o t a l))      reads it back
+ *
+ * `var` is compiled like any other bare token, so PP2_DEF_var is pasted with the
+ * name group trailing it (see IP2_LANGUAGE_COMPILE); being function-like, it takes
+ * that group as its argument and leaves whatever follows as the right-hand side,
+ * exactly as the single-letter PP2_DEF_<c> entries do. PP2_SPACED turns the run
+ * into the char-seq address (t)(o)(t)(a)(l) at compile time, so `var (...)` costs
+ * no more at run time than a built-in letter. Names draw from the alphabet
+ * a-z A-Z 0-9 _ and run to 40 characters (see name.h). */
+#define PP2_DEF_var(name) )PP2_COMPILE_LANGUAGE_VAR(PP2_SPACED(name),
+
+#define PP2_INSN_8PP2_LANGUAGE_VAR(P,r0,r1,r2,addr,rhs_stx,...) \
+        IP2_LANGUAGE_VAR_CHOOSE_LOAD_STORE(PP2_INSN_,IP2_LANGUAGE_VAR_TEST_IF_STORE P##rhs_stx) \
+        (, \
+         P##r0,P##r1,P##r2, \
+         P##addr,P##value, \
+         P##__VA_ARGS__ \
+        )
+
+#define IP2_LANGUAGE_VAR_CHOOSE_LOAD_STORE(P,...) \
+        IP2_LANGUAGE_VAR_CHOOSE_LOAD_STORE_I(P, \
+            __VA_ARGS__, \
+            8IP2_LANGUAGE_VAR_LOAD \
+        )
+#define IP2_LANGUAGE_VAR_CHOOSE_LOAD_STORE_I(P,_,insn,...) P##insn
+#define IP2_LANGUAGE_VAR_TEST_IF_STORE(...) ,8IP2_LANGUAGE_VAR_STORE,
+
+
+/* An assignment is done for its effect, so it answers with nil. 8PP2_STACK_STORE
+ * clears r0 once the value is in the frame, and the nil goes in after it. */
+#define PP2_INSN_8IP2_LANGUAGE_VAR_STORE(P,r0,r1,r2,addr,value,...) \
+                                        (, \
+                                         P##r0,P##r1,P##r2, \
+                                         IP2_LANGUAGE_VAR_STORE_OPEN P##value,8PP2_STACK_STORE,P##addr, \
+                                         8PP2_LANGUAGE_LOAD_NIL, \
+                                         P##__VA_ARGS__ \
+                                        )
+#define IP2_LANGUAGE_VAR_STORE_OPEN(value) PP2_COMPILE(value)
+
+#define PP2_INSN_8IP2_LANGUAGE_VAR_LOAD(P,r0,r1,r2,addr,method,...) \
+                                       (, \\
+                                        P##r0,P##r1,P##r2, \
+                                        8PP2_STACK_LOAD,P##addr,PP2_COMPILE_LANGUAGE_RETURN(P##method), \
+                                        P##__VA_ARGS__ \
+                                       )
+
+
+#define PP2_COMPILE_LANGUAGE_VAR(addr,rhs_stx) \
+        IP2_LANGUAGE_VAR_CHOOSE_LOAD_STORE(,IP2_LANGUAGE_VAR_TEST_IF_STORE rhs_stx),addr,rhs_stx
+
+#endif
+
+
+// ******************** From: const.h
+/** @file */
+#ifndef PP2_LANGUAGE_DEFINITION_CONST_H
+#define PP2_LANGUAGE_DEFINITION_CONST_H
+
+
+
+// ******************** From: load.h
+/** @file */
+#ifndef PP2_MACHINE_INSNS_LOAD_H
+#define PP2_MACHINE_INSNS_LOAD_H
+
+#define PP2_INSN_8PP2_LOAD_CONST(P,r0,r1,r2,value,insn,...) PP2_INSN_##insn(,P##value,P##r1,P##r2,P##__VA_ARGS__)
+
+#endif
+
+#define PP2_CONST(type,value) )PP2_COMPILE_CONST(type,value,
+
+#define PP2_COMPILE_CONST(type,value,rhs_stx) 8PP2_LOAD_CONST,(,type,value),PP2_COMPILE_LANGUAGE_RETURN(rhs_stx)
+
+#endif
+
+// ******************** From: def.h
+/** @file */
+#ifndef PP2_LANGUAGE_DEFINITION_DEF_H
+#define PP2_LANGUAGE_DEFINITION_DEF_H
+
+
+#define PP2_DEF(stx) )PP2_COMPILE_DEF(stx,
+#define PP2_COMPILE_DEF(stx,rhs_stx) 8PP2_LANGUAGE_COMPILE,stx,PP2_COMPILE_LANGUAGE_RETURN(rhs_stx)
+
+#endif
+
+// ******************** From: fn.h
+/** @file */
+#ifndef PP2_LANGUAGE_DEFINITION_FN_H
+#define PP2_LANGUAGE_DEFINITION_FN_H
+
+
+// ******************** From: fn.h
+#ifndef PP2_LANGUAGE_EXPRESSIONS_FN_H
+#define PP2_LANGUAGE_EXPRESSIONS_FN_H
+
+
+// ******************** From: fn.h
+/** @file */
+#ifndef PP2_LANGUAGE_TYPES_FN_H
+#define PP2_LANGUAGE_TYPES_FN_H
+
+
+// ******************** From: type.h
+/** @file */
+#ifndef PP2_LANGUAGE_DEFINITION_TYPE_H
+#define PP2_LANGUAGE_DEFINITION_TYPE_H
+
+
+#define PP2_TYPE(name,super) )PP2_COMPILE_CONST(Type,(,name,super),
+
+#endif
+
+// ******************** From: vm_fn.h
+#ifndef PP2_LANGUAGE_DEFINITION_VM_FN_H
+#define PP2_LANGUAGE_DEFINITION_VM_FN_H
+
+
+
+
+#define PP2_VM_FN(macro,nargs) )PP2_LANGUAGE_COMPILE_VM_FN(,macro,nargs,
+#define PP2_LANGUAGE_COMPILE_VM_FN(P,macro,nargs,rhs_stx) 8PP2_LANGUAGE_VM_FN,P##nargs,P##macro,PP2_COMPILE_LANGUAGE_RETURN(P##rhs_stx)
+
+#define PP2_INSN_8PP2_LANGUAGE_VM_FN(P,r0,r1,r2,nargs,macro,...) \
+                                    (, \
+                                     /*r0=*/(,Fn,(,8PP2_LOCAL_CTX_PREPEND_ARGUMENTS,PP2_LOCAL_CTX_GET_ARGUMENTS P##r1,8PP2_LANGUAGE_VM_FN_CALL,P##macro)), \
+                                     P##r1,P##r2, \
+                                     8PP2_LOCAL_CTX_CLEAR_ARGUMENTS, \
+                                     P##__VA_ARGS__ \
+                                    )
+
+#define PP2_INSN_8PP2_LANGUAGE_VM_FN_CALL(P,r0,r1,r2,macro,...) \
+        IP2_LANGUAGE_VM_FN_CALL( \
+            P##macro, \
+            (, \
+             /*r0=*/,P##r1,P##r2, \
+             PP2_LOCAL_CTX_UNPACK_ARGS P##r1, \
+             8PP2_LOCAL_CTX_CLEAR_ARGUMENTS, \
+             P##__VA_ARGS__ \
+            ) \
+        )
+/* The handler travels through the VM registers as the pp-number `8NAME`, never as
+ * an identifier. An identifier that passes through its own expansion is painted
+ * blue for the rest of the translation unit, which is exactly what happens when a
+ * method appears in its own argument (`3 plus (4 plus (5))`): the outer handler's
+ * name rides the register file through the inner handler's expansion, comes out
+ * painted, and never expands again. A pp-number cannot be painted, so the real
+ * name is pasted back on here, at the last instant before the call. */
+#define IP2_LANGUAGE_VM_FN_CALL(m,args_tup) PP2_INSN_##m args_tup
+
+#endif
+
+
+
+#define PP2_DEF_Fn PP2_TYPE(Fn,Any)
+#define PP2_SYM_Fn(...) __VA_ARGS__
+
+/* Fn(params, body): build a function from its constituent data -- a parameter
+ * list and a quote holding the body -- exactly as the `fn (params) (body)`
+ * literal would. This VM's functions capture no lexical environment, so params
+ * + body are the whole of a Fn; there is no closure to pass. The body is
+ * unwrapped to its raw token tuple and handed, with the parameter names, to the
+ * same 8PP2_LANGUAGE_FN builder the fn keyword uses, so parameter binding,
+ * framing and the body block all go through one path.
+ *
+ * The parameter list comes either way round:
+ *
+ *     Fn ((x, y), (x plus (y)))               one quote holding both names
+ *     Fn (List ((x), (y)), (x plus (y)))      a List of quoted names
+ *
+ * The quote form is direct and carries any number of names. The explicit List
+ * form is useful when parameter names are already first-class Quote values. */
+#define PP2_DEF_Fn_construct PP2_VM_FN(8PP2_LANGUAGE_FN_CONSTRUCT,3)
+#define PP2_INSN_8PP2_LANGUAGE_FN_CONSTRUCT(P,r0,r1,r2,self,params_q,body_q,...) \
+        (, \
+         /*r0=*/, \
+         P##r1,P##r2, \
+         8PP2_LANGUAGE_FN, \
+         IP2_FX(LANGUAGE_FN_CONSTRUCT_PARAMS,(,PP2_LANGUAGE_OBJECT_TYPE P##params_q,P##params_q)), \
+         PP2_LANGUAGE_OBJECT_VALUE P##body_q, \
+         P##__VA_ARGS__ \
+        )
+
+/* one paste on the parameter object's type: a Quote already holds the raw
+ * parameter tokens, a List holds one Quote per name */
+#define IP2_LANGUAGE_FN_CONSTRUCT_PARAMS(P,type,obj) IP2_LANGUAGE_FN_CONSTRUCT_PARAMS_##type(P##obj)
+#define IP2_LANGUAGE_FN_CONSTRUCT_PARAMS_Quote(obj) PP2_LANGUAGE_OBJECT_VALUE obj
+#define IP2_LANGUAGE_FN_CONSTRUCT_PARAMS_List(obj) IP2_LANGUAGE_FN_PARAMS_JOIN(PP2_LANGUAGE_OBJECT_VALUE obj)
+
+/* join the element quotes back into the bare, comma-separated parameter list
+ * the fn builder expects. An empty List is a function of no parameters. */
+#define IP2_LANGUAGE_FN_PARAMS_JOIN(elems) IP2_LANGUAGE_FN_PARAMS_JOIN_I(IP2_LANGUAGE_FN_PARAMS_PROBE elems,elems)
+#define IP2_LANGUAGE_FN_PARAMS_PROBE(x0,...) x0
+#define IP2_LANGUAGE_FN_PARAMS_JOIN_I(head,elems) PP2_IS_TUPLE(head)(IP2_LANGUAGE_FN_PARAMS_SOME,IP2_LANGUAGE_FN_PARAMS_NONE)(elems)
+#define IP2_LANGUAGE_FN_PARAMS_NONE(elems) ()
+#define IP2_LANGUAGE_FN_PARAMS_SOME(elems) (IP2_LANGUAGE_FN_PARAMS_OVERLOAD elems)
+
+#define IP2_LANGUAGE_FN_PARAMS_OVERLOAD(...) \
+        IP2_LANGUAGE_FN_PARAMS_SELECT( \
+            __VA_ARGS__, \
+            PP2_COMMA_8, \
+            PP2_COMMA_7, \
+            PP2_COMMA_6, \
+            PP2_COMMA_5, \
+            PP2_COMMA_4, \
+            PP2_COMMA_3, \
+            PP2_COMMA_2, \
+            PP2_COMMA_1, \
+        )(,__VA_ARGS__)
+#define IP2_LANGUAGE_FN_PARAMS_SELECT(x0,x1,x2,x3,x4,x5,x6,x7,m,...) PP2_TUPLE_AT_1(IP2_LANGUAGE_FN_PARAMS_,m,9_OR_MORE)
+
+/* a quote's value keeps its wrapping parens, so the name needs one OPEN */
+#define IP2_LANGUAGE_FN_PARAMS_NAME(e) PP2_FX(OPEN,PP2_LANGUAGE_OBJECT_VALUE e)
+
+#define IP2_LANGUAGE_FN_PARAMS_1(P,e0) IP2_LANGUAGE_FN_PARAMS_NAME(P##e0)
+#define IP2_LANGUAGE_FN_PARAMS_2(P,e0,e1) IP2_LANGUAGE_FN_PARAMS_NAME(P##e0),IP2_LANGUAGE_FN_PARAMS_NAME(P##e1)
+#define IP2_LANGUAGE_FN_PARAMS_3(P,e0,e1,e2) IP2_LANGUAGE_FN_PARAMS_NAME(P##e0),IP2_LANGUAGE_FN_PARAMS_NAME(P##e1),IP2_LANGUAGE_FN_PARAMS_NAME(P##e2)
+#define IP2_LANGUAGE_FN_PARAMS_4(P,e0,e1,e2,e3) IP2_LANGUAGE_FN_PARAMS_NAME(P##e0),IP2_LANGUAGE_FN_PARAMS_NAME(P##e1),IP2_LANGUAGE_FN_PARAMS_NAME(P##e2),IP2_LANGUAGE_FN_PARAMS_NAME(P##e3)
+#define IP2_LANGUAGE_FN_PARAMS_5(P,e0,e1,e2,e3,e4) IP2_LANGUAGE_FN_PARAMS_NAME(P##e0),IP2_LANGUAGE_FN_PARAMS_NAME(P##e1),IP2_LANGUAGE_FN_PARAMS_NAME(P##e2),IP2_LANGUAGE_FN_PARAMS_NAME(P##e3),IP2_LANGUAGE_FN_PARAMS_NAME(P##e4)
+#define IP2_LANGUAGE_FN_PARAMS_6(P,e0,e1,e2,e3,e4,e5) IP2_LANGUAGE_FN_PARAMS_NAME(P##e0),IP2_LANGUAGE_FN_PARAMS_NAME(P##e1),IP2_LANGUAGE_FN_PARAMS_NAME(P##e2),IP2_LANGUAGE_FN_PARAMS_NAME(P##e3),IP2_LANGUAGE_FN_PARAMS_NAME(P##e4),IP2_LANGUAGE_FN_PARAMS_NAME(P##e5)
+#define IP2_LANGUAGE_FN_PARAMS_7(P,e0,e1,e2,e3,e4,e5,e6) IP2_LANGUAGE_FN_PARAMS_NAME(P##e0),IP2_LANGUAGE_FN_PARAMS_NAME(P##e1),IP2_LANGUAGE_FN_PARAMS_NAME(P##e2),IP2_LANGUAGE_FN_PARAMS_NAME(P##e3),IP2_LANGUAGE_FN_PARAMS_NAME(P##e4),IP2_LANGUAGE_FN_PARAMS_NAME(P##e5),IP2_LANGUAGE_FN_PARAMS_NAME(P##e6)
+#define IP2_LANGUAGE_FN_PARAMS_8(P,e0,e1,e2,e3,e4,e5,e6,e7) IP2_LANGUAGE_FN_PARAMS_NAME(P##e0),IP2_LANGUAGE_FN_PARAMS_NAME(P##e1),IP2_LANGUAGE_FN_PARAMS_NAME(P##e2),IP2_LANGUAGE_FN_PARAMS_NAME(P##e3),IP2_LANGUAGE_FN_PARAMS_NAME(P##e4),IP2_LANGUAGE_FN_PARAMS_NAME(P##e5),IP2_LANGUAGE_FN_PARAMS_NAME(P##e6),IP2_LANGUAGE_FN_PARAMS_NAME(P##e7)
+/* Rejoining more than eight names would need a second overload family, and the
+ * quote form already carries any number, so this stops rather than truncating.
+ * The failure token reaches the output the way PP2_VM_FAILURE does. */
+#define IP2_LANGUAGE_FN_PARAMS_9_OR_MORE(P,...) PP2_LANGUAGE_FN_PARAMS_FAILURE
+
+#define PP2_DEF_Fn_call )PP2_COMPILE_LANGUAGE_FN_CALL(,
+#define PP2_COMPILE_LANGUAGE_FN_CALL(P,args_tup) \
+        IP2_COMPILE_LANGUAGE_FN_CALL_CHOOSE_PTR_OR_CALL( \
+            IP2_COMPILE_LANGUAGE_FN_CALL_TEST_IF_CALL P##args_tup\
+        )(,P##args_tup)
+
+#define IP2_COMPILE_LANGUAGE_FN_CALL(P,args_tup) IP2_FW(COMPILE_LANGUAGE_FN_CALL_I,(,PP2_SEQ_SPLIT_HEAD P##args_tup))
+#define IP2_COMPILE_LANGUAGE_FN_CALL_I(P,args_tup,rhs_stx) 8PP2_LANGUAGE_FN_CALL,P##args_tup,PP2_COMPILE_LANGUAGE_RETURN(P##rhs_stx)
+#define IP2_COMPILE_LANGUAGE_FN_CALL_PTR(P,rhs_stx) 8PP2_LANGUAGE_FN_PTR,PP2_COMPILE_LANGUAGE_RETURN(P##rhs_stx)
+
+#define IP2_COMPILE_LANGUAGE_FN_CALL_CHOOSE_PTR_OR_CALL(...) PP2_TUPLE_AT_1(,__VA_ARGS__,IP2_COMPILE_LANGUAGE_FN_CALL_PTR)
+#define IP2_COMPILE_LANGUAGE_FN_CALL_TEST_IF_CALL(...) ,IP2_COMPILE_LANGUAGE_FN_CALL,
+
+
+#define PP2_INSN_8PP2_LANGUAGE_FN_PTR(P,r0,r1,r2,...) \
+                                     (, \
+                                      /*r0=*/(,Fn,(,8PP2_LANGUAGE_FN_PTR_CALL,PP2_LOCAL_CTX_GET_ARGUMENTS P##r1)), \
+                                      /*r1=*/P##r1, \
+                                      /*r2=*/P##r2, \
+                                      8PP2_LOCAL_CTX_CLEAR_ARGUMENTS, \
+                                      P##__VA_ARGS__ \
+                                     )
+
+#define PP2_INSN_8PP2_LANGUAGE_FN_PTR_CALL(P,r0,r1,r2,ptr,...) \
+                                          (, \
+                                           /*r0=*/P##ptr,\
+                                           /*r1=*/P##r1, \
+                                           /*r2=*/P##r2, \
+                                           8PP2_LANGUAGE_FN_CALL_IMPL, \
+                                           P##__VA_ARGS__ \
+                                          )
+
+#define PP2_INSN_8PP2_LANGUAGE_FN_CALL(P,r0,r1,r2,args_tup,...) \
+                                      (, \
+                                       /*r0=*/, \
+                                       /*r1=*/P##r1, \
+                                       /*r2=*/P##r2, \
+                                       PP2_LANGUAGE_FN_PARSE_ARGS P##args_tup, \
+                                       8IP2_LANGUAGE_FN_CALL, \
+                                       P##__VA_ARGS__ \
+                                      )
+
+#define PP2_INSN_8IP2_LANGUAGE_FN_CALL(P,r0,r1,r2,...) \
+                                      (, \
+                                       /*r0=*/PP2_LOCAL_CTX_GET_ARGUMENTS_HEAD P##r1, \
+                                       /*r1=*/PP2_LOCAL_CTX_POP_ARGUMENT P##r1, \
+                                       /*r2=*/P##r2, \
+                                       8PP2_LANGUAGE_FN_CALL_IMPL, \
+                                       P##__VA_ARGS__ \
+                                      )
+
+#define PP2_INSN_8PP2_LANGUAGE_FN_CALL_IMPL(P,r0,r1,r2,...) \
+                                           (, \
+                                            /*r0=*/, \
+                                            /*r1=*/P##r1, \
+                                            /*r2=*/P##r2, \
+                                            IP2_LANGUAGE_FN_CALL_OPEN P##r0, \
+                                            8PP2_LOCAL_CTX_CLEAR_ARGUMENTS, \
+                                            P##__VA_ARGS__ \
+                                           )
+
+#define IP2_LANGUAGE_FN_CALL_OPEN(fn_addr,fn_type,fn_value) PP2_QUOTE_OPEN fn_value
+
+#define PP2_INSN_8PP2_LANGUAGE_FN_PARSE_ARGS(P,r0,r1,r2,args_tup,...) (,P##r0,P##r1,P##r2,PP2_LANGUAGE_FN_PARSE_ARGS P##args_tup,P##__VA_ARGS__)
+#define PP2_LANGUAGE_FN_PARSE_ARGS(...) \
+        IP2_LANGUAGE_FN_CALL_PARSE_ARGS_OVERLOAD( \
+            __VA_ARGS__, \
+            PP2_COMMA_8, \
+            PP2_COMMA_7, \
+            PP2_COMMA_6, \
+            PP2_COMMA_5, \
+            PP2_COMMA_4, \
+            PP2_COMMA_3, \
+            PP2_COMMA_2, \
+            PP2_COMMA_1, \
+        )(,__VA_ARGS__)
+#define IP2_LANGUAGE_FN_CALL_PARSE_ARGS_OVERLOAD(x0,x1,x2,x3,x4,x5,x6,x7,m,...) PP2_TUPLE_AT_1(IP2_LANGUAGE_FN_CALL_PARSE_ARGS_,m,9_OR_MORE)
+
+#define IP2_LANGUAGE_FN_CALL_PARSE_ARGS_0(P,_) 8PP2_NOP
+
+#define IP2_LANGUAGE_FN_CALL_PARSE_ARGS_1(P,a0) PP2_IS_TUPLE(P##a0)(IP2_LANGUAGE_FN_CALL_PARSE_ARGS_1_QUOTE,IP2_LANGUAGE_FN_CALL_PARSE_ARGS_CHOOSE_0_OR_1_ARG(IP2_LANGUAGE_FN_CALL_TEST_IF_0_ARGS P##a0 ()))(,P##a0)
+#define IP2_LANGUAGE_FN_CALL_PARSE_ARGS_1_SYNTAX(P,a0) 8PP2_ARGS_SPILL,IP2_LANGUAGE_COMPILE(P##a0),8PP2_ARGS_UNSPILL_PUSH
+#define IP2_LANGUAGE_FN_CALL_PARSE_ARGS_1_QUOTE(P,a0) 8PP2_ARGS_SPILL,PP2_COMPILE(P##a0),8PP2_ARGS_UNSPILL_PUSH
+#define IP2_LANGUAGE_FN_CALL_PARSE_ARGS_CHOOSE_0_OR_1_ARG(...) PP2_TUPLE_AT_1(,__VA_ARGS__,IP2_LANGUAGE_FN_CALL_PARSE_ARGS_1_SYNTAX)
+#define IP2_LANGUAGE_FN_CALL_TEST_IF_0_ARGS() ,IP2_LANGUAGE_FN_CALL_PARSE_ARGS_0,
+
+#define IP2_LANGUAGE_FN_CALL_PARSE_ARGS_2(P,a0,a1) 8PP2_ARGS_SPILL,PP2_COMPILE(P##a0),8PP2_ARGS_UNSPILL_PUSH,8PP2_ARGS_SPILL,PP2_COMPILE(P##a1),8PP2_ARGS_UNSPILL_PUSH
+#define IP2_LANGUAGE_FN_CALL_PARSE_ARGS_3(P,a0,a1,a2) 8PP2_ARGS_SPILL,PP2_COMPILE(P##a0),8PP2_ARGS_UNSPILL_PUSH,8PP2_ARGS_SPILL,PP2_COMPILE(P##a1),8PP2_ARGS_UNSPILL_PUSH,8PP2_ARGS_SPILL,PP2_COMPILE(P##a2),8PP2_ARGS_UNSPILL_PUSH
+#define IP2_LANGUAGE_FN_CALL_PARSE_ARGS_4(P,a0,a1,a2,a3) 8PP2_ARGS_SPILL,PP2_COMPILE(P##a0),8PP2_ARGS_UNSPILL_PUSH,8PP2_ARGS_SPILL,PP2_COMPILE(P##a1),8PP2_ARGS_UNSPILL_PUSH,8PP2_ARGS_SPILL,PP2_COMPILE(P##a2),8PP2_ARGS_UNSPILL_PUSH,8PP2_ARGS_SPILL,PP2_COMPILE(P##a3),8PP2_ARGS_UNSPILL_PUSH
+#define IP2_LANGUAGE_FN_CALL_PARSE_ARGS_5(P,a0,a1,a2,a3,a4) 8PP2_ARGS_SPILL,PP2_COMPILE(P##a0),8PP2_ARGS_UNSPILL_PUSH,8PP2_ARGS_SPILL,PP2_COMPILE(P##a1),8PP2_ARGS_UNSPILL_PUSH,8PP2_ARGS_SPILL,PP2_COMPILE(P##a2),8PP2_ARGS_UNSPILL_PUSH,8PP2_ARGS_SPILL,PP2_COMPILE(P##a3),8PP2_ARGS_UNSPILL_PUSH,8PP2_ARGS_SPILL,PP2_COMPILE(P##a4),8PP2_ARGS_UNSPILL_PUSH
+#define IP2_LANGUAGE_FN_CALL_PARSE_ARGS_6(P,a0,a1,a2,a3,a4,a5) 8PP2_ARGS_SPILL,PP2_COMPILE(P##a0),8PP2_ARGS_UNSPILL_PUSH,8PP2_ARGS_SPILL,PP2_COMPILE(P##a1),8PP2_ARGS_UNSPILL_PUSH,8PP2_ARGS_SPILL,PP2_COMPILE(P##a2),8PP2_ARGS_UNSPILL_PUSH,8PP2_ARGS_SPILL,PP2_COMPILE(P##a3),8PP2_ARGS_UNSPILL_PUSH,8PP2_ARGS_SPILL,PP2_COMPILE(P##a4),8PP2_ARGS_UNSPILL_PUSH,8PP2_ARGS_SPILL,PP2_COMPILE(P##a5),8PP2_ARGS_UNSPILL_PUSH
+#define IP2_LANGUAGE_FN_CALL_PARSE_ARGS_7(P,a0,a1,a2,a3,a4,a5,a6) 8PP2_ARGS_SPILL,PP2_COMPILE(P##a0),8PP2_ARGS_UNSPILL_PUSH,8PP2_ARGS_SPILL,PP2_COMPILE(P##a1),8PP2_ARGS_UNSPILL_PUSH,8PP2_ARGS_SPILL,PP2_COMPILE(P##a2),8PP2_ARGS_UNSPILL_PUSH,8PP2_ARGS_SPILL,PP2_COMPILE(P##a3),8PP2_ARGS_UNSPILL_PUSH,8PP2_ARGS_SPILL,PP2_COMPILE(P##a4),8PP2_ARGS_UNSPILL_PUSH,8PP2_ARGS_SPILL,PP2_COMPILE(P##a5),8PP2_ARGS_UNSPILL_PUSH,8PP2_ARGS_SPILL,PP2_COMPILE(P##a6),8PP2_ARGS_UNSPILL_PUSH
+#define IP2_LANGUAGE_FN_CALL_PARSE_ARGS_8(P,a0,a1,a2,a3,a4,a5,a6,a7) 8PP2_ARGS_SPILL,PP2_COMPILE(P##a0),8PP2_ARGS_UNSPILL_PUSH,8PP2_ARGS_SPILL,PP2_COMPILE(P##a1),8PP2_ARGS_UNSPILL_PUSH,8PP2_ARGS_SPILL,PP2_COMPILE(P##a2),8PP2_ARGS_UNSPILL_PUSH,8PP2_ARGS_SPILL,PP2_COMPILE(P##a3),8PP2_ARGS_UNSPILL_PUSH,8PP2_ARGS_SPILL,PP2_COMPILE(P##a4),8PP2_ARGS_UNSPILL_PUSH,8PP2_ARGS_SPILL,PP2_COMPILE(P##a5),8PP2_ARGS_UNSPILL_PUSH,8PP2_ARGS_SPILL,PP2_COMPILE(P##a6),8PP2_ARGS_UNSPILL_PUSH,8PP2_ARGS_SPILL,PP2_COMPILE(P##a7),8PP2_ARGS_UNSPILL_PUSH
+#define IP2_LANGUAGE_FN_CALL_PARSE_ARGS_9_OR_MORE(P,a0,a1,a2,a3,a4,a5,a6,a7,...) 8PP2_ARGS_SPILL,PP2_COMPILE(P##a0),8PP2_ARGS_UNSPILL_PUSH,8PP2_ARGS_SPILL,PP2_COMPILE(P##a1),8PP2_ARGS_UNSPILL_PUSH,8PP2_ARGS_SPILL,PP2_COMPILE(P##a2),8PP2_ARGS_UNSPILL_PUSH,8PP2_ARGS_SPILL,PP2_COMPILE(P##a3),8PP2_ARGS_UNSPILL_PUSH,8PP2_ARGS_SPILL,PP2_COMPILE(P##a4),8PP2_ARGS_UNSPILL_PUSH,8PP2_ARGS_SPILL,PP2_COMPILE(P##a5),8PP2_ARGS_UNSPILL_PUSH,8PP2_ARGS_SPILL,PP2_COMPILE(P##a6),8PP2_ARGS_UNSPILL_PUSH,8PP2_ARGS_SPILL,PP2_COMPILE(P##a7),8PP2_ARGS_UNSPILL_PUSH,8PP2_LANGUAGE_FN_PARSE_ARGS,(P##__VA_ARGS__)
+
+#define PP2_INSN_8PP2_LANGUAGE_FN_CALL_PUSH_ARG(P,r0,r1,r2,...) \
+                                               (, \
+                                                /*r0=*/, \
+                                                /*r1=*/PP2_LOCAL_CTX_PUSH_ARGUMENT(P##r1,P##r0), \
+                                                /*r2=*/P##r2, \
+                                                P##__VA_ARGS__ \
+                                               )
+
+#endif
+
+
+
+#define PP2_DEF_fn(...) )PP2_COMPILE_LANGUAGE_FN(,(__VA_ARGS__),
+#define PP2_COMPILE_LANGUAGE_FN(P,params,body) 8PP2_LANGUAGE_FN,P##params,IP2_FX(COMPILE_LANGUAGE_FN_I, (,PP2_SEQ_SPLIT_HEAD P##body))
+#define IP2_COMPILE_LANGUAGE_FN_I(P,body,rhs_stx) P##body,PP2_COMPILE_LANGUAGE_RETURN(P##rhs_stx)
+
+#define PP2_INSN_8PP2_LANGUAGE_FN(P,r0,r1,r2,params,body,...) \
+                                 (, \
+                                  /*r0=*/(,Fn,(,8PP2_FRAME_ENTER_CLOSURE,(PP2_LOCAL_CTX_GET_STACK P##r1),IP2_LANGUAGE_FN_PARSE_PARAMS P##params,8PP2_LANGUAGE_BLOCK,P##body,8PP2_FRAME_LEAVE)), \
+                                  P##r1,P##r2, \
+                                  P##__VA_ARGS__ \
+                                 )
+
+#define PP2_INSN_8PP2_LANGUAGE_FN_PARSE_PARAMS(P,r0,r1,r2,params,...) (,P##r0,P##r1,P##r2,IP2_LANGUAGE_FN_PARSE_PARAMS P##params,P##__VA_ARGS__)
+#define IP2_LANGUAGE_FN_PARSE_PARAMS(...) \
+        IP2_LANGUAGE_FN_PARSE_PARAMS_OVERLOAD( \
+            __VA_ARGS__, \
+            PP2_COMMA_8, \
+            PP2_COMMA_7, \
+            PP2_COMMA_6, \
+            PP2_COMMA_5, \
+            PP2_COMMA_4, \
+            PP2_COMMA_3, \
+            PP2_COMMA_2, \
+            PP2_COMMA_1, \
+        )(,__VA_ARGS__)
+#define IP2_LANGUAGE_FN_PARSE_PARAMS_OVERLOAD(x0,x1,x2,x3,x4,x5,x6,x7,m,...) PP2_TUPLE_AT_1(IP2_LANGUAGE_FN_PARSE_PARAMS_,m,9_OR_MORE)
+
+#define IP2_LANGUAGE_FN_PARSE_PARAMS_1(P,p0) \
+        IP2_LANGUAGE_FN_PARSE_PARAMS_CHOOSE_0_OR_1( \
+            IP2_LANGUAGE_FN_PARSE_PARAMS_TEST_IF_0_ARGS P##p0 () \
+        )(,P##p0)
+#define IP2_LANGUAGE_FN_PARSE_PARAMS_0(P,p0) 8PP2_NOP
+#define IP2_LANGUAGE_FN_PARSE_PARAMS_1_IMPL(P,p0) IP2_FX(LANGUAGE_FN_PARSE_PARAM_TYPES_1,(,PP2_COMPILE_UNSAFE(P##p0())))
+#define IP2_LANGUAGE_FN_PARSE_PARAMS_CHOOSE_0_OR_1(...) PP2_TUPLE_AT_1(,__VA_ARGS__,IP2_LANGUAGE_FN_PARSE_PARAMS_1_IMPL)
+#define IP2_LANGUAGE_FN_PARSE_PARAMS_TEST_IF_0_ARGS() ,IP2_LANGUAGE_FN_PARSE_PARAMS_0,
+#define IP2_LANGUAGE_FN_PARSE_PARAMS_2(P,p0,p1) IP2_FX(LANGUAGE_FN_PARSE_PARAM_TYPES_2,(,PP2_COMPILE_UNSAFE(P##p0()),PP2_COMPILE_UNSAFE(P##p1())))
+#define IP2_LANGUAGE_FN_PARSE_PARAMS_3(P,p0,p1,p2) IP2_FX(LANGUAGE_FN_PARSE_PARAM_TYPES_3,(,PP2_COMPILE_UNSAFE(P##p0()),PP2_COMPILE_UNSAFE(P##p1()),PP2_COMPILE_UNSAFE(P##p2())))
+#define IP2_LANGUAGE_FN_PARSE_PARAMS_4(P,p0,p1,p2,p3) IP2_FX(LANGUAGE_FN_PARSE_PARAM_TYPES_4,(,PP2_COMPILE_UNSAFE(P##p0()),PP2_COMPILE_UNSAFE(P##p1()),PP2_COMPILE_UNSAFE(P##p2()),PP2_COMPILE_UNSAFE(P##p3())))
+#define IP2_LANGUAGE_FN_PARSE_PARAMS_5(P,p0,p1,p2,p3,p4) IP2_FX(LANGUAGE_FN_PARSE_PARAM_TYPES_5,(,PP2_COMPILE_UNSAFE(P##p0()),PP2_COMPILE_UNSAFE(P##p1()),PP2_COMPILE_UNSAFE(P##p2()),PP2_COMPILE_UNSAFE(P##p3()),PP2_COMPILE_UNSAFE(P##p4())))
+#define IP2_LANGUAGE_FN_PARSE_PARAMS_6(P,p0,p1,p2,p3,p4,p5) IP2_FX(LANGUAGE_FN_PARSE_PARAM_TYPES_6,(,PP2_COMPILE_UNSAFE(P##p0()),PP2_COMPILE_UNSAFE(P##p1()),PP2_COMPILE_UNSAFE(P##p2()),PP2_COMPILE_UNSAFE(P##p3()),PP2_COMPILE_UNSAFE(P##p4()),PP2_COMPILE_UNSAFE(P##p5())))
+#define IP2_LANGUAGE_FN_PARSE_PARAMS_7(P,p0,p1,p2,p3,p4,p5,p6) IP2_FX(LANGUAGE_FN_PARSE_PARAM_TYPES_7,(,PP2_COMPILE_UNSAFE(P##p0()),PP2_COMPILE_UNSAFE(P##p1()),PP2_COMPILE_UNSAFE(P##p2()),PP2_COMPILE_UNSAFE(P##p3()),PP2_COMPILE_UNSAFE(P##p4()),PP2_COMPILE_UNSAFE(P##p5()),PP2_COMPILE_UNSAFE(P##p6())))
+#define IP2_LANGUAGE_FN_PARSE_PARAMS_8(P,p0,p1,p2,p3,p4,p5,p6,p7) IP2_FX(LANGUAGE_FN_PARSE_PARAM_TYPES_8,(,PP2_COMPILE_UNSAFE(P##p0()),PP2_COMPILE_UNSAFE(P##p1()),PP2_COMPILE_UNSAFE(P##p2()),PP2_COMPILE_UNSAFE(P##p3()),PP2_COMPILE_UNSAFE(P##p4()),PP2_COMPILE_UNSAFE(P##p5()),PP2_COMPILE_UNSAFE(P##p6()),PP2_COMPILE_UNSAFE(P##p7())))
+#define IP2_LANGUAGE_FN_PARSE_PARAMS_9_OR_MORE(P,p0,p1,p2,p3,p4,p5,p6,p7,...) IP2_FX(LANGUAGE_FN_PARSE_PARAM_TYPES_8,(,PP2_COMPILE_UNSAFE(P##p0()),PP2_COMPILE_UNSAFE(P##p1()),PP2_COMPILE_UNSAFE(P##p2()),PP2_COMPILE_UNSAFE(P##p3()),PP2_COMPILE_UNSAFE(P##p4()),PP2_COMPILE_UNSAFE(P##p5()),PP2_COMPILE_UNSAFE(P##p6()),PP2_COMPILE_UNSAFE(P##p7()))),8PP2_LANGUAGE_FN_PARSE_PARAMS,(P##__VA_ARGS__)
+
+#define IP2_LANGUAGE_FN_PARSE_PARAM_TYPES_1(P,i0,a0,x0) 8PP2_LOCAL_CTX_POP_ARGUMENT,8PP2_STACK_STORE,P##a0
+#define IP2_LANGUAGE_FN_PARSE_PARAM_TYPES_2(P,i0,a0,x0,i1,a1,x1) 8PP2_LOCAL_CTX_POP_ARGUMENT,8PP2_STACK_STORE,P##a0,8PP2_LOCAL_CTX_POP_ARGUMENT,8PP2_STACK_STORE,P##a1
+#define IP2_LANGUAGE_FN_PARSE_PARAM_TYPES_3(P,i0,a0,x0,i1,a1,x1,i2,a2,x2) 8PP2_LOCAL_CTX_POP_ARGUMENT,8PP2_STACK_STORE,P##a0,8PP2_LOCAL_CTX_POP_ARGUMENT,8PP2_STACK_STORE,P##a1,8PP2_LOCAL_CTX_POP_ARGUMENT,8PP2_STACK_STORE,P##a2
+#define IP2_LANGUAGE_FN_PARSE_PARAM_TYPES_4(P,i0,a0,x0,i1,a1,x1,i2,a2,x2,i3,a3,x3) 8PP2_LOCAL_CTX_POP_ARGUMENT,8PP2_STACK_STORE,P##a0,8PP2_LOCAL_CTX_POP_ARGUMENT,8PP2_STACK_STORE,P##a1,8PP2_LOCAL_CTX_POP_ARGUMENT,8PP2_STACK_STORE,P##a2,8PP2_LOCAL_CTX_POP_ARGUMENT,8PP2_STACK_STORE,P##a3
+#define IP2_LANGUAGE_FN_PARSE_PARAM_TYPES_5(P,i0,a0,x0,i1,a1,x1,i2,a2,x2,i3,a3,x3,i4,a4,x4) 8PP2_LOCAL_CTX_POP_ARGUMENT,8PP2_STACK_STORE,P##a0,8PP2_LOCAL_CTX_POP_ARGUMENT,8PP2_STACK_STORE,P##a1,8PP2_LOCAL_CTX_POP_ARGUMENT,8PP2_STACK_STORE,P##a2,8PP2_LOCAL_CTX_POP_ARGUMENT,8PP2_STACK_STORE,P##a3,8PP2_LOCAL_CTX_POP_ARGUMENT,8PP2_STACK_STORE,P##a4
+#define IP2_LANGUAGE_FN_PARSE_PARAM_TYPES_6(P,i0,a0,x0,i1,a1,x1,i2,a2,x2,i3,a3,x3,i4,a4,x4,i5,a5,x5) 8PP2_LOCAL_CTX_POP_ARGUMENT,8PP2_STACK_STORE,P##a0,8PP2_LOCAL_CTX_POP_ARGUMENT,8PP2_STACK_STORE,P##a1,8PP2_LOCAL_CTX_POP_ARGUMENT,8PP2_STACK_STORE,P##a2,8PP2_LOCAL_CTX_POP_ARGUMENT,8PP2_STACK_STORE,P##a3,8PP2_LOCAL_CTX_POP_ARGUMENT,8PP2_STACK_STORE,P##a4,8PP2_LOCAL_CTX_POP_ARGUMENT,8PP2_STACK_STORE,P##a5
+#define IP2_LANGUAGE_FN_PARSE_PARAM_TYPES_7(P,i0,a0,x0,i1,a1,x1,i2,a2,x2,i3,a3,x3,i4,a4,x4,i5,a5,x5,i6,a6,x6) 8PP2_LOCAL_CTX_POP_ARGUMENT,8PP2_STACK_STORE,P##a0,8PP2_LOCAL_CTX_POP_ARGUMENT,8PP2_STACK_STORE,P##a1,8PP2_LOCAL_CTX_POP_ARGUMENT,8PP2_STACK_STORE,P##a2,8PP2_LOCAL_CTX_POP_ARGUMENT,8PP2_STACK_STORE,P##a3,8PP2_LOCAL_CTX_POP_ARGUMENT,8PP2_STACK_STORE,P##a4,8PP2_LOCAL_CTX_POP_ARGUMENT,8PP2_STACK_STORE,P##a5,8PP2_LOCAL_CTX_POP_ARGUMENT,8PP2_STACK_STORE,P##a6
+#define IP2_LANGUAGE_FN_PARSE_PARAM_TYPES_8(P,i0,a0,x0,i1,a1,x1,i2,a2,x2,i3,a3,x3,i4,a4,x4,i5,a5,x5,i6,a6,x6,i7,a7,x7) 8PP2_LOCAL_CTX_POP_ARGUMENT,8PP2_STACK_STORE,P##a0,8PP2_LOCAL_CTX_POP_ARGUMENT,8PP2_STACK_STORE,P##a1,8PP2_LOCAL_CTX_POP_ARGUMENT,8PP2_STACK_STORE,P##a2,8PP2_LOCAL_CTX_POP_ARGUMENT,8PP2_STACK_STORE,P##a3,8PP2_LOCAL_CTX_POP_ARGUMENT,8PP2_STACK_STORE,P##a4,8PP2_LOCAL_CTX_POP_ARGUMENT,8PP2_STACK_STORE,P##a5,8PP2_LOCAL_CTX_POP_ARGUMENT,8PP2_STACK_STORE,P##a6,8PP2_LOCAL_CTX_POP_ARGUMENT,8PP2_STACK_STORE,P##a7
+
+#endif
+
+/* PP2_FN(<params>) (<body>): bind a name to a function value -- pp2's analogue
+ * of order-pp's `<name> ORDER_PP_FN(8fn(...))`. Written host-side as
+ *
+ *   #define PP2_DEF_add PP2_FN (x, y) (x plus (y))
+ *
+ * after which `add` is a first-class value in every position:
+ *   - direct application   : add(2, 3)               -> 5
+ *   - assign then call      : F (add), F call (2, 3)  -> 5
+ *   - passed as a value     : print(add), map (add), ...
+ *
+ * PP2_FN is the same function-like shape as the `fn` keyword (PP2_DEF_fn): it
+ * consumes the parameter tuple as its arguments and leaves the `fn` compiler
+ * open so the `(body)` that follows -- and the rest of the enclosing program --
+ * completes it, exactly as `fn (params) (body)` does inline. So a PP2_FN
+ * binding is spelled without a redundant `fn` and without wrapping parens.
+ *
+ * Direct application `add(a, b)` needs no special machinery: the compiler's
+ * RETURN grammar already dispatches a paren group following a value through
+ * 8PP2_LANGUAGE_SELF_CALL (i.e. `call`). Note this only holds for
+ * value-resolving names like `add`; a single-letter variable slot `F (...)` is
+ * assignment, so a stored fn is still invoked with `call`. */
+#define PP2_FN(...) )PP2_COMPILE_LANGUAGE_FN(,(__VA_ARGS__),
+
+#endif
+
+// ******************** From: primitive.h
+/** @file */
+#ifndef PP2_LANGUAGE_DEFINITION_PRIMITIVE_H
+#define PP2_LANGUAGE_DEFINITION_PRIMITIVE_H
+
+#define PP2_PRIMITIVE(...) )PP2_PRIMITIVE_I(,__VA_ARGS__
+#define PP2_PRIMITIVE_I(P,...) P##__VA_ARGS__
+
+#endif
+
+
+
+// ******************** From: print.h
+/** @file */
+#ifndef PP2_LANGUAGE_IO_PRINT_H
+#define PP2_LANGUAGE_IO_PRINT_H
+
+
+// ******************** From: emit.h
+/** @file */
+#ifndef PP2_LANGUAGE_IO_EMIT_H
+#define PP2_LANGUAGE_IO_EMIT_H
+
+
+// ******************** From: symbol.h
+/** @file */
+#ifndef PP2_LANGUAGE_BASIC_SYMBOL_H
+#define PP2_LANGUAGE_BASIC_SYMBOL_H
+
+/**
+* Equality of two registered symbols, yielding 1 or 0.
+*
+* The preprocessor cannot compare two arbitrary tokens. It can compare tokens
+* that have been registered, and a symbol is registered by defining
+* `PP2_SYM_<name>(...) __VA_ARGS__`. Every PP2 type name is registered next to
+* its type definition.
+*
+* `sa (sb)` yields `sb` when the two differ. When they are the same symbol it
+* yields `sa` painted blue, because a macro is disabled inside its own
+* expansion, and a painted token never expands again. So only the live one goes
+* on to eat the trailing `(0,1)`, and the arity of what comes back is the
+* answer: two arguments when the symbols differ, one when they match.
+*
+* Both names must be registered. An unregistered name expands to nothing at all,
+* which looks exactly like the painted case, so it reports equal. Only ever call
+* this on names you know are registered.
+*/
+#define PP2_SYMBOL_EQ(a,b) IP2_SYMBOL_EQ_I(PP2_SYM_##a,PP2_SYM_##b)
+#define IP2_SYMBOL_EQ_I(sa,sb) IP2_SYMBOL_EQ_II(sa (sb) (0,1))
+#define IP2_SYMBOL_EQ_II(...) IP2_SYMBOL_EQ_PICK(__VA_ARGS__,0,1)
+#define IP2_SYMBOL_EQ_PICK(_1,_2,_3,...) _3
+
+#endif
+
+
+// ******************** From: emit.h
+/** @file */
+#ifndef PP2_MACHINE_INSNS_EMIT_H
+#define PP2_MACHINE_INSNS_EMIT_H
+
+#define PP2_INSN_8PP2_EMIT_LITERAL(P,r0,r1,r2,...) (,/*r0=*/,/*r1=*/P##r1,/*r2=*/P##r2,P##__VA_ARGS__)(,8LITERAL,P##r0)
+
+#endif
+
+
+/* Emit an object's string form. Most values can ride through r0 while str()
+ * runs. A Quote containing a comma cannot: opening it in r0 would split the
+ * VM state tuple. Put its raw tokens directly in a parenthesised output record
+ * instead, where commas are ordinary variadic payload tokens. */
+#define PP2_INSN_8PP2_LANGUAGE_EMIT_OBJECT(P,r0,r1,r2,...) \
+        IP2_FX(LANGUAGE_EMIT_OBJECT_SELECT,(,PP2_LANGUAGE_OBJECT_TYPE P##r0)) \
+            (,P##r0,P##r1,P##r2,P##__VA_ARGS__)
+
+#define IP2_LANGUAGE_EMIT_OBJECT_SELECT(P,type) \
+        PP2_CAT(IP2_LANGUAGE_EMIT_OBJECT_,PP2_SYMBOL_EQ(type,Quote))
+
+/* Printing is done for its effect, so it answers with nil rather than leaving r0
+ * empty. 8PP2_EMIT_LITERAL clears r0 once the tokens are out, so the nil is loaded
+ * after it; the Quote path never puts the object in r0 at all and so can just set
+ * nil directly. */
+#define IP2_LANGUAGE_EMIT_OBJECT_0(P,obj,r1,r2,...) \
+        (,P##obj,P##r1,P##r2,8PP2_LANGUAGE_METHOD_CALL,str(),8PP2_EMIT_LITERAL,8PP2_LANGUAGE_LOAD_NIL,P##__VA_ARGS__)
+
+#define IP2_LANGUAGE_EMIT_OBJECT_1(P,obj,r1,r2,...) \
+        (,/*r0=*/PP2_LANGUAGE_NIL,P##r1,P##r2,P##__VA_ARGS__)(,8LITERAL,PP2_FX(OPEN,PP2_LANGUAGE_OBJECT_VALUE P##obj))
+
+#endif
+
+
+#define PP2_DEF_print PP2_PRIMITIVE(IP2_LANGUAGE_PRINT_OVERLOAD)
+
+#define IP2_LANGUAGE_PRINT_OVERLOAD(...)       \
+        IP2_LANGUAGE_PRINT_OVERLOAD_SELECT(    \
+            __VA_ARGS__,                       \
+            PP2_COMMA_8,                       \
+            PP2_COMMA_7,                       \
+            PP2_COMMA_6,                       \
+            PP2_COMMA_5,                       \
+            PP2_COMMA_4,                       \
+            PP2_COMMA_3,                       \
+            PP2_COMMA_2,                       \
+            PP2_COMMA_1,                       \
+        )(,__VA_ARGS__)
+
+#define IP2_LANGUAGE_PRINT_OVERLOAD_SELECT(x0,x1,x2,x3,x4,x5,x6,x7,m,...) PP2_TUPLE_AT_1(IP2_LANGUAGE_PRINT_EVAL,m,9_OR_MORE)
+
+#define IP2_LANGUAGE_PRINT_EVAL1(P,stx0) 8IP2_LANGUAGE_PRINT_OBJ,P##stx0
+#define IP2_LANGUAGE_PRINT_EVAL2(P,stx0,stx1) 8IP2_LANGUAGE_PRINT_OBJ,P##stx0,8IP2_LANGUAGE_PRINT_OBJ,P##stx1
+#define IP2_LANGUAGE_PRINT_EVAL3(P,stx0,stx1,stx2) 8IP2_LANGUAGE_PRINT_OBJ,P##stx0,8IP2_LANGUAGE_PRINT_OBJ,P##stx1,8IP2_LANGUAGE_PRINT_OBJ,P##stx2
+#define IP2_LANGUAGE_PRINT_EVAL4(P,stx0,stx1,stx2,stx3) 8IP2_LANGUAGE_PRINT_OBJ,P##stx0,8IP2_LANGUAGE_PRINT_OBJ,P##stx1,8IP2_LANGUAGE_PRINT_OBJ,P##stx2,8IP2_LANGUAGE_PRINT_OBJ,P##stx3
+#define IP2_LANGUAGE_PRINT_EVAL5(P,stx0,stx1,stx2,stx3,stx4) 8IP2_LANGUAGE_PRINT_OBJ,P##stx0,8IP2_LANGUAGE_PRINT_OBJ,P##stx1,8IP2_LANGUAGE_PRINT_OBJ,P##stx2,8IP2_LANGUAGE_PRINT_OBJ,P##stx3,8IP2_LANGUAGE_PRINT_OBJ,P##stx4
+#define IP2_LANGUAGE_PRINT_EVAL6(P,stx0,stx1,stx2,stx3,stx4,stx5) 8IP2_LANGUAGE_PRINT_OBJ,P##stx0,8IP2_LANGUAGE_PRINT_OBJ,P##stx1,8IP2_LANGUAGE_PRINT_OBJ,P##stx2,8IP2_LANGUAGE_PRINT_OBJ,P##stx3,8IP2_LANGUAGE_PRINT_OBJ,P##stx4,8IP2_LANGUAGE_PRINT_OBJ,P##stx5
+#define IP2_LANGUAGE_PRINT_EVAL7(P,stx0,stx1,stx2,stx3,stx4,stx5,stx6) 8IP2_LANGUAGE_PRINT_OBJ,P##stx0,8IP2_LANGUAGE_PRINT_OBJ,P##stx1,8IP2_LANGUAGE_PRINT_OBJ,P##stx2,8IP2_LANGUAGE_PRINT_OBJ,P##stx3,8IP2_LANGUAGE_PRINT_OBJ,P##stx4,8IP2_LANGUAGE_PRINT_OBJ,P##stx5,8IP2_LANGUAGE_PRINT_OBJ,P##stx6
+#define IP2_LANGUAGE_PRINT_EVAL8(P,stx0,stx1,stx2,stx3,stx4,stx5,stx6,stx7) 8IP2_LANGUAGE_PRINT_OBJ,P##stx0,8IP2_LANGUAGE_PRINT_OBJ,P##stx1,8IP2_LANGUAGE_PRINT_OBJ,P##stx2,8IP2_LANGUAGE_PRINT_OBJ,P##stx3,8IP2_LANGUAGE_PRINT_OBJ,P##stx4,8IP2_LANGUAGE_PRINT_OBJ,P##stx5,8IP2_LANGUAGE_PRINT_OBJ,P##stx6,8IP2_LANGUAGE_PRINT_OBJ,P##stx7
+#define IP2_LANGUAGE_PRINT_EVAL9_OR_MORE(P,stx0,stx1,stx2,stx3,stx4,stx5,stx6,stx7,...) 8IP2_LANGUAGE_PRINT_OBJ,P##stx0,8IP2_LANGUAGE_PRINT_OBJ,P##stx1,8IP2_LANGUAGE_PRINT_OBJ,P##stx2,8IP2_LANGUAGE_PRINT_OBJ,P##stx3,8IP2_LANGUAGE_PRINT_OBJ,P##stx4,8IP2_LANGUAGE_PRINT_OBJ,P##stx5,8IP2_LANGUAGE_PRINT_OBJ,P##stx6,8IP2_LANGUAGE_PRINT_OBJ,P##stx7,8PP2_LANGUAGE_PRINT,(P##__VA_ARGS__)
+
+#define PP2_INSN_8PP2_LANGUAGE_PRINT(P,r0,r1,r2,stx_tup,...)  (,P##r0,P##r1,P##r2,IP2_LANGUAGE_PRINT_OVERLOAD P##stx_tup,P##__VA_ARGS__)
+#define PP2_INSN_8IP2_LANGUAGE_PRINT_OBJ(P,r0,r1,r2,stx,...)  (,/*r0=*/,P##r1,P##r2,PP2_COMPILE(P##stx),8PP2_LANGUAGE_EMIT_OBJECT,P##__VA_ARGS__)
+
+#endif
+
+// ******************** From: put.h
+#ifndef PP2_LANGUAGE_IO_PUT_H
+#define PP2_LANGUAGE_IO_PUT_H
+
+
+#define PP2_DEF_put(stx) PP2_PRIMITIVE(8PP2_LANGUAGE_PUT,stx)
+
+#define PP2_INSN_8PP2_LANGUAGE_PUT(P,r0,r1,r2,stx,...) (,/*r0=*/P##r0,/*r1=*/P##r1,/*r2=*/P##r2,PP2_COMPILE(stx),8PP2_LANGUAGE_EMIT_OBJECT,P##__VA_ARGS__)
+
+#endif
+
+
+// ******************** From: for.h
+/** @file */
+#ifndef PP2_LANGUAGE_STATEMENTS_FOR_H
+#define PP2_LANGUAGE_STATEMENTS_FOR_H
+
+
+// ******************** From: while.h
+/** @file */
+#ifndef PP2_LANGUAGE_STATEMENTS_WHILE_H
+#define PP2_LANGUAGE_STATEMENTS_WHILE_H
+
+
+
+// ******************** From: goto.h
+/** @file */
+#ifndef PP2_MACHINE_GOTO_GOTO_H
+#define PP2_MACHINE_GOTO_GOTO_H
+
+
 // ******************** From: find.h
 /** @file */
 #ifndef PP2_PRIMITIVE_ASSOC_FIND_H
@@ -343,1748 +3037,10 @@
 
 #endif
 
-// ******************** From: at.h
-/** @file */
-#ifndef PP2_PRIMITIVE_TUPLE_AT_H
-#define PP2_PRIMITIVE_TUPLE_AT_H
-
-#define PP2_TUPLE_AT_0(P,x0,...) P##x0
-#define PP2_TUPLE_AT_1(P,x0,x1,...) P##x1
-#define PP2_TUPLE_AT_2(P,x0,x1,x2,...) P##x2
-#define PP2_TUPLE_AT_3(P,x0,x1,x2,x3,...) P##x3
-#define PP2_TUPLE_AT_4(P,x0,x1,x2,x3,x4,...) P##x4
-#define PP2_TUPLE_AT_5(P,x0,x1,x2,x3,x4,x5,...) P##x5
-#define PP2_TUPLE_AT_6(P,x0,x1,x2,x3,x4,x5,x6,...) P##x6
-#define PP2_TUPLE_AT_7(P,x0,x1,x2,x3,x4,x5,x6,x7,...) P##x7
-#define PP2_TUPLE_AT_8(P,x0,x1,x2,x3,x4,x5,x6,x7,x8,...) P##x8
-#define PP2_TUPLE_AT_9(P,x0,x1,x2,x3,x4,x5,x6,x7,x8,x9,...) P##x9
-#define PP2_TUPLE_AT_10(P,x0,x1,x2,x3,x4,x5,x6,x7,x8,x9,x10,...) P##x10
-#define PP2_TUPLE_AT_11(P,x0,x1,x2,x3,x4,x5,x6,x7,x8,x9,x10,x11,...) P##x11
-#define PP2_TUPLE_AT_12(P,x0,x1,x2,x3,x4,x5,x6,x7,x8,x9,x10,x11,x12,...) P##x12
-#define PP2_TUPLE_AT_13(P,x0,x1,x2,x3,x4,x5,x6,x7,x8,x9,x10,x11,x12,x13,...) P##x13
-#define PP2_TUPLE_AT_14(P,x0,x1,x2,x3,x4,x5,x6,x7,x8,x9,x10,x11,x12,x13,x14,...) P##x14
-#define PP2_TUPLE_AT_15(P,x0,x1,x2,x3,x4,x5,x6,x7,x8,x9,x10,x11,x12,x13,x14,x15,...) P##x15
-#define PP2_TUPLE_AT_16(P,x0,x1,x2,x3,x4,x5,x6,x7,x8,x9,x10,x11,x12,x13,x14,x15,x16,...) P##x16
-#define PP2_TUPLE_AT_17(P,x0,x1,x2,x3,x4,x5,x6,x7,x8,x9,x10,x11,x12,x13,x14,x15,x16,x17,...) P##x17
-#define PP2_TUPLE_AT_18(P,x0,x1,x2,x3,x4,x5,x6,x7,x8,x9,x10,x11,x12,x13,x14,x15,x16,x17,x18,...) P##x18
-#define PP2_TUPLE_AT_19(P,x0,x1,x2,x3,x4,x5,x6,x7,x8,x9,x10,x11,x12,x13,x14,x15,x16,x17,x18,x19,...) P##x19
-#define PP2_TUPLE_AT_20(P,x0,x1,x2,x3,x4,x5,x6,x7,x8,x9,x10,x11,x12,x13,x14,x15,x16,x17,x18,x19,x20,...) P##x20
-#define PP2_TUPLE_AT_21(P,x0,x1,x2,x3,x4,x5,x6,x7,x8,x9,x10,x11,x12,x13,x14,x15,x16,x17,x18,x19,x20,x21,...) P##x21
-#define PP2_TUPLE_AT_22(P,x0,x1,x2,x3,x4,x5,x6,x7,x8,x9,x10,x11,x12,x13,x14,x15,x16,x17,x18,x19,x20,x21,x22,...) P##x22
-#define PP2_TUPLE_AT_23(P,x0,x1,x2,x3,x4,x5,x6,x7,x8,x9,x10,x11,x12,x13,x14,x15,x16,x17,x18,x19,x20,x21,x22,x23,...) P##x23
-#define PP2_TUPLE_AT_24(P,x0,x1,x2,x3,x4,x5,x6,x7,x8,x9,x10,x11,x12,x13,x14,x15,x16,x17,x18,x19,x20,x21,x22,x23,x24,...) P##x24
-#define PP2_TUPLE_AT_25(P,x0,x1,x2,x3,x4,x5,x6,x7,x8,x9,x10,x11,x12,x13,x14,x15,x16,x17,x18,x19,x20,x21,x22,x23,x24,x25,...) P##x25
-#define PP2_TUPLE_AT_26(P,x0,x1,x2,x3,x4,x5,x6,x7,x8,x9,x10,x11,x12,x13,x14,x15,x16,x17,x18,x19,x20,x21,x22,x23,x24,x25,x26,...) P##x26
-#define PP2_TUPLE_AT_27(P,x0,x1,x2,x3,x4,x5,x6,x7,x8,x9,x10,x11,x12,x13,x14,x15,x16,x17,x18,x19,x20,x21,x22,x23,x24,x25,x26,x27,...) P##x27
-#define PP2_TUPLE_AT_28(P,x0,x1,x2,x3,x4,x5,x6,x7,x8,x9,x10,x11,x12,x13,x14,x15,x16,x17,x18,x19,x20,x21,x22,x23,x24,x25,x26,x27,x28,...) P##x28
-#define PP2_TUPLE_AT_29(P,x0,x1,x2,x3,x4,x5,x6,x7,x8,x9,x10,x11,x12,x13,x14,x15,x16,x17,x18,x19,x20,x21,x22,x23,x24,x25,x26,x27,x28,x29,...) P##x29
-#define PP2_TUPLE_AT_30(P,x0,x1,x2,x3,x4,x5,x6,x7,x8,x9,x10,x11,x12,x13,x14,x15,x16,x17,x18,x19,x20,x21,x22,x23,x24,x25,x26,x27,x28,x29,x30,...) P##x30
-#define PP2_TUPLE_AT_31(P,x0,x1,x2,x3,x4,x5,x6,x7,x8,x9,x10,x11,x12,x13,x14,x15,x16,x17,x18,x19,x20,x21,x22,x23,x24,x25,x26,x27,x28,x29,x30,x31,...) P##x31
-#define PP2_TUPLE_AT_32(P,x0,x1,x2,x3,x4,x5,x6,x7,x8,x9,x10,x11,x12,x13,x14,x15,x16,x17,x18,x19,x20,x21,x22,x23,x24,x25,x26,x27,x28,x29,x30,x31,x32,...) P##x32
-#define PP2_TUPLE_AT_33(P,x0,x1,x2,x3,x4,x5,x6,x7,x8,x9,x10,x11,x12,x13,x14,x15,x16,x17,x18,x19,x20,x21,x22,x23,x24,x25,x26,x27,x28,x29,x30,x31,x32,x33,...) P##x33
-#define PP2_TUPLE_AT_34(P,x0,x1,x2,x3,x4,x5,x6,x7,x8,x9,x10,x11,x12,x13,x14,x15,x16,x17,x18,x19,x20,x21,x22,x23,x24,x25,x26,x27,x28,x29,x30,x31,x32,x33,x34,...) P##x34
-#define PP2_TUPLE_AT_35(P,x0,x1,x2,x3,x4,x5,x6,x7,x8,x9,x10,x11,x12,x13,x14,x15,x16,x17,x18,x19,x20,x21,x22,x23,x24,x25,x26,x27,x28,x29,x30,x31,x32,x33,x34,x35,...) P##x35
-#define PP2_TUPLE_AT_36(P,x0,x1,x2,x3,x4,x5,x6,x7,x8,x9,x10,x11,x12,x13,x14,x15,x16,x17,x18,x19,x20,x21,x22,x23,x24,x25,x26,x27,x28,x29,x30,x31,x32,x33,x34,x35,x36,...) P##x36
-#define PP2_TUPLE_AT_37(P,x0,x1,x2,x3,x4,x5,x6,x7,x8,x9,x10,x11,x12,x13,x14,x15,x16,x17,x18,x19,x20,x21,x22,x23,x24,x25,x26,x27,x28,x29,x30,x31,x32,x33,x34,x35,x36,x37,...) P##x37
-#define PP2_TUPLE_AT_38(P,x0,x1,x2,x3,x4,x5,x6,x7,x8,x9,x10,x11,x12,x13,x14,x15,x16,x17,x18,x19,x20,x21,x22,x23,x24,x25,x26,x27,x28,x29,x30,x31,x32,x33,x34,x35,x36,x37,x38,...) P##x38
-#define PP2_TUPLE_AT_39(P,x0,x1,x2,x3,x4,x5,x6,x7,x8,x9,x10,x11,x12,x13,x14,x15,x16,x17,x18,x19,x20,x21,x22,x23,x24,x25,x26,x27,x28,x29,x30,x31,x32,x33,x34,x35,x36,x37,x38,x39,...) P##x39
-#define PP2_TUPLE_AT_40(P,x0,x1,x2,x3,x4,x5,x6,x7,x8,x9,x10,x11,x12,x13,x14,x15,x16,x17,x18,x19,x20,x21,x22,x23,x24,x25,x26,x27,x28,x29,x30,x31,x32,x33,x34,x35,x36,x37,x38,x39,x40,...) P##x40
-#define PP2_TUPLE_AT_41(P,x0,x1,x2,x3,x4,x5,x6,x7,x8,x9,x10,x11,x12,x13,x14,x15,x16,x17,x18,x19,x20,x21,x22,x23,x24,x25,x26,x27,x28,x29,x30,x31,x32,x33,x34,x35,x36,x37,x38,x39,x40,x41,...) P##x41
-#define PP2_TUPLE_AT_42(P,x0,x1,x2,x3,x4,x5,x6,x7,x8,x9,x10,x11,x12,x13,x14,x15,x16,x17,x18,x19,x20,x21,x22,x23,x24,x25,x26,x27,x28,x29,x30,x31,x32,x33,x34,x35,x36,x37,x38,x39,x40,x41,x42,...) P##x42
-#define PP2_TUPLE_AT_43(P,x0,x1,x2,x3,x4,x5,x6,x7,x8,x9,x10,x11,x12,x13,x14,x15,x16,x17,x18,x19,x20,x21,x22,x23,x24,x25,x26,x27,x28,x29,x30,x31,x32,x33,x34,x35,x36,x37,x38,x39,x40,x41,x42,x43,...) P##x43
-#define PP2_TUPLE_AT_44(P,x0,x1,x2,x3,x4,x5,x6,x7,x8,x9,x10,x11,x12,x13,x14,x15,x16,x17,x18,x19,x20,x21,x22,x23,x24,x25,x26,x27,x28,x29,x30,x31,x32,x33,x34,x35,x36,x37,x38,x39,x40,x41,x42,x43,x44,...) P##x44
-#define PP2_TUPLE_AT_45(P,x0,x1,x2,x3,x4,x5,x6,x7,x8,x9,x10,x11,x12,x13,x14,x15,x16,x17,x18,x19,x20,x21,x22,x23,x24,x25,x26,x27,x28,x29,x30,x31,x32,x33,x34,x35,x36,x37,x38,x39,x40,x41,x42,x43,x44,x45,...) P##x45
-#define PP2_TUPLE_AT_46(P,x0,x1,x2,x3,x4,x5,x6,x7,x8,x9,x10,x11,x12,x13,x14,x15,x16,x17,x18,x19,x20,x21,x22,x23,x24,x25,x26,x27,x28,x29,x30,x31,x32,x33,x34,x35,x36,x37,x38,x39,x40,x41,x42,x43,x44,x45,x46,...) P##x46
-#define PP2_TUPLE_AT_47(P,x0,x1,x2,x3,x4,x5,x6,x7,x8,x9,x10,x11,x12,x13,x14,x15,x16,x17,x18,x19,x20,x21,x22,x23,x24,x25,x26,x27,x28,x29,x30,x31,x32,x33,x34,x35,x36,x37,x38,x39,x40,x41,x42,x43,x44,x45,x46,x47,...) P##x47
-#define PP2_TUPLE_AT_48(P,x0,x1,x2,x3,x4,x5,x6,x7,x8,x9,x10,x11,x12,x13,x14,x15,x16,x17,x18,x19,x20,x21,x22,x23,x24,x25,x26,x27,x28,x29,x30,x31,x32,x33,x34,x35,x36,x37,x38,x39,x40,x41,x42,x43,x44,x45,x46,x47,x48,...) P##x48
-#define PP2_TUPLE_AT_49(P,x0,x1,x2,x3,x4,x5,x6,x7,x8,x9,x10,x11,x12,x13,x14,x15,x16,x17,x18,x19,x20,x21,x22,x23,x24,x25,x26,x27,x28,x29,x30,x31,x32,x33,x34,x35,x36,x37,x38,x39,x40,x41,x42,x43,x44,x45,x46,x47,x48,x49,...) P##x49
-#define PP2_TUPLE_AT_50(P,x0,x1,x2,x3,x4,x5,x6,x7,x8,x9,x10,x11,x12,x13,x14,x15,x16,x17,x18,x19,x20,x21,x22,x23,x24,x25,x26,x27,x28,x29,x30,x31,x32,x33,x34,x35,x36,x37,x38,x39,x40,x41,x42,x43,x44,x45,x46,x47,x48,x49,x50,...) P##x50
-#define PP2_TUPLE_AT_51(P,x0,x1,x2,x3,x4,x5,x6,x7,x8,x9,x10,x11,x12,x13,x14,x15,x16,x17,x18,x19,x20,x21,x22,x23,x24,x25,x26,x27,x28,x29,x30,x31,x32,x33,x34,x35,x36,x37,x38,x39,x40,x41,x42,x43,x44,x45,x46,x47,x48,x49,x50,x51,...) P##x51
-#define PP2_TUPLE_AT_52(P,x0,x1,x2,x3,x4,x5,x6,x7,x8,x9,x10,x11,x12,x13,x14,x15,x16,x17,x18,x19,x20,x21,x22,x23,x24,x25,x26,x27,x28,x29,x30,x31,x32,x33,x34,x35,x36,x37,x38,x39,x40,x41,x42,x43,x44,x45,x46,x47,x48,x49,x50,x51,x52,...) P##x52
-#define PP2_TUPLE_AT_53(P,x0,x1,x2,x3,x4,x5,x6,x7,x8,x9,x10,x11,x12,x13,x14,x15,x16,x17,x18,x19,x20,x21,x22,x23,x24,x25,x26,x27,x28,x29,x30,x31,x32,x33,x34,x35,x36,x37,x38,x39,x40,x41,x42,x43,x44,x45,x46,x47,x48,x49,x50,x51,x52,x53,...) P##x53
-#define PP2_TUPLE_AT_54(P,x0,x1,x2,x3,x4,x5,x6,x7,x8,x9,x10,x11,x12,x13,x14,x15,x16,x17,x18,x19,x20,x21,x22,x23,x24,x25,x26,x27,x28,x29,x30,x31,x32,x33,x34,x35,x36,x37,x38,x39,x40,x41,x42,x43,x44,x45,x46,x47,x48,x49,x50,x51,x52,x53,x54,...) P##x54
-#define PP2_TUPLE_AT_55(P,x0,x1,x2,x3,x4,x5,x6,x7,x8,x9,x10,x11,x12,x13,x14,x15,x16,x17,x18,x19,x20,x21,x22,x23,x24,x25,x26,x27,x28,x29,x30,x31,x32,x33,x34,x35,x36,x37,x38,x39,x40,x41,x42,x43,x44,x45,x46,x47,x48,x49,x50,x51,x52,x53,x54,x55,...) P##x55
-#define PP2_TUPLE_AT_56(P,x0,x1,x2,x3,x4,x5,x6,x7,x8,x9,x10,x11,x12,x13,x14,x15,x16,x17,x18,x19,x20,x21,x22,x23,x24,x25,x26,x27,x28,x29,x30,x31,x32,x33,x34,x35,x36,x37,x38,x39,x40,x41,x42,x43,x44,x45,x46,x47,x48,x49,x50,x51,x52,x53,x54,x55,x56,...) P##x56
-#define PP2_TUPLE_AT_57(P,x0,x1,x2,x3,x4,x5,x6,x7,x8,x9,x10,x11,x12,x13,x14,x15,x16,x17,x18,x19,x20,x21,x22,x23,x24,x25,x26,x27,x28,x29,x30,x31,x32,x33,x34,x35,x36,x37,x38,x39,x40,x41,x42,x43,x44,x45,x46,x47,x48,x49,x50,x51,x52,x53,x54,x55,x56,x57,...) P##x57
-#define PP2_TUPLE_AT_58(P,x0,x1,x2,x3,x4,x5,x6,x7,x8,x9,x10,x11,x12,x13,x14,x15,x16,x17,x18,x19,x20,x21,x22,x23,x24,x25,x26,x27,x28,x29,x30,x31,x32,x33,x34,x35,x36,x37,x38,x39,x40,x41,x42,x43,x44,x45,x46,x47,x48,x49,x50,x51,x52,x53,x54,x55,x56,x57,x58,...) P##x58
-#define PP2_TUPLE_AT_59(P,x0,x1,x2,x3,x4,x5,x6,x7,x8,x9,x10,x11,x12,x13,x14,x15,x16,x17,x18,x19,x20,x21,x22,x23,x24,x25,x26,x27,x28,x29,x30,x31,x32,x33,x34,x35,x36,x37,x38,x39,x40,x41,x42,x43,x44,x45,x46,x47,x48,x49,x50,x51,x52,x53,x54,x55,x56,x57,x58,x59,...) P##x59
-#define PP2_TUPLE_AT_60(P,x0,x1,x2,x3,x4,x5,x6,x7,x8,x9,x10,x11,x12,x13,x14,x15,x16,x17,x18,x19,x20,x21,x22,x23,x24,x25,x26,x27,x28,x29,x30,x31,x32,x33,x34,x35,x36,x37,x38,x39,x40,x41,x42,x43,x44,x45,x46,x47,x48,x49,x50,x51,x52,x53,x54,x55,x56,x57,x58,x59,x60,...) P##x60
-#define PP2_TUPLE_AT_61(P,x0,x1,x2,x3,x4,x5,x6,x7,x8,x9,x10,x11,x12,x13,x14,x15,x16,x17,x18,x19,x20,x21,x22,x23,x24,x25,x26,x27,x28,x29,x30,x31,x32,x33,x34,x35,x36,x37,x38,x39,x40,x41,x42,x43,x44,x45,x46,x47,x48,x49,x50,x51,x52,x53,x54,x55,x56,x57,x58,x59,x60,x61,...) P##x61
-#define PP2_TUPLE_AT_62(P,x0,x1,x2,x3,x4,x5,x6,x7,x8,x9,x10,x11,x12,x13,x14,x15,x16,x17,x18,x19,x20,x21,x22,x23,x24,x25,x26,x27,x28,x29,x30,x31,x32,x33,x34,x35,x36,x37,x38,x39,x40,x41,x42,x43,x44,x45,x46,x47,x48,x49,x50,x51,x52,x53,x54,x55,x56,x57,x58,x59,x60,x61,x62,...) P##x62
-#define PP2_TUPLE_AT_63(P,x0,x1,x2,x3,x4,x5,x6,x7,x8,x9,x10,x11,x12,x13,x14,x15,x16,x17,x18,x19,x20,x21,x22,x23,x24,x25,x26,x27,x28,x29,x30,x31,x32,x33,x34,x35,x36,x37,x38,x39,x40,x41,x42,x43,x44,x45,x46,x47,x48,x49,x50,x51,x52,x53,x54,x55,x56,x57,x58,x59,x60,x61,x62,x63,...) P##x63
-#define PP2_TUPLE_AT_64(P,x0,x1,x2,x3,x4,x5,x6,x7,x8,x9,x10,x11,x12,x13,x14,x15,x16,x17,x18,x19,x20,x21,x22,x23,x24,x25,x26,x27,x28,x29,x30,x31,x32,x33,x34,x35,x36,x37,x38,x39,x40,x41,x42,x43,x44,x45,x46,x47,x48,x49,x50,x51,x52,x53,x54,x55,x56,x57,x58,x59,x60,x61,x62,x63,x64,...) P##x64
-#define PP2_TUPLE_AT_65(P,x0,x1,x2,x3,x4,x5,x6,x7,x8,x9,x10,x11,x12,x13,x14,x15,x16,x17,x18,x19,x20,x21,x22,x23,x24,x25,x26,x27,x28,x29,x30,x31,x32,x33,x34,x35,x36,x37,x38,x39,x40,x41,x42,x43,x44,x45,x46,x47,x48,x49,x50,x51,x52,x53,x54,x55,x56,x57,x58,x59,x60,x61,x62,x63,x64,x65,...) P##x65
-#define PP2_TUPLE_AT_66(P,x0,x1,x2,x3,x4,x5,x6,x7,x8,x9,x10,x11,x12,x13,x14,x15,x16,x17,x18,x19,x20,x21,x22,x23,x24,x25,x26,x27,x28,x29,x30,x31,x32,x33,x34,x35,x36,x37,x38,x39,x40,x41,x42,x43,x44,x45,x46,x47,x48,x49,x50,x51,x52,x53,x54,x55,x56,x57,x58,x59,x60,x61,x62,x63,x64,x65,x66,...) P##x66
-#define PP2_TUPLE_AT_67(P,x0,x1,x2,x3,x4,x5,x6,x7,x8,x9,x10,x11,x12,x13,x14,x15,x16,x17,x18,x19,x20,x21,x22,x23,x24,x25,x26,x27,x28,x29,x30,x31,x32,x33,x34,x35,x36,x37,x38,x39,x40,x41,x42,x43,x44,x45,x46,x47,x48,x49,x50,x51,x52,x53,x54,x55,x56,x57,x58,x59,x60,x61,x62,x63,x64,x65,x66,x67,...) P##x67
-#define PP2_TUPLE_AT_68(P,x0,x1,x2,x3,x4,x5,x6,x7,x8,x9,x10,x11,x12,x13,x14,x15,x16,x17,x18,x19,x20,x21,x22,x23,x24,x25,x26,x27,x28,x29,x30,x31,x32,x33,x34,x35,x36,x37,x38,x39,x40,x41,x42,x43,x44,x45,x46,x47,x48,x49,x50,x51,x52,x53,x54,x55,x56,x57,x58,x59,x60,x61,x62,x63,x64,x65,x66,x67,x68,...) P##x68
-#define PP2_TUPLE_AT_69(P,x0,x1,x2,x3,x4,x5,x6,x7,x8,x9,x10,x11,x12,x13,x14,x15,x16,x17,x18,x19,x20,x21,x22,x23,x24,x25,x26,x27,x28,x29,x30,x31,x32,x33,x34,x35,x36,x37,x38,x39,x40,x41,x42,x43,x44,x45,x46,x47,x48,x49,x50,x51,x52,x53,x54,x55,x56,x57,x58,x59,x60,x61,x62,x63,x64,x65,x66,x67,x68,x69,...) P##x69
-#define PP2_TUPLE_AT_70(P,x0,x1,x2,x3,x4,x5,x6,x7,x8,x9,x10,x11,x12,x13,x14,x15,x16,x17,x18,x19,x20,x21,x22,x23,x24,x25,x26,x27,x28,x29,x30,x31,x32,x33,x34,x35,x36,x37,x38,x39,x40,x41,x42,x43,x44,x45,x46,x47,x48,x49,x50,x51,x52,x53,x54,x55,x56,x57,x58,x59,x60,x61,x62,x63,x64,x65,x66,x67,x68,x69,x70,...) P##x70
-#define PP2_TUPLE_AT_71(P,x0,x1,x2,x3,x4,x5,x6,x7,x8,x9,x10,x11,x12,x13,x14,x15,x16,x17,x18,x19,x20,x21,x22,x23,x24,x25,x26,x27,x28,x29,x30,x31,x32,x33,x34,x35,x36,x37,x38,x39,x40,x41,x42,x43,x44,x45,x46,x47,x48,x49,x50,x51,x52,x53,x54,x55,x56,x57,x58,x59,x60,x61,x62,x63,x64,x65,x66,x67,x68,x69,x70,x71,...) P##x71
-#define PP2_TUPLE_AT_72(P,x0,x1,x2,x3,x4,x5,x6,x7,x8,x9,x10,x11,x12,x13,x14,x15,x16,x17,x18,x19,x20,x21,x22,x23,x24,x25,x26,x27,x28,x29,x30,x31,x32,x33,x34,x35,x36,x37,x38,x39,x40,x41,x42,x43,x44,x45,x46,x47,x48,x49,x50,x51,x52,x53,x54,x55,x56,x57,x58,x59,x60,x61,x62,x63,x64,x65,x66,x67,x68,x69,x70,x71,x72,...) P##x72
-#define PP2_TUPLE_AT_73(P,x0,x1,x2,x3,x4,x5,x6,x7,x8,x9,x10,x11,x12,x13,x14,x15,x16,x17,x18,x19,x20,x21,x22,x23,x24,x25,x26,x27,x28,x29,x30,x31,x32,x33,x34,x35,x36,x37,x38,x39,x40,x41,x42,x43,x44,x45,x46,x47,x48,x49,x50,x51,x52,x53,x54,x55,x56,x57,x58,x59,x60,x61,x62,x63,x64,x65,x66,x67,x68,x69,x70,x71,x72,x73,...) P##x73
-#define PP2_TUPLE_AT_74(P,x0,x1,x2,x3,x4,x5,x6,x7,x8,x9,x10,x11,x12,x13,x14,x15,x16,x17,x18,x19,x20,x21,x22,x23,x24,x25,x26,x27,x28,x29,x30,x31,x32,x33,x34,x35,x36,x37,x38,x39,x40,x41,x42,x43,x44,x45,x46,x47,x48,x49,x50,x51,x52,x53,x54,x55,x56,x57,x58,x59,x60,x61,x62,x63,x64,x65,x66,x67,x68,x69,x70,x71,x72,x73,x74,...) P##x74
-#define PP2_TUPLE_AT_75(P,x0,x1,x2,x3,x4,x5,x6,x7,x8,x9,x10,x11,x12,x13,x14,x15,x16,x17,x18,x19,x20,x21,x22,x23,x24,x25,x26,x27,x28,x29,x30,x31,x32,x33,x34,x35,x36,x37,x38,x39,x40,x41,x42,x43,x44,x45,x46,x47,x48,x49,x50,x51,x52,x53,x54,x55,x56,x57,x58,x59,x60,x61,x62,x63,x64,x65,x66,x67,x68,x69,x70,x71,x72,x73,x74,x75,...) P##x75
-#define PP2_TUPLE_AT_76(P,x0,x1,x2,x3,x4,x5,x6,x7,x8,x9,x10,x11,x12,x13,x14,x15,x16,x17,x18,x19,x20,x21,x22,x23,x24,x25,x26,x27,x28,x29,x30,x31,x32,x33,x34,x35,x36,x37,x38,x39,x40,x41,x42,x43,x44,x45,x46,x47,x48,x49,x50,x51,x52,x53,x54,x55,x56,x57,x58,x59,x60,x61,x62,x63,x64,x65,x66,x67,x68,x69,x70,x71,x72,x73,x74,x75,x76,...) P##x76
-#define PP2_TUPLE_AT_77(P,x0,x1,x2,x3,x4,x5,x6,x7,x8,x9,x10,x11,x12,x13,x14,x15,x16,x17,x18,x19,x20,x21,x22,x23,x24,x25,x26,x27,x28,x29,x30,x31,x32,x33,x34,x35,x36,x37,x38,x39,x40,x41,x42,x43,x44,x45,x46,x47,x48,x49,x50,x51,x52,x53,x54,x55,x56,x57,x58,x59,x60,x61,x62,x63,x64,x65,x66,x67,x68,x69,x70,x71,x72,x73,x74,x75,x76,x77,...) P##x77
-#define PP2_TUPLE_AT_78(P,x0,x1,x2,x3,x4,x5,x6,x7,x8,x9,x10,x11,x12,x13,x14,x15,x16,x17,x18,x19,x20,x21,x22,x23,x24,x25,x26,x27,x28,x29,x30,x31,x32,x33,x34,x35,x36,x37,x38,x39,x40,x41,x42,x43,x44,x45,x46,x47,x48,x49,x50,x51,x52,x53,x54,x55,x56,x57,x58,x59,x60,x61,x62,x63,x64,x65,x66,x67,x68,x69,x70,x71,x72,x73,x74,x75,x76,x77,x78,...) P##x78
-#define PP2_TUPLE_AT_79(P,x0,x1,x2,x3,x4,x5,x6,x7,x8,x9,x10,x11,x12,x13,x14,x15,x16,x17,x18,x19,x20,x21,x22,x23,x24,x25,x26,x27,x28,x29,x30,x31,x32,x33,x34,x35,x36,x37,x38,x39,x40,x41,x42,x43,x44,x45,x46,x47,x48,x49,x50,x51,x52,x53,x54,x55,x56,x57,x58,x59,x60,x61,x62,x63,x64,x65,x66,x67,x68,x69,x70,x71,x72,x73,x74,x75,x76,x77,x78,x79,...) P##x79
-#define PP2_TUPLE_AT_80(P,x0,x1,x2,x3,x4,x5,x6,x7,x8,x9,x10,x11,x12,x13,x14,x15,x16,x17,x18,x19,x20,x21,x22,x23,x24,x25,x26,x27,x28,x29,x30,x31,x32,x33,x34,x35,x36,x37,x38,x39,x40,x41,x42,x43,x44,x45,x46,x47,x48,x49,x50,x51,x52,x53,x54,x55,x56,x57,x58,x59,x60,x61,x62,x63,x64,x65,x66,x67,x68,x69,x70,x71,x72,x73,x74,x75,x76,x77,x78,x79,x80,...) P##x80
-#define PP2_TUPLE_AT_81(P,x0,x1,x2,x3,x4,x5,x6,x7,x8,x9,x10,x11,x12,x13,x14,x15,x16,x17,x18,x19,x20,x21,x22,x23,x24,x25,x26,x27,x28,x29,x30,x31,x32,x33,x34,x35,x36,x37,x38,x39,x40,x41,x42,x43,x44,x45,x46,x47,x48,x49,x50,x51,x52,x53,x54,x55,x56,x57,x58,x59,x60,x61,x62,x63,x64,x65,x66,x67,x68,x69,x70,x71,x72,x73,x74,x75,x76,x77,x78,x79,x80,x81,...) P##x81
-#define PP2_TUPLE_AT_82(P,x0,x1,x2,x3,x4,x5,x6,x7,x8,x9,x10,x11,x12,x13,x14,x15,x16,x17,x18,x19,x20,x21,x22,x23,x24,x25,x26,x27,x28,x29,x30,x31,x32,x33,x34,x35,x36,x37,x38,x39,x40,x41,x42,x43,x44,x45,x46,x47,x48,x49,x50,x51,x52,x53,x54,x55,x56,x57,x58,x59,x60,x61,x62,x63,x64,x65,x66,x67,x68,x69,x70,x71,x72,x73,x74,x75,x76,x77,x78,x79,x80,x81,x82,...) P##x82
-#define PP2_TUPLE_AT_83(P,x0,x1,x2,x3,x4,x5,x6,x7,x8,x9,x10,x11,x12,x13,x14,x15,x16,x17,x18,x19,x20,x21,x22,x23,x24,x25,x26,x27,x28,x29,x30,x31,x32,x33,x34,x35,x36,x37,x38,x39,x40,x41,x42,x43,x44,x45,x46,x47,x48,x49,x50,x51,x52,x53,x54,x55,x56,x57,x58,x59,x60,x61,x62,x63,x64,x65,x66,x67,x68,x69,x70,x71,x72,x73,x74,x75,x76,x77,x78,x79,x80,x81,x82,x83,...) P##x83
-#define PP2_TUPLE_AT_84(P,x0,x1,x2,x3,x4,x5,x6,x7,x8,x9,x10,x11,x12,x13,x14,x15,x16,x17,x18,x19,x20,x21,x22,x23,x24,x25,x26,x27,x28,x29,x30,x31,x32,x33,x34,x35,x36,x37,x38,x39,x40,x41,x42,x43,x44,x45,x46,x47,x48,x49,x50,x51,x52,x53,x54,x55,x56,x57,x58,x59,x60,x61,x62,x63,x64,x65,x66,x67,x68,x69,x70,x71,x72,x73,x74,x75,x76,x77,x78,x79,x80,x81,x82,x83,x84,...) P##x84
-#define PP2_TUPLE_AT_85(P,x0,x1,x2,x3,x4,x5,x6,x7,x8,x9,x10,x11,x12,x13,x14,x15,x16,x17,x18,x19,x20,x21,x22,x23,x24,x25,x26,x27,x28,x29,x30,x31,x32,x33,x34,x35,x36,x37,x38,x39,x40,x41,x42,x43,x44,x45,x46,x47,x48,x49,x50,x51,x52,x53,x54,x55,x56,x57,x58,x59,x60,x61,x62,x63,x64,x65,x66,x67,x68,x69,x70,x71,x72,x73,x74,x75,x76,x77,x78,x79,x80,x81,x82,x83,x84,x85,...) P##x85
-#define PP2_TUPLE_AT_86(P,x0,x1,x2,x3,x4,x5,x6,x7,x8,x9,x10,x11,x12,x13,x14,x15,x16,x17,x18,x19,x20,x21,x22,x23,x24,x25,x26,x27,x28,x29,x30,x31,x32,x33,x34,x35,x36,x37,x38,x39,x40,x41,x42,x43,x44,x45,x46,x47,x48,x49,x50,x51,x52,x53,x54,x55,x56,x57,x58,x59,x60,x61,x62,x63,x64,x65,x66,x67,x68,x69,x70,x71,x72,x73,x74,x75,x76,x77,x78,x79,x80,x81,x82,x83,x84,x85,x86,...) P##x86
-#define PP2_TUPLE_AT_87(P,x0,x1,x2,x3,x4,x5,x6,x7,x8,x9,x10,x11,x12,x13,x14,x15,x16,x17,x18,x19,x20,x21,x22,x23,x24,x25,x26,x27,x28,x29,x30,x31,x32,x33,x34,x35,x36,x37,x38,x39,x40,x41,x42,x43,x44,x45,x46,x47,x48,x49,x50,x51,x52,x53,x54,x55,x56,x57,x58,x59,x60,x61,x62,x63,x64,x65,x66,x67,x68,x69,x70,x71,x72,x73,x74,x75,x76,x77,x78,x79,x80,x81,x82,x83,x84,x85,x86,x87,...) P##x87
-#define PP2_TUPLE_AT_88(P,x0,x1,x2,x3,x4,x5,x6,x7,x8,x9,x10,x11,x12,x13,x14,x15,x16,x17,x18,x19,x20,x21,x22,x23,x24,x25,x26,x27,x28,x29,x30,x31,x32,x33,x34,x35,x36,x37,x38,x39,x40,x41,x42,x43,x44,x45,x46,x47,x48,x49,x50,x51,x52,x53,x54,x55,x56,x57,x58,x59,x60,x61,x62,x63,x64,x65,x66,x67,x68,x69,x70,x71,x72,x73,x74,x75,x76,x77,x78,x79,x80,x81,x82,x83,x84,x85,x86,x87,x88,...) P##x88
-#define PP2_TUPLE_AT_89(P,x0,x1,x2,x3,x4,x5,x6,x7,x8,x9,x10,x11,x12,x13,x14,x15,x16,x17,x18,x19,x20,x21,x22,x23,x24,x25,x26,x27,x28,x29,x30,x31,x32,x33,x34,x35,x36,x37,x38,x39,x40,x41,x42,x43,x44,x45,x46,x47,x48,x49,x50,x51,x52,x53,x54,x55,x56,x57,x58,x59,x60,x61,x62,x63,x64,x65,x66,x67,x68,x69,x70,x71,x72,x73,x74,x75,x76,x77,x78,x79,x80,x81,x82,x83,x84,x85,x86,x87,x88,x89,...) P##x89
-#define PP2_TUPLE_AT_90(P,x0,x1,x2,x3,x4,x5,x6,x7,x8,x9,x10,x11,x12,x13,x14,x15,x16,x17,x18,x19,x20,x21,x22,x23,x24,x25,x26,x27,x28,x29,x30,x31,x32,x33,x34,x35,x36,x37,x38,x39,x40,x41,x42,x43,x44,x45,x46,x47,x48,x49,x50,x51,x52,x53,x54,x55,x56,x57,x58,x59,x60,x61,x62,x63,x64,x65,x66,x67,x68,x69,x70,x71,x72,x73,x74,x75,x76,x77,x78,x79,x80,x81,x82,x83,x84,x85,x86,x87,x88,x89,x90,...) P##x90
-#define PP2_TUPLE_AT_91(P,x0,x1,x2,x3,x4,x5,x6,x7,x8,x9,x10,x11,x12,x13,x14,x15,x16,x17,x18,x19,x20,x21,x22,x23,x24,x25,x26,x27,x28,x29,x30,x31,x32,x33,x34,x35,x36,x37,x38,x39,x40,x41,x42,x43,x44,x45,x46,x47,x48,x49,x50,x51,x52,x53,x54,x55,x56,x57,x58,x59,x60,x61,x62,x63,x64,x65,x66,x67,x68,x69,x70,x71,x72,x73,x74,x75,x76,x77,x78,x79,x80,x81,x82,x83,x84,x85,x86,x87,x88,x89,x90,x91,...) P##x91
-#define PP2_TUPLE_AT_92(P,x0,x1,x2,x3,x4,x5,x6,x7,x8,x9,x10,x11,x12,x13,x14,x15,x16,x17,x18,x19,x20,x21,x22,x23,x24,x25,x26,x27,x28,x29,x30,x31,x32,x33,x34,x35,x36,x37,x38,x39,x40,x41,x42,x43,x44,x45,x46,x47,x48,x49,x50,x51,x52,x53,x54,x55,x56,x57,x58,x59,x60,x61,x62,x63,x64,x65,x66,x67,x68,x69,x70,x71,x72,x73,x74,x75,x76,x77,x78,x79,x80,x81,x82,x83,x84,x85,x86,x87,x88,x89,x90,x91,x92,...) P##x92
-#define PP2_TUPLE_AT_93(P,x0,x1,x2,x3,x4,x5,x6,x7,x8,x9,x10,x11,x12,x13,x14,x15,x16,x17,x18,x19,x20,x21,x22,x23,x24,x25,x26,x27,x28,x29,x30,x31,x32,x33,x34,x35,x36,x37,x38,x39,x40,x41,x42,x43,x44,x45,x46,x47,x48,x49,x50,x51,x52,x53,x54,x55,x56,x57,x58,x59,x60,x61,x62,x63,x64,x65,x66,x67,x68,x69,x70,x71,x72,x73,x74,x75,x76,x77,x78,x79,x80,x81,x82,x83,x84,x85,x86,x87,x88,x89,x90,x91,x92,x93,...) P##x93
-#define PP2_TUPLE_AT_94(P,x0,x1,x2,x3,x4,x5,x6,x7,x8,x9,x10,x11,x12,x13,x14,x15,x16,x17,x18,x19,x20,x21,x22,x23,x24,x25,x26,x27,x28,x29,x30,x31,x32,x33,x34,x35,x36,x37,x38,x39,x40,x41,x42,x43,x44,x45,x46,x47,x48,x49,x50,x51,x52,x53,x54,x55,x56,x57,x58,x59,x60,x61,x62,x63,x64,x65,x66,x67,x68,x69,x70,x71,x72,x73,x74,x75,x76,x77,x78,x79,x80,x81,x82,x83,x84,x85,x86,x87,x88,x89,x90,x91,x92,x93,x94,...) P##x94
-#define PP2_TUPLE_AT_95(P,x0,x1,x2,x3,x4,x5,x6,x7,x8,x9,x10,x11,x12,x13,x14,x15,x16,x17,x18,x19,x20,x21,x22,x23,x24,x25,x26,x27,x28,x29,x30,x31,x32,x33,x34,x35,x36,x37,x38,x39,x40,x41,x42,x43,x44,x45,x46,x47,x48,x49,x50,x51,x52,x53,x54,x55,x56,x57,x58,x59,x60,x61,x62,x63,x64,x65,x66,x67,x68,x69,x70,x71,x72,x73,x74,x75,x76,x77,x78,x79,x80,x81,x82,x83,x84,x85,x86,x87,x88,x89,x90,x91,x92,x93,x94,x95,...) P##x95      
-#define PP2_TUPLE_AT_96(P,x0,x1,x2,x3,x4,x5,x6,x7,x8,x9,x10,x11,x12,x13,x14,x15,x16,x17,x18,x19,x20,x21,x22,x23,x24,x25,x26,x27,x28,x29,x30,x31,x32,x33,x34,x35,x36,x37,x38,x39,x40,x41,x42,x43,x44,x45,x46,x47,x48,x49,x50,x51,x52,x53,x54,x55,x56,x57,x58,x59,x60,x61,x62,x63,x64,x65,x66,x67,x68,x69,x70,x71,x72,x73,x74,x75,x76,x77,x78,x79,x80,x81,x82,x83,x84,x85,x86,x87,x88,x89,x90,x91,x92,x93,x94,x95,x96,...) P##x96  
-#define PP2_TUPLE_AT_97(P,x0,x1,x2,x3,x4,x5,x6,x7,x8,x9,x10,x11,x12,x13,x14,x15,x16,x17,x18,x19,x20,x21,x22,x23,x24,x25,x26,x27,x28,x29,x30,x31,x32,x33,x34,x35,x36,x37,x38,x39,x40,x41,x42,x43,x44,x45,x46,x47,x48,x49,x50,x51,x52,x53,x54,x55,x56,x57,x58,x59,x60,x61,x62,x63,x64,x65,x66,x67,x68,x69,x70,x71,x72,x73,x74,x75,x76,x77,x78,x79,x80,x81,x82,x83,x84,x85,x86,x87,x88,x89,x90,x91,x92,x93,x94,x95,x96,x97,...) P##x97
-#define PP2_TUPLE_AT_98(P,x0,x1,x2,x3,x4,x5,x6,x7,x8,x9,x10,x11,x12,x13,x14,x15,x16,x17,x18,x19,x20,x21,x22,x23,x24,x25,x26,x27,x28,x29,x30,x31,x32,x33,x34,x35,x36,x37,x38,x39,x40,x41,x42,x43,x44,x45,x46,x47,x48,x49,x50,x51,x52,x53,x54,x55,x56,x57,x58,x59,x60,x61,x62,x63,x64,x65,x66,x67,x68,x69,x70,x71,x72,x73,x74,x75,x76,x77,x78,x79,x80,x81,x82,x83,x84,x85,x86,x87,x88,x89,x90,x91,x92,x93,x94,x95,x96,x97,x98,...) P##x98
-#define PP2_TUPLE_AT_99(P,x0,x1,x2,x3,x4,x5,x6,x7,x8,x9,x10,x11,x12,x13,x14,x15,x16,x17,x18,x19,x20,x21,x22,x23,x24,x25,x26,x27,x28,x29,x30,x31,x32,x33,x34,x35,x36,x37,x38,x39,x40,x41,x42,x43,x44,x45,x46,x47,x48,x49,x50,x51,x52,x53,x54,x55,x56,x57,x58,x59,x60,x61,x62,x63,x64,x65,x66,x67,x68,x69,x70,x71,x72,x73,x74,x75,x76,x77,x78,x79,x80,x81,x82,x83,x84,x85,x86,x87,x88,x89,x90,x91,x92,x93,x94,x95,x96,x97,x98,x99,...) P##x99
-
-#define PP2_TUPLE_AT_100(P,x0,x1,x2,x3,x4,x5,x6,x7,x8,x9,x10,x11,x12,x13,x14,x15,x16,x17,x18,x19,x20,x21,x22,x23,x24,x25,x26,x27,x28,x29,x30,x31,x32,x33,x34,x35,x36,x37,x38,x39,x40,x41,x42,x43,x44,x45,x46,x47,x48,x49,x50,x51,x52,x53,x54,x55,x56,x57,x58,x59,x60,x61,x62,x63,x64,x65,x66,x67,x68,x69,x70,x71,x72,x73,x74,x75,x76,x77,x78,x79,x80,x81,x82,x83,x84,x85,x86,x87,x88,x89,x90,x91,x92,x93,x94,x95,x96,x97,x98,x99,x100,...) P##x100
-#define PP2_TUPLE_AT_101(P,x0,x1,x2,x3,x4,x5,x6,x7,x8,x9,x10,x11,x12,x13,x14,x15,x16,x17,x18,x19,x20,x21,x22,x23,x24,x25,x26,x27,x28,x29,x30,x31,x32,x33,x34,x35,x36,x37,x38,x39,x40,x41,x42,x43,x44,x45,x46,x47,x48,x49,x50,x51,x52,x53,x54,x55,x56,x57,x58,x59,x60,x61,x62,x63,x64,x65,x66,x67,x68,x69,x70,x71,x72,x73,x74,x75,x76,x77,x78,x79,x80,x81,x82,x83,x84,x85,x86,x87,x88,x89,x90,x91,x92,x93,x94,x95,x96,x97,x98,x99,x100,x101,...) P##x101
-#define PP2_TUPLE_AT_102(P,x0,x1,x2,x3,x4,x5,x6,x7,x8,x9,x10,x11,x12,x13,x14,x15,x16,x17,x18,x19,x20,x21,x22,x23,x24,x25,x26,x27,x28,x29,x30,x31,x32,x33,x34,x35,x36,x37,x38,x39,x40,x41,x42,x43,x44,x45,x46,x47,x48,x49,x50,x51,x52,x53,x54,x55,x56,x57,x58,x59,x60,x61,x62,x63,x64,x65,x66,x67,x68,x69,x70,x71,x72,x73,x74,x75,x76,x77,x78,x79,x80,x81,x82,x83,x84,x85,x86,x87,x88,x89,x90,x91,x92,x93,x94,x95,x96,x97,x98,x99,x100,x101,x102,...) P##x102
-#define PP2_TUPLE_AT_103(P,x0,x1,x2,x3,x4,x5,x6,x7,x8,x9,x10,x11,x12,x13,x14,x15,x16,x17,x18,x19,x20,x21,x22,x23,x24,x25,x26,x27,x28,x29,x30,x31,x32,x33,x34,x35,x36,x37,x38,x39,x40,x41,x42,x43,x44,x45,x46,x47,x48,x49,x50,x51,x52,x53,x54,x55,x56,x57,x58,x59,x60,x61,x62,x63,x64,x65,x66,x67,x68,x69,x70,x71,x72,x73,x74,x75,x76,x77,x78,x79,x80,x81,x82,x83,x84,x85,x86,x87,x88,x89,x90,x91,x92,x93,x94,x95,x96,x97,x98,x99,x100,x101,x102,x103,...) P##x103
-#define PP2_TUPLE_AT_104(P,x0,x1,x2,x3,x4,x5,x6,x7,x8,x9,x10,x11,x12,x13,x14,x15,x16,x17,x18,x19,x20,x21,x22,x23,x24,x25,x26,x27,x28,x29,x30,x31,x32,x33,x34,x35,x36,x37,x38,x39,x40,x41,x42,x43,x44,x45,x46,x47,x48,x49,x50,x51,x52,x53,x54,x55,x56,x57,x58,x59,x60,x61,x62,x63,x64,x65,x66,x67,x68,x69,x70,x71,x72,x73,x74,x75,x76,x77,x78,x79,x80,x81,x82,x83,x84,x85,x86,x87,x88,x89,x90,x91,x92,x93,x94,x95,x96,x97,x98,x99,x100,x101,x102,x103,x104,...) P##x104
-#define PP2_TUPLE_AT_105(P,x0,x1,x2,x3,x4,x5,x6,x7,x8,x9,x10,x11,x12,x13,x14,x15,x16,x17,x18,x19,x20,x21,x22,x23,x24,x25,x26,x27,x28,x29,x30,x31,x32,x33,x34,x35,x36,x37,x38,x39,x40,x41,x42,x43,x44,x45,x46,x47,x48,x49,x50,x51,x52,x53,x54,x55,x56,x57,x58,x59,x60,x61,x62,x63,x64,x65,x66,x67,x68,x69,x70,x71,x72,x73,x74,x75,x76,x77,x78,x79,x80,x81,x82,x83,x84,x85,x86,x87,x88,x89,x90,x91,x92,x93,x94,x95,x96,x97,x98,x99,x100,x101,x102,x103,x104,x105,...) P##x105
-#define PP2_TUPLE_AT_106(P,x0,x1,x2,x3,x4,x5,x6,x7,x8,x9,x10,x11,x12,x13,x14,x15,x16,x17,x18,x19,x20,x21,x22,x23,x24,x25,x26,x27,x28,x29,x30,x31,x32,x33,x34,x35,x36,x37,x38,x39,x40,x41,x42,x43,x44,x45,x46,x47,x48,x49,x50,x51,x52,x53,x54,x55,x56,x57,x58,x59,x60,x61,x62,x63,x64,x65,x66,x67,x68,x69,x70,x71,x72,x73,x74,x75,x76,x77,x78,x79,x80,x81,x82,x83,x84,x85,x86,x87,x88,x89,x90,x91,x92,x93,x94,x95,x96,x97,x98,x99,x100,x101,x102,x103,x104,x105,x106,...) P##x106
-#define PP2_TUPLE_AT_107(P,x0,x1,x2,x3,x4,x5,x6,x7,x8,x9,x10,x11,x12,x13,x14,x15,x16,x17,x18,x19,x20,x21,x22,x23,x24,x25,x26,x27,x28,x29,x30,x31,x32,x33,x34,x35,x36,x37,x38,x39,x40,x41,x42,x43,x44,x45,x46,x47,x48,x49,x50,x51,x52,x53,x54,x55,x56,x57,x58,x59,x60,x61,x62,x63,x64,x65,x66,x67,x68,x69,x70,x71,x72,x73,x74,x75,x76,x77,x78,x79,x80,x81,x82,x83,x84,x85,x86,x87,x88,x89,x90,x91,x92,x93,x94,x95,x96,x97,x98,x99,x100,x101,x102,x103,x104,x105,x106,x107,...) P##x107
-#define PP2_TUPLE_AT_108(P,x0,x1,x2,x3,x4,x5,x6,x7,x8,x9,x10,x11,x12,x13,x14,x15,x16,x17,x18,x19,x20,x21,x22,x23,x24,x25,x26,x27,x28,x29,x30,x31,x32,x33,x34,x35,x36,x37,x38,x39,x40,x41,x42,x43,x44,x45,x46,x47,x48,x49,x50,x51,x52,x53,x54,x55,x56,x57,x58,x59,x60,x61,x62,x63,x64,x65,x66,x67,x68,x69,x70,x71,x72,x73,x74,x75,x76,x77,x78,x79,x80,x81,x82,x83,x84,x85,x86,x87,x88,x89,x90,x91,x92,x93,x94,x95,x96,x97,x98,x99,x100,x101,x102,x103,x104,x105,x106,x107,x108,...) P##x108
-#define PP2_TUPLE_AT_109(P,x0,x1,x2,x3,x4,x5,x6,x7,x8,x9,x10,x11,x12,x13,x14,x15,x16,x17,x18,x19,x20,x21,x22,x23,x24,x25,x26,x27,x28,x29,x30,x31,x32,x33,x34,x35,x36,x37,x38,x39,x40,x41,x42,x43,x44,x45,x46,x47,x48,x49,x50,x51,x52,x53,x54,x55,x56,x57,x58,x59,x60,x61,x62,x63,x64,x65,x66,x67,x68,x69,x70,x71,x72,x73,x74,x75,x76,x77,x78,x79,x80,x81,x82,x83,x84,x85,x86,x87,x88,x89,x90,x91,x92,x93,x94,x95,x96,x97,x98,x99,x100,x101,x102,x103,x104,x105,x106,x107,x108,x109,...) P##x109
-#define PP2_TUPLE_AT_110(P,x0,x1,x2,x3,x4,x5,x6,x7,x8,x9,x10,x11,x12,x13,x14,x15,x16,x17,x18,x19,x20,x21,x22,x23,x24,x25,x26,x27,x28,x29,x30,x31,x32,x33,x34,x35,x36,x37,x38,x39,x40,x41,x42,x43,x44,x45,x46,x47,x48,x49,x50,x51,x52,x53,x54,x55,x56,x57,x58,x59,x60,x61,x62,x63,x64,x65,x66,x67,x68,x69,x70,x71,x72,x73,x74,x75,x76,x77,x78,x79,x80,x81,x82,x83,x84,x85,x86,x87,x88,x89,x90,x91,x92,x93,x94,x95,x96,x97,x98,x99,x100,x101,x102,x103,x104,x105,x106,x107,x108,x109,x110,...) P##x110
-#define PP2_TUPLE_AT_111(P,x0,x1,x2,x3,x4,x5,x6,x7,x8,x9,x10,x11,x12,x13,x14,x15,x16,x17,x18,x19,x20,x21,x22,x23,x24,x25,x26,x27,x28,x29,x30,x31,x32,x33,x34,x35,x36,x37,x38,x39,x40,x41,x42,x43,x44,x45,x46,x47,x48,x49,x50,x51,x52,x53,x54,x55,x56,x57,x58,x59,x60,x61,x62,x63,x64,x65,x66,x67,x68,x69,x70,x71,x72,x73,x74,x75,x76,x77,x78,x79,x80,x81,x82,x83,x84,x85,x86,x87,x88,x89,x90,x91,x92,x93,x94,x95,x96,x97,x98,x99,x100,x101,x102,x103,x104,x105,x106,x107,x108,x109,x110,x111,...) P##x111
-#define PP2_TUPLE_AT_112(P,x0,x1,x2,x3,x4,x5,x6,x7,x8,x9,x10,x11,x12,x13,x14,x15,x16,x17,x18,x19,x20,x21,x22,x23,x24,x25,x26,x27,x28,x29,x30,x31,x32,x33,x34,x35,x36,x37,x38,x39,x40,x41,x42,x43,x44,x45,x46,x47,x48,x49,x50,x51,x52,x53,x54,x55,x56,x57,x58,x59,x60,x61,x62,x63,x64,x65,x66,x67,x68,x69,x70,x71,x72,x73,x74,x75,x76,x77,x78,x79,x80,x81,x82,x83,x84,x85,x86,x87,x88,x89,x90,x91,x92,x93,x94,x95,x96,x97,x98,x99,x100,x101,x102,x103,x104,x105,x106,x107,x108,x109,x110,x111,x112,...) P##x112
-#define PP2_TUPLE_AT_113(P,x0,x1,x2,x3,x4,x5,x6,x7,x8,x9,x10,x11,x12,x13,x14,x15,x16,x17,x18,x19,x20,x21,x22,x23,x24,x25,x26,x27,x28,x29,x30,x31,x32,x33,x34,x35,x36,x37,x38,x39,x40,x41,x42,x43,x44,x45,x46,x47,x48,x49,x50,x51,x52,x53,x54,x55,x56,x57,x58,x59,x60,x61,x62,x63,x64,x65,x66,x67,x68,x69,x70,x71,x72,x73,x74,x75,x76,x77,x78,x79,x80,x81,x82,x83,x84,x85,x86,x87,x88,x89,x90,x91,x92,x93,x94,x95,x96,x97,x98,x99,x100,x101,x102,x103,x104,x105,x106,x107,x108,x109,x110,x111,x112,x113,...) P##x113
-#define PP2_TUPLE_AT_114(P,x0,x1,x2,x3,x4,x5,x6,x7,x8,x9,x10,x11,x12,x13,x14,x15,x16,x17,x18,x19,x20,x21,x22,x23,x24,x25,x26,x27,x28,x29,x30,x31,x32,x33,x34,x35,x36,x37,x38,x39,x40,x41,x42,x43,x44,x45,x46,x47,x48,x49,x50,x51,x52,x53,x54,x55,x56,x57,x58,x59,x60,x61,x62,x63,x64,x65,x66,x67,x68,x69,x70,x71,x72,x73,x74,x75,x76,x77,x78,x79,x80,x81,x82,x83,x84,x85,x86,x87,x88,x89,x90,x91,x92,x93,x94,x95,x96,x97,x98,x99,x100,x101,x102,x103,x104,x105,x106,x107,x108,x109,x110,x111,x112,x113,x114,...) P##x114
-#define PP2_TUPLE_AT_115(P,x0,x1,x2,x3,x4,x5,x6,x7,x8,x9,x10,x11,x12,x13,x14,x15,x16,x17,x18,x19,x20,x21,x22,x23,x24,x25,x26,x27,x28,x29,x30,x31,x32,x33,x34,x35,x36,x37,x38,x39,x40,x41,x42,x43,x44,x45,x46,x47,x48,x49,x50,x51,x52,x53,x54,x55,x56,x57,x58,x59,x60,x61,x62,x63,x64,x65,x66,x67,x68,x69,x70,x71,x72,x73,x74,x75,x76,x77,x78,x79,x80,x81,x82,x83,x84,x85,x86,x87,x88,x89,x90,x91,x92,x93,x94,x95,x96,x97,x98,x99,x100,x101,x102,x103,x104,x105,x106,x107,x108,x109,x110,x111,x112,x113,x114,x115,...) P##x115
-#define PP2_TUPLE_AT_116(P,x0,x1,x2,x3,x4,x5,x6,x7,x8,x9,x10,x11,x12,x13,x14,x15,x16,x17,x18,x19,x20,x21,x22,x23,x24,x25,x26,x27,x28,x29,x30,x31,x32,x33,x34,x35,x36,x37,x38,x39,x40,x41,x42,x43,x44,x45,x46,x47,x48,x49,x50,x51,x52,x53,x54,x55,x56,x57,x58,x59,x60,x61,x62,x63,x64,x65,x66,x67,x68,x69,x70,x71,x72,x73,x74,x75,x76,x77,x78,x79,x80,x81,x82,x83,x84,x85,x86,x87,x88,x89,x90,x91,x92,x93,x94,x95,x96,x97,x98,x99,x100,x101,x102,x103,x104,x105,x106,x107,x108,x109,x110,x111,x112,x113,x114,x115,x116,...) P##x116
-#define PP2_TUPLE_AT_117(P,x0,x1,x2,x3,x4,x5,x6,x7,x8,x9,x10,x11,x12,x13,x14,x15,x16,x17,x18,x19,x20,x21,x22,x23,x24,x25,x26,x27,x28,x29,x30,x31,x32,x33,x34,x35,x36,x37,x38,x39,x40,x41,x42,x43,x44,x45,x46,x47,x48,x49,x50,x51,x52,x53,x54,x55,x56,x57,x58,x59,x60,x61,x62,x63,x64,x65,x66,x67,x68,x69,x70,x71,x72,x73,x74,x75,x76,x77,x78,x79,x80,x81,x82,x83,x84,x85,x86,x87,x88,x89,x90,x91,x92,x93,x94,x95,x96,x97,x98,x99,x100,x101,x102,x103,x104,x105,x106,x107,x108,x109,x110,x111,x112,x113,x114,x115,x116,x117,...) P##x117
-#define PP2_TUPLE_AT_118(P,x0,x1,x2,x3,x4,x5,x6,x7,x8,x9,x10,x11,x12,x13,x14,x15,x16,x17,x18,x19,x20,x21,x22,x23,x24,x25,x26,x27,x28,x29,x30,x31,x32,x33,x34,x35,x36,x37,x38,x39,x40,x41,x42,x43,x44,x45,x46,x47,x48,x49,x50,x51,x52,x53,x54,x55,x56,x57,x58,x59,x60,x61,x62,x63,x64,x65,x66,x67,x68,x69,x70,x71,x72,x73,x74,x75,x76,x77,x78,x79,x80,x81,x82,x83,x84,x85,x86,x87,x88,x89,x90,x91,x92,x93,x94,x95,x96,x97,x98,x99,x100,x101,x102,x103,x104,x105,x106,x107,x108,x109,x110,x111,x112,x113,x114,x115,x116,x117,x118,...) P##x118
-#define PP2_TUPLE_AT_119(P,x0,x1,x2,x3,x4,x5,x6,x7,x8,x9,x10,x11,x12,x13,x14,x15,x16,x17,x18,x19,x20,x21,x22,x23,x24,x25,x26,x27,x28,x29,x30,x31,x32,x33,x34,x35,x36,x37,x38,x39,x40,x41,x42,x43,x44,x45,x46,x47,x48,x49,x50,x51,x52,x53,x54,x55,x56,x57,x58,x59,x60,x61,x62,x63,x64,x65,x66,x67,x68,x69,x70,x71,x72,x73,x74,x75,x76,x77,x78,x79,x80,x81,x82,x83,x84,x85,x86,x87,x88,x89,x90,x91,x92,x93,x94,x95,x96,x97,x98,x99,x100,x101,x102,x103,x104,x105,x106,x107,x108,x109,x110,x111,x112,x113,x114,x115,x116,x117,x118,x119,...) P##x119
-#define PP2_TUPLE_AT_120(P,x0,x1,x2,x3,x4,x5,x6,x7,x8,x9,x10,x11,x12,x13,x14,x15,x16,x17,x18,x19,x20,x21,x22,x23,x24,x25,x26,x27,x28,x29,x30,x31,x32,x33,x34,x35,x36,x37,x38,x39,x40,x41,x42,x43,x44,x45,x46,x47,x48,x49,x50,x51,x52,x53,x54,x55,x56,x57,x58,x59,x60,x61,x62,x63,x64,x65,x66,x67,x68,x69,x70,x71,x72,x73,x74,x75,x76,x77,x78,x79,x80,x81,x82,x83,x84,x85,x86,x87,x88,x89,x90,x91,x92,x93,x94,x95,x96,x97,x98,x99,x100,x101,x102,x103,x104,x105,x106,x107,x108,x109,x110,x111,x112,x113,x114,x115,x116,x117,x118,x119,x120,...) P##x120
-#define PP2_TUPLE_AT_121(P,x0,x1,x2,x3,x4,x5,x6,x7,x8,x9,x10,x11,x12,x13,x14,x15,x16,x17,x18,x19,x20,x21,x22,x23,x24,x25,x26,x27,x28,x29,x30,x31,x32,x33,x34,x35,x36,x37,x38,x39,x40,x41,x42,x43,x44,x45,x46,x47,x48,x49,x50,x51,x52,x53,x54,x55,x56,x57,x58,x59,x60,x61,x62,x63,x64,x65,x66,x67,x68,x69,x70,x71,x72,x73,x74,x75,x76,x77,x78,x79,x80,x81,x82,x83,x84,x85,x86,x87,x88,x89,x90,x91,x92,x93,x94,x95,x96,x97,x98,x99,x100,x101,x102,x103,x104,x105,x106,x107,x108,x109,x110,x111,x112,x113,x114,x115,x116,x117,x118,x119,x120,x121,...) P##x121
-#define PP2_TUPLE_AT_122(P,x0,x1,x2,x3,x4,x5,x6,x7,x8,x9,x10,x11,x12,x13,x14,x15,x16,x17,x18,x19,x20,x21,x22,x23,x24,x25,x26,x27,x28,x29,x30,x31,x32,x33,x34,x35,x36,x37,x38,x39,x40,x41,x42,x43,x44,x45,x46,x47,x48,x49,x50,x51,x52,x53,x54,x55,x56,x57,x58,x59,x60,x61,x62,x63,x64,x65,x66,x67,x68,x69,x70,x71,x72,x73,x74,x75,x76,x77,x78,x79,x80,x81,x82,x83,x84,x85,x86,x87,x88,x89,x90,x91,x92,x93,x94,x95,x96,x97,x98,x99,x100,x101,x102,x103,x104,x105,x106,x107,x108,x109,x110,x111,x112,x113,x114,x115,x116,x117,x118,x119,x120,x121,x122,...) P##x122
-#define PP2_TUPLE_AT_123(P,x0,x1,x2,x3,x4,x5,x6,x7,x8,x9,x10,x11,x12,x13,x14,x15,x16,x17,x18,x19,x20,x21,x22,x23,x24,x25,x26,x27,x28,x29,x30,x31,x32,x33,x34,x35,x36,x37,x38,x39,x40,x41,x42,x43,x44,x45,x46,x47,x48,x49,x50,x51,x52,x53,x54,x55,x56,x57,x58,x59,x60,x61,x62,x63,x64,x65,x66,x67,x68,x69,x70,x71,x72,x73,x74,x75,x76,x77,x78,x79,x80,x81,x82,x83,x84,x85,x86,x87,x88,x89,x90,x91,x92,x93,x94,x95,x96,x97,x98,x99,x100,x101,x102,x103,x104,x105,x106,x107,x108,x109,x110,x111,x112,x113,x114,x115,x116,x117,x118,x119,x120,x121,x122,x123,...) P##x123
-#define PP2_TUPLE_AT_124(P,x0,x1,x2,x3,x4,x5,x6,x7,x8,x9,x10,x11,x12,x13,x14,x15,x16,x17,x18,x19,x20,x21,x22,x23,x24,x25,x26,x27,x28,x29,x30,x31,x32,x33,x34,x35,x36,x37,x38,x39,x40,x41,x42,x43,x44,x45,x46,x47,x48,x49,x50,x51,x52,x53,x54,x55,x56,x57,x58,x59,x60,x61,x62,x63,x64,x65,x66,x67,x68,x69,x70,x71,x72,x73,x74,x75,x76,x77,x78,x79,x80,x81,x82,x83,x84,x85,x86,x87,x88,x89,x90,x91,x92,x93,x94,x95,x96,x97,x98,x99,x100,x101,x102,x103,x104,x105,x106,x107,x108,x109,x110,x111,x112,x113,x114,x115,x116,x117,x118,x119,x120,x121,x122,x123,x124,...) P##x124
-#define PP2_TUPLE_AT_125(P,x0,x1,x2,x3,x4,x5,x6,x7,x8,x9,x10,x11,x12,x13,x14,x15,x16,x17,x18,x19,x20,x21,x22,x23,x24,x25,x26,x27,x28,x29,x30,x31,x32,x33,x34,x35,x36,x37,x38,x39,x40,x41,x42,x43,x44,x45,x46,x47,x48,x49,x50,x51,x52,x53,x54,x55,x56,x57,x58,x59,x60,x61,x62,x63,x64,x65,x66,x67,x68,x69,x70,x71,x72,x73,x74,x75,x76,x77,x78,x79,x80,x81,x82,x83,x84,x85,x86,x87,x88,x89,x90,x91,x92,x93,x94,x95,x96,x97,x98,x99,x100,x101,x102,x103,x104,x105,x106,x107,x108,x109,x110,x111,x112,x113,x114,x115,x116,x117,x118,x119,x120,x121,x122,x123,x124,x125,...) P##x125
-#define PP2_TUPLE_AT_126(P,x0,x1,x2,x3,x4,x5,x6,x7,x8,x9,x10,x11,x12,x13,x14,x15,x16,x17,x18,x19,x20,x21,x22,x23,x24,x25,x26,x27,x28,x29,x30,x31,x32,x33,x34,x35,x36,x37,x38,x39,x40,x41,x42,x43,x44,x45,x46,x47,x48,x49,x50,x51,x52,x53,x54,x55,x56,x57,x58,x59,x60,x61,x62,x63,x64,x65,x66,x67,x68,x69,x70,x71,x72,x73,x74,x75,x76,x77,x78,x79,x80,x81,x82,x83,x84,x85,x86,x87,x88,x89,x90,x91,x92,x93,x94,x95,x96,x97,x98,x99,x100,x101,x102,x103,x104,x105,x106,x107,x108,x109,x110,x111,x112,x113,x114,x115,x116,x117,x118,x119,x120,x121,x122,x123,x124,x125,x126,...) P##x126
-#define PP2_TUPLE_AT_127(P,x0,x1,x2,x3,x4,x5,x6,x7,x8,x9,x10,x11,x12,x13,x14,x15,x16,x17,x18,x19,x20,x21,x22,x23,x24,x25,x26,x27,x28,x29,x30,x31,x32,x33,x34,x35,x36,x37,x38,x39,x40,x41,x42,x43,x44,x45,x46,x47,x48,x49,x50,x51,x52,x53,x54,x55,x56,x57,x58,x59,x60,x61,x62,x63,x64,x65,x66,x67,x68,x69,x70,x71,x72,x73,x74,x75,x76,x77,x78,x79,x80,x81,x82,x83,x84,x85,x86,x87,x88,x89,x90,x91,x92,x93,x94,x95,x96,x97,x98,x99,x100,x101,x102,x103,x104,x105,x106,x107,x108,x109,x110,x111,x112,x113,x114,x115,x116,x117,x118,x119,x120,x121,x122,x123,x124,x125,x126,x127,...) P##x127
-#endif
-
 #define PP2_ASSOC_FIND(aseq,key,default) IP2_ASSOC_FIND_I(default,IP2_LOOKUP_MATCH_UP_##key aseq)
 #define IP2_ASSOC_FIND_I(default,lookup) PP2_TUPLE_AT_1(,lookup,default)
 
 #endif
-
-#define PP2_INSN_8PP2_THROW_EXCEPTION(P,r0,r1,r2,type,msg,...) )(,8LITERAL,P##type(P##msg))
-
-#endif
-
-
-// ******************** From: head.h
-#ifndef PP2_PRIMITIVE_SEQ_HEAD_H
-#define PP2_PRIMITIVE_SEQ_HEAD_H
-
-
-#define PP2_SEQ_HEAD(seq) IP2_SEQ_HEAD_I(,PP2_SEQ_OPEN_SPLIT_HEAD seq)
-#define IP2_SEQ_HEAD_I(P,x) PP2_TUPLE_AT_0(,x)
-
-#define PP2_SEQ_SPLIT_HEAD(...) (__VA_ARGS__),
-
-#define PP2_SEQ_OPEN_SPLIT_HEAD(...) __VA_ARGS__,
-
-#endif
-
-// ******************** From: eat.h
-/** @file */
-#ifndef PP2_PRIMITIVE_TUPLE_EAT_H
-#define PP2_PRIMITIVE_TUPLE_EAT_H
-
-/**
-* Substitutes none of the provided macro arguments into the macro replacment list,
-* causing all tokens in those arguments to be erased.
-*
-* @param ... the token sequence to erase
-* @returns a \ref Placemarker token
-*/
-#define PP2_EAT(...)
-
-#endif
-
-#define PP2_COMPILE(stx) IP2_LANGUAGE_COMPILE_CHOOSE_EVAL_OR_QUOTE(IP2_LANGUAGE_COMPILE_TEST_IF_QUOTE stx)(stx)
-#define IP2_LANGUAGE_COMPILE_CHOOSE_EVAL_OR_QUOTE(x) PP2_TUPLE_AT_2(IP2_LANGUAGE_COMPILE,x,_QUOTE,)
-#define IP2_LANGUAGE_COMPILE_TEST_IF_QUOTE(...) ,
-
-#define IP2_LANGUAGE_COMPILE(stx) IP2_LANGUAGE_COMPILE_I(((8PP2_THROW_EXCEPTION,8PP2_LANGUAGE_DEFINITION_EXCEPTION,stx),PP2_DEF_##stx))
-#define IP2_LANGUAGE_COMPILE_I(tup) IP2_LANGUAGE_COMPILE_II tup
-#define IP2_LANGUAGE_COMPILE_II(fail_cont,x) IP2_LANGUAGE_COMPILE_III(IP2_LANGUAGE_COMPILE_TEST_SUCCESS_##x,IP2_LANGUAGE_COMPILE_FAIL,) fail_cont
-#define IP2_LANGUAGE_COMPILE_III(...) PP2_TUPLE_AT_1(,__VA_ARGS__)
-#define IP2_LANGUAGE_COMPILE_TEST_SUCCESS_ ,PP2_EAT,
-#define IP2_LANGUAGE_COMPILE_FAIL(...) __VA_ARGS__
-
-#define IP2_LANGUAGE_COMPILE_QUOTE(tok_tup) IP2_LANGUAGE_COMPILE_QUOTE_I tok_tup)
-#define IP2_LANGUAGE_COMPILE_QUOTE_I(...) 8PP2_LOAD_CONST,(,Quote,(__VA_ARGS__)),PP2_COMPILE_LANGUAGE_RETURN(
-
-
-#define PP2_COMPILE_UNSAFE(stx) IP2_LANGUAGE_COMPILE_UNSAFE((PP2_DEF_##stx))
-#define IP2_LANGUAGE_COMPILE_UNSAFE(x) PP2_EAT x
-
-
-#define PP2_COMPILE_OR_DEFAULT(stx,default) IP2_LANGUAGE_COMPILE_I((default,PP2_DEF_##stx))
-
-
-#define PP2_INSN_8PP2_LANGUAGE_COMPILE(P,r0,r1,r2,stx,...) (,P##r0,P##r1,P##r2,PP2_COMPILE(P##stx),P##__VA_ARGS__)
-#define PP2_INSN_8PP2_LANGUAGE_COMPILE_UNSAFE(P,r0,r1,r2,stx,...) (,P##r0,P##r1,P##r2,PP2_COMPILE_UNSAFE(P##stx),P##__VA_ARGS__)
-#define PP2_INSN_8PP2_LANGUAGE_COMPILE_OR_DEFAULT(P,r0,r1,r2,stx,default,...) (,P##r0,P##r1,P##r2,PP2_COMPILE_OR_DEFAULT(P##stx,P##default),P##__VA_ARGS__)
-
-#endif
-
-
-// ******************** From: comma.h
-/** @file */
-#ifndef PP2_PRIMITIVE_PUNCTUATION_COMMA_H
-#define PP2_PRIMITIVE_PUNCTUATION_COMMA_H
-
-/**
-*/
-#define PP2_COMMA ,
-
-#define PP2_COMMA_0  ,0
-#define PP2_COMMA_1  ,1
-#define PP2_COMMA_2  ,2
-#define PP2_COMMA_3  ,3
-#define PP2_COMMA_4  ,4
-#define PP2_COMMA_5  ,5
-#define PP2_COMMA_6  ,6
-#define PP2_COMMA_7  ,7
-#define PP2_COMMA_8  ,8
-#define PP2_COMMA_9  ,9
-#define PP2_COMMA_10 ,10
-#define PP2_COMMA_11 ,11
-#define PP2_COMMA_12 ,12
-#define PP2_COMMA_13 ,13
-#define PP2_COMMA_14 ,14
-#define PP2_COMMA_15 ,15
-#define PP2_COMMA_16 ,16
-
-#endif
-
-#define PP2_LANGUAGE_BLOCK(...)                \
-        IP2_LANGUAGE_BLOCK_OVERLOAD(           \
-            __VA_ARGS__,                       \
-            PP2_COMMA_16,                      \
-            PP2_COMMA_15,                      \
-            PP2_COMMA_14,                      \
-            PP2_COMMA_13,                      \
-            PP2_COMMA_12,                      \
-            PP2_COMMA_11,                      \
-            PP2_COMMA_10,                      \
-            PP2_COMMA_9,                       \
-            PP2_COMMA_8,                       \
-            PP2_COMMA_7,                       \
-            PP2_COMMA_6,                       \
-            PP2_COMMA_5,                       \
-            PP2_COMMA_4,                       \
-            PP2_COMMA_3,                       \
-            PP2_COMMA_2,                       \
-            PP2_COMMA_1,                       \
-        )(__VA_ARGS__)
-
-#define IP2_LANGUAGE_BLOCK_OVERLOAD(x0,x1,x2,x3,x4,x5,x6,x7,x8,x9,x10,x11,x12,x13,x14,x15,m,...) PP2_TUPLE_AT_1(IP2_LANGUAGE_BLOCK_EVAL,m,17_OR_MORE)
-
-#define IP2_LANGUAGE_BLOCK_EVAL1(stx0) PP2_COMPILE(stx0)
-#define IP2_LANGUAGE_BLOCK_EVAL2(stx0,stx1) PP2_COMPILE(stx0),PP2_COMPILE(stx1)
-#define IP2_LANGUAGE_BLOCK_EVAL3(stx0,stx1,stx2) PP2_COMPILE(stx0),PP2_COMPILE(stx1),PP2_COMPILE(stx2)
-#define IP2_LANGUAGE_BLOCK_EVAL4(stx0,stx1,stx2,stx3) PP2_COMPILE(stx0),PP2_COMPILE(stx1),PP2_COMPILE(stx2),PP2_COMPILE(stx3)
-#define IP2_LANGUAGE_BLOCK_EVAL5(stx0,stx1,stx2,stx3,stx4) PP2_COMPILE(stx0),PP2_COMPILE(stx1),PP2_COMPILE(stx2),PP2_COMPILE(stx3),PP2_COMPILE(stx4)
-#define IP2_LANGUAGE_BLOCK_EVAL6(stx0,stx1,stx2,stx3,stx4,stx5) PP2_COMPILE(stx0),PP2_COMPILE(stx1),PP2_COMPILE(stx2),PP2_COMPILE(stx3),PP2_COMPILE(stx4),PP2_COMPILE(stx5)
-#define IP2_LANGUAGE_BLOCK_EVAL7(stx0,stx1,stx2,stx3,stx4,stx5,stx6) PP2_COMPILE(stx0),PP2_COMPILE(stx1),PP2_COMPILE(stx2),PP2_COMPILE(stx3),PP2_COMPILE(stx4),PP2_COMPILE(stx5),PP2_COMPILE(stx6)
-#define IP2_LANGUAGE_BLOCK_EVAL8(stx0,stx1,stx2,stx3,stx4,stx5,stx6,stx7) PP2_COMPILE(stx0),PP2_COMPILE(stx1),PP2_COMPILE(stx2),PP2_COMPILE(stx3),PP2_COMPILE(stx4),PP2_COMPILE(stx5),PP2_COMPILE(stx6),PP2_COMPILE(stx7)
-#define IP2_LANGUAGE_BLOCK_EVAL9(stx0,stx1,stx2,stx3,stx4,stx5,stx6,stx7,stx8) PP2_COMPILE(stx0),PP2_COMPILE(stx1),PP2_COMPILE(stx2),PP2_COMPILE(stx3),PP2_COMPILE(stx4),PP2_COMPILE(stx5),PP2_COMPILE(stx6),PP2_COMPILE(stx7),PP2_COMPILE(stx8)
-#define IP2_LANGUAGE_BLOCK_EVAL10(stx0,stx1,stx2,stx3,stx4,stx5,stx6,stx7,stx8,stx9) PP2_COMPILE(stx0),PP2_COMPILE(stx1),PP2_COMPILE(stx2),PP2_COMPILE(stx3),PP2_COMPILE(stx4),PP2_COMPILE(stx5),PP2_COMPILE(stx6),PP2_COMPILE(stx7),PP2_COMPILE(stx8),PP2_COMPILE(stx9)
-#define IP2_LANGUAGE_BLOCK_EVAL11(stx0,stx1,stx2,stx3,stx4,stx5,stx6,stx7,stx8,stx9,stx10) PP2_COMPILE(stx0),PP2_COMPILE(stx1),PP2_COMPILE(stx2),PP2_COMPILE(stx3),PP2_COMPILE(stx4),PP2_COMPILE(stx5),PP2_COMPILE(stx6),PP2_COMPILE(stx7),PP2_COMPILE(stx8),PP2_COMPILE(stx9),PP2_COMPILE(stx10)
-#define IP2_LANGUAGE_BLOCK_EVAL12(stx0,stx1,stx2,stx3,stx4,stx5,stx6,stx7,stx8,stx9,stx10,stx11) PP2_COMPILE(stx0),PP2_COMPILE(stx1),PP2_COMPILE(stx2),PP2_COMPILE(stx3),PP2_COMPILE(stx4),PP2_COMPILE(stx5),PP2_COMPILE(stx6),PP2_COMPILE(stx7),PP2_COMPILE(stx8),PP2_COMPILE(stx9),PP2_COMPILE(stx10),PP2_COMPILE(stx11)
-#define IP2_LANGUAGE_BLOCK_EVAL13(stx0,stx1,stx2,stx3,stx4,stx5,stx6,stx7,stx8,stx9,stx10,stx11,stx12) PP2_COMPILE(stx0),PP2_COMPILE(stx1),PP2_COMPILE(stx2),PP2_COMPILE(stx3),PP2_COMPILE(stx4),PP2_COMPILE(stx5),PP2_COMPILE(stx6),PP2_COMPILE(stx7),PP2_COMPILE(stx8),PP2_COMPILE(stx9),PP2_COMPILE(stx10),PP2_COMPILE(stx11),PP2_COMPILE(stx12)
-#define IP2_LANGUAGE_BLOCK_EVAL14(stx0,stx1,stx2,stx3,stx4,stx5,stx6,stx7,stx8,stx9,stx10,stx11,stx12,stx13) PP2_COMPILE(stx0),PP2_COMPILE(stx1),PP2_COMPILE(stx2),PP2_COMPILE(stx3),PP2_COMPILE(stx4),PP2_COMPILE(stx5),PP2_COMPILE(stx6),PP2_COMPILE(stx7),PP2_COMPILE(stx8),PP2_COMPILE(stx9),PP2_COMPILE(stx10),PP2_COMPILE(stx11),PP2_COMPILE(stx12),PP2_COMPILE(stx13)
-#define IP2_LANGUAGE_BLOCK_EVAL15(stx0,stx1,stx2,stx3,stx4,stx5,stx6,stx7,stx8,stx9,stx10,stx11,stx12,stx13,stx14) PP2_COMPILE(stx0),PP2_COMPILE(stx1),PP2_COMPILE(stx2),PP2_COMPILE(stx3),PP2_COMPILE(stx4),PP2_COMPILE(stx5),PP2_COMPILE(stx6),PP2_COMPILE(stx7),PP2_COMPILE(stx8),PP2_COMPILE(stx9),PP2_COMPILE(stx10),PP2_COMPILE(stx11),PP2_COMPILE(stx12),PP2_COMPILE(stx13),PP2_COMPILE(stx14)
-#define IP2_LANGUAGE_BLOCK_EVAL16(stx0,stx1,stx2,stx3,stx4,stx5,stx6,stx7,stx8,stx9,stx10,stx11,stx12,stx13,stx14,stx15) PP2_COMPILE(stx0),PP2_COMPILE(stx1),PP2_COMPILE(stx2),PP2_COMPILE(stx3),PP2_COMPILE(stx4),PP2_COMPILE(stx5),PP2_COMPILE(stx6),PP2_COMPILE(stx7),PP2_COMPILE(stx8),PP2_COMPILE(stx9),PP2_COMPILE(stx10),PP2_COMPILE(stx11),PP2_COMPILE(stx12),PP2_COMPILE(stx13),PP2_COMPILE(stx14),PP2_COMPILE(stx15)
-#define IP2_LANGUAGE_BLOCK_EVAL17_OR_MORE(stx0,stx1,stx2,stx3,stx4,stx5,stx6,stx7,stx8,stx9,stx10,stx11,stx12,stx13,stx14,stx15,...) PP2_COMPILE(stx0),PP2_COMPILE(stx1),PP2_COMPILE(stx2),PP2_COMPILE(stx3),PP2_COMPILE(stx4),PP2_COMPILE(stx5),PP2_COMPILE(stx6),PP2_COMPILE(stx7),PP2_COMPILE(stx8),PP2_COMPILE(stx9),PP2_COMPILE(stx10),PP2_COMPILE(stx11),PP2_COMPILE(stx12),PP2_COMPILE(stx13),PP2_COMPILE(stx14),PP2_COMPILE(stx15),8PP2_LANGUAGE_BLOCK,(__VA_ARGS__)
-
-#define PP2_INSN_8PP2_LANGUAGE_BLOCK(P,r0,r1,r2,stx_tuple,...) (,P##r0,P##r1,P##r2,PP2_LANGUAGE_BLOCK P##stx_tuple,P##__VA_ARGS__)
-
-#endif
-
-// ******************** From: object.h
-/** @file */
-#ifndef PP2_LANGUAGE_BASIC_OBJECT_H
-#define PP2_LANGUAGE_BASIC_OBJECT_H
-
-#define PP2_INSN_8PP2_LANGUAGE_OBJECT_ADDR(P,r0,r1,r2,...) (,/*r0=*/PP2_LANGUAGE_OBJECT_ADDR P##r0,P##r1,P##r2,P##__VA_ARGS__)
-#define PP2_INSN_8PP2_LANGUAGE_OBJECT_TYPE(P,r0,r1,r2,...) (,/*r0=*/PP2_LANGUAGE_OBJECT_TYPE P##r0,P##r1,P##r2,P##__VA_ARGS__)
-#define PP2_INSN_8PP2_LANGUAGE_OBJECT_VALUE(P,r0,r1,r2,...) (,/*r0=*/PP2_LANGUAGE_OBJECT_VALUE P##r0,P##r1,P##r2,P##__VA_ARGS__)
-
-#define PP2_LANGUAGE_OBJECT_ADDR(addr,type,value) addr
-#define PP2_LANGUAGE_OBJECT_TYPE(addr,type,value) type
-#define PP2_LANGUAGE_OBJECT_VALUE(addr,type,value) value
-
-#endif
-
-// ******************** From: return.h
-/** @file */
-#ifndef PP2_LANGUAGE_BASIC_RETURN_H
-#define PP2_LANGUAGE_BASIC_RETURN_H
-
-
-
-// ******************** From: context.h
-/** @file */
-#ifndef PP2_MACHINE_CONTEXT_H
-#define PP2_MACHINE_CONTEXT_H
-
-
-// ******************** From: cat.h
-/** @file */
-#ifndef PP2_PRIMITIVE_BASIC_CAT_H
-#define PP2_PRIMITIVE_BASIC_CAT_H
-
-#define PP2_PRIMITIVE_CAT(a,...) a##__VA_ARGS__
-
-#define PP2_CAT(a,...) PP2_PRIMITIVE_CAT(a,__VA_ARGS__)
-
-
-#define PP2_PRIMITIVE_REVERSE_CAT(a,...) __VA_ARGS__##a
-
-#define PP2_REVERSE_CAT(a,...) PP2_PRIMITIVE_REVERSE_CAT(a,__VA_ARGS__)
-
-#endif
-
-// ******************** From: invoke.h
-/** @file */
-#ifndef PP2_PRIMITIVE_BASIC_INVOKE_H
-#define PP2_PRIMITIVE_BASIC_INVOKE_H
-
-
-/**
-*
-*/
-#define PP2_FX(f,x) PP2_##f x
-/**
-*
-*/
-#define PP2_FY(f,y) PP2_##f y
-/**
-*
-*/
-#define PP2_FZ(f,z) PP2_##f z
-/**
-*
-*/
-#define PP2_FW(f,w) PP2_##f w
-
-
-/**
-*
-*/
-#define IP2_FX(f,x) IP2_##f x
-/**
-*
-*/
-#define IP2_FY(f,y) IP2_##f y
-/**
-*
-*/
-#define IP2_FZ(f,z) IP2_##f z
-/**
-*
-*/
-#define IP2_FW(f,w) IP2_##f w
-
-
-/**
-*
-*/
-#define PP2_INVOKE(K,...) PP2_##K(,__VA_ARGS__
-
-/**
-*
-*/
-#define IP2_INVOKE(K,...) IP2_##K(,__VA_ARGS__
-
-#endif
-
-// ******************** From: open.h
-/** @file */
-#ifndef PP2_PRIMITIVE_TUPLE_OPEN_H
-#define PP2_PRIMITIVE_TUPLE_OPEN_H
-
-/**
-* Removes the parentheses surrounding the provided macro arguments, and substitutes the tokens contained
-* between those parentheses into the macro replacement list without changing them.
-*
-* See \link PP2_SCAN \endlink for a comparison between these two macros.
-*
-* @param ... the token sequence to have the outermost parentheses stripped from
-*/
-#define PP2_OPEN(...) __VA_ARGS__
-
-/**
-* @param P
-* @param ...
-*/
-#define PP2_QUOTE_OPEN(P,...) P##__VA_ARGS__
-
-#endif
-
-/**
-*
-*/
-#define PP2_DEFAULT_LOCAL_CTX \
-        (, \
-         /*stack=*/(), \
-         /*labels=*/, \
-         /*arguments=*/, \
-         /*registers=*/(), \
-        )
-
-#define PP2_LOCAL_CTX_GET_STACK PP2_TUPLE_AT_0
-#define PP2_LOCAL_CTX_GET_LABELS PP2_TUPLE_AT_1
-#define PP2_LOCAL_CTX_GET_ARGUMENTS PP2_TUPLE_AT_2
-#define PP2_LOCAL_CTX_GET_REGISTERS PP2_TUPLE_AT_3
-
-#define PP2_LOCAL_CTX_SET_STACK(ctx,v) IP2_LOCAL_CTX_SET_STACK ctx,v)
-#define IP2_LOCAL_CTX_SET_STACK(P,...) IP2_LOCAL_CTX_SET_STACK_I(,P##__VA_ARGS__
-#define IP2_LOCAL_CTX_SET_STACK_I(P,stack,labels,arguments,registers,_,v) (,P##v,P##labels,P##arguments,P##registers,)
-
-#define PP2_LOCAL_CTX_SET_LABELS(ctx,v) IP2_LOCAL_CTX_SET_LABELS ctx,v)
-#define IP2_LOCAL_CTX_SET_LABELS(P,...) IP2_LOCAL_CTX_SET_LABELS_I(,P##__VA_ARGS__
-#define IP2_LOCAL_CTX_SET_LABELS_I(P,stack,labels,arguments,registers,_,v) (,P##stack,P##v,P##arguments,P##registers,)
-
-#define PP2_LOCAL_CTX_SET_ARGUMENTS(ctx,v) IP2_LOCAL_CTX_SET_ARGUMENTS ctx,v)
-#define IP2_LOCAL_CTX_SET_ARGUMENTS(P,...) IP2_LOCAL_CTX_SET_ARGUMENTS_I(,P##__VA_ARGS__
-#define IP2_LOCAL_CTX_SET_ARGUMENTS_I(P,stack,labels,arguments,registers,_,v) (,P##stack,P##labels,P##v,P##registers,)
-
-#define PP2_LOCAL_CTX_SET_REGISTERS(ctx,v) IP2_LOCAL_CTX_SET_REGISTERS ctx,v)
-#define IP2_LOCAL_CTX_SET_REGISTERS(P,...) IP2_LOCAL_CTX_SET_REGISTERS_I(,P##__VA_ARGS__
-#define IP2_LOCAL_CTX_SET_REGISTERS_I(P,stack,labels,arguments,registers,_,v) (,P##stack,P##labels,P##arguments,P##v,)
-
-
-#define PP2_LOCAL_CTX_GET_ARGUMENTS_HEAD(P,stack,labels,arguments,registers,_) PP2_SEQ_HEAD(P##arguments)
-
-#define PP2_LOCAL_CTX_PUSH_ARGUMENT(ctx,v) IP2_LOCAL_CTX_PUSH_ARGUMENT ctx,v)
-#define IP2_LOCAL_CTX_PUSH_ARGUMENT(P,... ) IP2_LOCAL_CTX_PUSH_ARGUMENT_I(,P##__VA_ARGS__
-#define IP2_LOCAL_CTX_PUSH_ARGUMENT_I(P,stack,labels,arguments,registers,_,v) (,P##stack,P##labels,P##arguments(P##v),P##registers,)
-#define PP2_INSN_8PP2_LOCAL_CTX_PUSH_ARGUMENT(P,r0,r1,r2,v,...) (,P##r0,PP2_LOCAL_CTX_PUSH_ARGUMENT(P##r1,P##v),P##r2,P##__VA_ARGS__)
-
-#define PP2_LOCAL_CTX_PUSH_ARGUMENTS(ctx,v) IP2_LOCAL_CTX_PUSH_ARGUMENTS ctx,v)
-#define IP2_LOCAL_CTX_PUSH_ARGUMENTS(P,... ) IP2_LOCAL_CTX_PUSH_ARGUMENTS_I(,P##__VA_ARGS__
-#define IP2_LOCAL_CTX_PUSH_ARGUMENTS_I(P,stack,labels,arguments,registers,_,v) (,P##stack,P##labels,P##arguments P##v,P##registers,)
-#define PP2_INSN_8PP2_LOCAL_CTX_PUSH_ARGUMENTS(P,r0,r1,r2,v,...) (,P##r0,PP2_LOCAL_CTX_PUSH_ARGUMENTS(P##r1,P##v),P##r2,P##__VA_ARGS__)
-
-#define PP2_LOCAL_CTX_PREPEND_ARGUMENT(ctx,v) IP2_LOCAL_CTX_PREPEND_ARGUMENT ctx,v)
-#define IP2_LOCAL_CTX_PREPEND_ARGUMENT(P,... ) IP2_LOCAL_CTX_PREPEND_ARGUMENT_I(,P##__VA_ARGS__
-#define IP2_LOCAL_CTX_PREPEND_ARGUMENT_I(P,stack,labels,arguments,registers,_,v) (,P##stack,P##labels,(P##v)P##arguments,P##registers,)
-#define PP2_INSN_8PP2_LOCAL_CTX_PREPEND_ARGUMENT(P,r0,r1,r2,v,...) (,P##r0,PP2_LOCAL_CTX_PREPEND_ARGUMENT(P##r1,P##v),P##r2,P##__VA_ARGS__)
-
-#define PP2_LOCAL_CTX_PREPEND_ARGUMENTS(ctx,v) IP2_LOCAL_CTX_PREPEND_ARGUMENTS ctx,v)
-#define IP2_LOCAL_CTX_PREPEND_ARGUMENTS(P,... ) IP2_LOCAL_CTX_PREPEND_ARGUMENTS_I(,P##__VA_ARGS__
-#define IP2_LOCAL_CTX_PREPEND_ARGUMENTS_I(P,stack,labels,arguments,registers,_,v) (,P##stack,P##labels,P##v P##arguments,P##registers,)
-#define PP2_INSN_8PP2_LOCAL_CTX_PREPEND_ARGUMENTS(P,r0,r1,r2,v,...) (,P##r0,PP2_LOCAL_CTX_PREPEND_ARGUMENTS(P##r1,P##v),P##r2,P##__VA_ARGS__)
-
-#define PP2_LOCAL_CTX_POP_ARGUMENT(P,stack,labels,arguments,registers,_) (,P##stack,P##labels,PP2_EAT P##arguments,P##registers,)
-#define PP2_INSN_8PP2_LOCAL_CTX_POP_ARGUMENT(P,r0,r1,r2,...) (,PP2_LOCAL_CTX_GET_ARGUMENTS_HEAD P##r1,PP2_LOCAL_CTX_POP_ARGUMENT P##r1,P##r2,P##__VA_ARGS__)
-
-#define PP2_LOCAL_CTX_CLEAR_ARGUMENTS(P,stack,labels,arguments,registers,_) (,P##stack,P##labels,/*arguments=*/,P##registers,)
-#define PP2_INSN_8PP2_LOCAL_CTX_CLEAR_ARGUMENTS(P,r0,r1,r2,...) (,P##r0,PP2_LOCAL_CTX_CLEAR_ARGUMENTS P##r1,P##r2,P##__VA_ARGS__)
-
-/* Argument-stack spilling for nested calls. The argument list is a single
- * shared stack, so evaluating a call argument that is itself a call would
- * scoop up the enclosing call's in-flight operands (its parked callee and any
- * already-evaluated sibling arguments). SPILL saves the whole current argument
- * list as one frame on the register spill-stack (a LIFO) and empties the
- * argument list, so the argument evaluates on a private, empty stack; nested
- * calls spill further, giving each call depth its own frame. UNSPILL_PUSH
- * restores the saved frame and pushes the just-evaluated argument (r0) onto it.
- * Spills are strictly LIFO and balanced (one SPILL + one UNSPILL_PUSH bracket
- * each argument), so the register field behaves as a proper call-frame stack. */
-#define PP2_LOCAL_CTX_SPILL_ARGUMENTS(P,stack,labels,arguments,registers,_) (,P##stack,P##labels,/*arguments=*/,/*registers=*/(P##arguments)P##registers,)
-#define PP2_INSN_8PP2_ARGS_SPILL(P,r0,r1,r2,...) (,P##r0,PP2_LOCAL_CTX_SPILL_ARGUMENTS P##r1,P##r2,P##__VA_ARGS__)
-
-#define PP2_LOCAL_CTX_UNSPILL_PUSH_ARGUMENT(ctx,v) IP2_LOCAL_CTX_UNSPILL_PUSH_ARGUMENT ctx,v)
-#define IP2_LOCAL_CTX_UNSPILL_PUSH_ARGUMENT(P,...) IP2_LOCAL_CTX_UNSPILL_PUSH_ARGUMENT_I(,P##__VA_ARGS__
-#define IP2_LOCAL_CTX_UNSPILL_PUSH_ARGUMENT_I(P,stack,labels,arguments,registers,_,v) IP2_FX(LOCAL_CTX_UNSPILL_PUSH_ARGUMENT_II,(,P##stack,P##labels,(P##v),PP2_SEQ_SPLIT_HEAD P##registers))
-#define IP2_LOCAL_CTX_UNSPILL_PUSH_ARGUMENT_II(P,stack,labels,elem,frame,rest) (,P##stack,P##labels,/*arguments=*/PP2_OPEN P##frame P##elem,/*registers=*/P##rest,)
-#define PP2_INSN_8PP2_ARGS_UNSPILL_PUSH(P,r0,r1,r2,...) (,/*r0=*/,PP2_LOCAL_CTX_UNSPILL_PUSH_ARGUMENT(P##r1,P##r0),P##r2,P##__VA_ARGS__)
-
-/* Local-variable frames for calls. A user function's parameters are bound into
- * name-addressed slots on the local stack, so a nested call whose callee reuses
- * a slot name would clobber the caller's live local. FRAME_ENTER saves the
- * whole local stack onto the same register spill-stack (as one frame) and hands
- * the callee an empty stack; FRAME_LEAVE restores the caller's stack by direct
- * assignment, leaving r0 (the call's result) untouched. FRAME_ENTER/LEAVE and
- * the argument SPILL/UNSPILL_PUSH are each balanced and strictly nested, so the
- * shared register stack stays a well-formed LIFO of activation frames. Only
- * user fns are bracketed (builtin VM_FN methods bind no locals). */
-#define PP2_LOCAL_CTX_FRAME_ENTER(P,stack,labels,arguments,registers,_) (,/*stack=*/(),P##labels,P##arguments,/*registers=*/(P##stack)P##registers,)
-#define PP2_INSN_8PP2_FRAME_ENTER(P,r0,r1,r2,...) (,P##r0,PP2_LOCAL_CTX_FRAME_ENTER P##r1,P##r2,P##__VA_ARGS__)
-
-#define PP2_LOCAL_CTX_FRAME_LEAVE(P,stack,labels,arguments,registers,_) IP2_FX(LOCAL_CTX_FRAME_LEAVE_I,(,P##labels,P##arguments,PP2_SEQ_SPLIT_HEAD P##registers))
-#define IP2_LOCAL_CTX_FRAME_LEAVE_I(P,labels,arguments,frame,rest) (,/*stack=*/PP2_OPEN P##frame,P##labels,P##arguments,/*registers=*/P##rest,)
-#define PP2_INSN_8PP2_FRAME_LEAVE(P,r0,r1,r2,...) (,P##r0,PP2_LOCAL_CTX_FRAME_LEAVE P##r1,P##r2,P##__VA_ARGS__)
-
-/* Closure variant of FRAME_ENTER. A lexical closure captures the environment
- * visible where the function is DEFINED; since loads only ever see the top
- * frame, that top frame is the whole visible environment, so a user fn snapshots
- * its defining stack into its value at creation. On call this installs that
- * captured stack (instead of the empty frame FRAME_ENTER gives) after spilling
- * the caller's stack, so the body sees the closed-over bindings; parameters are
- * then STACK_STOREd on top and shadow any captured binding of the same name.
- * FRAME_LEAVE restores the caller unchanged, so captures are by snapshot. A fn
- * defined with an empty environment captures (), i.e. behaves exactly as before. */
-#define PP2_INSN_8PP2_FRAME_ENTER_CLOSURE(P,r0,r1,r2,captured,...) (,P##r0,IP2_FX(LOCAL_CTX_FRAME_ENTER_CLOSURE,(P##captured,PP2_OPEN P##r1)),P##r2,P##__VA_ARGS__)
-#define IP2_LOCAL_CTX_FRAME_ENTER_CLOSURE(captured,P,stack,labels,arguments,registers,_) (,/*stack=*/PP2_OPEN captured,P##labels,P##arguments,/*registers=*/(P##stack)P##registers,)
-
-#define PP2_LOCAL_CTX_UNPACK_ARGS(P,stack,labels,arguments,registers,_) PP2_REVERSE_CAT(0,IP2_LOCAL_CTX_UNPACK_ARGS P##arguments)
-#define IP2_LOCAL_CTX_UNPACK_ARGS(x) x IP2_LOCAL_CTX_UNPACK_ARGS_UP
-#define IP2_LOCAL_CTX_UNPACK_ARGS_UP(x) ,x IP2_LOCAL_CTX_UNPACK_ARGS_DN
-#define IP2_LOCAL_CTX_UNPACK_ARGS_DN(x) ,x IP2_LOCAL_CTX_UNPACK_ARGS_UP
-#define IP2_LOCAL_CTX_UNPACK_ARGS_UP0
-#define IP2_LOCAL_CTX_UNPACK_ARGS_DN0
-
-/**
-*
-*/
-#define PP2_DEFAULT_VM_STATE \
-        (, \
-         /*heap=*/, \
-         /*eh_stack=*/, \
-        )
-
-
-#define IP2_VM_STATE_SET(idx,val,P,...) PP2_TUPLE_REPLACE_##idx(,P##val,P##__VA_ARGS__)
-
-#endif
-
-// ******************** From: nop.h
-#ifndef PP2_MACHINE_INSNS_NOP_H
-#define PP2_MACHINE_INSNS_NOP_H
-
-#define PP2_INSN_8PP2_NOP(P,r0,r1,r2,...) (,P##r0,P##r1,P##r2,P##__VA_ARGS__)
-
-#define PP2_INSN_8PP2_NOP_UNSAFE(P,r0,r1,r2,insn,...) PP2_INSN_##insn(,P##r0,P##r1,P##r2,P##__VA_ARGS__)
-
-
-#endif
-
-
-// ******************** From: is_nil.h
-/** @file */
-#ifndef PP2_PRIMITIVE_INTROSPECTION_IS_NIL_H
-#define PP2_PRIMITIVE_INTROSPECTION_IS_NIL_H
-
-
-// ******************** From: is_tuple.h
-/** @file */
-#ifndef PP2_PRIMITIVE_INTROSPECTION_IS_TUPLE_H
-#define PP2_PRIMITIVE_INTROSPECTION_IS_TUPLE_H
-
-
-// ******************** From: if.h
-/** @file */
-#ifndef PP2_PRIMITIVE_CONTROL_IF_H
-#define PP2_PRIMITIVE_CONTROL_IF_H
-
-
-#define PP2_IF(...) PP2_PRIMITIVE_CAT(PP2_IF_,__VA_ARGS__)
-#define PP2_IF_0(t,...) __VA_ARGS__
-#define PP2_IF_1(t,...) t
-
-#endif
-
-#define PP2_IS_TUPLE(x) IP2_IS_TUPLE_TEST_I(IP2_IS_TUPLE_TEST_DETECT_TUPLE x,1,0)
-#define IP2_IS_TUPLE_TEST_I(...) PP2_TUPLE_AT_2(PP2_IF_,__VA_ARGS__)
-#define IP2_IS_TUPLE_TEST_DETECT_TUPLE(...) ,
-
-#endif
-
-#define PP2_IS_NIL(x) PP2_IS_TUPLE(x)(PP2_IF_0,PP2_IS_TUPLE(x()))
-
-#define PP2_IS_NIL_NON_TUPLE(x) PP2_IS_TUPLE(x())
-
-#endif
-
-#define PP2_COMPILE_LANGUAGE_RETURN(rhs_stx) \
-        IP2_LANGUAGE_RETURN_CHOOSE_CALL_OR_METHOD(,rhs_stx,IP2_LANGUAGE_RETURN_TEST_IF_CALL rhs_stx), \
-        rhs_stx
-
-#define PP2_INSN_8PP2_LANGUAGE_RETURN(P,r0,r1,r2,method,...) \
-                                     (, \
-                                      P##r0,P##r1,P##r2, \
-                                      IP2_LANGUAGE_RETURN_CHOOSE_CALL_OR_METHOD(, \
-                                          P##method,IP2_LANGUAGE_RETURN_TEST_IF_CALL P##method \
-                                      ), \
-                                      P##method, \
-                                      P##__VA_ARGS__ \
-                                     )
-
-#define IP2_LANGUAGE_RETURN_CHOOSE_CALL_OR_METHOD(P,method,...) \
-        IP2_LANGUAGE_RETURN_TUPLE_AT_1( \
-            __VA_ARGS__, \
-            IP2_LANGUAGE_RETURN_CHOOSE_METHOD_OR_RETURN(, \
-                IP2_LANGUAGE_RETURN_TEST_IF_NOT_METHOD P##method () \
-            ) \
-        )
-#define IP2_LANGUAGE_RETURN_CHOOSE_METHOD_OR_RETURN(P,...) \
-        IP2_LANGUAGE_RETURN_TUPLE_AT_1( \
-            __VA_ARGS__, \
-            8PP2_LANGUAGE_METHOD_CALL \
-        )
-
-#define PP2_INSN_8IP2_LANGUAGE_RETURN_NOP(P,r0,r1,r2,_,...) (,P##r0,P##r1,P##r2,P##__VA_ARGS__)
-#define PP2_INSN_8PP2_LANGUAGE_METHOD_CALL(P,r0,r1,r2,method,...) (,P##r0,PP2_LOCAL_CTX_PUSH_ARGUMENT(P##r1,P##r0),P##r2,IP2_LANGUAGE_RETURN_METHOD_CALL(,P##r0,P##method),P##__VA_ARGS__)
-#define PP2_INSN_8PP2_LANGUAGE_SELF_CALL(P,r0,r1,r2,args_tup,...) (,P##r0,PP2_LOCAL_CTX_PUSH_ARGUMENT(P##r1,P##r0),P##r2,IP2_LANGUAGE_RETURN_METHOD_CALL(,P##r0,call P##args_tup),P##__VA_ARGS__)
-
-#define IP2_LANGUAGE_RETURN_TUPLE_AT_1(_,insn,...) insn
-#define IP2_LANGUAGE_RETURN_TEST_IF_CALL(...) ,8PP2_LANGUAGE_SELF_CALL,
-#define IP2_LANGUAGE_RETURN_TEST_IF_NOT_METHOD(...) ,8IP2_LANGUAGE_RETURN_NOP,
-
-
-#define IP2_LANGUAGE_RETURN_METHOD_CALL(P,obj,method) IP2_FX(LANGUAGE_RETURN_METHOD_CALL_STATIC, (,PP2_LANGUAGE_OBJECT_TYPE P##obj,P##method))
-#define IP2_LANGUAGE_RETURN_METHOD_CALL_STATIC(P,type,method) PP2_COMPILE_OR_DEFAULT(type##_##method,(8IP2_LANGUAGE_RETURN_RESOLVE_INHERITED_METHOD,P##type,P##type,P##method))
-#define IP2_LANGUAGE_RETURN_METHOD_CALL_INHERITED(P,base_type,type,method) PP2_COMPILE_OR_DEFAULT(type##_##method,(8IP2_LANGUAGE_RETURN_RESOLVE_INHERITED_METHOD,P##base_type,P##type,P##method))
-
-#define PP2_INSN_8IP2_LANGUAGE_RETURN_RESOLVE_INHERITED_METHOD(P,r0,r1,r2,base_type,type,method,...) \
-                                                              (, \
-                                                               P##r0,P##r1,P##r2, \
-                                                               PP2_COMPILE_UNSAFE(P##type), \
-                                                               8IP2_LANGUAGE_RETURN_INHERITED_METHOD_CALL,P##base_type,P##method, \
-                                                               P##__VA_ARGS__ \
-                                                              )
-
-#define PP2_INSN_8IP2_LANGUAGE_RETURN_INHERITED_METHOD_CALL(P,r0,r1,r2,base_type,method,...) \
-                                                           (, \
-                                                            /*r0=*/,P##r1,P##r2, \
-                                                            IP2_FX ( \
-                                                                LANGUAGE_RETURN_INHERITED_METHOD_CALL_INVOKE, \
-                                                                (,P##base_type,PP2_LANGUAGE_TYPE_SUPERTYPE_NAME P##r0,P##method) \
-                                                            ), \
-                                                            P##__VA_ARGS__ \
-                                                           )
-#define IP2_LANGUAGE_RETURN_INHERITED_METHOD_CALL_INVOKE(P,type_name,supertype_name,method) \
-        PP2_IS_NIL_NON_TUPLE (P##supertype_name) ( \
-            IP2_LANGUAGE_RETURN_INHERITED_METHOD_CALL_FAIL(type_name##_##method), \
-            IP2_LANGUAGE_RETURN_METHOD_CALL_INHERITED(,P##type_name,P##supertype_name,P##method) \
-        )
-#define IP2_LANGUAGE_RETURN_INHERITED_METHOD_CALL_FAIL(stx) 8PP2_THROW_EXCEPTION,8PP2_LANGUAGE_DEFINITION_EXCEPTION,stx
-
-#define PP2_LANGUAGE_TYPE_SUPERTYPE_NAME(type_addr,type_type,type_value) IP2_LANGUAGE_TYPE_SUPERTYPE_NAME_I type_value
-#define IP2_LANGUAGE_TYPE_SUPERTYPE_NAME_I(P,type_name,supertype_name) P##supertype_name
-
-#endif
-
-// ******************** From: variable.h
-/** @file */
-#ifndef PP2_LANGUAGE_BASIC_VARIABLE_H
-#define PP2_LANGUAGE_BASIC_VARIABLE_H
-
-
-// ******************** From: variable_tables.h
-/** @file */
-#ifndef PP2_LANGUAGE_BASIC_DETAIL_VARIABLE_TABLES_H
-#define PP2_LANGUAGE_BASIC_DETAIL_VARIABLE_TABLES_H
-
-#define PP2_VAR_ADDR_a 0
-#define PP2_VAR_ADDR_b 1
-#define PP2_VAR_ADDR_c 2
-#define PP2_VAR_ADDR_d 3
-#define PP2_VAR_ADDR_e 4
-#define PP2_VAR_ADDR_f 5
-#define PP2_VAR_ADDR_g 6
-#define PP2_VAR_ADDR_h 7
-#define PP2_VAR_ADDR_i 8
-#define PP2_VAR_ADDR_j 9
-#define PP2_VAR_ADDR_k 10
-#define PP2_VAR_ADDR_l 11
-#define PP2_VAR_ADDR_m 12
-#define PP2_VAR_ADDR_n 13
-#define PP2_VAR_ADDR_o 14
-#define PP2_VAR_ADDR_p 15
-#define PP2_VAR_ADDR_q 16
-#define PP2_VAR_ADDR_r 17
-#define PP2_VAR_ADDR_s 18
-#define PP2_VAR_ADDR_t 19
-#define PP2_VAR_ADDR_u 20
-#define PP2_VAR_ADDR_v 21
-#define PP2_VAR_ADDR_w 22
-#define PP2_VAR_ADDR_x 23
-#define PP2_VAR_ADDR_y 24
-#define PP2_VAR_ADDR_z 25
-
-#define PP2_VAR_ADDR_A 26
-#define PP2_VAR_ADDR_B 27
-#define PP2_VAR_ADDR_C 28
-#define PP2_VAR_ADDR_D 29
-#define PP2_VAR_ADDR_E 30
-#define PP2_VAR_ADDR_F 31
-#define PP2_VAR_ADDR_G 32
-#define PP2_VAR_ADDR_H 33
-#define PP2_VAR_ADDR_I 34
-#define PP2_VAR_ADDR_J 35
-#define PP2_VAR_ADDR_K 36
-#define PP2_VAR_ADDR_L 37
-#define PP2_VAR_ADDR_M 38
-#define PP2_VAR_ADDR_N 39
-#define PP2_VAR_ADDR_O 40
-#define PP2_VAR_ADDR_P 41
-#define PP2_VAR_ADDR_Q 42
-#define PP2_VAR_ADDR_R 43
-#define PP2_VAR_ADDR_S 44
-#define PP2_VAR_ADDR_T 45
-#define PP2_VAR_ADDR_U 46
-#define PP2_VAR_ADDR_V 47
-#define PP2_VAR_ADDR_W 48
-#define PP2_VAR_ADDR_X 49
-#define PP2_VAR_ADDR_Y 50
-#define PP2_VAR_ADDR_Z 51
-
-#define PP2_VAR_ADDR_this 52
-
-
-#define PP2_DEF_a )PP2_COMPILE_LANGUAGE_VAR(PP2_VAR_ADDR_a,
-#define PP2_DEF_b )PP2_COMPILE_LANGUAGE_VAR(PP2_VAR_ADDR_b,
-#define PP2_DEF_c )PP2_COMPILE_LANGUAGE_VAR(PP2_VAR_ADDR_c,
-#define PP2_DEF_d )PP2_COMPILE_LANGUAGE_VAR(PP2_VAR_ADDR_d,
-#define PP2_DEF_e )PP2_COMPILE_LANGUAGE_VAR(PP2_VAR_ADDR_e,
-#define PP2_DEF_f )PP2_COMPILE_LANGUAGE_VAR(PP2_VAR_ADDR_f,
-#define PP2_DEF_g )PP2_COMPILE_LANGUAGE_VAR(PP2_VAR_ADDR_g,
-#define PP2_DEF_h )PP2_COMPILE_LANGUAGE_VAR(PP2_VAR_ADDR_h,
-#define PP2_DEF_i )PP2_COMPILE_LANGUAGE_VAR(PP2_VAR_ADDR_i,
-#define PP2_DEF_j )PP2_COMPILE_LANGUAGE_VAR(PP2_VAR_ADDR_j,
-#define PP2_DEF_k )PP2_COMPILE_LANGUAGE_VAR(PP2_VAR_ADDR_k,
-#define PP2_DEF_l )PP2_COMPILE_LANGUAGE_VAR(PP2_VAR_ADDR_l,
-#define PP2_DEF_m )PP2_COMPILE_LANGUAGE_VAR(PP2_VAR_ADDR_m,
-#define PP2_DEF_n )PP2_COMPILE_LANGUAGE_VAR(PP2_VAR_ADDR_n,
-#define PP2_DEF_o )PP2_COMPILE_LANGUAGE_VAR(PP2_VAR_ADDR_o,
-#define PP2_DEF_p )PP2_COMPILE_LANGUAGE_VAR(PP2_VAR_ADDR_p,
-#define PP2_DEF_q )PP2_COMPILE_LANGUAGE_VAR(PP2_VAR_ADDR_q,
-#define PP2_DEF_r )PP2_COMPILE_LANGUAGE_VAR(PP2_VAR_ADDR_r,
-#define PP2_DEF_s )PP2_COMPILE_LANGUAGE_VAR(PP2_VAR_ADDR_s,
-#define PP2_DEF_t )PP2_COMPILE_LANGUAGE_VAR(PP2_VAR_ADDR_t,
-#define PP2_DEF_u )PP2_COMPILE_LANGUAGE_VAR(PP2_VAR_ADDR_u,
-#define PP2_DEF_v )PP2_COMPILE_LANGUAGE_VAR(PP2_VAR_ADDR_v,
-#define PP2_DEF_w )PP2_COMPILE_LANGUAGE_VAR(PP2_VAR_ADDR_w,
-#define PP2_DEF_x )PP2_COMPILE_LANGUAGE_VAR(PP2_VAR_ADDR_x,
-#define PP2_DEF_y )PP2_COMPILE_LANGUAGE_VAR(PP2_VAR_ADDR_y,
-#define PP2_DEF_z )PP2_COMPILE_LANGUAGE_VAR(PP2_VAR_ADDR_z,
-
-#define PP2_DEF_A )PP2_COMPILE_LANGUAGE_VAR(PP2_VAR_ADDR_A,
-#define PP2_DEF_B )PP2_COMPILE_LANGUAGE_VAR(PP2_VAR_ADDR_B,
-#define PP2_DEF_C )PP2_COMPILE_LANGUAGE_VAR(PP2_VAR_ADDR_C,
-#define PP2_DEF_D )PP2_COMPILE_LANGUAGE_VAR(PP2_VAR_ADDR_D,
-#define PP2_DEF_E )PP2_COMPILE_LANGUAGE_VAR(PP2_VAR_ADDR_E,
-#define PP2_DEF_F )PP2_COMPILE_LANGUAGE_VAR(PP2_VAR_ADDR_F,
-#define PP2_DEF_G )PP2_COMPILE_LANGUAGE_VAR(PP2_VAR_ADDR_G,
-#define PP2_DEF_H )PP2_COMPILE_LANGUAGE_VAR(PP2_VAR_ADDR_H,
-#define PP2_DEF_I )PP2_COMPILE_LANGUAGE_VAR(PP2_VAR_ADDR_I,
-#define PP2_DEF_J )PP2_COMPILE_LANGUAGE_VAR(PP2_VAR_ADDR_J,
-#define PP2_DEF_K )PP2_COMPILE_LANGUAGE_VAR(PP2_VAR_ADDR_K,
-#define PP2_DEF_L )PP2_COMPILE_LANGUAGE_VAR(PP2_VAR_ADDR_L,
-#define PP2_DEF_M )PP2_COMPILE_LANGUAGE_VAR(PP2_VAR_ADDR_M,
-#define PP2_DEF_N )PP2_COMPILE_LANGUAGE_VAR(PP2_VAR_ADDR_N,
-#define PP2_DEF_O )PP2_COMPILE_LANGUAGE_VAR(PP2_VAR_ADDR_O,
-#define PP2_DEF_P )PP2_COMPILE_LANGUAGE_VAR(PP2_VAR_ADDR_P,
-#define PP2_DEF_Q )PP2_COMPILE_LANGUAGE_VAR(PP2_VAR_ADDR_Q,
-#define PP2_DEF_R )PP2_COMPILE_LANGUAGE_VAR(PP2_VAR_ADDR_R,
-#define PP2_DEF_S )PP2_COMPILE_LANGUAGE_VAR(PP2_VAR_ADDR_S,
-#define PP2_DEF_T )PP2_COMPILE_LANGUAGE_VAR(PP2_VAR_ADDR_T,
-#define PP2_DEF_U )PP2_COMPILE_LANGUAGE_VAR(PP2_VAR_ADDR_U,
-#define PP2_DEF_V )PP2_COMPILE_LANGUAGE_VAR(PP2_VAR_ADDR_V,
-#define PP2_DEF_W )PP2_COMPILE_LANGUAGE_VAR(PP2_VAR_ADDR_W,
-#define PP2_DEF_X )PP2_COMPILE_LANGUAGE_VAR(PP2_VAR_ADDR_X,
-#define PP2_DEF_Y )PP2_COMPILE_LANGUAGE_VAR(PP2_VAR_ADDR_Y,
-#define PP2_DEF_Z )PP2_COMPILE_LANGUAGE_VAR(PP2_VAR_ADDR_Z,
-
-#define PP2_DEF_this )PP2_COMPILE_LANGUAGE_VAR(PP2_VAR_ADDR_this,
-
-#endif
-
-
-// ******************** From: load.h
-/** @file */
-#ifndef PP2_MACHINE_STACK_LOAD_H
-#define PP2_MACHINE_STACK_LOAD_H
-
-
-// ******************** From: load_tables.h
-/** @file */
-#ifndef PP2_MACHINE_STACK_DETAIL_LOAD_TABLES_H
-#define PP2_MACHINE_STACK_DETAIL_LOAD_TABLES_H
-
-#define PP2_STACK_FRAME_LOAD_0_0(P,value) ,P##value,
-#define PP2_STACK_FRAME_LOAD_UP_0(P,addr,tag,value) PP2_STACK_FRAME_LOAD_0_##addr(,P##value) PP2_STACK_FRAME_LOAD_DN_0
-#define PP2_STACK_FRAME_LOAD_DN_0(P,addr,tag,value) PP2_STACK_FRAME_LOAD_0_##addr(,P##value) PP2_STACK_FRAME_LOAD_UP_0
-
-#define PP2_STACK_FRAME_LOAD_1_1(P,value) ,P##value,
-#define PP2_STACK_FRAME_LOAD_UP_1(P,addr,tag,value) PP2_STACK_FRAME_LOAD_1_##addr(,P##value) PP2_STACK_FRAME_LOAD_DN_1
-#define PP2_STACK_FRAME_LOAD_DN_1(P,addr,tag,value) PP2_STACK_FRAME_LOAD_1_##addr(,P##value) PP2_STACK_FRAME_LOAD_UP_1
-
-#define PP2_STACK_FRAME_LOAD_2_2(P,value) ,P##value,
-#define PP2_STACK_FRAME_LOAD_UP_2(P,addr,tag,value) PP2_STACK_FRAME_LOAD_2_##addr(,P##value) PP2_STACK_FRAME_LOAD_DN_2
-#define PP2_STACK_FRAME_LOAD_DN_2(P,addr,tag,value) PP2_STACK_FRAME_LOAD_2_##addr(,P##value) PP2_STACK_FRAME_LOAD_UP_2
-
-#define PP2_STACK_FRAME_LOAD_3_3(P,value) ,P##value,
-#define PP2_STACK_FRAME_LOAD_UP_3(P,addr,tag,value) PP2_STACK_FRAME_LOAD_3_##addr(,P##value) PP2_STACK_FRAME_LOAD_DN_3
-#define PP2_STACK_FRAME_LOAD_DN_3(P,addr,tag,value) PP2_STACK_FRAME_LOAD_3_##addr(,P##value) PP2_STACK_FRAME_LOAD_UP_3
-
-#define PP2_STACK_FRAME_LOAD_4_4(P,value) ,P##value,
-#define PP2_STACK_FRAME_LOAD_UP_4(P,addr,tag,value) PP2_STACK_FRAME_LOAD_4_##addr(,P##value) PP2_STACK_FRAME_LOAD_DN_4
-#define PP2_STACK_FRAME_LOAD_DN_4(P,addr,tag,value) PP2_STACK_FRAME_LOAD_4_##addr(,P##value) PP2_STACK_FRAME_LOAD_UP_4
-
-#define PP2_STACK_FRAME_LOAD_5_5(P,value) ,P##value,
-#define PP2_STACK_FRAME_LOAD_UP_5(P,addr,tag,value) PP2_STACK_FRAME_LOAD_5_##addr(,P##value) PP2_STACK_FRAME_LOAD_DN_5
-#define PP2_STACK_FRAME_LOAD_DN_5(P,addr,tag,value) PP2_STACK_FRAME_LOAD_5_##addr(,P##value) PP2_STACK_FRAME_LOAD_UP_5
-
-#define PP2_STACK_FRAME_LOAD_6_6(P,value) ,P##value,
-#define PP2_STACK_FRAME_LOAD_UP_6(P,addr,tag,value) PP2_STACK_FRAME_LOAD_6_##addr(,P##value) PP2_STACK_FRAME_LOAD_DN_6
-#define PP2_STACK_FRAME_LOAD_DN_6(P,addr,tag,value) PP2_STACK_FRAME_LOAD_6_##addr(,P##value) PP2_STACK_FRAME_LOAD_UP_6
-
-#define PP2_STACK_FRAME_LOAD_7_7(P,value) ,P##value,
-#define PP2_STACK_FRAME_LOAD_UP_7(P,addr,tag,value) PP2_STACK_FRAME_LOAD_7_##addr(,P##value) PP2_STACK_FRAME_LOAD_DN_7
-#define PP2_STACK_FRAME_LOAD_DN_7(P,addr,tag,value) PP2_STACK_FRAME_LOAD_7_##addr(,P##value) PP2_STACK_FRAME_LOAD_UP_7
-
-#define PP2_STACK_FRAME_LOAD_8_8(P,value) ,P##value,
-#define PP2_STACK_FRAME_LOAD_UP_8(P,addr,tag,value) PP2_STACK_FRAME_LOAD_8_##addr(,P##value) PP2_STACK_FRAME_LOAD_DN_8
-#define PP2_STACK_FRAME_LOAD_DN_8(P,addr,tag,value) PP2_STACK_FRAME_LOAD_8_##addr(,P##value) PP2_STACK_FRAME_LOAD_UP_8
-
-#define PP2_STACK_FRAME_LOAD_9_9(P,value) ,P##value,
-#define PP2_STACK_FRAME_LOAD_UP_9(P,addr,tag,value) PP2_STACK_FRAME_LOAD_9_##addr(,P##value) PP2_STACK_FRAME_LOAD_DN_9
-#define PP2_STACK_FRAME_LOAD_DN_9(P,addr,tag,value) PP2_STACK_FRAME_LOAD_9_##addr(,P##value) PP2_STACK_FRAME_LOAD_UP_9
-
-#define PP2_STACK_FRAME_LOAD_10_10(P,value) ,P##value,
-#define PP2_STACK_FRAME_LOAD_UP_10(P,addr,tag,value) PP2_STACK_FRAME_LOAD_10_##addr(,P##value) PP2_STACK_FRAME_LOAD_DN_10
-#define PP2_STACK_FRAME_LOAD_DN_10(P,addr,tag,value) PP2_STACK_FRAME_LOAD_10_##addr(,P##value) PP2_STACK_FRAME_LOAD_UP_10
-
-#define PP2_STACK_FRAME_LOAD_11_11(P,value) ,P##value,
-#define PP2_STACK_FRAME_LOAD_UP_11(P,addr,tag,value) PP2_STACK_FRAME_LOAD_11_##addr(,P##value) PP2_STACK_FRAME_LOAD_DN_11
-#define PP2_STACK_FRAME_LOAD_DN_11(P,addr,tag,value) PP2_STACK_FRAME_LOAD_11_##addr(,P##value) PP2_STACK_FRAME_LOAD_UP_11
-
-#define PP2_STACK_FRAME_LOAD_12_12(P,value) ,P##value,
-#define PP2_STACK_FRAME_LOAD_UP_12(P,addr,tag,value) PP2_STACK_FRAME_LOAD_12_##addr(,P##value) PP2_STACK_FRAME_LOAD_DN_12
-#define PP2_STACK_FRAME_LOAD_DN_12(P,addr,tag,value) PP2_STACK_FRAME_LOAD_12_##addr(,P##value) PP2_STACK_FRAME_LOAD_UP_12
-
-#define PP2_STACK_FRAME_LOAD_13_13(P,value) ,P##value,
-#define PP2_STACK_FRAME_LOAD_UP_13(P,addr,tag,value) PP2_STACK_FRAME_LOAD_13_##addr(,P##value) PP2_STACK_FRAME_LOAD_DN_13
-#define PP2_STACK_FRAME_LOAD_DN_13(P,addr,tag,value) PP2_STACK_FRAME_LOAD_13_##addr(,P##value) PP2_STACK_FRAME_LOAD_UP_13
-
-#define PP2_STACK_FRAME_LOAD_14_14(P,value) ,P##value,
-#define PP2_STACK_FRAME_LOAD_UP_14(P,addr,tag,value) PP2_STACK_FRAME_LOAD_14_##addr(,P##value) PP2_STACK_FRAME_LOAD_DN_14
-#define PP2_STACK_FRAME_LOAD_DN_14(P,addr,tag,value) PP2_STACK_FRAME_LOAD_14_##addr(,P##value) PP2_STACK_FRAME_LOAD_UP_14
-
-#define PP2_STACK_FRAME_LOAD_15_15(P,value) ,P##value,
-#define PP2_STACK_FRAME_LOAD_UP_15(P,addr,tag,value) PP2_STACK_FRAME_LOAD_15_##addr(,P##value) PP2_STACK_FRAME_LOAD_DN_15
-#define PP2_STACK_FRAME_LOAD_DN_15(P,addr,tag,value) PP2_STACK_FRAME_LOAD_15_##addr(,P##value) PP2_STACK_FRAME_LOAD_UP_15
-
-#define PP2_STACK_FRAME_LOAD_16_16(P,value) ,P##value,
-#define PP2_STACK_FRAME_LOAD_UP_16(P,addr,tag,value) PP2_STACK_FRAME_LOAD_16_##addr(,P##value) PP2_STACK_FRAME_LOAD_DN_16
-#define PP2_STACK_FRAME_LOAD_DN_16(P,addr,tag,value) PP2_STACK_FRAME_LOAD_16_##addr(,P##value) PP2_STACK_FRAME_LOAD_UP_16
-
-#define PP2_STACK_FRAME_LOAD_17_17(P,value) ,P##value,
-#define PP2_STACK_FRAME_LOAD_UP_17(P,addr,tag,value) PP2_STACK_FRAME_LOAD_17_##addr(,P##value) PP2_STACK_FRAME_LOAD_DN_17
-#define PP2_STACK_FRAME_LOAD_DN_17(P,addr,tag,value) PP2_STACK_FRAME_LOAD_17_##addr(,P##value) PP2_STACK_FRAME_LOAD_UP_17
-
-#define PP2_STACK_FRAME_LOAD_18_18(P,value) ,P##value,
-#define PP2_STACK_FRAME_LOAD_UP_18(P,addr,tag,value) PP2_STACK_FRAME_LOAD_18_##addr(,P##value) PP2_STACK_FRAME_LOAD_DN_18
-#define PP2_STACK_FRAME_LOAD_DN_18(P,addr,tag,value) PP2_STACK_FRAME_LOAD_18_##addr(,P##value) PP2_STACK_FRAME_LOAD_UP_18
-
-#define PP2_STACK_FRAME_LOAD_19_19(P,value) ,P##value,
-#define PP2_STACK_FRAME_LOAD_UP_19(P,addr,tag,value) PP2_STACK_FRAME_LOAD_19_##addr(,P##value) PP2_STACK_FRAME_LOAD_DN_19
-#define PP2_STACK_FRAME_LOAD_DN_19(P,addr,tag,value) PP2_STACK_FRAME_LOAD_19_##addr(,P##value) PP2_STACK_FRAME_LOAD_UP_19
-
-#define PP2_STACK_FRAME_LOAD_20_20(P,value) ,P##value,
-#define PP2_STACK_FRAME_LOAD_UP_20(P,addr,tag,value) PP2_STACK_FRAME_LOAD_20_##addr(,P##value) PP2_STACK_FRAME_LOAD_DN_20
-#define PP2_STACK_FRAME_LOAD_DN_20(P,addr,tag,value) PP2_STACK_FRAME_LOAD_20_##addr(,P##value) PP2_STACK_FRAME_LOAD_UP_20
-
-#define PP2_STACK_FRAME_LOAD_21_21(P,value) ,P##value,
-#define PP2_STACK_FRAME_LOAD_UP_21(P,addr,tag,value) PP2_STACK_FRAME_LOAD_21_##addr(,P##value) PP2_STACK_FRAME_LOAD_DN_21
-#define PP2_STACK_FRAME_LOAD_DN_21(P,addr,tag,value) PP2_STACK_FRAME_LOAD_21_##addr(,P##value) PP2_STACK_FRAME_LOAD_UP_21
-
-#define PP2_STACK_FRAME_LOAD_22_22(P,value) ,P##value,
-#define PP2_STACK_FRAME_LOAD_UP_22(P,addr,tag,value) PP2_STACK_FRAME_LOAD_22_##addr(,P##value) PP2_STACK_FRAME_LOAD_DN_22
-#define PP2_STACK_FRAME_LOAD_DN_22(P,addr,tag,value) PP2_STACK_FRAME_LOAD_22_##addr(,P##value) PP2_STACK_FRAME_LOAD_UP_22
-
-#define PP2_STACK_FRAME_LOAD_23_23(P,value) ,P##value,
-#define PP2_STACK_FRAME_LOAD_UP_23(P,addr,tag,value) PP2_STACK_FRAME_LOAD_23_##addr(,P##value) PP2_STACK_FRAME_LOAD_DN_23
-#define PP2_STACK_FRAME_LOAD_DN_23(P,addr,tag,value) PP2_STACK_FRAME_LOAD_23_##addr(,P##value) PP2_STACK_FRAME_LOAD_UP_23
-
-#define PP2_STACK_FRAME_LOAD_24_24(P,value) ,P##value,
-#define PP2_STACK_FRAME_LOAD_UP_24(P,addr,tag,value) PP2_STACK_FRAME_LOAD_24_##addr(,P##value) PP2_STACK_FRAME_LOAD_DN_24
-#define PP2_STACK_FRAME_LOAD_DN_24(P,addr,tag,value) PP2_STACK_FRAME_LOAD_24_##addr(,P##value) PP2_STACK_FRAME_LOAD_UP_24
-
-#define PP2_STACK_FRAME_LOAD_25_25(P,value) ,P##value,
-#define PP2_STACK_FRAME_LOAD_UP_25(P,addr,tag,value) PP2_STACK_FRAME_LOAD_25_##addr(,P##value) PP2_STACK_FRAME_LOAD_DN_25
-#define PP2_STACK_FRAME_LOAD_DN_25(P,addr,tag,value) PP2_STACK_FRAME_LOAD_25_##addr(,P##value) PP2_STACK_FRAME_LOAD_UP_25
-
-#define PP2_STACK_FRAME_LOAD_26_26(P,value) ,P##value,
-#define PP2_STACK_FRAME_LOAD_UP_26(P,addr,tag,value) PP2_STACK_FRAME_LOAD_26_##addr(,P##value) PP2_STACK_FRAME_LOAD_DN_26
-#define PP2_STACK_FRAME_LOAD_DN_26(P,addr,tag,value) PP2_STACK_FRAME_LOAD_26_##addr(,P##value) PP2_STACK_FRAME_LOAD_UP_26
-
-#define PP2_STACK_FRAME_LOAD_27_27(P,value) ,P##value,
-#define PP2_STACK_FRAME_LOAD_UP_27(P,addr,tag,value) PP2_STACK_FRAME_LOAD_27_##addr(,P##value) PP2_STACK_FRAME_LOAD_DN_27
-#define PP2_STACK_FRAME_LOAD_DN_27(P,addr,tag,value) PP2_STACK_FRAME_LOAD_27_##addr(,P##value) PP2_STACK_FRAME_LOAD_UP_27
-
-#define PP2_STACK_FRAME_LOAD_28_28(P,value) ,P##value,
-#define PP2_STACK_FRAME_LOAD_UP_28(P,addr,tag,value) PP2_STACK_FRAME_LOAD_28_##addr(,P##value) PP2_STACK_FRAME_LOAD_DN_28
-#define PP2_STACK_FRAME_LOAD_DN_28(P,addr,tag,value) PP2_STACK_FRAME_LOAD_28_##addr(,P##value) PP2_STACK_FRAME_LOAD_UP_28
-
-#define PP2_STACK_FRAME_LOAD_29_29(P,value) ,P##value,
-#define PP2_STACK_FRAME_LOAD_UP_29(P,addr,tag,value) PP2_STACK_FRAME_LOAD_29_##addr(,P##value) PP2_STACK_FRAME_LOAD_DN_29
-#define PP2_STACK_FRAME_LOAD_DN_29(P,addr,tag,value) PP2_STACK_FRAME_LOAD_29_##addr(,P##value) PP2_STACK_FRAME_LOAD_UP_29
-
-#define PP2_STACK_FRAME_LOAD_30_30(P,value) ,P##value,
-#define PP2_STACK_FRAME_LOAD_UP_30(P,addr,tag,value) PP2_STACK_FRAME_LOAD_30_##addr(,P##value) PP2_STACK_FRAME_LOAD_DN_30
-#define PP2_STACK_FRAME_LOAD_DN_30(P,addr,tag,value) PP2_STACK_FRAME_LOAD_30_##addr(,P##value) PP2_STACK_FRAME_LOAD_UP_30
-
-#define PP2_STACK_FRAME_LOAD_31_31(P,value) ,P##value,
-#define PP2_STACK_FRAME_LOAD_UP_31(P,addr,tag,value) PP2_STACK_FRAME_LOAD_31_##addr(,P##value) PP2_STACK_FRAME_LOAD_DN_31
-#define PP2_STACK_FRAME_LOAD_DN_31(P,addr,tag,value) PP2_STACK_FRAME_LOAD_31_##addr(,P##value) PP2_STACK_FRAME_LOAD_UP_31
-
-#define PP2_STACK_FRAME_LOAD_32_32(P,value) ,P##value,
-#define PP2_STACK_FRAME_LOAD_UP_32(P,addr,tag,value) PP2_STACK_FRAME_LOAD_32_##addr(,P##value) PP2_STACK_FRAME_LOAD_DN_32
-#define PP2_STACK_FRAME_LOAD_DN_32(P,addr,tag,value) PP2_STACK_FRAME_LOAD_32_##addr(,P##value) PP2_STACK_FRAME_LOAD_UP_32
-
-#define PP2_STACK_FRAME_LOAD_33_33(P,value) ,P##value,
-#define PP2_STACK_FRAME_LOAD_UP_33(P,addr,tag,value) PP2_STACK_FRAME_LOAD_33_##addr(,P##value) PP2_STACK_FRAME_LOAD_DN_33
-#define PP2_STACK_FRAME_LOAD_DN_33(P,addr,tag,value) PP2_STACK_FRAME_LOAD_33_##addr(,P##value) PP2_STACK_FRAME_LOAD_UP_33
-
-#define PP2_STACK_FRAME_LOAD_34_34(P,value) ,P##value,
-#define PP2_STACK_FRAME_LOAD_UP_34(P,addr,tag,value) PP2_STACK_FRAME_LOAD_34_##addr(,P##value) PP2_STACK_FRAME_LOAD_DN_34
-#define PP2_STACK_FRAME_LOAD_DN_34(P,addr,tag,value) PP2_STACK_FRAME_LOAD_34_##addr(,P##value) PP2_STACK_FRAME_LOAD_UP_34
-
-#define PP2_STACK_FRAME_LOAD_35_35(P,value) ,P##value,
-#define PP2_STACK_FRAME_LOAD_UP_35(P,addr,tag,value) PP2_STACK_FRAME_LOAD_35_##addr(,P##value) PP2_STACK_FRAME_LOAD_DN_35
-#define PP2_STACK_FRAME_LOAD_DN_35(P,addr,tag,value) PP2_STACK_FRAME_LOAD_35_##addr(,P##value) PP2_STACK_FRAME_LOAD_UP_35
-
-#define PP2_STACK_FRAME_LOAD_36_36(P,value) ,P##value,
-#define PP2_STACK_FRAME_LOAD_UP_36(P,addr,tag,value) PP2_STACK_FRAME_LOAD_36_##addr(,P##value) PP2_STACK_FRAME_LOAD_DN_36
-#define PP2_STACK_FRAME_LOAD_DN_36(P,addr,tag,value) PP2_STACK_FRAME_LOAD_36_##addr(,P##value) PP2_STACK_FRAME_LOAD_UP_36
-
-#define PP2_STACK_FRAME_LOAD_37_37(P,value) ,P##value,
-#define PP2_STACK_FRAME_LOAD_UP_37(P,addr,tag,value) PP2_STACK_FRAME_LOAD_37_##addr(,P##value) PP2_STACK_FRAME_LOAD_DN_37
-#define PP2_STACK_FRAME_LOAD_DN_37(P,addr,tag,value) PP2_STACK_FRAME_LOAD_37_##addr(,P##value) PP2_STACK_FRAME_LOAD_UP_37
-
-#define PP2_STACK_FRAME_LOAD_38_38(P,value) ,P##value,
-#define PP2_STACK_FRAME_LOAD_UP_38(P,addr,tag,value) PP2_STACK_FRAME_LOAD_38_##addr(,P##value) PP2_STACK_FRAME_LOAD_DN_38
-#define PP2_STACK_FRAME_LOAD_DN_38(P,addr,tag,value) PP2_STACK_FRAME_LOAD_38_##addr(,P##value) PP2_STACK_FRAME_LOAD_UP_38
-
-#define PP2_STACK_FRAME_LOAD_39_39(P,value) ,P##value,
-#define PP2_STACK_FRAME_LOAD_UP_39(P,addr,tag,value) PP2_STACK_FRAME_LOAD_39_##addr(,P##value) PP2_STACK_FRAME_LOAD_DN_39
-#define PP2_STACK_FRAME_LOAD_DN_39(P,addr,tag,value) PP2_STACK_FRAME_LOAD_39_##addr(,P##value) PP2_STACK_FRAME_LOAD_UP_39
-
-#define PP2_STACK_FRAME_LOAD_40_40(P,value) ,P##value,
-#define PP2_STACK_FRAME_LOAD_UP_40(P,addr,tag,value) PP2_STACK_FRAME_LOAD_40_##addr(,P##value) PP2_STACK_FRAME_LOAD_DN_40
-#define PP2_STACK_FRAME_LOAD_DN_40(P,addr,tag,value) PP2_STACK_FRAME_LOAD_40_##addr(,P##value) PP2_STACK_FRAME_LOAD_UP_40
-
-#define PP2_STACK_FRAME_LOAD_41_41(P,value) ,P##value,
-#define PP2_STACK_FRAME_LOAD_UP_41(P,addr,tag,value) PP2_STACK_FRAME_LOAD_41_##addr(,P##value) PP2_STACK_FRAME_LOAD_DN_41
-#define PP2_STACK_FRAME_LOAD_DN_41(P,addr,tag,value) PP2_STACK_FRAME_LOAD_41_##addr(,P##value) PP2_STACK_FRAME_LOAD_UP_41
-
-#define PP2_STACK_FRAME_LOAD_42_42(P,value) ,P##value,
-#define PP2_STACK_FRAME_LOAD_UP_42(P,addr,tag,value) PP2_STACK_FRAME_LOAD_42_##addr(,P##value) PP2_STACK_FRAME_LOAD_DN_42
-#define PP2_STACK_FRAME_LOAD_DN_42(P,addr,tag,value) PP2_STACK_FRAME_LOAD_42_##addr(,P##value) PP2_STACK_FRAME_LOAD_UP_42
-
-#define PP2_STACK_FRAME_LOAD_43_43(P,value) ,P##value,
-#define PP2_STACK_FRAME_LOAD_UP_43(P,addr,tag,value) PP2_STACK_FRAME_LOAD_43_##addr(,P##value) PP2_STACK_FRAME_LOAD_DN_43
-#define PP2_STACK_FRAME_LOAD_DN_43(P,addr,tag,value) PP2_STACK_FRAME_LOAD_43_##addr(,P##value) PP2_STACK_FRAME_LOAD_UP_43
-
-#define PP2_STACK_FRAME_LOAD_44_44(P,value) ,P##value,
-#define PP2_STACK_FRAME_LOAD_UP_44(P,addr,tag,value) PP2_STACK_FRAME_LOAD_44_##addr(,P##value) PP2_STACK_FRAME_LOAD_DN_44
-#define PP2_STACK_FRAME_LOAD_DN_44(P,addr,tag,value) PP2_STACK_FRAME_LOAD_44_##addr(,P##value) PP2_STACK_FRAME_LOAD_UP_44
-
-#define PP2_STACK_FRAME_LOAD_45_45(P,value) ,P##value,
-#define PP2_STACK_FRAME_LOAD_UP_45(P,addr,tag,value) PP2_STACK_FRAME_LOAD_45_##addr(,P##value) PP2_STACK_FRAME_LOAD_DN_45
-#define PP2_STACK_FRAME_LOAD_DN_45(P,addr,tag,value) PP2_STACK_FRAME_LOAD_45_##addr(,P##value) PP2_STACK_FRAME_LOAD_UP_45
-
-#define PP2_STACK_FRAME_LOAD_46_46(P,value) ,P##value,
-#define PP2_STACK_FRAME_LOAD_UP_46(P,addr,tag,value) PP2_STACK_FRAME_LOAD_46_##addr(,P##value) PP2_STACK_FRAME_LOAD_DN_46
-#define PP2_STACK_FRAME_LOAD_DN_46(P,addr,tag,value) PP2_STACK_FRAME_LOAD_46_##addr(,P##value) PP2_STACK_FRAME_LOAD_UP_46
-
-#define PP2_STACK_FRAME_LOAD_47_47(P,value) ,P##value,
-#define PP2_STACK_FRAME_LOAD_UP_47(P,addr,tag,value) PP2_STACK_FRAME_LOAD_47_##addr(,P##value) PP2_STACK_FRAME_LOAD_DN_47
-#define PP2_STACK_FRAME_LOAD_DN_47(P,addr,tag,value) PP2_STACK_FRAME_LOAD_47_##addr(,P##value) PP2_STACK_FRAME_LOAD_UP_47
-
-#define PP2_STACK_FRAME_LOAD_48_48(P,value) ,P##value,
-#define PP2_STACK_FRAME_LOAD_UP_48(P,addr,tag,value) PP2_STACK_FRAME_LOAD_48_##addr(,P##value) PP2_STACK_FRAME_LOAD_DN_48
-#define PP2_STACK_FRAME_LOAD_DN_48(P,addr,tag,value) PP2_STACK_FRAME_LOAD_48_##addr(,P##value) PP2_STACK_FRAME_LOAD_UP_48
-
-#define PP2_STACK_FRAME_LOAD_49_49(P,value) ,P##value,
-#define PP2_STACK_FRAME_LOAD_UP_49(P,addr,tag,value) PP2_STACK_FRAME_LOAD_49_##addr(,P##value) PP2_STACK_FRAME_LOAD_DN_49
-#define PP2_STACK_FRAME_LOAD_DN_49(P,addr,tag,value) PP2_STACK_FRAME_LOAD_49_##addr(,P##value) PP2_STACK_FRAME_LOAD_UP_49
-
-#define PP2_STACK_FRAME_LOAD_50_50(P,value) ,P##value,
-#define PP2_STACK_FRAME_LOAD_UP_50(P,addr,tag,value) PP2_STACK_FRAME_LOAD_50_##addr(,P##value) PP2_STACK_FRAME_LOAD_DN_50
-#define PP2_STACK_FRAME_LOAD_DN_50(P,addr,tag,value) PP2_STACK_FRAME_LOAD_50_##addr(,P##value) PP2_STACK_FRAME_LOAD_UP_50
-
-#define PP2_STACK_FRAME_LOAD_51_51(P,value) ,P##value,
-#define PP2_STACK_FRAME_LOAD_UP_51(P,addr,tag,value) PP2_STACK_FRAME_LOAD_51_##addr(,P##value) PP2_STACK_FRAME_LOAD_DN_51
-#define PP2_STACK_FRAME_LOAD_DN_51(P,addr,tag,value) PP2_STACK_FRAME_LOAD_51_##addr(,P##value) PP2_STACK_FRAME_LOAD_UP_51
-
-#define PP2_STACK_FRAME_LOAD_52_52(P,value) ,P##value,
-#define PP2_STACK_FRAME_LOAD_UP_52(P,addr,tag,value) PP2_STACK_FRAME_LOAD_52_##addr(,P##value) PP2_STACK_FRAME_LOAD_DN_52
-#define PP2_STACK_FRAME_LOAD_DN_52(P,addr,tag,value) PP2_STACK_FRAME_LOAD_52_##addr(,P##value) PP2_STACK_FRAME_LOAD_UP_52
-
-#define PP2_STACK_FRAME_LOAD_53_53(P,value) ,P##value,
-#define PP2_STACK_FRAME_LOAD_UP_53(P,addr,tag,value) PP2_STACK_FRAME_LOAD_53_##addr(,P##value) PP2_STACK_FRAME_LOAD_DN_53
-#define PP2_STACK_FRAME_LOAD_DN_53(P,addr,tag,value) PP2_STACK_FRAME_LOAD_53_##addr(,P##value) PP2_STACK_FRAME_LOAD_UP_53
-
-#define PP2_STACK_FRAME_LOAD_54_54(P,value) ,P##value,
-#define PP2_STACK_FRAME_LOAD_UP_54(P,addr,tag,value) PP2_STACK_FRAME_LOAD_54_##addr(,P##value) PP2_STACK_FRAME_LOAD_DN_54
-#define PP2_STACK_FRAME_LOAD_DN_54(P,addr,tag,value) PP2_STACK_FRAME_LOAD_54_##addr(,P##value) PP2_STACK_FRAME_LOAD_UP_54
-
-#define PP2_STACK_FRAME_LOAD_55_55(P,value) ,P##value,
-#define PP2_STACK_FRAME_LOAD_UP_55(P,addr,tag,value) PP2_STACK_FRAME_LOAD_55_##addr(,P##value) PP2_STACK_FRAME_LOAD_DN_55
-#define PP2_STACK_FRAME_LOAD_DN_55(P,addr,tag,value) PP2_STACK_FRAME_LOAD_55_##addr(,P##value) PP2_STACK_FRAME_LOAD_UP_55
-
-#define PP2_STACK_FRAME_LOAD_56_56(P,value) ,P##value,
-#define PP2_STACK_FRAME_LOAD_UP_56(P,addr,tag,value) PP2_STACK_FRAME_LOAD_56_##addr(,P##value) PP2_STACK_FRAME_LOAD_DN_56
-#define PP2_STACK_FRAME_LOAD_DN_56(P,addr,tag,value) PP2_STACK_FRAME_LOAD_56_##addr(,P##value) PP2_STACK_FRAME_LOAD_UP_56
-
-#define PP2_STACK_FRAME_LOAD_57_57(P,value) ,P##value,
-#define PP2_STACK_FRAME_LOAD_UP_57(P,addr,tag,value) PP2_STACK_FRAME_LOAD_57_##addr(,P##value) PP2_STACK_FRAME_LOAD_DN_57
-#define PP2_STACK_FRAME_LOAD_DN_57(P,addr,tag,value) PP2_STACK_FRAME_LOAD_57_##addr(,P##value) PP2_STACK_FRAME_LOAD_UP_57
-
-#define PP2_STACK_FRAME_LOAD_58_58(P,value) ,P##value,
-#define PP2_STACK_FRAME_LOAD_UP_58(P,addr,tag,value) PP2_STACK_FRAME_LOAD_58_##addr(,P##value) PP2_STACK_FRAME_LOAD_DN_58
-#define PP2_STACK_FRAME_LOAD_DN_58(P,addr,tag,value) PP2_STACK_FRAME_LOAD_58_##addr(,P##value) PP2_STACK_FRAME_LOAD_UP_58
-
-#define PP2_STACK_FRAME_LOAD_59_59(P,value) ,P##value,
-#define PP2_STACK_FRAME_LOAD_UP_59(P,addr,tag,value) PP2_STACK_FRAME_LOAD_59_##addr(,P##value) PP2_STACK_FRAME_LOAD_DN_59
-#define PP2_STACK_FRAME_LOAD_DN_59(P,addr,tag,value) PP2_STACK_FRAME_LOAD_59_##addr(,P##value) PP2_STACK_FRAME_LOAD_UP_59
-
-#define PP2_STACK_FRAME_LOAD_60_60(P,value) ,P##value,
-#define PP2_STACK_FRAME_LOAD_UP_60(P,addr,tag,value) PP2_STACK_FRAME_LOAD_60_##addr(,P##value) PP2_STACK_FRAME_LOAD_DN_60
-#define PP2_STACK_FRAME_LOAD_DN_60(P,addr,tag,value) PP2_STACK_FRAME_LOAD_60_##addr(,P##value) PP2_STACK_FRAME_LOAD_UP_60
-
-#define PP2_STACK_FRAME_LOAD_61_61(P,value) ,P##value,
-#define PP2_STACK_FRAME_LOAD_UP_61(P,addr,tag,value) PP2_STACK_FRAME_LOAD_61_##addr(,P##value) PP2_STACK_FRAME_LOAD_DN_61
-#define PP2_STACK_FRAME_LOAD_DN_61(P,addr,tag,value) PP2_STACK_FRAME_LOAD_61_##addr(,P##value) PP2_STACK_FRAME_LOAD_UP_61
-
-#define PP2_STACK_FRAME_LOAD_62_62(P,value) ,P##value,
-#define PP2_STACK_FRAME_LOAD_UP_62(P,addr,tag,value) PP2_STACK_FRAME_LOAD_62_##addr(,P##value) PP2_STACK_FRAME_LOAD_DN_62
-#define PP2_STACK_FRAME_LOAD_DN_62(P,addr,tag,value) PP2_STACK_FRAME_LOAD_62_##addr(,P##value) PP2_STACK_FRAME_LOAD_UP_62
-
-#define PP2_STACK_FRAME_LOAD_63_63(P,value) ,P##value,
-#define PP2_STACK_FRAME_LOAD_UP_63(P,addr,tag,value) PP2_STACK_FRAME_LOAD_63_##addr(,P##value) PP2_STACK_FRAME_LOAD_DN_63
-#define PP2_STACK_FRAME_LOAD_DN_63(P,addr,tag,value) PP2_STACK_FRAME_LOAD_63_##addr(,P##value) PP2_STACK_FRAME_LOAD_UP_63
-
-#endif
-
-
-#define PP2_INSN_8PP2_STACK_LOAD(P,r0,r1,r2,addr,...) \
-                                (, \
-                                    /*r0=*/IP2_FX(STACK_FRAME_LOAD, (,P##addr,IP2_STACK_LOAD_SPLIT_FRAME P##r1)), \
-                                    P##r1,P##r2, \
-                                    P##__VA_ARGS__ \
-                                )
-
-#define IP2_STACK_FRAME_LOAD(P,addr,frame,frame_stack) IP2_STACK_FRAME_LOAD_I(P##addr,PP2_STACK_FRAME_LOAD_UP_##addr P##frame)
-#define IP2_STACK_FRAME_LOAD_I(addr,x) PP2_TUPLE_AT_1(,x,IP2_STACK_FRAME_LOAD_UNBOUND(,addr))
-
-#define IP2_STACK_LOAD_SPLIT_FRAME(P,stack,...) IP2_STACK_LOAD_SPLIT_FRAME_I P##stack
-#define IP2_STACK_LOAD_SPLIT_FRAME_I(...) __VA_ARGS__,
-
-#define IP2_STACK_FRAME_LOAD_UNBOUND(P,addr) /*r0=*/,/*r1=*/,/*r2=*/,8PP2_STACK_FRAME_LOAD_UNBOUND,P##addr
-#define PP2_INSN_8PP2_STACK_FRAME_LOAD_UNBOUND(P,_0,_1,_2,addr,r1,r2,...) (,P##r0,P##r1,P##r2,8PP2_THROW_EXCEPTION,8PP2_LANGUAGE_UNBOUND_LOCAL_EXCEPTION,P##addr,P##__VA_ARGS__)
-
-#endif
-
-// ******************** From: store.h
-/** @file */
-#ifndef PP2_MACHINE_STACK_STORE_H
-#define PP2_MACHINE_STACK_STORE_H
-
-
-// ******************** From: store_tables.h
-/** @file */
-#ifndef PP2_MACHINE_STACK_DETAIL_STORE_TABLES_H
-#define PP2_MACHINE_STACK_DETAIL_STORE_TABLES_H
-
-#define PP2_STACK_FRAME_STORE_0(P,addr,tag,value) PP2_STACK_FRAME_STORE_0_##addr,PP2_STACK_FRAME_STORE_CONTINUE,P##addr,P##tag,P##value,
-#define PP2_STACK_FRAME_STORE_0_0 ,PP2_STACK_FRAME_STORE_BREAK
-
-#define PP2_STACK_FRAME_STORE_1(P,addr,tag,value) PP2_STACK_FRAME_STORE_1_##addr,PP2_STACK_FRAME_STORE_CONTINUE,P##addr,P##tag,P##value,
-#define PP2_STACK_FRAME_STORE_1_1 ,PP2_STACK_FRAME_STORE_BREAK
-
-#define PP2_STACK_FRAME_STORE_2(P,addr,tag,value) PP2_STACK_FRAME_STORE_2_##addr,PP2_STACK_FRAME_STORE_CONTINUE,P##addr,P##tag,P##value,
-#define PP2_STACK_FRAME_STORE_2_2 ,PP2_STACK_FRAME_STORE_BREAK
-
-#define PP2_STACK_FRAME_STORE_3(P,addr,tag,value) PP2_STACK_FRAME_STORE_3_##addr,PP2_STACK_FRAME_STORE_CONTINUE,P##addr,P##tag,P##value,
-#define PP2_STACK_FRAME_STORE_3_3 ,PP2_STACK_FRAME_STORE_BREAK
-
-#define PP2_STACK_FRAME_STORE_4(P,addr,tag,value) PP2_STACK_FRAME_STORE_4_##addr,PP2_STACK_FRAME_STORE_CONTINUE,P##addr,P##tag,P##value,
-#define PP2_STACK_FRAME_STORE_4_4 ,PP2_STACK_FRAME_STORE_BREAK
-
-#define PP2_STACK_FRAME_STORE_5(P,addr,tag,value) PP2_STACK_FRAME_STORE_5_##addr,PP2_STACK_FRAME_STORE_CONTINUE,P##addr,P##tag,P##value,
-#define PP2_STACK_FRAME_STORE_5_5 ,PP2_STACK_FRAME_STORE_BREAK
-
-#define PP2_STACK_FRAME_STORE_6(P,addr,tag,value) PP2_STACK_FRAME_STORE_6_##addr,PP2_STACK_FRAME_STORE_CONTINUE,P##addr,P##tag,P##value,
-#define PP2_STACK_FRAME_STORE_6_6 ,PP2_STACK_FRAME_STORE_BREAK
-
-#define PP2_STACK_FRAME_STORE_7(P,addr,tag,value) PP2_STACK_FRAME_STORE_7_##addr,PP2_STACK_FRAME_STORE_CONTINUE,P##addr,P##tag,P##value,
-#define PP2_STACK_FRAME_STORE_7_7 ,PP2_STACK_FRAME_STORE_BREAK
-
-#define PP2_STACK_FRAME_STORE_8(P,addr,tag,value) PP2_STACK_FRAME_STORE_8_##addr,PP2_STACK_FRAME_STORE_CONTINUE,P##addr,P##tag,P##value,
-#define PP2_STACK_FRAME_STORE_8_8 ,PP2_STACK_FRAME_STORE_BREAK
-
-#define PP2_STACK_FRAME_STORE_9(P,addr,tag,value) PP2_STACK_FRAME_STORE_9_##addr,PP2_STACK_FRAME_STORE_CONTINUE,P##addr,P##tag,P##value,
-#define PP2_STACK_FRAME_STORE_9_9 ,PP2_STACK_FRAME_STORE_BREAK
-
-#define PP2_STACK_FRAME_STORE_10(P,addr,tag,value) PP2_STACK_FRAME_STORE_10_##addr,PP2_STACK_FRAME_STORE_CONTINUE,P##addr,P##tag,P##value,
-#define PP2_STACK_FRAME_STORE_10_10 ,PP2_STACK_FRAME_STORE_BREAK
-
-#define PP2_STACK_FRAME_STORE_11(P,addr,tag,value) PP2_STACK_FRAME_STORE_11_##addr,PP2_STACK_FRAME_STORE_CONTINUE,P##addr,P##tag,P##value,
-#define PP2_STACK_FRAME_STORE_11_11 ,PP2_STACK_FRAME_STORE_BREAK
-
-#define PP2_STACK_FRAME_STORE_12(P,addr,tag,value) PP2_STACK_FRAME_STORE_12_##addr,PP2_STACK_FRAME_STORE_CONTINUE,P##addr,P##tag,P##value,
-#define PP2_STACK_FRAME_STORE_12_12 ,PP2_STACK_FRAME_STORE_BREAK
-
-#define PP2_STACK_FRAME_STORE_13(P,addr,tag,value) PP2_STACK_FRAME_STORE_13_##addr,PP2_STACK_FRAME_STORE_CONTINUE,P##addr,P##tag,P##value,
-#define PP2_STACK_FRAME_STORE_13_13 ,PP2_STACK_FRAME_STORE_BREAK
-
-#define PP2_STACK_FRAME_STORE_14(P,addr,tag,value) PP2_STACK_FRAME_STORE_14_##addr,PP2_STACK_FRAME_STORE_CONTINUE,P##addr,P##tag,P##value,
-#define PP2_STACK_FRAME_STORE_14_14 ,PP2_STACK_FRAME_STORE_BREAK
-
-#define PP2_STACK_FRAME_STORE_15(P,addr,tag,value) PP2_STACK_FRAME_STORE_15_##addr,PP2_STACK_FRAME_STORE_CONTINUE,P##addr,P##tag,P##value,
-#define PP2_STACK_FRAME_STORE_15_15 ,PP2_STACK_FRAME_STORE_BREAK
-
-#define PP2_STACK_FRAME_STORE_16(P,addr,tag,value) PP2_STACK_FRAME_STORE_16_##addr,PP2_STACK_FRAME_STORE_CONTINUE,P##addr,P##tag,P##value,
-#define PP2_STACK_FRAME_STORE_16_16 ,PP2_STACK_FRAME_STORE_BREAK
-
-#define PP2_STACK_FRAME_STORE_17(P,addr,tag,value) PP2_STACK_FRAME_STORE_17_##addr,PP2_STACK_FRAME_STORE_CONTINUE,P##addr,P##tag,P##value,
-#define PP2_STACK_FRAME_STORE_17_17 ,PP2_STACK_FRAME_STORE_BREAK
-
-#define PP2_STACK_FRAME_STORE_18(P,addr,tag,value) PP2_STACK_FRAME_STORE_18_##addr,PP2_STACK_FRAME_STORE_CONTINUE,P##addr,P##tag,P##value,
-#define PP2_STACK_FRAME_STORE_18_18 ,PP2_STACK_FRAME_STORE_BREAK
-
-#define PP2_STACK_FRAME_STORE_19(P,addr,tag,value) PP2_STACK_FRAME_STORE_19_##addr,PP2_STACK_FRAME_STORE_CONTINUE,P##addr,P##tag,P##value,
-#define PP2_STACK_FRAME_STORE_19_19 ,PP2_STACK_FRAME_STORE_BREAK
-
-#define PP2_STACK_FRAME_STORE_20(P,addr,tag,value) PP2_STACK_FRAME_STORE_20_##addr,PP2_STACK_FRAME_STORE_CONTINUE,P##addr,P##tag,P##value,
-#define PP2_STACK_FRAME_STORE_20_20 ,PP2_STACK_FRAME_STORE_BREAK
-
-#define PP2_STACK_FRAME_STORE_21(P,addr,tag,value) PP2_STACK_FRAME_STORE_21_##addr,PP2_STACK_FRAME_STORE_CONTINUE,P##addr,P##tag,P##value,
-#define PP2_STACK_FRAME_STORE_21_21 ,PP2_STACK_FRAME_STORE_BREAK
-
-#define PP2_STACK_FRAME_STORE_22(P,addr,tag,value) PP2_STACK_FRAME_STORE_22_##addr,PP2_STACK_FRAME_STORE_CONTINUE,P##addr,P##tag,P##value,
-#define PP2_STACK_FRAME_STORE_22_22 ,PP2_STACK_FRAME_STORE_BREAK
-
-#define PP2_STACK_FRAME_STORE_23(P,addr,tag,value) PP2_STACK_FRAME_STORE_23_##addr,PP2_STACK_FRAME_STORE_CONTINUE,P##addr,P##tag,P##value,
-#define PP2_STACK_FRAME_STORE_23_23 ,PP2_STACK_FRAME_STORE_BREAK
-
-#define PP2_STACK_FRAME_STORE_24(P,addr,tag,value) PP2_STACK_FRAME_STORE_24_##addr,PP2_STACK_FRAME_STORE_CONTINUE,P##addr,P##tag,P##value,
-#define PP2_STACK_FRAME_STORE_24_24 ,PP2_STACK_FRAME_STORE_BREAK
-
-#define PP2_STACK_FRAME_STORE_25(P,addr,tag,value) PP2_STACK_FRAME_STORE_25_##addr,PP2_STACK_FRAME_STORE_CONTINUE,P##addr,P##tag,P##value,
-#define PP2_STACK_FRAME_STORE_25_25 ,PP2_STACK_FRAME_STORE_BREAK
-
-#define PP2_STACK_FRAME_STORE_26(P,addr,tag,value) PP2_STACK_FRAME_STORE_26_##addr,PP2_STACK_FRAME_STORE_CONTINUE,P##addr,P##tag,P##value,
-#define PP2_STACK_FRAME_STORE_26_26 ,PP2_STACK_FRAME_STORE_BREAK
-
-#define PP2_STACK_FRAME_STORE_27(P,addr,tag,value) PP2_STACK_FRAME_STORE_27_##addr,PP2_STACK_FRAME_STORE_CONTINUE,P##addr,P##tag,P##value,
-#define PP2_STACK_FRAME_STORE_27_27 ,PP2_STACK_FRAME_STORE_BREAK
-
-#define PP2_STACK_FRAME_STORE_28(P,addr,tag,value) PP2_STACK_FRAME_STORE_28_##addr,PP2_STACK_FRAME_STORE_CONTINUE,P##addr,P##tag,P##value,
-#define PP2_STACK_FRAME_STORE_28_28 ,PP2_STACK_FRAME_STORE_BREAK
-
-#define PP2_STACK_FRAME_STORE_29(P,addr,tag,value) PP2_STACK_FRAME_STORE_29_##addr,PP2_STACK_FRAME_STORE_CONTINUE,P##addr,P##tag,P##value,
-#define PP2_STACK_FRAME_STORE_29_29 ,PP2_STACK_FRAME_STORE_BREAK
-
-#define PP2_STACK_FRAME_STORE_30(P,addr,tag,value) PP2_STACK_FRAME_STORE_30_##addr,PP2_STACK_FRAME_STORE_CONTINUE,P##addr,P##tag,P##value,
-#define PP2_STACK_FRAME_STORE_30_30 ,PP2_STACK_FRAME_STORE_BREAK
-
-#define PP2_STACK_FRAME_STORE_31(P,addr,tag,value) PP2_STACK_FRAME_STORE_31_##addr,PP2_STACK_FRAME_STORE_CONTINUE,P##addr,P##tag,P##value,
-#define PP2_STACK_FRAME_STORE_31_31 ,PP2_STACK_FRAME_STORE_BREAK
-
-#define PP2_STACK_FRAME_STORE_32(P,addr,tag,value) PP2_STACK_FRAME_STORE_32_##addr,PP2_STACK_FRAME_STORE_CONTINUE,P##addr,P##tag,P##value,
-#define PP2_STACK_FRAME_STORE_32_32 ,PP2_STACK_FRAME_STORE_BREAK
-
-#define PP2_STACK_FRAME_STORE_33(P,addr,tag,value) PP2_STACK_FRAME_STORE_33_##addr,PP2_STACK_FRAME_STORE_CONTINUE,P##addr,P##tag,P##value,
-#define PP2_STACK_FRAME_STORE_33_33 ,PP2_STACK_FRAME_STORE_BREAK
-
-#define PP2_STACK_FRAME_STORE_34(P,addr,tag,value) PP2_STACK_FRAME_STORE_34_##addr,PP2_STACK_FRAME_STORE_CONTINUE,P##addr,P##tag,P##value,
-#define PP2_STACK_FRAME_STORE_34_34 ,PP2_STACK_FRAME_STORE_BREAK
-
-#define PP2_STACK_FRAME_STORE_35(P,addr,tag,value) PP2_STACK_FRAME_STORE_35_##addr,PP2_STACK_FRAME_STORE_CONTINUE,P##addr,P##tag,P##value,
-#define PP2_STACK_FRAME_STORE_35_35 ,PP2_STACK_FRAME_STORE_BREAK
-
-#define PP2_STACK_FRAME_STORE_36(P,addr,tag,value) PP2_STACK_FRAME_STORE_36_##addr,PP2_STACK_FRAME_STORE_CONTINUE,P##addr,P##tag,P##value,
-#define PP2_STACK_FRAME_STORE_36_36 ,PP2_STACK_FRAME_STORE_BREAK
-
-#define PP2_STACK_FRAME_STORE_37(P,addr,tag,value) PP2_STACK_FRAME_STORE_37_##addr,PP2_STACK_FRAME_STORE_CONTINUE,P##addr,P##tag,P##value,
-#define PP2_STACK_FRAME_STORE_37_37 ,PP2_STACK_FRAME_STORE_BREAK
-
-#define PP2_STACK_FRAME_STORE_38(P,addr,tag,value) PP2_STACK_FRAME_STORE_38_##addr,PP2_STACK_FRAME_STORE_CONTINUE,P##addr,P##tag,P##value,
-#define PP2_STACK_FRAME_STORE_38_38 ,PP2_STACK_FRAME_STORE_BREAK
-
-#define PP2_STACK_FRAME_STORE_39(P,addr,tag,value) PP2_STACK_FRAME_STORE_39_##addr,PP2_STACK_FRAME_STORE_CONTINUE,P##addr,P##tag,P##value,
-#define PP2_STACK_FRAME_STORE_39_39 ,PP2_STACK_FRAME_STORE_BREAK
-
-#define PP2_STACK_FRAME_STORE_40(P,addr,tag,value) PP2_STACK_FRAME_STORE_40_##addr,PP2_STACK_FRAME_STORE_CONTINUE,P##addr,P##tag,P##value,
-#define PP2_STACK_FRAME_STORE_40_40 ,PP2_STACK_FRAME_STORE_BREAK
-
-#define PP2_STACK_FRAME_STORE_41(P,addr,tag,value) PP2_STACK_FRAME_STORE_41_##addr,PP2_STACK_FRAME_STORE_CONTINUE,P##addr,P##tag,P##value,
-#define PP2_STACK_FRAME_STORE_41_41 ,PP2_STACK_FRAME_STORE_BREAK
-
-#define PP2_STACK_FRAME_STORE_42(P,addr,tag,value) PP2_STACK_FRAME_STORE_42_##addr,PP2_STACK_FRAME_STORE_CONTINUE,P##addr,P##tag,P##value,
-#define PP2_STACK_FRAME_STORE_42_42 ,PP2_STACK_FRAME_STORE_BREAK
-
-#define PP2_STACK_FRAME_STORE_43(P,addr,tag,value) PP2_STACK_FRAME_STORE_43_##addr,PP2_STACK_FRAME_STORE_CONTINUE,P##addr,P##tag,P##value,
-#define PP2_STACK_FRAME_STORE_43_43 ,PP2_STACK_FRAME_STORE_BREAK
-
-#define PP2_STACK_FRAME_STORE_44(P,addr,tag,value) PP2_STACK_FRAME_STORE_44_##addr,PP2_STACK_FRAME_STORE_CONTINUE,P##addr,P##tag,P##value,
-#define PP2_STACK_FRAME_STORE_44_44 ,PP2_STACK_FRAME_STORE_BREAK
-
-#define PP2_STACK_FRAME_STORE_45(P,addr,tag,value) PP2_STACK_FRAME_STORE_45_##addr,PP2_STACK_FRAME_STORE_CONTINUE,P##addr,P##tag,P##value,
-#define PP2_STACK_FRAME_STORE_45_45 ,PP2_STACK_FRAME_STORE_BREAK
-
-#define PP2_STACK_FRAME_STORE_46(P,addr,tag,value) PP2_STACK_FRAME_STORE_46_##addr,PP2_STACK_FRAME_STORE_CONTINUE,P##addr,P##tag,P##value,
-#define PP2_STACK_FRAME_STORE_46_46 ,PP2_STACK_FRAME_STORE_BREAK
-
-#define PP2_STACK_FRAME_STORE_47(P,addr,tag,value) PP2_STACK_FRAME_STORE_47_##addr,PP2_STACK_FRAME_STORE_CONTINUE,P##addr,P##tag,P##value,
-#define PP2_STACK_FRAME_STORE_47_47 ,PP2_STACK_FRAME_STORE_BREAK
-
-#define PP2_STACK_FRAME_STORE_48(P,addr,tag,value) PP2_STACK_FRAME_STORE_48_##addr,PP2_STACK_FRAME_STORE_CONTINUE,P##addr,P##tag,P##value,
-#define PP2_STACK_FRAME_STORE_48_48 ,PP2_STACK_FRAME_STORE_BREAK
-
-#define PP2_STACK_FRAME_STORE_49(P,addr,tag,value) PP2_STACK_FRAME_STORE_49_##addr,PP2_STACK_FRAME_STORE_CONTINUE,P##addr,P##tag,P##value,
-#define PP2_STACK_FRAME_STORE_49_49 ,PP2_STACK_FRAME_STORE_BREAK
-
-#define PP2_STACK_FRAME_STORE_50(P,addr,tag,value) PP2_STACK_FRAME_STORE_50_##addr,PP2_STACK_FRAME_STORE_CONTINUE,P##addr,P##tag,P##value,
-#define PP2_STACK_FRAME_STORE_50_50 ,PP2_STACK_FRAME_STORE_BREAK
-
-#define PP2_STACK_FRAME_STORE_51(P,addr,tag,value) PP2_STACK_FRAME_STORE_51_##addr,PP2_STACK_FRAME_STORE_CONTINUE,P##addr,P##tag,P##value,
-#define PP2_STACK_FRAME_STORE_51_51 ,PP2_STACK_FRAME_STORE_BREAK
-
-#define PP2_STACK_FRAME_STORE_52(P,addr,tag,value) PP2_STACK_FRAME_STORE_52_##addr,PP2_STACK_FRAME_STORE_CONTINUE,P##addr,P##tag,P##value,
-#define PP2_STACK_FRAME_STORE_52_52 ,PP2_STACK_FRAME_STORE_BREAK
-
-#define PP2_STACK_FRAME_STORE_53(P,addr,tag,value) PP2_STACK_FRAME_STORE_53_##addr,PP2_STACK_FRAME_STORE_CONTINUE,P##addr,P##tag,P##value,
-#define PP2_STACK_FRAME_STORE_53_53 ,PP2_STACK_FRAME_STORE_BREAK
-
-#define PP2_STACK_FRAME_STORE_54(P,addr,tag,value) PP2_STACK_FRAME_STORE_54_##addr,PP2_STACK_FRAME_STORE_CONTINUE,P##addr,P##tag,P##value,
-#define PP2_STACK_FRAME_STORE_54_54 ,PP2_STACK_FRAME_STORE_BREAK
-
-#define PP2_STACK_FRAME_STORE_55(P,addr,tag,value) PP2_STACK_FRAME_STORE_55_##addr,PP2_STACK_FRAME_STORE_CONTINUE,P##addr,P##tag,P##value,
-#define PP2_STACK_FRAME_STORE_55_55 ,PP2_STACK_FRAME_STORE_BREAK
-
-#define PP2_STACK_FRAME_STORE_56(P,addr,tag,value) PP2_STACK_FRAME_STORE_56_##addr,PP2_STACK_FRAME_STORE_CONTINUE,P##addr,P##tag,P##value,
-#define PP2_STACK_FRAME_STORE_56_56 ,PP2_STACK_FRAME_STORE_BREAK
-
-#define PP2_STACK_FRAME_STORE_57(P,addr,tag,value) PP2_STACK_FRAME_STORE_57_##addr,PP2_STACK_FRAME_STORE_CONTINUE,P##addr,P##tag,P##value,
-#define PP2_STACK_FRAME_STORE_57_57 ,PP2_STACK_FRAME_STORE_BREAK
-
-#define PP2_STACK_FRAME_STORE_58(P,addr,tag,value) PP2_STACK_FRAME_STORE_58_##addr,PP2_STACK_FRAME_STORE_CONTINUE,P##addr,P##tag,P##value,
-#define PP2_STACK_FRAME_STORE_58_58 ,PP2_STACK_FRAME_STORE_BREAK
-
-#define PP2_STACK_FRAME_STORE_59(P,addr,tag,value) PP2_STACK_FRAME_STORE_59_##addr,PP2_STACK_FRAME_STORE_CONTINUE,P##addr,P##tag,P##value,
-#define PP2_STACK_FRAME_STORE_59_59 ,PP2_STACK_FRAME_STORE_BREAK
-
-#define PP2_STACK_FRAME_STORE_60(P,addr,tag,value) PP2_STACK_FRAME_STORE_60_##addr,PP2_STACK_FRAME_STORE_CONTINUE,P##addr,P##tag,P##value,
-#define PP2_STACK_FRAME_STORE_60_60 ,PP2_STACK_FRAME_STORE_BREAK
-
-#define PP2_STACK_FRAME_STORE_61(P,addr,tag,value) PP2_STACK_FRAME_STORE_61_##addr,PP2_STACK_FRAME_STORE_CONTINUE,P##addr,P##tag,P##value,
-#define PP2_STACK_FRAME_STORE_61_61 ,PP2_STACK_FRAME_STORE_BREAK
-
-#define PP2_STACK_FRAME_STORE_62(P,addr,tag,value) PP2_STACK_FRAME_STORE_62_##addr,PP2_STACK_FRAME_STORE_CONTINUE,P##addr,P##tag,P##value,
-#define PP2_STACK_FRAME_STORE_62_62 ,PP2_STACK_FRAME_STORE_BREAK
-
-#define PP2_STACK_FRAME_STORE_63(P,addr,tag,value) PP2_STACK_FRAME_STORE_63_##addr,PP2_STACK_FRAME_STORE_CONTINUE,P##addr,P##tag,P##value,
-#define PP2_STACK_FRAME_STORE_63_63 ,PP2_STACK_FRAME_STORE_BREAK
-
-#endif
-
-
-#define PP2_INSN_8PP2_STACK_STORE(P,value,r1,r2,addr,...) \
-        PP2_FX( \
-                INSN_8PP2_STACK_FRAME_STORE, \
-                (,/*r0=*/,/*r1=*/,/*r2=*/P##r2, \
-                 P##addr,P##value, \
-                 /*frame,frame_stack*/IP2_STACK_STORE_SPLIT_FRAME(PP2_LOCAL_CTX_GET_STACK P##r1), \
-                 8PP2_STACK_FRAME_STORE_FINALIZE,P##r1, \
-                 P##__VA_ARGS__ \
-                ) \
-        )
-#define PP2_INSN_8PP2_STACK_FRAME_STORE(P,r0,r1,r2,addr,value,frame,frame_stack,...) \
-                                       ( \
-                                        IP2_STACK_STORE_II(,P##r0,P##r1,P##r2,P##addr,P##value,P##frame_stack,PP2_STACK_FRAME_STORE_##addr P##frame), \
-                                        P##__VA_ARGS__ \
-                                       )
-
-#define IP2_STACK_STORE_II(P,r0,r1,r2,addr,value,frame_stack,store_result) \
-        IP2_STACK_STORE_III(,P##r0,P##r1,P##r2,P##addr,P##value,P##frame_stack,store_result,PP2_STACK_FRAME_STORE_UNBOUND,)
-
-#define IP2_STACK_STORE_III(P,r0,r1,r2,addr,value,frame_stack,_,continuation,...) \
-        continuation(,P##r0,P##r1,P##r2,P##addr,P##value,P##frame_stack,__VA_ARGS__)
-
-
-#define PP2_STACK_FRAME_STORE_CONTINUE(P,r0,r1,r2,addr,value,frame_stack,b_addr,b_tag,b_value,tail_bindings,...) \
-        ,/*r0=*/P##r0 (,P##b_addr,P##b_tag,P##b_value), \
-        /*r1=*/P##r1, \
-        /*r2=*/P##r2, \
-        /*insn=*/8PP2_STACK_FRAME_STORE,P##addr,P##value,P##tail_bindings,P##frame_stack
-#define PP2_STACK_FRAME_STORE_BREAK(P,r0,r1,r2,addr,value,frame_stack,_,b_addr,b_tag,b_value,tail_bindings,...) \
-        ,/*r0=*/, \
-        /*r1=*/((,P##addr,P##b_tag,P##value) P##r0 P##tail_bindings)P##frame_stack, \
-        /*r2=*/P##r2
-#define PP2_STACK_FRAME_STORE_UNBOUND(P,r0,r1,r2,addr,value,frame_stack,_) \
-        ,/*r0=*/, \
-        /*r1=*/((,P##addr,8LOCAL,P##value) P##r0)P##frame_stack, \
-        /*r2=*/P##r2
-
-
-#define PP2_INSN_8PP2_STACK_FRAME_STORE_FINALIZE(P,acc,new_ctx_stack,vm,ctx,...) (,P##acc,PP2_LOCAL_CTX_SET_STACK(P##ctx,P##new_ctx_stack),P##vm,P##__VA_ARGS__)
-
-#define IP2_STACK_STORE_SPLIT_FRAME(stack) IP2_STACK_STORE_SPLIT_FRAME_I stack
-#define IP2_STACK_STORE_SPLIT_FRAME_I(...) __VA_ARGS__,
-
-#endif
-
-#define PP2_INSN_8PP2_LANGUAGE_VAR(P,r0,r1,r2,addr,rhs_stx,...) \
-        IP2_LANGUAGE_VAR_CHOOSE_LOAD_STORE(PP2_INSN_,IP2_LANGUAGE_VAR_TEST_IF_STORE P##rhs_stx) \
-        (, \
-         P##r0,P##r1,P##r2, \
-         P##addr,P##value, \
-         P##__VA_ARGS__ \
-        )
-
-#define IP2_LANGUAGE_VAR_CHOOSE_LOAD_STORE(P,...) \
-        IP2_LANGUAGE_VAR_CHOOSE_LOAD_STORE_I(P, \
-            __VA_ARGS__, \
-            8IP2_LANGUAGE_VAR_LOAD \
-        )
-#define IP2_LANGUAGE_VAR_CHOOSE_LOAD_STORE_I(P,_,insn,...) P##insn
-#define IP2_LANGUAGE_VAR_TEST_IF_STORE(...) ,8IP2_LANGUAGE_VAR_STORE,
-
-
-#define PP2_INSN_8IP2_LANGUAGE_VAR_STORE(P,r0,r1,r2,addr,value,...) \
-                                        (, \
-                                         P##r0,P##r1,P##r2, \
-                                         IP2_LANGUAGE_VAR_STORE_OPEN P##value,8PP2_STACK_STORE,P##addr, \
-                                         P##__VA_ARGS__ \
-                                        )
-#define IP2_LANGUAGE_VAR_STORE_OPEN(value) PP2_COMPILE(value)
-
-#define PP2_INSN_8IP2_LANGUAGE_VAR_LOAD(P,r0,r1,r2,addr,method,...) \
-                                       (, \\
-                                        P##r0,P##r1,P##r2, \
-                                        8PP2_STACK_LOAD,P##addr,PP2_COMPILE_LANGUAGE_RETURN(P##method), \
-                                        P##__VA_ARGS__ \
-                                       )
-
-
-#define PP2_COMPILE_LANGUAGE_VAR(addr,rhs_stx) \
-        IP2_LANGUAGE_VAR_CHOOSE_LOAD_STORE(,IP2_LANGUAGE_VAR_TEST_IF_STORE rhs_stx),addr,rhs_stx
-
-#endif
-
-
-// ******************** From: const.h
-/** @file */
-#ifndef PP2_LANGUAGE_DEFINITION_CONST_H
-#define PP2_LANGUAGE_DEFINITION_CONST_H
-
-
-
-// ******************** From: load.h
-/** @file */
-#ifndef PP2_MACHINE_INSNS_LOAD_H
-#define PP2_MACHINE_INSNS_LOAD_H
-
-#define PP2_INSN_8PP2_LOAD_CONST(P,r0,r1,r2,value,insn,...) PP2_INSN_##insn(,P##value,P##r1,P##r2,P##__VA_ARGS__)
-
-#endif
-
-#define PP2_CONST(type,value) )PP2_COMPILE_CONST(type,value,
-
-#define PP2_COMPILE_CONST(type,value,rhs_stx) 8PP2_LOAD_CONST,(,type,value),PP2_COMPILE_LANGUAGE_RETURN(rhs_stx)
-
-#endif
-
-// ******************** From: def.h
-/** @file */
-#ifndef PP2_LANGUAGE_DEFINITION_DEF_H
-#define PP2_LANGUAGE_DEFINITION_DEF_H
-
-
-#define PP2_DEF(stx) )PP2_COMPILE_DEF(stx,
-#define PP2_COMPILE_DEF(stx,rhs_stx) 8PP2_LANGUAGE_COMPILE,stx,PP2_COMPILE_LANGUAGE_RETURN(rhs_stx)
-
-#endif
-
-// ******************** From: fn.h
-/** @file */
-#ifndef PP2_LANGUAGE_DEFINITION_FN_H
-#define PP2_LANGUAGE_DEFINITION_FN_H
-
-
-// ******************** From: fn.h
-#ifndef PP2_LANGUAGE_EXPRESSIONS_FN_H
-#define PP2_LANGUAGE_EXPRESSIONS_FN_H
-
-
-// ******************** From: fn.h
-/** @file */
-#ifndef PP2_LANGUAGE_TYPES_FN_H
-#define PP2_LANGUAGE_TYPES_FN_H
-
-
-// ******************** From: type.h
-/** @file */
-#ifndef PP2_LANGUAGE_DEFINITION_TYPE_H
-#define PP2_LANGUAGE_DEFINITION_TYPE_H
-
-
-#define PP2_TYPE(name,super) )PP2_COMPILE_CONST(Type,(,name,super),
-
-#endif
-
-// ******************** From: vm_fn.h
-#ifndef PP2_LANGUAGE_DEFINITION_VM_FN_H
-#define PP2_LANGUAGE_DEFINITION_VM_FN_H
-
-
-
-
-#define PP2_VM_FN(macro,nargs) )PP2_LANGUAGE_COMPILE_VM_FN(,macro,nargs,
-#define PP2_LANGUAGE_COMPILE_VM_FN(P,macro,nargs,rhs_stx) 8PP2_LANGUAGE_VM_FN,P##nargs,P##macro,PP2_COMPILE_LANGUAGE_RETURN(P##rhs_stx)
-
-#define PP2_INSN_8PP2_LANGUAGE_VM_FN(P,r0,r1,r2,nargs,macro,...) \
-                                    (, \
-                                     /*r0=*/(,Fn,(,8PP2_LOCAL_CTX_PREPEND_ARGUMENTS,PP2_LOCAL_CTX_GET_ARGUMENTS P##r1,8PP2_LANGUAGE_VM_FN_CALL,P##macro)), \
-                                     P##r1,P##r2, \
-                                     8PP2_LOCAL_CTX_CLEAR_ARGUMENTS, \
-                                     P##__VA_ARGS__ \
-                                    )
-
-#define PP2_INSN_8PP2_LANGUAGE_VM_FN_CALL(P,r0,r1,r2,macro,...) \
-        IP2_LANGUAGE_VM_FN_CALL( \
-            P##macro, \
-            (, \
-             /*r0=*/,P##r1,P##r2, \
-             PP2_LOCAL_CTX_UNPACK_ARGS P##r1, \
-             8PP2_LOCAL_CTX_CLEAR_ARGUMENTS, \
-             P##__VA_ARGS__ \
-            ) \
-        )
-/* The handler travels through the VM registers as the pp-number `8NAME`, never as
- * an identifier. An identifier that passes through its own expansion is painted
- * blue for the rest of the translation unit, which is exactly what happens when a
- * method appears in its own argument (`3 plus (4 plus (5))`): the outer handler's
- * name rides the register file through the inner handler's expansion, comes out
- * painted, and never expands again. A pp-number cannot be painted, so the real
- * name is pasted back on here, at the last instant before the call. */
-#define IP2_LANGUAGE_VM_FN_CALL(m,args_tup) PP2_INSN_##m args_tup
-
-#endif
-
-
-
-#define PP2_DEF_Fn PP2_TYPE(Fn,Any)
-#define PP2_SYM_Fn(...) __VA_ARGS__
-
-/* Fn(params, body): build a function from its constituent data -- a quote
- * holding the parameter list and a quote holding the body -- exactly as the
- * `fn (params) (body)` literal would. This VM's functions capture no lexical
- * environment, so params + body are the whole of a Fn; there is no closure to
- * pass. The two args arrive as Quote objects: unwrap each to its raw token
- * tuple and hand them to the same 8PP2_LANGUAGE_FN builder the fn keyword uses,
- * so parameter binding, framing and the body block all go through one path. */
-#define PP2_DEF_Fn_construct PP2_VM_FN(8PP2_LANGUAGE_FN_CONSTRUCT,3)
-#define PP2_INSN_8PP2_LANGUAGE_FN_CONSTRUCT(P,r0,r1,r2,self,params_q,body_q,...) \
-        (, \
-         /*r0=*/, \
-         P##r1,P##r2, \
-         8PP2_LANGUAGE_FN,PP2_LANGUAGE_OBJECT_VALUE P##params_q,PP2_LANGUAGE_OBJECT_VALUE P##body_q, \
-         P##__VA_ARGS__ \
-        )
-
-#define PP2_DEF_Fn_call )PP2_COMPILE_LANGUAGE_FN_CALL(,
-#define PP2_COMPILE_LANGUAGE_FN_CALL(P,args_tup) \
-        IP2_COMPILE_LANGUAGE_FN_CALL_CHOOSE_PTR_OR_CALL( \
-            IP2_COMPILE_LANGUAGE_FN_CALL_TEST_IF_CALL P##args_tup\
-        )(,P##args_tup)
-
-#define IP2_COMPILE_LANGUAGE_FN_CALL(P,args_tup) IP2_FW(COMPILE_LANGUAGE_FN_CALL_I,(,PP2_SEQ_SPLIT_HEAD P##args_tup))
-#define IP2_COMPILE_LANGUAGE_FN_CALL_I(P,args_tup,rhs_stx) 8PP2_LANGUAGE_FN_CALL,P##args_tup,PP2_COMPILE_LANGUAGE_RETURN(P##rhs_stx)
-#define IP2_COMPILE_LANGUAGE_FN_CALL_PTR(P,rhs_stx) 8PP2_LANGUAGE_FN_PTR,PP2_COMPILE_LANGUAGE_RETURN(P##rhs_stx)
-
-#define IP2_COMPILE_LANGUAGE_FN_CALL_CHOOSE_PTR_OR_CALL(...) PP2_TUPLE_AT_1(,__VA_ARGS__,IP2_COMPILE_LANGUAGE_FN_CALL_PTR)
-#define IP2_COMPILE_LANGUAGE_FN_CALL_TEST_IF_CALL(...) ,IP2_COMPILE_LANGUAGE_FN_CALL,
-
-
-#define PP2_INSN_8PP2_LANGUAGE_FN_PTR(P,r0,r1,r2,...) \
-                                     (, \
-                                      /*r0=*/(,Fn,(,8PP2_LANGUAGE_FN_PTR_CALL,PP2_LOCAL_CTX_GET_ARGUMENTS P##r1)), \
-                                      /*r1=*/P##r1, \
-                                      /*r2=*/P##r2, \
-                                      8PP2_LOCAL_CTX_CLEAR_ARGUMENTS, \
-                                      P##__VA_ARGS__ \
-                                     )
-
-#define PP2_INSN_8PP2_LANGUAGE_FN_PTR_CALL(P,r0,r1,r2,ptr,...) \
-                                          (, \
-                                           /*r0=*/P##ptr,\
-                                           /*r1=*/P##r1, \
-                                           /*r2=*/P##r2, \
-                                           8PP2_LANGUAGE_FN_CALL_IMPL, \
-                                           P##__VA_ARGS__ \
-                                          )
-
-#define PP2_INSN_8PP2_LANGUAGE_FN_CALL(P,r0,r1,r2,args_tup,...) \
-                                      (, \
-                                       /*r0=*/, \
-                                       /*r1=*/P##r1, \
-                                       /*r2=*/P##r2, \
-                                       PP2_LANGUAGE_FN_PARSE_ARGS P##args_tup, \
-                                       8IP2_LANGUAGE_FN_CALL, \
-                                       P##__VA_ARGS__ \
-                                      )
-
-#define PP2_INSN_8IP2_LANGUAGE_FN_CALL(P,r0,r1,r2,...) \
-                                      (, \
-                                       /*r0=*/PP2_LOCAL_CTX_GET_ARGUMENTS_HEAD P##r1, \
-                                       /*r1=*/PP2_LOCAL_CTX_POP_ARGUMENT P##r1, \
-                                       /*r2=*/P##r2, \
-                                       8PP2_LANGUAGE_FN_CALL_IMPL, \
-                                       P##__VA_ARGS__ \
-                                      )
-
-#define PP2_INSN_8PP2_LANGUAGE_FN_CALL_IMPL(P,r0,r1,r2,...) \
-                                           (, \
-                                            /*r0=*/, \
-                                            /*r1=*/P##r1, \
-                                            /*r2=*/P##r2, \
-                                            IP2_LANGUAGE_FN_CALL_OPEN P##r0, \
-                                            8PP2_LOCAL_CTX_CLEAR_ARGUMENTS, \
-                                            P##__VA_ARGS__ \
-                                           )
-
-#define IP2_LANGUAGE_FN_CALL_OPEN(fn_addr,fn_type,fn_value) PP2_QUOTE_OPEN fn_value
-
-#define PP2_INSN_8PP2_LANGUAGE_FN_PARSE_ARGS(P,r0,r1,r2,args_tup,...) (,P##r0,P##r1,P##r2,PP2_LANGUAGE_FN_PARSE_ARGS P##args_tup,P##__VA_ARGS__)
-#define PP2_LANGUAGE_FN_PARSE_ARGS(...) \
-        IP2_LANGUAGE_FN_CALL_PARSE_ARGS_OVERLOAD( \
-            __VA_ARGS__, \
-            PP2_COMMA_8, \
-            PP2_COMMA_7, \
-            PP2_COMMA_6, \
-            PP2_COMMA_5, \
-            PP2_COMMA_4, \
-            PP2_COMMA_3, \
-            PP2_COMMA_2, \
-            PP2_COMMA_1, \
-        )(,__VA_ARGS__)
-#define IP2_LANGUAGE_FN_CALL_PARSE_ARGS_OVERLOAD(x0,x1,x2,x3,x4,x5,x6,x7,m,...) PP2_TUPLE_AT_1(IP2_LANGUAGE_FN_CALL_PARSE_ARGS_,m,9_OR_MORE)
-
-#define IP2_LANGUAGE_FN_CALL_PARSE_ARGS_0(P,_) 8PP2_NOP
-
-#define IP2_LANGUAGE_FN_CALL_PARSE_ARGS_1(P,a0) PP2_IS_TUPLE(P##a0)(IP2_LANGUAGE_FN_CALL_PARSE_ARGS_1_QUOTE,IP2_LANGUAGE_FN_CALL_PARSE_ARGS_CHOOSE_0_OR_1_ARG(IP2_LANGUAGE_FN_CALL_TEST_IF_0_ARGS P##a0 ()))(,P##a0)
-#define IP2_LANGUAGE_FN_CALL_PARSE_ARGS_1_SYNTAX(P,a0) 8PP2_ARGS_SPILL,IP2_LANGUAGE_COMPILE(P##a0),8PP2_ARGS_UNSPILL_PUSH
-#define IP2_LANGUAGE_FN_CALL_PARSE_ARGS_1_QUOTE(P,a0) 8PP2_ARGS_SPILL,IP2_LANGUAGE_COMPILE_QUOTE(P##a0),8PP2_ARGS_UNSPILL_PUSH
-#define IP2_LANGUAGE_FN_CALL_PARSE_ARGS_CHOOSE_0_OR_1_ARG(...) PP2_TUPLE_AT_1(,__VA_ARGS__,IP2_LANGUAGE_FN_CALL_PARSE_ARGS_1_SYNTAX)
-#define IP2_LANGUAGE_FN_CALL_TEST_IF_0_ARGS() ,IP2_LANGUAGE_FN_CALL_PARSE_ARGS_0,
-
-#define IP2_LANGUAGE_FN_CALL_PARSE_ARGS_2(P,a0,a1) 8PP2_ARGS_SPILL,PP2_COMPILE(P##a0),8PP2_ARGS_UNSPILL_PUSH,8PP2_ARGS_SPILL,PP2_COMPILE(P##a1),8PP2_ARGS_UNSPILL_PUSH
-#define IP2_LANGUAGE_FN_CALL_PARSE_ARGS_3(P,a0,a1,a2) 8PP2_ARGS_SPILL,PP2_COMPILE(P##a0),8PP2_ARGS_UNSPILL_PUSH,8PP2_ARGS_SPILL,PP2_COMPILE(P##a1),8PP2_ARGS_UNSPILL_PUSH,8PP2_ARGS_SPILL,PP2_COMPILE(P##a2),8PP2_ARGS_UNSPILL_PUSH
-#define IP2_LANGUAGE_FN_CALL_PARSE_ARGS_4(P,a0,a1,a2,a3) 8PP2_ARGS_SPILL,PP2_COMPILE(P##a0),8PP2_ARGS_UNSPILL_PUSH,8PP2_ARGS_SPILL,PP2_COMPILE(P##a1),8PP2_ARGS_UNSPILL_PUSH,8PP2_ARGS_SPILL,PP2_COMPILE(P##a2),8PP2_ARGS_UNSPILL_PUSH,8PP2_ARGS_SPILL,PP2_COMPILE(P##a3),8PP2_ARGS_UNSPILL_PUSH
-#define IP2_LANGUAGE_FN_CALL_PARSE_ARGS_5(P,a0,a1,a2,a3,a4) 8PP2_ARGS_SPILL,PP2_COMPILE(P##a0),8PP2_ARGS_UNSPILL_PUSH,8PP2_ARGS_SPILL,PP2_COMPILE(P##a1),8PP2_ARGS_UNSPILL_PUSH,8PP2_ARGS_SPILL,PP2_COMPILE(P##a2),8PP2_ARGS_UNSPILL_PUSH,8PP2_ARGS_SPILL,PP2_COMPILE(P##a3),8PP2_ARGS_UNSPILL_PUSH,8PP2_ARGS_SPILL,PP2_COMPILE(P##a4),8PP2_ARGS_UNSPILL_PUSH
-#define IP2_LANGUAGE_FN_CALL_PARSE_ARGS_6(P,a0,a1,a2,a3,a4,a5) 8PP2_ARGS_SPILL,PP2_COMPILE(P##a0),8PP2_ARGS_UNSPILL_PUSH,8PP2_ARGS_SPILL,PP2_COMPILE(P##a1),8PP2_ARGS_UNSPILL_PUSH,8PP2_ARGS_SPILL,PP2_COMPILE(P##a2),8PP2_ARGS_UNSPILL_PUSH,8PP2_ARGS_SPILL,PP2_COMPILE(P##a3),8PP2_ARGS_UNSPILL_PUSH,8PP2_ARGS_SPILL,PP2_COMPILE(P##a4),8PP2_ARGS_UNSPILL_PUSH,8PP2_ARGS_SPILL,PP2_COMPILE(P##a5),8PP2_ARGS_UNSPILL_PUSH
-#define IP2_LANGUAGE_FN_CALL_PARSE_ARGS_7(P,a0,a1,a2,a3,a4,a5,a6) 8PP2_ARGS_SPILL,PP2_COMPILE(P##a0),8PP2_ARGS_UNSPILL_PUSH,8PP2_ARGS_SPILL,PP2_COMPILE(P##a1),8PP2_ARGS_UNSPILL_PUSH,8PP2_ARGS_SPILL,PP2_COMPILE(P##a2),8PP2_ARGS_UNSPILL_PUSH,8PP2_ARGS_SPILL,PP2_COMPILE(P##a3),8PP2_ARGS_UNSPILL_PUSH,8PP2_ARGS_SPILL,PP2_COMPILE(P##a4),8PP2_ARGS_UNSPILL_PUSH,8PP2_ARGS_SPILL,PP2_COMPILE(P##a5),8PP2_ARGS_UNSPILL_PUSH,8PP2_ARGS_SPILL,PP2_COMPILE(P##a6),8PP2_ARGS_UNSPILL_PUSH
-#define IP2_LANGUAGE_FN_CALL_PARSE_ARGS_8(P,a0,a1,a2,a3,a4,a5,a6,a7) 8PP2_ARGS_SPILL,PP2_COMPILE(P##a0),8PP2_ARGS_UNSPILL_PUSH,8PP2_ARGS_SPILL,PP2_COMPILE(P##a1),8PP2_ARGS_UNSPILL_PUSH,8PP2_ARGS_SPILL,PP2_COMPILE(P##a2),8PP2_ARGS_UNSPILL_PUSH,8PP2_ARGS_SPILL,PP2_COMPILE(P##a3),8PP2_ARGS_UNSPILL_PUSH,8PP2_ARGS_SPILL,PP2_COMPILE(P##a4),8PP2_ARGS_UNSPILL_PUSH,8PP2_ARGS_SPILL,PP2_COMPILE(P##a5),8PP2_ARGS_UNSPILL_PUSH,8PP2_ARGS_SPILL,PP2_COMPILE(P##a6),8PP2_ARGS_UNSPILL_PUSH,8PP2_ARGS_SPILL,PP2_COMPILE(P##a7),8PP2_ARGS_UNSPILL_PUSH
-#define IP2_LANGUAGE_FN_CALL_PARSE_ARGS_9_OR_MORE(P,a0,a1,a2,a3,a4,a5,a6,a7,...) 8PP2_ARGS_SPILL,PP2_COMPILE(P##a0),8PP2_ARGS_UNSPILL_PUSH,8PP2_ARGS_SPILL,PP2_COMPILE(P##a1),8PP2_ARGS_UNSPILL_PUSH,8PP2_ARGS_SPILL,PP2_COMPILE(P##a2),8PP2_ARGS_UNSPILL_PUSH,8PP2_ARGS_SPILL,PP2_COMPILE(P##a3),8PP2_ARGS_UNSPILL_PUSH,8PP2_ARGS_SPILL,PP2_COMPILE(P##a4),8PP2_ARGS_UNSPILL_PUSH,8PP2_ARGS_SPILL,PP2_COMPILE(P##a5),8PP2_ARGS_UNSPILL_PUSH,8PP2_ARGS_SPILL,PP2_COMPILE(P##a6),8PP2_ARGS_UNSPILL_PUSH,8PP2_ARGS_SPILL,PP2_COMPILE(P##a7),8PP2_ARGS_UNSPILL_PUSH,8PP2_LANGUAGE_FN_PARSE_ARGS,(P##__VA_ARGS__)
-
-#define PP2_INSN_8PP2_LANGUAGE_FN_CALL_PUSH_ARG(P,r0,r1,r2,...) \
-                                               (, \
-                                                /*r0=*/, \
-                                                /*r1=*/PP2_LOCAL_CTX_PUSH_ARGUMENT(P##r1,P##r0), \
-                                                /*r2=*/P##r2, \
-                                                P##__VA_ARGS__ \
-                                               )
-
-#endif
-
-
-
-#define PP2_DEF_fn(...) )PP2_COMPILE_LANGUAGE_FN(,(__VA_ARGS__),
-#define PP2_COMPILE_LANGUAGE_FN(P,params,body) 8PP2_LANGUAGE_FN,P##params,IP2_FX(COMPILE_LANGUAGE_FN_I, (,PP2_SEQ_SPLIT_HEAD P##body))
-#define IP2_COMPILE_LANGUAGE_FN_I(P,body,rhs_stx) P##body,PP2_COMPILE_LANGUAGE_RETURN(P##rhs_stx)
-
-#define PP2_INSN_8PP2_LANGUAGE_FN(P,r0,r1,r2,params,body,...) \
-                                 (, \
-                                  /*r0=*/(,Fn,(,8PP2_FRAME_ENTER_CLOSURE,(PP2_LOCAL_CTX_GET_STACK P##r1),IP2_LANGUAGE_FN_PARSE_PARAMS P##params,8PP2_LANGUAGE_BLOCK,P##body,8PP2_FRAME_LEAVE)), \
-                                  P##r1,P##r2, \
-                                  P##__VA_ARGS__ \
-                                 )
-
-#define PP2_INSN_8PP2_LANGUAGE_FN_PARSE_PARAMS(P,r0,r1,r2,params,...) (,P##r0,P##r1,P##r2,IP2_LANGUAGE_FN_PARSE_PARAMS P##params,P##__VA_ARGS__)
-#define IP2_LANGUAGE_FN_PARSE_PARAMS(...) \
-        IP2_LANGUAGE_FN_PARSE_PARAMS_OVERLOAD( \
-            __VA_ARGS__, \
-            PP2_COMMA_8, \
-            PP2_COMMA_7, \
-            PP2_COMMA_6, \
-            PP2_COMMA_5, \
-            PP2_COMMA_4, \
-            PP2_COMMA_3, \
-            PP2_COMMA_2, \
-            PP2_COMMA_1, \
-        )(,__VA_ARGS__)
-#define IP2_LANGUAGE_FN_PARSE_PARAMS_OVERLOAD(x0,x1,x2,x3,x4,x5,x6,x7,m,...) PP2_TUPLE_AT_1(IP2_LANGUAGE_FN_PARSE_PARAMS_,m,9_OR_MORE)
-
-#define IP2_LANGUAGE_FN_PARSE_PARAMS_1(P,p0) IP2_FX(LANGUAGE_FN_PARSE_PARAM_TYPES_1,(,PP2_COMPILE_UNSAFE(P##p0())))
-#define IP2_LANGUAGE_FN_PARSE_PARAMS_2(P,p0,p1) IP2_FX(LANGUAGE_FN_PARSE_PARAM_TYPES_2,(,PP2_COMPILE_UNSAFE(P##p0()),PP2_COMPILE_UNSAFE(P##p1())))
-#define IP2_LANGUAGE_FN_PARSE_PARAMS_3(P,p0,p1,p2) IP2_FX(LANGUAGE_FN_PARSE_PARAM_TYPES_3,(,PP2_COMPILE_UNSAFE(P##p0()),PP2_COMPILE_UNSAFE(P##p1()),PP2_COMPILE_UNSAFE(P##p2())))
-#define IP2_LANGUAGE_FN_PARSE_PARAMS_4(P,p0,p1,p2,p3) IP2_FX(LANGUAGE_FN_PARSE_PARAM_TYPES_4,(,PP2_COMPILE_UNSAFE(P##p0()),PP2_COMPILE_UNSAFE(P##p1()),PP2_COMPILE_UNSAFE(P##p2()),PP2_COMPILE_UNSAFE(P##p3())))
-#define IP2_LANGUAGE_FN_PARSE_PARAMS_5(P,p0,p1,p2,p3,p4) IP2_FX(LANGUAGE_FN_PARSE_PARAM_TYPES_5,(,PP2_COMPILE_UNSAFE(P##p0()),PP2_COMPILE_UNSAFE(P##p1()),PP2_COMPILE_UNSAFE(P##p2()),PP2_COMPILE_UNSAFE(P##p3()),PP2_COMPILE_UNSAFE(P##p4())))
-#define IP2_LANGUAGE_FN_PARSE_PARAMS_6(P,p0,p1,p2,p3,p4,p5) IP2_FX(LANGUAGE_FN_PARSE_PARAM_TYPES_6,(,PP2_COMPILE_UNSAFE(P##p0()),PP2_COMPILE_UNSAFE(P##p1()),PP2_COMPILE_UNSAFE(P##p2()),PP2_COMPILE_UNSAFE(P##p3()),PP2_COMPILE_UNSAFE(P##p4()),PP2_COMPILE_UNSAFE(P##p5())))
-#define IP2_LANGUAGE_FN_PARSE_PARAMS_7(P,p0,p1,p2,p3,p4,p5,p6) IP2_FX(LANGUAGE_FN_PARSE_PARAM_TYPES_7,(,PP2_COMPILE_UNSAFE(P##p0()),PP2_COMPILE_UNSAFE(P##p1()),PP2_COMPILE_UNSAFE(P##p2()),PP2_COMPILE_UNSAFE(P##p3()),PP2_COMPILE_UNSAFE(P##p4()),PP2_COMPILE_UNSAFE(P##p5()),PP2_COMPILE_UNSAFE(P##p6())))
-#define IP2_LANGUAGE_FN_PARSE_PARAMS_8(P,p0,p1,p2,p3,p4,p5,p6,p7) IP2_FX(LANGUAGE_FN_PARSE_PARAM_TYPES_8,(,PP2_COMPILE_UNSAFE(P##p0()),PP2_COMPILE_UNSAFE(P##p1()),PP2_COMPILE_UNSAFE(P##p2()),PP2_COMPILE_UNSAFE(P##p3()),PP2_COMPILE_UNSAFE(P##p4()),PP2_COMPILE_UNSAFE(P##p5()),PP2_COMPILE_UNSAFE(P##p6()),PP2_COMPILE_UNSAFE(P##p7())))
-#define IP2_LANGUAGE_FN_PARSE_PARAMS_9_OR_MORE(P,p0,p1,p2,p3,p4,p5,p6,p7,...) IP2_FX(LANGUAGE_FN_PARSE_PARAM_TYPES_8,(,PP2_COMPILE_UNSAFE(P##p0()),PP2_COMPILE_UNSAFE(P##p1()),PP2_COMPILE_UNSAFE(P##p2()),PP2_COMPILE_UNSAFE(P##p3()),PP2_COMPILE_UNSAFE(P##p4()),PP2_COMPILE_UNSAFE(P##p5()),PP2_COMPILE_UNSAFE(P##p6()),PP2_COMPILE_UNSAFE(P##p7()))),8PP2_LANGUAGE_FN_PARSE_PARAMS,(P##__VA_ARGS__)
-
-#define IP2_LANGUAGE_FN_PARSE_PARAM_TYPES_1(P,i0,a0,x0) 8PP2_LOCAL_CTX_POP_ARGUMENT,8PP2_STACK_STORE,P##a0
-#define IP2_LANGUAGE_FN_PARSE_PARAM_TYPES_2(P,i0,a0,x0,i1,a1,x1) 8PP2_LOCAL_CTX_POP_ARGUMENT,8PP2_STACK_STORE,P##a0,8PP2_LOCAL_CTX_POP_ARGUMENT,8PP2_STACK_STORE,P##a1
-#define IP2_LANGUAGE_FN_PARSE_PARAM_TYPES_3(P,i0,a0,x0,i1,a1,x1,i2,a2,x2) 8PP2_LOCAL_CTX_POP_ARGUMENT,8PP2_STACK_STORE,P##a0,8PP2_LOCAL_CTX_POP_ARGUMENT,8PP2_STACK_STORE,P##a1,8PP2_LOCAL_CTX_POP_ARGUMENT,8PP2_STACK_STORE,P##a2
-#define IP2_LANGUAGE_FN_PARSE_PARAM_TYPES_4(P,i0,a0,x0,i1,a1,x1,i2,a2,x2,i3,a3,x3) 8PP2_LOCAL_CTX_POP_ARGUMENT,8PP2_STACK_STORE,P##a0,8PP2_LOCAL_CTX_POP_ARGUMENT,8PP2_STACK_STORE,P##a1,8PP2_LOCAL_CTX_POP_ARGUMENT,8PP2_STACK_STORE,P##a2,8PP2_LOCAL_CTX_POP_ARGUMENT,8PP2_STACK_STORE,P##a3
-#define IP2_LANGUAGE_FN_PARSE_PARAM_TYPES_5(P,i0,a0,x0,i1,a1,x1,i2,a2,x2,i3,a3,x3,i4,a4,x4) 8PP2_LOCAL_CTX_POP_ARGUMENT,8PP2_STACK_STORE,P##a0,8PP2_LOCAL_CTX_POP_ARGUMENT,8PP2_STACK_STORE,P##a1,8PP2_LOCAL_CTX_POP_ARGUMENT,8PP2_STACK_STORE,P##a2,8PP2_LOCAL_CTX_POP_ARGUMENT,8PP2_STACK_STORE,P##a3,8PP2_LOCAL_CTX_POP_ARGUMENT,8PP2_STACK_STORE,P##a4
-#define IP2_LANGUAGE_FN_PARSE_PARAM_TYPES_6(P,i0,a0,x0,i1,a1,x1,i2,a2,x2,i3,a3,x3,i4,a4,x4,i5,a5,x5) 8PP2_LOCAL_CTX_POP_ARGUMENT,8PP2_STACK_STORE,P##a0,8PP2_LOCAL_CTX_POP_ARGUMENT,8PP2_STACK_STORE,P##a1,8PP2_LOCAL_CTX_POP_ARGUMENT,8PP2_STACK_STORE,P##a2,8PP2_LOCAL_CTX_POP_ARGUMENT,8PP2_STACK_STORE,P##a3,8PP2_LOCAL_CTX_POP_ARGUMENT,8PP2_STACK_STORE,P##a4,8PP2_LOCAL_CTX_POP_ARGUMENT,8PP2_STACK_STORE,P##a5
-#define IP2_LANGUAGE_FN_PARSE_PARAM_TYPES_7(P,i0,a0,x0,i1,a1,x1,i2,a2,x2,i3,a3,x3,i4,a4,x4,i5,a5,x5,i6,a6,x6) 8PP2_LOCAL_CTX_POP_ARGUMENT,8PP2_STACK_STORE,P##a0,8PP2_LOCAL_CTX_POP_ARGUMENT,8PP2_STACK_STORE,P##a1,8PP2_LOCAL_CTX_POP_ARGUMENT,8PP2_STACK_STORE,P##a2,8PP2_LOCAL_CTX_POP_ARGUMENT,8PP2_STACK_STORE,P##a3,8PP2_LOCAL_CTX_POP_ARGUMENT,8PP2_STACK_STORE,P##a4,8PP2_LOCAL_CTX_POP_ARGUMENT,8PP2_STACK_STORE,P##a5,8PP2_LOCAL_CTX_POP_ARGUMENT,8PP2_STACK_STORE,P##a6
-#define IP2_LANGUAGE_FN_PARSE_PARAM_TYPES_8(P,i0,a0,x0,i1,a1,x1,i2,a2,x2,i3,a3,x3,i4,a4,x4,i5,a5,x5,i6,a6,x6,i7,a7,x7) 8PP2_LOCAL_CTX_POP_ARGUMENT,8PP2_STACK_STORE,P##a0,8PP2_LOCAL_CTX_POP_ARGUMENT,8PP2_STACK_STORE,P##a1,8PP2_LOCAL_CTX_POP_ARGUMENT,8PP2_STACK_STORE,P##a2,8PP2_LOCAL_CTX_POP_ARGUMENT,8PP2_STACK_STORE,P##a3,8PP2_LOCAL_CTX_POP_ARGUMENT,8PP2_STACK_STORE,P##a4,8PP2_LOCAL_CTX_POP_ARGUMENT,8PP2_STACK_STORE,P##a5,8PP2_LOCAL_CTX_POP_ARGUMENT,8PP2_STACK_STORE,P##a6,8PP2_LOCAL_CTX_POP_ARGUMENT,8PP2_STACK_STORE,P##a7
-
-#endif
-
-/* PP2_FN(<params>) (<body>): bind a name to a function value -- pp2's analogue
- * of order-pp's `<name> ORDER_PP_FN(8fn(...))`. Written host-side as
- *
- *   #define PP2_DEF_add PP2_FN (x, y) (x plus (y))
- *
- * after which `add` is a first-class value in every position:
- *   - direct application   : add(2, 3)               -> 5
- *   - assign then call      : F (add), F call (2, 3)  -> 5
- *   - passed as a value     : print(add), map (add), ...
- *
- * PP2_FN is the same function-like shape as the `fn` keyword (PP2_DEF_fn): it
- * consumes the parameter tuple as its arguments and leaves the `fn` compiler
- * open so the `(body)` that follows -- and the rest of the enclosing program --
- * completes it, exactly as `fn (params) (body)` does inline. So a PP2_FN
- * binding is spelled without a redundant `fn` and without wrapping parens.
- *
- * Direct application `add(a, b)` needs no special machinery: the compiler's
- * RETURN grammar already dispatches a paren group following a value through
- * 8PP2_LANGUAGE_SELF_CALL (i.e. `call`). Note this only holds for
- * value-resolving names like `add`; a single-letter variable slot `F (...)` is
- * assignment, so a stored fn is still invoked with `call`. */
-#define PP2_FN(...) )PP2_COMPILE_LANGUAGE_FN(,(__VA_ARGS__),
-
-#endif
-
-// ******************** From: primitive.h
-/** @file */
-#ifndef PP2_LANGUAGE_DEFINITION_PRIMITIVE_H
-#define PP2_LANGUAGE_DEFINITION_PRIMITIVE_H
-
-#define PP2_PRIMITIVE(...) )PP2_PRIMITIVE_I(,__VA_ARGS__
-#define PP2_PRIMITIVE_I(P,...) P##__VA_ARGS__
-
-#endif
-
-
-
-// ******************** From: print.h
-/** @file */
-#ifndef PP2_LANGUAGE_IO_PRINT_H
-#define PP2_LANGUAGE_IO_PRINT_H
-
-
-
-// ******************** From: emit.h
-/** @file */
-#ifndef PP2_MACHINE_INSNS_EMIT_H
-#define PP2_MACHINE_INSNS_EMIT_H
-
-#define PP2_INSN_8PP2_EMIT_LITERAL(P,r0,r1,r2,...) (,/*r0=*/,/*r1=*/P##r1,/*r2=*/P##r2,P##__VA_ARGS__)(,8LITERAL,P##r0)
-
-#endif
-
-
-#define PP2_DEF_print PP2_PRIMITIVE(IP2_LANGUAGE_PRINT_OVERLOAD)
-
-#define IP2_LANGUAGE_PRINT_OVERLOAD(...)       \
-        IP2_LANGUAGE_PRINT_OVERLOAD_SELECT(    \
-            __VA_ARGS__,                       \
-            PP2_COMMA_8,                       \
-            PP2_COMMA_7,                       \
-            PP2_COMMA_6,                       \
-            PP2_COMMA_5,                       \
-            PP2_COMMA_4,                       \
-            PP2_COMMA_3,                       \
-            PP2_COMMA_2,                       \
-            PP2_COMMA_1,                       \
-        )(,__VA_ARGS__)
-
-#define IP2_LANGUAGE_PRINT_OVERLOAD_SELECT(x0,x1,x2,x3,x4,x5,x6,x7,m,...) PP2_TUPLE_AT_1(IP2_LANGUAGE_PRINT_EVAL,m,9_OR_MORE)
-
-#define IP2_LANGUAGE_PRINT_EVAL1(P,stx0) 8IP2_LANGUAGE_PRINT_OBJ,P##stx0
-#define IP2_LANGUAGE_PRINT_EVAL2(P,stx0,stx1) 8IP2_LANGUAGE_PRINT_OBJ,P##stx0,8IP2_LANGUAGE_PRINT_OBJ,P##stx1
-#define IP2_LANGUAGE_PRINT_EVAL3(P,stx0,stx1,stx2) 8IP2_LANGUAGE_PRINT_OBJ,P##stx0,8IP2_LANGUAGE_PRINT_OBJ,P##stx1,8IP2_LANGUAGE_PRINT_OBJ,P##stx2
-#define IP2_LANGUAGE_PRINT_EVAL4(P,stx0,stx1,stx2,stx3) 8IP2_LANGUAGE_PRINT_OBJ,P##stx0,8IP2_LANGUAGE_PRINT_OBJ,P##stx1,8IP2_LANGUAGE_PRINT_OBJ,P##stx2,8IP2_LANGUAGE_PRINT_OBJ,P##stx3
-#define IP2_LANGUAGE_PRINT_EVAL5(P,stx0,stx1,stx2,stx3,stx4) 8IP2_LANGUAGE_PRINT_OBJ,P##stx0,8IP2_LANGUAGE_PRINT_OBJ,P##stx1,8IP2_LANGUAGE_PRINT_OBJ,P##stx2,8IP2_LANGUAGE_PRINT_OBJ,P##stx3,8IP2_LANGUAGE_PRINT_OBJ,P##stx4
-#define IP2_LANGUAGE_PRINT_EVAL6(P,stx0,stx1,stx2,stx3,stx4,stx5) 8IP2_LANGUAGE_PRINT_OBJ,P##stx0,8IP2_LANGUAGE_PRINT_OBJ,P##stx1,8IP2_LANGUAGE_PRINT_OBJ,P##stx2,8IP2_LANGUAGE_PRINT_OBJ,P##stx3,8IP2_LANGUAGE_PRINT_OBJ,P##stx4,8IP2_LANGUAGE_PRINT_OBJ,P##stx5
-#define IP2_LANGUAGE_PRINT_EVAL7(P,stx0,stx1,stx2,stx3,stx4,stx5,stx6) 8IP2_LANGUAGE_PRINT_OBJ,P##stx0,8IP2_LANGUAGE_PRINT_OBJ,P##stx1,8IP2_LANGUAGE_PRINT_OBJ,P##stx2,8IP2_LANGUAGE_PRINT_OBJ,P##stx3,8IP2_LANGUAGE_PRINT_OBJ,P##stx4,8IP2_LANGUAGE_PRINT_OBJ,P##stx5,8IP2_LANGUAGE_PRINT_OBJ,P##stx6
-#define IP2_LANGUAGE_PRINT_EVAL8(P,stx0,stx1,stx2,stx3,stx4,stx5,stx6,stx7) 8IP2_LANGUAGE_PRINT_OBJ,P##stx0,8IP2_LANGUAGE_PRINT_OBJ,P##stx1,8IP2_LANGUAGE_PRINT_OBJ,P##stx2,8IP2_LANGUAGE_PRINT_OBJ,P##stx3,8IP2_LANGUAGE_PRINT_OBJ,P##stx4,8IP2_LANGUAGE_PRINT_OBJ,P##stx5,8IP2_LANGUAGE_PRINT_OBJ,P##stx6,8IP2_LANGUAGE_PRINT_OBJ,P##stx7
-#define IP2_LANGUAGE_PRINT_EVAL9_OR_MORE(P,stx0,stx1,stx2,stx3,stx4,stx5,stx6,stx7,...) 8IP2_LANGUAGE_PRINT_OBJ,P##stx0,8IP2_LANGUAGE_PRINT_OBJ,P##stx1,8IP2_LANGUAGE_PRINT_OBJ,P##stx2,8IP2_LANGUAGE_PRINT_OBJ,P##stx3,8IP2_LANGUAGE_PRINT_OBJ,P##stx4,8IP2_LANGUAGE_PRINT_OBJ,P##stx5,8IP2_LANGUAGE_PRINT_OBJ,P##stx6,8IP2_LANGUAGE_PRINT_OBJ,P##stx7,8PP2_LANGUAGE_PRINT,(P##__VA_ARGS__)
-
-#define PP2_INSN_8PP2_LANGUAGE_PRINT(P,r0,r1,r2,stx_tup,...)  (,P##r0,P##r1,P##r2,IP2_LANGUAGE_PRINT_OVERLOAD P##stx_tup,P##__VA_ARGS__)
-#define PP2_INSN_8IP2_LANGUAGE_PRINT_OBJ(P,r0,r1,r2,stx,...)  (,/*r0=*/,P##r1,P##r2,PP2_COMPILE(P##stx),8PP2_LANGUAGE_METHOD_CALL,str(),8PP2_EMIT_LITERAL,P##__VA_ARGS__)
-
-#endif
-
-// ******************** From: put.h
-#ifndef PP2_LANGUAGE_IO_PUT_H
-#define PP2_LANGUAGE_IO_PUT_H
-
-
-
-#define PP2_DEF_put(stx) PP2_PRIMITIVE(8PP2_LANGUAGE_PUT,stx)
-
-#define PP2_INSN_8PP2_LANGUAGE_PUT(P,r0,r1,r2,stx,...) (,/*r0=*/P##r0,/*r1=*/P##r1,/*r2=*/P##r2,PP2_COMPILE(stx),8PP2_LANGUAGE_METHOD_CALL,str(),8PP2_EMIT_LITERAL,P##__VA_ARGS__)
-
-#endif
-
-
-// ******************** From: for.h
-/** @file */
-#ifndef PP2_LANGUAGE_STATEMENTS_FOR_H
-#define PP2_LANGUAGE_STATEMENTS_FOR_H
-
-
-// ******************** From: while.h
-/** @file */
-#ifndef PP2_LANGUAGE_STATEMENTS_WHILE_H
-#define PP2_LANGUAGE_STATEMENTS_WHILE_H
-
-
-
-// ******************** From: goto.h
-/** @file */
-#ifndef PP2_MACHINE_GOTO_GOTO_H
-#define PP2_MACHINE_GOTO_GOTO_H
-
 
 
 #define PP2_INSN_8PP2_GOTO(P,r0,r1,r2,label,...) \
@@ -2162,7 +3118,10 @@
                                     PP2_OPEN P##body_stx_tup \
                                    )
 
-#define IP2_LANGUAGE_WHILE_LOOP_PUSH_LABELS(body,epilogue,P,stack,labels,...) (,P##stack,(,0,(8PP2_LANGUAGE_LOOP_POP_LABELS,PP2_OPEN P##epilogue))(,1,P##body)P##labels,P##__VA_ARGS__)
+/* Label 0 is the loop's exit continuation. A loop runs for its effect, so it answers
+ * with nil: the exit path loads it on the way out, which also covers `for`, since a
+ * for compiles down to a while. */
+#define IP2_LANGUAGE_WHILE_LOOP_PUSH_LABELS(body,epilogue,P,stack,labels,...) (,P##stack,(,0,(8PP2_LANGUAGE_LOOP_POP_LABELS,8PP2_LANGUAGE_LOAD_NIL,PP2_OPEN P##epilogue))(,1,P##body)P##labels,P##__VA_ARGS__)
 
 /* On loop exit (the goto-0/epilogue path) drop the two labels this loop pushed,
  * restoring any enclosing loop's labels. Without this the labels list is shared
@@ -2258,7 +3217,7 @@
 #define IP2_LANGUAGE_IF_BRANCH_0(P,if_branch,else_branch) IP2_LANGUAGE_ELSE_MATCH_##else_branch
 
 #define IP2_LANGUAGE_ELSE_MATCH_else 8PP2_LANGUAGE_ELSE,
-#define IP2_LANGUAGE_ELSE_MATCH_ 8PP2_NOP /* no else clause: a false if is a no-op */
+#define IP2_LANGUAGE_ELSE_MATCH_ 8PP2_LANGUAGE_LOAD_NIL /* no else clause: a false if answers nil */
 
 #define IP2_LANGUAGE_ELSE_DETECT_BLOCK(...) 0BLOCK_DETECTED,PP2_LANGUAGE_BLOCK(__VA_ARGS__)
 #define IP2_LANGUAGE_ELSE_TEST_IF_COND(...) IP2_LANGUAGE_ELSE_TEST_IF_COND_I(__VA_ARGS__)
@@ -2268,42 +3227,176 @@
 
 #endif
 
+// ******************** From: try.h
+/** @file */
+#ifndef PP2_LANGUAGE_STATEMENTS_TRY_H
+#define PP2_LANGUAGE_STATEMENTS_TRY_H
+
+
+
+// ******************** From: pop_eh.h
+/** @file */
+#ifndef PP2_MACHINE_EXCEPTION_POP_EH_H
+#define PP2_MACHINE_EXCEPTION_POP_EH_H
+
+
+
+/* Uninstall the innermost handler, run when a protected body finishes without throwing.
+ *
+ * Dropping the front entry is enough. Everything the body pushed onto the spill stack
+ * -- activation frames, spilled argument lists -- is strictly balanced and has already
+ * been popped by the time the body ends, so the handler this try installed is back on
+ * top. r0 is left alone: it still holds whatever the body produced, which is the value
+ * of the try. */
+#define PP2_INSN_8PP2_POP_EXCEPTION_HANDLER(P,r0,r1,r2,...) \
+                                           (, \
+                                            P##r0, \
+                                            /*r1=*/IP2_FX(POP_EXCEPTION_HANDLER_I,(PP2_OPEN P##r1)), \
+                                            P##r2, \
+                                            P##__VA_ARGS__ \
+                                           )
+
+#define IP2_POP_EXCEPTION_HANDLER_I(P,stack,labels,arguments,registers,_) \
+        (,P##stack,P##labels,P##arguments,/*registers=*/PP2_EAT P##registers,)
+
+#endif
+
+// ******************** From: push_eh.h
+/** @file */
+#ifndef PP2_MACHINE_EXCEPTION_PUSH_EH_H
+#define PP2_MACHINE_EXCEPTION_PUSH_EH_H
+
+
+
+/* Install an exception handler by pushing it onto the spill stack, tagged 8E, in
+ * among the activation frames and spilled argument lists it will have to unwind past.
+ *
+ * Living on that one stack is what makes the nesting come out right for free. Handlers
+ * shadow one another because the stack is a LIFO, so a throw meets the innermost first.
+ * A throw is popping frames off the same stack it is looking for a handler on, so it
+ * cannot pass a handler without having already restored everything the handler's scope
+ * expects to see. And nothing has to be kept in step with anything else, because there
+ * is only the one structure.
+ *
+ * The entry carries three things: the handler continuation, and snapshots of the labels
+ * and the pending arguments as they stand here.
+ *
+ * Those two are snapshotted and the local stack deliberately is NOT, and the difference
+ * is the whole distinction the semantics turn on. The local stack is what the program
+ * SAYS -- the try body's assignments are real and a throw must not undo them -- so it is
+ * recovered by restoring activation frames on the way out (see unwind.h), which discards
+ * only the callee's locals and keeps the try scope's own. Labels and pending arguments
+ * are what the machine happens to be in the MIDDLE of -- a half-walked loop, a half-built
+ * call whose operands are still parked -- and at the moment of a throw that state is
+ * meaningless debris. Keeping it would hand the handler a stale parked callee. So they
+ * are restored to what they were when the try began.
+ *
+ * See PP2_INSN_8PP2_POP_EXCEPTION_HANDLER for the matching pop and unwind.h for the walk. */
+#define PP2_INSN_8PP2_PUSH_EXCEPTION_HANDLER(P,r0,r1,r2,handler,...) \
+                                            (, \
+                                             P##r0, \
+                                             /*r1=*/IP2_FX(PUSH_EXCEPTION_HANDLER_I,(P##handler,PP2_OPEN P##r1)), \
+                                             P##r2, \
+                                             P##__VA_ARGS__ \
+                                            )
+
+#define IP2_PUSH_EXCEPTION_HANDLER_I(handler,\
+                                     P,stack,labels,arguments,registers,_) \
+        (,P##stack,P##labels,P##arguments,/*registers=*/(8E,P##labels,(P##arguments),P##handler)P##registers,)
+
+#endif
+
+
+/* `try (body) catch (handler)` runs the body with a handler installed. If the body
+ * throws, the rest of it is abandoned and the handler runs instead; if it finishes,
+ * the handler is uninstalled and never runs. Either way execution carries on with
+ * whatever follows the statement.
+ *
+ *   try (
+ *       print(1),
+ *       print(nonexistent),
+ *       print(2)
+ *   ) catch (
+ *       print((caught!))
+ *   )
+ *
+ * prints `1 caught!`. The `print(2)` is skipped, and the program does not die.
+ *
+ * `catch (e) (handler)` names the exception, binding it in the handler as a Quote
+ * of the thrown `TYPE(message)`. The name is spelled out character by character
+ * like any `var` name, so `catch (e r r) (...)` binds `err`.
+ *
+ * A throw inside the handler is not caught by its own try, since the entry is
+ * popped on the way in, so it reaches the next handler out or ends the program. */
+/* Object-like, so the body group arrives still parenthesised as an argument of
+ * PP2_COMPILE_LANGUAGE_TRY. A function-like PP2_DEF_try would collect the body
+ * group as its own argument list and be torn apart on the commas between the
+ * body's statements. The whole tail `(body) catch (handler)` holds no top-level
+ * comma, so it arrives as a single argument and is taken apart here instead. */
+#define PP2_DEF_try )PP2_COMPILE_LANGUAGE_TRY(
+
+#define PP2_COMPILE_LANGUAGE_TRY(...) \
+        IP2_FX(LANGUAGE_TRY_SPLIT,(,PP2_SEQ_SPLIT_HEAD __VA_ARGS__))
+
+/* The tokens after the body group are the whole catch clause, so pasting the peel
+ * prefix onto them both checks for the `catch` keyword and strips it, leaving the
+ * clause as a seq of one or two groups. A clause that did not open with `catch`
+ * leaves the unresolved paste behind, which is not a group, and that is what tells
+ * a malformed try from a well-formed one. */
+#define IP2_LANGUAGE_TRY_SPLIT(P,body_stx,catch_clause) \
+        IP2_LANGUAGE_TRY_CHECK(P##body_stx,IP2_LANGUAGE_TRY_PEEL_##catch_clause)
+
+#define IP2_LANGUAGE_TRY_PEEL_catch
+
+#define IP2_LANGUAGE_TRY_CHECK(body_stx,clause) \
+        PP2_IS_TUPLE(clause)(IP2_LANGUAGE_TRY_SHAPE,IP2_LANGUAGE_TRY_MALFORMED)(body_stx,clause)
+
+#define IP2_LANGUAGE_TRY_MALFORMED(body_stx,clause) \
+        8PP2_THROW_EXCEPTION,8PP2_LANGUAGE_DEFINITION_EXCEPTION,try
+
+/* One group is a bare handler, two are a name and a handler. A bound name compiles
+ * to a store of r0, which the throw has already loaded with the exception, into a
+ * local of that name; the store runs first thing in the handler's continuation. */
+/* IP2_FY, not IP2_FX: this runs inside the IP2_FX that PP2_COMPILE_LANGUAGE_TRY
+ * opened, and a hop reused inside its own expansion is blue-painted and stops
+ * firing. Nested hops need distinct names. */
+#define IP2_LANGUAGE_TRY_SHAPE(body_stx,clause) \
+        IP2_FY(LANGUAGE_TRY_SHAPE_I,(body_stx,PP2_SEQ_SPLIT_HEAD clause))
+
+#define IP2_LANGUAGE_TRY_SHAPE_I(body_stx,first,rest) \
+        PP2_IS_TUPLE(rest)(IP2_LANGUAGE_TRY_BOUND,IP2_LANGUAGE_TRY_PLAIN)(body_stx,first,rest)
+
+#define IP2_LANGUAGE_TRY_PLAIN(body_stx,handler_stx,rest) \
+        8PP2_LANGUAGE_TRY,body_stx,(),handler_stx
+
+#define IP2_LANGUAGE_TRY_BOUND(body_stx,name,handler_stx) \
+        8PP2_LANGUAGE_TRY,body_stx,(8PP2_STACK_STORE,PP2_SPACED name,),handler_stx
+
+
+/* The instruction stream trailing a try IS its continuation, so both the normal
+ * path and the throw path have to end up in it. The normal path just falls through:
+ * body, pop the handler, carry on. The throw path cannot fall through to anything,
+ * because a throw abandons the stream it was running in, so the handler is installed
+ * as a continuation that already has that same trailing stream appended to it. The
+ * two paths meet again at the instruction after the try, whichever one ran. */
+#define PP2_INSN_8PP2_LANGUAGE_TRY(P,r0,r1,r2,body_stx,bind,handler_stx,...) \
+                                  (, \
+                                   P##r0,P##r1,P##r2, \
+                                   8PP2_PUSH_EXCEPTION_HANDLER, \
+                                       (PP2_OPEN P##bind 8PP2_LANGUAGE_BLOCK,P##handler_stx,P##__VA_ARGS__), \
+                                   8PP2_LANGUAGE_BLOCK,P##body_stx, \
+                                   8PP2_POP_EXCEPTION_HANDLER, \
+                                   P##__VA_ARGS__ \
+                                  )
+
+#endif
+
 
 // ******************** From: any.h
 /** @file */
 #ifndef PP2_LANGUAGE_TYPES_ANY_H
 #define PP2_LANGUAGE_TYPES_ANY_H
 
-
-// ******************** From: symbol.h
-/** @file */
-#ifndef PP2_LANGUAGE_BASIC_SYMBOL_H
-#define PP2_LANGUAGE_BASIC_SYMBOL_H
-
-/**
-* Equality of two registered symbols, yielding 1 or 0.
-*
-* The preprocessor cannot compare two arbitrary tokens. It can compare tokens
-* that have been registered, and a symbol is registered by defining
-* `PP2_SYM_<name>(...) __VA_ARGS__`. Every PP2 type name is registered next to
-* its type definition.
-*
-* `sa (sb)` yields `sb` when the two differ. When they are the same symbol it
-* yields `sa` painted blue, because a macro is disabled inside its own
-* expansion, and a painted token never expands again. So only the live one goes
-* on to eat the trailing `(0,1)`, and the arity of what comes back is the
-* answer: two arguments when the symbols differ, one when they match.
-*
-* Both names must be registered. An unregistered name expands to nothing at all,
-* which looks exactly like the painted case, so it reports equal. Only ever call
-* this on names you know are registered.
-*/
-#define PP2_SYMBOL_EQ(a,b) IP2_SYMBOL_EQ_I(PP2_SYM_##a,PP2_SYM_##b)
-#define IP2_SYMBOL_EQ_I(sa,sb) IP2_SYMBOL_EQ_II(sa (sb) (0,1))
-#define IP2_SYMBOL_EQ_II(...) IP2_SYMBOL_EQ_PICK(__VA_ARGS__,0,1)
-#define IP2_SYMBOL_EQ_PICK(_1,_2,_3,...) _3
-
-#endif
 
 // ******************** From: type.h
 /** @file */
@@ -2353,6 +3446,16 @@
 
 #define PP2_LANGUAGE_TYPE_NAME(P,type_name,supertype_name) P##type_name
 #define PP2_LANGUAGE_SUPERTYPE_NAME(P,type_name,supertype_name) P##supertype_name
+
+
+/* str(): a Type prints as its name, so `print(Bool)` gives `Bool` and
+ * `print(5 type())` gives `Int`. Without this a Type fell through to Any_str,
+ * which hands the object itself to the emitter, and printing a type spilled its
+ * internals: `(,Type,(,Bool,Any))`. Like Bool_str this leaves a raw token in r0
+ * for 8PP2_EMIT_LITERAL rather than an object. */
+#define PP2_DEF_Type_str PP2_VM_FN(8PP2_LANGUAGE_TYPE_STR,1)
+#define PP2_INSN_8PP2_LANGUAGE_TYPE_STR(P,r0,r1,r2,obj,...) \
+        (,PP2_FX(LANGUAGE_TYPE_NAME,PP2_LANGUAGE_OBJECT_VALUE P##obj),P##r1,P##r2,P##__VA_ARGS__)
 
 
 /* eq(other): two Type objects are equal when they name the same type. Type names
@@ -3354,67 +4457,6 @@
 #define PP2_PRIMITIVE_ARITHMETIC_ARBITRARY_SIGN_H
 
 
-// ******************** From: is_edible.h
-/** @file */
-#ifndef PP2_PRIMITIVE_DETECTION_IS_EDIBLE_H
-#define PP2_PRIMITIVE_DETECTION_IS_EDIBLE_H
-
-
-// ******************** From: test.h
-/** @file */
-#ifndef PP2_PRIMITIVE_CONTROL_TEST_H
-#define PP2_PRIMITIVE_CONTROL_TEST_H
-
-
-/**
-* Detection primitive: selects `P##c` when `x` expands to two commas (three
-* fields) and `P##a` otherwise. Detection macros arrange for `x` to be `,,`
-* exactly when the tested property holds, so this collapses a probe into a
-* branch. See \link PP2_IS_EDIBLE \endlink.
-*/
-#define PP2_TEST(P,x,c,a) PP2_TUPLE_AT_3(,x,P##c,,P##a,)
-
-#endif
-
-// ******************** From: ifp.h
-/** @file */
-#ifndef PP2_PRIMITIVE_CONTROL_IFP_H
-#define PP2_PRIMITIVE_CONTROL_IFP_H
-
-
-/* Three-argument "if with paste prefix": the selectors returned by the
- * detection primitives take a paste-prefix P, a true-branch c, and an else
- * branch, yielding P##c or P##else. This is the convention the arbitrary
- * arithmetic walks rely on to emit either a kept digit (P##(digit)) or a
- * continuation co-routine (P##next) from a single predicate call. It is
- * deliberately separate from the two-argument \link PP2_IF \endlink used
- * elsewhere in the primitive library. */
-
-#define PP2_IFP(c) PP2_PRIMITIVE_CAT(PP2_IFP_,c)
-#define PP2_IFP_(P,c,...) P##c
-#define PP2_IFP_0(P,c,...) P##__VA_ARGS__
-#define PP2_IFP_1(P,c,...) P##c
-
-#define PP2_IFP_NOT(c) PP2_PRIMITIVE_CAT(PP2_IFP_NOT_,c)
-#define PP2_IFP_NOT_(P,c,...) P##__VA_ARGS__
-#define PP2_IFP_NOT_0(P,c,...) P##c
-#define PP2_IFP_NOT_1(P,c,...) P##__VA_ARGS__
-
-#endif
-
-/**
-* Yields a 3-arg paste-selector (see \link PP2_IFP \endlink): the true selector
-* when `x##P` is "edible" (a parenthesised group, so that PP2_IS_EDIBLE_TEST
-* placed before it fires and expands to `,,`), and the false selector otherwise.
-* Used as `PP2_IS_EDIBLE(,x)(P,then,else)`.
-*/
-#define PP2_IS_EDIBLE(P,x) PP2_TEST(PP2_IFP_,PP2_IS_EDIBLE_TEST x##P,,0)
-#define PP2_ISNT_EDIBLE(P,x) PP2_TEST(PP2_IFP_,PP2_IS_EDIBLE_TEST x##P,0,)
-
-#define PP2_IS_EDIBLE_TEST(...) ,,
-
-#endif
-
 /* Sign of an arbitrary number: yields PP2_IF_1 when x is negative (its magnitude
  * seq is wrapped in an extra paren layer, so stripping one leaves a tuple) and
  * PP2_IF_0 when non-negative. Use as PP2_ARBITRARY_SIGN(x)(neg,nonneg). */
@@ -3429,76 +4471,6 @@
 #ifndef PP2_PRIMITIVE_ARITHMETIC_ARBITRARY_INC_H
 #define PP2_PRIMITIVE_ARITHMETIC_ARBITRARY_INC_H
 
-
-// ******************** From: core.h
-/** @file */ 
-#ifndef PP2_PRIMITIVE_CORE_H
-#define PP2_PRIMITIVE_CORE_H
-
-/**
-* Substitutes all of the provided macro arguments into the macro replacement list without changing them.
-*
-* This is typically used to force an additional scan over the tokens in the macro arguments,
-* allowing additional macro expansions to take place if any are legal to perform.
-* This only differs from \link PP2_OPEN \endlink in its intended use, as demonstrated:
-* \code{.c}
-* #define FOO(x) PP2_SCAN(x)
-* #define BAR 123
-* FOO(BAR PP2_BLOCK ()) // 123
-*
-* // compared to...
-*
-* #define FOO(x) PP2_OPEN x
-* FOO((1,2,3)) // 1,2,3
-* \endcode
-*
-* @param ... the token sequence to scan
-*/
-#define PP2_SCAN(...) __VA_ARGS__
-
-/**
-* Substitutes no tokens into the macro replacmeent list, effectively advancing the macro evaluator ahead
-* by one token and performing a no-op.
-*/
-#define PP2_BLOCK
-
-#endif
-
-// ******************** From: defer.h
-/** @file */
-#ifndef PP2_PRIMITIVE_BASIC_DEFER_H
-#define PP2_PRIMITIVE_BASIC_DEFER_H
-
-
-/**
-* Emits its arguments followed by a \link PP2_BLOCK \endlink, delaying any
-* function-like macro named at the tail of the arguments by one rescan: the
-* trailing name and a following `()` are separated by the (empty) PP2_BLOCK, so
-* the call only forms after the block is eliminated on the next scan.
-*
-* @param ... the token sequence to defer
-*/
-#define PP2_DEFER(...) __VA_ARGS__ PP2_BLOCK
-
-#endif
-
-// ******************** From: lparen.h
-/** @file */
-#ifndef PP2_PRIMITIVE_PUNCTUATION_LPAREN_H
-#define PP2_PRIMITIVE_PUNCTUATION_LPAREN_H
-
-/**
-*/
-#define PP2_LPAREN (
-
-/**
-* Yields an unmatched left parenthesis when called, but only after a rescan.
-* Used with \link PP2_DEFER \endlink to place a `(` that must not pair eagerly
-* during the sliding-window walks in the arbitrary-precision arithmetic.
-*/
-#define PP2_LPAREN_ID() PP2_LPAREN
-
-#endif
 
 // ******************** From: dec.h
 /** @file */
@@ -3547,52 +4519,6 @@
 #define PP2_ARBITRARY_FIX_II(c) PP2_IS_EDIBLE(,c)(,c,(0))
 #define PP2_ARBITRARY_FIX_A(digit) PP2_ISNT_0(digit)(,(digit),PP2_ARBITRARY_FIX_B)
 #define PP2_ARBITRARY_FIX_B(digit) PP2_ISNT_0(digit)(,(digit),PP2_ARBITRARY_FIX_A)
-
-#endif
-
-// ******************** From: special.h
-/** @file */
-#ifndef PP2_PRIMITIVE_ARITHMETIC_ARBITRARY_DETAIL_SPECIAL_H
-#define PP2_PRIMITIVE_ARITHMETIC_ARBITRARY_DETAIL_SPECIAL_H
-
-
-// ******************** From: rparen.h
-/** @file */
-#ifndef PP2_PRIMITIVE_PUNCTUATION_RPAREN_H
-#define PP2_PRIMITIVE_PUNCTUATION_RPAREN_H
-
-/**
-*/
-#define PP2_RPAREN )
-
-#endif
-
-/* The sliding-window engine behind every arbitrary-precision walk.
- *
- * PP2_ARBITRARY_SPECIAL(digit) selects a pass-through for real digits 0-9 and an
- * eater for the sentinel 00. Walkers drive a seq (d0)(d1)... by pasting each
- * digit onto an alternating A/B co-routine (dodging blue-paint), and terminate
- * when the injected (00) is reached. PP2_ARBITRARY_SPECIAL_CLOSE emits one ')'
- * per digit so a walk opened with a deferred '(' per digit closes exactly. */
-
-#define PP2_ARBITRARY_SPECIAL(digit) PP2_PRIMITIVE_CAT(PP2_ARBITRARY_SPECIAL_, digit)
-
-#define PP2_ARBITRARY_SPECIAL_00(...)
-#define PP2_ARBITRARY_SPECIAL_0(...) __VA_ARGS__
-#define PP2_ARBITRARY_SPECIAL_1(...) __VA_ARGS__
-#define PP2_ARBITRARY_SPECIAL_2(...) __VA_ARGS__
-#define PP2_ARBITRARY_SPECIAL_3(...) __VA_ARGS__
-#define PP2_ARBITRARY_SPECIAL_4(...) __VA_ARGS__
-#define PP2_ARBITRARY_SPECIAL_5(...) __VA_ARGS__
-#define PP2_ARBITRARY_SPECIAL_6(...) __VA_ARGS__
-#define PP2_ARBITRARY_SPECIAL_7(...) __VA_ARGS__
-#define PP2_ARBITRARY_SPECIAL_8(...) __VA_ARGS__
-#define PP2_ARBITRARY_SPECIAL_9(...) __VA_ARGS__
-
-#define PP2_ARBITRARY_SPECIAL_CLOSE(x) PP2_ARBITRARY_SPECIAL_CLOSE_A x(00)
-
-#define PP2_ARBITRARY_SPECIAL_CLOSE_A(digit) PP2_ARBITRARY_SPECIAL(digit)(PP2_RPAREN PP2_ARBITRARY_SPECIAL_CLOSE_B)
-#define PP2_ARBITRARY_SPECIAL_CLOSE_B(digit) PP2_ARBITRARY_SPECIAL(digit)(PP2_RPAREN PP2_ARBITRARY_SPECIAL_CLOSE_A)
 
 #endif
 
@@ -3690,94 +4616,11 @@
 #define PP2_PRIMITIVE_ARITHMETIC_ARBITRARY_ADD_H
 
 
-// ******************** From: reverse.h
-/** @file */
-#ifndef PP2_PRIMITIVE_SEQ_REVERSE_H
-#define PP2_PRIMITIVE_SEQ_REVERSE_H
-
-
-// ******************** From: binary_transform.h
-/** @file */
-#ifndef PP2_PRIMITIVE_SEQ_BINARY_TRANSFORM_H
-#define PP2_PRIMITIVE_SEQ_BINARY_TRANSFORM_H
-
-
-/* Turn a seq (a)(b)(c) into the "binary" chain (REM,a)()(REM,b)()(REM,c)()
- * consumed by the reversal walk. The A/B co-routines alternate to dodge
- * blue-paint; the trailing co-routine name is pasted to 0 by the enclosing CAT
- * to reach an empty terminator. */
-
-#define PP2_SEQ_BINARY_TRANSFORM(seq,...) PP2_CAT(PP2_SEQ_BINARY_TRANSFORM_A seq,0)(PP2_EAT,__VA_ARGS__)
-
-#define PP2_SEQ_BINARY_TRANSFORM_A(...) (PP2_OPEN,__VA_ARGS__)()PP2_SEQ_BINARY_TRANSFORM_B
-#define PP2_SEQ_BINARY_TRANSFORM_B(...) (PP2_OPEN,__VA_ARGS__)()PP2_SEQ_BINARY_TRANSFORM_A
-
-#define PP2_SEQ_BINARY_TRANSFORM_A0
-#define PP2_SEQ_BINARY_TRANSFORM_B0
-
-#endif
-
-// ******************** From: close.h
-/** @file */
-#ifndef PP2_PRIMITIVE_SEQ_DETAIL_CLOSE_H
-#define PP2_PRIMITIVE_SEQ_DETAIL_CLOSE_H
-
-
-/* Emits the trailing ')' that closes a binary-chain walk (one per element,
- * driven by the chain itself). */
-
-#define PP2_SEQ_CLOSE(bin) PP2_SEQ_CLOSE_I bin
-
-#define PP2_SEQ_CLOSE_I_ID() PP2_SEQ_CLOSE_I
-
-#define PP2_SEQ_CLOSE_I(K,...) K(PP2_RPAREN PP2_SEQ_CLOSE_I_ID)
-
-#endif
-
-/* Reverse a seq: (a)(b)(c) -> (c)(b)(a). Drives the binary chain, prepending
- * each element to a running result via the deferred-open-paren idiom. */
-
-#define PP2_SEQ_REVERSE(seq) PP2_SCAN(PP2_SEQ_REVERSE_I(PP2_SEQ_BINARY_TRANSFORM(seq,~)))
-
-#define PP2_SEQ_REVERSE_I(bin) PP2_SEQ_REVERSE_II bin PP2_SEQ_CLOSE(bin)
-#define PP2_SEQ_REVERSE_II(K,...) K(PP2_SEQ_REVERSE_III PP2_DEFER(PP2_LPAREN_ID)()(__VA_ARGS__),PP2_SEQ_REVERSE_II_ID)
-
-#define PP2_SEQ_REVERSE_II_ID() PP2_SEQ_REVERSE_II
-#define PP2_SEQ_REVERSE_III(x,res) res x
-
-#endif
-
 // ******************** From: compare.h
 /** @file */
 #ifndef PP2_PRIMITIVE_ARITHMETIC_ARBITRARY_COMPARE_H
 #define PP2_PRIMITIVE_ARITHMETIC_ARBITRARY_COMPARE_H
 
-
-// ******************** From: indirect.h
-/** @file */
-#ifndef PP2_PRIMITIVE_FACILITIES_INDIRECT_H
-#define PP2_PRIMITIVE_FACILITIES_INDIRECT_H
-
-
-/**
-* Re-emits a chosen macro applied to a digit `n`, one rescan later. Used by the
-* arbitrary-precision comparison walk to hand a running result to the next
-* stage without it collapsing prematurely.
-*/
-#define PP2_INDIRECT(n) PP2_PRIMITIVE_CAT(PP2_INDIRECT_, n)
-
-#define PP2_INDIRECT_0(m) m(0)
-#define PP2_INDIRECT_1(m) m(1)
-#define PP2_INDIRECT_2(m) m(2)
-#define PP2_INDIRECT_3(m) m(3)
-#define PP2_INDIRECT_4(m) m(4)
-#define PP2_INDIRECT_5(m) m(5)
-#define PP2_INDIRECT_6(m) m(6)
-#define PP2_INDIRECT_7(m) m(7)
-#define PP2_INDIRECT_8(m) m(8)
-#define PP2_INDIRECT_9(m) m(9)
-
-#endif
 
 // ******************** From: rel.h
 /** @file */
@@ -3825,88 +4668,6 @@
         (0, 0, 0, 0, 0, 0, 0, 0, 1, 2), \
         (0, 0, 0, 0, 0, 0, 0, 0, 0, 1) \
     )))
-
-#endif
-
-// ******************** From: merge.h
-/** @file */
-#ifndef PP2_PRIMITIVE_ARITHMETIC_ARBITRARY_DETAIL_MERGE_H
-#define PP2_PRIMITIVE_ARITHMETIC_ARBITRARY_DETAIL_MERGE_H
-
-
-// ******************** From: tail.h
-#ifndef PP2_PRIMITIVE_SEQ_TAIL_H
-#define PP2_PRIMITIVE_SEQ_TAIL_H
-
-
-#define PP2_SEQ_TAIL(seq) IP2_SEQ_TAIL_I(PP2_SEQ_SPLIT_HEAD seq)
-#define IP2_SEQ_TAIL_I(x) PP2_TUPLE_AT_1(,x)
-
-#endif
-
-// ******************** From: swap.h
-/** @file */
-#ifndef PP2_PRIMITIVE_ARITHMETIC_ARBITRARY_DETAIL_SWAP_H
-#define PP2_PRIMITIVE_ARITHMETIC_ARBITRARY_DETAIL_SWAP_H
-
-/* Order a digit pair for a merge op. When the shorter operand was on the left,
- * SWAP restores original operand order to the op; NO_SWAP keeps it. */
-
-#define PP2_ARBITRARY_SWAP(a,...) (__VA_ARGS__,a)
-#define PP2_ARBITRARY_NO_SWAP(a,...) (a,__VA_ARGS__)
-
-#endif
-
-// ******************** From: is_shorter.h
-/** @file */
-#ifndef PP2_PRIMITIVE_ARITHMETIC_ARBITRARY_DETAIL_IS_SHORTER_H
-#define PP2_PRIMITIVE_ARITHMETIC_ARBITRARY_DETAIL_IS_SHORTER_H
-
-
-/* Yields a selector: true when seq x is strictly shorter than seq y. Walks both
- * in lockstep (x drives, y is consumed) and detects whether y still has digits
- * left when x runs out. Use as PP2_ARBITRARY_IS_SHORTER(x,y)(P,then,else). */
-
-#define PP2_ARBITRARY_IS_SHORTER(x, y) PP2_ARBITRARY_IS_SHORTER_II(PP2_SCAN(PP2_ARBITRARY_IS_SHORTER_A x(00) y ~ PP2_ARBITRARY_SPECIAL_CLOSE(x)))
-#define PP2_ARBITRARY_IS_SHORTER_II(...) PP2_IS_EDIBLE(,__VA_ARGS__)
-
-#define PP2_ARBITRARY_IS_SHORTER_A(digit) PP2_ARBITRARY_SPECIAL(digit)(PP2_ARBITRARY_IS_SHORTER_I PP2_DEFER(PP2_LPAREN_ID)() PP2_ARBITRARY_IS_SHORTER_B)
-#define PP2_ARBITRARY_IS_SHORTER_B(digit) PP2_ARBITRARY_SPECIAL(digit)(PP2_ARBITRARY_IS_SHORTER_I PP2_DEFER(PP2_LPAREN_ID)() PP2_ARBITRARY_IS_SHORTER_A)
-#define PP2_ARBITRARY_IS_SHORTER_I(y) PP2_EAT y
-
-#endif
-
-/* Zip two digit seqs of possibly different length, applying op to each aligned
- * digit pair and padding the shorter with def. FMERGE aligns from the most
- * significant end (result MSD-first, used by comparison); RMERGE aligns from the
- * least significant end (result LSD-first, used by add/sub). The longer operand
- * drives the walk; the shorter is padded by appending (def) as it is consumed.
- * SWAP restores original op-argument order when the left operand was shorter. */
-
-#define PP2_ARBITRARY_FMERGE(x, y, op, def) PP2_ARBITRARY_FMERGE_III(PP2_ARBITRARY_IS_SHORTER(x,y)(PP2_ARBITRARY_FMERGE_,LHS,RHS)(x,y,op,def))
-#define PP2_ARBITRARY_FMERGE_LHS(x, y, op, def) PP2_SCAN(PP2_ARBITRARY_FMERGE_A y(00), PP2_SEQ_REVERSE(x), op, def, PP2_ARBITRARY_SWAP PP2_ARBITRARY_SPECIAL_CLOSE(y))
-#define PP2_ARBITRARY_FMERGE_RHS(x, y, op, def) PP2_SCAN(PP2_ARBITRARY_FMERGE_A x(00), PP2_SEQ_REVERSE(y), op, def, PP2_ARBITRARY_SPECIAL_CLOSE(x))
-
-#define PP2_ARBITRARY_FMERGE_A(digit) PP2_ARBITRARY_SPECIAL(digit)(PP2_ARBITRARY_FMERGE_I PP2_DEFER(PP2_LPAREN_ID)() digit, PP2_ARBITRARY_FMERGE_B)
-#define PP2_ARBITRARY_FMERGE_B(digit) PP2_ARBITRARY_SPECIAL(digit)(PP2_ARBITRARY_FMERGE_I PP2_DEFER(PP2_LPAREN_ID)() digit, PP2_ARBITRARY_FMERGE_A)
-#define PP2_ARBITRARY_FMERGE_I(...) PP2_ARBITRARY_FMERGE_II(__VA_ARGS__)
-#define PP2_ARBITRARY_FMERGE_II(digit, res, y, op, def, swap) \
-        (op)swap(digit, PP2_SEQ_HEAD(y))res, PP2_SEQ_TAIL(y(def)), op, def, swap
-
-#define PP2_ARBITRARY_FMERGE_III(...) PP2_SCAN(PP2_EAT PP2_TUPLE_AT_0(,__VA_ARGS__))
-
-
-#define PP2_ARBITRARY_RMERGE(x, y, op, def) PP2_ARBITRARY_RMERGE_III(PP2_ARBITRARY_IS_SHORTER(x,y)(PP2_ARBITRARY_RMERGE_,LHS,RHS)(x,y,op,def))
-#define PP2_ARBITRARY_RMERGE_LHS(x, y, op, def) PP2_SCAN(PP2_ARBITRARY_RMERGE_A y(00) PP2_EAT, PP2_SEQ_REVERSE(x), op, def, PP2_ARBITRARY_SWAP PP2_ARBITRARY_SPECIAL_CLOSE(y))
-#define PP2_ARBITRARY_RMERGE_RHS(x, y, op, def) PP2_SCAN(PP2_ARBITRARY_RMERGE_A x(00) PP2_EAT, PP2_SEQ_REVERSE(y), op, def, PP2_ARBITRARY_SPECIAL_CLOSE(x))
-
-#define PP2_ARBITRARY_RMERGE_A(digit) PP2_ARBITRARY_SPECIAL(digit)(PP2_ARBITRARY_RMERGE_I PP2_DEFER(PP2_LPAREN_ID)() digit, PP2_ARBITRARY_RMERGE_B)
-#define PP2_ARBITRARY_RMERGE_B(digit) PP2_ARBITRARY_SPECIAL(digit)(PP2_ARBITRARY_RMERGE_I PP2_DEFER(PP2_LPAREN_ID)() digit, PP2_ARBITRARY_RMERGE_A)
-#define PP2_ARBITRARY_RMERGE_I(...) PP2_ARBITRARY_RMERGE_II(__VA_ARGS__)
-#define PP2_ARBITRARY_RMERGE_II(digit, res, y, op, def, swap) \
-        res(op)swap(digit, PP2_SEQ_HEAD(y)), PP2_SEQ_TAIL(y(def)), op, def, swap
-
-#define PP2_ARBITRARY_RMERGE_III(...) PP2_TUPLE_AT_0(,__VA_ARGS__)
 
 #endif
 
@@ -5424,9 +6185,11 @@
 #define IP2_LIST_FILTER_KEEP_II(b) IP2_LIST_FILTER_KEEP_##b
 #define IP2_LIST_FILTER_KEEP_1(P,r1,r2,e,...) (,,PP2_LOCAL_CTX_UNSPILL_PUSH_ARGUMENT(P##r1,P##e),P##r2,P##__VA_ARGS__)
 #define IP2_LIST_FILTER_KEEP_0(P,r1,r2,e,...) (,,IP2_LIST_FILTER_UNSPILL P##r1,P##r2,P##__VA_ARGS__)
-/* restore the spilled argument frame without pushing anything */
+/* restore the spilled argument frame without pushing anything. IP2_UNTAG, not
+ * PP2_OPEN: entries on the spill stack carry a kind tag (see context.h), so opening
+ * one raw would spill its `8A,` into the local context as an extra field. */
 #define IP2_LIST_FILTER_UNSPILL(P,stack,labels,arguments,registers,_) IP2_FX(LIST_FILTER_UNSPILL_I,(,P##stack,P##labels,PP2_SEQ_SPLIT_HEAD P##registers))
-#define IP2_LIST_FILTER_UNSPILL_I(P,stack,labels,frame,rest) (,P##stack,P##labels,/*arguments=*/PP2_OPEN P##frame,/*registers=*/P##rest,)
+#define IP2_LIST_FILTER_UNSPILL_I(P,stack,labels,frame,rest) (,P##stack,P##labels,/*arguments=*/IP2_UNTAG P##frame,/*registers=*/P##rest,)
 
 /* each(fn): map's traversal for effect only; returns the receiver. */
 #define PP2_DEF_List_each PP2_VM_FN(8PP2_LANGUAGE_LIST_EACH,2)
@@ -5454,6 +6217,7 @@
 
 
 
+
 /* Long is the ARBITRARY-precision integer: its value is a canonical decimal
  * digit-seq, (1)(2)(8) == 128, ((1)) == -1, unbounded length, signed. All of
  * its arithmetic is the arbitrary layer. Long is contagious: any operation
@@ -5477,6 +6241,42 @@
 #define IP2_LONG_CONSTRUCT_Long(v) (,Long,v)
 #define IP2_LONG_CONSTRUCT_Quote(v) (,Long,PP2_ARBITRARY_FIX(PP2_OPEN v))
 #define IP2_LONG_CONSTRUCT_Seq(v) (,Long,PP2_ARBITRARY_FIX(v))
+
+/* call: the tail of a Long literal. `(2)(5)(6)` compiles its leading `(2)` to a
+ * Long (see IP2_LANGUAGE_COMPILE_LIT_LONG) and leaves `(5)(6)` sitting where a
+ * call would be, so each remaining digit group arrives here as `call (5)...`.
+ * A Long's value already IS the digit-seq, so appending a digit is juxtaposing
+ * its group; FIX then does nothing but strip a leading zero. The syntax after
+ * the digits compiles as the return of this instruction, exactly as it would
+ * after any other expression, so `(2)(5)(6) plus (1)` needs no lookahead.
+ *
+ * One instruction per digit, and each is a fresh VM dispatch, so a literal is
+ * bounded by the machine's fuel rather than by macro depth. Calling a Long on
+ * anything but a digit is the definition exception: a Long is not callable. */
+#define PP2_DEF_Long_call PP2_PRIMITIVE(8IP2_LANGUAGE_LONG_DIGIT,)
+
+#define PP2_INSN_8IP2_LANGUAGE_LONG_DIGIT(P,r0,r1,r2,rhs_stx,...) \
+        IP2_FX(LONG_DIGIT_SELECT,(,PP2_SEQ_SPLIT_HEAD P##rhs_stx)) \
+            (,P##r0,PP2_LOCAL_CTX_CLEAR_ARGUMENTS P##r1,P##r2,P##rhs_stx,P##__VA_ARGS__)
+
+/* the leading group of the call syntax decides: one digit appends, anything
+ * else is not a digit and so not a literal */
+#define IP2_LONG_DIGIT_SELECT(P,dtup,...) PP2_CAT(IP2_LONG_DIGIT_,IP2_LANGUAGE_LITERAL_KIND dtup)
+#define IP2_LONG_DIGIT_LONG  IP2_LONG_DIGIT_APPEND
+#define IP2_LONG_DIGIT_QUOTE IP2_LONG_DIGIT_REJECT
+
+#define IP2_LONG_DIGIT_APPEND(P,r0,r1,r2,rhs_stx,...) \
+        (, \
+         /*r0=*/IP2_FX(LONG_DIGIT_VALUE,(,PP2_LANGUAGE_OBJECT_VALUE P##r0,PP2_SEQ_SPLIT_HEAD P##rhs_stx)), \
+         P##r1,P##r2, \
+         IP2_FX(LONG_DIGIT_REST,(,PP2_SEQ_SPLIT_HEAD P##rhs_stx)), \
+         P##__VA_ARGS__ \
+        )
+#define IP2_LONG_DIGIT_VALUE(P,value,dtup,...) (,Long,PP2_ARBITRARY_FIX(P##value dtup))
+#define IP2_LONG_DIGIT_REST(P,dtup,...) PP2_COMPILE_LANGUAGE_RETURN(__VA_ARGS__)
+
+#define IP2_LONG_DIGIT_REJECT(P,r0,r1,r2,rhs_stx,...) \
+        (,P##r0,P##r1,P##r2,8PP2_THROW_EXCEPTION,8PP2_LANGUAGE_DEFINITION_EXCEPTION,Long_call,P##__VA_ARGS__)
 
 /* str: demote the digit-seq back to native tokens (a negative emits the sign
  * as its own token: ((1)(2)) -> - 12). */
@@ -5571,6 +6371,63 @@
 #define IP2_LONG_GEQ_T(t) IP2_LONG_GEQ_##t
 #define IP2_LONG_GEQ_Int(lv,rv) (,Bool,PP2_ARBITRARY_GREATER_EQUAL(lv,PP2_ARBITRARY_PROMOTE(rv)))
 #define IP2_LONG_GEQ_Long(lv,rv) (,Bool,PP2_ARBITRARY_GREATER_EQUAL(lv,rv))
+
+#endif
+
+// ******************** From: nil.h
+/** @file */
+#ifndef PP2_LANGUAGE_TYPES_NIL_H
+#define PP2_LANGUAGE_TYPES_NIL_H
+
+
+
+/* Nil is the value of everything done for its effect rather than for an answer: a
+ * print, an assignment, a loop, an if that was not taken, an empty body, a
+ * function whose last statement is a statement.
+ *
+ * Before Nil those all left r0 empty, and an empty r0 is not an object. Anything
+ * that then read it -- printing it, returning it, comparing it -- reached for the
+ * object's fields with PP2_LANGUAGE_OBJECT_VALUE, found no parenthesised triple to
+ * take apart, so the accessor never fired and its own macro name spilled into the
+ * output. A procedure now answers with a real object that means "no answer", and
+ * every operation on it behaves.
+ *
+ * There is exactly one Nil value, written `nil`. */
+#define PP2_DEF_Nil PP2_TYPE(Nil,Any)
+#define PP2_SYM_Nil(...) __VA_ARGS__
+
+#define PP2_DEF_nil PP2_CONST(Nil,)
+
+/* An empty statement is nil, which is what makes an empty body work: `fn () ()`,
+ * `catch ()`, and a block with nothing in it all compile through PP2_COMPILE with
+ * empty syntax, and so all reach PP2_DEF_ here. Before, the empty name resolved to
+ * nothing and the compiler raised a definition exception on a program that had
+ * simply said nothing. */
+#define PP2_DEF_ PP2_CONST(Nil,)
+
+/* Nil(x) is nil, so `Nil(expr)` evaluates expr and throws the value away. */
+#define PP2_DEF_Nil_construct PP2_VM_FN(8PP2_LANGUAGE_NIL_CONSTRUCT,2)
+#define PP2_INSN_8PP2_LANGUAGE_NIL_CONSTRUCT(P,r0,r1,r2,self,arg0,...) \
+        (,/*r0=*/PP2_LANGUAGE_NIL,P##r1,P##r2,P##__VA_ARGS__)
+
+/* str(): nil prints as nothing at all, exactly like a quote holding no tokens.
+ * Printing is how a program says something, and a procedure has nothing to say, so
+ * `print(f(x))` on a procedure adds no word to the output rather than littering it
+ * with `nil`. Like Bool_str this leaves raw tokens in r0 for 8PP2_EMIT_LITERAL
+ * rather than an object, and here those tokens are simply none. */
+#define PP2_DEF_Nil_str PP2_VM_FN(8PP2_LANGUAGE_NIL_STR,1)
+#define PP2_INSN_8PP2_LANGUAGE_NIL_STR(P,r0,r1,r2,obj,...) (,/*r0=*/,P##r1,P##r2,P##__VA_ARGS__)
+
+/* eq(other): nil equals nil and nothing else. Without its own eq, two Nils would
+ * reach Any_eq's same-type branch, which raises rather than guessing. That is right
+ * for Quote and Fn, whose values are arbitrary tokens the preprocessor cannot
+ * compare, and wrong here, where there is one value and therefore one answer. */
+#define PP2_DEF_Nil_eq PP2_VM_FN(8PP2_LANGUAGE_NIL_EQ,2)
+#define PP2_INSN_8PP2_LANGUAGE_NIL_EQ(P,r0,r1,r2,lhs_obj,rhs_obj,...) \
+        (,/*r0=*/IP2_FX(LANGUAGE_NIL_EQ,(,PP2_LANGUAGE_OBJECT_TYPE P##rhs_obj)),P##r1,P##r2,P##__VA_ARGS__)
+#define IP2_LANGUAGE_NIL_EQ(P,rhs_type) PP2_CAT(IP2_LANGUAGE_NIL_EQ_,PP2_SYMBOL_EQ(Nil,P##rhs_type))
+#define IP2_LANGUAGE_NIL_EQ_0 (,Bool,0)
+#define IP2_LANGUAGE_NIL_EQ_1 (,Bool,1)
 
 #endif
 

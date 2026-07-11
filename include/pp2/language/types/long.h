@@ -3,11 +3,19 @@
 #define PP2_LANGUAGE_TYPES_LONG_H
 
 #include "pp2/language/basic/object.h"
+#include "pp2/language/basic/return.h"
+#include "pp2/language/compiler.h"
 #include "pp2/language/definition/const.h"
+#include "pp2/language/definition/primitive.h"
 #include "pp2/language/definition/type.h"
 #include "pp2/language/definition/vm_fn.h"
 
+#include "pp2/machine/context.h"
+#include "pp2/machine/exception/throw.h"
+
+#include "pp2/primitive/basic/cat.h"
 #include "pp2/primitive/basic/invoke.h"
+#include "pp2/primitive/seq/head.h"
 #include "pp2/primitive/tuple/open.h"
 #include "pp2/primitive/arithmetic/arbitrary.h"
 
@@ -34,6 +42,42 @@
 #define IP2_LONG_CONSTRUCT_Long(v) (,Long,v)
 #define IP2_LONG_CONSTRUCT_Quote(v) (,Long,PP2_ARBITRARY_FIX(PP2_OPEN v))
 #define IP2_LONG_CONSTRUCT_Seq(v) (,Long,PP2_ARBITRARY_FIX(v))
+
+/* call: the tail of a Long literal. `(2)(5)(6)` compiles its leading `(2)` to a
+ * Long (see IP2_LANGUAGE_COMPILE_LIT_LONG) and leaves `(5)(6)` sitting where a
+ * call would be, so each remaining digit group arrives here as `call (5)...`.
+ * A Long's value already IS the digit-seq, so appending a digit is juxtaposing
+ * its group; FIX then does nothing but strip a leading zero. The syntax after
+ * the digits compiles as the return of this instruction, exactly as it would
+ * after any other expression, so `(2)(5)(6) plus (1)` needs no lookahead.
+ *
+ * One instruction per digit, and each is a fresh VM dispatch, so a literal is
+ * bounded by the machine's fuel rather than by macro depth. Calling a Long on
+ * anything but a digit is the definition exception: a Long is not callable. */
+#define PP2_DEF_Long_call PP2_PRIMITIVE(8IP2_LANGUAGE_LONG_DIGIT,)
+
+#define PP2_INSN_8IP2_LANGUAGE_LONG_DIGIT(P,r0,r1,r2,rhs_stx,...) \
+        IP2_FX(LONG_DIGIT_SELECT,(,PP2_SEQ_SPLIT_HEAD P##rhs_stx)) \
+            (,P##r0,PP2_LOCAL_CTX_CLEAR_ARGUMENTS P##r1,P##r2,P##rhs_stx,P##__VA_ARGS__)
+
+/* the leading group of the call syntax decides: one digit appends, anything
+ * else is not a digit and so not a literal */
+#define IP2_LONG_DIGIT_SELECT(P,dtup,...) PP2_CAT(IP2_LONG_DIGIT_,IP2_LANGUAGE_LITERAL_KIND dtup)
+#define IP2_LONG_DIGIT_LONG  IP2_LONG_DIGIT_APPEND
+#define IP2_LONG_DIGIT_QUOTE IP2_LONG_DIGIT_REJECT
+
+#define IP2_LONG_DIGIT_APPEND(P,r0,r1,r2,rhs_stx,...) \
+        (, \
+         /*r0=*/IP2_FX(LONG_DIGIT_VALUE,(,PP2_LANGUAGE_OBJECT_VALUE P##r0,PP2_SEQ_SPLIT_HEAD P##rhs_stx)), \
+         P##r1,P##r2, \
+         IP2_FX(LONG_DIGIT_REST,(,PP2_SEQ_SPLIT_HEAD P##rhs_stx)), \
+         P##__VA_ARGS__ \
+        )
+#define IP2_LONG_DIGIT_VALUE(P,value,dtup,...) (,Long,PP2_ARBITRARY_FIX(P##value dtup))
+#define IP2_LONG_DIGIT_REST(P,dtup,...) PP2_COMPILE_LANGUAGE_RETURN(__VA_ARGS__)
+
+#define IP2_LONG_DIGIT_REJECT(P,r0,r1,r2,rhs_stx,...) \
+        (,P##r0,P##r1,P##r2,8PP2_THROW_EXCEPTION,8PP2_LANGUAGE_DEFINITION_EXCEPTION,Long_call,P##__VA_ARGS__)
 
 /* str: demote the digit-seq back to native tokens (a negative emits the sign
  * as its own token: ((1)(2)) -> - 12). */
