@@ -1,5 +1,5 @@
 #!/bin/sh -l
-set -x
+set -eu
 
 WORKSPACE=/github/workspace
 
@@ -9,7 +9,7 @@ chown -R $(id -u) ${WORKSPACE}
 
 cd ${WORKSPACE}
 mkdir build && cd build
-cmake ${WORKSPACE}
+cmake ${WORKSPACE} -DPP2_BUILD_TESTS=OFF -DPP2_BUILD_SINGLE_INCLUDE=OFF -DPP2_INSTALL=OFF
 make Sphinx
 
 cd ${WORKSPACE}

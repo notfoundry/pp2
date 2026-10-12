@@ -1,6 +1,7 @@
 import os
 import sys
 import glob
+import json
 
 
 # -- Project information -----------------------------------------------------
@@ -59,7 +60,7 @@ html_js_files = [
 ]
 with open("../single_include/pp2/pp2.h") as livecode_header:
     with open('{}/scripts/livecode-constants.js'.format(html_static_path[0]), 'w') as livecode_constants:
-        livecode_constants.write('LIVECODE_HEADER = String.raw`{}`\n'.format(livecode_header.read()))
+        livecode_constants.write('LIVECODE_HEADER = {};\n'.format(json.dumps(livecode_header.read())))
 
 breathe_default_project = "pp2"
 
