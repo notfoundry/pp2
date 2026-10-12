@@ -1,4 +1,5 @@
 sphinx
+sphinxcontrib-jquery==4.1
 breathe
 requests
 sphinx-jinja

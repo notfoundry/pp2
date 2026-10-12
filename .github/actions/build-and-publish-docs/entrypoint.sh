@@ -25,5 +25,7 @@ touch ${WORKSPACE}/.nojekyll
 git add .
 git config user.name github-actions[bot]
 git config user.email github-actions[bot]@users.noreply.github.com
-git commit -m "Auto-update documentation from ${GITHUB_REF}@${GITHUB_SHA}"
-git push
+if ! git diff --cached --quiet; then
+    git commit -m "Auto-update documentation from ${GITHUB_REF}@${GITHUB_SHA}"
+    git push
+fi
